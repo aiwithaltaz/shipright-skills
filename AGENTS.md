@@ -1,7 +1,7 @@
 # AGENTS.md — Rules for AI working in this pack
 
 **Pack:** **ShipRight** (name locked)  
-**Status: Public draft (v0.4.1-draft).**
+**Status: Public draft (v0.5.0-draft).**
 **Tagline:** Context before generate. Product before pixels.
 
 These rules apply when an agent edits this skill-pack repo. The reusable product is the content under `skills/` and `docs/`. Do not copy this file into an end-user's app; the skills carry their own usage rules.
@@ -19,6 +19,7 @@ These rules apply when an agent edits this skill-pack repo. The reusable product
 | `architecture.md` | Folder ownership and loading order |
 | `skills.md` | Which skill to run |
 | `docs/01`–`05` | Optional templates for recording context and decisions; equivalent project sources are valid |
+| `docs/06-design-md.md` | DESIGN.md and PRODUCT.md import and export |
 | `skills/_shared/intake.md` | Decision ownership and focused intake |
 | `skills/_shared/operating-contract.md` | Authority, evidence statuses and readiness |
 | `skills/*/SKILL.md` | When that skill activates |
@@ -60,9 +61,13 @@ These rules apply when an agent edits this skill-pack repo. The reusable product
 
 ## Writing style for this pack
 
-- Practical. Complete sentences. No hype. No “revolutionary / seamless / delightful” fluff.
+- Practical. Complete sentences. No hype words such as revolutionary, seamless, or delightful.
+- Short sentences. Prefer 20 words or fewer. Use active voice.
+- Keep the words not, never, no, and only. Dropping one of them changes the rule.
+- Use a period, a colon, or a hyphen. Do not use an em dash in skill files or in skill output.
 - Prefer checklists, tables, and concrete examples over abstract theory.
-- Every skill description must start with **“Use this when …”** (or include that phrase clearly) and name trigger tasks.
+- Every skill description must start with **"Use this when"** (or include that phrase clearly) and name trigger tasks.
+- Define a specialist term the first time you use it. Example: Proposed means a suggestion, not a decision.
 - Keep the `-draft` version suffix until the maintainer approves a stable release.
 - Tagline when useful: **Context before generate. Product before pixels.**
 

@@ -1,6 +1,6 @@
 # 01 — Product Requirements Document (PRD)
 
-**Status: Template (ShipRight v0.4.1-draft).**
+**Status: Template (ShipRight v0.5.0-draft).**
 **Pack:** ShipRight  
 **How to use:** Use relevant sections to record current product context. Skills may help draft missing sections provisionally. Mark unknowns and proposed decisions; missing files do not grant approval to invent scope.
 

@@ -60,9 +60,14 @@ for path in sorted((ROOT / "skills").rglob("*.md")):
 # Change set 2: inline core rules, optional references, verdict vocabulary,
 # and no stale publication status outside history files.
 optional_refs = {
-    "product-design": ["opportunity-research.md", "operational-flows.md"],
-    "ui-ux-design": ["references-and-design-system.md", "build-handoff.md", "operator-workspaces.md"],
-    "ux-critique": ["bounded-verification.md", "requirements-and-feedback.md"],
+    "product-design": ["opportunity-research.md", "operational-flows.md", "doc-set.md"],
+    "ui-ux-design": [
+        "references-and-design-system.md",
+        "build-handoff.md",
+        "operator-workspaces.md",
+        "ui-copy.md",
+    ],
+    "ux-critique": ["bounded-verification.md", "requirements-and-feedback.md", "plan-review.md"],
 }
 for name, refs in optional_refs.items():
     source = (ROOT / "skills" / name / "SKILL.md").read_text()
@@ -91,7 +96,8 @@ for path in sorted(ROOT.rglob("*.md")):
 if errors:
     print("FAIL\n" + "\n".join(errors))
     sys.exit(1)
+optional_count = sum(len(refs) for refs in optional_refs.values())
 print(f"PASS: 3 skill metadata records; stable 8/10/10 check IDs; "
       f"{len(references)} local references; shared intake/contract links; "
-      f"inline core rules; 7 optional references linked; no stale status wording.")
+      f"inline core rules; {optional_count} optional references linked; no stale status wording.")
 print("Canonical source check only; client installs and behavior need separate evidence.")

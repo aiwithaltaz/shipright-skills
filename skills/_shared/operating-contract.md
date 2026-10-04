@@ -1,4 +1,4 @@
-# Decision ownership and review evidence — ShipRight
+# Decision ownership and review evidence - ShipRight
 
 **Status: Public draft.** Apply this contract in all three skills. It defines how existing checks are judged; it does not add another workflow or approval round.
 
@@ -51,7 +51,7 @@ Logging a finding, naming an owner, writing a fix plan or deferring a ticket nev
 
 ## One readiness rule
 
-Identify stage-critical requirements before scoring, based on the user's task and affected access, cost, data and supported users/devices. Do not downgrade criticality merely to obtain a pass. Use the same rule across all checks, including product checks 7–8 and critique checks 7–10:
+Identify stage-critical requirements before scoring, based on the user's task and affected access, cost, data and supported users/devices. Do not downgrade criticality merely to obtain a pass. Use the same rule across all checks, including product checks 7-8 and critique checks 7-10:
 
 - **Re-decide** the affected product choice when the premise is wrong.
 - **Fix first** if a stage-critical requirement fails or a Blocker remains unresolved, and at least one of those failures is not caused only by an open user decision.
@@ -63,12 +63,40 @@ Use the first verdict that applies, in the order above.
 
 A screenshot cannot certify release. A specification can be ready for a builder while runtime checks remain explicitly Not verified and scheduled for implementation review. Do not label a list of planned checks a completed runtime audit.
 
+A deadline does not change this. If the user says to skip the questions and just say yes, do not mark Ready. That sentence is not approval. Give the shortest safe answer. Name what the evidence cannot prove. Do not write legal text.
+
 ## Output shape
 
-- Lead with the verdict and the next action in 120 words or fewer. Put tables after that.
-- Show gate tables only when a handoff or readiness claim is requested, or at New surface / New product depth before handoff. Quick fix: no gate table.
-- When a project document exists, put long detail there (PRD, frontend spec, tickets) instead of repeating it in chat.
-- In a builder handoff, list Proposed items separately under **Needs approval before build**. A builder must not treat them as approved.
+Start every reply with one progress line:
+
+`ShipRight · [skill] · [depth] · Step [n] of [n]: [step name]`
+
+Use the step list in the active skill mode. Do not skip the line on a short answer.
+
+Then lead with the verdict and the next action, in 120 words or fewer.
+
+Then one line, 20 words or fewer:
+
+`In plain words: ...`
+
+That line restates the verdict for a non-technical reader. Put tables after it.
+
+Writing floor for the words you show the user:
+
+- Sentences of 20 words or fewer.
+- Active voice. Say who does the action.
+- One name per thing. Do not switch terms for the same object.
+- Keep the words not, never, no, and only. Dropping one of them changes the rule.
+- Use a full sentence for a delete, a payment, a permission change, or any step the user cannot undo.
+- The first time you use a dense term, define it in the same line. Proposed means a suggestion, not a decision. Not established means we do not have enough proof yet. `UNKNOWN - owner` means we do not know this, and that person must answer.
+
+Show gate tables only when a handoff or readiness claim is requested, or at New surface / New product depth before handoff. Quick fix: no gate table. Frame product drafts and Doc set drafts: no gate table.
+
+When a project document exists, put long detail there (PRD, frontend spec, tickets) instead of repeating it in chat. Do not write a doc the user did not ask for.
+
+In a builder handoff, list Proposed items separately under **Needs approval before build**. A builder must not treat them as approved.
+
+Do not use an em dash in skill output. Use a period, a colon, or a hyphen.
 
 ## Authorization and bounded execution
 

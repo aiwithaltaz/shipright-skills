@@ -1,4 +1,4 @@
-# Layout and hierarchy — reference
+# Layout and hierarchy - reference
 
 **Status: DRAFT.**  
 **Pack:** ShipRight. Use with design dials + **10-gate pre-flight**. Load with `ui-ux-design` when structuring screens.
@@ -9,12 +9,12 @@ Users should understand **what this screen is** and **what to do next** without 
 
 ## Hierarchy checklist
 
-1. **Page title (H1)** — names the job or object  
-2. **Short context** — one sentence if needed (not a paragraph essay)  
-3. **Primary action** — one obvious CTA  
-4. **Secondary actions** — visually quieter  
-5. **Content block** — table, list, form, or detail  
-6. **Tertiary** — help links, metadata  
+1. **Page title (H1)** - names the job or object  
+2. **Short context** - one sentence if needed (not a paragraph essay)  
+3. **Primary action** - one obvious CTA  
+4. **Secondary actions** - visually quieter  
+5. **Content block** - table, list, form, or detail  
+6. **Tertiary** - help links, metadata  
 
 If everything is bold, nothing is bold. If everything is a button, nothing is primary.
 
@@ -25,7 +25,7 @@ If everything is bold, nothing is bold. If everything is a button, nothing is pr
 | Single column form | Settings, invite, short create | Comparing many items |
 | List / table + row actions | Collections, members, tickets | Tiny mobile without responsive plan |
 | Master-detail | Browse + inspect | Simple one-shot tasks |
-| Stepper / wizard | Legal gates, long setup with clear phases | 2–3 fields that fit one page |
+| Stepper / wizard | Legal gates, long setup with clear phases | 2-3 fields that fit one page |
 | Dashboard widgets | Monitoring jobs in PRD | Generic “AI admin” filler widgets |
 
 ## Spacing rules
@@ -49,13 +49,13 @@ If everything is bold, nothing is bold. If everything is a button, nothing is pr
 | Primary CTA | Highest among actions |
 | Destructive | Distinct but not competing with primary create actions on the same view unless the job is delete |
 | Nav chrome | Quiet; content is louder |
-| Decorative background | Lowest — must not reduce contrast |
+| Decorative background | Lowest - must not reduce contrast |
 
 ## Responsive notes
 
 - Stack columns on small screens  
 - Do not hide primary action in overflow-only menus on mobile  
-- Tables may become cards on small screens — specify which fields remain  
+- Tables may become cards on small screens - specify which fields remain  
 
 ## Common hierarchy failures (fix these)
 
@@ -71,4 +71,4 @@ If everything is bold, nothing is bold. If everything is a button, nothing is pr
 
 ---
 
-*DRAFT — ui-ux-design/references/layout-and-hierarchy.md — ShipRight*
+*DRAFT - ui-ux-design/references/layout-and-hierarchy.md - ShipRight*

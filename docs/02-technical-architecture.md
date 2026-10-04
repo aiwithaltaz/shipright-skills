@@ -1,6 +1,6 @@
 # 02 — Technical Architecture Document
 
-**Status: Template (ShipRight v0.4.1-draft).**
+**Status: Template (ShipRight v0.5.0-draft).**
 **Pack:** ShipRight  
 **How to use:** Describe systems and constraints so AI does not invent APIs, stacks, or data shapes. Product designers can fill the non-code sections; eng should review stack and data flow.
 

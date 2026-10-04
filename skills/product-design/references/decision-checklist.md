@@ -1,7 +1,46 @@
-# Decision checklist — reference
+# Decision checklist - reference
 
-**Status: DRAFT.** Use during **Decision review** mode and before marking product-design done.  
-**Pack:** ShipRight. Pairs with the skill’s **8-check decision gate**.
+**Status: Public draft.** Use during **Decision review** mode, during **Frame product**, and before marking product-design done.
+**Pack:** ShipRight. Pairs with the skill's **8-check decision gate**.
+
+## Before screen jobs (Frame product)
+
+Run this before objects, the journey, or screen jobs. Then stop. Do not draft screens in the same message.
+
+### Premises
+
+Write 3 to 5 short statements the plan depends on. The user marks each one agree, disagree, or unknown. Do not mark them yourself.
+
+```text
+1. One person sets this up for the group. Mark: ___
+2. Members already share one list. Mark: ___
+```
+
+If a premise is unknown, anything that depends on it stays Unknown. Do not invent a user or a feature to fill the gap.
+
+### Narrowest first version
+
+One or two sentences. This is the smallest version that still proves the differentiating system. Mark it Proposed until the user agrees. It is not a feature list.
+
+### Three approaches
+
+Show all three. Recommend one. Say what evidence would change your pick. Then stop.
+
+| Approach | What it is | Effort | Risk | What it proves |
+| --- | --- | --- | --- | --- |
+| Small | The narrowest version above | Low, if the mechanism is already clear | It may leave later jobs unproved | The differentiating system, and nothing else |
+| Full | The later jobs you can already name from the user's words | Higher | More unknown decisions | Whether the whole path holds |
+| Different | Another mechanism that could cause the same outcome | Varies | It may abandon the user's idea | Whether a simpler mechanism works |
+
+Put this choice in one decision card. Give each approach one example of its shape. Use the user's words. Do not name a feature, a price, or a user they did not state. If they only said "an app for my community", the Small example is: the smallest version that proves the mechanism, after the mechanism is known. It is not a guessed feature.
+
+My pick names Small, Full, or Different, plus one sentence tied to the user's words. If you have no basis, say "No pick yet".
+
+**You decide** selects only this approach. **Let me decide** means you wait. Do not draft screen jobs until the user picks, or delegates this one choice.
+
+Do not invent prices, user counts, or features to make an approach look complete.
+
+If the user asks to score the plan, route to ux-critique Plan review. Do not score it here.
 
 ## Interaction choices
 
@@ -34,7 +73,7 @@
 - [ ] State table present  
 - [ ] Primary action named per key state  
 - [ ] Error copy ownership noted (who writes final strings)  
-- [ ] Analytics events only if in docs — else UNKNOWN  
+- [ ] Analytics events only if in docs - else UNKNOWN  
 - [ ] Tickets suggested for `docs/05`  
 - [ ] **8-check decision gate** uses the shared four statuses with evidence and next action
 
@@ -58,4 +97,4 @@ Critical failures block the affected handoff even when tracked in a ticket. Use 
 
 ---
 
-*DRAFT — product-design/references/decision-checklist.md — ShipRight*
+*DRAFT - product-design/references/decision-checklist.md - ShipRight*

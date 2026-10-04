@@ -1,4 +1,4 @@
-# Severity rubric — reference
+# Severity rubric - reference
 
 **Status: DRAFT.** Used by `ux-critique` when labeling findings.  
 **Pack:** ShipRight. Use with the **10-gate ship audit**.
@@ -52,7 +52,7 @@ Examples:
 ## Prioritization tips
 
 1. List blockers first, then majors, then polish  
-2. Cap polish to what helps learning — do not write 40 nits  
+2. Cap polish to what helps learning - do not write 40 nits  
 3. If a “visual” issue hides a wrong decision, escalate to **blocker/major** and route to **product-design**  
 4. One finding = one problem (do not bundle unrelated issues)
 
@@ -68,4 +68,4 @@ Severity is impact; priority is delivery order. Retest the affected artifact/ver
 
 ---
 
-*DRAFT — ux-critique/references/severity-rubric.md — ShipRight*
+*DRAFT - ux-critique/references/severity-rubric.md - ShipRight*

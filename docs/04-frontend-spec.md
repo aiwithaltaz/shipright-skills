@@ -1,6 +1,6 @@
 # 04 — Frontend Specification Document
 
-**Status: Template (ShipRight v0.4.1-draft).**
+**Status: Template (ShipRight v0.5.0-draft).**
 **Pack:** ShipRight  
 **How to use:** Record approved screens, navigation, components, states and design direction before generating UI. The **ui-ux-design** skill follows approved entries here and compiles them into a build handoff pack. Skills may help draft a provisional screen specification. Do not treat proposed screens as approved; unresolved consequential decisions block the affected commitment.
 
@@ -80,7 +80,9 @@ Reuse existing design-system components when listed:
 
 ## 5. Design tokens and direction
 
-Mode: [ ] **Preserve** (existing product — record what is actually in use) [ ] **Establish** (new product — small Proposed set until approved). See `skills/ui-ux-design/references/references-and-design-system.md`.
+Mode: [ ] **Preserve** (existing product, record what is actually in use) [ ] **Establish** (new product, small Proposed set until approved). See `skills/ui-ux-design/references/references-and-design-system.md`.
+
+Export Approved or Proposed tokens to `DESIGN.md`. Omit Unknown values. Do not invent a hex. See `06-design-md.md`. In Preserve mode, do not change URLs, primary nav labels, form field names or order, the logo, or legal copy unless that item is explicitly approved.
 
 - **Feeling (one line):** <!-- e.g. calm, precise, trustworthy -->
 - **Reference products/sites (1–2, with what to borrow):** <!-- write here -->

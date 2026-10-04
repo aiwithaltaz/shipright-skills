@@ -1,6 +1,6 @@
 # ShipRight
 
-**Status: Public draft — v0.4.1-draft.** See [CHANGELOG.md](./CHANGELOG.md).
+**Status: Public draft - v0.5.0-draft.** See [CHANGELOG.md](./CHANGELOG.md).
 
 **Tagline:** Context before generate. Product before pixels.
 
@@ -18,13 +18,15 @@ It works with Claude Design, Figma, Cursor, Claude Code, Codex, Antigravity, VS 
 
 ```text
 rough idea
-  → Frame product: outcome → differentiating system → core objects → journey → screen jobs   (product-design)
+  → Frame product: outcome, premises, Small / Full / Different, then objects, journey, screen jobs   (product-design)
   → optional opportunity research (only if you agree)
-  → flows + states for each screen job                                                     (product-design)
-  → screen specs + optional references + design-system direction                           (ui-ux-design)
-  → build handoff pack: rules block + one prompt per screen                                (ui-ux-design)
+  → optional doc set: PRD, architecture, access, frontend spec, tickets, one doc at a time            (product-design)
+  → flows + states for each screen job                                                               (product-design)
+  → screen specs + optional references + design-system direction                                     (ui-ux-design)
+  → optional PRODUCT.md and DESIGN.md export                                                         (ui-ux-design)
+  → build handoff pack: rules block + one prompt per screen                                          (ui-ux-design)
   → your build tool makes the screens
-  → critique + screenshot check of what was built, max 2 fix passes                        (ux-critique)
+  → critique + screenshot check of what was built, max 2 fix passes                                  (ux-critique)
 ```
 
 You approve decisions along the way. Suggestions stay **Proposed** until you say yes. Silence is never approval.
@@ -38,7 +40,7 @@ ShipRight matches effort to the request:
 | Quick fix | "Better label for this button" | A short answer. No research, no check tables |
 | Focused improvement | "This page feels cluttered; we launch this week" | Top problems, what to keep, what to ship now |
 | New surface | "Design the invite flow" | Flow, states, spec, checks at handoff |
-| New product | "I have a rough idea" | A one-page product frame first; research only if you agree |
+| New product | "I have a rough idea" | A one-page product frame first. Premises and three approaches, then a stop. Research only if you agree |
 
 ## Related packs (pair with them; we don't bundle them)
 
@@ -67,11 +69,11 @@ Taste packs make it look right. ShipRight makes it be right, then tells your too
 
 | Layer | Path | Job |
 | --- | --- | --- |
-| Templates | `docs/01`–`05` | Record context and decisions so AI doesn't invent them (optional; missing docs never block drafting) |
+| Templates | `docs/01`-`06` | Record context and decisions so AI does not invent them. Doc set drafts them one at a time. `06` covers DESIGN.md and PRODUCT.md |
 | Product decisions | `skills/product-design/` | Frame product, flows, states, **decision gate** |
 | UI/UX craft | `skills/ui-ux-design/` | Screen specs, references, design-system direction, **build handoff pack**, **10-check pre-flight** |
 | Critique | `skills/ux-critique/` | Reviews, product audit, screenshot verification, **10-check audit** |
-| Shared intake | `skills/_shared/intake.md` | Depth + 0–5 questions + decision ownership |
+| Shared intake | `skills/_shared/intake.md` | Depth, 0-5 decision cards, You decide / Let me decide |
 | Shared contract | `skills/_shared/operating-contract.md` | Decision status, evidence and readiness rules |
 | Personal taste | `personal-taste/` | Your optional preference files |
 | Catalog | `skills.md` | Which skill + prompts |
@@ -159,8 +161,11 @@ The profile stays optional for other users. Keep the file accessible when using 
 **3 — Hand approved specs to a build tool (ui-ux-design)**
 > Use the ui-ux-design skill. Our frame and screen specs are approved in docs/. Make the build handoff pack for [Cursor / Claude Design / Figma].
 
-**4 — Check what got built (ux-critique)**
+**4 - Check what got built (ux-critique)**
 > Use the ux-critique skill. Here are desktop and mobile screenshots of [screen] built from the pack. Compare them with the approved screen job and states.
+
+**5 - Write the five docs (product-design)**
+> Use the product-design skill, Doc set mode. The frame is approved. Write the docs one at a time. Mark unknown facts as UNKNOWN with an owner. Do not invent the stack.
 
 ## Boundaries
 
@@ -177,7 +182,7 @@ Follow the shared operating contract for decision authority and readiness.
 
 ## Version
 
-- Current: **v0.4.1-draft**
+- Current: **v0.5.0-draft**
 - See [CHANGELOG.md](./CHANGELOG.md)
 
 ---

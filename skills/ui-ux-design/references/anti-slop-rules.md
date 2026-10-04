@@ -1,8 +1,8 @@
-# Anti-slop rules — reference
+# Anti-slop rules - reference
 
 **Status: DRAFT.** Hard rules for `ui-ux-design`. Aligns with critique lens in `ux-critique/references/slop-tells.md`.  
 **Pack:** ShipRight. Anti-slop = capability, not the product name.  
-Inspired by Taste Skill / Hallmark / UI UX Pro Max ideas (paraphrased — not copied verbatim).
+Inspired by Taste Skill / Hallmark / UI UX Pro Max ideas (paraphrased - not copied verbatim).
 
 ## Purpose
 
@@ -18,7 +18,27 @@ Do not add unapproved navigation or features merely to satisfy a checklist. Appl
 
 ## Visual heuristics
 
-Purple palettes, gradients, cards, blur, symmetry, emoji, a single font and motion are not automatic failures. Evaluate product purpose, brand fit, content hierarchy, accessible interaction and actual use. Prefer approved tokens/components. Explain a concrete problem before recommending a visual change. Numerical dials are optional aids, not proof of quality.
+Purple palettes, gradients, cards, blur, symmetry, emoji, a single font and motion are not automatic failures. An observed or approved brand color, including purple, stays. Evaluate product purpose, brand fit, content hierarchy, accessible interaction and actual use. Prefer approved tokens and components. Explain a concrete problem before recommending a visual change. Numerical dials are optional aids, not proof of quality.
+
+## Count it
+
+Fill this block before a build handoff, and whenever you review a screen. A count is evidence. Judge it in context. Only fake proof, unsourced proof, hidden cost, and a dark pattern auto-fail.
+
+```text
+Count it
+- Eyebrow labels: N
+- Identical card rows: N
+- Accent colors: N
+- Primary CTAs on this screen: N
+- Numbered markers that are not a real sequence: N
+- Fake data (Jane Doe, Acme, 99.99%, or similar): quote or "none"
+- Proof with no source: quote or "none"
+Judgment: say what the counts mean for this job. Do not fail a color or a card row by count alone.
+```
+
+Common default looks, used as calibration, not as bans: cream page with a serif and a clay accent; near-black page with one neon accent; newspaper hairlines and tiny labels; a purple-blue gradient with three equal cards; template chrome (all-caps eyebrows, "A · B · C" markers, arrows on every link). Ask: "Is this a choice for this brief?"
+
+UI sentences follow [ui-copy.md](ui-copy.md). Quote a bad line. Name the pattern. Do not guess that a model wrote it.
 
 ## Prefer instead
 
@@ -31,7 +51,7 @@ Purple palettes, gradients, cards, blur, symmetry, emoji, a single font and moti
 | Custom snowflake controls | Design-system components |
 | Color-only status | Text + icon + color |
 | Centered long essay | Short context + structured content |
-| Motion dial high but nothing moves | Real motion notes — or lower MOTION |
+| Motion dial high but nothing moves | Real motion notes - or lower MOTION |
 
 ## Product-type sanity
 
@@ -66,8 +86,8 @@ Run **ux-critique** (10-gate ship audit). Convert blockers/majors into doc 05 ti
 
 ## Honest failure
 
-If the model output is mostly slop, say so. Do not “lightly edit” a wrong product into existence — return to docs + product-design. Fail pre-flight honestly.
+If the model output is mostly slop, say so. Do not “lightly edit” a wrong product into existence - return to docs + product-design. Fail pre-flight honestly.
 
 ---
 
-*DRAFT — ui-ux-design/references/anti-slop-rules.md — ShipRight*
+*DRAFT - ui-ux-design/references/anti-slop-rules.md - ShipRight*

@@ -1,11 +1,11 @@
-# State coverage — reference (UI)
+# State coverage - reference (UI)
 
 **Status: DRAFT.**  
 **Pack:** ShipRight. Supports the **10-gate pre-flight**. UI-facing companion to product-design states. Used by `ui-ux-design`.
 
 ## Rule
 
-If the screen is interactive and P0, design **all** relevant states — not only the populated success view.
+If the screen is interactive and P0, design **all** relevant states - not only the populated success view.
 
 ## State-by-state UI guidance
 
@@ -91,4 +91,4 @@ Final strings may need a copy owner (doc 04).
 
 ---
 
-*DRAFT — ui-ux-design/references/state-coverage.md — ShipRight*
+*DRAFT - ui-ux-design/references/state-coverage.md - ShipRight*

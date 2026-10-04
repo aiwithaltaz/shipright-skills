@@ -7,6 +7,31 @@ Format based on Keep a Changelog. Versioning follows SemVer.
 **Status:** Public draft. Historical notes below describe their time.
 **Product name:** **ShipRight** (locked).
 
+## [0.5.0-draft] - 2026-10-04 - doc set, decision cards, premises, DESIGN.md, slop counts
+
+### Added
+
+- **Doc set** mode in product-design. It drafts the five docs one at a time, stops for a yes, marks unknown facts as `UNKNOWN - owner`, and does not overwrite Approved sections. See `skills/product-design/references/doc-set.md` and `docs/README.md`.
+- Decision cards in shared intake. Each card has a question, why it matters, options with examples, a pick, and **You decide** / **Let me decide**.
+- A progress line and one "In plain words" line in the shared output shape. A writing floor: short sentences, active voice, keep not / never / no / only.
+- Frame product now checks premises, names the narrowest first version, and offers Small, Full, and Different. It stops before screen jobs.
+- Optional **Plan review** in ux-critique. It scores Product, Design, and Build from 0 to 10.
+- DESIGN.md and PRODUCT.md import and export. Guide: `docs/06-design-md.md`. Imported values are Observed plus a source. Brand files are inspiration only. Preserve mode lists what never changes silently.
+- A countable slop catalog and UI copy rules. Count block, five common default looks, banned filler, a portability test, and Detect mode that quotes the line. Visual tells stay evidence. Only integrity problems auto-fail.
+- Dry-run stress notes in `evals/change-set-4/`. This is not a live model trial.
+
+### Changed
+
+- Skill files no longer use em dashes.
+- Catalog, pack map, README, and current-version lines now say **0.5.0-draft**.
+- The source checker also requires links to `doc-set.md`, `ui-copy.md`, and `plan-review.md`.
+- The 8 / 10 / 10 check IDs are unchanged. No new skill, hook, CLI, or bundled detector.
+
+### Validation
+
+- `python3 evals/check_sources.py` checks source shape only.
+- `evals/change-set-4/results.md` is a careful dry-run of the written instructions. It is not a live three-arm eval.
+
 ## [0.4.1-draft] — 2026-09-25 — optional personal design profile
 
 ### Added

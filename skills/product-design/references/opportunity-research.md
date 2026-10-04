@@ -1,4 +1,4 @@
-# Opportunity research — reference (optional)
+# Opportunity research - reference (optional)
 
 **Status: Public draft.** Used by `product-design` during **Frame product**.
 **Pack:** ShipRight.
@@ -40,4 +40,4 @@ Include "doing nothing / a spreadsheet / email" as an alternative when that is w
 
 ---
 
-*Public draft — product-design/references/opportunity-research.md — ShipRight*
+*Public draft - product-design/references/opportunity-research.md - ShipRight*

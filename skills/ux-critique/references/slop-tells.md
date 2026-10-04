@@ -1,11 +1,57 @@
-# AI slop tells — reference
+# AI slop tells - reference
 
 **Status: DRAFT.** Used by `ux-critique` (and useful to `ui-ux-design`).  
 **Pack:** ShipRight. Use with the **10-gate ship audit**.
 
 These patterns show up often from vibe-coding UI tools (Claude Design, Figma AI, Google Stitch, generic Cursor/Codex UI, etc.). Spot them; ask for rewrites grounded in docs.
 
-Visual patterns below are contextual prompts, not automatic failures. Approved purple palettes, gradients, emoji or a single typeface can be appropriate. Explain the actual impact; visual preferences cannot waive fabricated proof, inaccessible critical controls or other integrity requirements.
+Visual patterns below are contextual prompts, not automatic failures. Approved purple palettes, gradients, emoji or a single typeface can be appropriate. Keep a brand color the user asked to keep, including purple. Explain the actual impact. Visual preferences cannot waive fabricated proof, inaccessible critical controls, or other integrity requirements.
+
+Only these auto-fail: fake proof, unsourced proof shown as fact, hidden cost, and a dark pattern. Everything else is a tell. Judge it. Then decide.
+
+## Count it
+
+Fill this block on every screen review. A count is evidence. It is not a verdict by itself.
+
+```text
+Count it
+- Eyebrow labels: N
+- Identical card rows: N
+- Accent colors: N
+- Primary CTAs on this screen: N
+- Numbered markers that are not a real sequence: N
+- Fake data (Jane Doe, Acme, 99.99%, or similar): quote or "none"
+- Proof with no source: quote or "none"
+Judgment: one or two sentences. Name any integrity Fail. Do not auto-fail a gradient, a purple brand, or a card row.
+```
+
+## Five default looks (calibration)
+
+These are common AI defaults. They are not automatic failures. Ask whether this brief chose them.
+
+| Look | What you see |
+| --- | --- |
+| Warm editorial | Cream page, serif headlines, a clay or terracotta accent |
+| Neon dark | Near-black page, one neon accent |
+| Broadsheet | Hairline rules, tiny labels, newspaper columns |
+| SaaS kit | Purple-blue gradient, three equal feature cards, soft shadow |
+| Template chrome | All-caps eyebrows, "A · B · C" markers, an arrow on every link |
+
+## Detect mode
+
+Run Detect when the artifact has UI sentences, or when the user asks what is wrong with the copy. Quote the exact line. Name the pattern. Give a fix. Do not write "AI wrote this."
+
+Pattern names and the portability test live in `../../ui-ux-design/references/ui-copy.md`. A rewrite must name this product's object or outcome, so the line cannot move to another product unchanged.
+
+```text
+Detect
+- Line: "[exact words]"
+  Pattern: Unsourced proof
+  Why: The number has no source.
+  Fix: Remove the line until the user supplies a real source.
+```
+
+Unsourced proof and fake customers are integrity failures. A gradient, an em dash, or three cards are tells. Explain them. Do not auto-fail them.
 
 ## Visual slop
 
@@ -56,4 +102,4 @@ In critique findings, name the tell, point to evidence on the screen, and give a
 
 ---
 
-*DRAFT — ux-critique/references/slop-tells.md — ShipRight*
+*DRAFT - ux-critique/references/slop-tells.md - ShipRight*

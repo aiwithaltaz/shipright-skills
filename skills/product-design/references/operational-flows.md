@@ -4,7 +4,7 @@ Load for a staff-operated flow, a task spanning related people/objects, or a pro
 
 ## Before drawing a wizard
 
-Work through the user's real starting conditions, not just the supplied happy path. Recommend a coherent solution within authorized scope; ask only about consequential rules that remain unknown. An existing detailed brief may already establish the product frame—do not require the user to approve the same outcome twice.
+Work through the user's real starting conditions, not just the supplied happy path. Recommend a coherent solution within authorized scope; ask only about consequential rules that remain unknown. An existing detailed brief may already establish the product frame - do not require the user to approve the same outcome twice.
 
 | Lens | Decision to make explicit |
 |---|---|
@@ -36,4 +36,4 @@ Keep a transaction separate from the people/items it pays for. One group receipt
 
 ## Small handoff artifact
 
-For applicable flows, add a compact table: **starting situation → known state → missing dependency → next permitted action → preserved work → completion condition → evidence needed**. Test materially different starting points and one return visit. Use existing gate checks 3–5 and 7–8; this is not an extra gate or a mandate for exhaustive combinations.
+For applicable flows, add a compact table: **starting situation → known state → missing dependency → next permitted action → preserved work → completion condition → evidence needed**. Test materially different starting points and one return visit. Use existing gate checks 3-5 and 7-8; this is not an extra gate or a mandate for exhaustive combinations.

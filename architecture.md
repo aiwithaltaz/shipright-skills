@@ -1,6 +1,6 @@
 # Architecture — ShipRight
 
-**Status: Public draft (v0.4.1-draft).**
+**Status: Public draft (v0.5.0-draft).**
 **Tagline:** Context before generate. Product before pixels.
 
 This file is a map of the pack. It is not a tutorial and not application code architecture.
@@ -28,18 +28,20 @@ pack/
 │   ├── 02-technical-architecture.md
 │   ├── 03-security-and-access.md
 │   ├── 04-frontend-spec.md   # Screen jobs, components, design-system direction
-│   └── 05-feature-ticket-list.md
+│   ├── 05-feature-ticket-list.md
+│   ├── 06-design-md.md       # DESIGN.md and PRODUCT.md import and export
+│   └── README.md             # How the doc set and the exports work
 ├── personal-taste/           # Optional preference overlays
 ├── skills/
 │   ├── _shared/
 │   │   ├── intake.md             # Depth + 0–5 questions + decision ownership
 │   │   └── operating-contract.md # Decision status, evidence, readiness, output shape
-│   ├── product-design/       # Frame product; what the product should DO (+ 8-check gate)
-│   │   └── references/       # states-and-flows, decision-checklist, operational-flows, opportunity-research
-│   ├── ui-ux-design/         # How screens LOOK and behave; build handoff (+ 10-check pre-flight)
-│   │   └── references/       # layout, state-coverage, operator-workspaces, anti-slop, references-and-design-system, build-handoff
-│   └── ux-critique/          # Review, product audit, verification (+ 10-check audit)
-│       └── references/       # slop-tells, severity-rubric, bounded-verification, requirements-and-feedback
+│   ├── product-design/       # Frame product, doc set; what the product should DO (+ 8-check gate)
+│   │   └── references/       # states-and-flows, decision-checklist, doc-set, operational-flows, opportunity-research
+│   ├── ui-ux-design/         # How screens LOOK and behave; DESIGN.md; UI copy; build handoff (+ 10-check pre-flight)
+│   │   └── references/       # layout, state-coverage, operator-workspaces, anti-slop, ui-copy, references-and-design-system, build-handoff
+│   └── ux-critique/          # Review, plan scores, copy detect, product audit, verification (+ 10-check audit)
+│       └── references/       # slop-tells, plan-review, severity-rubric, bounded-verification, requirements-and-feedback
 ├── evals/                    # Focused behavior trials + source checks
 └── examples/
     ├── idea-to-screen-jobs/  # Rough idea → frame → screen jobs → build pack → review
@@ -53,9 +55,9 @@ pack/
 |------|------|--------------|
 | `docs/` | Recorded context and decisions (requirements, systems, security, frontend, tickets) | Runtime code; approval by itself |
 | `skills/_shared/` | Depth, intake, decision ownership, evidence and readiness | Skill-specific craft rules |
-| `skills/product-design/` | Product frame, flows, states, decisions, risks, optional opportunity research, decision gate | Pixel styling, fake research |
-| `skills/ui-ux-design/` | Layout, hierarchy, components, a11y, references, design-system direction, build handoff pack, pre-flight | Product strategy, pricing |
-| `skills/ux-critique/` | Findings, severity, product audit, bounded verification, audit | Inventing new product scope |
+| `skills/product-design/` | Product frame, premises, three approaches, doc set, flows, states, decisions, risks, optional opportunity research, decision gate | Pixel styling, fake research, docs the user did not ask for |
+| `skills/ui-ux-design/` | Layout, hierarchy, components, accessibility, references, design-system direction, DESIGN.md and PRODUCT.md, UI copy, build handoff pack, pre-flight | Product strategy, pricing, silent brand changes |
+| `skills/ux-critique/` | Findings, severity, plan review, copy detect, product audit, bounded verification, audit | Inventing new product scope |
 | `personal-taste/` | Optional preference overlays (merge, don’t rewrite cores) | Core skill bodies |
 | `examples/` | Teaching samples | Source of truth for a real product |
 
@@ -77,8 +79,9 @@ Do not load every reference on every turn. Keep the skill body lean; put depth i
 relevant context (approved decisions preserved) + depth
       │
       ▼
-product-design  →  Frame product (new product / rough idea)  →  user approves frame
+product-design  →  Frame product (premises, Small / Full / Different, stop)  →  user approves
       │            (optional opportunity research, only if the user agrees)
+      │            (Doc set only if the user asks: one doc, then a stop)
       ▼
 product-design  →  flows, states  →  8-check DECISION GATE at handoff
       │

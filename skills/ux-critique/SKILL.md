@@ -1,12 +1,12 @@
 ---
 name: ux-critique
-description: "Use this when reviewing a product specification, screen, prototype or implementation for task clarity, states, trust, accessibility and decision drift, auditing an existing product before launch, or checking what a build tool actually built (screenshots, links, running apps). Distinguish what is specified, visible and verified. Part of ShipRight."
+description: "Use this when reviewing a product specification, screen, prototype or implementation for task clarity, states, trust, accessibility and decision drift, scoring a plan on Product, Design and Build lenses, detecting UI copy patterns by quoting the line, auditing an existing product before launch, or checking what a build tool actually built (screenshots, links, running apps). Distinguish what is specified, visible and verified. Part of ShipRight."
 ---
 
-# UX Critique Skill — ShipRight
+# UX Critique Skill - ShipRight
 
 **Status: Public draft.**
-**Pack version:** 0.4.1-draft
+**Pack version:** 0.5.0-draft
 **Pack name:** **ShipRight** (locked)  
 **Tagline:** Context before generate. Product before pixels.
 
@@ -19,7 +19,7 @@ Review specifications, screens and flows for actionable UX findings. Use the exi
 - Structured critique with severity
 - Slop detection (generic dashboards, random gradients, happy-path-only, purple SaaS tells)
 - Rewrite asks tied to docs when docs exist
-- Countable ship gate — not vibes
+- Countable ship gate - not vibes
 
 ### IS NOT
 
@@ -37,13 +37,13 @@ Identify the artifact/version, review stage, user job and requested next step. A
 
 **You decide** delegates only the named choice. **Let me decide** reserves it for the user. Blank answers stay unresolved; continue independent work.
 
-**Core rules if `../_shared` is unreachable (say so):** You decide = only the named choice. Let me decide = the user keeps it. Blank or silence = unresolved, never approval. Statuses: Pass · Fail · Not verified · Not applicable (with reason). A ticket, owner or plan never turns Fail into Pass; a stage-critical Fail is a Blocker. Spec ≠ screenshot ≠ implementation evidence. Readiness never authorizes deploy, publish or payment.
+**Core rules if `../_shared` is unreachable (say so):** You decide = only the named choice. Let me decide = the user keeps it. Blank or silence = unresolved, never approval. Statuses: Pass · Fail · Not verified · Not applicable (with reason). A ticket, owner or plan never turns Fail into Pass; a stage-critical Fail is a Blocker. Spec ≠ screenshot ≠ implementation evidence. Readiness never authorizes deploy, publish or payment. Start with a progress line. Add one "In plain words" line of 20 words or fewer. Ask with a decision card (example, my pick, You decide, Let me decide).
 
 ## 2. When to use / When NOT
 
-**Use when** a written specification, mock, generated output, or coded UI exists and someone asks: review, critique, audit, find issues, is this shippable? Also use when a build tool has produced screens from a ShipRight build handoff pack: compare the result with the approved screen jobs and states.
+**Use when** a written specification, mock, generated output, or coded UI exists and someone asks: review, critique, audit, find issues, is this shippable? Also use when a build tool has produced screens from a ShipRight build handoff pack: compare the result with the approved screen jobs and states. Also use when the user asks to score a plan, or to detect slop and UI copy patterns.
 
-**Do NOT use when** there is no artifact to review — request the smallest relevant specification, screen or result. Use **product-design** if the user needs help shaping it. Do not use as pure brand illustration feedback.
+**Do NOT use when** there is no artifact to review - request the smallest relevant specification, screen or result. Use **product-design** if the user needs help shaping it. Do not use as pure brand illustration feedback.
 
 ## 3. Review evidence
 
@@ -63,13 +63,21 @@ Read the shared contract before scoring. Missing evidence is Not verified, not a
 
 Work through each lens. Skip a lens only if truly N/A and say why.
 
-1. **Clarity** — Can a new user tell what this screen is for in 5 seconds?  
-2. **Flow** — Are steps necessary? Dead ends? Missing back/cancel?  
-3. **Hierarchy** — Is the primary action obvious? Is noise competing?  
-4. **States** — Empty / loading / error / success / denied present and distinct?  
-5. **Trust** — Honest copy? Scary permissions explained? No dark patterns?  
-6. **Accessibility** — Contrast, focus, keyboard, not color-only, touch size?  
-7. **AI slop tells** — See `references/slop-tells.md`; distinguish integrity failures from contextual visual preferences
+1. **Clarity** - Can a new user tell what this screen is for in 5 seconds?  
+2. **Flow** - Are steps necessary? Dead ends? Missing back/cancel?  
+3. **Hierarchy** - Is the primary action obvious? Is noise competing?  
+4. **States** - Empty / loading / error / success / denied present and distinct?  
+5. **Trust** - Honest copy? Scary permissions explained? No dark patterns?  
+6. **Accessibility** - Contrast, focus, keyboard, not color-only, touch size?  
+7. **AI slop tells.** See `references/slop-tells.md`. Fill the count block on every screen review. If the artifact has UI sentences, run Detect mode and quote each line. Integrity problems auto-fail. A visual tell does not.
+
+## 4b. Plan review (optional)
+
+When the user asks to score a plan, a frame, or a doc set before build, load `references/plan-review.md` and follow it.
+
+Score Product, Design, and Build from 0 to 10. For each lens, one sentence says what a 10 would have. Ask one decision card per lens under 8. A high score is not Ready.
+
+This block does not replace the 10-check audit. Skip it on a quick fix, and when there is no plan.
 
 ## 5. Severity rubric
 
@@ -83,12 +91,12 @@ Use `references/severity-rubric.md`. Short form:
 
 ## 6. Output format
 
-Lead with the verdict and next action (120 words or fewer). Then findings, then the audit table. At Quick fix depth, skip the table.
+Follow the shared output shape: progress line first, then the verdict and next action (120 words or fewer), then one "In plain words" line. Then findings, then the audit table. At Quick fix depth, skip the table.
 
-**Product audit (optional; existing product, Focused improvement depth).** When the user wants an existing product improved or ready for launch, put this block above the findings:
+**Product audit (existing product).** When the user wants an existing product improved, modernized, or ready for launch, put this block above the findings. List colors and type you can see as **Observed**, with the source. Write Unknown when you cannot see the value. Keep a brand color the user named, including purple. In Preserve mode, proposed changes are a ticket list. Do not write code in the audit. Do not rename URLs, navigation labels, form fields, the logo, or legal copy unless the user approves that item.
 
 ```text
-## Product audit — [scope]
+## Product audit - [scope]
 Top 3 problems (by user impact, not fix difficulty):
 1. …
 What's working (keep it):
@@ -111,21 +119,27 @@ Audit one lane per session (one flow, one screen, or one dimension). Do not reop
 - Next action (one line):
 
 ## Findings
-### B1 — [Blocker] Title
+### B1 - [Blocker] Title
 - Lens:
 - Evidence:
 - Impact:
 - Rewrite ask:
 - Route: product-design / ui-ux-design / eng / copy
 
-### M1 — [Major] ...
-### P1 — [Polish] ...
+### M1 - [Major] ...
+### P1 - [Polish] ...
+
+## Count it
+Fill every line from `references/slop-tells.md`. A count is evidence. Only integrity auto-fails.
+
+## Detect
+Quote each UI sentence that matches a pattern. Name the pattern. Skip this block only when the artifact has no sentences.
 
 ## AI-slop tells spotted
 - ...
 
 ## What looks good
-- (honest; 2–5 bullets)
+- (honest; 2-5 bullets)
 
 ## 10-gate ship audit
 | # | Gate | Status | Evidence / next action |
@@ -139,7 +153,7 @@ Audit one lane per session (one flow, one screen, or one dimension). Do not reop
 ### Rewrite ask quality
 
 Bad: “Make it nicer.”  
-Good: “Replace gradient hero with brand token background from doc 04; keep one primary CTA — Invite teammate.”
+Good: “Replace gradient hero with brand token background from doc 04; keep one primary CTA - Invite teammate.”
 
 ## 7. What never to invent
 
@@ -148,7 +162,7 @@ Good: “Replace gradient hero with brand token background from doc 04; keep one
 - New features to “engage” users not in PRD  
 - Legal conclusions  
 
-If research is needed, say **unknown — needs research**, do not fabricate.
+If research is needed, say **unknown - needs research**, do not fabricate.
 
 ## 8. Routing
 
@@ -195,10 +209,12 @@ Use the shared contract's four statuses and readiness rule. Define critical requ
 - [Shared intake](../_shared/intake.md)
 - [Operating contract](../_shared/operating-contract.md)
 - [Requirements and feedback](references/requirements-and-feedback.md) (operational flows or stakeholder corrections)
-- `references/slop-tells.md`
+- `references/slop-tells.md` (count block, default looks, Detect mode)
+- `references/plan-review.md` (optional; score a plan before build)
 - `references/severity-rubric.md`
-- `references/bounded-verification.md` (optional; implementation stage — screenshot and fix loop)
+- `references/bounded-verification.md` (optional; implementation stage, screenshot and fix loop)
+- UI copy rules: `../ui-ux-design/references/ui-copy.md`
 
 ---
 
-*Public draft — skills/ux-critique/SKILL.md — ShipRight 0.4.1-draft*
+*Public draft - skills/ux-critique/SKILL.md - ShipRight 0.5.0-draft*

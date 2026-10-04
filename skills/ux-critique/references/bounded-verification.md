@@ -1,4 +1,4 @@
-# Bounded verification — reference (optional)
+# Bounded verification - reference (optional)
 
 **Status: Public draft.** Used by `ux-critique` at the implementation or visual-artifact stage.
 **Pack:** ShipRight.
@@ -36,4 +36,4 @@ Use the shared readiness rule. Verification never authorizes deploy, publish or 
 
 ---
 
-*Public draft — ux-critique/references/bounded-verification.md — ShipRight*
+*Public draft - ux-critique/references/bounded-verification.md - ShipRight*

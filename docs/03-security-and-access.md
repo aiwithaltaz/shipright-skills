@@ -1,6 +1,6 @@
 # 03 — Security & Access Document
 
-**Status: Template (ShipRight v0.4.1-draft).**
+**Status: Template (ShipRight v0.5.0-draft).**
 **Pack:** ShipRight  
 **How to use:** Record roles, auth, and permissions so AI does not invent admin powers or expose data. This is a design/product checklist — not a formal security audit.
 

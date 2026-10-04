@@ -1,4 +1,4 @@
-# States and flows — reference
+# States and flows - reference
 
 **Status: DRAFT.**  
 **Pack:** ShipRight. Supports the **8-check decision gate**. Load when specifying states or shaping flows. Used by `product-design`.
@@ -17,7 +17,7 @@ AI slop usually designs the **happy path only**. Real products need every reacha
 | **Error** | Request or validation failed | What went wrong + how to fix / retry |
 | **Permission denied** | AuthZ blocked | Clear message; path to request access or go back |
 | **Partial data** | Some sections loaded, some failed | Show what works; isolate failure |
-| **Filtered empty** | Data exists but filters/search hide it | “No results” + clear filters — not the same as Empty |
+| **Filtered empty** | Data exists but filters/search hide it | “No results” + clear filters - not the same as Empty |
 
 ## Empty vs filtered empty
 
@@ -30,11 +30,11 @@ AI slop usually designs the **happy path only**. Real products need every reacha
 
 ## Flow shape (simple)
 
-1. **Entry** — how the user arrives (nav, deep link, CTA)  
-2. **Steps** — only steps required by the job  
-3. **Decision points** — branches (permission, validation, payment, etc.)  
-4. **Exit** — success destination, cancel destination  
-5. **Recovery** — error → retry or abandon  
+1. **Entry** - how the user arrives (nav, deep link, CTA)  
+2. **Steps** - only steps required by the job  
+3. **Decision points** - branches (permission, validation, payment, etc.)  
+4. **Exit** - success destination, cancel destination  
+5. **Recovery** - error → retry or abandon  
 
 ### Happy path template
 
@@ -93,4 +93,4 @@ AI slop usually designs the **happy path only**. Real products need every reacha
 
 ---
 
-*DRAFT — product-design/references/states-and-flows.md — ShipRight*
+*DRAFT - product-design/references/states-and-flows.md - ShipRight*
