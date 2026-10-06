@@ -1,10 +1,12 @@
 # Operational flows: entry, dependencies and return visits
 
+Use only current-phase capabilities. Later ideas stay in notes, not UI.
+
 Load for a staff-operated flow, a task spanning related people/objects, or a process with prerequisites and pending work. Use only the lenses that apply. Do not add registration, payments or family concepts to unrelated products.
 
 ## Before drawing a wizard
 
-Work through the user's real starting conditions, not just the supplied happy path. Recommend a coherent solution within authorized scope; ask only about consequential rules that remain unknown. An existing detailed brief may already establish the product frame—do not require the user to approve the same outcome twice.
+Work through the user's real starting conditions, not just the supplied happy path. Recommend a coherent solution within authorized scope; ask only about consequential rules that remain unknown. An existing detailed brief may already establish the product frame. Do not require the user to approve the same outcome twice.
 
 | Lens | Decision to make explicit |
 |---|---|
@@ -22,7 +24,7 @@ Model independent states separately. Saved ≠ eligible ≠ signed ≠ paid ≠ 
 
 When a prerequisite comes from an external record, separate:
 
-- **Refresh:** read the source and show last-checked time, source and unchanged/error states. A stale source still being stale does not establish eligibility.
+- **Refresh:** when verification is part of the operator task, read the source and show useful last-checked and result information. Keep routine synchronization plumbing hidden. A stale source still being stale does not establish eligibility.
 - **Attested exception:** only when allowed, record what evidence was seen, the signed-in verifier, time, place and applicable approver. A typed name must not substitute for the authenticated actor.
 - **Unresolved:** preserve permitted work and show a recovery path. Do not advance through the gate merely because staff clicked a generic checkbox.
 
@@ -36,4 +38,4 @@ Keep a transaction separate from the people/items it pays for. One group receipt
 
 ## Small handoff artifact
 
-For applicable flows, add a compact table: **starting situation → known state → missing dependency → next permitted action → preserved work → completion condition → evidence needed**. Test materially different starting points and one return visit. Use existing gate checks 3–5 and 7–8; this is not an extra gate or a mandate for exhaustive combinations.
+For applicable flows, add a compact table: **starting situation → known state → missing dependency → next permitted action → preserved work → completion condition → evidence needed**. Test materially different starting points and one return visit. Use existing gate checks 3-5 and 7-8; this is not an extra gate or a mandate for exhaustive combinations.

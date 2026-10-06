@@ -1,74 +1,49 @@
-# Layout and hierarchy — reference
+# Layout and hierarchy
 
-**Status: DRAFT.**  
-**Pack:** ShipRight. Use with design dials + **10-gate pre-flight**. Load with `ui-ux-design` when structuring screens.
+Start with the task and content, then choose a layout. Keep existing approved patterns unless the user requests a change.
 
-## Goal
+## Decide before styling
 
-Users should understand **what this screen is** and **what to do next** without decoration getting in the way.
+Write a short structure from top to bottom. For each region, name its job and current-phase source.
+Order content by the user's next decision: identify the task, enter or inspect information, then act.
+A page title, short explanation, actions and results are possible parts, not a required template.
+Give each action a scope: page, form, selected items or row. Make the current next action clear within its scope.
+Several contextual actions can coexist. Do not force every page into one global button.
 
-## Hierarchy checklist
+## Layout contract
 
-1. **Page title (H1)** — names the job or object  
-2. **Short context** — one sentence if needed (not a paragraph essay)  
-3. **Primary action** — one obvious CTA  
-4. **Secondary actions** — visually quieter  
-5. **Content block** — table, list, form, or detail  
-6. **Tertiary** — help links, metadata  
+| Property | Define |
+| --- | --- |
+| Reading order | DOM and visual order follow the task, including when columns stack. |
+| Main/supporting regions | Main work gets usable width; supporting content earns its space. |
+| Sizing | Use existing containers, grid and tokens. State what grows, wraps or scrolls. |
+| Alignment | Share edges for labels, fields, headings and action groups. Avoid almost-aligned columns. |
+| Density | Compare with realistic content; spacing within a group is smaller than between groups. |
+| Responsive behavior | State which region moves first and why. Keep the primary task reachable. |
+| Overflow | Long names/labels wrap or truncate with an accessible full value. Avoid hiding necessary data. |
+| Sticky content | Use only when useful; reserve space so rows, errors and keyboard focus stay visible. |
 
-If everything is bold, nothing is bold. If everything is a button, nothing is primary.
+## Component choice
 
-## Layout patterns (choose from docs, don’t invent)
+Use a form for input, a list for scanning, a table for comparing fields and master-detail for repeated inspection.
+Use a wizard only for real dependencies or length. Use monitoring widgets only for an approved monitoring job.
+Prefer existing paired fields when their relationship helps; do not blindly convert every form to a single column.
+On narrow screens, stack related fields in task order. Tables may scroll or transform when their meaning survives.
+Avoid redundant card nesting, filler panels and large empty regions that push results away from their controls.
 
-| Pattern | Best for | Avoid when |
-|---------|----------|------------|
-| Single column form | Settings, invite, short create | Comparing many items |
-| List / table + row actions | Collections, members, tickets | Tiny mobile without responsive plan |
-| Master-detail | Browse + inspect | Simple one-shot tasks |
-| Stepper / wizard | Legal gates, long setup with clear phases | 2–3 fields that fit one page |
-| Dashboard widgets | Monitoring jobs in PRD | Generic “AI admin” filler widgets |
+## Type and emphasis
 
-## Spacing rules
+Use system type tokens and meaningful headings. Establish clear title, body and supporting levels without arbitrary size quotas.
+Use weight, spacing and alignment before more colors, outlines or shadows.
+Keep important names, errors and actions readable. Supporting content can be quieter without becoming low contrast.
+Do not infer exact fonts, sizes or colors from screenshots when the source is uncertain.
 
-- Use the spacing scale from doc 04 tokens when available  
-- Group: label + field stay close; groups separate farther  
-- Align columns; avoid “almost aligned” generated layouts  
-- Prefer consistent page margins over decorative full-bleed blocks that hide the job  
+## Crops and full screens
 
-## Typography rules
+Preserve the liked properties of a crop, such as button shape or spacing. Reconcile them with the full screen.
+Explicit removals override controls visible in the reference. Do not copy incidental chips, counters or tabs.
+For selected rows, use the approved selection treatment. Keep it clear and clean, without a heavy accent bar unless the design system says so.
+Keep selection distinct from keyboard focus and validation.
 
-- Use approved type tokens; one or multiple families can work when hierarchy and readability support the task
-- Limit to ~3 sizes on a screen (title, body, meta)  
-- Line length: avoid ultra-wide body text on desktop  
-- Buttons and links: verb + noun  
-
-## Visual weight
-
-| Element | Weight |
-|---------|--------|
-| Primary CTA | Highest among actions |
-| Destructive | Distinct but not competing with primary create actions on the same view unless the job is delete |
-| Nav chrome | Quiet; content is louder |
-| Decorative background | Lowest — must not reduce contrast |
-
-## Responsive notes
-
-- Stack columns on small screens  
-- Do not hide primary action in overflow-only menus on mobile  
-- Tables may become cards on small screens — specify which fields remain  
-
-## Common hierarchy failures (fix these)
-
-- Dual competing CTAs (“Upgrade” vs “Invite”) with same weight when PRD job is invite  
-- Title below a giant hero illustration  
-- Filters above the fold; results far below with no count  
-- Settings mixed into the same view as the primary job without need  
-
-## Tie back to docs
-
-- Screen and primary action must follow current product decisions, recorded in docs 01/04 or equivalent context.
-- If a new screen is needed, mark it Proposed and resolve its scope before committing it; continue independent layout work.
-
----
-
-*DRAFT — ui-ux-design/references/layout-and-hierarchy.md — ShipRight*
+Before handoff, inspect relevant desktop and narrow layouts with 0, 1 and many records and difficult content.
+Without a rendered artifact, mark visual fit Not verified; a written spacing scale is not visual evidence.

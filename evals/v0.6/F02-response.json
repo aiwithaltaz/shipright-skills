@@ -1,0 +1,15 @@
+{
+  "trial_id": "F02",
+  "final_response": "Let\u2019s define one valuable thing members should accomplish, then shape a small first version around it. We\u2019re at product framing; visual design and building come later.\n\nThree short answers will give us a useful starting point:\n\n1. **Who is your community for?** For example, local residents, people sharing a hobby, or members of a profession.\n2. **What should the app help a member accomplish?** For example, get useful advice, find people to meet, or participate in an activity. These are examples, not proposed features.\n3. **How do members do that today?** For example, WhatsApp, email, an existing platform, or in person.\n\nMy recommendation is to make one recurring member task exceptionally easy before expanding. That gives \u201cpremium\u201d a concrete purpose.\n\n**No pick yet** on features: the member, outcome and current alternative are still unknown. If you want to delegate a choice, say **\u201cYou decide\u201d** and name it; **\u201cLet me decide\u201d** keeps it open for you. Brief, rough answers are enough.",
+  "consulted_files": [
+    "/workspace/scratch/4f39cfda673d/trial-pack/skills/product-design/SKILL.md",
+    "/workspace/scratch/4f39cfda673d/trial-pack/skills/_shared/intake.md",
+    "/workspace/scratch/4f39cfda673d/trial-pack/skills/_shared/operating-contract.md",
+    "/workspace/scratch/4f39cfda673d/trial-pack/skills/product-design/references/decision-checklist.md"
+  ],
+  "evidence_limits": [
+    "Only the supplied request and listed skill references were available.",
+    "No community details, documents, brand assets, or approved features were supplied.",
+    "No external research, product artifact, or runtime behavior was inspected."
+  ]
+}

@@ -1,71 +1,22 @@
-# Severity rubric — reference
+# Severity
 
-**Status: DRAFT.** Used by `ux-critique` when labeling findings.  
-**Pack:** ShipRight. Use with the **10-gate ship audit**.
+| Level | Meaning | Required action |
+| --- | --- | --- |
+| Blocker | Core task fails, material harm is possible, or a stage-critical requirement fails. | Fix before claiming readiness for that stage. |
+| Major | Substantial noncritical friction with a usable, understood workaround. | State impact and explicit disposition; the check remains Fail. |
+| Polish | Small visual or copy issue without meaningful task failure. | Prioritize after important problems. |
 
-## Three levels
+Examples of Blockers: lost data without warning, inaccessible primary task, wrong access, fake consequential progress, or no recovery from a critical error.
+Unknown evidence is Not verified, not automatically a Blocker. Critical missing evidence prevents readiness through Not established.
+A required specification behavior that is absent is a Fail, even when its owner decision remains open.
+Use Needs decision when all critical gaps arise only from reserved owner choices; do not call the user's pending choice a defect.
 
-### Blocker
+## Flow rules (must pass)
 
-Ship is unsafe, the core job fails, or **any stage-critical requirement fails** at the reviewed stage (including a missing required behavior in a specification).
+Use [flow-rules.md](../../_shared/flow-rules.md) for F1 exit, F2 consistency and F3 useful status.
+A functional Flow rule failure is Blocker on a critical path or with data/money loss or a stuck user; otherwise Major.
+Cosmetic icon/spacing drift can be Polish when meaning and behavior remain sound. Do not mislabel it as a functional failure.
+An approved responsive/platform variation is not inconsistency.
 
-Examples:
-
-- Primary task cannot be completed, including on a supported mobile viewport
-- Data loss without warning
-- Permission denied shows as blank/broken with no recovery
-- Security-sensitive action exposed to wrong role (vs doc 03)
-- Critical accessibility failure (e.g. keyboard trap on primary flow)
-- Strong dark pattern
-
-**Rule:** Must fix before release.
-
-### Major
-
-Noncritical only: substantial friction with a usable, understood workaround. If the core supported task fails, or a stage-critical requirement fails, classify it as Blocker regardless of whether the cause is visual. Never write "Major, but critical".
-
-Examples:
-
-- Missing empty state on a P0 screen when the job still completes (a missing error/recovery path on a critical flow is a Blocker)
-- Primary action unclear; competing CTAs
-- Nav or features invented vs docs (even if pretty)
-- Multiple strong AI-slop tells that hide the real product
-- Form loses user input on error
-- Mobile layout adds friction but the primary task remains usable
-
-**Rule:** A noncritical deferral needs explicit disposition and impact; the underlying check remains Fail. A ticket alone does not resolve it.
-
-### Polish
-
-Does not block the job; improves clarity or craft.
-
-Examples:
-
-- Spacing inconsistency
-- Minor copy tone
-- Icon style drift
-- Non-critical alignment
-- Optional empty-state illustration quality
-
-**Rule:** Backlog OK; do not dilute blockers with polish noise.
-
-## Prioritization tips
-
-1. List blockers first, then majors, then polish  
-2. Cap polish to what helps learning — do not write 40 nits  
-3. If a “visual” issue hides a wrong decision, escalate to **blocker/major** and route to **product-design**  
-4. One finding = one problem (do not bundle unrelated issues)
-
-## Mapping to tickets (doc 05)
-
-Severity is impact; priority is delivery order. Retest the affected artifact/version before closing a finding. See the shared operating contract for readiness.
-
-| Severity | Ticket priority suggestion |
-|----------|----------------------------|
-| Blocker | P0 |
-| Major | P0 or P1 |
-| Polish | P2 |
-
----
-
-*DRAFT — ux-critique/references/severity-rubric.md — ShipRight*
+Severity describes impact; P0/P1/P2 describe delivery order. Neither an owner nor a ticket makes a failure pass.
+One finding should have one clear problem, correction and retest condition. Keep critical issues ahead of cosmetic counts.

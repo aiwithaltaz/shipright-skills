@@ -1,99 +1,46 @@
-# 03 — Security & Access Document
+# 03 - Security and access
 
-**Status: Template (ShipRight v0.4.1-draft).**
-**Pack:** ShipRight  
-**How to use:** Record roles, auth, and permissions so AI does not invent admin powers or expose data. This is a design/product checklist — not a formal security audit.
+**Status: Template (ShipRight 0.6.1-draft).**
+**Project path:** `docs/shipright/03-security-and-access.md`
 
-**Product / feature name:** <!-- write here -->  
-**Author:** <!-- write here -->  
-**Date:** <!-- write here -->  
-**Version:** <!-- write here -->  
+**Version/date:** <!-- -->  **Sources and approval:** <!-- -->
 
----
 
-## 1. Purpose
+This records product access rules. It is not a security audit or legal review.
+Use only actual roles and capabilities from the current phase. Do not seed Owner/Admin/Member/Guest roles by default.
 
-What access and data risks this feature introduces.
+## Roles and authentication
 
-<!-- write here -->
+| Actual role | User job | Sign-in requirement | Source |
+| --- | --- | --- | --- |
+| <!-- --> | <!-- --> | <!-- --> | <!-- --> |
 
-## 2. Roles
+<!-- Known sign-in, session, recovery and verification behavior, or Unknown. -->
 
-| Role | Who | Can do (summary) | Cannot do |
-|------|-----|------------------|-----------|
-| <!-- e.g. Owner --> | <!-- --> | <!-- --> | <!-- --> |
-| <!-- e.g. Member --> | <!-- --> | <!-- --> | <!-- --> |
-| <!-- e.g. Guest --> | <!-- --> | <!-- --> | <!-- --> |
-| Anonymous | Not signed in | <!-- --> | <!-- --> |
+## Permission matrix
 
-## 3. Authentication
+| Action | Actual actor | Allowed scope | Denied behavior | Source |
+| --- | --- | --- | --- | --- |
+| <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> |
 
-- **Sign-in method(s):** <!-- write here -->
-- **Session length / refresh:** <!-- write here or UNKNOWN -->
-- **MFA required?** [ ] yes [ ] no [ ] UNKNOWN
-- **Account recovery:** <!-- write here -->
+## Data boundaries
 
-## 4. Authorization matrix (feature actions)
+| Data | Who may see/change it | Storage/logging/URL limits | Retention source |
+| --- | --- | --- | --- |
+| <!-- --> | <!-- --> | <!-- --> | <!-- --> |
 
-Fill one row per sensitive action. Use Y / N / own-only.
+No secrets or sensitive phone/email searches in URLs, analytics or logs by default.
+UI visibility is not access enforcement. Record required server-side boundaries and verification limits.
 
-| Action | Owner | Admin | Member | Guest | Notes |
-|--------|-------|-------|--------|-------|-------|
-| View resource | | | | | <!-- --> |
-| Create | | | | | <!-- --> |
-| Edit | | | | | <!-- --> |
-| Delete | | | | | <!-- --> |
-| Invite others | | | | | <!-- --> |
-| Change roles | | | | | <!-- --> |
+## Consequential actions
 
-## 5. Data sensitivity
+| Action/object | Effect | Confirmation or supported undo | Recovery | Authority |
+| --- | --- | --- | --- | --- |
+| <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> |
 
-| Data type | Sensitivity (low/med/high) | Who can see | Retention notes |
-|-----------|----------------------------|-------------|-----------------|
-| <!-- e.g. email --> | | | |
-| <!-- e.g. payment --> | | | |
-| <!-- e.g. content --> | | | |
+Clear/reset/remove must state what happens to saved records. Keep unclear destructive effects unresolved.
+Show denied states and safe exits without revealing protected records. Preserve valid work where supported.
 
-## 6. Threat notes (lightweight)
+## Risks and open choices
 
-Not a full threat model. List obvious risks and mitigations.
-
-| Threat | Impact | Mitigation in product/UX |
-|--------|--------|--------------------------|
-| Stolen session | <!-- --> | <!-- --> |
-| Unauthorized access to resource | <!-- --> | <!-- --> |
-| Invite link abuse | <!-- --> | <!-- --> |
-| Accidental destructive action | <!-- --> | Confirm / undo (product-design) |
-| Other: <!-- --> | <!-- --> | <!-- --> |
-
-## 7. Audit & logging (if any)
-
-- What events should be logged? <!-- write here -->
-- What must never be logged (secrets)? <!-- write here -->
-
-## 8. User-facing security UX requirements
-
-Skills must respect these:
-
-- [ ] Clear permission-denied state (not a blank screen)
-- [ ] Destructive actions need confirm or undo (say which)
-- [ ] Sensitive data masked where needed
-- [ ] No security-through-obscurity copy that lies to users
-
-## 9. Open questions
-
-| Question | Owner | Status |
-|----------|-------|--------|
-| <!-- --> | <!-- --> | open |
-
-## 10. Ready check
-
-- [ ] Roles defined
-- [ ] Auth method known or marked UNKNOWN
-- [ ] Permission matrix filled for key actions
-- [ ] Sensitive data listed
-- [ ] Ready for product-design state tables (include denied states)
-
----
-
-*Template — docs/03-security-and-access.md*
+<!-- Material risks, source or evidence needed, owner and effect on readiness. Do not invent a compliance claim. -->

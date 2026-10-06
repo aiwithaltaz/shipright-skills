@@ -1,4 +1,10 @@
-# ShipRight implementation review — prototype v1
+# ShipRight implementation review - prototype v1
+
+**Historical evidence limit added in 0.6:** The packaged prototype/app.js does not match evidence/source-manifest.json.
+Claims below describe the earlier recorded review, not verification of the exact current package.
+Source inspection also found silent fallback to seed data after unreadable saved JSON, followed by persistence.
+That can overwrite malformed stored work. Storage fault recovery was not verified; the broad assurance below is not established.
+Sample waiver wording is a historical violation of the pack's no-legal-text rule, not text to reuse.
 
 > **Historical v1 artifact.** This document records the first specification/implementation only. The owner’s September 25 review supersedes affected requirements and readiness judgments. Use [Context brief v2](06-context-brief-v2.md) for current requirements. Old passes do not verify the revised behavior.
 

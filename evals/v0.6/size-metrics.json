@@ -1,0 +1,27 @@
+{
+  "before": {
+    "skills_words": 33195,
+    "entry_words": 10066,
+    "skills_characters": 201118,
+    "entry_characters": 63327,
+    "entry_words_by_skill": {
+      "ux-critique": 2580,
+      "product-design": 2671,
+      "ui-ux-design": 3192,
+      "ship-check": 1623
+    }
+  },
+  "after": {
+    "skills_words": 14753,
+    "entry_words": 3294,
+    "skills_characters": 97115,
+    "entry_characters": 22638,
+    "entry_words_by_skill": {
+      "ux-critique": 817,
+      "product-design": 773,
+      "ui-ux-design": 864,
+      "ship-check": 840
+    }
+  },
+  "method": "Whitespace-separated words and Unicode characters, not tokenizer counts. Actual token use depends on client tokenizer and reference loading."
+}

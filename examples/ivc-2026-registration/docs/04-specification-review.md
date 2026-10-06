@@ -1,4 +1,4 @@
-# ShipRight pre-build review — specification v1
+# ShipRight pre-build review - specification v1
 
 > **Historical v1 artifact.** This document records the first specification/implementation only. The owner’s September 25 review supersedes affected requirements and readiness judgments. Use [Context brief v2](06-context-brief-v2.md) for current requirements. Old passes do not verify the revised behavior.
 
@@ -34,7 +34,7 @@ Verdict: Ready for prototype implementation. The current user request authorizes
 | 9 | Content/density | Pass | Forms/tables/long names and 390px layout specified; rendered density unverified |
 | 10 | Handoff | Pass | docs/03 screen prompts, open production dependencies and bounded change; build next |
 
-## UX critique — specification 10-check audit
+## UX critique - specification 10-check audit
 
 | # | Gate | Status | Evidence / next action |
 |---|---|---|---|

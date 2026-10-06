@@ -1,7 +1,7 @@
 {
-  "version": "1",
-  "date": "2026-09-25",
-  "pack": "ShipRight 0.4.0-draft",
+  "version": "1.1",
+  "date": "2026-10-04",
+  "pack": "ShipRight 0.6",
   "format": "tool-neutral messages JSONL; no Soup adapter verified",
   "source": "Owner IVC prototype feedback, September 25, 2026; authored paraphrases and fictional scenarios",
   "review_status": "needs_human_review",
@@ -135,5 +135,6 @@
         "F27"
       ]
     }
-  ]
+  ],
+  "revision_note": "Records 2, 7 and 8 corrected to remove unsupplied approval claims; remaining authored examples still need human review."
 }

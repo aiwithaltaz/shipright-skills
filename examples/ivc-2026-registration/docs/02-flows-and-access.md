@@ -1,4 +1,4 @@
-# Flows, states and access — specification v1
+# Flows, states and access - specification v1
 
 > **Historical v1 artifact.** This document records the first specification/implementation only. The owner’s September 25 review supersedes affected requirements and readiness judgments. Use [Context brief v2](06-context-brief-v2.md) for current requirements. Old passes do not verify the revised behavior.
 

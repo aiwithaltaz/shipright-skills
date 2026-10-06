@@ -1,39 +1,30 @@
-# Bounded verification — reference (optional)
+# Bounded verification
 
-**Status: Public draft.** Used by `ux-critique` at the implementation or visual-artifact stage.
-**Pack:** ShipRight.
+Verify the actual requested change with available tools. Do not turn a small correction into a broad test project.
 
-Use when a built result exists and the user wants it checked. ShipRight records evidence; it does not bring its own test framework.
+## Scope
 
-## 1. Plan (state it before running)
+Select the affected critical paths and known risks. For a broad pass, start with at most five representative paths.
+Record artifact/version, supported device sizes, relevant roles, input methods and failure cases.
+Use authorized local/preview data. Do not perform writes on live customer records during a review.
+Use available tools; do not add installations, paid calls or deployments as hidden prerequisites.
 
-- At most 5 critical paths, taken from the approved screen jobs.
-- For each path, the evidence needed: viewport (desktop and a supported mobile width such as 390px), browser, keyboard, role, failure case.
+## Checks
 
-## 2. Inspect with what is available
+Inspect relevant desktop and narrow layouts, plus zoom/reflow where supported. Use the project's widths, not a universal 390px-only rule.
+Check reading order, clipping, overflow, alignment, fonts, sticky overlap and difficult content.
+Exercise keyboard focus, labels, relevant dialogs, state transitions and affected saving/recovery when available.
+Read accessibility snapshots alongside visual evidence. Test reduced motion or forced colors when relevant to the change.
+Automated scans do not prove complete accessibility or product correctness.
 
-- A browser tool (for example Playwright), screenshots, a running build, or the user's QA notes.
-- Do not install tools or call paid services without approval.
-- No tool available → give the user a short manual checklist and mark those items **Not verified**.
+If no browser can run, state **Partial check: no browser was available**.
+Name exactly which checks remain Not verified. Source inspection can support some findings without claiming runtime success.
+Screenshots cannot verify persistence, permission enforcement or keyboard operation.
 
-Look for these defect types on desktop **and** mobile: spacing inconsistency, overflow or clipping, misalignment, unreachable primary action, missing states, wrong or unwired fonts, placeholder images or proof shown as real, color-only meaning, broken focus.
+## Fix and stop
 
-## 3. Record
-
-- Artifact/version and exactly what was exercised.
-- Status per path: only what was observed. No inferred passes.
-- Before and after screenshots for each fix.
-
-## 4. Fix loop (only if the user authorized fixes)
-
-- Fix only findings from this review, within approved scope. No refactors, new features or new dependencies.
-- Re-verify the affected path after each pass.
-- **Stop after 2 passes**, or earlier when only Polish remains. Report what is left.
-
-## 5. Verdict
-
-Use the shared readiness rule. Verification never authorizes deploy, publish or payment.
-
----
-
-*Public draft — ux-critique/references/bounded-verification.md — ShipRight*
+For authorized fixes, correct deviations from approved requirements and recheck the affected path.
+Use up to two optional visual refinement passes as a budget, not a reason to abandon a known required correction.
+Stop optional checks once the acceptance boundary is satisfied. If a tool or unresolved decision blocks completion, report it clearly.
+Record before/after evidence when useful. Keep historical results separate from new evidence.
+Use the shared readiness rule. Verification never authorizes publishing, deployment or payment.

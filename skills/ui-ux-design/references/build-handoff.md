@@ -1,61 +1,63 @@
-# Build handoff pack — reference
+# Build handoff
 
-**Status: Public draft.** Used by `ui-ux-design` when approved specs go to a build tool.
-**Pack:** ShipRight.
+Compile current approved decisions for the user's design or coding tool. Do not add a new implementation workflow.
+Use [output-folder.md](../../_shared/output-folder.md) when files are requested.
+Template: [docs/build-rules.md](../../../docs/build-rules.md).
 
-ShipRight does not draw the screens. It compiles approved decisions into inputs that Claude Design, Figma, Cursor, Claude Code, Codex, Antigravity, VS Code agents and similar tools can follow. Run this after the product frame and the screen specs are approved.
+## Check scope first
 
-## 1. Project rules block (paste once)
+Every screen and visible element needs a current-phase source. Reconcile exact feedback before writing prompts.
+Later-phase ideas stay in notes, not rendered UI, hidden routes or data models.
+Keep unresolved proposals separate under **Needs approval before build**.
+An explicit approved correction is build scope, not a suggestion waiting for another yes.
 
-Paste into the tool's rules or instructions: `CLAUDE.md`, `AGENTS.md`, `.cursor/rules`, or the Figma / Claude Design project instructions.
+## Shared builder context
 
-- **Outcome and differentiating system** (2 lines)
-- **Core objects** and their states
-- **Screens in scope** (IDs + one-sentence screen jobs); nothing else
-- **Design direction:** feeling line, color roles with exact values, fonts by name, type sizes, spacing scale, radius, key components (from `docs/04`)
-- **Hard rules:** approved navigation only; no invented features, data, testimonials or metrics; every listed state; label any sample data; text contrast at least WCAG AA; keyboard reachable; no hover-only critical actions; respect reduced motion
-- **Do not resolve:** list every open decision (ID + owner). The tool must leave these alone.
-- **Needs approval before build:** every item still Proposed
+Include the outcome, useful mechanism, current phase, jobs, allowed screens, exclusions and source versions.
+Point to the existing design system and components. Use Approved or Observed values permitted by current instructions.
+Copy the compact **Flow rules (must pass)** block from [flow-rules.md](../../_shared/flow-rules.md) into exported build rules.
+Do not leave unresolved pack-local references in a user's project.
+Preserve exact feedback with one acceptance check per item. Keep clear/reset effects unresolved if their meaning is not known.
 
-## 2. One prompt per screen (in build order)
-
-Write it like a creative director's brief built from the approved docs:
+## Screen brief
 
 ```text
-Screen [ID] — [name]
-Screen job: [one sentence]
-Objects shown: [...]
-Feeling: [one line] · Reference: [what to borrow from which reference]
-Structure (top → bottom): 1. … 2. … 3. …
-Primary action: [verb + object]  Secondary: [...]
-States: empty · loading · success · error (with recovery) · permission denied · [others that apply] — copy direction for each
-Exact values: spacing [e.g. 8/16/24/48], section gap [...], radius [...], fonts [...], colors [...]
-Accessibility: focus order, labels, error announcement, touch targets on mobile
-Do not add: [nav items, sections, features, fake proof]
-Build: desktop and mobile. Then [verification instruction, below].
-Acceptance: [3–5 checks tied to the screen job]
+Screen ID and job:
+Current phase and source:
+Keep / remove / change / add:
+Allowed elements and source for each:
+Structure and reading order:
+Components and sourced tokens:
+Actions: scope, label, effect and supported recovery:
+States, including relevant background work and saved unfinished work:
+Exit (F1), reused patterns (F2), useful status (F3):
+Responsive order, sizing, wrapping and sticky behavior:
+Accessibility criteria and evidence needed:
+Do not add / later-phase notes:
+Exact acceptance checks:
+Unknowns and decisions reserved for the user:
 ```
 
-## 3. Tool notes
+Use requested device support. Do not invent mobile apps or desktop-only limits.
+A visual tool needs representative frames for relevant states, not every possible combination.
+A coding tool should reuse existing components and obey the project's actual implementation rules.
+Do not install registries, call paid services or publish merely because the handoff is ready.
+Images are visual evidence only; they cannot prove interaction or access behavior.
 
-- **Visual tools (Claude Design, Figma):** ask for every state as its own frame, on desktop and mobile. If Figma MCP is connected, the tool can read or write the file; otherwise export or screenshot.
-- **Code agents (Cursor, Claude Code, Codex, Antigravity, VS Code agents):** build one screen at a time. No new dependencies, routes or data models without approval. Wire web fonts properly for production.
-- **If a browser tool such as Playwright is available:** ask the tool to screenshot desktop and mobile and fix spacing, overflow and alignment before showing results, following `../../ux-critique/references/bounded-verification.md` (max 2 fix passes).
+## Interaction floor
 
-## 4. If the result looks generic
+Use the accessibility criteria in [state-coverage.md](state-coverage.md).
+Keep paste usable, input types and autocomplete appropriate, labels visible and errors associated with their fields.
+Prevent duplicate submission while a request is running. Do not disable a necessary action without explaining why.
+Preserve valid values and warn before losing unsaved work. Do not invent undo or persistence capabilities.
+Preserve safe navigation state where useful. Never put sensitive phone/email searches, tokens or private records in URLs, analytics or logs by default.
+Keep keyboard focus clear of sticky bars. Status updates should not move focus or expose internal plumbing.
+Apply only existing/requested motion and reduced-motion behavior.
 
-| Symptom | Likely cause | Fix in the pack |
-| --- | --- | --- |
-| Looks like an AI template | No references or feeling line; sections from a template | Add feeling + 1–2 references; derive sections from the screen job |
-| Cramped or misaligned | No exact spacing values; mobile not checked | Give exact spacing numbers; require desktop + mobile screenshots |
-| Fake-looking images or proof | Placeholders presented as real | Use real approved images, or label samples; remove unapproved proof |
-| Fonts wrong when live | Fonts named but not wired | Ask to wire the web fonts for production |
-| Extra pages or features | Scope not stated | List screens in scope and a "Do not add" line |
+## Return loop
 
-## 5. Return loop
-
-After each screen is built, bring back a screenshot, link or build. Review it with **ux-critique** at the matching evidence stage, and use bounded verification for implemented screens. Only items listed under "Needs approval before build" may change, and only after the user approves them.
-
----
-
-*Public draft — ui-ux-design/references/build-handoff.md — ShipRight*
+Check the built artifact against the same phase boundary and feedback list.
+For implementation checks, use [bounded-verification.md](../../ux-critique/references/bounded-verification.md).
+Fix authorized deviations from approved requirements. A defect need not appear on an old proposal list to be correctable.
+New scope still needs a decision. Stop optional testing when the affected acceptance checks are satisfied.
+Report unverified behavior and unresolved issues; do not claim a perfect or production-ready result from screenshots.

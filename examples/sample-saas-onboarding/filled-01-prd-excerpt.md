@@ -1,4 +1,4 @@
-# Filled excerpt — 01 PRD (sample only)
+# Filled excerpt - 01 PRD (sample only)
 
 **Status: DRAFT example.**  
 **Pack:** ShipRight  
@@ -46,7 +46,7 @@ Small team admins set up Acme Team alone, then need a coworker in the workspace.
 
 | Metric | Baseline | Target | How measured |
 |--------|----------|--------|--------------|
-| % new workspaces with ≥1 invite in 7 days | UNKNOWN | UNKNOWN — set with data team | Analytics event `invite_sent` |
+| % new workspaces with ≥1 invite in 7 days | UNKNOWN | UNKNOWN - set with data team | Analytics event `invite_sent` |
 | Invite accept rate | UNKNOWN | UNKNOWN | `invite_accepted` / `invite_sent` |
 
 ## Scope
@@ -67,7 +67,7 @@ Small team admins set up Acme Team alone, then need a coworker in the workspace.
 
 | ID | Assumption | Risk if wrong |
 |----|------------|---------------|
-| A1 | Email delivery exists via current provider | Invites fail silently — need error state |
+| A1 | Email delivery exists via current provider | Invites fail silently - need error state |
 | A2 | Only Owner can invite in v1 | Members may expect invite rights |
 
 ## User jobs
@@ -91,4 +91,4 @@ This excerpt supports a provisional specification discussion. Expiry, delivery a
 
 ---
 
-*DRAFT example — ShipRight — not a live product*
+*DRAFT example - ShipRight - not a live product*

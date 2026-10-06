@@ -21,7 +21,7 @@ Review outputs against the rubric below. Record failures honestly. A single run
 per input provides regression evidence, not a reliability estimate. Repeat only
 to investigate a failure or support a broader compatibility claim.
 
-## Reviewer rubric — never pass to the executing agent
+## Reviewer rubric - never pass to the executing agent
 
 | Task | Cases covered | Required observations |
 | --- | --- | --- |

@@ -1,4 +1,4 @@
-# Change set 2 — focused behavior trials
+# Change set 2 - focused behavior trials
 
 These cases check the 0.3.0-draft changes: depth, Frame product, scoring rules, optional research, design direction, build handoff and verification. They are not an automated framework or a reliability benchmark.
 
@@ -10,7 +10,7 @@ These cases check the 0.3.0-draft changes: depth, Frame product, scoring rules, 
 
 Use a fresh agent per case with the named skill, the pack AGENTS.md and referenced instructions. Give only the harness and task. Exclude this README, examples, earlier outputs and expected answers. Allow web access only where the case says so. For the copy-only install case, give the agent a folder that contains the single skill without `_shared`. Record failures honestly. One run per case is regression evidence, not a reliability rate. Run at least one set on a second model family before claiming cross-model behavior.
 
-## Reviewer rubric — never pass to the executing agent
+## Reviewer rubric - never pass to the executing agent
 
 | Case | Must observe |
 | --- | --- |

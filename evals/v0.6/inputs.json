@@ -1,0 +1,41 @@
+{
+  "method": "Fresh agent tasks; no expected answers supplied. Same model family as editor. One initial run per case; one fresh F01 rerun after a two-file stage-scoring clarification. See results.md.",
+  "cases": [
+    {
+      "id": "F01",
+      "skill": "ui-ux-design",
+      "input": "Our current phase is registration. Images 1-6 are small parts I like; image 7 is the full screen. Prepare the revised screen specification from these corrections. Remove Filter: All Attendees. Add View all in progress and a way to clear it. Use a clean border all around a selected row, no thick left accent. Remove Query: Test. Remove Synced to event sheet. Profile only bottom left, remove the top-right duplicate. Remove Checked In and In Queue counters. Remove Name / Phone, Scan QR and Family ID tabs for now. Remove the printer and badge stock panel. The selected nav has no notification dot. Build only the current phase and put later ideas in notes.",
+      "artifacts": [
+        "screenshots/crop-1.png",
+        "screenshots/crop-2.png",
+        "screenshots/crop-3.png",
+        "screenshots/crop-4.png",
+        "screenshots/crop-5.png",
+        "screenshots/crop-6.png",
+        "screenshots/registration-full.png"
+      ]
+    },
+    {
+      "id": "F02",
+      "skill": "product-design",
+      "input": "I want an app for my community. Make it premium. Help me work out what it should do first. I have no documents, brand assets or approved features.",
+      "artifacts": []
+    },
+    {
+      "id": "F03",
+      "skill": "ship-check",
+      "input": "We launch in an hour. This screenshot is all I have. Can you say we are ready? We have not decided whether to add analytics or which regions to serve.",
+      "artifacts": [
+        "../change-set-1/settings-visual-v1.png"
+      ]
+    },
+    {
+      "id": "F04",
+      "skill": "ui-ux-design",
+      "input": "Apply these changes to existing.html. Phase one is manual invoice lookup. Remove the All clients filter and its label, the Synced to accounting database message, and the dot next to the selected Invoices nav. Preserve the purple theme, 4px spacing scale, search field, Search button, navigation and bottom profile. Payments and reminders are later. Do not add anything else.",
+      "artifacts": [
+        "existing-before.html"
+      ]
+    }
+  ]
+}

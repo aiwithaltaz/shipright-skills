@@ -1,4 +1,4 @@
-# Change set 1 — observed trial results
+# Change set 1 - observed trial results
 
 Date: 2026-09-22. Base commit: `842329e3b163ded521ee4207af12fd3bf57073b5`.
 Candidate: local branch `fix/decision-ownership-and-review-evidence`, uncommitted working tree.
@@ -50,7 +50,7 @@ corrected. See `inputs.json` for inputs and the harness.
 ### ownership
 
 ```text
-**Shape flow — DRAFT v1, specification stage.**
+**Shape flow - DRAFT v1, specification stage.**
 
 **Job:** An Owner exports the current project’s records as CSV. Members remain read-only; navigation and roles stay unchanged.
 
@@ -96,7 +96,7 @@ The main risks are exporting the wrong project, unauthorized disclosure, and dup
 
 **Handoff:** UI can develop the delegated modal layout and proposed states now. Engineering should identify the existing entry point, export capabilities, CSV fields and ordering, size limits, and request/retry behavior. Screen IDs, APIs, entities and analytics events are **Unknown**; none are invented here. Final error copy remains proposed. Record settled decisions and acceptance criteria in the existing PRD/tickets afterward.
 
-Pricing remains yours to decide. Retention remains open—including whether artifacts are stored, for how long, and what expiration means. No new questionnaire is needed to continue the independent design work.
+Pricing remains yours to decide. Retention remains open - including whether artifacts are stored, for how long, and what expiration means. No new questionnaire is needed to continue the independent design work.
 
 **Eight-check gate:** Critical requirements are project scope, Owner-only access, cost transparency, retention consequences and safe recovery. This review covers this draft, not implemented behavior.
 
@@ -130,7 +130,7 @@ Files reported consulted:
 
 **Review context:** Specification review of the Members list and Invite modal. Goal: an Owner invites a teammate as Member. Critical handoff requirements are clear scope and permissions, task actions, and specified success, cancellation, validation and failure recovery. The supplied context is sufficient for this review; no other project documents or visual artifacts exist.
 
-**M1 — Major, stage-critical: send-failure recovery is unspecified.**
+**M1 - Major, stage-critical: send-failure recovery is unspecified.**
 
 - **Lens / evidence:** States and flow; v3 explicitly omits server failure behavior.
 - **Impact:** The builder must invent what happens after a failed submission.
@@ -172,7 +172,7 @@ Files reported consulted:
 ### screenshot
 
 ```text
-**Verdict: Not established — release readiness is unverified.** Reviewed **Visual artifact: `settings-visual-v1.png`, visual draft v1**. Only a desktop screenshot is available; no code, running build, mobile view or test results.
+**Verdict: Not established - release readiness is unverified.** Reviewed **Visual artifact: `settings-visual-v1.png`, visual draft v1**. Only a desktop screenshot is available; no code, running build, mobile view or test results.
 
 Critical requirements are Owner-only deletion, deliberate workspace-name confirmation, accessible operation on desktop and mobile, and clear cancellation, failure and completion behavior.
 
@@ -195,7 +195,7 @@ Before release:
 
 - **Engineering:** Demonstrate successful Owner deletion only after typing the required name. The visible “Atlas” value does not establish whether it was typed or prefilled. Test blank and incorrect input.
 - **Engineering:** Demonstrate server-side rejection of Member deletion requests, including direct requests bypassing the interface. “Sam · Owner” is only a displayed label.
-- **Design and engineering:** Verify Cancel exits safely; failures explain whether deletion occurred and allow appropriate recovery; success clearly communicates completion. Confirm the irreversible warning matches actual behavior—do not assume an undo exists.
+- **Design and engineering:** Verify Cancel exits safely; failures explain whether deletion occurred and allow appropriate recovery; success clearly communicates completion. Confirm the irreversible warning matches actual behavior - do not assume an undo exists.
 - **Accessibility and responsive review:** Exercise the complete task with keyboard and assistive technology, and on desktop and mobile.
 
 These are release-critical evidence gaps, **not confirmed defects**. Assigning tickets will not establish readiness; inspect and test the implementation.
@@ -218,7 +218,7 @@ Papertrail should retain its approved purple palette, one typeface and **Request
 
 **Design read:** A clear, restrained document-review landing page that explains the product category and makes requesting a demo obvious.
 
-**Specification draft v1 — proposed refinement.** Source: the supplied brief and taste profile. No rendered artifact was available.
+**Specification draft v1 - proposed refinement.** Source: the supplied brief and taste profile. No rendered artifact was available.
 
 - **Header:** Existing Papertrail identity; preserve approved navigation.
 - **Hero:** “Document review with Papertrail.” Supporting copy: “Document review means checking a document for accuracy, clarity and needed changes. See how Papertrail supports that process.” Primary button: **Request a demo**.

@@ -1,94 +1,70 @@
-# State coverage — reference (UI)
+# UI states and accessibility
 
-**Status: DRAFT.**  
-**Pack:** ShipRight. Supports the **10-gate pre-flight**. UI-facing companion to product-design states. Used by `ui-ux-design`.
+Use only states reachable in the approved current phase. Cover affected interactions at every priority, not only P0.
 
-## Rule
+## States
 
-If the screen is interactive and P0, design **all** relevant states — not only the populated success view.
+| State | UI requirement |
+| --- | --- |
+| Empty | Show it where the content would be. Explain what belongs here and offer one existing permitted next action. |
+| Loading | Meaningful activity feedback; no fake final data; prevent duplicate submission. |
+| Populated/success | Approved structure and next action; confirm meaningful changes without repeated toasts. |
+| Error | Plain cause and recovery near affected work; preserve input where possible. |
+| Permission denied | Explain access limits and provide an existing exit without exposing protected content. |
+| No matches | Keep search criteria editable; clear only those criteria. Do not show first-run onboarding. |
+| Partial | Keep successful sections usable and isolate failures. |
+| Background work | Truthful task-relevant feedback under F3. |
+| Saved unfinished work | Show remaining human work, resume path and known saved state. |
+| Selected/focused | Distinct visual and semantic states. Selection never hides the keyboard focus indicator. |
 
-## State-by-state UI guidance
+For forms, specify pristine, invalid, submitting, unsaved and submitted states when relevant.
+For lists, specify 0/1/many items, selected items and approved pagination/bulk behavior only when those capabilities exist.
+A request for "View all" does not authorize new filters, exports or bulk destructive actions.
+Clear/reset/remove needs an object, scope, saved effects and recovery. Keep unclear destructive behavior unresolved.
 
-### Empty
+## Flow rules (must pass)
 
-- Explain what will appear here  
-- One primary action to create the first object  
-- Optional secondary: import / learn  
-- Do not show a dense fake table of placeholder names  
+Use [flow-rules.md](../../_shared/flow-rules.md): F1 exit, F2 consistent patterns, F3 useful status.
+Do not add a spinner for human work or a permanent badge for routine internal sync.
 
-### Loading
+## Accessibility checks
 
-- Skeleton that matches final layout OR clear progress  
-- Disable duplicate primary submits  
-- Do not flash fake metrics that look real  
+Use these practical checks against WCAG 2.2 and the relevant native/component pattern. They are not a complete conformance audit.
 
-### Success / populated
+- Use native buttons, links, inputs and headings. Match visible labels to accessible names; do not use placeholders as labels.
+- Associate help and error text with the field. Identify required fields and invalid state in text and semantics.
+- Complete the main task by keyboard in a logical order. Keep a visible focus indicator, including on selected controls.
+- Keep focused controls clear of sticky headers/footers. WCAG AA prohibits complete obstruction; prefer no obstruction.
+- For modal dialogs, move focus inside, contain the Tab sequence, allow Escape and restore focus to the trigger or logical successor.
+- A trap means no keyboard route out. Proper modal focus containment with dismissal is not a trap.
+- Announce important status without stealing focus. Use polite status updates normally; reserve urgent alerts for urgent failures.
+- Measure text contrast: 4.5:1 normally; 3:1 for large text, at least 18pt or 14pt bold.
+- Required UI boundaries and meaningful graphics need 3:1 against adjacent colors, subject to WCAG exceptions.
+- Pointer targets normally meet 24 by 24 CSS pixels under WCAG 2.2 AA, or a documented applicable exception such as spacing.
+- Prefer 44 by 44 targets on touch-heavy screens as a usability goal. Icon size is separate from target size.
+- Test text resizing to 200% and reflow at 320 CSS pixels, with justified exceptions for content requiring two dimensions.
+- Do not rely on color or hover alone. Selected rows need checkbox/state semantics; errors need text.
+- Keep paste and password managers usable. Use suitable input types and autocomplete.
+- Respect reduced motion. Decorative images are ignored; meaningful images have useful alternatives.
 
-- Show real structure (columns, fields) from doc 04  
-- Keep primary action discoverable  
-- Support common next jobs only if in PRD  
+Use an error summary or focus the first invalid field when helpful after submission. Do not steal focus during ordinary typing.
+Prefer readable mobile input text, commonly 16px to avoid browser auto-zoom; this is a usability recommendation, not a WCAG threshold.
+Measure the actual rendered color pairs. A screenshot cannot verify names, keyboard order, announcements or persistence.
 
-### Error
+## Difficult content
 
-- Say what failed in plain language  
-- Offer retry / edit / support path as appropriate  
-- Preserve user-entered data when possible  
-- Field errors inline; system errors at form/page level  
+Check long/short names, accents, emoji, right-to-left text, no-space strings, missing optional fields and failed images.
+Test 0, 1 and many items, long translated labels and large amounts only where the product uses them.
+Use wrapping, a bounded scroll region or accessible full-value disclosure. No clipped controls, overlaps or hidden required data.
+Record what was actually tried. A proposed test fixture is not a passing runtime result.
+Do not turn sensitive phone/email searches into URLs, analytics or logs merely to preserve state.
 
-### Permission denied
+## Sources
 
-- Explicit message (not empty state)  
-- Safe actions: go back, request access, switch account  
-- Do not tease locked features with full interactive chrome that fails on click  
-
-### Filtered empty
-
-- “No results” for current filters/search  
-- Control to clear filters  
-- Do not use first-time empty onboarding CTA here  
-
-### Partial
-
-- Sections that loaded stay visible  
-- Failed sections show local error + retry  
-- Avoid whole-page failure if only one panel failed  
-
-## Form-specific states
-
-| State | UI |
-|-------|-----|
-| Pristine | Defaults from docs; no error noise |
-| Invalid | Inline errors; focus first error |
-| Submitting | Button busy; prevent double submit |
-| Submitted OK | Confirmation pattern from product-design (toast / page / redirect) |
-| Submitted fail | Keep values; show error |
-
-## Table / list-specific states
-
-| State | UI |
-|-------|-----|
-| Empty | First-run CTA |
-| Rows | Clear row actions; don’t hide only on hover |
-| Bulk select | Show count; confirm destructive bulk |
-| Pagination / load more | Say what is loading |
-
-## Copy direction (not final legal copy)
-
-Write direction notes, not fake polished brand fluff:
-
-- Empty: “No [objects] yet” + “Create [object]”  
-- Error: “Couldn’t [action]. [Try again / check X].”  
-- Denied: “You don’t have permission to [action].”
-
-Final strings may need a copy owner (doc 04).
-
-## Checklist before handoff
-
-- [ ] Each P0 screen has a state table in the skill output  
-- [ ] Empty ≠ filtered empty  
-- [ ] Denied ≠ error ≠ empty  
-- [ ] Loading does not look like success  
-
----
-
-*DRAFT — ui-ux-design/references/state-coverage.md — ShipRight*
+Primary references, checked October 4, 2026:
+- [Text contrast](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)
+- [Non-text contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html)
+- [Target size](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html)
+- [Reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)
+- [Focus not obscured](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html)
+- [Modal dialog pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)

@@ -1,0 +1,662 @@
+[
+  {
+    "path": "AGENTS.md",
+    "bytes": 8569,
+    "sha256": "7be03172b8d085ae6280546e4ba8b2d7754a018c047638b530b5151122b171a9",
+    "reviewer": "root"
+  },
+  {
+    "path": "CHANGELOG.md",
+    "bytes": 20224,
+    "sha256": "45b0437d4173b7307a84ccf7dd92d425b557ad437ef3119653e8280d3322b798",
+    "reviewer": "audit_docs"
+  },
+  {
+    "path": "LICENSE",
+    "bytes": 1068,
+    "sha256": "1cb477b827fbb62b94e1c1cef91a9350d8daf786a388b26553e92b04a00374da",
+    "reviewer": "audit_docs"
+  },
+  {
+    "path": "README.md",
+    "bytes": 10485,
+    "sha256": "fd35d108e2f8907c7cbfd2e38fe0acd934fba082f147b11044900046b1bf30f8",
+    "reviewer": "audit_docs"
+  },
+  {
+    "path": "architecture.md",
+    "bytes": 10089,
+    "sha256": "2cf0437b81a9c0ed88a5d2b345c8725bf406bccf811ee8dd8c3533ab426489cd",
+    "reviewer": "audit_docs"
+  },
+  {
+    "path": "docs/01-prd.md",
+    "bytes": 4837,
+    "sha256": "281a09a0d1fcebfc141c139f887597716f94168415b656184a6232e3a46edc81",
+    "reviewer": "audit_docs"
+  },
+  {
+    "path": "docs/02-technical-architecture.md",
+    "bytes": 3159,
+    "sha256": "ab31c332ed716594b926e5bfff293578b77843780d42b5e396dea5356be0fef8",
+    "reviewer": "audit_docs"
+  },
+  {
+    "path": "docs/03-security-and-access.md",
+    "bytes": 3103,
+    "sha256": "0f8fae6e14ffe1d220d71fe1535acf14ebf56a9c51c7042d6b5b79d34cf9575a",
+    "reviewer": "audit_docs"
+  },
+  {
+    "path": "docs/04-frontend-spec.md",
+    "bytes": 7147,
+    "sha256": "ad66c54ac270d9e054daca0418c43b87a61e527f9981c50b5323f25e092f76c2",
+    "reviewer": "audit_docs"
+  },
+  {
+    "path": "docs/05-feature-ticket-list.md",
+    "bytes": 3587,
+    "sha256": "37482f59017ffd0e01be389cae09f2bdc6f15c7ce9daf6519c7ddd194e740ac1",
+    "reviewer": "audit_docs"
+  },
+  {
+    "path": "docs/06-pitch-one-pager.md",
+    "bytes": 1783,
+    "sha256": "24497e3326936f0da016c3abc6ac0a0afabfbd9ad7dbc06482d1df3af88e8517",
+    "reviewer": "audit_docs"
+  },
+  {
+    "path": "docs/DESIGN.md",
+    "bytes": 6490,
+    "sha256": "322a2ea78436af495a9f66dee461d1845dc1eb31099376707b0da63a1d8dd978",
+    "reviewer": "audit_docs"
+  },
+  {
+    "path": "docs/PRODUCT.md",
+    "bytes": 1510,
+    "sha256": "274334cdefaf62c7923e641078ef953b036fc27837868ace26607a4a2edb0674",
+    "reviewer": "audit_docs"
+  },
+  {
+    "path": "docs/build-rules.md",
+    "bytes": 5318,
+    "sha256": "fa6aebdee168aa1956e892d6f196c753ffb862cd08d1bd0bf800f2917373ec3d",
+    "reviewer": "audit_docs"
+  },
+  {
+    "path": "docs/ship-check.md",
+    "bytes": 2149,
+    "sha256": "e2cf0dd463da97424be0d98ac7b8b572c038ecb093acc68946d4c6221ae61118",
+    "reviewer": "audit_docs"
+  },
+  {
+    "path": "evals/change-set-1/README.md",
+    "bytes": 2526,
+    "sha256": "11dcaed2d432f4e2dda9489aa027c3ac467a0b16d399bc023f5e71e43d69c7c8",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "evals/change-set-1/inputs.json",
+    "bytes": 4752,
+    "sha256": "34fdae44fc38ea75960722a78da514024a9f6f4ced4bdb2d24d54b1c73a62858",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "evals/change-set-1/results.md",
+    "bytes": 21609,
+    "sha256": "10845ff75b718f392a2f0a71088a0399527d2acd024cd52efabecab2ff2309be",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "evals/change-set-1/settings-visual-v1.png",
+    "bytes": 43512,
+    "sha256": "7ce644cd50b190e203eb91b2cced1bc26488c31c5f2cb21a3008010e95bbc488",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "evals/change-set-2/README.md",
+    "bytes": 2503,
+    "sha256": "7f7475f5593f9d36dbd8afbaf89e94576a5014f652a38f215a7620bc2aceebea",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "evals/change-set-2/inputs.json",
+    "bytes": 6312,
+    "sha256": "115d1215b4444289c89c93f416bb0f0bb30cc21f3cc1c63101fd6ae4c8e8d857",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "evals/change-set-2/results.md",
+    "bytes": 3222,
+    "sha256": "0dd01c07767269ebe1729d458f7e76ea7b64295da68e694fb1688bf7b1073172",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "evals/change-set-3/README.md",
+    "bytes": 2587,
+    "sha256": "676f02f71057a71ca4cb055f6e7c34c1c5add502613e05e9abb43087663da232",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "evals/change-set-3/artifact-checks.txt",
+    "bytes": 356,
+    "sha256": "2eaf5f104a8a82937a71f228cffb0a819acaab8434725598f4c9e070090fb6fb",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "evals/change-set-3/inputs.json",
+    "bytes": 3152,
+    "sha256": "42fa75818631e0dc163883c03656745c110d684318e3bce5cf262db99924be7e",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "evals/change-set-3/output-critique.md",
+    "bytes": 9742,
+    "sha256": "7522d175acba39b89bfc1da7f139d177c2ed4773f33c0a356636ad23288638fc",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "evals/change-set-3/output-product.md",
+    "bytes": 10500,
+    "sha256": "d8d43150cfdcf15c56e7ca61c12c1c30af3c16333e0aefb8d43f17b475932d5f",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "evals/change-set-3/output-ui.md",
+    "bytes": 6789,
+    "sha256": "5cd97288e1c1f94bd1c491dcfd60523554f52bffc23077bb5063aba3a7effae7",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "evals/change-set-3/results.md",
+    "bytes": 3494,
+    "sha256": "852be6cda0fae4db5df735957a32159ce0777e37622e4c64f32cb2fd7ec521d4",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "evals/change-set-3/source-checks.txt",
+    "bytes": 484,
+    "sha256": "6fe4450d884b87918ca08afaa3a3b59daaa7a3bc45009810c3075eb04b7a439d",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "evals/change-set-4/README.md",
+    "bytes": 3820,
+    "sha256": "cb28b4fde38d102fc229d75ce0e8904ba25fdad1d0da1555dde5a7332a84e2a5",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "evals/change-set-4/inputs.json",
+    "bytes": 2025,
+    "sha256": "e6a3489fe7d691b571fa4ec9d1766193555ad505ce3753906beda0fc1e42dfa6",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "evals/change-set-4/results.md",
+    "bytes": 326,
+    "sha256": "0a17395d5993eb6b49c0bc23c817ea91405e6ee1fd55308f600acf748f19eaf8",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "evals/check_sources.py",
+    "bytes": 9526,
+    "sha256": "698fd331990126c85e65f30543f49357b660239d2e83e0ea090b60ad7f944570",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "evals/failure-modes.md",
+    "bytes": 289,
+    "sha256": "c84451e00c5aadd3a74ae6287bb0068dfef01a53cbd814dce1d436526de86678",
+    "reviewer": "audit_evals"
+  },
+  {
+    "path": "examples/idea-to-screen-jobs/README.md",
+    "bytes": 6043,
+    "sha256": "7ca2bf863cef670472e6011a36149d36fba184297c8de2b8dea1250f51a6125b",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/README.md",
+    "bytes": 6706,
+    "sha256": "2c05b21cad11ab8afae240a8f48e87e723719ba91e97ddb58a8a828fb138ade1",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/docs/01-product-frame.md",
+    "bytes": 5923,
+    "sha256": "018e326150b6db9388cf0870d7c944fd34c872e95ac524d74779ec9e88a8af91",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/docs/02-flows-and-access.md",
+    "bytes": 7139,
+    "sha256": "4e89bda4c22daccc16732af4b1a8d585404a58f3d400ea8a1bacd20811797e95",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/docs/03-design-and-handoff.md",
+    "bytes": 6815,
+    "sha256": "b50d0d70b18c23bb4dd329f6371d6fe859fec807a3fdc013e234bb214d24b933",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/docs/04-specification-review.md",
+    "bytes": 4966,
+    "sha256": "ba8c3f710699ac6bf979b976ab35aaee467aa808894b447884910fa35d362696",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/docs/05-implementation-review.md",
+    "bytes": 7822,
+    "sha256": "7442236360ceb7485f966e5f474002e169ec3fc31a707a80f90ef015cca0f03e",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/docs/06-context-brief-v2.md",
+    "bytes": 29336,
+    "sha256": "d94d3c7a7d36a204fb635996dbf7b226ad27977f42cdffd32130d03132d7291f",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/evidence/01-sign-in.png",
+    "bytes": 97897,
+    "sha256": "8229b9745c379c80bd97b5f3984ec5e2c31de7365c426f5550b1406314d86d04",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/evidence/02-desk.png",
+    "bytes": 167759,
+    "sha256": "01e476103c46f095782b855352450a7483ed636a0b6449d1985d74a1a7ffbe7e",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/evidence/browser-final.json",
+    "bytes": 831,
+    "sha256": "a2bef4842ecc8b29401d80a180c94c15f849a384f5f62b12e11fd8278a65e36e",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/evidence/deployment.json",
+    "bytes": 381,
+    "sha256": "6b99244e30e6db66fc2fb9f8108b48e70d135804d9302f91ecbd9503529aac0c",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/evidence/final-cash-close.png",
+    "bytes": 154682,
+    "sha256": "8b385044762d68dbce7c0f7537d1f3402f3a922441a4f8fb2864af3121aa3ea6",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/evidence/final-event-mobile.png",
+    "bytes": 332849,
+    "sha256": "bfe247d58cf2a6eb8c72244548b3c70d10f8f06482215710d6c96592ebc6cd7b",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/evidence/final-family-confirmation.png",
+    "bytes": 124667,
+    "sha256": "f360f586bad871c65e6b131f1fe5aa1c2f06495b510ae9572d80a77e4a6a47bc",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/evidence/final-parent-mobile-before.png",
+    "bytes": 84582,
+    "sha256": "55ea9c8c46a38a336455b175cc67070a04a91ee95580a78a83087bd448b61b86",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/evidence/final-reports.png",
+    "bytes": 290967,
+    "sha256": "6726f45d3036bd57eb0bcb9bacfe03773e8054c90384cc6417491310c3222267",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/evidence/final-teen-ticket-mobile.png",
+    "bytes": 62072,
+    "sha256": "e9a6aee57a77909c4cf6e96468ad90ff424868b58313794999c6054a5129eeae",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/evidence/keyboard.json",
+    "bytes": 246,
+    "sha256": "78b392a96df04fbd6502e4d020cef94729bd11063b9359ff48203a7a5cf39c9b",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/evidence/model-tests.txt",
+    "bytes": 759,
+    "sha256": "e325b0797b9eacefc1f9dd5b080afc40f82b42f59b97b011b506fb8ddc44891b",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/evidence/qr-decoded.txt",
+    "bytes": 239,
+    "sha256": "bf13f4fb33697c3be0d4dfd654b4cac863e8a2ebc894e848428a51ec4ce344c9",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/evidence/source-manifest.json",
+    "bytes": 716,
+    "sha256": "d2dd811078c27ec21b1163a1fe64a492a6104b1346eef4f72fd3464dd3733ef6",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/evidence/ticket-qr-url.txt",
+    "bytes": 238,
+    "sha256": "7b8bb123818db9730c9b173aa524d978b6e691f12b4e2ebf3f9f82822b252ec1",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/evidence/ticket-qr.png",
+    "bytes": 11002,
+    "sha256": "bad96473d78adf7137d17f1ad90713515d51636f5cb37a0ed6cb236008ff982d",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/feedback/shipright-learning.md",
+    "bytes": 11022,
+    "sha256": "3f34926c7e8616f68227ad4bb9762f33130cde8251552f759fa9632d8bb1e836",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/feedback/training-candidates.jsonl",
+    "bytes": 16028,
+    "sha256": "0f24cd6385d379dcf9b2e9f8034045165efbdd713af449b7c3ea8cd35aef5f9f",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/feedback/training-manifest.json",
+    "bytes": 2181,
+    "sha256": "c4ebf46e9bed00508faae01c3efaa769bcc9ecfec16b90d01e83795faea6576f",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/feedback/training-notes.md",
+    "bytes": 2590,
+    "sha256": "0d2a8bb7787f9052b5736b8c123d64d4be8f5526d030b76493af92eb410e8b3f",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/prototype/app.js",
+    "bytes": 67794,
+    "sha256": "bab6df757fd224fbad1d1f2b9b678df877a24032dc7d06069b75027ae9c56c3e",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/prototype/assets/ivc-logo-background.svg",
+    "bytes": 600090,
+    "sha256": "3f8adfce3886e953245894729bd6f9aa048f3057130fb99928d9676ede28ce80",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/prototype/assets/ivc-logo.svg",
+    "bytes": 600040,
+    "sha256": "27ba26a4248c7b324fc0ed8d093ce053601ce4bd4b05297f9ab8400d1050991c",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/prototype/assets/qrcode.js",
+    "bytes": 56694,
+    "sha256": "18ae399f81182bc9de916e9c77b195df20cc58d6f2d55a62b085a299f1bf1780",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/prototype/index.html",
+    "bytes": 949,
+    "sha256": "b2ee3b3dcf95b3b1911a01039782b23014328c2100a2dc457a7e5d9620034377",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/prototype/model.mjs",
+    "bytes": 9910,
+    "sha256": "a2c07bd8389ac154ce34ae7f8eb49d89976ec7a50cb2d679f5a312c760945d3b",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/prototype/styles.css",
+    "bytes": 46643,
+    "sha256": "d35858539542babbd883fec484482bd81094e7cb1b8f034250ca8f89ff7a93be",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/tests/browser.cjs",
+    "bytes": 14589,
+    "sha256": "b9ee25bf7b6eaa8a722511635df39222844d501ca18c1b935c717aeac01e8aa7",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/tests/decode-qr.swift",
+    "bytes": 520,
+    "sha256": "064e3762a3fd6765ffe7a914f73cb79e59dea8ae6a9cb458c2cc688c9f47933b",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/tests/inspect.cjs",
+    "bytes": 900,
+    "sha256": "96076b441f9564e18622545549500356fb59dd3d557920751a8922b5eeba9c7b",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/tests/keyboard.cjs",
+    "bytes": 2470,
+    "sha256": "4e636cb8d4ec8270e8b766a4c892916aaaa923716a589ef7b7c5e8d9ebad9659",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/ivc-2026-registration/tests/model.test.mjs",
+    "bytes": 4751,
+    "sha256": "466fb0e99f45e49b2ae903ea8d359f423c88d588a62ac3a1b32c89af59244683",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/sample-saas-onboarding/README.md",
+    "bytes": 2260,
+    "sha256": "070220e6a9e8b84345216586ce9369f489004e5cd6b785567e31a2cadf803a28",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/sample-saas-onboarding/filled-01-prd-excerpt.md",
+    "bytes": 2875,
+    "sha256": "b9cdd6eecae1f11e3e3e8e8556356f25e409c7a5afbb2133e199ce161ab62f90",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "examples/sample-saas-onboarding/sample-skill-outputs.md",
+    "bytes": 7886,
+    "sha256": "27d27966118abf1b9abc7081e138b45967ce70a35556f78e750e733394f200ec",
+    "reviewer": "audit_examples"
+  },
+  {
+    "path": "personal-taste/README.md",
+    "bytes": 2957,
+    "sha256": "f5260f2187b607ad8e96741f0f343e915fcdccf837ee6751afc797e07576e67f",
+    "reviewer": "audit_docs"
+  },
+  {
+    "path": "personal-taste/altaz.md",
+    "bytes": 3706,
+    "sha256": "7de32e703a1926254a91de4402685fddaa577f9ec32ee059c4d4668ca66155e3",
+    "reviewer": "audit_docs"
+  },
+  {
+    "path": "skills/_shared/flow-rules.md",
+    "bytes": 5411,
+    "sha256": "7651e1616b120a8675a1f744a0bbd0f6b8678e5e89effd5225dc8c481f37f951",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/_shared/intake.md",
+    "bytes": 7334,
+    "sha256": "7420e934e7b1b18d5f0e99d2dd0c0405f060e9403cf81bba01c8023219cc258f",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/_shared/operating-contract.md",
+    "bytes": 9043,
+    "sha256": "6b1fc413adf0dc118c206e09119bfee32a23d472e6595c7787befafd83de783d",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/_shared/output-folder.md",
+    "bytes": 3616,
+    "sha256": "0112d1f8855ae66cc2be3e6ae1b07a5d4431b10ca88b74c6afed018e0ee5052e",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/product-design/SKILL.md",
+    "bytes": 16581,
+    "sha256": "19534427ec711885a7c0deeef43f02201e3f9d964af445d7501e680dc95df1c4",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/product-design/references/decision-checklist.md",
+    "bytes": 4978,
+    "sha256": "547cb13fcc363b42026c1c5656df3f5d59398d8cf2d1278522a2fd2973bf4fad",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/product-design/references/doc-set.md",
+    "bytes": 7247,
+    "sha256": "364b10c42be9428fa88572768268d0a9d04ae8fc317812babeaa444df08ce232",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/product-design/references/operational-flows.md",
+    "bytes": 4204,
+    "sha256": "d3d224dede45a93fa4c750c18a9974809e3a281b76e9c4fc976a8ac0eb8e1be3",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/product-design/references/opportunity-research.md",
+    "bytes": 1892,
+    "sha256": "b3415f092c870b12e86b888dafe4e97401180a6c06cf365bdea6ec2b502ebea8",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/product-design/references/states-and-flows.md",
+    "bytes": 5412,
+    "sha256": "97b0445f6ae46bf745e3657d3c333264cd33f7bae071585f7add296333725536",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/ship-check/SKILL.md",
+    "bytes": 9407,
+    "sha256": "acb5eb4be32e5f97a533bace67892391d39666339540d64a59c8fce4832c490a",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/ship-check/references/launch-items.md",
+    "bytes": 12038,
+    "sha256": "532e9d35cdcf2e3be9a70edef99e20e47502f1e1253d0e3de21f084ac5e937d1",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/ui-ux-design/SKILL.md",
+    "bytes": 20938,
+    "sha256": "6a4af332a80364fc76cef32e5b4e885c515b323081d1db3c65bab3b84a6fb078",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/ui-ux-design/references/anti-slop-rules.md",
+    "bytes": 6361,
+    "sha256": "541f09c33100bbe0af7bc8065847162c0818541c5e2af33779eefd8e2eaf68c8",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/ui-ux-design/references/build-handoff.md",
+    "bytes": 7545,
+    "sha256": "abedc1c9c4d04d3b7618fc1139077525463b3b54b904b1dea13fce623f26c043",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/ui-ux-design/references/icons-and-placement.md",
+    "bytes": 7816,
+    "sha256": "65bf17d884fcd7cadc30590623cf2d9318ac7a2251c9eb971e2daf1765ff43ad",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/ui-ux-design/references/layout-and-hierarchy.md",
+    "bytes": 2992,
+    "sha256": "e665494471b240a52742e4d7656292a97a9c09a3e067b90a85b0434c16bb57ab",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/ui-ux-design/references/motion.md",
+    "bytes": 3940,
+    "sha256": "d57310fe40a3d3f85f4e79063325ce0f733b7f9047585b994960304567354612",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/ui-ux-design/references/operator-workspaces.md",
+    "bytes": 2835,
+    "sha256": "9a9c0146c038614373cf1dbd50ecce51558309f2d6965a6fa0c84cbe6bce27f0",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/ui-ux-design/references/references-and-design-system.md",
+    "bytes": 8553,
+    "sha256": "350b2c1520ba2a401bdcdcb91b884304aae56328dd8e7cdce15e28cce73546a6",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/ui-ux-design/references/state-coverage.md",
+    "bytes": 5549,
+    "sha256": "2720cda25567a983bcb66d8c987b58de4a9180e51c24bfb5d4e0e712588bfc78",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/ui-ux-design/references/ui-copy.md",
+    "bytes": 5284,
+    "sha256": "acd2cd9bb661b7a7b97e040514d078d58d709ef7ce247a7fcb3aba23ed6efe92",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/ux-critique/SKILL.md",
+    "bytes": 16527,
+    "sha256": "151864a43c9b4fa5b30eb711a9fef08edd44b9072f530411532596faa886bd54",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/ux-critique/references/bounded-verification.md",
+    "bytes": 3004,
+    "sha256": "177865660139039368785a02347a2de02f91ddee2f6741688d097b0bccc33b3f",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/ux-critique/references/existing-app.md",
+    "bytes": 4807,
+    "sha256": "98eb7e0f16bbc0dc87da69cfbaa74ee06c93290c16adbfb553ea3bdaeecd439e",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/ux-critique/references/plan-review.md",
+    "bytes": 1865,
+    "sha256": "4d15f306a55d8dc3789ead588c18994b1338417fe78df7cae4bb61f2bc641d35",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/ux-critique/references/requirements-and-feedback.md",
+    "bytes": 3480,
+    "sha256": "96efe955732c29f8bd913debc7ae4e1826c8ac8b901549c9b37779740462d8af",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/ux-critique/references/severity-rubric.md",
+    "bytes": 3770,
+    "sha256": "59ddcc7b642bc0da3e86c724e96965d86de17d1d011ec18be583e96b344e286f",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills/ux-critique/references/slop-tells.md",
+    "bytes": 9194,
+    "sha256": "5f7595382c7e231a8acea63e7b01cb3886f50254163541c228b1a167959c645d",
+    "reviewer": "root"
+  },
+  {
+    "path": "skills.md",
+    "bytes": 9471,
+    "sha256": "47c9a40900d549167b1d29e23265bc3cfddc324e8f9f2f7b918ef32bb07b29d4",
+    "reviewer": "audit_docs"
+  }
+]

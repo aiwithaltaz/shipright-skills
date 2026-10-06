@@ -1,102 +1,38 @@
-# 05 — Feature Ticket List
+# 05 - Feature tickets
 
-**Status: Template (ShipRight v0.4.1-draft).**
-**Pack:** ShipRight  
-**How to use:** Turn decisions from docs + skills into prioritized tickets with acceptance criteria. Update this **after** product-design, ui-ux-design, and ux-critique — then start coding.
+**Status: Template (ShipRight 0.6.1-draft).**
+**Project path:** `docs/shipright/05-feature-ticket-list.md`
 
-**Product / feature name:** <!-- write here -->  
-**Author:** <!-- write here -->  
-**Date:** <!-- write here -->  
-**Version:** <!-- write here -->  
-**Source docs:** 01 PRD · 02 Architecture · 03 Security · 04 Frontend Spec  
+**Version/date:** <!-- -->  **Sources and approval:** <!-- -->
 
----
 
-## 1. Priority definitions
+Use approved current-phase jobs. Later ideas remain notes, not implementation tickets unless the user requests planning for them.
+P0 means required for this release; P1/P2 describe delivery priority, not defect severity.
 
-| Priority | Meaning |
-|----------|---------|
-| P0 | Must ship for release; blocks the job |
-| P1 | Important; ship soon after P0 |
-| P2 | Nice to have; do not let AI inflate these into P0 |
+## Ordered tickets
 
-## 2. Ticket list
+| ID | Change | Phase / job / screen | Depends on | Owner | Status |
+| --- | --- | --- | --- | --- | --- |
+| <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> |
 
-Add one row per ticket. Keep titles concrete (verb + object).
+## Ticket detail
 
-| ID | Title | Priority | Depends on | Owner | Status |
-|----|-------|----------|------------|-------|--------|
-| T1 | <!-- e.g. Build invite form with validation --> | P0 | — | <!-- --> | todo |
-| T2 | <!-- --> | P0 | T1 | <!-- --> | todo |
-| T3 | <!-- --> | P1 | T1 | <!-- --> | todo |
+Copy this block per ticket:
 
-## 3. Ticket details (copy block per ticket)
+- **ID, priority and source:** <!-- -->
+- **Bounded change:** <!-- -->
+- **Preserve / do not add:** <!-- -->
+- **Affected screen, state or non-UI job:** <!-- -->
+- **Acceptance checks:** <!-- exact feedback, behavior, recovery and access where relevant -->
+- **Verification evidence needed:** <!-- -->
+- **Open dependency:** <!-- -->
 
-### Ticket <!-- T1 -->: <!-- title -->
+## Critique follow-up
 
-- **Priority:** P0 / P1 / P2  
-- **User job / PRD link:** <!-- J1 -->  
-- **Screen(s):** <!-- S1 -->  
-- **Description:**  
-  <!-- write here: what to build in 2–4 sentences -->  
-- **Acceptance criteria:**  
-  - [ ] <!-- write here -->  
-  - [ ] Empty / loading / error / success handled as specified  
-  - [ ] Permissions match doc 03  
-  - [ ] No nav or features outside docs 01/04  
-- **UX notes:** <!-- write here -->  
-- **Tech notes:** <!-- write here -->  
-- **QA notes:** <!-- write here -->  
-- **Out of scope for this ticket:** <!-- write here -->  
+| Finding | Severity | Ticket / acceptance change | Evidence closing it |
+| --- | --- | --- | --- |
+| <!-- --> | <!-- --> | <!-- --> | <!-- --> |
 
-### Ticket <!-- T2 -->: <!-- title -->
-
-- **Priority:**  
-- **User job / PRD link:**  
-- **Screen(s):**  
-- **Description:**  
-  <!-- write here -->  
-- **Acceptance criteria:**  
-  - [ ] <!-- write here -->  
-  - [ ] States covered  
-  - [ ] Permissions match doc 03  
-- **UX notes:** <!-- -->  
-- **Tech notes:** <!-- -->  
-- **QA notes:** <!-- -->  
-
-## 4. Dependency graph (simple)
-
-```text
-<!-- example:
-T1 form → T2 API wire → T3 success/empty states
-         ↘ T4 email invite (P1)
--->
-```
-
-## 5. Critique follow-ups
-
-After **ux-critique**, record findings as tickets or AC updates. Recording a ticket does not resolve a failed check. Close it only with evidence from the corrected artifact/version.
-
-| Finding ID | Severity | Becomes ticket / AC change | Done? |
-|------------|----------|----------------------------|-------|
-| <!-- --> | blocker / major / polish | <!-- --> | [ ] |
-
-## 6. Definition of done (feature-level)
-
-- [ ] All P0 tickets done
-- [ ] Docs 01–04 still accurate (or updated)
-- [ ] Critical requirements verified and critique blockers resolved with evidence
-- [ ] Noncritical failures/unknowns have explicit disposition; visual preferences do not override integrity
-- [ ] Ready to ship / release checklist owned by team
-
-## 7. Ready check (before coding)
-
-- [ ] Tickets trace to PRD jobs
-- [ ] Acceptance criteria are testable
-- [ ] Dependencies ordered
-- [ ] P0 set is small enough to finish
-- [ ] Skills have been run (or explicitly skipped with reason)
-
----
-
-*Template — docs/05-feature-ticket-list.md*
+A ticket does not turn Fail into Pass. Check the changed artifact before closing the finding.
+A small UI fix does not require a full launch audit. For a launch task, reference `docs/shipright/ship-check.md`.
+Before handoff, reconcile approved jobs, screen IDs, roles and current-phase exclusions across documents.

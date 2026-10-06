@@ -1,61 +1,32 @@
-# Decision checklist — reference
+# Product decisions
 
-**Status: DRAFT.** Use during **Decision review** mode and before marking product-design done.  
-**Pack:** ShipRight. Pairs with the skill’s **8-check decision gate**.
+## Before screen jobs
+
+Identify the user, job, current alternative, useful mechanism and current phase from sources.
+Show only material unknown premises. Each premise needing an answer counts as a question under shared intake.
+Recommend the narrowest useful version. Explain effort and risk where they change the choice.
+Do not force Small/Full/Different options or invent features to fill a comparison.
+A supplied frame or delegated choice needs no second approval. Unapproved scope remains in notes, not build instructions.
+Then derive necessary objects, their states, the journey and screen jobs. A feature list alone does not prove value.
 
 ## Interaction choices
 
-| Question | Options | Pick when… |
-|----------|---------|------------|
-| Confirm vs undo? | Confirm modal / Undo toast / Neither | Irreversible → confirm; reversible → undo; low risk → neither |
-| Modal vs inline? | Modal / Inline panel / Full page | Short interrupt → modal; complex task → page/panel |
-| Autocomplete vs plain field? | Auto / Plain | Known finite set → prefer guided input |
-| Single page vs wizard? | One page / Steps | Few fields → one page; clear phases or legal gates → steps |
-| Soft vs hard validation? | On blur / On submit / Both | Prefer help before submit; block submit on hard rules |
+| Choice | Decision rule |
+| --- | --- |
+| Confirm or undo | Confirm important irreversible effects. Use supported undo for reversible effects. Neither is needed for harmless actions. |
+| Modal, panel or page | Match task length and context. Reuse the existing pattern for the same job. |
+| Guided or free input | Use guidance when approved data constrains the answer. Do not invent a source or valid options. |
+| One form or steps | Split only for meaningful dependencies or complexity, not a tiny form. |
+| Validation timing | Help near the field; validate before commitment. Avoid error noise before the user starts. |
+| Clear, reset or remove | Name the object, scope and saved effects. Resolve destructive ambiguity before build. |
 
-## Risk prompts (answer in writing)
+Check meaningful risks yourself: missing prerequisites, wrong permissions, lost input, slow/offline behavior, duplicate submission and return visits.
+Do not force the user to enumerate every edge case or invent support services to handle them.
 
-- [ ] What is the worst user mistake on this flow?  
-- [ ] Can they recover without support?  
-- [ ] What data is destroyed or exposed on failure?  
-- [ ] What does a guest / wrong role see? (doc 03)  
-- [ ] What happens offline or on slow network?  
-- [ ] Is there a double-submit risk?  
+## Handoff
 
-## Scope discipline
-
-- [ ] Every step maps to an approved or explicitly provisional job; non-goals stay excluded
-- [ ] No “while we’re here” features  
-- [ ] No invented navigation destinations  
-- [ ] Assumptions labeled `ASSUMPTION`  
-
-## Handoff completeness
-
-- [ ] State table present  
-- [ ] Primary action named per key state  
-- [ ] Error copy ownership noted (who writes final strings)  
-- [ ] Analytics events only if in docs — else UNKNOWN  
-- [ ] Tickets suggested for `docs/05`  
-- [ ] **8-check decision gate** uses the shared four statuses with evidence and next action
-
-## Severity for leftover issues
-
-Use the same impact-based severity as ux-critique. Severity describes harm or friction; P0/P1/P2 describe delivery priority.
-
-| Level | Meaning |
-|-------|---------|
-| Blocker | The supported core job cannot complete, access fails, material harm is likely, or any stage-critical requirement fails |
-| Major | Noncritical: substantial friction with a usable, understood workaround |
-| Polish | Clarification or craft that does not block the job |
-
-Critical failures block the affected handoff even when tracked in a ticket. Use the shared readiness rule; assigning a priority does not resolve a failure.
-
-## Never invent
-
-- Legal copy, medical claims, guaranteed SLAs  
-- Fake research quotes  
-- APIs and field names not in doc 02 (mark UNKNOWN)  
-
----
-
-*DRAFT — product-design/references/decision-checklist.md — ShipRight*
+- Every step and action has a current-phase source.
+- State transitions say what changes and what remains.
+- Exit, consistency and status follow [flow-rules.md](../../_shared/flow-rules.md).
+- Unknown APIs, metrics and policy stay Unknown. Legal copy is not authored here.
+- Relevant tickets carry testable acceptance checks. Readiness uses the shared contract, not a count of completed documents.
