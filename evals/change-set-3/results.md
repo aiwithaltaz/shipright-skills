@@ -1,4 +1,4 @@
-# Results — 0.4.0-draft skill update
+# Results - 0.4.0-draft skill update
 
 **Date:** September 25, 2026. **Stage:** Skill instruction-following trials plus source validation. **Verdict:** Ready for a draft skill review, within the limits below. The revised IVC app is not implemented or verified by this change.
 

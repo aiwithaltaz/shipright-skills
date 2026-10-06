@@ -1,30 +1,36 @@
-# Operator workspaces: useful density without clutter
+# Operator workspaces
 
-Load when designing a staff desk, repeated data-entry task, or related-record workflow. Preserve the approved visual system; this is not a universal dashboard template.
+Use for staff desks and repeated data-entry tasks. This is not a dashboard template.
 
-## Put the work first
+## Put the current job first
 
-Branding should establish identity without displacing lookup, current state or next action. Reuse approved logo assets, including the favicon when supplied. A small brand treatment may fit an operating desk while a public event page needs more context; do not copy their hierarchy wholesale between audiences.
+Keep lookup, current work, real blockers and the next action prominent.
+Branding establishes identity without taking over the working area. Reuse supplied assets.
+Put occasional reference material in clearly named, keyboard-accessible help. Do not hide errors, fees or action consequences.
+Use supporting space for a useful summary of entered details, not repeated background facts.
+Remove status that reveals implementation plumbing without helping the operator act.
+A routine sync destination usually needs no message. A failed save does: "Changes not saved. Try again."
+Use truthful operator language only when supported; do not invent a successful save or recovery capability.
 
-Classify content by use:
+## Related records and pending work
 
-1. **Needed now:** identity, relevant blockers, action consequences and the next action stay visible.
-2. **Useful for verification:** current entered details belong in a review panel or summary with edit links, not a second copy of generic event/product facts.
-3. **Occasional reference:** group rules, links and explanatory details behind a plainly named, keyboard-accessible help/disclosure control. Keep the entry point discoverable. Do not hide blockers, fees at commitment, errors or critical controls to achieve minimalism.
+Keep the active person/object and remaining work clear. Separate each record's progress from group completion.
+Allow existing permitted review/edit and resume paths without discarding valid work.
+Add/link a counterpart only when approved. A shared phone number does not prove a relationship.
+Saved unfinished work is not a running background job. Show the relevant remaining task rather than a spinner.
+If a subset is shown, make the approved route to all pending items discoverable.
+Clear controls must distinguish hiding a card, abandoning a draft and deleting data. Ask when the effect is unknown.
 
-Remove repeated facts unless repetition serves a concrete task. Omit irrelevant “not required” explanations when they add no decision value. Do not omit an applicable task merely because another actor's version does not apply.
+## Lessons from exact feedback
 
-## Related people or objects
+- Take feedback exactly as given. A liked crop approves its named properties, not every control in it.
+- Build only the current phase. Later-phase counters, tabs, panels, badges and row actions stay in notes, not UI.
+- Hide system plumbing from operators: sync destinations, queues and device health. Show real failures in task words.
+- Make the selected state clear and clean, without a heavy accent bar unless the design system says so.
+- Keep one profile or identity home per layout. Remove duplicate account boxes.
+- No notification dot on the selected nav item. A dot means real unread or pending work.
+- No filler chips, such as a query chip that repeats visible input.
+- When the user offers alternatives ("A or B"), either one satisfies the request.
 
-- Show the active person's/object's name, position and remaining work, not just “Step 2”.
-- Make permitted completed steps selectable for review/edit, preserving other entries. Distinguish details complete from the whole case complete.
-- Put “Add/link [counterpart]” at the point of need when the product flow allows it; avoid restarting the search or losing the active draft.
-- Keep one clear back/exit route and describe saved versus unsaved effects. Revalidate only affected dependencies after an edit.
-
-## Lists and details
-
-Use columns for decisions users compare or act on; use secondary text for supporting facts. Keep role, group, location, payment and overall status semantically distinct even when combined visually. Surface pending-state actions directly. Place full audit detail in the record view, with actor and timestamp for the actual event rather than one ambiguous “updated by”. Do not erase state distinctions merely to reduce column count.
-
-Use one spacing-token system from the project. An 8-point system is appropriate when the user requests it; do not silently replace a different approved system. Judge density in rendered screens with realistic names, multiple pending states and family/group sizes. A token list alone is not visual evidence.
-
-Map these decisions to the existing pre-flight checks for action hierarchy, states, navigation, accessibility and content/density. Do not add a new ceremony for a narrow edit.
+Do not silently remove unrelated approved actions. If an item's phase is unclear, flag it.
+Worked case: [IVC round-1 corrections](../../../examples/ivc-2026-registration/feedback/round1-corrections.md). It is project-specific, not a default for other apps.

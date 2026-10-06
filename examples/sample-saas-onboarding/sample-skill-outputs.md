@@ -93,9 +93,9 @@ No existing answers are asked again. The agent does not decide expiry or mark a 
 **Stage:** Specification. **Next stage:** builder handoff.
 **Critical requirements:** Supported job, access/consequences, failure recovery and implementable accessibility behavior.
 
-**B1 — Blocker (specification stage): send recovery is unspecified.** T7 is recorded, not resolved. Specify retained input, persistent effects and recovery. Distinguish confirmed failure from outcome unknown before retrying. Define when another request is safe; do not promise delivery or cost behavior without evidence. Route: product-design + Engineering.
+**B1 - Blocker (specification stage): send recovery is unspecified.** T7 is recorded, not resolved. Specify retained input, persistent effects and recovery. Distinguish confirmed failure from outcome unknown before retrying. Define when another request is safe; do not promise delivery or cost behavior without evidence. Route: product-design + Engineering.
 
-**B2 — Blocker (specification stage): accessibility behavior is underspecified.** Define modal entry/focus return, keyboard actions and error announcements. Later verify them in the actual implementation. Route: ui-ux-design + Engineering.
+**B2 - Blocker (specification stage): accessibility behavior is underspecified.** Define modal entry/focus return, keyboard actions and error announcements. Later verify them in the actual implementation. Route: ui-ux-design + Engineering.
 
 Both are Blockers because they fail stage-critical requirements for builder handoff. They describe incomplete specifications, not observed runtime harm.
 

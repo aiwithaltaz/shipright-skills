@@ -1,148 +1,80 @@
-# 04 — Frontend Specification Document
+# 04 - Frontend specification
 
-**Status: Template (ShipRight v0.4.1-draft).**
-**Pack:** ShipRight  
-**How to use:** Record approved screens, navigation, components, states and design direction before generating UI. The **ui-ux-design** skill follows approved entries here and compiles them into a build handoff pack. Skills may help draft a provisional screen specification. Do not treat proposed screens as approved; unresolved consequential decisions block the affected commitment.
+**Status: Template (ShipRight 0.6.1-draft).**
+**Project path:** `docs/shipright/04-frontend-spec.md`
 
-**Product / feature name:** <!-- write here -->  
-**Author:** <!-- write here -->  
-**Date:** <!-- write here -->  
-**Version:** <!-- write here -->  
-**Related PRD jobs:** <!-- e.g. J1, J2 -->  
+**Version/date:** <!-- -->  **Sources and approval:** <!-- -->
 
----
 
-## 1. Purpose
+Use current explicit feedback, approved jobs and sourced components. Do not copy every control visible in a reference.
 
-What the frontend must support for this release (one short paragraph).
+## Current phase and allowed screens
 
-<!-- write here -->
+**Current phase:** <!-- -->
+**Excluded / later notes only:** <!-- -->
 
-## 2. Navigation & information architecture
+| Screen ID | Job | Actor | Phase | Source |
+| --- | --- | --- | --- | --- |
+| <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> |
 
-### Primary nav (approved)
+## Navigation
 
-List only real destinations. Do not let AI invent extra nav items.
+| Label | Approved destination | Actor / phase | Active treatment |
+| --- | --- | --- | --- |
+| <!-- --> | <!-- --> | <!-- --> | <!-- --> |
 
-| Label | Destination / route | Who sees it (roles) |
-|-------|---------------------|---------------------|
-| <!-- --> | <!-- --> | <!-- --> |
+Profile/account home: <!-- one canonical location per layout -->
+An active nav item does not imply unread work. Notifications need their own real source.
 
-### Entry points into this feature
+## Flow rules (must pass)
 
-- From: <!-- write here -->
-- Deep link / URL pattern: <!-- write here or UNKNOWN -->
+<!-- FLOW-EXPORT-START -->
+- **F1. Exit route:** provide a visible, safe way back or out. Explain saved and unsaved effects. Error and success states have a next step. Leaving a screen does not necessarily cancel its transaction; say what continues and how to recover.
+- **F2. Consistency:** use the same names, behavior and component patterns for the same job. Primary action side and button order are decided once in the design system and used the same way across the app. Responsive or platform differences need a documented reason.
+- **F3. System status:** show task-relevant progress, results and actionable failures in the user's words. Hide routine system plumbing. Never fake progress or claim work is saved, cancelled or complete without evidence.
+<!-- FLOW-EXPORT-END -->
 
-### Exit points
+## Per-screen specification
 
-- After success go to: <!-- write here -->
-- Cancel / back goes to: <!-- write here -->
+Copy only this block for each in-scope screen.
 
-## 3. Screen inventory
+**Screen ID / job / source:** <!-- -->
+**Keep/remove/change/add:** <!-- exact requested feedback -->
 
-| Screen ID | Name | Screen job (one sentence) | Objects shown | PRD job | Priority |
-|-----------|------|---------------------------|---------------|---------|----------|
-| S1 | <!-- --> | <!-- what the user gets done here --> | <!-- from PRD 1d --> | J? | P0 |
-| S2 | <!-- --> | <!-- --> | <!-- --> | J? | |
+| Visible element | User purpose | Current-phase source | Placement / component |
+| --- | --- | --- | --- |
+| <!-- --> | <!-- --> | <!-- --> | <!-- --> |
 
-### Per-screen brief (copy one block per screen)
+**Structure and reading order:** <!-- -->
+**Sizing and alignment:** <!-- sourced containers/tokens, what grows and wraps -->
+**Actions:** <!-- scope, label, effect, recovery; clear does not imply deletion -->
+**Exit and saved work:** <!-- -->
 
-#### Screen: <!-- S1 name -->
+| Reachable state / trigger | User sees | System effect | Next action / exit | Evidence needed |
+| --- | --- | --- | --- | --- |
+| <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> |
 
-- **User goal on this screen:** <!-- write here -->
-- **Primary action:** <!-- write here -->
-- **Secondary actions:** <!-- write here -->
-- **Content / data shown:** <!-- write here -->
-- **Components used:** <!-- write here -->
-- **States required:**  
-  - [ ] Empty  
-  - [ ] Loading  
-  - [ ] Success / populated  
-  - [ ] Error  
-  - [ ] Permission denied  
-  - [ ] Partial data  
-  - [ ] Filtered empty (vs true empty)
-- **Current object/person and remaining work (if multi-step):** <!-- -->
-- **Review/edit summary and pending-state actions:** <!-- -->
-- **Always visible vs accessible help:** <!-- -->
-- **Notes / constraints:** <!-- write here -->
+Include applicable empty, loading, error, populated, denied, partial and no-match states.
+Separate background work from saved unfinished human work. Do not add features merely to fill states.
 
-## 4. Component inventory (feature-level)
+**Responsive behavior:** <!-- task order, stacking, table handling, overflow and sticky clearance -->
+**Difficult content:** <!-- relevant long/missing text, 0/1/many results and images -->
+**Accessibility:** <!-- semantics, focus, keyboard, contrast, reflow, targets, announcements -->
 
-| Component | Used on screens | Behavior notes |
-|-----------|-----------------|----------------|
-| <!-- e.g. Invite form --> | S1 | <!-- --> |
-| <!-- e.g. Member table --> | S2 | <!-- --> |
+## Design system
 
-Reuse existing design-system components when listed:
+**Mode:** <!-- Preserve or authorized Establish -->
+**Source:** `DESIGN.md` at the project root, or <!-- existing component/token source -->.
+Use sourced Approved/Observed values permitted by current instructions. Proposed values stay labeled in Markdown.
+Unknown values stay Unknown; do not invent brand values.
 
-<!-- write here: link or name of design system / Figma library -->
+## Exact acceptance checks
 
-## 5. Design tokens and direction
+| Feedback/source | Check | Status | Evidence / next action |
+| --- | --- | --- | --- |
+| <!-- --> | <!-- --> | <!-- Pass/Fail/Not verified/Not applicable --> | <!-- --> |
 
-Mode: [ ] **Preserve** (existing product — record what is actually in use) [ ] **Establish** (new product — small Proposed set until approved). See `skills/ui-ux-design/references/references-and-design-system.md`.
+## Handoff limits
 
-- **Feeling (one line):** <!-- e.g. calm, precise, trustworthy -->
-- **Reference products/sites (1–2, with what to borrow):** <!-- write here -->
-
-Do not invent a new visual language if one exists.
-
-| Token area | Source of truth | Notes |
-|------------|-----------------|-------|
-| Color | <!-- Figma / CSS vars / UNKNOWN --> | <!-- --> |
-| Type | <!-- --> | <!-- --> |
-| Spacing | <!-- --> | <!-- --> |
-| Radius / elevation | <!-- --> | <!-- --> |
-| Motion | <!-- --> | Prefer reduced-motion safe |
-
-**Integrity and craft:** [ ] No fabricated proof or inaccessible critical controls. Evaluate visual choices against approved brand and task requirements.
-
-## 6. Copy & content rules
-
-- **Voice / tone:** <!-- write here -->
-- **Language(s):** <!-- write here -->
-- **Forbidden phrases:** <!-- e.g. “Delightful experience” -->
-- **Error copy owner:** <!-- write here -->
-
-## 7. Accessibility requirements
-
-- [ ] Text contrast usable (aim WCAG AA)
-- [ ] Keyboard reachable primary actions
-- [ ] Focus visible
-- [ ] No hover-only critical actions
-- [ ] Touch targets ~44×44 where relevant
-- [ ] Meaning not by color alone
-- [ ] Icons: meaningful, consistent and accessibly labeled
-
-## 8. Responsive / breakpoints
-
-| Breakpoint | Layout notes |
-|------------|--------------|
-| Mobile | <!-- --> |
-| Tablet | <!-- --> |
-| Desktop | <!-- --> |
-
-## 9. Analytics events (names only)
-
-| Event name | When fired | Properties (no PII) |
-|------------|------------|---------------------|
-| <!-- --> | <!-- --> | <!-- --> |
-
-## 10. Open questions
-
-| Question | Blocks UI? | Status |
-|----------|------------|--------|
-| <!-- --> | Y/N | open |
-
-## 11. Ready check
-
-- [ ] Nav approved (no mystery items)
-- [ ] Screen inventory complete for P0
-- [ ] States checked per P0 screen
-- [ ] Tokens / design system pointed to (or UNKNOWN)
-- [ ] Every P0 screen has a one-sentence screen job
-- [ ] Ready for **ui-ux-design** skill — then **ux-critique** — then the build handoff pack
-
----
-
-*Template — docs/04-frontend-spec.md*
+<!-- Decisions reserved for the user, unverified implementation behavior and next stage. -->
+Exported project paths are rooted at the app. This document requires no pack-local skills/ tree.

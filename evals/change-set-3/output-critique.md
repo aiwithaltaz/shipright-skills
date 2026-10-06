@@ -2,7 +2,7 @@
 
 ## Critique summary
 
-- **Depth:** Focused improvement — equipment-hire handoff.
+- **Depth:** Focused improvement - equipment-hire handoff.
 - **Artifacts and evidence:** Implementation v1 and draft specification v2, as described in the supplied evidence packet. No source, screenshots, specification text, or test details were independently inspected.
 - **Stage and next step:** Assess implementation readiness for operational use; identify what the revised handoff must establish.
 - **Job:** Help staff find the customer, complete outstanding payment without restarting completed work, and handle cash according to the payer’s instruction.
@@ -20,7 +20,7 @@
 
 ## Findings
 
-### B1 — Blocker: Unsupported approved lookup routes
+### B1 - Blocker: Unsupported approved lookup routes
 
 - **Lenses:** Flow, clarity, states.
 - **Evidence:** v1 searches only by membership number; the owner requires approved name and phone fields too.
@@ -28,7 +28,7 @@
 - **Correction and retest:** Carry the exact approved fields into the handoff; retain membership lookup and add the approved alternatives. Exercise each supported route. Specify and verify usable no-match and ambiguous-match handling without inventing broader access or identity policy.
 - **Route:** Engineering; product-design only for any genuinely unresolved lookup policy.
 
-### B2 — Blocker: Returning staff must repeat the wizard
+### B2 - Blocker: Returning staff must repeat the wizard
 
 - **Lenses:** Flow, states.
 - **Evidence:** v1 restarts the full wizard to collect an outstanding balance.
@@ -36,7 +36,7 @@
 - **Correction and retest:** Open the existing hire at its unpaid step. Verify that prior valid work remains available and is not unnecessarily recollected; complete payment, then revisit the record to check that the completed payment is reflected correctly. Preserve any existing, still-valid new-hire coverage.
 - **Route:** Engineering.
 
-### B3 — Blocker: Surplus cash becomes an unauthorized donation
+### B3 - Blocker: Surplus cash becomes an unauthorized donation
 
 - **Lenses:** Trust, action effects, states.
 - **Evidence:** Entering $100 for an $80 hire automatically creates a $20 club donation.

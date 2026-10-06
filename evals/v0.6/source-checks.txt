@@ -1,0 +1,11 @@
+October 4, 2026. Invoked from outside the pack root.
+Command: python3 shipright-skills/evals/check_sources.py --self-test
+
+PASS: 4 restricted metadata records; stable 8/10/10/20 gates; 136 local references; phase/feedback/intake contracts; synchronized F1-F3 exports; project paths; versions; 14753 skill words within budget; original paths and historical bytes retained.
+KNOWN LIMIT: Historical app.js hash mismatch is disclosed; old runtime evidence does not verify packaged app.js.
+KNOWN LIMIT: F03 raw evidence retains a quoted em dash; the style miss is disclosed.
+PASS: 18 mutation self-tests rejected.
+Source integrity only. Behavior trials, client installs and runtime verification require separate evidence.
+
+Exit code: 0
+F04 bounded source diff: PASS. Requested removals only; other HTML/CSS unchanged apart from trailing newline.

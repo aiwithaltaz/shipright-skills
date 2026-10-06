@@ -1,186 +1,79 @@
 # ShipRight
 
-**Status: Public draft — v0.4.1-draft.** See [CHANGELOG.md](./CHANGELOG.md).
+**Version 0.6.1-draft**
+**Context before generate. Product before pixels.**
 
-**Tagline:** Context before generate. Product before pixels.
+ShipRight helps AI design and coding tools follow your product decisions before generating UI.
+It connects the user job, current phase, flows, screen layout and verification evidence.
+It does not guarantee perfect designs or replace user testing.
 
----
+## Start
 
-## One-line pitch
+1. Unzip this pack and keep the entire `shipright-skills/` folder together.
+2. Make that folder readable by your tool. Start with the matching skill path below.
+3. Supply your task, current phase and existing screen/docs when available. The skill asks only material missing questions.
 
-ShipRight takes you from a rough idea to build-ready product decisions, the way a senior product team would, then checks what your AI tool actually builds.
+| Task | Entry file |
+| --- | --- |
+| Frame an idea or define a flow | [product-design](skills/product-design/SKILL.md) |
+| Design a screen or apply exact visual feedback | [ui-ux-design](skills/ui-ux-design/SKILL.md) |
+| Review an existing artifact | [ux-critique](skills/ux-critique/SKILL.md) |
+| Check a launch or specific release item | [ship-check](skills/ship-check/SKILL.md) |
 
-It works with Claude Design, Figma, Cursor, Claude Code, Codex, Antigravity, VS Code agents and similar tools. ShipRight decides what to build and why, then writes the build inputs. Your tool draws the screens.
+Example for a local coding tool:
 
-**Anti-slop** is a capability (evidence-based checks for unsupported scope, misleading content and weak UX), not the product name.
+> Read shipright-skills/skills/ui-ux-design/SKILL.md and its required references. Our current phase is registration. Apply this feedback exactly: [changes]. Preserve the existing design system. Keep later ideas out of the UI.
 
-## How it works
+Use the actual unpacked path if different. Keep `_shared`, references, docs and personal-taste available at their original relative locations.
+A single pasted SKILL.md is incomplete; its fallback rules do not reproduce the full pack.
+Do not copy this pack's AGENTS.md into your app. It is for maintaining ShipRight itself.
 
-```text
-rough idea
-  → Frame product: outcome → differentiating system → core objects → journey → screen jobs   (product-design)
-  → optional opportunity research (only if you agree)
-  → flows + states for each screen job                                                     (product-design)
-  → screen specs + optional references + design-system direction                           (ui-ux-design)
-  → build handoff pack: rules block + one prompt per screen                                (ui-ux-design)
-  → your build tool makes the screens
-  → critique + screenshot check of what was built, max 2 fix passes                        (ux-critique)
-```
+## Tool setup
 
-You approve decisions along the way. Suggestions stay **Proposed** until you say yes. Silence is never approval.
+Claude Code, Cursor and Codex can read the local Markdown pack when it is available in their workspace.
+For automatic skill discovery, use the current client's supported registration method and point it to the canonical skill files.
+Avoid separate edited copies for each client. Symlink handling and sandbox access vary; confirm references resolve in your client.
+For a design tool without local file access, provide the whole pack through its supported file/project context mechanism.
+Claude Design ingestion and all native client installs have not been verified for this release. Manual file-based use is the portable route.
 
-## Right-sized work
+## What changes in 0.6
 
-ShipRight matches effort to the request:
+- Exact feedback becomes keep/remove/change/add instructions with acceptance checks.
+- Current-phase scope controls every visible element. Later ideas stay in notes, not UI.
+- Intake asks 0-5 questions total before starting; clear tasks need none.
+- Existing identity and components are preserved. Brand values, data and features are never invented.
+- Flow feedback uses the operator's language and hides routine system plumbing.
+- Layout, selection, pending work and accessibility have concrete checks.
+- Shorter skill entries load detailed references only when relevant.
+- 0.6.1-draft restores concrete icon, placement and question-card rules, and moves the IVC corrections into the example.
 
-| Depth | Example | What you get |
-| --- | --- | --- |
-| Quick fix | "Better label for this button" | A short answer. No research, no check tables |
-| Focused improvement | "This page feels cluttered; we launch this week" | Top problems, what to keep, what to ship now |
-| New surface | "Design the invite flow" | Flow, states, spec, checks at handoff |
-| New product | "I have a rough idea" | A one-page product frame first; research only if you agree |
+## Requested outputs
 
-## Related packs (pair with them; we don't bundle them)
+A small fix gets a small response. A full project can use PRODUCT.md, DESIGN.md and the templates under docs/.
+Other project documents normally live under docs/shipright/. Reuse existing equivalents.
+A request to write authorizes the requested files. Read before updating and preserve unrelated content.
+The pitch and full launch report are optional. Readiness never authorizes deployment, publication or payment.
 
-| Pack | Strong at | ShipRight's different job |
-| --- | --- | --- |
-| [Taste Skill](https://github.com/Leonxlnx/taste-skill) | Anti-slop frontend taste, including redesigns of existing projects | Decides *what* each screen must do before taste is applied |
-| [Hallmark](https://github.com/nutlope/hallmark) | Anti-slop UI rules | Same |
-| [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | Style and design-system suggestions by product type (Python CLI) | Preserves *your* decisions and evidence instead of a generated style |
-| [Impeccable](https://github.com/pbakaus/impeccable) | Product context file, design commands, deterministic detectors (CLI + hooks) | Multi-screen product frame, decision ownership, stage-bounded readiness; plain Markdown, no install tooling |
+## Evidence
 
-Taste packs make it look right. ShipRight makes it be right, then tells your tool exactly what to build. Use them together if you like. If you have Figma MCP or Playwright connected, ShipRight's build and verification steps can use them; they are optional.
+Reviews distinguish specifications, visible designs and exercised implementation.
+Checks use Pass, Fail, Not verified or Not applicable with a reason. A ticket does not resolve a failure.
 
-## Who this is for
-
-- Product designers, product owners, founders and vibe-coders using AI design and coding tools
-- Teams tired of generic "AI purple dashboard" output
-- Anyone who wants **context before generate**
-
-## Who this is not for
-
-- Pure backend / infra with no product surface
-- Brand illustration or logo art alone
-- Inventing fake user research or legal/medical advice
-
-## What's inside
-
-| Layer | Path | Job |
-| --- | --- | --- |
-| Templates | `docs/01`–`05` | Record context and decisions so AI doesn't invent them (optional; missing docs never block drafting) |
-| Product decisions | `skills/product-design/` | Frame product, flows, states, **decision gate** |
-| UI/UX craft | `skills/ui-ux-design/` | Screen specs, references, design-system direction, **build handoff pack**, **10-check pre-flight** |
-| Critique | `skills/ux-critique/` | Reviews, product audit, screenshot verification, **10-check audit** |
-| Shared intake | `skills/_shared/intake.md` | Depth + 0–5 questions + decision ownership |
-| Shared contract | `skills/_shared/operating-contract.md` | Decision status, evidence and readiness rules |
-| Personal taste | `personal-taste/` | Your optional preference files |
-| Catalog | `skills.md` | Which skill + prompts |
-| Map | `architecture.md` | How the pack is organized |
-| Maintainer rules | `AGENTS.md` | Rules for editing this pack (not for your app) |
-| Examples | `examples/` | Idea-to-screen-jobs walkthrough; fictional invite specification with honest reviews |
-
-## In practice
-
-[IVC 2026 registration prototype](examples/ivc-2026-registration/README.md) is a real project brief carried through the full workflow: product frame, flows and states, screen handoff, implementation, and bounded review. The example includes the original runnable fake-data source, screenshots and test evidence, followed by owner feedback, a revised brief and targeted skill improvements. The original demo does not yet implement the revised requirements. It does not claim production readiness or independent validation.
-
-## Quality checks
-
-| Skill | Checks | Used when |
-| --- | --- | --- |
-| product-design | 8 | Before a product handoff |
-| ui-ux-design | 10 | Before a decided build handoff |
-| ux-critique | 10 | Reviewing a specification, visual artifact or implementation |
-
-Statuses: **Pass**, **Fail**, **Not verified**, **Not applicable** (with a reason). A ticket, owner or fix plan never turns a failure into Pass. A failure on a stage-critical requirement is a **Blocker**. A screenshot cannot prove keyboard behavior, persistence or release readiness.
-
-Verdicts: **Re-decide**, **Fix first**, **Needs decision (D#)**, **Not established**, **Ready for [next stage]**. Readiness never authorizes deploy, publish or payment.
-
-## Decision ownership
-
-- **You decide** delegates only the named choice.
-- **Let me decide** leaves the choice with you.
-- Blank or skipped answers stay unresolved; silence is not approval.
-- Your latest explicit correction supersedes older decisions within its scope.
-
-See [shared intake](skills/_shared/intake.md) and the [operating contract](skills/_shared/operating-contract.md).
-
-## Install (copy-paste ready)
-
-Keep **one** canonical copy of this pack. Link the three skills **and** the `_shared` folder; the skills read `../_shared/`.
+Run source validation from the unpacked folder:
 
 ```bash
-PACK=/path/to/shipright-skills   # replace with your real path
-
-# --- Claude Code (personal) ---
-mkdir -p ~/.claude/skills
-for d in product-design ui-ux-design ux-critique _shared; do
-  ln -s "$PACK/skills/$d" ~/.claude/skills/$d
-done
-
-# --- Claude Code (project) ---
-mkdir -p .claude/skills
-for d in product-design ui-ux-design ux-critique _shared; do
-  ln -s "$PACK/skills/$d" .claude/skills/$d
-done
-
-# --- Cursor ---
-mkdir -p .cursor/skills
-for d in product-design ui-ux-design ux-critique _shared; do
-  ln -s "$PACK/skills/$d" .cursor/skills/$d
-done
-
-# --- Codex / Agent Skills ---
-mkdir -p .agents/skills
-for d in product-design ui-ux-design ux-critique _shared; do
-  ln -s "$PACK/skills/$d" .agents/skills/$d
-done
+python3 evals/check_sources.py
+python3 evals/check_sources.py --self-test
 ```
 
-If a tool can only take one skill folder (for example, a single-folder upload), each skill still carries a short inline copy of the core rules and will say that the shared files are missing. For full behavior, include `_shared`.
+See [0.6 evaluation evidence](evals/v0.6/results.md). Source checks and controlled trials do not establish cross-model or client performance.
+The [IVC example](examples/ivc-2026-registration/README.md) is historical and includes documented defects and evidence limits.
+Do not use its prototype or training candidates as current approved implementation guidance.
 
-Do **not** copy `AGENTS.md` into your app: it contains rules for maintaining this pack.
+## Optional preferences and map
 
-Exact paths can vary by tool version.
+[Altaz's profile](personal-taste/altaz.md) is active only when selected. It cannot change scope or override approved identity.
+[skills.md](skills.md) routes tasks. [architecture.md](architecture.md) explains file ownership and loading.
+[CHANGELOG.md](CHANGELOG.md) records the release. Names and original paths are retained.
 
-## Optional personal design preferences
-
-The pack includes [Altaz's personal-taste profile](personal-taste/altaz.md). To use it, say: “Use ShipRight with Altaz's personal-taste profile.” You can also record that choice in your existing project instructions for future sessions. It covers simple organized screens, restrained branding, discoverable help, useful summaries, progress and 8-point layout spacing when no approved system already exists.
-
-The profile stays optional for other users. Keep the file accessible when using a skills-only installation; see [selection and installation guidance](personal-taste/README.md). No IVC eligibility or registration policy is inherited.
-
-## Example prompts
-
-**1 — Start from a rough idea (product-design)**
-> Use the product-design skill. I have a rough idea: [one sentence]. No docs yet. Frame the product first.
-
-**2 — Improve an existing screen before launch (ux-critique)**
-> Use the ux-critique skill. Audit our [page] before launch. Approved and frozen: [colors, shapes, nav]. I want changes I can ship this week, not a redesign.
-
-**3 — Hand approved specs to a build tool (ui-ux-design)**
-> Use the ui-ux-design skill. Our frame and screen specs are approved in docs/. Make the build handoff pack for [Cursor / Claude Design / Figma].
-
-**4 — Check what got built (ux-critique)**
-> Use the ux-critique skill. Here are desktop and mobile screenshots of [screen] built from the pack. Compare them with the approved screen job and states.
-
-## Boundaries
-
-Follow the shared operating contract for decision authority and readiness.
-
-- **Do not** turn proposed scope, roles or screens into approved requirements
-- **Do not** turn a competitor's missing feature into required scope
-- **Do not** claim user research was done unless sources are listed
-- **Do not** use dark patterns (trick opt-outs, fake urgency, hidden costs)
-- **Do** ask only material unanswered questions and preserve who owns each choice
-- **Do** cover applicable empty / loading / error / success / permission-denied behavior
-- **Do** resolve critical failures and verify critical requirements before claiming readiness
-- **Do** write in simple, clear English
-
-## Version
-
-- Current: **v0.4.1-draft**
-- See [CHANGELOG.md](./CHANGELOG.md)
-
----
-
-*Public draft — ShipRight — © 2026 Altaz Lavji — MIT*
-*Context before generate. Product before pixels.*
+MIT license for the pack. Example brand assets retain their existing ownership notices.

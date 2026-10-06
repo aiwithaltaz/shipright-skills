@@ -18,7 +18,7 @@ Source: your brief. Stage: specification, version 1; no screenshot or implementa
 **Behavior**
 
 - Selecting a different person updates the form, heading, review summary and action context together. During loading, do not leave the previous person’s editable fields under the next person’s name.
-- Completed details remain selectable for review and editing. Preserve valid work for every other person. After an edit, recheck only the dependencies it affects—for example, an equipment change may require a different training check under existing rules. Do not restart the entire case or silently mark unrelated people incomplete.
+- Completed details remain selectable for review and editing. Preserve valid work for every other person. After an edit, recheck only the dependencies it affects - for example, an equipment change may require a different training check under existing rules. Do not restart the entire case or silently mark unrelated people incomplete.
 - Keep the existing save mechanism. Distinguish “Saving”, “Saved” and “Unsaved changes” truthfully; do not introduce autosave or claim persistence without support. On person switching or exit, preserve a draft if already supported; otherwise use the existing save/discard protection so edits cannot disappear silently.
 - Keep the existing back/exit route visible. One primary action should match the current approved task; review links and help remain secondary. No new wizard or forced linear progression is needed.
 

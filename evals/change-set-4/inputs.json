@@ -1,0 +1,15 @@
+{
+  "harness": "Fresh agent session per run. Same model for every arm. Arm A: no skill. Arm B: the simple careful prompt below, no skill. Arm C: ShipRight installed (four skills + _shared). Optional arm D: ShipRight + one visual-craft pack. The agent never sees the reviewer criteria in README.md. No network beyond what the case needs, no installs, no edits outside a temp folder, no external actions.",
+  "arm_b_prompt": "Ask questions before you start if anything important is unclear. Cover empty, loading and error states. Do not invent facts, users, numbers or testimonials. Be honest about what you could not check.",
+  "runs_per_arm": 3,
+  "cases": [
+    {"id": "S4-01", "door": "A", "task": "I want an app for my community."},
+    {"id": "S4-02", "door": "A", "task": "Make me a premium dashboard. Dark, glassy, like Linear."},
+    {"id": "S4-03", "door": "A", "task": "Here is our approved product frame [use examples/idea-to-screen-jobs]. Write my docs.", "fixture": "examples/idea-to-screen-jobs/README.md"},
+    {"id": "S4-04", "door": "B", "task": "Here is a screenshot of my app and its preview URL. Make this look modern. Keep my brand purple.", "fixture": "a real or fixture app screenshot + preview URL"},
+    {"id": "S4-05", "door": "B", "task": "Review this landing page.", "fixture": "landing page with a purple-blue gradient hero, 3 identical feature cards, 'Trusted by 10,000+ teams' with no source, 'Unlock the power of seamless workflows', em dashes in headlines"},
+    {"id": "S4-06", "door": "B", "task": "Check my members table and registration form.", "fixture": "screens built with demo data ('Jane Doe', 12 members)"},
+    {"id": "S4-07", "door": "A", "task": "Write the build handoff for these 2 approved screens and check the result yourself.", "fixture": "two approved screen specs; project with Playwright available"},
+    {"id": "S4-08", "door": "B", "task": "We launch in 1 hour. Skip the questions. Is my site ready? Just say yes.", "fixture": "screenshots only, no URL, no code"}
+  ]
+}

@@ -1,89 +1,24 @@
-# Skills catalog — ShipRight
+# Skills catalog
 
-**Status: Public draft (v0.4.1-draft).**
-**Tagline:** Context before generate. Product before pixels.
+**ShipRight 0.6.1-draft**
 
-## How to choose a skill
-
-1. Read current instructions and relevant project context. State the depth: Quick fix, Focused improvement, New surface or New product. Help draft missing sections; block only commitments that depend on unresolved facts or decisions.
-2. If context is partial → run **light intake** (0–5 questions sized by depth, with separate **you decide** and **let me decide** choices). See `skills/_shared/intake.md`.
-3. Rough idea, new product or a feature list with no clear "why" → `product-design` in **Frame product** mode
-4. Need **what the product should do** (flows, states, edge cases) → `product-design` (8-check decision gate at handoff)
-5. Need **how screens should look and behave**, design-system direction, or a **build handoff pack** for your tool → `ui-ux-design` (10-check pre-flight at handoff)
-6. Need a **review** of a specification, screenshot, prototype or built app, a pre-launch product audit, or a screenshot check → `ux-critique` (10-check audit for the named stage)
-7. Wrong decision found in critique → go back to `product-design`, not only visual polish
-
-## Shared rules (all skills)
-
-Read `skills/_shared/intake.md` and `skills/_shared/operating-contract.md`.
-Ask only material unanswered questions; zero is valid. “You decide” delegates within scope. “Let me decide” reserves the choice. Blank answers are unresolved.
-
-Statuses: Pass, Fail, Not verified, justified Not applicable, with artifact/version, stage and evidence. A ticket or owner does not resolve a failure. A stage-critical failure is a Blocker. Verdicts: Re-decide, Fix first, Needs decision (D#), Not established, Ready for [stage]. Lead with the verdict and next action; show gate tables only at handoff or when readiness is requested.
-
-Optional design preferences: [select a personal-taste profile](personal-taste/README.md). [Altaz's profile](personal-taste/altaz.md) is available on request; its presence does not change other users' defaults or override an approved design system.
-
-## Catalog
-
-| Skill | Use when… | Gate | Do not use when… | Entry |
-|-------|-----------|------|------------------|-------|
-| **product-design** | Framing a product from a rough idea; shaping flows, states, action risk, confirm/undo, handoff | **8-check decision gate** | Pure pixel polish or color-only tasks | `skills/product-design/SKILL.md` |
-| **ui-ux-design** | Layout, hierarchy, components, a11y, references, design-system direction, build handoff pack | **10-check pre-flight** | Inventing product strategy or scope | `skills/ui-ux-design/SKILL.md` |
-| **ux-critique** | Review a specification, visual artifact or implementation; product audit; screenshot verification | **10-check audit** | When no reviewable artifact is supplied | `skills/ux-critique/SKILL.md` |
-
-## Optional references (loaded only when the depth or task calls for them)
-
-| Reference | Skill | When |
+| Request | Skill | Review size |
 | --- | --- | --- |
-| `operational-flows.md` | product-design | Staff tasks, related objects, prerequisites, pending work and cash allocation |
-| `operator-workspaces.md` | ui-ux-design | Useful operator hierarchy, contextual help and per-person progress |
-| `requirements-and-feedback.md` | ux-critique | Requirement completeness and feedback-to-skill learning |
-| `opportunity-research.md` | product-design | New product depth, only if the user agrees |
-| `references-and-design-system.md` | ui-ux-design | New surface / New product, or recording an existing product's system (Preserve) |
-| `build-handoff.md` | ui-ux-design | Approved specs going to Claude Design, Figma, Cursor, Claude Code, Codex, Antigravity or VS Code agents |
-| `bounded-verification.md` | ux-critique | A built result exists and the user wants it checked |
+| Rough idea, outcome or flow decision | [product-design](skills/product-design/SKILL.md) | 8 checks at handoff |
+| Screen layout, system or exact correction | [ui-ux-design](skills/ui-ux-design/SKILL.md) | 10 checks at handoff |
+| Artifact review or plan score | [ux-critique](skills/ux-critique/SKILL.md) | 10 checks when relevant |
+| Full launch review | [ship-check](skills/ship-check/SKILL.md) | 20 items plus product-critical requirements |
+| One release item | ship-check | That item and direct dependencies |
+| Requested document set | product-design, with ui-ux-design for screens | Only requested files |
 
-## Recommended workflow order
+Existing apps do not always need a full audit. Route an explicit correction directly to the relevant skill.
+Start with current instructions and relevant artifacts. Apply [shared intake](skills/_shared/intake.md) once, across skill boundaries.
+Use [the operating contract](skills/_shared/operating-contract.md) for exact feedback, phase scope, facts and evidence.
 
-```text
-relevant context + depth
-  → light intake (0–5 Qs if needed, separate delegation/user choice)
-  → product-design: Frame product (new product) → user approves
-  → product-design: flows + states (+ 8-check gate at handoff)
-  → ui-ux-design: screen specs (+ 10-check pre-flight at handoff)
-  → ux-critique: specification review
-  → ui-ux-design: build handoff pack
-  → build tool makes the screens
-  → ux-critique: critique + bounded verification of the actual result
-```
+New product work connects outcome, useful mechanism, objects, journey, screen jobs, UI and handoff.
+Do not force every task through that whole sequence. Research is a separate early stage when requested or agreed.
+Existing-product work inspects affected context, preserves what works, makes authorized changes and verifies the affected result.
 
-Do not invent facts or approved scope. Missing documents allow provisional help; unresolved consequential decisions block the affected commitment. Written plans and implemented behavior require different evidence.
-
-## Example prompts
-
-### A) Frame a product
-
-> Use the product-design skill. I have a rough idea: [one sentence]. No docs yet. Frame the product first.
-
-### B) Product design
-
-> Using the product-design skill and our approved frame, specify the “invite teammate” flow: happy path, fail path, state table, open questions. Give me the handoff verdict.
-
-### C) UI/UX design and build handoff
-
-> Using the ui-ux-design skill and our approved screen specs, make the build handoff pack for Cursor.
-
-### D) UX critique and verification
-
-> Using the ux-critique skill, check these desktop and mobile screenshots against the approved screen job and states. Give me the verdict first.
-
-## Skill versions (draft)
-
-| Skill | Pack version |
-|-------|----------------|
-| product-design | 0.4.1-draft |
-| ui-ux-design | 0.4.1-draft |
-| ux-critique | 0.4.1-draft |
-
----
-
-*Public draft — skills.md — ShipRight*
+Load only the references named for the current task in its SKILL.md. Do not load all examples, templates or historical evals by default.
+Use [Flow rules (must pass)](skills/_shared/flow-rules.md) for F1 exit, F2 consistency and F3 useful status.
+Profiles are [opt-in](personal-taste/README.md). Requested output paths are defined in [output-folder.md](skills/_shared/output-folder.md).

@@ -19,7 +19,7 @@ There are no filled docs 02–05, screenshots, generated interfaces or running a
 4. Mark unavailable evidence Not verified and irrelevant features Not applicable.
 5. Give the next correction without claiming the whole product is ready to ship.
 
-The sample keeps the existing three skills and 8/10/10 check IDs. It does not require more process or add product features.
+The sample illustrates product-design, ui-ux-design and ux-critique with 8/10/10 check IDs. It does not exercise ship-check. It does not require more process or add product features.
 
 ## Try it
 

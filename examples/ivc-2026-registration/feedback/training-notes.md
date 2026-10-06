@@ -1,5 +1,8 @@
 # Training candidates and evaluation boundaries
 
+**0.6 correction:** Candidate records 2, 7 and 8 were revised to remove approval claims absent from their own input.
+These remain authored, untrained examples needing human review. They are not current project requirements or held-out evals.
+
 The owner asked for material that could later help fine-tune a model using a Soup GitHub project. Its exact repository is still needed. Do not guess a package or claim these records are import-ready for an unknown tool.
 
 ## Files and format

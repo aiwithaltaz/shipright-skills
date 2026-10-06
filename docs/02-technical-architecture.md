@@ -1,114 +1,37 @@
-# 02 — Technical Architecture Document
+# 02 - Technical architecture
 
-**Status: Template (ShipRight v0.4.1-draft).**
-**Pack:** ShipRight  
-**How to use:** Describe systems and constraints so AI does not invent APIs, stacks, or data shapes. Product designers can fill the non-code sections; eng should review stack and data flow.
+**Status: Template (ShipRight 0.6.1-draft).**
+**Project path:** `docs/shipright/02-technical-architecture.md`
 
-**Product / feature name:** <!-- write here -->  
-**Author:** <!-- write here -->  
-**Date:** <!-- write here -->  
-**Version:** <!-- write here -->  
+**Version/date:** <!-- -->  **Sources and approval:** <!-- -->
 
----
 
-## 1. Purpose of this document
+Record known systems and constraints. Do not choose a stack, API, provider or data shape without authority.
 
-One paragraph: what system this feature sits in, and what this doc decides.
+## Systems and stack
 
-<!-- write here -->
+| Component | Responsibility | Chosen technology or Unknown | Source / owner |
+| --- | --- | --- | --- |
+| <!-- --> | <!-- --> | <!-- --> | <!-- --> |
 
-## 2. Systems map
+## Data and integrations
 
-List the main pieces (boxes). Keep it simple.
+| Object / system | Read/write direction | Approved fields or Unknown | Access boundary | Failure behavior |
+| --- | --- | --- | --- | --- |
+| <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> |
 
-| System / service | Responsibility | Owner |
-|------------------|----------------|-------|
-| <!-- e.g. Web app --> | <!-- --> | <!-- --> |
-| <!-- e.g. API --> | <!-- --> | <!-- --> |
-| <!-- e.g. Auth provider --> | <!-- --> | <!-- --> |
-| <!-- e.g. Email --> | <!-- --> | <!-- --> |
+Describe entry, request, processing, persistence and returned result for the current-phase job.
+Separate observed capabilities from proposals. UI copy should expose useful consequences, not internal architecture.
 
-**Simple diagram (words or ASCII):**
+## Constraints
 
-```text
-<!-- example:
-[Browser] → [Web app] → [API] → [DB]
-                ↓
-             [Auth]
--->
-```
+<!-- Supported devices, performance, scale, network/offline limits, environments and relevant security constraints. -->
 
-## 3. Stack choices (decided or UNKNOWN)
+## Dependencies and open decisions
 
-Only list what is already chosen. Mark unknowns. Do not let AI pick a random stack.
+| Unknown / decision | Blocks what | Owner | Next evidence |
+| --- | --- | --- | --- |
+| <!-- --> | <!-- --> | <!-- --> | <!-- --> |
 
-| Layer | Choice | Notes |
-|-------|--------|-------|
-| Client | <!-- e.g. React / Next --> | <!-- --> |
-| API | <!-- --> | <!-- --> |
-| Data store | <!-- --> | <!-- --> |
-| Auth | <!-- --> | <!-- --> |
-| Hosting | <!-- --> | <!-- --> |
-| Other | <!-- --> | <!-- --> |
-
-## 4. Data flow (for this feature)
-
-Describe the happy-path data movement in plain English.
-
-1. User does: <!-- write here -->
-2. Client sends: <!-- write here -->
-3. Server does: <!-- write here -->
-4. Data stored / returned: <!-- write here -->
-5. User sees: <!-- write here -->
-
-### Main entities (names + key fields only)
-
-| Entity | Key fields | Notes |
-|--------|------------|-------|
-| <!-- --> | <!-- --> | <!-- --> |
-
-## 5. Integrations
-
-| Integration | Direction | Why needed | Failure behavior |
-|-------------|-----------|------------|------------------|
-| <!-- e.g. Stripe --> | in / out / both | <!-- --> | <!-- --> |
-
-## 6. Constraints
-
-- **Performance:** <!-- write here -->
-- **Scale (users / data):** <!-- write here -->
-- **Offline / latency:** <!-- write here -->
-- **Browser / device support:** <!-- write here -->
-- **Compliance hints (point to doc 03):** <!-- write here -->
-
-## 7. Environments
-
-| Env | Purpose | Notes |
-|-----|---------|-------|
-| Local | <!-- --> | <!-- --> |
-| Staging | <!-- --> | <!-- --> |
-| Production | <!-- --> | <!-- --> |
-
-## 8. Out of scope for architecture
-
-What eng will not build now:
-
-- [ ] <!-- write here -->
-
-## 9. Open technical questions
-
-| Question | Needed by | Status |
-|----------|-----------|--------|
-| <!-- --> | <!-- --> | open |
-
-## 10. Ready check
-
-- [ ] Systems map exists
-- [ ] Stack is decided or marked UNKNOWN
-- [ ] Data flow for the feature is written
-- [ ] Integrations and failure behavior listed
-- [ ] Ready to inform `product-design` and `04` Frontend Spec
-
----
-
-*Template — docs/02-technical-architecture.md*
+Use a short diagram only when it clarifies relationships. A table can be enough.
+Keep later-phase architecture as notes. Unknowns are honest gaps, not proof the system is ready.

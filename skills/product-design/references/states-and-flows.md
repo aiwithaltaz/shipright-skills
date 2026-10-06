@@ -1,96 +1,48 @@
-# States and flows — reference
+# States and flows
 
-**Status: DRAFT.**  
-**Pack:** ShipRight. Supports the **8-check decision gate**. Load when specifying states or shaping flows. Used by `product-design`.
+Model reachable behavior within current-phase scope. Do not create features to fill rows.
 
-## Why states matter
+| State | Behavior to define |
+| --- | --- |
+| Empty | What belongs here and an approved next action, if any. A read-only list need not offer Create. |
+| Loading | What is loading, without fake final values or duplicate submission. |
+| Populated/success | The actual content structure and permitted next task. |
+| Error | What failed, what changed, preserved input and a real recovery action. |
+| Permission denied | Explain the limit without exposing protected data; provide an existing exit. |
+| Partial | Keep working sections usable; isolate the failure. |
+| No matches | Explain the search/filter result and allow editing or clearing existing criteria. |
+| Background work | A running system job with truthful, task-relevant feedback. |
+| Saved unfinished work | A draft waiting for a person; show remaining work and approved resume/edit/clear behavior. |
 
-AI slop usually designs the **happy path only**. Real products need every reachable state. If a state is missing, eng and UI generators invent it badly.
+Pending human work is not a loading spinner. Saved, valid, eligible, paid and complete are separate facts.
+Only include applicable states. An empty state does not authorize creation, import or a new help destination.
 
-## Core state list
+## Flow shape
 
-| State | Meaning | Typical UI need |
-|-------|---------|-----------------|
-| **Empty** | User has never created data here | Explanation + one clear first action |
-| **Loading** | Waiting on network/work | Progress or skeleton; do not fake final data |
-| **Success / populated** | Happy path content | Primary content + primary action |
-| **Error** | Request or validation failed | What went wrong + how to fix / retry |
-| **Permission denied** | AuthZ blocked | Clear message; path to request access or go back |
-| **Partial data** | Some sections loaded, some failed | Show what works; isolate failure |
-| **Filtered empty** | Data exists but filters/search hide it | “No results” + clear filters — not the same as Empty |
+Specify entry, necessary steps, decision points, success destination, back/cancel effects and failure recovery.
+Use this compact table where helpful:
 
-## Empty vs filtered empty
+| Trigger/current state | User sees | System effect | Permitted action | Saved work / exit |
+| --- | --- | --- | --- | --- |
 
-| | True empty | Filtered empty |
-|--|------------|----------------|
-| Cause | No records yet | Filters/search too narrow |
-| Copy | “Create your first …” | “No results for these filters” |
-| Primary action | Create / import | Clear filters / edit search |
-| Secondary | Learn / docs | Adjust filters |
+## Flow rules (must pass)
 
-## Flow shape (simple)
+Read [flow-rules.md](../../_shared/flow-rules.md): F1 exit route, F2 consistency and F3 useful system status.
+A screen exit is separate from cancelling a submitted transaction. Do not trap users in legal or payment steps.
+Specify what happens after leaving, including an unknown payment result, before allowing a duplicate attempt.
 
-1. **Entry** — how the user arrives (nav, deep link, CTA)  
-2. **Steps** — only steps required by the job  
-3. **Decision points** — branches (permission, validation, payment, etc.)  
-4. **Exit** — success destination, cancel destination  
-5. **Recovery** — error → retry or abandon  
+## Consequences
 
-### Happy path template
+Confirm important irreversible actions with the object and consequence. Use supported undo for reversible actions.
+For bulk effects, show the affected scope and count. Do not invent undo where the system cannot provide it.
+For clear/reset/remove, distinguish fields, selected rows, visible cards, drafts and permanent records.
+Ambiguous destructive behavior stays unresolved while independent work continues.
 
-1. User …  
-2. System …  
-3. User …  
-4. System confirms …  
-5. User lands on …  
+## Forms and async work
 
-### Fail path template
-
-1. Failure happens at step …  
-2. User sees …  
-3. User can … (retry / edit / cancel / contact)  
-4. System does / does not change data …
-
-## Destructive actions
-
-| Situation | Prefer | Avoid |
-|-----------|--------|-------|
-| Irreversible delete of important data | Modal confirm with clear consequence | Accidental one-click delete |
-| Reversible delete | Undo window | Extra friction for low risk |
-| Bulk destructive | Confirm + summary of count | Silent bulk delete |
-
-## Mini examples
-
-### SaaS members table
-
-| State | Copy direction | Action |
-|-------|----------------|--------|
-| Empty | “No teammates yet” | Invite teammate |
-| Filtered empty | “No teammates match this filter” | Clear filter |
-| Error | “Couldn’t load teammates” | Retry |
-| Denied | “You don’t have access to members” | Ask admin / back |
-
-### Form submit
-
-| State | Behavior |
-|-------|----------|
-| Loading | Disable double-submit; show progress on button or form |
-| Field error | Inline next to field; keep user input |
-| Server error | Page or form-level message + retry |
-| Success | Confirm + next step from PRD (not a random dashboard) |
-
-### Checkout-like step
-
-- Always define: payment fail, validation fail, session expired, success receipt  
-- Do not invent upsell steps unless PRD includes them  
-
-## What not to invent
-
-- Extra onboarding steps “for engagement”
-- Fake social proof counts
-- Roles not in doc 03
-- Screens not in doc 04
-
----
-
-*DRAFT — product-design/references/states-and-flows.md — ShipRight*
+Keep values after a recoverable failure when the system supports it. Describe lost values honestly if it cannot.
+Use inline field errors; place broader errors at the form or affected section.
+Prevent duplicate submission. A failed response does not prove a payment or send failed at its destination.
+Use a real status lookup/recovery path when available; otherwise mark the missing capability, never claim success.
+For autosave, expose unsaved changes that matter. For upload/generation, show actual work and supported cancellation.
+Do not invent notifications, retries, background persistence or consent.

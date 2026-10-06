@@ -1,4 +1,4 @@
-# Change set 3 — operational flow and feedback trials
+# Change set 3 - operational flow and feedback trials
 
 Three fresh-context agents each received one realistic equipment-hire task and one updated ShipRight skill. They used the same current Codex model as the builder, with no model switch or paid model API call. The trial agents did not receive IVC examples, prior conclusions, the training corpus or an expected answer. They were instructed to read only the skill and needed references and to write into isolated temporary files. No network, installs, implementation or external changes were permitted.
 

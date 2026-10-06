@@ -1,204 +1,90 @@
 ---
 name: ux-critique
-description: "Use this when reviewing a product specification, screen, prototype or implementation for task clarity, states, trust, accessibility and decision drift, auditing an existing product before launch, or checking what a build tool actually built (screenshots, links, running apps). Distinguish what is specified, visible and verified. Part of ShipRight."
+description: "Use this when reviewing a plan, specification, screenshot or running interface for task clarity, scope drift, flows, layout, states, accessibility or exact feedback compliance. Audit existing apps within the requested scope and distinguish visible from verified behavior. Part of ShipRight."
 ---
 
-# UX Critique Skill — ShipRight
+# UX critique
 
-**Status: Public draft.**
-**Pack version:** 0.4.1-draft
-**Pack name:** **ShipRight** (locked)  
-**Tagline:** Context before generate. Product before pixels.
+**Pack version:** 0.6.1-draft
+**Context before generate. Product before pixels.**
 
-## 1. Purpose
-
-Review specifications, screens and flows for actionable UX findings. Use the existing **10-gate audit** with stage-appropriate evidence; only implementation evidence can support implementation readiness.
-
-### IS
-
-- Structured critique with severity
-- Slop detection (generic dashboards, random gradients, happy-path-only, purple SaaS tells)
-- Rewrite asks tied to docs when docs exist
-- Countable ship gate — not vibes
-
-### IS NOT
-
-- A substitute for a missing PRD
-- Fake personas or invented interview quotes
-- Full visual redesign (hand to **ui-ux-design** after decisions are sound)
-- Product strategy from scratch (hand to **product-design**)
-- A huge questionnaire
+Review a real artifact and report evidence-backed corrections. Do not invent users, interview quotes or predicted conversion gains.
+With no artifact, ask for the smallest relevant input. A specification is reviewable without a running app.
 
 ## INTAKE
 
-Apply [the shared operating contract](../_shared/operating-contract.md) for decision ownership, missing context, evidence statuses and readiness. Use [shared intake](../_shared/intake.md); do not repeat questions already answered.
+Read [shared intake](../_shared/intake.md) and [the operating contract](../_shared/operating-contract.md) once per task.
+Use 0-5 questions total before starting. Current instructions and the current phase control scope.
 
-Identify the artifact/version, review stage, user job and requested next step. Ask only when one of these is materially unclear; do not default a specification review to release certification.
+**Core rules if `../_shared` is unreachable:** say the pack is incomplete. Honor exact feedback and current-phase scope.
+Never invent facts, brand values, data or features. You decide delegates the named choice; Let me decide reserves it.
+Silence is not approval. Use Pass, Fail, Not verified or justified Not applicable with evidence.
+A ticket cannot turn Fail into Pass. A critical failure blocks readiness. Screenshots cannot prove runtime behavior.
+Continue supported work; do not claim a full ShipRight check without its required references.
 
-**You decide** delegates only the named choice. **Let me decide** reserves it for the user. Blank answers stay unresolved; continue independent work.
+## Review sequence
 
-**Core rules if `../_shared` is unreachable (say so):** You decide = only the named choice. Let me decide = the user keeps it. Blank or silence = unresolved, never approval. Statuses: Pass · Fail · Not verified · Not applicable (with reason). A ticket, owner or plan never turns Fail into Pass; a stage-critical Fail is a Blocker. Spec ≠ screenshot ≠ implementation evidence. Readiness never authorizes deploy, publish or payment.
+1. Name scope, artifact/version, evidence stage and intended next step. Identify critical requirements before scoring.
+2. Compare with current instructions, current-phase scope and approved decisions.
+3. Check the user job, action hierarchy, exits, consistency, states, truthfulness and accessibility.
+4. Keep actual defects separate from preferences and missing evidence. Explain the user impact of each finding.
+5. Give a concrete correction and retest condition. Record what works and should stay.
+6. Check exact feedback item by item; do not substitute a redesign for requested corrections.
 
-## 2. When to use / When NOT
+Use [requirements-and-feedback.md](references/requirements-and-feedback.md) for stakeholder changes or multi-step flows.
+Use [existing-app.md](references/existing-app.md) for existing products. A review is read-only; already authorized fixes need no repeated approval.
+Use [bounded-verification.md](references/bounded-verification.md) for available runtime evidence.
 
-**Use when** a written specification, mock, generated output, or coded UI exists and someone asks: review, critique, audit, find issues, is this shippable? Also use when a build tool has produced screens from a ShipRight build handoff pack: compare the result with the approved screen jobs and states.
+## Flow rules (must pass)
 
-**Do NOT use when** there is no artifact to review — request the smallest relevant specification, screen or result. Use **product-design** if the user needs help shaping it. Do not use as pure brand illustration feedback.
+Read [flow-rules.md](../_shared/flow-rules.md): **F1 exit route, F2 consistency, F3 useful system status**.
+Inspect affected rules even for Quick fixes. Compare system messages with what the operator needs to know.
+Selection is not focus, an error or unread work. Check icons and placement against the existing design system.
 
-## 3. Review evidence
+## Count it
 
-Name Specification, Visual artifact or Implementation in the review header, with the exact artifact/version and requested next stage. A written flow is a reviewable specification. It is not a rendered or tested interface.
+Use counts only to support a relevant finding or full screen review.
+[slop-tells.md](references/slop-tells.md) helps identify competing actions, duplicate identities and unsupported widgets.
+Do not output ten empty counting rows for a label edit. Numerical quotas do not decide visual quality.
 
-| Available input | Action |
-| --- | --- |
-| Artifact + relevant context | Evaluate against current decisions; identify unapproved deviations |
-| Artifact + incomplete context | Review supported properties; mark affected product conclusions unknown rather than inventing scope |
-| No artifact | Ask for the smallest relevant spec, screen or result; do not claim to have reviewed an imaginary attachment |
+## Detect
 
-For operational-flow reviews or stakeholder feedback, use [requirements-and-feedback.md](references/requirements-and-feedback.md). Check whether the specification covers the real task as well as whether the implementation matches it.
+When copy causes a problem, quote that line, name the issue and suggest a grounded correction.
+Use [UI copy](../ui-ux-design/references/ui-copy.md). Do not guess whether AI wrote it.
+Familiar labels such as Search and Cancel may be generic because they are clear.
 
-Read the shared contract before scoring. Missing evidence is Not verified, not an automatic Fail or Pass.
+## 4b. Plan review
 
-## 4. Critique lenses
+Only when requested, use [plan-review.md](references/plan-review.md) to score Product, Design and Build.
+A low score is not a reason for another intake round. Ask only a material unresolved decision within the shared limit.
 
-Work through each lens. Skip a lens only if truly N/A and say why.
+## Findings and output
 
-1. **Clarity** — Can a new user tell what this screen is for in 5 seconds?  
-2. **Flow** — Are steps necessary? Dead ends? Missing back/cancel?  
-3. **Hierarchy** — Is the primary action obvious? Is noise competing?  
-4. **States** — Empty / loading / error / success / denied present and distinct?  
-5. **Trust** — Honest copy? Scary permissions explained? No dark patterns?  
-6. **Accessibility** — Contrast, focus, keyboard, not color-only, touch size?  
-7. **AI slop tells** — See `references/slop-tells.md`; distinguish integrity failures from contextual visual preferences
+Use [severity-rubric.md](references/severity-rubric.md): Blocker for critical failure, Major for substantial noncritical friction, Polish for small craft issues.
+Each finding needs location, evidence, impact, severity, correction and a retest condition.
+A missing requirement can be a specification Fail; an unavailable runtime check is Not verified.
+A ticket or owner never resolves the failure. Never call a critical failure Major.
 
-## 5. Severity rubric
+Lead with the verdict and next action. Keep narrow reviews short.
+For a full review, add the highest-impact findings, what to preserve, evidence limits and the relevant audit rows.
+Review the scope requested, even when it spans several screens. Do not impose one screen per session.
 
-Use `references/severity-rubric.md`. Short form:
+## Audit: 10 checks
 
-| Severity | Meaning | Ship rule |
-|----------|---------|-----------|
-| **Blocker** | Stops the job, causes harm, major access failure, **or fails any stage-critical requirement** | Do not pass this stage |
-| **Major** | Noncritical: substantial friction with a usable, understood workaround | Record impact and explicit disposition |
-| **Polish** | Visual/copy nits that do not block the job | Backlog OK |
-
-## 6. Output format
-
-Lead with the verdict and next action (120 words or fewer). Then findings, then the audit table. At Quick fix depth, skip the table.
-
-**Product audit (optional; existing product, Focused improvement depth).** When the user wants an existing product improved or ready for launch, put this block above the findings:
-
-```text
-## Product audit — [scope]
-Top 3 problems (by user impact, not fix difficulty):
-1. …
-What's working (keep it):
-- …
-Root cause behind several problems:
-- …
-Patch or rethink: [one honest call + why]
-```
-
-Audit one lane per session (one flow, one screen, or one dimension). Do not reopen approved decisions; route a wrong decision to product-design.
-
-```text
-## Critique summary
-- Artifact/version:
-- Stage and requested next step:
-- Critical requirements for this stage:
-- Intake goal:
-- Docs available: yes/partial/no (list gaps)
-- Verdict: Re-decide / Fix first / Needs decision (D#) / Not established / Ready for [stage]
-- Next action (one line):
-
-## Findings
-### B1 — [Blocker] Title
-- Lens:
-- Evidence:
-- Impact:
-- Rewrite ask:
-- Route: product-design / ui-ux-design / eng / copy
-
-### M1 — [Major] ...
-### P1 — [Polish] ...
-
-## AI-slop tells spotted
-- ...
-
-## What looks good
-- (honest; 2–5 bullets)
-
-## 10-gate ship audit
-| # | Gate | Status | Evidence / next action |
-|---|------|--------|------------------------|
-| 1 | … | | |
-
-## Next steps
-1. ...
-```
-
-### Rewrite ask quality
-
-Bad: “Make it nicer.”  
-Good: “Replace gradient hero with brand token background from doc 04; keep one primary CTA — Invite teammate.”
-
-## 7. What never to invent
-
-- Fake user quotes (“Users said…”) without sources  
-- Fake metrics (“this will lift conversion 20%”)  
-- New features to “engage” users not in PRD  
-- Legal conclusions  
-
-If research is needed, say **unknown — needs research**, do not fabricate.
-
-## 8. Routing
-
-| Finding type | Route to |
-|--------------|----------|
-| Wrong flow / wrong decision / missing job | **product-design** |
-| Layout, hierarchy, visual slop, a11y craft, dials/pre-flight | **ui-ux-design** |
-| Permissions / roles wrong | doc **03** + product-design |
-| Ticket / AC update | doc **05** |
-
-## 9. Audit (10 checks; evidence for the named stage)
-
-Run the table when a readiness claim is requested or at a handoff. For a Quick fix, give a one-line readiness note instead.
-
-Use the shared contract's four statuses and readiness rule. Define critical requirements before scoring. Every relevant check needs evidence and next action tied to the artifact/version in the header. A finding, owner or ticket never substitutes for meeting the requirement. Defer only noncritical work, with explicit disposition; the check remains Fail or Not verified as appropriate.
+Use at handoff or when readiness is requested. Use four statuses, evidence and next action per relevant row.
 
 | # | Gate | Criterion |
 | --- | --- | --- |
-| 1 | Artifact | A real specification, screen or implementation is identified, not an assumed attachment |
-| 2 | Context honesty | Claims are supported by available context; missing facts and scope limits are explicit |
-| 3 | Job clarity | The artifact communicates its job; label heuristic judgment rather than claiming user testing |
-| 4 | Action hierarchy | Primary/contextual actions serve the user's task and current product decisions |
-| 5 | States | Required behavior and relevant entry/return variants are traced to stage-appropriate evidence; selected tests do not prove omitted scenarios; missing required behavior remains Fail when ticketed |
-| 6 | Blockers | No unresolved Blocker in the reviewed scope; lack of evidence does not prove none exists |
-| 7 | Craft | Specific hierarchy/content/interaction defects are addressed; visual evidence unavailable means Not verified |
-| 8 | Trust | Cost, permissions, action effects and evidence are honest; taste cannot waive them |
-| 9 | Accessibility | Evidence fits this stage; screenshots cannot verify keyboard behavior or implementation compliance |
-| 10 | Rewrite path | Findings have concrete corrections and retest conditions; this does not resolve their underlying failures |
+| 1 | Artifact | A real artifact and version are identified. |
+| 2 | Context | Claims match current instructions and current-phase scope; unknowns stay explicit. |
+| 3 | Job clarity | The artifact communicates its job; heuristics are not presented as user testing. |
+| 4 | Hierarchy | Actions and content serve the task without unsupported UI. |
+| 5 | States | Required entry, return, exit and status behavior is supported by stage-appropriate evidence (F1, F3). |
+| 6 | Blockers | No critical defect remains; missing evidence cannot prove absence. |
+| 7 | Craft | Layout, content, component patterns and placement support the task (F2). |
+| 8 | Trust | Costs, permissions, consequences and data claims are honest. |
+| 9 | Accessibility | Evidence covers relevant criteria for this stage, with runtime limits stated. |
+| 10 | Correction | Exact feedback is covered; fixes and retest conditions are concrete. |
 
-**Verdict:** Re-decide the affected premise; otherwise Fix first for a critical failure or open Blocker; otherwise Needs decision (D#) when the only open items are the user's own decisions; otherwise Not established for an unverified critical requirement; otherwise Ready for the named next stage with explicit noncritical dispositions. This applies to all ten checks. Readiness does not grant external-action permission.
-
-## 10. Quality gate (skill completeness)
-
-- [ ] Intake asked only material unanswered questions, at most five per round
-- [ ] Review stage, artifact/version and context limits stated
-- [ ] Each finding has severity + rewrite ask  
-- [ ] No fake quotes  
-- [ ] Slop lens considered  
-- [ ] **10-gate audit** uses honest statuses and evidence
-- [ ] Blockers clearly called out  
-
-## 11. References
-
-- [Shared intake](../_shared/intake.md)
-- [Operating contract](../_shared/operating-contract.md)
-- [Requirements and feedback](references/requirements-and-feedback.md) (operational flows or stakeholder corrections)
-- `references/slop-tells.md`
-- `references/severity-rubric.md`
-- `references/bounded-verification.md` (optional; implementation stage — screenshot and fix loop)
-
----
-
-*Public draft — skills/ux-critique/SKILL.md — ShipRight 0.4.1-draft*
+Use the shared readiness rule. For launch readiness, use [ship-check](../ship-check/SKILL.md).
+Do not launch a full release audit for a focused spacing or copy request.

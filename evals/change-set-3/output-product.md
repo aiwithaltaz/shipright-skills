@@ -2,7 +2,7 @@
 
 Keep the approved staff-operated desk and shape it around one working hire record: identified people, equipment assigned to each user, training evidence, item fees and payments. Offer a separate **Pay outstanding balance** entry. The flow below is a design proposal within your approved scope; the consequential questions concern identity, training and financial policy, not approval of the outcome again.
 
-**Job:** A desk operator identifies the customer and each equipment user, verifies the required training, records item charges and cash accurately, and releases only eligible equipment—or settles an existing balance on a later visit.
+**Job:** A desk operator identifies the customer and each equipment user, verifies the required training, records item charges and cash accurately, and releases only eligible equipment - or settles an existing balance on a later visit.
 
 Approved requirements are those in your brief. Interaction and recovery choices below are proposed. No implementation or existing system capabilities have been verified. Online booking, marketing and payment services remain outside scope.
 
@@ -52,9 +52,9 @@ A payment-only visit does not require fresh training or equipment selection. If 
 
 ### Consequential questions
 
-- **D1 — Identity and records, unresolved; desk policy owner:** What identity check is required when membership number is absent or matches are ambiguous, and may operators create a genuinely missing person record? This determines lookup completion and the no-record recovery path.
-- **D2 — Training and release, unresolved; training/desk policy owner:** What training and recency rules apply to each equipment type, which supervisors may confirm it, and what evidence must be retained? May eligible members of a group receive their equipment while another member remains blocked? This determines the release gate and the scope of a supervisor confirmation.
-- **D3 — Liability and cash, unresolved; desk policy owner:** Who owes each charge when a sponsor arranges hire; are partial payment and release with an outstanding balance permitted; and who may correct a posted payment or release? This determines allocation, unpaid release and recovery after a consequential mistake.
+- **D1 - Identity and records, unresolved; desk policy owner:** What identity check is required when membership number is absent or matches are ambiguous, and may operators create a genuinely missing person record? This determines lookup completion and the no-record recovery path.
+- **D2 - Training and release, unresolved; training/desk policy owner:** What training and recency rules apply to each equipment type, which supervisors may confirm it, and what evidence must be retained? May eligible members of a group receive their equipment while another member remains blocked? This determines the release gate and the scope of a supervisor confirmation.
+- **D3 - Liability and cash, unresolved; desk policy owner:** Who owes each charge when a sponsor arranges hire; are partial payment and release with an outstanding balance permitted; and who may correct a posted payment or release? This determines allocation, unpaid release and recovery after a consequential mistake.
 
 The highest-impact mistakes are selecting the wrong person, releasing equipment without valid training, and recording cash twice. Inline identity/training checks, an explicit release summary and recoverable payment submission address these in the proposed design. Policy questions remain open; the approved desk outcome does not.
 

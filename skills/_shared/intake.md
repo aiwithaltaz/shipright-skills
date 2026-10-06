@@ -1,50 +1,75 @@
-# Light intake — ShipRight
-
-**Status: Public draft.** Context before generate. Product before pixels.
+# Light intake
 
 ## Rule
 
-Read the request and relevant existing context first. Ask zero questions when the next action is clear. Otherwise ask the smallest number that changes the next decision, usually one and no more than five in one intake round. Do not repeat intake at each skill boundary. The limit is not permission to guess a consequential answer.
+Read the request and relevant existing files or screens first. Never ask for an answer already supplied.
+Ask **0-5 questions total before starting**, across all skills in this task, not five per skill or per round.
+Use zero when the task is clear. For a vague new product, aim for three useful questions; ask up to five only if needed.
+Each requested decision counts separately, including every premise and approach choice. Do not hide several questions inside one card.
+After this intake, begin useful work. Keep unknowns visible. Ask later only when the work reveals a new consequential decision.
 
-## Depth (pick once; state it in one line)
+## Two front doors
 
-Match the work to the request. Depth decides questions, optional research and how much review output to show.
-
-| Depth | Typical request | Questions | Optional research | Review output |
-| --- | --- | --- | --- | --- |
-| **Quick fix** | Copy, label, spacing, one state | 0–1 | Never | No gate table; one-line readiness only if asked |
-| **Focused improvement** | One screen or flow in an existing product | 0–3 | Never by default | Only the affected checks |
-| **New surface** | New screen, flow or page | 1–5 | Reference analysis if useful; ask first | Full gate at handoff only |
-| **New product** | Rough idea, new product, repositioning, feature list with no clear "why" | 1–5 | Opportunity research offered; runs only if the user agrees | Frame first; gates only at handoff |
-
-The user can change the depth. Never upgrade depth silently.
-
-## Ownership
-
-Use short examples when helpful. Offer delegation and user choice as separate options:
-
-| User response | Agent behavior |
+| Request | Start |
 | --- | --- |
-| **You decide** | Choose within delegated scope; state the choice and reason. Do not extend delegation to price, access, external actions or unrelated scope. |
-| **Let me decide** | Leave the choice with the user. Recommend if useful and continue independent work. |
-| A specific answer or correction | Use current intent. Surface conflicts with older decisions or observed constraints; do not silently prefer an old document. |
-| Blank, skipped or ambiguous | Keep unresolved. Offer a safe reversible proposal if useful; silence is not approval. |
+| Rough idea without a clear user job | product-design: Frame product |
+| Existing artifact to review | ux-critique: Existing app, scoped to the request |
+| Explicit screen correction, even in an existing app | ui-ux-design: focused change |
+| Launch readiness | ship-check |
 
-An assumption label does not grant authority to decide. Apply [operating-contract.md](operating-contract.md) for authority, missing context, evidence and readiness.
+## Depth
 
-Before asking the user to enumerate edge cases, examine the stated job for material alternate starting conditions, missing prerequisites and return visits. Offer a concrete recommendation within scope. Keep policy choices with their owner; do not replace product thinking with a questionnaire. Existing explicit requirements may already establish the frame.
+| Depth | Questions needed | Work |
+| --- | --- | --- |
+| Quick fix | Usually 0 | The requested label, spacing or state change |
+| Focused improvement | 0-3 | One screen or flow and its affected checks |
+| New surface | Up to 5 total | Job, states, layout and handoff |
+| New product | Usually 3, maximum 5 total | Outcome, scope, mechanism, then relevant flows |
+
+State depth briefly if useful. Do not silently expand the task. Research is a separate stage, only when requested or agreed.
+
+## Decision cards
+
+One card per question. Number the cards. Each card has:
+
+- A short **Why it matters** line: what the answer changes.
+- Two or three options, each with a concrete example, plus **Something else** so the user can type their own.
+- **My pick** with a reason from the user's context. Without a basis, write **No pick yet**.
+- **You decide** and **Let me decide**.
+
+Examples illustrate choices; they do not become product requirements.
+
+Example:
+
+> Q1. What should "Clear" do to this saved draft?
+> Why it matters: it decides whether any saved work can be lost.
+> A. Hide the card, keep the draft. Example: the draft still shows in the drafts list.
+> B. Discard the draft after a confirm. Example: "Discard this draft?"
+> C. Something else. Type your own.
+> My pick: A, if your goal is only to tidy this view.
+> You decide: delegate this choice within the stated scope. Let me decide: keep it open for you.
+
+- **You decide:** choose only within the named delegation. State the choice and reason.
+- **Let me decide:** the user keeps the choice. Continue work that does not depend on it.
+- **Blank or skipped:** unresolved. Silence is not approval.
+
+Do not treat design delegation as authority to set prices, access policy, legal terms or paid services.
+Apply [the operating contract](operating-contract.md) for facts, phase limits and approval.
 
 ## Question bank
 
-Select only unanswered questions relevant to this task; this is not a form to complete.
+Pick only unanswered decisions: who is it for; what job matters now; what is excluded from this phase;
+what existing system must stay; which unresolved choice prevents the next useful step.
+Do not ask the user to design the whole product. Examine realistic entry conditions, failures and return visits yourself.
+Recommend within scope; keep policy choices with their owner.
 
-- **Outcome:** What changes for the user, and how would we know? Examples: invoice paid by due date, idea turned into a draft in one step.
-- **Difference:** What does the user do today instead, and why is that worse? Ask this at New product depth.
-- **Work:** Which flow, screen or decision? Examples: invite teammate, members empty state, permission recovery.
-- **User:** Whose task are we supporting? Examples: Owner, Member, customer on mobile. Do not invent a role.
-- **Constraints:** What is approved or excluded? Examples: existing tokens, no new navigation, mobile support.
-- **Direction:** If UI direction is unresolved, what feeling fits, and which 1–2 real products or sites have that feeling? Do not reopen an approved direction for a small fix.
+## Request traps
 
-After intake, restate the job in one sentence, distinguish proposals from approvals and proceed with the authorized work. Missing context blocks only the affected commitment; help draft what is needed without inventing facts or approved scope.
+| Request | Response |
+| --- | --- |
+| "Make it premium" without a job | Ask what the screen helps the user do. |
+| "Like this brand" | Clarify the property to borrow; do not copy identity or features. |
+| A feature list without an outcome | Find the user job and narrowest useful version. |
+| "Just say it is ready" | Apply the Deadline rule; do not invent evidence. |
 
-Optional personal taste informs defaults only within its scope. Current project decisions and integrity requirements take precedence.
+Restate the job and current-phase boundary, then proceed. Missing context blocks only the affected commitment.

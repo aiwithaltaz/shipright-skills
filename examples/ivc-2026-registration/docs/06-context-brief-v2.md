@@ -1,4 +1,25 @@
-# IVC 2026 — Context brief, Phase 1 registration
+# IVC 2026 - Context brief, Phase 1 registration
+
+## Current desk corrections, October 4, 2026
+
+This supplement overrides conflicting desk UI in the September 25 brief below. It does not verify implementation.
+Use the current registration phase only. Keep the liked nav/button/search/card styling where it agrees with these corrections.
+
+- Remove Filter: All Attendees. Keep the existing search fields without adding a replacement filter.
+- In progress needs a "View all in progress" option, or a way to clear it (owner's words). Either one satisfies. If clear is built, leave its saved effects unresolved until the owner defines them.
+- Use a clean, even selected-row border on all four sides. Remove the thick left accent and filler Query: Test chip.
+- Remove Synced to event sheet. Show task-relevant failure or saving feedback only when truthful and useful.
+- Keep the profile only at bottom left in this desktop layout. Remove the top-right box; it is likely the small "⌘K" square (shortcut box) next to Desk help.
+- Remove Checked In and In Queue counters, and the Name / Phone, Scan QR and Family ID tab strip.
+- Remove printer and badge stock panels. The selected nav item has no notification dot.
+- Keep check-in-only row actions, badges and copy out of registration. Save later ideas as notes, not UI.
+
+The exact feedback mapping lives in [round1-corrections.md](../feedback/round1-corrections.md). General lessons live in [operator-workspaces.md](../../../skills/ui-ux-design/references/operator-workspaces.md).
+Screenshots are review evidence, not approval of incidental features. Clear could mean dismiss, abandon or delete; do not assume.
+
+## Historical September 25 brief
+
+The following is retained for product context. Its old desktop UI is superseded where it conflicts with the supplement above.
 
 **Version 2 · September 25, 2026 · Updated after the owner's first prototype review.**
 
@@ -59,7 +80,7 @@ Only approved Google accounts may enter in production. Prototype accounts demons
 
 Search must accept phone number, first name, last name and combinations. A person may not know the number stored in their record; a mother's record may use her adult child's phone. Phone-only lookup is insufficient.
 
-**Proposed interaction:** One “Find a person” field with “Name or phone” guidance, with optional separate name fields if disambiguation is needed. Normalize case, spaces and phone punctuation; return matching people, not the entire directory. Use enough authorized context—name, JK, age/zone and a masked or staff-visible contact—to distinguish similar names. Do not silently select the first name match. Email is not a required search key because the known master fields do not include it.
+**Proposed interaction:** One “Find a person” field with “Name or phone” guidance, with optional separate name fields if disambiguation is needed. Normalize case, spaces and phone punctuation; return matching people, not the entire directory. Use enough authorized context - name, JK, age/zone and a masked or staff-visible contact - to distinguish similar names. Do not silently select the first name match. Email is not a required search key because the known master fields do not include it.
 
 Each result should show its state immediately and offer the relevant action:
 
@@ -149,7 +170,7 @@ The payment step should behave like a simple cash register: show fee due, cash r
 | Same, payer says keep change | $20 | $100 | $80 | $0 | $100 |
 | Three $15 fees, $50 handed over | $45 | $50 | $0 | $5 | $45 |
 
-For a receipt: **cash received = ticket allocation + donation + change returned**. Values must be nonnegative. Insufficient cash cannot be recorded as fully Paid. Partial installment payments and splitting some—but not all—change into a donation are **Open (D5)**, not implied new statuses.
+For a receipt: **cash received = ticket allocation + donation + change returned**. Values must be nonnegative. Insufficient cash cannot be recorded as fully Paid. Partial installment payments and splitting some - but not all - change into a donation are **Open (D5)**, not implied new statuses.
 
 Record receipt ID, amounts, affected people, transaction desk, received-by account and receipt time. Allocate a family donation once at receipt level. **Proposed display:** attribute it to the payer's row with the receipt reference; do not repeat the full family donation on every person's row or inflate reports.
 
@@ -193,7 +214,7 @@ Keep the current clean grouping, View action, details dialog and Open ticket act
 | Desk | Where the person registered, such as Plano, Dallas HQ or Waco |
 | Status | Registered, Waiting on parent, Waiver needed, Payment due, or eligibility attention; show multiple outstanding items when necessary |
 | Payment | Paid / Pending / Covered and amount collected or due, with clear labels; Covered is staff-only and has $0 collected |
-| Donation | Attributed donation amount, or $0/—; link to receipt; no duplicate allocation across family rows |
+| Donation | Attributed donation amount, or $0/-; link to receipt; no duplicate allocation across family rows |
 | Actions | View and the relevant next action |
 
 Remove the standalone Waiver column; keep waiver details in Status and the record dialog. Include a visible donation example in seeded data.

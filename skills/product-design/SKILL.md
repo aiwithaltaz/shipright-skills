@@ -1,191 +1,86 @@
 ---
 name: product-design
-description: "Use this when turning a rough idea or feature list into a product frame (outcome, differentiating system, core objects, journey, screen jobs), shaping product flows, specifying states, reviewing interaction decisions, hardening edge cases or preparing a build handoff. Preserve the owned outcome and approved product decisions. Not for visual polish alone. Part of ShipRight."
+description: "Use this when framing a rough product idea, deciding an in-scope flow, defining states or action consequences, reviewing product decisions, or writing requested project documents. Preserve current phase and approved scope. Part of ShipRight."
 ---
 
-# Product Design Skill — ShipRight
+# Product design
 
-**Status: Public draft.**
-**Pack version:** 0.4.1-draft
-**Pack name:** **ShipRight** (locked)  
-**Tagline:** Context before generate. Product before pixels.
+**Pack version:** 0.6.1-draft
+**Context before generate. Product before pixels.**
 
-## 1. Purpose
-
-### IS
-
-- Frame a product from a rough idea: outcome → differentiating system → core objects → journey → screen jobs
-- Decide what the product should **do**
-- Shape flows, reachable states, and action consequences
-- Record decisions so AI and eng do not invent behavior
-- Hand off clear specs to **ui-ux-design** and engineering
-- Evaluate the **8-check decision gate** for the named handoff stage
-
-### IS NOT
-
-- Pixel styling, color palettes, or illustration
-- Inventing PRD scope, roles, or metrics
-- Claiming user interviews without sources
-- Legal or compliance certification
-- A huge questionnaire dump
+Define what the product must do. Keep the owned outcome, useful mechanism, objects, journey and screen jobs connected.
+For visual refinement use ui-ux-design; for reviewing an artifact use ux-critique.
 
 ## INTAKE
 
-Apply [the shared operating contract](../_shared/operating-contract.md) for decision ownership, missing context, evidence statuses and readiness. Use [shared intake](../_shared/intake.md); do not repeat questions already answered.
+Read [shared intake](../_shared/intake.md) and [the operating contract](../_shared/operating-contract.md) once per task.
+Use 0-5 questions total before starting. Current instructions and the current phase control scope.
 
-State the depth (Quick fix, Focused improvement, New surface, New product) and restate the user job, then select a mode. Ask only about missing outcome, difference, flow, user or constraints that change this decision.
+**Core rules if `../_shared` is unreachable:** say the pack is incomplete. Honor exact feedback and current-phase scope.
+Never invent facts, brand values, data or features. You decide delegates the named choice; Let me decide reserves it.
+Silence is not approval. Use Pass, Fail, Not verified or justified Not applicable with evidence.
+A ticket cannot turn Fail into Pass. A critical failure blocks readiness. Screenshots cannot prove runtime behavior.
+Continue supported work; do not claim a full ShipRight check without its required references.
 
-**You decide** delegates only the named choice. **Let me decide** reserves it for the user. Blank answers stay unresolved; continue independent work.
+## Choose the smallest mode
 
-**Core rules if `../_shared` is unreachable (say so):** You decide = only the named choice. Let me decide = the user keeps it. Blank or silence = unresolved, never approval. Statuses: Pass · Fail · Not verified · Not applicable (with reason). A ticket, owner or plan never turns Fail into Pass; a stage-critical Fail is a Blocker. Spec ≠ screenshot ≠ implementation evidence. Readiness never authorizes deploy, publish or payment.
+| Mode | Output |
+| --- | --- |
+| Frame product | User, outcome, current alternative, useful mechanism, current phase and exclusions |
+| Shape flow | Entry, steps, failure/cancel path and recovery |
+| Spec states | Triggers, UI, effects, actions and preserved work |
+| Decision review | One recommended interaction choice with reason |
+| Edge-case harden | Material missing prerequisites, return visits or failures |
+| Doc set | Only the requested documents, using the approved frame |
 
-## 2. When to use / When NOT
+A useful mechanism explains why this product helps more than the current alternative. Do not invent market evidence or a differentiator.
 
-**Use when** the user has a rough idea or feature list and needs to know what to build, or asks to design a flow, define states, choose confirm vs undo, map edge cases, or write a product handoff.
+## Frame product
 
-**Do NOT use when** the task is only visual polish, only copy tone, or pure backend with no product surface. For post-generate review, prefer **ux-critique**. For layout craft against an approved spec, prefer **ui-ux-design**.
+Read [decision-checklist.md](references/decision-checklist.md). Resolve only material unknowns within the shared intake limit.
+Recommend one narrow first version. Offer another approach only when it changes a real tradeoff or the user asks.
+State uncertain premises as Unknown; do not require a separate questionnaire or three invented approaches.
+If the frame is supplied or delegated, proceed. Otherwise keep dependent choices Proposed and continue independent work.
 
-## 3. Relevant inputs
+From the agreed job, identify only the objects actually needed, their lifecycles, the main journey and one job per screen.
+No fixed object count. Do not add screens to make the frame feel complete.
+Opportunity research is a separate early stage; use [opportunity-research.md](references/opportunity-research.md) only when requested or agreed.
 
-Read available project context for the requested decision. The five templates record product, architecture, access, frontend and tickets; equivalent existing documents or explicit user instructions can supply those facts.
+## Flows and states
 
-- PRD: outcome, differentiating system, core objects, user, approved scope, non-goals and decision log.
-- Architecture: observed capabilities and constraints affecting this flow.
-- Access: actual actors, permissions and consequential effects.
-- Frontend: existing screen jobs/navigation when UI is involved.
-- Tickets: relevant acceptance criteria, or update after decisions settle.
+1. Name the actor, job, current phase, scope source and excluded work.
+2. Map entry, necessary steps, branch decisions, success, cancel and recovery.
+3. Read [states-and-flows.md](references/states-and-flows.md) for reachable states and effects.
+4. For staff or related-record work, read [operational-flows.md](references/operational-flows.md).
+5. Check **Flow rules (must pass)**: [F1 exit, F2 consistency, F3 useful system status](../_shared/flow-rules.md).
+6. Give each action a source, effect and permitted recovery. Pending human work differs from a running background job.
 
-Missing files do not block clarification or provisional drafting. Help fill relevant gaps and label proposals/unknowns. Apply the shared contract: block only the affected commitment, not independent work. Do not turn missing roles, APIs or approvals into facts.
+Do not introduce roles, filters, notification services or payment behavior to satisfy a state checklist.
+For unclear clear/reset/remove actions, resolve the object and saved effects before specifying destructive behavior.
 
-## 4. Modes (pick one per run)
+## Doc set and handoff
 
-| Mode | Goal |
-|------|------|
-| **Frame product** | Outcome → differentiating system → core objects & lifecycle → journey → screen jobs, as a one-page frame. No state tables, no gate. |
-| **Shape flow** | Happy path + fail path + decision points |
-| **Spec states** | State table for a screen or flow |
-| **Decision review** | Confirm vs undo, modal vs inline, etc. |
-| **Edge-case harden** | Permission denied, partial data, retries, race cases |
+Use [doc-set.md](references/doc-set.md) and [output-folder.md](../_shared/output-folder.md) when the user requests files.
+Write the authorized set without automatic approval stops between documents. Keep unresolved facts and decisions explicit.
+ui-ux-design owns DESIGN.md and the frontend specification. Cross-check IDs, actors, states, scope and acceptance checks.
+For a flow handoff, include the job, paths, state table, decisions and remaining dependencies.
+List Proposed items separately under **Needs approval before build**.
 
-Say which mode you are in at the start of the output. Use **Frame product** first when there is no approved outcome, or when the user gives only a feature list.
+## Decision gate: 8 checks
 
-### 4.1 Frame product
+Use at handoff or when readiness is requested. For a narrow correction, assess only affected checks.
+Use the contract's statuses, evidence and next action. Define criticality before judging.
 
-Use for a rough idea, a new product, repositioning, or a feature list with no clear "why". Produce, in order, marking each item **Approved**, **Proposed** or **Unknown**:
+| # | Check | Criterion |
+| --- | --- | --- |
+| 1 | Context | Sources and unknown dependencies support this commitment. |
+| 2 | Outcome | The actor, job and intended outcome are clear. |
+| 3 | Scope and consistency | Current-phase steps have approval; names and patterns agree (F2). |
+| 4 | Recovery | Failure/cancel paths define exit, effects and preserved input (F1). |
+| 5 | States | Relevant entry, return and background work states have truthful feedback (F3). |
+| 6 | Empty results | Empty and no-match states differ where search/filtering exists. |
+| 7 | Consequences | Actor, effect and confirm/undo rules are clear for consequential actions. |
+| 8 | Decisions | Open choices have owner, source, status and disposition. |
 
-1. **Outcome** — who, what changes for them, and how we would know. One line.
-2. **Differentiating system** — the mechanism that makes the outcome better than what this user does today. Name the current alternative. A feature list is not a system: if the user gives only features, say so and offer at most two candidate mechanisms as Proposed.
-3. **Core objects & lifecycle** — the 3–6 things the product manages and their key states (for example, Invoice: draft → sent → overdue → paid).
-4. **Journey** — the main path across those objects, from entry to outcome, in 7 steps or fewer.
-5. **Screen jobs** — one sentence per screen: what the user gets done there.
-
-Then ask the questions (5 or fewer) that change items 1–2, and stop. Flows, state tables and gates come after the user approves the frame. Opportunity research is optional; offer it only at New product depth (see `references/opportunity-research.md`). Record approved frame items in the PRD sections 1b–1d and the decision log.
-
-## 5. Step checklist
-
-1. [ ] Light intake (0–5 questions when needed) complete or skipped because docs already answer; depth stated
-1a. [ ] If there is no approved outcome or differentiating system, run **Frame product** and stop for approval
-2. [ ] Identify relevant context and unresolved dependencies
-3. [ ] Restate the **user job** in one sentence (from PRD + intake)  
-4. [ ] Pick mode  
-5. [ ] List in-scope / out-of-scope from PRD (do not expand)  
-6. [ ] Draft happy path (numbered)  
-7. [ ] Draft fail / cancel path  
-7a. [ ] For operational or related-record flows, map alternate entry, prerequisites and return visits using [operational-flows.md](references/operational-flows.md); recommend within scope and ask only unresolved policy questions
-8. [ ] Build state table (see `references/states-and-flows.md`)  
-9. [ ] Apply decision checklist (`references/decision-checklist.md`)  
-10. [ ] List open questions (do not silently answer them)  
-11. [ ] Handoff notes for ui-ux-design + eng  
-12. [ ] **8-check decision gate** with evidence and next actions (below), when a handoff or readiness claim is requested
-
-## 6. Required outputs
-
-For a flow/state handoff, include the relevant outputs below. For a narrow decision or correction, report only affected behavior and checks; preserve unrelated approvals:
-
-1. **Job** — who + verb + object  
-2. **Happy path** — numbered steps  
-3. **Fail / cancel path** — numbered steps  
-4. **State table** — applicable empty, loading, success, error and permission-denied states; partial / filtered-empty only when the flow supports them
-5. **Key decisions** — with short rationale tied to docs  
-6. **Open questions** — unresolved items  
-7. **Handoff** — what ui-ux-design and eng need next  
-8. **Decision gate** — when a handoff or readiness claim is requested: relevant checks marked Pass, Fail, Not verified or Not applicable with evidence
-
-Lead with the verdict and next action (120 words or fewer), then the detail.
-
-### State table template
-
-| State | User sees | System does | Primary action |
-|-------|-----------|-------------|----------------|
-| Empty | | | |
-| Loading | | | |
-| Success | | | |
-| Error | | | |
-| Permission denied | | | |
-| Partial | | | |
-| Filtered empty | | | |
-
-## 7. Decision rules (short)
-
-- **Destructive + hard to undo** → confirm  
-- **Destructive + easy to undo** → prefer undo toast when safe  
-- **Empty** (never had data) ≠ **filtered empty** (filters hide data) — different copy and actions  
-- **Permission denied** is a real state — not a blank page  
-- Prefer **inline** errors for field issues; **page-level** for hard blockers  
-- Do not add steps that are not in PRD scope  
-
-Full checklist: `references/decision-checklist.md`
-
-## 8. Handoff
-
-### To ui-ux-design
-
-- Screen IDs from doc 04  
-- State table  
-- Primary / secondary actions  
-- Content that must appear (not lorem)
-
-### To engineering
-
-- Acceptance-oriented behavior  
-- API/entity names only if present in doc 02 — else mark UNKNOWN  
-- Analytics event names if listed in doc 04  
-- Explicit non-goals
-- **Needs approval before build:** every item still Proposed, listed separately
-
-### Back to docs
-
-- Suggest updates to `docs/05-feature-ticket-list.md` after decisions settle
-
-## 9. Decision gate (8 checks)
-
-Run this gate only when a handoff or readiness claim is requested, or at New surface / New product depth before handoff. Do not run it on a Frame product draft or a Quick fix; give a one-line readiness note instead.
-
-Use the shared contract's four statuses and one readiness rule. Identify the artifact/version, handoff stage and critical requirements first. Each row needs evidence and next action. A logged risk or named owner cannot turn failure into a pass, including checks 7–8.
-
-| # | Check | Status | Evidence / next action |
-| --- | --- | --- | --- |
-| 1 | Relevant context supports the affected commitment; unknown dependencies and provisional choices are explicit | | |
-| 2 | User job and intended outcome are clear | | |
-| 3 | Happy path follows approved or explicitly provisional scope | | |
-| 4 | Failure/cancel behavior states preserved input, persistent effects and recovery | | |
-| 5 | Required states, relevant entry variants and pending-work recovery have defined behavior; unsupported states are Not applicable with a reason | | |
-| 6 | Empty differs from filtered empty when filtering exists; no filters invented for this check | | |
-| 7 | Consequential actions have actor, effect and supported confirm/recovery decisions | | |
-| 8 | Open questions and assumptions have decision status, source and disposition | | |
-
-**Readiness:** Re-decide, Fix first, Needs decision (D#), Not established, or Ready for the named next stage, as defined by the shared contract. Never claim handoff readiness from gaps listed or risks assigned alone.
-
-## 10. References
-
-- [Shared intake](../_shared/intake.md)
-- [Operating contract](../_shared/operating-contract.md)
-- [Operational flows](references/operational-flows.md) (staff tasks, related objects, prerequisites or pending work)
-- `references/states-and-flows.md`
-- `references/decision-checklist.md`
-- `references/opportunity-research.md` (optional; New product depth only)
-- Pack docs: `../../docs/`
-
----
-
-*Public draft — skills/product-design/SKILL.md — ShipRight 0.4.1-draft*
+Use Re-decide, Fix first, Needs decision, Not established or Ready for the named next stage.
+Readiness does not authorize external actions.

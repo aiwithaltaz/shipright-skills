@@ -1,0 +1,23 @@
+--- initial/skills/_shared/operating-contract.md
++++ rerun/skills/_shared/operating-contract.md
+@@ -78,6 +78,9 @@
+ 
+ Needs decision is a verdict, not a fifth item status. Put the decision ID in the item's next action.
+ A specification can be ready for a builder while runtime checks remain Not verified.
++Score each criterion at the named review stage. A sufficient specification can Pass without runtime proof.
++List future runtime tests separately; do not mark a specified accessibility requirement Not verified only because no app exists.
++If a required specification behavior is still missing, mark Fail and name its unresolved decision.
+ A screenshot cannot certify a release. Do not lower criticality to obtain Ready.
+ 
+ **Deadline rule:** urgency or "just say yes" does not change evidence. Give the shortest honest verdict and the top checks still needed.
+--- initial/skills/ui-ux-design/SKILL.md
++++ rerun/skills/ui-ux-design/SKILL.md
+@@ -75,6 +75,8 @@
+ ## Pre-flight: 10 checks
+ 
+ Use at handoff or when readiness is requested. Each relevant row needs status, evidence and next action.
++Name the review stage. Judge specification completeness separately from later runtime verification.
++Missing required spec behavior is Fail; defined behavior may Pass at specification stage while its implementation remains untested.
+ 
+ | # | Gate | Criterion |
+ | --- | --- | --- |

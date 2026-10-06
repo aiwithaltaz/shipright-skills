@@ -1,73 +1,33 @@
-# Anti-slop rules — reference
+# Prevent invented and generic UI
 
-**Status: DRAFT.** Hard rules for `ui-ux-design`. Aligns with critique lens in `ux-critique/references/slop-tells.md`.  
-**Pack:** ShipRight. Anti-slop = capability, not the product name.  
-Inspired by Taste Skill / Hallmark / UI UX Pro Max ideas (paraphrased — not copied verbatim).
+Every visible element must earn its place through a current-phase user job or an explicit requirement.
+Read [the operating contract](../../_shared/operating-contract.md) for scope, exact feedback and facts.
 
-## Purpose
+## Hard failures
 
-Vibe-coding tools invent pretty, generic UI. These rules force craft back to **your** product docs, design dials, and the **10-gate pre-flight**.
+Unsupported features, fabricated proof, hidden costs, misleading consequences and inaccessible critical controls are actual defects.
+A checklist cannot authorize extra navigation, filters, counters, widgets or notifications.
+Sample data must be labeled and appropriate to the requested prototype/test. Never present it as live data or customer proof.
 
-**Tagline:** Context before generate. Product before pixels.
+## Visual judgment
 
-## Integrity requirements
+Purple, cream, gradients, cards, blur, symmetry, emoji and a single font are not automatic failures.
+Preserve approved identity. Explain a concrete problem in task clarity, hierarchy, readability or interaction before changing it.
+Do not trade one generic style for another. A familiar pattern can be the correct choice.
 
-Do not present fabricated research, testimonials, customers, metrics or capabilities as real. Label synthetic prototype fixtures. Do not hide material costs, permissions or consequences. Keep critical controls usable through supported input methods. Docs and personal taste cannot waive truthfulness or accessibility.
+Look for duplicate profile boxes, unsupported counters, query chips that repeat visible input, decorative status dots and unnecessary panels.
+Remove an element when its removal improves the task and fits the request. Do not remove decoration just to meet a quota.
+Use supplied crops for their liked properties; do not import their incidental features.
 
-Do not add unapproved navigation or features merely to satisfy a checklist. Apply the shared operating contract for decision ownership and evidence.
+## Count it, when useful
 
-## Visual heuristics
+Count competing actions, duplicate information, unsupported elements or repeated decoration when the count supports a finding.
+Name the actual elements and their impact. A number alone is not a verdict.
+One global primary button, one accent or two fonts are heuristics, not universal laws.
+Read [slop-tells.md](../../ux-critique/references/slop-tells.md) for concrete review prompts.
 
-Purple palettes, gradients, cards, blur, symmetry, emoji, a single font and motion are not automatic failures. Evaluate product purpose, brand fit, content hierarchy, accessible interaction and actual use. Prefer approved tokens/components. Explain a concrete problem before recommending a visual change. Numerical dials are optional aids, not proof of quality.
+## Before handoff
 
-## Prefer instead
-
-| Instead of slop | Prefer |
-|-----------------|--------|
-| Random gradient hero | Token background + clear H1 + CTA |
-| Three equal feature cards by default | Layout that matches VARIANCE dial + real content structure |
-| Six unrelated widgets | Widgets mapped to PRD metrics only |
-| “Submit” | Verb + object from the job |
-| Custom snowflake controls | Design-system components |
-| Color-only status | Text + icon + color |
-| Centered long essay | Short context + structured content |
-| Motion dial high but nothing moves | Real motion notes — or lower MOTION |
-
-## Product-type sanity
-
-Match seriousness to the product in the PRD:
-
-| Product vibe in PRD | Avoid |
-|---------------------|-------|
-| Finance / health / admin | Neon playfulness, joke copy |
-| Consumer social | Dense enterprise table overload without need |
-| Internal tools | Marketing landing chrome inside the app shell |
-
-If direction is unresolved, start neutral and clear. Preserve approved brand choices; use dials only when useful.
-
-## Pre-generate check (actionable)
-
-Before calling Figma / Stitch / Claude Design / Cursor / Claude Code UI generate (for the full pack, see `build-handoff.md`):
-
-- [ ] Current screen scope identified from doc 04 or equivalent context; proposals distinguished from approvals
-- [ ] One-line design read; optional dials if useful
-- [ ] Tokens / brand pointed to  
-- [ ] Integrity requirements and relevant visual rationale stated in the prompt
-- [ ] State requirements listed in the prompt  
-- [ ] **10-gate pre-flight** in the skill uses Pass, Fail, Not verified or justified Not applicable with evidence
-
-Example prompt fragment:
-
-> Follow current screen decisions in docs/04 or equivalent context. Design read: [one line]. Screens only: [list]. Use the approved brand, accessible controls and no unapproved navigation. Include the applicable states from the product specification. Primary CTA: [verb + object]. Add dials only if they clarify direction.
-
-## After generate
-
-Run **ux-critique** (10-gate ship audit). Convert blockers/majors into doc 05 tickets or design revisions.
-
-## Honest failure
-
-If the model output is mostly slop, say so. Do not “lightly edit” a wrong product into existence — return to docs + product-design. Fail pre-flight honestly.
-
----
-
-*DRAFT — ui-ux-design/references/anti-slop-rules.md — ShipRight*
+Check the exact change list, phase exclusions, sourced system values, applicable states and accessibility.
+Separate Proposed scope from approved builder instructions. Do not fill blank areas with features.
+After generation, compare the real result with the same acceptance checks. Wrong scope needs a correction, not cosmetic praise.

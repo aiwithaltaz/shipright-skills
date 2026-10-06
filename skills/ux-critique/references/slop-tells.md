@@ -1,59 +1,34 @@
-# AI slop tells — reference
+# Concrete signs of weak UI
 
-**Status: DRAFT.** Used by `ux-critique` (and useful to `ui-ux-design`).  
-**Pack:** ShipRight. Use with the **10-gate ship audit**.
+Use these prompts to inspect actual impact. They are not a banned-style list or evidence that AI authored the result.
 
-These patterns show up often from vibe-coding UI tools (Claude Design, Figma AI, Google Stitch, generic Cursor/Codex UI, etc.). Spot them; ask for rewrites grounded in docs.
+| Sign | Check | Correction |
+| --- | --- | --- |
+| Extra tabs, filters, counters or widgets | Is there a current-phase source? | Remove unsupported scope; keep later ideas in notes. |
+| Duplicate profile/account boxes | Do both serve distinct approved tasks? | Keep one canonical home per layout. |
+| Notification dot on active nav | Is it selection or real unread work? | Use active styling for selection; no invented notifications. |
+| Query chips repeat visible input | Do they help editing or recovery? | Remove filler; keep useful criteria controls only. |
+| Backend sync/device status dominates | Can this operator act on it now? | Hide plumbing; expose relevant errors in task language. |
+| A thick accent competes with row content | What selection pattern was approved? | Use that pattern; retain semantic selection and focus. |
+| Everything has equal weight | What decision comes next? | Differentiate actions and group related information. |
+| Repeated cards or nested panels | Does the content need these groups? | Simplify where grouping adds no meaning. |
+| Mixed icon meanings or styles | Does the system define them? | Reuse sourced icons and labels. |
+| Dead ends or hidden actions | Can all supported input methods complete and exit? | Fix F1 and accessibility with implementation evidence. |
+| Spinner or fake progress | What is actually known? | Use truthful task status under F3. |
+| Unsupported proof or hidden cost | Is the claim sourced and consequence clear? | Correct the integrity failure, not just the styling. |
+| Generic marketing copy | Does it name a real job or supported outcome? | Use concrete, truthful language. |
+| Decorative motion delays work | Does it explain a change? | Remove delay and respect reduced motion. |
 
-Visual patterns below are contextual prompts, not automatic failures. Approved purple palettes, gradients, emoji or a single typeface can be appropriate. Explain the actual impact; visual preferences cannot waive fabricated proof, inaccessible critical controls or other integrity requirements.
+## Count it
 
-## Visual slop
+For a relevant screen review, count actual competing actions, duplicate facts, unsupported controls or repeated decoration.
+Name the elements. Do not enforce a global button/font/color quota or produce empty counts for a narrow change.
+A count supports judgment; it does not replace it.
 
-| Tell | Why it’s a problem | Rewrite direction |
-|------|--------------------|-------------------|
-| Purple/pink neon gradients everywhere | Generic “AI aesthetic,” not product brand | Use tokens from doc 04 / real brand |
-| Glassmorphism + blur on every card | Decoration, weak hierarchy | Flat surfaces; elevation only when needed |
-| Hero with stock-looking abstract 3D shapes | Decoration meaning | Real product UI or simple diagram |
-| Too many accent colors | No hierarchy | One primary CTA color; neutrals dominate |
-| Ambiguous or inconsistently labeled icons | Meaning or accessible name unclear | Use the approved icon system with meaningful labels; emoji alone is not a failure |
-| Random illustration style mix | Feels generated | One illustration system or none |
-| Centered-everything sections | Symmetry as default = template feel | Bias layout when the job needs it |
+## Detect
 
-## Layout & IA slop
+Quote problematic copy, name the issue and give a grounded fix using [ui-copy.md](../../ui-ux-design/references/ui-copy.md).
+Do not fabricate specificity, data or capabilities in the replacement.
 
-| Tell | Why | Rewrite |
-|------|-----|---------|
-| Generic “Admin Dashboard” with 6 widgets unrelated to job | Invented product | Match screens in doc 04 only |
-| Invented nav items (Blog, Community, Pricing) inside app chrome | Scope creep | Keep nav to approved doc 04 items |
-| Cards inside cards inside cards | Noise | Flatten; one grouping level |
-| Everything is equal weight | No primary action | One clear H1 + one primary CTA |
-| Sidebar + top nav + tab + chips all at once | Over-chrome | Simplify to what doc 04 needs |
-| Icon-tile feature card row (3 equal cards) as default | Universal AI template | Asymmetric or type-led; only if content needs cards |
-
-## Flow & content slop
-
-| Tell | Why | Rewrite |
-|------|-----|---------|
-| Happy path only | Breaks on error/empty | Add states from product-design table |
-| “Get started” empty of meaning | Vague | Verb + object from PRD job |
-| Fake testimonials / logos | Trust damage | Remove unless real and approved |
-| Fake charts with round numbers | Misleading | Use empty/loading or real data shapes |
-| Onboarding of 7 delight steps | Friction theater | Only steps required by job/security |
-| Dark patterns (sneaky opt-out, fake urgency) | Harm + policy risk | Honest defaults; remove urgency theater |
-
-## Component slop
-
-| Tell | Why | Rewrite |
-|------|-----|---------|
-| Custom snowflake controls for standard tasks | Cost + inconsistency | Use design-system components |
-| Hover-only actions | Fails touch/keyboard | Visible actions or focusable menus |
-| Color-only error (red border, no text) | A11y fail | Text + icon + color |
-| Disabled primary with no explanation | Dead end | Explain how to unlock |
-
-## How to report a tell
-
-In critique findings, name the tell, point to evidence on the screen, and give a **rewrite ask** that cites doc 01/04 when possible. A demonstrated defect keeps its related audit check Fail until fixed and retested. Missing evidence is Not verified. Review only the stage supported by the artifact; an assigned ticket does not make a check Pass.
-
----
-
-*DRAFT — ux-critique/references/slop-tells.md — ShipRight*
+Keep approved colors, gradients, familiar patterns and emoji when they serve the product.
+Use [severity-rubric.md](severity-rubric.md), not aesthetic dislike, to determine severity.

@@ -1,4 +1,4 @@
-# Change set 2 — observed trial results
+# Change set 2 - observed trial results
 
 Date: 2026-09-23. Base: `main@a6ae2a1`. Candidate: local branch `change-set-2` (0.3.0-draft).
 

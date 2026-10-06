@@ -1,4 +1,12 @@
-# IVC 2026 registration — ShipRight field example
+# IVC 2026 registration - ShipRight field example
+
+**0.6 evidence notice, October 4, 2026:** This is a historical specimen, not current approved implementation guidance.
+The packaged app.js SHA-256 is `bab6df757fd224fbad1d1f2b9b678df877a24032dc7d06069b75027ae9c56c3e`.
+The old source manifest records a different hash. Its browser results do not verify this exact packaged app.js; five other entries match.
+The prototype also contains authored sample waiver wording, contrary to the pack's no-legal-text rule, and unverified storage recovery.
+Do not reuse that wording or treat the demo as production code. The source, screenshots and old manifest are preserved as historical evidence.
+The October 4 desk corrections below the header of [the context brief](docs/06-context-brief-v2.md) supersede conflicting old desk UI.
+The exact round-1 corrections, including the "⌘K" top-right box note, are in [feedback/round1-corrections.md](feedback/round1-corrections.md).
 
 **Status: Historical v1 prototype plus owner feedback and revised v2 brief, September 25, 2026.** This is a real project brief exercised through the complete ShipRight workflow. The people, phone numbers, accounts, payments and signatures in the prototype are fictional. It is not a deployed registration service for collecting real attendee data.
 
@@ -28,7 +36,7 @@ The supplied brand uses burnt orange and cream. The polished interface follows t
 | Specification critique | [8/10/10 gate review](docs/04-specification-review.md) | Specification readiness only, before implementation |
 | Build | [Runnable static source](prototype/index.html) | Actual linked interfaces and local data model |
 | Implementation critique | [Final review and scenario matrix](docs/05-implementation-review.md) | Tested behavior, screenshot findings, two bounded fix passes and stated limits |
-| Evidence | [Browser results](evidence/browser-final.json), [model tests](evidence/model-tests.txt), [source hashes](evidence/source-manifest.json) | Exact result evidence, not a planned checklist |
+| Evidence | [Browser results](evidence/browser-final.json), [model tests](evidence/model-tests.txt), [source hashes](evidence/source-manifest.json) | Historical results; app.js source mismatch limits exact-version claims |
 
 ## What was exercised in v1
 
@@ -69,7 +77,7 @@ Open `http://localhost:4173`, choose the JK admin demo account, and try the scen
 - Stage-specific evidence prevented planned behavior or screenshots from being represented as runtime validation.
 - The bounded review produced specific corrections rather than an open-ended redesign.
 
-This single project does not establish productivity gains, user satisfaction, accessibility certification or production readiness. Full limitations and proposed pack feedback are in the implementation review. The original app source is unchanged; the pack now includes targeted guidance informed by the owner’s review. See the learning record for exact changes and the current brief for open decisions.
+This single project does not establish productivity gains, user satisfaction, accessibility certification or production readiness. Full limitations and proposed pack feedback are in the implementation review. The prototype bytes are preserved from the uploaded package; their earlier provenance is not fully established. The pack includes guidance informed by owner review. See the learning record for exact changes and the current brief for open decisions.
 
 ## Asset and data notes
 
