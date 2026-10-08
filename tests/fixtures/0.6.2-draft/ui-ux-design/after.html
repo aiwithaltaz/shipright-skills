@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ui-ux-design after</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1280px; height: 800px; overflow: hidden; }
+  body {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    color: #1f1a17;
+    background: #f4f1eb;
+  }
+  button, input { font-family: inherit; }
+  .bar {
+    height: 36px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1f1a17;
+    color: #f4f1eb;
+    font-size: 13px;
+    letter-spacing: 0.01em;
+  }
+  .bar span { color: #c8bfb4; }
+  .stage { height: 764px; overflow: hidden; }
+  .fine {
+    font-size: 12px;
+    line-height: 1.4;
+    color: #5e564e;
+  }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <strong>ui-ux-design</strong>
+    <span>0.6.2-draft output. Same booking task, laid out for the job</span>
+  </div>
+  <div class="stage">
+
+<style>
+  .app {{ padding: 28px 48px 0; max-width: 760px; }}
+  .back {{ border: 0; background: transparent; padding: 0; color: #1d4f3a; font-size: 14px; font-weight: 650; }}
+  h1 {{ margin: 16px 0 8px; font-size: 32px; line-height: 1.15; }}
+  .lead {{ margin: 0 0 20px; font-size: 16px; }}
+  .panel {{ background: #fffcf8; border: 1px solid #e3dcd2; border-radius: 12px; padding: 20px 24px; }}
+  label {{ display: block; font-size: 14px; font-weight: 650; margin: 12px 0 8px; }}
+  label:first-child {{ margin-top: 0; }}
+  .value, input {{
+    width: 100%; height: 44px; border: 1px solid #d9d0c4; border-radius: 8px; background: #fff;
+    padding: 0 12px; font-size: 16px; display: flex; align-items: center;
+  }}
+  .held {{
+    margin-top: 16px; padding: 12px 16px; border-radius: 8px; background: #f4f1eb;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }}
+  .held p {{ margin: 0; font-size: 14px; }}
+  .textbtn {{ border: 0; background: transparent; color: #8f2d2d; font-size: 14px; font-weight: 650; padding: 8px 0; }}
+  .status {{ margin-top: 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }}
+  .primary {{
+    height: 44px; padding: 0 20px; border: 0; border-radius: 8px; background: #1d4f3a; color: #fff;
+    font-size: 16px; font-weight: 650;
+  }}
+  .foot {{ margin: 12px 0 0; }}
+</style>
+<div class="app">
+  <button class="back">Back</button>
+  <h1>Book a visit</h1>
+  <p class="lead">Haircut, Thu 9 Oct at 10:30. Confirm when the name is filled in.</p>
+  <div class="panel">
+    <label>Service</label>
+    <div class="value">Haircut</div>
+    <label>When</label>
+    <div class="value">Thu 9 Oct, 10:30</div>
+    <label for="who">Name</label>
+    <input id="who" type="text" placeholder="First and last name">
+    <div class="held">
+      <p><strong>Draft</strong><br>Fri 10:00. Sample hold, not a customer.</p>
+      <button class="textbtn">Remove draft</button>
+    </div>
+    <div class="status">
+      <span class="fine">Not saved yet. Back keeps this draft. Confirm books the visit.</span>
+      <button class="primary">Confirm visit</button>
+    </div>
+  </div>
+  <p class="foot fine">Illustration. Same booking facts as the before screen. No stats, no second button, no icon-only remove.</p>
+</div>
+
+  </div>
+</body>
+</html>

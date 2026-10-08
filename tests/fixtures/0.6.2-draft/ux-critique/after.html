@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ux-critique after</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1280px; height: 800px; overflow: hidden; }
+  body {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    color: #1f1a17;
+    background: #f4f1eb;
+  }
+  button, input { font-family: inherit; }
+  .bar {
+    height: 36px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1f1a17;
+    color: #f4f1eb;
+    font-size: 13px;
+    letter-spacing: 0.01em;
+  }
+  .bar span { color: #c8bfb4; }
+  .stage { height: 764px; overflow: hidden; }
+  .fine {
+    font-size: 12px;
+    line-height: 1.4;
+    color: #5e564e;
+  }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <strong>ux-critique</strong>
+    <span>0.6.2-draft output. Findings on the same desk</span>
+  </div>
+  <div class="stage">
+
+<style>
+  .split { display: grid; grid-template-columns: 420px 1fr; height: 764px; }
+  .side { padding: 16px 24px 0; background: #f4f1eb; }
+  h1 { margin: 0 0 4px; font-size: 28px; line-height: 1.15; }
+  .verdict { margin: 0 0 12px; font-size: 16px; }
+  .finding {
+    background: #fffcf8; border: 1px solid #e3dcd2; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px;
+  }
+  .finding strong { font-size: 14px; }
+  .tag {
+    display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .02em;
+    padding: 2px 6px; border-radius: 4px; margin-right: 6px;
+  }
+  .b { background: #f8e6e6; color: #8f2d2d; }
+  .m { background: #f8efd8; color: #7a5410; }
+  .finding p { margin: 4px 0 0; font-size: 13px; line-height: 1.4; color: #3f3833; }
+  .keep { font-size: 14px; margin: 8px 0 0; }
+</style>
+<div class="split">
+  <div>
+<div style="height:100%;background:#f7f5f2;padding:12px;font-size:13px;color:#1f1a17;">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+    <strong style="font-size:16px;">Open orders</strong>
+    <span style="background:#ece7ff;color:#5b21b6;border-radius:99px;padding:4px 8px;">Synced</span>
+  </div>
+  <div style="background:#fff;border:1px solid #e4e0d8;border-radius:8px;overflow:hidden;">
+    <div style="display:grid;grid-template-columns:1.2fr 1fr 40px;gap:8px;padding:8px 10px;color:#5e564e;font-size:12px;">
+      <span>Order</span><span>Status</span><span></span>
+    </div>
+    <div style="display:grid;grid-template-columns:1.2fr 1fr 40px;gap:8px;padding:8px 10px;border-top:1px solid #eee;align-items:center;">
+      <span>1042<br><span style="color:#5e564e">Sample row</span></span>
+      <span>Open</span>
+      <span style="width:28px;height:28px;border-radius:6px;background:#f3e8ff;color:#6d28d9;display:flex;align-items:center;justify-content:center;">
+        <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M5.5 2h5l.5 1H14v1.5H2V3h3l.5-1zM4 6h1.5v7H4V6zm3.25 0h1.5v7h-1.5V6zM10.5 6H12v7h-1.5V6z"/></svg>
+      </span>
+    </div>
+    <div style="display:grid;grid-template-columns:1.2fr 1fr 40px;gap:8px;padding:8px 10px;border-top:1px solid #eee;">
+      <span>1048<br><span style="color:#5e564e">Sample row</span></span><span>Open</span><span></span>
+    </div>
+  </div>
+  <div style="margin-top:8px;background:#fff;border:1px solid #e4e0d8;border-radius:8px;padding:10px;">
+    <strong>Order 1042</strong>
+    <p style="margin:4px 0 8px;color:#5e564e;">Detail opened from the row. No back control.</p>
+    <div>
+      <span style="background:#6d28d9;color:#fff;border-radius:6px;padding:6px 8px;">Mark packed</span>
+    </div>
+  </div>
+</div>
+</div>
+  <div class="side">
+    <h1>Review</h1>
+    <p class="verdict"><strong>Fix first.</strong> Three findings. The desk on the left is the artifact.</p>
+    <div class="finding">
+      <span class="tag b">Blocker</span><strong>Order detail. No way back.</strong>
+      <p>Impact: the packer is stuck in the detail. Correction: add a text Back control. Retest: the list returns and the row stays selected.</p>
+    </div>
+    <div class="finding">
+      <span class="tag m">Major</span><strong>Remove is a trash icon with no word.</strong>
+      <p>Impact: the action is unclear. Correction: use the word Remove, or drop it if this phase does not delete orders. Retest: the control has a visible label.</p>
+    </div>
+    <div class="finding">
+      <span class="tag m">Major</span><strong>Chip says Synced.</strong>
+      <p>Impact: the packer cannot act on it. Correction: remove the chip. Retest: the list shows order status only.</p>
+    </div>
+    <p class="keep"><strong>Kept:</strong> the open-order list. <strong>Not added:</strong> a chart, a welcome line, or a new color.</p>
+    <p class="fine">Illustration. Same artifact as the before screen. The review names the fix and does not restyle it.</p>
+  </div>
+</div>
+
+  </div>
+</body>
+</html>

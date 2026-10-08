@@ -1,6 +1,6 @@
 # Pack architecture
 
-**ShipRight 0.6.1-draft**
+**ShipRight 0.6.2-draft**
 
 This is a product/design instruction pack, not an application framework.
 

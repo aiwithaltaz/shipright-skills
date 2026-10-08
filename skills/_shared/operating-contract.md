@@ -1,6 +1,6 @@
 # Decision ownership and evidence
 
-ShipRight 0.6.1-draft. Read once per task. Use the current request and relevant project sources first.
+ShipRight 0.6.2-draft. Read once per task. Use the current request and relevant project sources first.
 
 ## Authority
 

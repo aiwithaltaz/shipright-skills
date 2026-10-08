@@ -1,5 +1,46 @@
 # Changelog
 
+## 0.6.2-draft - 2026-10-08
+
+A vague idea was still turning into a full product and a generic screen before anyone answered. This version stops that, and keeps a picture of the difference.
+
+### What changed and why
+
+- The first reply on a rough idea is three decision cards. Objects, screens, and the doc set wait until the user answers, delegates, or asks to write. "Build it" is not a frame. This keeps the question limit and stops an early dump.
+- UI rules now name two screens to leave out: a marketing page on a booking idea, and summary cards plus a chart on an internal desk. The screen should show the task.
+- Critique has one worked finding so the write-up stays specific. A review does not restyle the page or add regions.
+- Ship check asks for a URL, a build, or a screenshot before it fills the launch table. An idea alone cannot pass.
+- ChatGPT is named next to Claude Code, Cursor, and Codex. File access is still the portable route. Native installs are still not verified.
+- Tests now include the two sample prompts, a score sheet, and a before/after screenshot step for the next update.
+
+### How it looks
+
+Product design. Salon booking. [Before](examples/before-after/0.6.2-draft/product-design/before.png), [after](examples/before-after/0.6.2-draft/product-design/after.png).
+
+![Salon booking before the frame rule](examples/before-after/0.6.2-draft/product-design/before.png)
+
+![Salon booking after the frame rule](examples/before-after/0.6.2-draft/product-design/after.png)
+
+UI/UX design. Same booking task. [Before](examples/before-after/0.6.2-draft/ui-ux-design/before.png), [after](examples/before-after/0.6.2-draft/ui-ux-design/after.png).
+
+![Booking form before the layout rule](examples/before-after/0.6.2-draft/ui-ux-design/before.png)
+
+![Booking form after the layout rule](examples/before-after/0.6.2-draft/ui-ux-design/after.png)
+
+UX critique. Order desk. [Before](examples/before-after/0.6.2-draft/ux-critique/before.png), [after](examples/before-after/0.6.2-draft/ux-critique/after.png).
+
+![Order desk critique before a worked finding](examples/before-after/0.6.2-draft/ux-critique/before.png)
+
+![Order desk critique after a worked finding](examples/before-after/0.6.2-draft/ux-critique/after.png)
+
+Ship check. No site supplied. [Before](examples/before-after/0.6.2-draft/ship-check/before.png), [after](examples/before-after/0.6.2-draft/ship-check/after.png).
+
+![Launch table before an artifact check](examples/before-after/0.6.2-draft/ship-check/before.png)
+
+![Launch question after an artifact check](examples/before-after/0.6.2-draft/ship-check/after.png)
+
+Screenshots illustrate the written rules. They are not a second model's output. Older pictures stay in their own version folder.
+
 ## 0.6.1-draft - 2026-10-04
 
 - Restored icon rules: icon-only only for close, search, menu, more and back, each with an accessible name and tooltip. Never icon-only for destructive or uncommon actions. Status is text + icon + color. One icon set and one style.

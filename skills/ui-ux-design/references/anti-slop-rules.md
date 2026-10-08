@@ -26,6 +26,16 @@ Name the actual elements and their impact. A number alone is not a verdict.
 One global primary button, one accent or two fonts are heuristics, not universal laws.
 Read [slop-tells.md](../../ux-critique/references/slop-tells.md) for concrete review prompts.
 
+## Default screens to leave out
+
+These layouts show up when the idea is still vague. Do not use them unless the current phase asks for that region.
+
+Booking or shop idea. Leave out a marketing hero, rating stats, a testimonial carousel, pricing tiers, a newsletter, and a chat bubble. Build the task: what they book, when, who it is for, and how they confirm or go back.
+
+Internal desk or dashboard idea. Leave out a welcome line, four summary cards, a chart row, an activity feed, and a sync chip. Build the task: the list they act on, the row they open, the status they set, and a way back.
+
+A form, list, or table is fine when it matches the job. Do not place two filled buttons side by side. Do not make delete or remove icon-only.
+
 ## Before handoff
 
 Check the exact change list, phase exclusions, sourced system values, applicable states and accessibility.

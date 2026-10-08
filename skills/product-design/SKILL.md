@@ -5,7 +5,7 @@ description: "Use this when framing a rough product idea, deciding an in-scope f
 
 # Product design
 
-**Pack version:** 0.6.1-draft
+**Pack version:** 0.6.2-draft
 **Context before generate. Product before pixels.**
 
 Define what the product must do. Keep the owned outcome, useful mechanism, objects, journey and screen jobs connected.
@@ -37,10 +37,12 @@ A useful mechanism explains why this product helps more than the current alterna
 
 ## Frame product
 
-Read [decision-checklist.md](references/decision-checklist.md). Resolve only material unknowns within the shared intake limit.
-Recommend one narrow first version. Offer another approach only when it changes a real tradeoff or the user asks.
-State uncertain premises as Unknown; do not require a separate questionnaire or three invented approaches.
-If the frame is supplied or delegated, proceed. Otherwise keep dependent choices Proposed and continue independent work.
+Read [decision-checklist.md](references/decision-checklist.md). On a vague idea, follow the first-reply rule in shared intake and stop.
+Do not derive objects, the journey, or screen jobs in that same reply.
+Recommend one narrow first version only after the frame is answered or delegated.
+Offer another approach only when it changes a real tradeoff or the user asks.
+State uncertain premises as Unknown. Do not require a separate questionnaire or three invented approaches.
+If the frame is supplied or delegated, proceed.
 
 From the agreed job, identify only the objects actually needed, their lifecycles, the main journey and one job per screen.
 No fixed object count. Do not add screens to make the frame feel complete.
