@@ -5,7 +5,7 @@ description: "Use this when designing or refining an in-scope screen, layout, co
 
 # UI/UX design
 
-**Pack version:** 0.6.2-draft
+**Pack version:** 0.6.2
 **Context before generate. Product before pixels.**
 
 Turn a clear screen job into a useful layout. For an unclear product job, ask or route to product-design.

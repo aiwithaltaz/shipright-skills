@@ -1,6 +1,6 @@
 # Ship check report
 
-**Status: Template (ShipRight 0.6.2-draft).**
+**Status: Template (ShipRight 0.6.2).**
 **Project path:** `docs/shipright/ship-check.md`
 
 **Version/date:** <!-- -->  **Sources and approval:** <!-- -->

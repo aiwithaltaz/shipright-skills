@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write styled sample screens for the 0.6.2-draft before/after pairs.
+"""Write styled sample screens for the 0.6.2 before/after pairs.
 
 CSS in this file uses normal braces. Do not turn these strings into f-strings.
 A doubled brace is invalid CSS, and the browser will drop the whole rule.
@@ -7,7 +7,7 @@ A doubled brace is invalid CSS, and the browser will drop the whole rule.
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'tests' / 'fixtures' / '0.6.2-draft'
+OUT = ROOT / 'tests' / 'fixtures' / '0.6.2'
 
 FONT = """
 @font-face { font-family: "Inter"; font-weight: 400; src: url("file:///usr/share/fonts/truetype/macos/Inter-Regular.ttf") format("truetype"); }

@@ -51,7 +51,7 @@ Do this for every skill whose instructions changed.
 Capture command, from the pack root:
 
 ```bash
-sh tests/capture.sh 0.6.2-draft
+sh tests/capture.sh 0.6.2
 ```
 
 The script writes the HTML, screenshots it with headless Chrome, and builds the side-by-side images.

@@ -18,7 +18,7 @@ import tempfile
 ROOT = Path(__file__).resolve().parents[1]
 ICONS = 'skills/ui-ux-design/references/icons-and-placement.md'
 HEAVY_ACCENT = 'without a heavy accent bar unless the design system says so'
-VERSION = '0.6.2-draft'
+VERSION = '0.6.2'
 SKILLS = {'product-design': 8, 'ui-ux-design': 10, 'ux-critique': 10, 'ship-check': 20}
 TEMPLATES = ['01-prd.md', '02-technical-architecture.md', '03-security-and-access.md',
              '04-frontend-spec.md', '05-feature-ticket-list.md', '06-pitch-one-pager.md',
@@ -340,7 +340,7 @@ def self_test(root):
         ('export drift', 'docs/build-rules.md', 'Hide routine system plumbing', 'Show all system plumbing'),
         ('project path', 'docs/05-feature-ticket-list.md', 'docs/shipright/ship-check.md', 'docs/ship-check.md'),
         ('placeholder token', 'docs/DESIGN.md', 'colors: {}', 'colors: {accent: "#000000"}'),
-        ('version', 'skills/ship-check/SKILL.md', '**Pack version:** 0.6.2-draft', '**Pack version:** 0.5.1-draft'),
+        ('version', 'skills/ship-check/SKILL.md', '**Pack version:** 0.6.2', '**Pack version:** 0.5.1-draft'),
         ('frame first', 'skills/_shared/intake.md', 'the first reply is the decision cards only', 'the first reply is the full product'),
         ('how it improved', 'README.md', '## How it improved', '## Notes'),
         ('default screens', 'skills/ui-ux-design/references/anti-slop-rules.md', 'Default screens to leave out', 'Screens to invent'),

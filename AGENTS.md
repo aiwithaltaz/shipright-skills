@@ -1,6 +1,6 @@
 # Maintaining ShipRight
 
-**Pack version: 0.6.2-draft**
+**Pack version: 0.6.2**
 **Context before generate. Product before pixels.**
 
 These rules govern this pack, not an end-user app. Preserve the four skill names and one canonical source tree.

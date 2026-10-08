@@ -1,6 +1,6 @@
 # ShipRight
 
-**Version 0.6.2-draft**
+**Version 0.6.2**
 **Context before generate. Product before pixels.**
 
 ShipRight helps AI design and coding tools follow your product decisions before generating UI.
@@ -82,27 +82,27 @@ Each pair is the same idea, shown on a phone-width screen. Before is the polishe
 
 **Product design.** A salon booking idea. The old path drew a marketing site. The new path keeps one booking task.
 
-[Before](examples/before-after/0.6.2-draft/product-design/before.png) and [after](examples/before-after/0.6.2-draft/product-design/after.png).
+[Before](examples/before-after/0.6.2/product-design/before.png) and [after](examples/before-after/0.6.2/product-design/after.png).
 
-![Salon booking, before and after the frame rule](examples/before-after/0.6.2-draft/product-design/compare.png)
+![Salon booking, before and after the frame rule](examples/before-after/0.6.2/product-design/compare.png)
 
 **UI/UX design.** The same booking task. The old layout has a gradient, summary cards, unlabeled fields, and two filled buttons. The new layout has labels, one action, and a way back.
 
-[Before](examples/before-after/0.6.2-draft/ui-ux-design/before.png) and [after](examples/before-after/0.6.2-draft/ui-ux-design/after.png).
+[Before](examples/before-after/0.6.2/ui-ux-design/before.png) and [after](examples/before-after/0.6.2/ui-ux-design/after.png).
 
-![Booking form, before and after the layout rule](examples/before-after/0.6.2-draft/ui-ux-design/compare.png)
+![Booking form, before and after the layout rule](examples/before-after/0.6.2/ui-ux-design/compare.png)
 
 **UX critique.** The same order desk. The old write-up restyles it. The new write-up names the fix.
 
-[Before](examples/before-after/0.6.2-draft/ux-critique/before.png) and [after](examples/before-after/0.6.2-draft/ux-critique/after.png).
+[Before](examples/before-after/0.6.2/ux-critique/before.png) and [after](examples/before-after/0.6.2/ux-critique/after.png).
 
-![Order desk critique, before and after a worked finding](examples/before-after/0.6.2-draft/ux-critique/compare.png)
+![Order desk critique, before and after a worked finding](examples/before-after/0.6.2/ux-critique/compare.png)
 
 **Ship check.** No site was supplied. The old path filled a launch list. The new path asks one question and stops.
 
-[Before](examples/before-after/0.6.2-draft/ship-check/before.png) and [after](examples/before-after/0.6.2-draft/ship-check/after.png).
+[Before](examples/before-after/0.6.2/ship-check/before.png) and [after](examples/before-after/0.6.2/ship-check/after.png).
 
-![Launch check, before and after an artifact question](examples/before-after/0.6.2-draft/ship-check/compare.png)
+![Launch check, before and after an artifact question](examples/before-after/0.6.2/ship-check/compare.png)
 
 Future updates keep a new folder under `examples/before-after/` and follow [tests/README.md](tests/README.md).
 

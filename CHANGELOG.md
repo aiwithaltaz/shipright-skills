@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.6.2-draft - 2026-10-08
+## 0.6.2 - 2026-10-08
 
 A vague idea was still turning into a full product and a generic screen before anyone answered. This version stops that, and keeps a picture of the difference.
 
@@ -17,21 +17,21 @@ A vague idea was still turning into a full product and a generic screen before a
 
 Phone-width screens. The README shows one side-by-side image per skill. Separate before and after files stay next to it.
 
-Product design. [Before](examples/before-after/0.6.2-draft/product-design/before.png), [after](examples/before-after/0.6.2-draft/product-design/after.png).
+Product design. [Before](examples/before-after/0.6.2/product-design/before.png), [after](examples/before-after/0.6.2/product-design/after.png).
 
-![Salon booking, before and after](examples/before-after/0.6.2-draft/product-design/compare.png)
+![Salon booking, before and after](examples/before-after/0.6.2/product-design/compare.png)
 
-UI/UX design. [Before](examples/before-after/0.6.2-draft/ui-ux-design/before.png), [after](examples/before-after/0.6.2-draft/ui-ux-design/after.png).
+UI/UX design. [Before](examples/before-after/0.6.2/ui-ux-design/before.png), [after](examples/before-after/0.6.2/ui-ux-design/after.png).
 
-![Booking form, before and after](examples/before-after/0.6.2-draft/ui-ux-design/compare.png)
+![Booking form, before and after](examples/before-after/0.6.2/ui-ux-design/compare.png)
 
-UX critique. [Before](examples/before-after/0.6.2-draft/ux-critique/before.png), [after](examples/before-after/0.6.2-draft/ux-critique/after.png).
+UX critique. [Before](examples/before-after/0.6.2/ux-critique/before.png), [after](examples/before-after/0.6.2/ux-critique/after.png).
 
-![Order desk critique, before and after](examples/before-after/0.6.2-draft/ux-critique/compare.png)
+![Order desk critique, before and after](examples/before-after/0.6.2/ux-critique/compare.png)
 
-Ship check. [Before](examples/before-after/0.6.2-draft/ship-check/before.png), [after](examples/before-after/0.6.2-draft/ship-check/after.png).
+Ship check. [Before](examples/before-after/0.6.2/ship-check/before.png), [after](examples/before-after/0.6.2/ship-check/after.png).
 
-![Launch check, before and after](examples/before-after/0.6.2-draft/ship-check/compare.png)
+![Launch check, before and after](examples/before-after/0.6.2/ship-check/compare.png)
 
 Screenshots illustrate the written rules. They are not a second model's output. Older pictures stay in their own version folder.
 

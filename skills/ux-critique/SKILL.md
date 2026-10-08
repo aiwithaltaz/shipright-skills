@@ -5,7 +5,7 @@ description: "Use this when reviewing a plan, specification, screenshot or runni
 
 # UX critique
 
-**Pack version:** 0.6.2-draft
+**Pack version:** 0.6.2
 **Context before generate. Product before pixels.**
 
 Review a real artifact and report evidence-backed corrections. Do not invent users, interview quotes or predicted conversion gains.

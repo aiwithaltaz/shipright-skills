@@ -5,7 +5,7 @@ description: "Use this when framing a rough product idea, deciding an in-scope f
 
 # Product design
 
-**Pack version:** 0.6.2-draft
+**Pack version:** 0.6.2
 **Context before generate. Product before pixels.**
 
 Define what the product must do. Keep the owned outcome, useful mechanism, objects, journey and screen jobs connected.

@@ -1,8 +1,8 @@
 #!/bin/sh
 # Screenshot sample screens at 390 by 844, then build the README pair.
-# Usage, from the pack root: sh tests/capture.sh 0.6.2-draft
+# Usage, from the pack root: sh tests/capture.sh 0.6.2
 set -eu
-VERSION="${1:-0.6.2-draft}"
+VERSION="${1:-0.6.2}"
 ROOT=$(CDPATH= cd -- "$(dirname "$0")/.." && pwd)
 CHROME="${CHROME:-google-chrome}"
 python3 "$ROOT/tests/build_samples.py"
