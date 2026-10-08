@@ -15,29 +15,23 @@ A vague idea was still turning into a full product and a generic screen before a
 
 ### How it looks
 
-Product design. Salon booking. [Before](examples/before-after/0.6.2-draft/product-design/before.png), [after](examples/before-after/0.6.2-draft/product-design/after.png).
+Phone-width screens. The README shows one side-by-side image per skill. Separate before and after files stay next to it.
 
-![Salon booking before the frame rule](examples/before-after/0.6.2-draft/product-design/before.png)
+Product design. [Before](examples/before-after/0.6.2-draft/product-design/before.png), [after](examples/before-after/0.6.2-draft/product-design/after.png).
 
-![Salon booking after the frame rule](examples/before-after/0.6.2-draft/product-design/after.png)
+![Salon booking, before and after](examples/before-after/0.6.2-draft/product-design/compare.png)
 
-UI/UX design. Same booking task. [Before](examples/before-after/0.6.2-draft/ui-ux-design/before.png), [after](examples/before-after/0.6.2-draft/ui-ux-design/after.png).
+UI/UX design. [Before](examples/before-after/0.6.2-draft/ui-ux-design/before.png), [after](examples/before-after/0.6.2-draft/ui-ux-design/after.png).
 
-![Booking form before the layout rule](examples/before-after/0.6.2-draft/ui-ux-design/before.png)
+![Booking form, before and after](examples/before-after/0.6.2-draft/ui-ux-design/compare.png)
 
-![Booking form after the layout rule](examples/before-after/0.6.2-draft/ui-ux-design/after.png)
+UX critique. [Before](examples/before-after/0.6.2-draft/ux-critique/before.png), [after](examples/before-after/0.6.2-draft/ux-critique/after.png).
 
-UX critique. Order desk. [Before](examples/before-after/0.6.2-draft/ux-critique/before.png), [after](examples/before-after/0.6.2-draft/ux-critique/after.png).
+![Order desk critique, before and after](examples/before-after/0.6.2-draft/ux-critique/compare.png)
 
-![Order desk critique before a worked finding](examples/before-after/0.6.2-draft/ux-critique/before.png)
+Ship check. [Before](examples/before-after/0.6.2-draft/ship-check/before.png), [after](examples/before-after/0.6.2-draft/ship-check/after.png).
 
-![Order desk critique after a worked finding](examples/before-after/0.6.2-draft/ux-critique/after.png)
-
-Ship check. No site supplied. [Before](examples/before-after/0.6.2-draft/ship-check/before.png), [after](examples/before-after/0.6.2-draft/ship-check/after.png).
-
-![Launch table before an artifact check](examples/before-after/0.6.2-draft/ship-check/before.png)
-
-![Launch question after an artifact check](examples/before-after/0.6.2-draft/ship-check/after.png)
+![Launch check, before and after](examples/before-after/0.6.2-draft/ship-check/compare.png)
 
 Screenshots illustrate the written rules. They are not a second model's output. Older pictures stay in their own version folder.
 

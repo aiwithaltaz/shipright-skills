@@ -29,6 +29,7 @@ Idea: "Clients should book appointments at my salon. Build it."
 > B. A request the shop confirms later. Example: "Request sent."
 > C. Something else.
 > My pick: No pick yet.
+> You decide: pick A or B and say why. Let me decide: leave this open.
 >
 > Q3. What stays out of this phase?
 > Why it matters: it keeps later ideas out of the UI.
@@ -36,6 +37,7 @@ Idea: "Clients should book appointments at my salon. Build it."
 > B. Reminders, reviews, and staff profiles.
 > C. Something else.
 > My pick: No pick yet.
+> You decide: pick A or B and say why. Let me decide: leave this open.
 
 Not in this reply: a home page, ratings, prices, or a list of screens.
 

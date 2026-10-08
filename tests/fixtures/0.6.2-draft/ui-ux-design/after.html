@@ -2,91 +2,75 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>ui-ux-design after</title>
+<title>ui-ux after</title>
 <style>
-  * { box-sizing: border-box; }
-  html, body { margin: 0; width: 1280px; height: 800px; overflow: hidden; }
-  body {
-    font-family: "Segoe UI", system-ui, sans-serif;
-    color: #1f1a17;
-    background: #f4f1eb;
-  }
-  button, input { font-family: inherit; }
-  .bar {
-    height: 36px;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #1f1a17;
-    color: #f4f1eb;
-    font-size: 13px;
-    letter-spacing: 0.01em;
-  }
-  .bar span { color: #c8bfb4; }
-  .stage { height: 764px; overflow: hidden; }
-  .fine {
-    font-size: 12px;
-    line-height: 1.4;
-    color: #5e564e;
-  }
+
+@font-face { font-family: "Inter"; font-weight: 400; src: url("file:///usr/share/fonts/truetype/macos/Inter-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 500; src: url("file:///usr/share/fonts/truetype/macos/Inter-Medium.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("file:///usr/share/fonts/truetype/macos/Inter-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 700; src: url("file:///usr/share/fonts/truetype/macos/Inter-Bold.ttf") format("truetype"); }
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 390px; height: 844px; overflow: hidden; }
+body { font-family: Inter, "Noto Sans", sans-serif; color: #1c1917; }
+button, input { font-family: inherit; }
+
+.calm { width: 390px; height: 844px; background: #f3f1ec; display: flex; flex-direction: column; }
+.top { height: 56px; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; }
+.back { border: 0; background: transparent; padding: 8px 0; color: #143d2e; font-size: 15px; font-weight: 600; }
+.brand { font-size: 13px; font-weight: 600; color: #6b6560; }
+.main { padding: 4px 20px 0; }
+h1 { margin: 12px 0 8px; font-size: 32px; line-height: 1.12; letter-spacing: -0.03em; font-weight: 700; }
+.lead { margin: 0 0 24px; font-size: 16px; line-height: 1.45; color: #4a453f; }
+.lbl { display: block; margin: 0 0 8px; font-size: 13px; font-weight: 600; }
+.choice { height: 52px; padding: 0 16px; border: 1px solid #e4ddd4; border-radius: 12px; background: #fff; display: flex; align-items: center; justify-content: space-between; font-size: 16px; }
+.hint { margin: 8px 0 20px; font-size: 13px; line-height: 1.4; color: #6b6560; }
+.chips { display: flex; gap: 8px; margin: 0 0 20px; }
+.chip { flex: 1; height: 44px; border-radius: 12px; border: 1px solid #e4ddd4; background: #fff; font-size: 14px; font-weight: 500; color: #1c1917; }
+.chip.on { background: #143d2e; border-color: #143d2e; color: #fff; font-weight: 600; }
+.name { width: 100%; height: 48px; border: 1px solid #e4ddd4; border-radius: 12px; background: #fff; padding: 0 14px; font-size: 16px; }
+.later { margin: 20px 0 0; font-size: 14px; line-height: 1.45; color: #6b6560; }
+.phase { margin-top: 20px; background: #fff; border: 1px solid #e4ddd4; border-radius: 16px; padding: 16px; }
+.phase strong { display: block; margin: 0 0 4px; font-size: 18px; letter-spacing: -0.02em; }
+.phase p { margin: 0; font-size: 14px; line-height: 1.45; color: #4a453f; }
+.dock { margin-top: auto; padding: 16px 20px 24px; }
+.dock p { margin: 0 0 10px; font-size: 13px; line-height: 1.4; color: #6b6560; }
+.primary { width: 100%; height: 52px; border: 0; border-radius: 14px; background: #143d2e; color: #fff; font-size: 16px; font-weight: 600; }
+
+.formcalm { width: 390px; height: 844px; background: #f3f1ec; display: flex; flex-direction: column; }
+.panel { margin: 8px 20px 0; background: #fff; border: 1px solid #e4ddd4; border-radius: 16px; padding: 16px; }
+.field { margin-bottom: 16px; }
+.field span { display: block; margin-bottom: 8px; font-size: 13px; font-weight: 600; }
+.value { height: 48px; border: 1px solid #e7e1d8; border-radius: 12px; background: #faf8f5; padding: 0 14px; display: flex; align-items: center; font-size: 16px; }
+.draft { margin-top: 4px; padding: 14px; border-radius: 12px; background: #f6f3ee; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.draft p { margin: 0; font-size: 14px; line-height: 1.4; }
+.draft strong { display: block; font-size: 13px; }
+.textbtn { border: 0; background: transparent; color: #8f2d2d; font-size: 14px; font-weight: 600; padding: 8px 0; }
+
 </style>
 </head>
 <body>
-  <div class="bar">
-    <strong>ui-ux-design</strong>
-    <span>0.6.2-draft output. Same booking task, laid out for the job</span>
-  </div>
-  <div class="stage">
 
-<style>
-  .app {{ padding: 28px 48px 0; max-width: 760px; }}
-  .back {{ border: 0; background: transparent; padding: 0; color: #1d4f3a; font-size: 14px; font-weight: 650; }}
-  h1 {{ margin: 16px 0 8px; font-size: 32px; line-height: 1.15; }}
-  .lead {{ margin: 0 0 20px; font-size: 16px; }}
-  .panel {{ background: #fffcf8; border: 1px solid #e3dcd2; border-radius: 12px; padding: 20px 24px; }}
-  label {{ display: block; font-size: 14px; font-weight: 650; margin: 12px 0 8px; }}
-  label:first-child {{ margin-top: 0; }}
-  .value, input {{
-    width: 100%; height: 44px; border: 1px solid #d9d0c4; border-radius: 8px; background: #fff;
-    padding: 0 12px; font-size: 16px; display: flex; align-items: center;
-  }}
-  .held {{
-    margin-top: 16px; padding: 12px 16px; border-radius: 8px; background: #f4f1eb;
-    display: flex; align-items: center; justify-content: space-between; gap: 16px;
-  }}
-  .held p {{ margin: 0; font-size: 14px; }}
-  .textbtn {{ border: 0; background: transparent; color: #8f2d2d; font-size: 14px; font-weight: 650; padding: 8px 0; }}
-  .status {{ margin-top: 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }}
-  .primary {{
-    height: 44px; padding: 0 20px; border: 0; border-radius: 8px; background: #1d4f3a; color: #fff;
-    font-size: 16px; font-weight: 650;
-  }}
-  .foot {{ margin: 12px 0 0; }}
-</style>
-<div class="app">
-  <button class="back">Back</button>
-  <h1>Book a visit</h1>
-  <p class="lead">Haircut, Thu 9 Oct at 10:30. Confirm when the name is filled in.</p>
-  <div class="panel">
-    <label>Service</label>
-    <div class="value">Haircut</div>
-    <label>When</label>
-    <div class="value">Thu 9 Oct, 10:30</div>
-    <label for="who">Name</label>
-    <input id="who" type="text" placeholder="First and last name">
-    <div class="held">
-      <p><strong>Draft</strong><br>Fri 10:00. Sample hold, not a customer.</p>
-      <button class="textbtn">Remove draft</button>
+<div class="formcalm calm">
+  <div class="top"><button class="back" type="button">Back</button><div class="brand">North Studio</div></div>
+  <div class="main">
+    <h1>Book a visit</h1>
+    <p class="lead">Haircut on Thu 9 Oct at 10:30. Confirm when the name is filled in.</p>
+    <div class="panel">
+      <div class="field"><span>Service</span><div class="value">Haircut</div></div>
+      <div class="field"><span>When</span><div class="value">Thu 9 Oct, 10:30</div></div>
+      <div class="field"><span>Name</span><input class="name" id="who" type="text" placeholder="First and last name"></div>
+      <div class="draft">
+        <p><strong>Draft</strong>Fri 10:00. Sample hold, not a customer.</p>
+        <button class="textbtn" type="button">Remove draft</button>
+      </div>
     </div>
-    <div class="status">
-      <span class="fine">Not saved yet. Back keeps this draft. Confirm books the visit.</span>
-      <button class="primary">Confirm visit</button>
-    </div>
+    <div class="phase"><span class="lbl">Layout</span><strong>One next step</strong><p>Labels stay visible. Remove draft is a word, not an icon.</p></div>
   </div>
-  <p class="foot fine">Illustration. Same booking facts as the before screen. No stats, no second button, no icon-only remove.</p>
+  <div class="dock">
+    <p>Not saved yet. Back keeps this draft. Confirm books the visit.</p>
+    <button class="primary" type="button">Confirm visit</button>
+  </div>
 </div>
 
-  </div>
 </body>
 </html>

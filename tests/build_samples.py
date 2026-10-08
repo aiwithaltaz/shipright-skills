@@ -1,508 +1,377 @@
 #!/usr/bin/env python3
-"""Write the 0.6.2-draft before/after sample screens.
+"""Write styled sample screens for the 0.6.2-draft before/after pairs.
 
-These pages illustrate the written rules. They are not a second model's output.
-Ratings, quotes, and prices appear only on the "before" screens, and those pages say they are fake.
+CSS in this file uses normal braces. Do not turn these strings into f-strings.
+A doubled brace is invalid CSS, and the browser will drop the whole rule.
 """
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.6.2-draft'
-OUT = ROOT / 'tests' / 'fixtures' / VERSION
+OUT = ROOT / 'tests' / 'fixtures' / '0.6.2-draft'
 
-FONT = '"Segoe UI", system-ui, sans-serif'
+FONT = """
+@font-face { font-family: "Inter"; font-weight: 400; src: url("file:///usr/share/fonts/truetype/macos/Inter-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 500; src: url("file:///usr/share/fonts/truetype/macos/Inter-Medium.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("file:///usr/share/fonts/truetype/macos/Inter-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 700; src: url("file:///usr/share/fonts/truetype/macos/Inter-Bold.ttf") format("truetype"); }
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 390px; height: 844px; overflow: hidden; }
+body { font-family: Inter, "Noto Sans", sans-serif; color: #1c1917; }
+button, input { font-family: inherit; }
+"""
+
+SLOP = """
+.slop { width: 390px; height: 844px; background: #f6f4fb; }
+.nav { height: 56px; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; background: #fff; }
+.logo { font-size: 16px; font-weight: 700; letter-spacing: -0.02em; }
+.ghost { height: 32px; padding: 0 12px; border: 0; border-radius: 999px; background: #f3e8ff; color: #6d28d9; font-size: 13px; font-weight: 600; }
+.hero { margin: 12px 16px 0; padding: 28px 20px 26px; border-radius: 28px; background: linear-gradient(165deg, #4c1d95 0%, #7c3aed 46%, #db2777 100%); color: #fff; }
+.eyebrow { margin: 0 0 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.hero h1 { margin: 0 0 8px; font-size: 34px; line-height: 1.08; letter-spacing: -0.03em; font-weight: 700; }
+.hero .sub { margin: 0 0 20px; font-size: 15px; line-height: 1.45; }
+.ctas { display: flex; gap: 8px; }
+.ctas button { flex: 1; height: 44px; border: 0; border-radius: 999px; font-size: 14px; font-weight: 600; }
+.light { background: #fff; color: #5b21b6; }
+.pink { background: #be185d; color: #fff; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: -20px 16px 0; position: relative; }
+.stat { background: #fff; border-radius: 16px; padding: 12px 8px 10px; text-align: center; box-shadow: 0 12px 28px rgba(76, 29, 149, 0.14); }
+.stat b { display: block; font-size: 18px; font-weight: 700; color: #6d28d9; letter-spacing: -0.03em; }
+.stat span { font-size: 12px; color: #6b6280; }
+.card { margin: 16px 16px 0; background: #fff; border-radius: 20px; padding: 16px; box-shadow: 0 8px 24px rgba(76, 29, 149, 0.06); }
+.stars { margin: 0; color: #d97706; letter-spacing: 2px; font-size: 13px; }
+.card p { margin: 8px 0 12px; font-size: 16px; line-height: 1.4; }
+.who { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #6b6280; }
+.avatar { width: 28px; height: 28px; border-radius: 50%; background: #ede9fe; color: #5b21b6; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+.row { display: flex; align-items: center; justify-content: space-between; padding: 11px 0; border-top: 1px solid #f3eef9; font-size: 15px; }
+.row:first-of-type { border-top: 0; }
+.row b { color: #6d28d9; font-size: 18px; letter-spacing: -0.03em; }
+.badge { margin-left: 8px; background: #ede9fe; color: #5b21b6; border-radius: 999px; padding: 3px 8px; font-size: 12px; font-weight: 600; }
+.news { margin: 16px 16px 0; background: #fff; border-radius: 20px; padding: 12px; display: flex; gap: 8px; box-shadow: 0 8px 24px rgba(76, 29, 149, 0.06); }
+.news input { flex: 1; height: 44px; border: 0; border-radius: 12px; background: #f6f3ff; padding: 0 12px; font-size: 15px; color: #1c1917; }
+.news button { height: 44px; border: 0; border-radius: 12px; background: #6d28d9; color: #fff; font-size: 14px; font-weight: 600; padding: 0 14px; }
+.seen { margin: 18px 20px 0; font-size: 12px; color: #8b849c; letter-spacing: 0.04em; text-transform: uppercase; }
+.seen strong { display: block; margin-top: 6px; font-size: 13px; letter-spacing: 0.12em; color: #6b6280; font-weight: 700; }
+"""
+
+CALM = """
+.calm { width: 390px; height: 844px; background: #f3f1ec; display: flex; flex-direction: column; }
+.top { height: 56px; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; }
+.back { border: 0; background: transparent; padding: 8px 0; color: #143d2e; font-size: 15px; font-weight: 600; }
+.brand { font-size: 13px; font-weight: 600; color: #6b6560; }
+.main { padding: 4px 20px 0; }
+h1 { margin: 12px 0 8px; font-size: 32px; line-height: 1.12; letter-spacing: -0.03em; font-weight: 700; }
+.lead { margin: 0 0 24px; font-size: 16px; line-height: 1.45; color: #4a453f; }
+.lbl { display: block; margin: 0 0 8px; font-size: 13px; font-weight: 600; }
+.choice { height: 52px; padding: 0 16px; border: 1px solid #e4ddd4; border-radius: 12px; background: #fff; display: flex; align-items: center; justify-content: space-between; font-size: 16px; }
+.hint { margin: 8px 0 20px; font-size: 13px; line-height: 1.4; color: #6b6560; }
+.chips { display: flex; gap: 8px; margin: 0 0 20px; }
+.chip { flex: 1; height: 44px; border-radius: 12px; border: 1px solid #e4ddd4; background: #fff; font-size: 14px; font-weight: 500; color: #1c1917; }
+.chip.on { background: #143d2e; border-color: #143d2e; color: #fff; font-weight: 600; }
+.name { width: 100%; height: 48px; border: 1px solid #e4ddd4; border-radius: 12px; background: #fff; padding: 0 14px; font-size: 16px; }
+.later { margin: 20px 0 0; font-size: 14px; line-height: 1.45; color: #6b6560; }
+.phase { margin-top: 20px; background: #fff; border: 1px solid #e4ddd4; border-radius: 16px; padding: 16px; }
+.phase strong { display: block; margin: 0 0 4px; font-size: 18px; letter-spacing: -0.02em; }
+.phase p { margin: 0; font-size: 14px; line-height: 1.45; color: #4a453f; }
+.dock { margin-top: auto; padding: 16px 20px 24px; }
+.dock p { margin: 0 0 10px; font-size: 13px; line-height: 1.4; color: #6b6560; }
+.primary { width: 100%; height: 52px; border: 0; border-radius: 14px; background: #143d2e; color: #fff; font-size: 16px; font-weight: 600; }
+"""
+
+FORM_SLOP = """
+.formslop { width: 390px; height: 844px; background: #f6f4fb; display: flex; flex-direction: column; }
+.banner { padding: 28px 20px 22px; background: linear-gradient(165deg, #4c1d95, #7c3aed 70%); color: #fff; }
+.banner h1 { margin: 0 0 6px; font-size: 28px; letter-spacing: -0.03em; font-weight: 700; }
+.banner p { margin: 0; font-size: 15px; line-height: 1.4; }
+.metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: -16px 16px 0; position: relative; }
+.metric { background: #fff; border-radius: 16px; padding: 12px 14px; box-shadow: 0 10px 24px rgba(76, 29, 149, 0.12); }
+.metric b { display: block; font-size: 20px; color: #6d28d9; letter-spacing: -0.03em; }
+.metric span { font-size: 12px; color: #6b6280; }
+.sheet { margin: 16px 16px 0; background: #fff; border-radius: 20px; padding: 16px; box-shadow: 0 8px 24px rgba(76, 29, 149, 0.06); }
+.sheet input { width: 100%; height: 48px; border: 0; border-radius: 12px; background: #f4f0ff; margin-bottom: 8px; padding: 0 14px; font-size: 16px; color: #1c1917; }
+.held { display: flex; align-items: center; justify-content: space-between; padding: 4px 4px 12px; font-size: 15px; }
+.icon { width: 40px; height: 40px; border: 0; border-radius: 12px; background: #f3e8ff; color: #6d28d9; }
+.pair { display: flex; gap: 8px; }
+.pair button { flex: 1; height: 48px; border: 0; border-radius: 14px; color: #fff; font-size: 15px; font-weight: 600; }
+.tabs { margin-top: auto; height: 72px; background: #fff; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid #efeaf8; }
+.tabs span { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 11px; color: #8b849c; font-weight: 600; }
+.tabs span.on { color: #6d28d9; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+"""
+
+FORM_CALM = """
+.formcalm { width: 390px; height: 844px; background: #f3f1ec; display: flex; flex-direction: column; }
+.panel { margin: 8px 20px 0; background: #fff; border: 1px solid #e4ddd4; border-radius: 16px; padding: 16px; }
+.field { margin-bottom: 16px; }
+.field span { display: block; margin-bottom: 8px; font-size: 13px; font-weight: 600; }
+.value { height: 48px; border: 1px solid #e7e1d8; border-radius: 12px; background: #faf8f5; padding: 0 14px; display: flex; align-items: center; font-size: 16px; }
+.draft { margin-top: 4px; padding: 14px; border-radius: 12px; background: #f6f3ee; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.draft p { margin: 0; font-size: 14px; line-height: 1.4; }
+.draft strong { display: block; font-size: 13px; }
+.textbtn { border: 0; background: transparent; color: #8f2d2d; font-size: 14px; font-weight: 600; padding: 8px 0; }
+"""
+
+REVIEW = """
+.review { width: 390px; height: 844px; background: #f3f1ec; padding: 16px 16px 0; }
+.review h1 { margin: 8px 4px 4px; font-size: 28px; letter-spacing: -0.03em; }
+.kicker { margin: 0 4px 12px; font-size: 13px; color: #6b6560; }
+.desk { background: #fff; border: 1px solid #e4ddd4; border-radius: 16px; overflow: hidden; margin-bottom: 12px; }
+.deskhead { height: 44px; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; background: linear-gradient(90deg, #5b21b6, #7c3aed); color: #fff; font-size: 14px; font-weight: 600; }
+.sync { background: rgba(255,255,255,.2); border-radius: 999px; padding: 3px 8px; font-size: 12px; font-weight: 600; }
+.line { display: grid; grid-template-columns: 1fr auto auto; gap: 8px; align-items: center; padding: 10px 12px; border-top: 1px solid #f1ece6; font-size: 14px; }
+.line small { display: block; color: #6b6560; font-size: 12px; }
+.trash { width: 32px; height: 32px; border: 0; border-radius: 8px; background: #f3e8ff; color: #6d28d9; }
+.detail { padding: 12px; border-top: 1px solid #f1ece6; }
+.detail p { margin: 4px 0 10px; font-size: 13px; color: #6b6560; }
+.mini { display: flex; gap: 8px; }
+.mini span { height: 32px; padding: 0 10px; border-radius: 8px; color: #fff; font-size: 12px; font-weight: 600; display: flex; align-items: center; }
+.bubble { background: #fff; border-radius: 16px; padding: 14px; border: 1px solid #e4ddd4; }
+.bubble h2 { margin: 0 0 8px; font-size: 16px; letter-spacing: -0.02em; }
+.bubble p { margin: 0 0 8px; font-size: 14px; line-height: 1.45; color: #3f3833; }
+.chips2 { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips2 span { background: #f3e8ff; color: #5b21b6; border-radius: 999px; padding: 6px 10px; font-size: 12px; font-weight: 600; }
+.find { background: #fff; border: 1px solid #e4ddd4; border-radius: 14px; padding: 12px; margin-bottom: 8px; }
+.find b { font-size: 14px; }
+.find p { margin: 6px 0 0; font-size: 13px; line-height: 1.4; color: #3f3833; }
+.tag { display: inline-block; margin-right: 6px; border-radius: 6px; padding: 2px 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.02em; }
+.tag.b { background: #f8e6e6; color: #8f2d2d; }
+.tag.m { background: #f8efd8; color: #7a5410; }
+.kept { margin: 4px 4px 0; font-size: 13px; line-height: 1.45; color: #3f3833; }
+"""
+
+CHECK = """
+.check { width: 390px; height: 844px; background: #f3f1ec; padding: 20px 16px 0; }
+.check h1 { margin: 12px 4px 6px; font-size: 28px; letter-spacing: -0.03em; }
+.sub { margin: 0 4px 14px; font-size: 14px; line-height: 1.4; color: #4a453f; }
+.list { background: #fff; border: 1px solid #e4ddd4; border-radius: 16px; overflow: hidden; }
+.item { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border-top: 1px solid #f1ece6; }
+.item:first-child { border-top: 0; }
+.item strong { display: block; font-size: 14px; font-weight: 600; }
+.item span { display: block; margin-top: 2px; font-size: 12px; color: #6b6560; }
+.pill { flex: 0 0 auto; background: #efeae3; color: #3f3833; border-radius: 999px; padding: 4px 8px; font-size: 11px; font-weight: 700; }
+.more { margin: 12px 4px 0; font-size: 13px; line-height: 1.45; color: #6b6560; }
+.opt { background: #fff; border: 1px solid #e4ddd4; border-radius: 14px; padding: 12px 14px; margin-bottom: 8px; }
+.opt strong { display: block; font-size: 15px; margin-bottom: 2px; }
+.opt span { font-size: 13px; line-height: 1.4; color: #6b6560; }
+.foot { margin: 8px 4px 0; font-size: 13px; line-height: 1.45; color: #3f3833; }
+"""
+
+TRASH = '<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M5.5 2h5l.5 1H14v1.5H2V3h3zm-1 3.5h1.4v7H4.5zm3.2 0h1.4v7H7.7zm3.2 0H12v7h-1.1z"/></svg>'
+
+DESK = """
+<div class="desk">
+  <div class="deskhead"><span>Open orders</span><span class="sync">Synced</span></div>
+  <div class="line"><span>1042<small>Sample row</small></span><span>Open</span><button class="trash" type="button">""" + TRASH + """</button></div>
+  <div class="line"><span>1048<small>Sample row</small></span><span>Open</span><span></span></div>
+  <div class="detail">
+    <strong>Order 1042</strong>
+    <p>Detail is open. There is no way back.</p>
+    <div class="mini"><span style="background:#6d28d9">Mark packed</span><span style="background:#be185d">Export</span></div>
+  </div>
+</div>
+"""
 
 
-def page(skill, side, version_label, note, body, bg='#f4f1eb'):
-    return f'''<!DOCTYPE html>
+def wrap(title, css, body):
+    html = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>{skill} {side}</title>
+<title>""" + title + """</title>
 <style>
-  * {{ box-sizing: border-box; }}
-  html, body {{ margin: 0; width: 1280px; height: 800px; overflow: hidden; }}
-  body {{
-    font-family: {FONT};
-    color: #1f1a17;
-    background: {bg};
-  }}
-  button, input {{ font-family: inherit; }}
-  .bar {{
-    height: 36px;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #1f1a17;
-    color: #f4f1eb;
-    font-size: 13px;
-    letter-spacing: 0.01em;
-  }}
-  .bar span {{ color: #c8bfb4; }}
-  .stage {{ height: 764px; overflow: hidden; }}
-  .fine {{
-    font-size: 12px;
-    line-height: 1.4;
-    color: #5e564e;
-  }}
+""" + FONT + css + """
 </style>
 </head>
 <body>
-  <div class="bar">
-    <strong>{skill}</strong>
-    <span>{version_label}. {note}</span>
-  </div>
-  <div class="stage">
-{body}
-  </div>
+""" + body + """
 </body>
 </html>
-'''
+"""
+    if '{{' in html or '}}' in html:
+        raise SystemExit('CSS braces were doubled in ' + title)
+    return html
 
 
-PRODUCT_BEFORE = '''
-<style>
-  .nav, .wrap {{ padding: 0 32px; }}
-  .nav {{
-    height: 56px; display: flex; align-items: center; justify-content: space-between;
-    background: #fff;
-  }}
-  .logo {{ font-weight: 700; font-size: 16px; }}
-  .nav-actions {{ display: flex; gap: 8px; }}
-  .fill {{
-    border: 0; border-radius: 8px; padding: 8px 14px; font-size: 14px; font-weight: 650; color: #fff;
-  }}
-  .p1 {{ background: #6d28d9; }}
-  .p2 {{ background: #db2777; }}
-  .hero {{
-    margin: 16px 32px 0;
-    height: 168px;
-    border-radius: 16px;
-    padding: 28px 32px;
-    background: linear-gradient(100deg, #6d28d9, #db2777);
-    color: #fff;
-  }}
-  .hero h1 {{ margin: 0 0 8px; font-size: 32px; line-height: 1.15; font-weight: 700; }}
-  .hero p {{ margin: 0 0 16px; font-size: 16px; }}
-  .stats, .quotes, .prices {{ display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; padding: 16px 32px 0; }}
-  .card {{
-    background: #fff; border-radius: 12px; padding: 12px 16px;
-    box-shadow: 0 8px 24px rgba(76, 29, 149, 0.12);
-  }}
-  .stat b {{ display: block; font-size: 20px; color: #6d28d9; }}
-  .stat span, .quote span, .price span {{ font-size: 13px; color: #6b6280; }}
-  .quote p, .price strong {{ margin: 0 0 4px; font-size: 14px; }}
-  .price b {{ font-size: 24px; color: #6d28d9; }}
-  .foot {{ padding: 12px 32px 0; }}
-</style>
-<div class="nav">
-  <div class="logo">North Studio</div>
-  <div class="nav-actions">
-    <button class="fill p1">Book now</button>
-    <button class="fill p2">Explore</button>
+PAGES = {
+    'product-design': {
+        'before': wrap('product-design before', SLOP, """
+<div class="slop">
+  <div class="nav"><div class="logo">North Studio</div><button class="ghost" type="button">Menu</button></div>
+  <section class="hero">
+    <p class="eyebrow">The new way to book</p>
+    <h1>Book beauty, elevated</h1>
+    <p class="sub">Trusted by thousands of happy clients.</p>
+    <div class="ctas"><button class="light" type="button">Book now</button><button class="pink" type="button">Learn more</button></div>
+  </section>
+  <section class="stats">
+    <article class="stat"><b>2,400</b><span>Clients</span></article>
+    <article class="stat"><b>4.9</b><span>Rating</span></article>
+    <article class="stat"><b>18</b><span>Stylists</span></article>
+  </section>
+  <section class="card">
+    <p class="stars">★★★★★</p>
+    <p>"Best salon in town. I come every week."</p>
+    <div class="who"><div class="avatar">M</div><span>Maya L. · Client</span></div>
+  </section>
+  <section class="card">
+    <div class="row"><span>Cut</span><b>$48</b></div>
+    <div class="row"><span>Color <em class="badge">Popular</em></span><b>$72</b></div>
+    <div class="row"><span>Wedding</span><b>$120</b></div>
+  </section>
+  <form class="news">
+    <input placeholder="Email address" aria-label="Email address">
+    <button type="button">Subscribe</button>
+  </form>
+  <p class="seen">As seen in<strong>Vogue · Gloss · Today</strong></p>
+</div>
+"""),
+        'after': wrap('product-design after', CALM, """
+<div class="calm">
+  <div class="top"><button class="back" type="button">Back</button><div class="brand">North Studio</div></div>
+  <div class="main">
+    <h1>Book a visit</h1>
+    <p class="lead">Choose a service and a time. This phase confirms the visit.</p>
+    <label class="lbl">Service</label>
+    <div class="choice"><span>Haircut</span></div>
+    <p class="hint">Sample label. The shop has not named its list.</p>
+    <label class="lbl">Day</label>
+    <div class="chips">
+      <button class="chip" type="button">Wed 8</button>
+      <button class="chip on" type="button">Thu 9</button>
+      <button class="chip" type="button">Fri 10</button>
+    </div>
+    <label class="lbl">Time</label>
+    <div class="chips">
+      <button class="chip" type="button">9:00</button>
+      <button class="chip on" type="button">10:30</button>
+      <button class="chip" type="button">14:00</button>
+    </div>
+    <label class="lbl" for="name">Name</label>
+    <input class="name" id="name" type="text" placeholder="First and last name">
+    <p class="later">Not on this screen: pay in the app, reminders, reviews, or staff profiles.</p>
+    <div class="phase"><span class="lbl">This phase</span><strong>Confirm one visit</strong><p>The button below is the only action. Leaving does not book anything.</p></div>
+  </div>
+  <div class="dock">
+    <p>Not saved yet. You can leave and nothing is booked.</p>
+    <button class="primary" type="button">Confirm visit</button>
   </div>
 </div>
-<div class="hero">
-  <h1>Book beauty, elevated</h1>
-  <p>The premium way to look your best. Trusted by thousands.</p>
-  <button class="fill" style="background:#fff;color:#6d28d9">Book now</button>
-  <button class="fill p2">Learn more</button>
+"""),
+    },
+    'ui-ux-design': {
+        'before': wrap('ui-ux before', FORM_SLOP, """
+<div class="formslop">
+  <div class="banner"><h1>Welcome back</h1><p>Your beauty journey starts here.</p></div>
+  <section class="metrics">
+    <article class="metric"><b>12</b><span>Today</span></article>
+    <article class="metric"><b>4.9</b><span>Rating</span></article>
+    <article class="metric"><b>8</b><span>Staff</span></article>
+    <article class="metric"><b>$1.2k</b><span>Revenue</span></article>
+  </section>
+  <form class="sheet">
+    <input placeholder="Service" value="Haircut">
+    <input placeholder="When" value="Thu 9 Oct, 10:30">
+    <input placeholder="Your name">
+    <div class="held"><span>Fri 10:00 held</span><button class="icon" type="button">""" + TRASH + """</button></div>
+    <div class="pair"><button type="button" style="background:#6d28d9">Confirm visit</button><button type="button" style="background:#be185d">Learn more</button></div>
+  </form>
+  <nav class="tabs">
+    <span>Home</span><span class="on">Book</span><span>Rewards</span><span>You</span>
+  </nav>
 </div>
-<div class="stats">
-  <div class="card stat"><b>2,400</b><span>Happy clients</span></div>
-  <div class="card stat"><b>4.9</b><span>Average rating</span></div>
-  <div class="card stat"><b>18</b><span>Stylists</span></div>
-</div>
-<div class="quotes">
-  <div class="card quote"><p>"Best salon in town."</p><span>Maya, invented quote</span></div>
-  <div class="card quote"><p>"I come back every week."</p><span>Jon, invented quote</span></div>
-  <div class="card quote"><p>"Worth every penny."</p><span>Ava, invented quote</span></div>
-</div>
-<div class="prices">
-  <div class="card price"><span>Cut</span><div><b>$48</b></div><strong>Invented price</strong></div>
-  <div class="card price"><span>Color</span><div><b>$72</b></div><strong>Most popular</strong></div>
-  <div class="card price"><span>Wedding</span><div><b>$120</b></div><strong>Invented price</strong></div>
-</div>
-<div class="foot fine">Illustration of a first screen drawn before anyone answered. Ratings, quotes, and prices are fake.</div>
-'''
-
-
-PRODUCT_AFTER = '''
-<style>
-  .app {{ padding: 32px 48px 0; max-width: 760px; }}
-  .back {{
-    border: 0; background: transparent; padding: 0; color: #1d4f3a; font-size: 14px; font-weight: 650;
-  }}
-  h1 {{ margin: 20px 0 8px; font-size: 32px; line-height: 1.15; }}
-  .lead {{ margin: 0 0 20px; font-size: 16px; color: #3f3833; max-width: 520px; }}
-  .panel {{
-    background: #fffcf8; border: 1px solid #e3dcd2; border-radius: 12px; padding: 20px 24px 24px;
-  }}
-  .row {{ margin-bottom: 16px; }}
-  .row label, .kicker {{ display: block; font-size: 14px; font-weight: 650; margin-bottom: 8px; }}
-  .choice {{
-    display: flex; justify-content: space-between; align-items: center;
-    border: 1px solid #e3dcd2; border-radius: 8px; padding: 12px 16px; background: #fff;
-  }}
-  .choice small {{ color: #5e564e; font-size: 13px; }}
-  .times {{ display: flex; gap: 8px; }}
-  .time {{
-    border: 1px solid #d9d0c4; background: #fff; border-radius: 8px; padding: 8px 16px; font-size: 14px;
-  }}
-  .time.on {{ border: 2px solid #1d4f3a; background: #e7f0eb; font-weight: 650; }}
-  input[type="text"] {{
-    width: 100%; height: 44px; border: 1px solid #d9d0c4; border-radius: 8px; padding: 0 12px; font-size: 16px;
-  }}
-  .status {{
-    display: flex; justify-content: space-between; align-items: center; margin-top: 8px;
-  }}
-  .primary {{
-    height: 44px; padding: 0 20px; border: 0; border-radius: 8px; background: #1d4f3a; color: #fff;
-    font-size: 16px; font-weight: 650;
-  }}
-  .later {{ margin: 16px 0 0; font-size: 14px; color: #5e564e; }}
-</style>
-<div class="app">
-  <button class="back">Back</button>
-  <h1>Book a visit</h1>
-  <p class="lead">Choose a service and a time. This phase confirms the visit. It does not take payment.</p>
-  <div class="panel">
-    <div class="row">
-      <label>Service</label>
-      <div class="choice"><span>Haircut</span><small>Sample label. The shop has not named its list.</small></div>
-    </div>
-    <div class="row">
-      <div class="kicker">Day</div>
-      <div class="times">
-        <button class="time">Wed 8 Oct</button>
-        <button class="time on">Thu 9 Oct</button>
-        <button class="time">Fri 10 Oct</button>
+"""),
+        'after': wrap('ui-ux after', CALM + FORM_CALM, """
+<div class="formcalm calm">
+  <div class="top"><button class="back" type="button">Back</button><div class="brand">North Studio</div></div>
+  <div class="main">
+    <h1>Book a visit</h1>
+    <p class="lead">Haircut on Thu 9 Oct at 10:30. Confirm when the name is filled in.</p>
+    <div class="panel">
+      <div class="field"><span>Service</span><div class="value">Haircut</div></div>
+      <div class="field"><span>When</span><div class="value">Thu 9 Oct, 10:30</div></div>
+      <div class="field"><span>Name</span><input class="name" id="who" type="text" placeholder="First and last name"></div>
+      <div class="draft">
+        <p><strong>Draft</strong>Fri 10:00. Sample hold, not a customer.</p>
+        <button class="textbtn" type="button">Remove draft</button>
       </div>
     </div>
-    <div class="row">
-      <div class="kicker">Time</div>
-      <div class="times">
-        <button class="time">9:00</button>
-        <button class="time on">10:30</button>
-        <button class="time">14:00</button>
-      </div>
-    </div>
-    <div class="row">
-      <label for="name">Name</label>
-      <input id="name" type="text" placeholder="First and last name">
-    </div>
-    <div class="status">
-      <span class="fine">Not saved yet. You can leave and nothing is booked.</span>
-      <button class="primary">Confirm visit</button>
-    </div>
+    <div class="phase"><span class="lbl">Layout</span><strong>One next step</strong><p>Labels stay visible. Remove draft is a word, not an icon.</p></div>
   </div>
-  <p class="later">Notes only, not on this screen: pay in the app, reminders, reviews, staff profiles.</p>
-  <p class="fine">Illustration. No ratings, quotes, or prices, because none were supplied.</p>
-</div>
-'''
-
-
-UI_BEFORE = '''
-<style>
-  .hero {{
-    height: 92px; padding: 16px 32px; color: #fff;
-    background: linear-gradient(90deg, #6d28d9, #7c3aed);
-  }}
-  .hero h1 {{ margin: 0; font-size: 24px; }}
-  .hero p {{ margin: 4px 0 0; font-size: 14px; opacity: 0.9; }}
-  .stats {{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 16px 32px 0; }}
-  .stat {{ background: #fff; border-radius: 12px; padding: 12px 16px; box-shadow: 0 6px 16px rgba(76,29,149,.12); }}
-  .stat b {{ display: block; font-size: 20px; color: #6d28d9; }}
-  .stat span {{ font-size: 12px; color: #6b6280; }}
-  .form {{ margin: 16px 32px 0; background: #fff; border-radius: 16px; padding: 16px; }}
-  input {{
-    width: 100%; height: 44px; border: 0; border-radius: 8px; background: #f4f0ff; margin-bottom: 8px;
-    padding: 0 12px; font-size: 16px;
-  }}
-  .held {{
-    display: flex; align-items: center; justify-content: space-between; padding: 8px 4px 12px;
-  }}
-  .icon {{
-    width: 36px; height: 36px; border: 0; border-radius: 8px; background: #f4f0ff; color: #6d28d9;
-  }}
-  .actions {{ display: flex; gap: 8px; }}
-  .fill {{ flex: 1; height: 44px; border: 0; border-radius: 8px; color: #fff; font-size: 16px; font-weight: 650; }}
-  .foot {{ padding: 12px 32px 0; }}
-</style>
-<div class="hero">
-  <h1>Welcome back</h1>
-  <p>Your beauty journey starts here.</p>
-</div>
-<div class="stats">
-  <div class="stat"><b>12</b><span>Today</span></div>
-  <div class="stat"><b>4.9</b><span>Rating</span></div>
-  <div class="stat"><b>8</b><span>Staff</span></div>
-  <div class="stat"><b>$1.2k</b><span>Revenue</span></div>
-</div>
-<div class="form">
-  <input placeholder="Service" value="Haircut">
-  <input placeholder="When" value="Thu 9 Oct, 10:30">
-  <input placeholder="Your name">
-  <div class="held">
-    <span>Fri 10:00 held</span>
-    <button class="icon" aria-label="">
-      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M5.5 2h5l.5 1H14v1.5H2V3h3l.5-1zM4 6h1.5v7H4V6zm3.25 0h1.5v7h-1.5V6zM10.5 6H12v7h-1.5V6z"/></svg>
-    </button>
-  </div>
-  <div class="actions">
-    <button class="fill" style="background:#6d28d9">Confirm visit</button>
-    <button class="fill" style="background:#db2777">Learn more</button>
+  <div class="dock">
+    <p>Not saved yet. Back keeps this draft. Confirm books the visit.</p>
+    <button class="primary" type="button">Confirm visit</button>
   </div>
 </div>
-<div class="foot fine">Illustration. Same booking facts as the after screen, plus invented stats. Fields have no labels. There is no way back.</div>
-'''
-
-
-UI_AFTER = '''
-<style>
-  .app {{ padding: 28px 48px 0; max-width: 760px; }}
-  .back {{ border: 0; background: transparent; padding: 0; color: #1d4f3a; font-size: 14px; font-weight: 650; }}
-  h1 {{ margin: 16px 0 8px; font-size: 32px; line-height: 1.15; }}
-  .lead {{ margin: 0 0 20px; font-size: 16px; }}
-  .panel {{ background: #fffcf8; border: 1px solid #e3dcd2; border-radius: 12px; padding: 20px 24px; }}
-  label {{ display: block; font-size: 14px; font-weight: 650; margin: 12px 0 8px; }}
-  label:first-child {{ margin-top: 0; }}
-  .value, input {{
-    width: 100%; height: 44px; border: 1px solid #d9d0c4; border-radius: 8px; background: #fff;
-    padding: 0 12px; font-size: 16px; display: flex; align-items: center;
-  }}
-  .held {{
-    margin-top: 16px; padding: 12px 16px; border-radius: 8px; background: #f4f1eb;
-    display: flex; align-items: center; justify-content: space-between; gap: 16px;
-  }}
-  .held p {{ margin: 0; font-size: 14px; }}
-  .textbtn {{ border: 0; background: transparent; color: #8f2d2d; font-size: 14px; font-weight: 650; padding: 8px 0; }}
-  .status {{ margin-top: 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }}
-  .primary {{
-    height: 44px; padding: 0 20px; border: 0; border-radius: 8px; background: #1d4f3a; color: #fff;
-    font-size: 16px; font-weight: 650;
-  }}
-  .foot {{ margin: 12px 0 0; }}
-</style>
-<div class="app">
-  <button class="back">Back</button>
-  <h1>Book a visit</h1>
-  <p class="lead">Haircut, Thu 9 Oct at 10:30. Confirm when the name is filled in.</p>
-  <div class="panel">
-    <label>Service</label>
-    <div class="value">Haircut</div>
-    <label>When</label>
-    <div class="value">Thu 9 Oct, 10:30</div>
-    <label for="who">Name</label>
-    <input id="who" type="text" placeholder="First and last name">
-    <div class="held">
-      <p><strong>Draft</strong><br>Fri 10:00. Sample hold, not a customer.</p>
-      <button class="textbtn">Remove draft</button>
-    </div>
-    <div class="status">
-      <span class="fine">Not saved yet. Back keeps this draft. Confirm books the visit.</span>
-      <button class="primary">Confirm visit</button>
-    </div>
+"""),
+    },
+    'ux-critique': {
+        'before': wrap('critique before', REVIEW, """
+<div class="review">
+  <h1>Review</h1>
+  <p class="kicker">Order desk. Same screen on both sides.</p>
+  """ + DESK + """
+  <div class="bubble">
+    <h2>Make it feel premium</h2>
+    <p>A new color and a chart would help. The trash icon is a bit unclear, but personality matters more.</p>
+    <div class="chips2"><span>Add a chart</span><span>Purple accent</span><span>Welcome line</span></div>
   </div>
-  <p class="foot fine">Illustration. Same booking facts as the before screen. No stats, no second button, no icon-only remove.</p>
-</div>
-'''
-
-
-DESK = '''
-<div style="height:100%;background:#f7f5f2;padding:12px;font-size:13px;color:#1f1a17;">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-    <strong style="font-size:16px;">Open orders</strong>
-    <span style="background:#ece7ff;color:#5b21b6;border-radius:99px;padding:4px 8px;">Synced</span>
-  </div>
-  <div style="background:#fff;border:1px solid #e4e0d8;border-radius:8px;overflow:hidden;">
-    <div style="display:grid;grid-template-columns:1.2fr 1fr 40px;gap:8px;padding:8px 10px;color:#5e564e;font-size:12px;">
-      <span>Order</span><span>Status</span><span></span>
-    </div>
-    <div style="display:grid;grid-template-columns:1.2fr 1fr 40px;gap:8px;padding:8px 10px;border-top:1px solid #eee;align-items:center;">
-      <span>1042<br><span style="color:#5e564e">Sample row</span></span>
-      <span>Open</span>
-      <span style="width:28px;height:28px;border-radius:6px;background:#f3e8ff;color:#6d28d9;display:flex;align-items:center;justify-content:center;">
-        <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M5.5 2h5l.5 1H14v1.5H2V3h3l.5-1zM4 6h1.5v7H4V6zm3.25 0h1.5v7h-1.5V6zM10.5 6H12v7h-1.5V6z"/></svg>
-      </span>
-    </div>
-    <div style="display:grid;grid-template-columns:1.2fr 1fr 40px;gap:8px;padding:8px 10px;border-top:1px solid #eee;">
-      <span>1048<br><span style="color:#5e564e">Sample row</span></span><span>Open</span><span></span>
-    </div>
-  </div>
-  <div style="margin-top:8px;background:#fff;border:1px solid #e4e0d8;border-radius:8px;padding:10px;">
-    <strong>Order 1042</strong>
-    <p style="margin:4px 0 8px;color:#5e564e;">Detail opened from the row. No back control.</p>
-    <div>
-      <span style="background:#6d28d9;color:#fff;border-radius:6px;padding:6px 8px;">Mark packed</span>
-    </div>
+  <div class="bubble" style="margin-top:12px">
+    <h2>Suggested additions</h2>
+    <p>A welcome line and a weekly chart, so the desk feels alive. Personality first.</p>
   </div>
 </div>
-'''
-
-
-CRITIQUE_BEFORE = f'''
-<style>
-  .split {{ display: grid; grid-template-columns: 420px 1fr; height: 764px; }}
-  .side {{ padding: 20px 24px; }}
-  .copy h1 {{ margin: 0 0 8px; font-size: 28px; line-height: 1.2; }}
-  .banner {{
-    background: linear-gradient(90deg, #6d28d9, #db2777); color: #fff; border-radius: 12px;
-    padding: 16px 20px; margin: 16px 0;
-  }}
-  .banner strong {{ display: block; font-size: 16px; margin-bottom: 4px; }}
-  .copy p {{ font-size: 16px; line-height: 1.45; margin: 0 0 12px; }}
-  .idea {{ background: #fff; border-radius: 12px; padding: 12px 16px; margin-bottom: 8px; font-size: 14px; }}
-</style>
-<div class="split">
-  <div>{DESK}</div>
-  <div class="side copy">
-    <h1>Review</h1>
-    <p class="fine">Order desk. No URL supplied.</p>
-    <div class="banner"><strong>Make it more modern</strong>A new color and a chart would help it feel premium.</div>
-    <div class="idea">Add a purple accent and a welcome line.</div>
-    <div class="idea">Add a trend chart so the desk looks alive.</div>
-    <div class="idea">The trash icon is a bit unclear, but personality matters more.</div>
-    <p class="fine">Illustration of a vague review. It restyles the screen and adds regions. The desk on the left is the artifact, unchanged.</p>
-  </div>
+"""),
+        'after': wrap('critique after', REVIEW, """
+<div class="review">
+  <h1>Fix first</h1>
+  <p class="kicker">Same desk. The review names the fix.</p>
+  """ + DESK + """
+  <article class="find"><span class="tag b">Blocker</span><b>No way back from the detail.</b><p>Add a text Back control. Retest: the list returns.</p></article>
+  <article class="find"><span class="tag m">Major</span><b>Remove has no word.</b><p>Label it Remove, or drop it. Retest: the control has a visible name.</p></article>
+  <article class="find"><span class="tag m">Major</span><b>Chip says Synced.</b><p>The packer cannot act on it. Remove the chip.</p></article>
+  <p class="kept"><strong>Kept:</strong> the order list. <strong>Not added:</strong> a chart or a new color.</p>
 </div>
-'''
-
-
-CRITIQUE_AFTER = f'''
-<style>
-  .split {{ display: grid; grid-template-columns: 420px 1fr; height: 764px; }}
-  .side {{ padding: 16px 24px 0; background: #f4f1eb; }}
-  h1 {{ margin: 0 0 4px; font-size: 28px; line-height: 1.15; }}
-  .verdict {{ margin: 0 0 12px; font-size: 16px; }}
-  .finding {{
-    background: #fffcf8; border: 1px solid #e3dcd2; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px;
-  }}
-  .finding strong {{ font-size: 14px; }}
-  .tag {{
-    display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .02em;
-    padding: 2px 6px; border-radius: 4px; margin-right: 6px;
-  }}
-  .b {{ background: #f8e6e6; color: #8f2d2d; }}
-  .m {{ background: #f8efd8; color: #7a5410; }}
-  .finding p {{ margin: 4px 0 0; font-size: 13px; line-height: 1.4; color: #3f3833; }}
-  .keep {{ font-size: 14px; margin: 8px 0 0; }}
-</style>
-<div class="split">
-  <div>{DESK}</div>
-  <div class="side">
-    <h1>Review</h1>
-    <p class="verdict"><strong>Fix first.</strong> Three findings. The desk on the left is the artifact.</p>
-    <div class="finding">
-      <span class="tag b">Blocker</span><strong>Order detail. No way back.</strong>
-      <p>Impact: the packer is stuck in the detail. Correction: add a text Back control. Retest: the list returns and the row stays selected.</p>
-    </div>
-    <div class="finding">
-      <span class="tag m">Major</span><strong>Remove is a trash icon with no word.</strong>
-      <p>Impact: the action is unclear. Correction: use the word Remove, or drop it if this phase does not delete orders. Retest: the control has a visible label.</p>
-    </div>
-    <div class="finding">
-      <span class="tag m">Major</span><strong>Chip says Synced.</strong>
-      <p>Impact: the packer cannot act on it. Correction: remove the chip. Retest: the list shows order status only.</p>
-    </div>
-    <p class="keep"><strong>Kept:</strong> the open-order list. <strong>Not added:</strong> a chart, a welcome line, or a new color.</p>
-    <p class="fine">Illustration. Same artifact as the before screen. The review names the fix and does not restyle it.</p>
-  </div>
-</div>
-'''
-
-
-SHIP_BEFORE = '''
-<style>
-  .wrap {{ padding: 16px 28px 0; }}
-  h1 {{ margin: 0; font-size: 28px; }}
-  .sub {{ margin: 4px 0 12px; font-size: 14px; color: #5e564e; }}
-  table {{ width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; font-size: 13px; }}
-  th, td {{ text-align: left; padding: 6px 10px; border-bottom: 1px solid #eee; }}
-  th {{ color: #5e564e; font-weight: 650; font-size: 12px; }}
-  .pill {{ display: inline-block; background: #eeeae4; color: #3f3833; border-radius: 99px; padding: 2px 8px; font-size: 12px; }}
-  .end {{ margin: 8px 0 0; font-size: 12px; color: #5e564e; }}
-</style>
-<div class="wrap">
+"""),
+    },
+    'ship-check': {
+        'before': wrap('ship before', CHECK, """
+<div class="check">
   <h1>Launch check</h1>
-  <p class="sub">North Studio booking. No URL, build, or screenshot. 20 rows filled from the idea.</p>
-  <table>
-    <thead><tr><th>#</th><th>Item</th><th>Status</th><th>Note</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td>Privacy policy</td><td><span class="pill">Not verified</span></td><td>No page to open</td></tr>
-      <tr><td>2</td><td>Terms</td><td><span class="pill">Not verified</span></td><td>No page to open</td></tr>
-      <tr><td>3</td><td>Tracking consent</td><td><span class="pill">Not verified</span></td><td>No requests to inspect</td></tr>
-      <tr><td>4</td><td>Frontend secrets</td><td><span class="pill">Not verified</span></td><td>No bundle</td></tr>
-      <tr><td>5</td><td>HTTPS</td><td><span class="pill">Not verified</span></td><td>No host</td></tr>
-      <tr><td>6</td><td>Public form abuse</td><td><span class="pill">Not verified</span></td><td>No server</td></tr>
-      <tr><td>7</td><td>Page titles</td><td><span class="pill">Not verified</span></td><td>Nothing served</td></tr>
-      <tr><td>8</td><td>Social preview</td><td><span class="pill">Not verified</span></td><td>No tags</td></tr>
-      <tr><td>9</td><td>Favicon</td><td><span class="pill">Not verified</span></td><td>No approved icon</td></tr>
-      <tr><td>10</td><td>Sitemap and robots</td><td><span class="pill">Not verified</span></td><td>No files</td></tr>
-      <tr><td>11</td><td>Image alternatives</td><td><span class="pill">Not verified</span></td><td>No pages</td></tr>
-      <tr><td>12</td><td>Contrast and focus</td><td><span class="pill">Not verified</span></td><td>No build</td></tr>
-    </tbody>
-  </table>
-  <p class="end">Rows 13 to 20 continue the same way. Verdict, easy to miss: Not established. Illustration of a full table with nothing to inspect. Statuses are Not verified, not Pass.</p>
-</div>
-'''
-
-
-SHIP_AFTER = '''
-<style>
-  .wrap {{ padding: 36px 48px 0; max-width: 760px; }}
-  h1 {{ margin: 0 0 8px; font-size: 32px; line-height: 1.15; }}
-  .lead {{ margin: 0 0 20px; font-size: 16px; max-width: 560px; }}
-  .card {{
-    background: #fffcf8; border: 1px solid #e3dcd2; border-radius: 12px; padding: 20px 24px;
-  }}
-  .why {{ margin: 0 0 12px; font-size: 14px; color: #3f3833; }}
-  .opt {{
-    border: 1px solid #e3dcd2; border-radius: 8px; padding: 12px 16px; margin-bottom: 8px; background: #fff;
-  }}
-  .opt strong {{ display: block; font-size: 16px; margin-bottom: 2px; }}
-  .opt span {{ font-size: 14px; color: #5e564e; }}
-  .pick {{ margin: 12px 0 0; font-size: 14px; }}
-  .stop {{ margin: 16px 0 0; font-size: 14px; color: #5e564e; }}
-</style>
-<div class="wrap">
-  <h1>Not established</h1>
-  <p class="lead">There is no site to check yet. I will not fill the 20 launch rows from the idea.</p>
-  <div class="card">
-    <p class="why"><strong>Q1. What should I check?</strong><br>Why it matters: launch evidence needs a URL, a build, or screenshots. An idea cannot pass.</p>
-    <div class="opt"><strong>A. A public URL</strong><span>Example: the booking page a client will open.</span></div>
-    <div class="opt"><strong>B. The project folder</strong><span>Example: the site source on this machine.</span></div>
-    <div class="opt"><strong>C. Screenshots only</strong><span>Example: desktop and phone of the booking page. These cannot prove HTTPS.</span></div>
-    <p class="pick"><strong>Something else.</strong> Type your own.<br>My pick: No pick yet. You decide, or let me decide and I will wait.</p>
+  <p class="sub">No URL, build, or screenshot. The table was filled from the idea.</p>
+  <div class="list">
+    <div class="item"><div><strong>Privacy policy</strong><span>No page to open</span></div><em class="pill">Not verified</em></div>
+    <div class="item"><div><strong>Terms</strong><span>No page to open</span></div><em class="pill">Not verified</em></div>
+    <div class="item"><div><strong>HTTPS</strong><span>No host</span></div><em class="pill">Not verified</em></div>
+    <div class="item"><div><strong>Form abuse</strong><span>No server</span></div><em class="pill">Not verified</em></div>
+    <div class="item"><div><strong>Contrast and focus</strong><span>No build</span></div><em class="pill">Not verified</em></div>
+    <div class="item"><div><strong>Forms</strong><span>Nothing to submit</span></div><em class="pill">Not verified</em></div>
+    <div class="item"><div><strong>Performance</strong><span>Nothing measured</span></div><em class="pill">Not verified</em></div>
   </div>
-  <p class="stop">No privacy page, no speed score, and no Pass marks were invented. Illustration.</p>
+  <p class="more">Rows 8 to 20 were filled the same way. Verdict, under the list: Not established. Statuses are Not verified, not Pass.</p>
 </div>
-'''
+"""),
+        'after': wrap('ship after', CHECK, """
+<div class="check">
+  <h1>Not established</h1>
+  <p class="sub">There is no site to check. The 20 rows stay unwritten.</p>
+  <div class="opt"><strong>Q1. What should I check?</strong><span>Why it matters: an idea cannot pass a launch check.</span></div>
+  <div class="opt"><strong>A. A public URL</strong><span>Example: the booking page a client will open.</span></div>
+  <div class="opt"><strong>B. The project folder</strong><span>Example: the site source on this machine.</span></div>
+  <div class="opt"><strong>C. Screenshots only</strong><span>Example: desktop and phone. These cannot prove HTTPS.</span></div>
+  <p class="foot"><strong>Something else.</strong> Type your own.<br>My pick: No pick yet. You decide, or let me decide and I will wait.</p>
+  <div class="list" style="margin-top:16px">
+    <div class="item"><div><strong>Not written from the idea</strong><span>No privacy page, speed score, or Pass mark.</span></div></div>
+    <div class="item"><div><strong>Next</strong><span>I stop until a URL, a folder, or screenshots arrive.</span></div></div>
+  </div>
+</div>
+"""),
+    },
+}
 
 
 def main():
-    files = {
-        'product-design': {
-            'before': page('product-design', 'before', '0.6.1-draft output', 'Marketing site before any answer', PRODUCT_BEFORE, '#f7f4ff'),
-            'after': page('product-design', 'after', '0.6.2-draft output', 'One booking task', PRODUCT_AFTER),
-        },
-        'ui-ux-design': {
-            'before': page('ui-ux-design', 'before', '0.6.1-draft output', 'Same booking task, generic layout', UI_BEFORE, '#f6f3ff'),
-            'after': page('ui-ux-design', 'after', '0.6.2-draft output', 'Same booking task, laid out for the job', UI_AFTER),
-        },
-        'ux-critique': {
-            'before': page('ux-critique', 'before', '0.6.1-draft output', 'Vague review that adds a theme', CRITIQUE_BEFORE, '#f7f4ff'),
-            'after': page('ux-critique', 'after', '0.6.2-draft output', 'Findings on the same desk', CRITIQUE_AFTER),
-        },
-        'ship-check': {
-            'before': page('ship-check', 'before', '0.6.1-draft output', '20 rows and no site', SHIP_BEFORE),
-            'after': page('ship-check', 'after', '0.6.2-draft output', 'One question, then stop', SHIP_AFTER),
-        },
-    }
-    for skill, sides in files.items():
+    for skill, sides in PAGES.items():
         for side, html in sides.items():
-            path = OUT / skill / f'{side}.html'
+            path = OUT / skill / (side + '.html')
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(html)
             print(path.relative_to(ROOT))

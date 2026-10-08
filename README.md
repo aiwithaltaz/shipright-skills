@@ -78,31 +78,31 @@ Do not use its prototype or training candidates as current approved implementati
 
 ## How it improved
 
-Same sample idea in each pair. The first picture is what 0.6.1-draft allowed. The second is what this version asks for. These are illustrations, not real businesses. Names, ratings, and quotes in the "before" pictures are fake.
+Each pair is the same idea, shown on a phone-width screen. Before is the polished generic screen 0.6.1-draft allowed. After is what this version asks for. Numbers, quotes, and prices on the before screens were not supplied.
 
-**Product design.** A salon booking idea. The old path drew a marketing site before anyone answered. The new path keeps one booking task.
+**Product design.** A salon booking idea. The old path drew a marketing site. The new path keeps one booking task.
 
-![Salon booking before the frame rule](examples/before-after/0.6.2-draft/product-design/before.png)
+[Before](examples/before-after/0.6.2-draft/product-design/before.png) and [after](examples/before-after/0.6.2-draft/product-design/after.png).
 
-![Salon booking after the frame rule](examples/before-after/0.6.2-draft/product-design/after.png)
+![Salon booking, before and after the frame rule](examples/before-after/0.6.2-draft/product-design/compare.png)
 
-**UI/UX design.** The same booking task, badly arranged, then arranged for the job. One primary button, a way back, and no summary cards.
+**UI/UX design.** The same booking task. The old layout has a gradient, summary cards, unlabeled fields, and two filled buttons. The new layout has labels, one action, and a way back.
 
-![Booking form before the layout rule](examples/before-after/0.6.2-draft/ui-ux-design/before.png)
+[Before](examples/before-after/0.6.2-draft/ui-ux-design/before.png) and [after](examples/before-after/0.6.2-draft/ui-ux-design/after.png).
 
-![Booking form after the layout rule](examples/before-after/0.6.2-draft/ui-ux-design/after.png)
+![Booking form, before and after the layout rule](examples/before-after/0.6.2-draft/ui-ux-design/compare.png)
 
-**UX critique.** The same order desk. The old write-up restyles it. The new write-up names the fix and leaves the rest alone.
+**UX critique.** The same order desk. The old write-up restyles it. The new write-up names the fix.
 
-![Order desk critique before a worked finding](examples/before-after/0.6.2-draft/ux-critique/before.png)
+[Before](examples/before-after/0.6.2-draft/ux-critique/before.png) and [after](examples/before-after/0.6.2-draft/ux-critique/after.png).
 
-![Order desk critique after a worked finding](examples/before-after/0.6.2-draft/ux-critique/after.png)
+![Order desk critique, before and after a worked finding](examples/before-after/0.6.2-draft/ux-critique/compare.png)
 
-**Ship check.** No site was supplied. The old path filled a launch table. The new path asks for the artifact and stops.
+**Ship check.** No site was supplied. The old path filled a launch list. The new path asks one question and stops.
 
-![Launch table before an artifact check](examples/before-after/0.6.2-draft/ship-check/before.png)
+[Before](examples/before-after/0.6.2-draft/ship-check/before.png) and [after](examples/before-after/0.6.2-draft/ship-check/after.png).
 
-![Launch question after an artifact check](examples/before-after/0.6.2-draft/ship-check/after.png)
+![Launch check, before and after an artifact question](examples/before-after/0.6.2-draft/ship-check/compare.png)
 
 Future updates keep a new folder under `examples/before-after/` and follow [tests/README.md](tests/README.md).
 

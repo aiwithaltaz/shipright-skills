@@ -2,76 +2,51 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>ship-check before</title>
+<title>ship before</title>
 <style>
-  * { box-sizing: border-box; }
-  html, body { margin: 0; width: 1280px; height: 800px; overflow: hidden; }
-  body {
-    font-family: "Segoe UI", system-ui, sans-serif;
-    color: #1f1a17;
-    background: #f4f1eb;
-  }
-  button, input { font-family: inherit; }
-  .bar {
-    height: 36px;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #1f1a17;
-    color: #f4f1eb;
-    font-size: 13px;
-    letter-spacing: 0.01em;
-  }
-  .bar span { color: #c8bfb4; }
-  .stage { height: 764px; overflow: hidden; }
-  .fine {
-    font-size: 12px;
-    line-height: 1.4;
-    color: #5e564e;
-  }
+
+@font-face { font-family: "Inter"; font-weight: 400; src: url("file:///usr/share/fonts/truetype/macos/Inter-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 500; src: url("file:///usr/share/fonts/truetype/macos/Inter-Medium.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("file:///usr/share/fonts/truetype/macos/Inter-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 700; src: url("file:///usr/share/fonts/truetype/macos/Inter-Bold.ttf") format("truetype"); }
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 390px; height: 844px; overflow: hidden; }
+body { font-family: Inter, "Noto Sans", sans-serif; color: #1c1917; }
+button, input { font-family: inherit; }
+
+.check { width: 390px; height: 844px; background: #f3f1ec; padding: 20px 16px 0; }
+.check h1 { margin: 12px 4px 6px; font-size: 28px; letter-spacing: -0.03em; }
+.sub { margin: 0 4px 14px; font-size: 14px; line-height: 1.4; color: #4a453f; }
+.list { background: #fff; border: 1px solid #e4ddd4; border-radius: 16px; overflow: hidden; }
+.item { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border-top: 1px solid #f1ece6; }
+.item:first-child { border-top: 0; }
+.item strong { display: block; font-size: 14px; font-weight: 600; }
+.item span { display: block; margin-top: 2px; font-size: 12px; color: #6b6560; }
+.pill { flex: 0 0 auto; background: #efeae3; color: #3f3833; border-radius: 999px; padding: 4px 8px; font-size: 11px; font-weight: 700; }
+.more { margin: 12px 4px 0; font-size: 13px; line-height: 1.45; color: #6b6560; }
+.opt { background: #fff; border: 1px solid #e4ddd4; border-radius: 14px; padding: 12px 14px; margin-bottom: 8px; }
+.opt strong { display: block; font-size: 15px; margin-bottom: 2px; }
+.opt span { font-size: 13px; line-height: 1.4; color: #6b6560; }
+.foot { margin: 8px 4px 0; font-size: 13px; line-height: 1.45; color: #3f3833; }
+
 </style>
 </head>
 <body>
-  <div class="bar">
-    <strong>ship-check</strong>
-    <span>0.6.1-draft output. 20 rows and no site</span>
-  </div>
-  <div class="stage">
 
-<style>
-  .wrap {{ padding: 16px 28px 0; }}
-  h1 {{ margin: 0; font-size: 28px; }}
-  .sub {{ margin: 4px 0 12px; font-size: 14px; color: #5e564e; }}
-  table {{ width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; font-size: 13px; }}
-  th, td {{ text-align: left; padding: 6px 10px; border-bottom: 1px solid #eee; }}
-  th {{ color: #5e564e; font-weight: 650; font-size: 12px; }}
-  .pill {{ display: inline-block; background: #eeeae4; color: #3f3833; border-radius: 99px; padding: 2px 8px; font-size: 12px; }}
-  .end {{ margin: 8px 0 0; font-size: 12px; color: #5e564e; }}
-</style>
-<div class="wrap">
+<div class="check">
   <h1>Launch check</h1>
-  <p class="sub">North Studio booking. No URL, build, or screenshot. 20 rows filled from the idea.</p>
-  <table>
-    <thead><tr><th>#</th><th>Item</th><th>Status</th><th>Note</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td>Privacy policy</td><td><span class="pill">Not verified</span></td><td>No page to open</td></tr>
-      <tr><td>2</td><td>Terms</td><td><span class="pill">Not verified</span></td><td>No page to open</td></tr>
-      <tr><td>3</td><td>Tracking consent</td><td><span class="pill">Not verified</span></td><td>No requests to inspect</td></tr>
-      <tr><td>4</td><td>Frontend secrets</td><td><span class="pill">Not verified</span></td><td>No bundle</td></tr>
-      <tr><td>5</td><td>HTTPS</td><td><span class="pill">Not verified</span></td><td>No host</td></tr>
-      <tr><td>6</td><td>Public form abuse</td><td><span class="pill">Not verified</span></td><td>No server</td></tr>
-      <tr><td>7</td><td>Page titles</td><td><span class="pill">Not verified</span></td><td>Nothing served</td></tr>
-      <tr><td>8</td><td>Social preview</td><td><span class="pill">Not verified</span></td><td>No tags</td></tr>
-      <tr><td>9</td><td>Favicon</td><td><span class="pill">Not verified</span></td><td>No approved icon</td></tr>
-      <tr><td>10</td><td>Sitemap and robots</td><td><span class="pill">Not verified</span></td><td>No files</td></tr>
-      <tr><td>11</td><td>Image alternatives</td><td><span class="pill">Not verified</span></td><td>No pages</td></tr>
-      <tr><td>12</td><td>Contrast and focus</td><td><span class="pill">Not verified</span></td><td>No build</td></tr>
-    </tbody>
-  </table>
-  <p class="end">Rows 13 to 20 continue the same way. Verdict, easy to miss: Not established. Illustration of a full table with nothing to inspect. Statuses are Not verified, not Pass.</p>
+  <p class="sub">No URL, build, or screenshot. The table was filled from the idea.</p>
+  <div class="list">
+    <div class="item"><div><strong>Privacy policy</strong><span>No page to open</span></div><em class="pill">Not verified</em></div>
+    <div class="item"><div><strong>Terms</strong><span>No page to open</span></div><em class="pill">Not verified</em></div>
+    <div class="item"><div><strong>HTTPS</strong><span>No host</span></div><em class="pill">Not verified</em></div>
+    <div class="item"><div><strong>Form abuse</strong><span>No server</span></div><em class="pill">Not verified</em></div>
+    <div class="item"><div><strong>Contrast and focus</strong><span>No build</span></div><em class="pill">Not verified</em></div>
+    <div class="item"><div><strong>Forms</strong><span>Nothing to submit</span></div><em class="pill">Not verified</em></div>
+    <div class="item"><div><strong>Performance</strong><span>Nothing measured</span></div><em class="pill">Not verified</em></div>
+  </div>
+  <p class="more">Rows 8 to 20 were filled the same way. Verdict, under the list: Not established. Statuses are Not verified, not Pass.</p>
 </div>
 
-  </div>
 </body>
 </html>
