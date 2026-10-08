@@ -1,6 +1,6 @@
 # ShipRight
 
-**Version 0.6.1-draft**
+**Version 0.6.2**
 **Context before generate. Product before pixels.**
 
 ShipRight helps AI design and coding tools follow your product decisions before generating UI.
@@ -30,7 +30,7 @@ Do not copy this pack's AGENTS.md into your app. It is for maintaining ShipRight
 
 ## Tool setup
 
-Claude Code, Cursor and Codex can read the local Markdown pack when it is available in their workspace.
+Claude Code, Cursor, Codex, and ChatGPT can read the local Markdown pack when it is available in their workspace or attached files.
 For automatic skill discovery, use the current client's supported registration method and point it to the canonical skill files.
 Avoid separate edited copies for each client. Symlink handling and sandbox access vary; confirm references resolve in your client.
 For a design tool without local file access, provide the whole pack through its supported file/project context mechanism.
@@ -75,5 +75,35 @@ Do not use its prototype or training candidates as current approved implementati
 [Altaz's profile](personal-taste/altaz.md) is active only when selected. It cannot change scope or override approved identity.
 [skills.md](skills.md) routes tasks. [architecture.md](architecture.md) explains file ownership and loading.
 [CHANGELOG.md](CHANGELOG.md) records the release. Names and original paths are retained.
+
+## How it improved
+
+Each pair is the same idea, shown on a phone-width screen. Before is the polished generic screen 0.6.1-draft allowed. After is what this version asks for. Numbers, quotes, and prices on the before screens were not supplied.
+
+**Product design.** A salon booking idea. The old path drew a marketing site. The new path keeps one booking task.
+
+[Before](examples/before-after/0.6.2/product-design/before.png) and [after](examples/before-after/0.6.2/product-design/after.png).
+
+![Salon booking, before and after the frame rule](examples/before-after/0.6.2/product-design/compare.png)
+
+**UI/UX design.** The same booking task. The old layout has a gradient, summary cards, unlabeled fields, and two filled buttons. The new layout has labels, one action, and a way back.
+
+[Before](examples/before-after/0.6.2/ui-ux-design/before.png) and [after](examples/before-after/0.6.2/ui-ux-design/after.png).
+
+![Booking form, before and after the layout rule](examples/before-after/0.6.2/ui-ux-design/compare.png)
+
+**UX critique.** The same order desk. The old write-up restyles it. The new write-up names the fix.
+
+[Before](examples/before-after/0.6.2/ux-critique/before.png) and [after](examples/before-after/0.6.2/ux-critique/after.png).
+
+![Order desk critique, before and after a worked finding](examples/before-after/0.6.2/ux-critique/compare.png)
+
+**Ship check.** No site was supplied. The old path filled a launch list. The new path asks one question and stops.
+
+[Before](examples/before-after/0.6.2/ship-check/before.png) and [after](examples/before-after/0.6.2/ship-check/after.png).
+
+![Launch check, before and after an artifact question](examples/before-after/0.6.2/ship-check/compare.png)
+
+Future updates keep a new folder under `examples/before-after/` and follow [tests/README.md](tests/README.md).
 
 MIT license for the pack. Example brand assets retain their existing ownership notices.

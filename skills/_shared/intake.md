@@ -56,6 +56,18 @@ Example:
 Do not treat design delegation as authority to set prices, access policy, legal terms or paid services.
 Apply [the operating contract](operating-contract.md) for facts, phase limits and approval.
 
+## First reply on a vague idea
+
+When the user shares a rough idea and has not answered the frame, the first reply is the decision cards only.
+Ask who it is for, what this phase must finish, and what stays out. That is three questions. Use a fourth or fifth only if one answer blocks the next step.
+Each card still has Why it matters, two or three options with examples, Something else, My pick or No pick yet, You decide, and Let me decide.
+Do not add objects, screens, flows, or documents in that reply.
+A request to build it is not a frame and not approval to invent the product.
+Write the frame and any requested files after the user answers, chooses You decide, or asks you to write with open items labeled Unknown.
+Let me decide leaves that card open. Do not fill the gap with a guessed feature.
+If the task is already clear, ask nothing and do the work.
+This is one pause before a frame exists. It is not a stop after each document.
+
 ## Question bank
 
 Pick only unanswered decisions: who is it for; what job matters now; what is excluded from this phase;

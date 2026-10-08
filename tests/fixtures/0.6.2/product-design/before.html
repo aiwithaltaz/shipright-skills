@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>product-design before</title>
+<style>
+
+@font-face { font-family: "Inter"; font-weight: 400; src: url("file:///usr/share/fonts/truetype/macos/Inter-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 500; src: url("file:///usr/share/fonts/truetype/macos/Inter-Medium.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("file:///usr/share/fonts/truetype/macos/Inter-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 700; src: url("file:///usr/share/fonts/truetype/macos/Inter-Bold.ttf") format("truetype"); }
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 390px; height: 844px; overflow: hidden; }
+body { font-family: Inter, "Noto Sans", sans-serif; color: #1c1917; }
+button, input { font-family: inherit; }
+
+.slop { width: 390px; height: 844px; background: #f6f4fb; }
+.nav { height: 56px; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; background: #fff; }
+.logo { font-size: 16px; font-weight: 700; letter-spacing: -0.02em; }
+.ghost { height: 32px; padding: 0 12px; border: 0; border-radius: 999px; background: #f3e8ff; color: #6d28d9; font-size: 13px; font-weight: 600; }
+.hero { margin: 12px 16px 0; padding: 28px 20px 26px; border-radius: 28px; background: linear-gradient(165deg, #4c1d95 0%, #7c3aed 46%, #db2777 100%); color: #fff; }
+.eyebrow { margin: 0 0 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.hero h1 { margin: 0 0 8px; font-size: 34px; line-height: 1.08; letter-spacing: -0.03em; font-weight: 700; }
+.hero .sub { margin: 0 0 20px; font-size: 15px; line-height: 1.45; }
+.ctas { display: flex; gap: 8px; }
+.ctas button { flex: 1; height: 44px; border: 0; border-radius: 999px; font-size: 14px; font-weight: 600; }
+.light { background: #fff; color: #5b21b6; }
+.pink { background: #be185d; color: #fff; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: -20px 16px 0; position: relative; }
+.stat { background: #fff; border-radius: 16px; padding: 12px 8px 10px; text-align: center; box-shadow: 0 12px 28px rgba(76, 29, 149, 0.14); }
+.stat b { display: block; font-size: 18px; font-weight: 700; color: #6d28d9; letter-spacing: -0.03em; }
+.stat span { font-size: 12px; color: #6b6280; }
+.card { margin: 16px 16px 0; background: #fff; border-radius: 20px; padding: 16px; box-shadow: 0 8px 24px rgba(76, 29, 149, 0.06); }
+.stars { margin: 0; color: #d97706; letter-spacing: 2px; font-size: 13px; }
+.card p { margin: 8px 0 12px; font-size: 16px; line-height: 1.4; }
+.who { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #6b6280; }
+.avatar { width: 28px; height: 28px; border-radius: 50%; background: #ede9fe; color: #5b21b6; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+.row { display: flex; align-items: center; justify-content: space-between; padding: 11px 0; border-top: 1px solid #f3eef9; font-size: 15px; }
+.row:first-of-type { border-top: 0; }
+.row b { color: #6d28d9; font-size: 18px; letter-spacing: -0.03em; }
+.badge { margin-left: 8px; background: #ede9fe; color: #5b21b6; border-radius: 999px; padding: 3px 8px; font-size: 12px; font-weight: 600; }
+.news { margin: 16px 16px 0; background: #fff; border-radius: 20px; padding: 12px; display: flex; gap: 8px; box-shadow: 0 8px 24px rgba(76, 29, 149, 0.06); }
+.news input { flex: 1; height: 44px; border: 0; border-radius: 12px; background: #f6f3ff; padding: 0 12px; font-size: 15px; color: #1c1917; }
+.news button { height: 44px; border: 0; border-radius: 12px; background: #6d28d9; color: #fff; font-size: 14px; font-weight: 600; padding: 0 14px; }
+.seen { margin: 18px 20px 0; font-size: 12px; color: #8b849c; letter-spacing: 0.04em; text-transform: uppercase; }
+.seen strong { display: block; margin-top: 6px; font-size: 13px; letter-spacing: 0.12em; color: #6b6280; font-weight: 700; }
+
+</style>
+</head>
+<body>
+
+<div class="slop">
+  <div class="nav"><div class="logo">North Studio</div><button class="ghost" type="button">Menu</button></div>
+  <section class="hero">
+    <p class="eyebrow">The new way to book</p>
+    <h1>Book beauty, elevated</h1>
+    <p class="sub">Trusted by thousands of happy clients.</p>
+    <div class="ctas"><button class="light" type="button">Book now</button><button class="pink" type="button">Learn more</button></div>
+  </section>
+  <section class="stats">
+    <article class="stat"><b>2,400</b><span>Clients</span></article>
+    <article class="stat"><b>4.9</b><span>Rating</span></article>
+    <article class="stat"><b>18</b><span>Stylists</span></article>
+  </section>
+  <section class="card">
+    <p class="stars">★★★★★</p>
+    <p>"Best salon in town. I come every week."</p>
+    <div class="who"><div class="avatar">M</div><span>Maya L. · Client</span></div>
+  </section>
+  <section class="card">
+    <div class="row"><span>Cut</span><b>$48</b></div>
+    <div class="row"><span>Color <em class="badge">Popular</em></span><b>$72</b></div>
+    <div class="row"><span>Wedding</span><b>$120</b></div>
+  </section>
+  <form class="news">
+    <input placeholder="Email address" aria-label="Email address">
+    <button type="button">Subscribe</button>
+  </form>
+  <p class="seen">As seen in<strong>Vogue · Gloss · Today</strong></p>
+</div>
+
+</body>
+</html>

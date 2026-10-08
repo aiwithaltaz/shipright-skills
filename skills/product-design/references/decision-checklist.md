@@ -9,6 +9,38 @@ Do not force Small/Full/Different options or invent features to fill a compariso
 A supplied frame or delegated choice needs no second approval. Unapproved scope remains in notes, not build instructions.
 Then derive necessary objects, their states, the journey and screen jobs. A feature list alone does not prove value.
 
+## Worked cards, illustration only
+
+These cards show the shape of a first reply. They are not requirements for every product.
+
+Idea: "Clients should book appointments at my salon. Build it."
+
+> Q1. Who books in this first version?
+> Why it matters: the screen is different for a client and for the front desk.
+> A. The client, on their own phone. Example: they choose a haircut and a time.
+> B. Only the front desk. Example: staff book while the client is in the shop.
+> C. Something else. Type your own.
+> My pick: No pick yet.
+> You decide: pick A or B and say why. Let me decide: leave this open.
+>
+> Q2. What must this phase finish?
+> Why it matters: it decides the one screen job.
+> A. A confirmed visit. Example: service, time, and name kept.
+> B. A request the shop confirms later. Example: "Request sent."
+> C. Something else.
+> My pick: No pick yet.
+> You decide: pick A or B and say why. Let me decide: leave this open.
+>
+> Q3. What stays out of this phase?
+> Why it matters: it keeps later ideas out of the UI.
+> A. Pay in the app.
+> B. Reminders, reviews, and staff profiles.
+> C. Something else.
+> My pick: No pick yet.
+> You decide: pick A or B and say why. Let me decide: leave this open.
+
+Not in this reply: a home page, ratings, prices, or a list of screens.
+
 ## Interaction choices
 
 | Choice | Decision rule |

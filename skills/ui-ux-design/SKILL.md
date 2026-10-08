@@ -5,7 +5,7 @@ description: "Use this when designing or refining an in-scope screen, layout, co
 
 # UI/UX design
 
-**Pack version:** 0.6.1-draft
+**Pack version:** 0.6.2
 **Context before generate. Product before pixels.**
 
 Turn a clear screen job into a useful layout. For an unclear product job, ask or route to product-design.
@@ -27,7 +27,7 @@ Continue supported work; do not claim a full ShipRight check without its require
 1. Identify the screen job, current phase and exact requested changes. Read the existing screen and component sources.
 2. Choose **Preserve** for an existing app. Use **Establish** only for a requested new system or approved overhaul.
 3. Build a keep/remove/change/add record for feedback. Reconcile liked crops with the whole screen.
-4. Trace every visible element to the current phase. Put later ideas in notes, not UI.
+4. Trace every visible element to the current phase. Read "Default screens to leave out" in [anti-slop-rules.md](references/anti-slop-rules.md) before adding a region. Put later ideas in notes, not UI.
 5. State the design direction in one useful sentence. Do not invent brand personality or tokens.
 6. Specify reading order, action priority, components, responsive behavior and relevant states.
 7. Check F1-F3, accessibility and exact feedback. Remove unsupported additions.

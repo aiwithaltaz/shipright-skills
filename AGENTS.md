@@ -1,6 +1,6 @@
 # Maintaining ShipRight
 
-**Pack version: 0.6.1-draft**
+**Pack version: 0.6.2**
 **Context before generate. Product before pixels.**
 
 These rules govern this pack, not an end-user app. Preserve the four skill names and one canonical source tree.
@@ -29,6 +29,7 @@ Do not maintain long Flow rule copies elsewhere.
 ## Validation
 
 Run `python3 evals/check_sources.py` after changes. Update checks when rules or protected paths change.
+When a skill's instructions change, add before and after screenshots. Follow tests/README.md. Keep older folders under examples/before-after/.
 Use `python3 evals/check_sources.py --self-test` to confirm meaningful mutations are rejected.
 Keep stable gate IDs: product-design 8, ui-ux-design 10, ux-critique 10, ship-check 20.
 Source checks are not behavior tests. Preserve raw controlled-trial output and state who wrote/scored it.

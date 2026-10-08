@@ -5,7 +5,7 @@ description: "Use this when reviewing a plan, specification, screenshot or runni
 
 # UX critique
 
-**Pack version:** 0.6.1-draft
+**Pack version:** 0.6.2
 **Context before generate. Product before pixels.**
 
 Review a real artifact and report evidence-backed corrections. Do not invent users, interview quotes or predicted conversion gains.
@@ -62,6 +62,7 @@ A low score is not a reason for another intake round. Ask only a material unreso
 
 Use [severity-rubric.md](references/severity-rubric.md): Blocker for critical failure, Major for substantial noncritical friction, Polish for small craft issues.
 Each finding needs location, evidence, impact, severity, correction and a retest condition.
+Copy the shape of the worked finding in [slop-tells.md](references/slop-tells.md). Do not answer a review by restyling the screen or adding regions.
 A missing requirement can be a specification Fail; an unavailable runtime check is Not verified.
 A ticket or owner never resolves the failure. Never call a critical failure Major.
 

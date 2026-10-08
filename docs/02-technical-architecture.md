@@ -1,6 +1,6 @@
 # 02 - Technical architecture
 
-**Status: Template (ShipRight 0.6.1-draft).**
+**Status: Template (ShipRight 0.6.2).**
 **Project path:** `docs/shipright/02-technical-architecture.md`
 
 **Version/date:** <!-- -->  **Sources and approval:** <!-- -->

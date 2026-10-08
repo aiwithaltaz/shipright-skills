@@ -5,7 +5,7 @@ description: "Use this when checking launch readiness or specific release items 
 
 # Ship check
 
-**Pack version:** 0.6.1-draft
+**Pack version:** 0.6.2
 **Context before generate. Product before pixels.**
 
 Report what launch evidence establishes. This is not a security audit, legal review or deployment step.
@@ -25,6 +25,8 @@ Continue supported work; do not claim a full ShipRight check without its require
 ## Scope and evidence
 
 Inspect the supplied URL, code or screenshots first. Ask only for facts that change the check.
+If the user does not supply a URL, a build, or a screenshot, ask one question for that artifact and stop.
+Do not fill the 20 rows from the idea alone. Do not mark Pass because the product sounds ready.
 Name the exact build/version, environment, date, supported users/devices and critical requirements.
 Run all 20 items for a launch request. For one item, check that item and direct dependencies without expanding scope.
 Read [launch-items.md](references/launch-items.md) for evidence requirements.

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ui-ux before</title>
+<style>
+
+@font-face { font-family: "Inter"; font-weight: 400; src: url("file:///usr/share/fonts/truetype/macos/Inter-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 500; src: url("file:///usr/share/fonts/truetype/macos/Inter-Medium.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("file:///usr/share/fonts/truetype/macos/Inter-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 700; src: url("file:///usr/share/fonts/truetype/macos/Inter-Bold.ttf") format("truetype"); }
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 390px; height: 844px; overflow: hidden; }
+body { font-family: Inter, "Noto Sans", sans-serif; color: #1c1917; }
+button, input { font-family: inherit; }
+
+.formslop { width: 390px; height: 844px; background: #f6f4fb; display: flex; flex-direction: column; }
+.banner { padding: 28px 20px 22px; background: linear-gradient(165deg, #4c1d95, #7c3aed 70%); color: #fff; }
+.banner h1 { margin: 0 0 6px; font-size: 28px; letter-spacing: -0.03em; font-weight: 700; }
+.banner p { margin: 0; font-size: 15px; line-height: 1.4; }
+.metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: -16px 16px 0; position: relative; }
+.metric { background: #fff; border-radius: 16px; padding: 12px 14px; box-shadow: 0 10px 24px rgba(76, 29, 149, 0.12); }
+.metric b { display: block; font-size: 20px; color: #6d28d9; letter-spacing: -0.03em; }
+.metric span { font-size: 12px; color: #6b6280; }
+.sheet { margin: 16px 16px 0; background: #fff; border-radius: 20px; padding: 16px; box-shadow: 0 8px 24px rgba(76, 29, 149, 0.06); }
+.sheet input { width: 100%; height: 48px; border: 0; border-radius: 12px; background: #f4f0ff; margin-bottom: 8px; padding: 0 14px; font-size: 16px; color: #1c1917; }
+.held { display: flex; align-items: center; justify-content: space-between; padding: 4px 4px 12px; font-size: 15px; }
+.icon { width: 40px; height: 40px; border: 0; border-radius: 12px; background: #f3e8ff; color: #6d28d9; }
+.pair { display: flex; gap: 8px; }
+.pair button { flex: 1; height: 48px; border: 0; border-radius: 14px; color: #fff; font-size: 15px; font-weight: 600; }
+.tabs { margin-top: auto; height: 72px; background: #fff; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid #efeaf8; }
+.tabs span { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 11px; color: #8b849c; font-weight: 600; }
+.tabs span.on { color: #6d28d9; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+</style>
+</head>
+<body>
+
+<div class="formslop">
+  <div class="banner"><h1>Welcome back</h1><p>Your beauty journey starts here.</p></div>
+  <section class="metrics">
+    <article class="metric"><b>12</b><span>Today</span></article>
+    <article class="metric"><b>4.9</b><span>Rating</span></article>
+    <article class="metric"><b>8</b><span>Staff</span></article>
+    <article class="metric"><b>$1.2k</b><span>Revenue</span></article>
+  </section>
+  <form class="sheet">
+    <input placeholder="Service" value="Haircut">
+    <input placeholder="When" value="Thu 9 Oct, 10:30">
+    <input placeholder="Your name">
+    <div class="held"><span>Fri 10:00 held</span><button class="icon" type="button"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M5.5 2h5l.5 1H14v1.5H2V3h3zm-1 3.5h1.4v7H4.5zm3.2 0h1.4v7H7.7zm3.2 0H12v7h-1.1z"/></svg></button></div>
+    <div class="pair"><button type="button" style="background:#6d28d9">Confirm visit</button><button type="button" style="background:#be185d">Learn more</button></div>
+  </form>
+  <nav class="tabs">
+    <span>Home</span><span class="on">Book</span><span>Rewards</span><span>You</span>
+  </nav>
+</div>
+
+</body>
+</html>

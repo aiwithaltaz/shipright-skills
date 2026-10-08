@@ -1,6 +1,7 @@
 # Writing requested project documents
 
-Use after the frame is supplied, approved or delegated. Write only the requested files.
+Use after the frame is supplied, approved, or delegated. A vague idea is not a frame.
+Write only the requested files. If the user asks you to write before answering, label every open fact Unknown. Do not invent objects, roles, or screens to fill the files.
 Follow [output-folder.md](../../_shared/output-folder.md). A request to write the set authorizes that work.
 Do not stop after each document unless the user requests staged review or a new unresolved choice blocks the next file.
 

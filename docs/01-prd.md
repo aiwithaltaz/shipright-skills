@@ -1,6 +1,6 @@
 # 01 - Product requirements
 
-**Status: Template (ShipRight 0.6.1-draft).**
+**Status: Template (ShipRight 0.6.2).**
 **Project path:** `docs/shipright/01-prd.md`
 
 **Version/date:** <!-- -->  **Sources and approval:** <!-- -->

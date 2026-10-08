@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>product-design after</title>
+<style>
+
+@font-face { font-family: "Inter"; font-weight: 400; src: url("file:///usr/share/fonts/truetype/macos/Inter-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 500; src: url("file:///usr/share/fonts/truetype/macos/Inter-Medium.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("file:///usr/share/fonts/truetype/macos/Inter-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 700; src: url("file:///usr/share/fonts/truetype/macos/Inter-Bold.ttf") format("truetype"); }
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 390px; height: 844px; overflow: hidden; }
+body { font-family: Inter, "Noto Sans", sans-serif; color: #1c1917; }
+button, input { font-family: inherit; }
+
+.calm { width: 390px; height: 844px; background: #f3f1ec; display: flex; flex-direction: column; }
+.top { height: 56px; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; }
+.back { border: 0; background: transparent; padding: 8px 0; color: #143d2e; font-size: 15px; font-weight: 600; }
+.brand { font-size: 13px; font-weight: 600; color: #6b6560; }
+.main { padding: 4px 20px 0; }
+h1 { margin: 12px 0 8px; font-size: 32px; line-height: 1.12; letter-spacing: -0.03em; font-weight: 700; }
+.lead { margin: 0 0 24px; font-size: 16px; line-height: 1.45; color: #4a453f; }
+.lbl { display: block; margin: 0 0 8px; font-size: 13px; font-weight: 600; }
+.choice { height: 52px; padding: 0 16px; border: 1px solid #e4ddd4; border-radius: 12px; background: #fff; display: flex; align-items: center; justify-content: space-between; font-size: 16px; }
+.hint { margin: 8px 0 20px; font-size: 13px; line-height: 1.4; color: #6b6560; }
+.chips { display: flex; gap: 8px; margin: 0 0 20px; }
+.chip { flex: 1; height: 44px; border-radius: 12px; border: 1px solid #e4ddd4; background: #fff; font-size: 14px; font-weight: 500; color: #1c1917; }
+.chip.on { background: #143d2e; border-color: #143d2e; color: #fff; font-weight: 600; }
+.name { width: 100%; height: 48px; border: 1px solid #e4ddd4; border-radius: 12px; background: #fff; padding: 0 14px; font-size: 16px; }
+.later { margin: 20px 0 0; font-size: 14px; line-height: 1.45; color: #6b6560; }
+.phase { margin-top: 20px; background: #fff; border: 1px solid #e4ddd4; border-radius: 16px; padding: 16px; }
+.phase strong { display: block; margin: 0 0 4px; font-size: 18px; letter-spacing: -0.02em; }
+.phase p { margin: 0; font-size: 14px; line-height: 1.45; color: #4a453f; }
+.dock { margin-top: auto; padding: 16px 20px 24px; }
+.dock p { margin: 0 0 10px; font-size: 13px; line-height: 1.4; color: #6b6560; }
+.primary { width: 100%; height: 52px; border: 0; border-radius: 14px; background: #143d2e; color: #fff; font-size: 16px; font-weight: 600; }
+
+</style>
+</head>
+<body>
+
+<div class="calm">
+  <div class="top"><button class="back" type="button">Back</button><div class="brand">North Studio</div></div>
+  <div class="main">
+    <h1>Book a visit</h1>
+    <p class="lead">Choose a service and a time. This phase confirms the visit.</p>
+    <label class="lbl">Service</label>
+    <div class="choice"><span>Haircut</span></div>
+    <p class="hint">Sample label. The shop has not named its list.</p>
+    <label class="lbl">Day</label>
+    <div class="chips">
+      <button class="chip" type="button">Wed 8</button>
+      <button class="chip on" type="button">Thu 9</button>
+      <button class="chip" type="button">Fri 10</button>
+    </div>
+    <label class="lbl">Time</label>
+    <div class="chips">
+      <button class="chip" type="button">9:00</button>
+      <button class="chip on" type="button">10:30</button>
+      <button class="chip" type="button">14:00</button>
+    </div>
+    <label class="lbl" for="name">Name</label>
+    <input class="name" id="name" type="text" placeholder="First and last name">
+    <p class="later">Not on this screen: pay in the app, reminders, reviews, or staff profiles.</p>
+    <div class="phase"><span class="lbl">This phase</span><strong>Confirm one visit</strong><p>The button below is the only action. Leaving does not book anything.</p></div>
+  </div>
+  <div class="dock">
+    <p>Not saved yet. You can leave and nothing is booked.</p>
+    <button class="primary" type="button">Confirm visit</button>
+  </div>
+</div>
+
+</body>
+</html>

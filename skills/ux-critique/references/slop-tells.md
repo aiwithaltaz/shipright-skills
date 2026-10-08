@@ -19,6 +19,19 @@ Use these prompts to inspect actual impact. They are not a banned-style list or 
 | Generic marketing copy | Does it name a real job or supported outcome? | Use concrete, truthful language. |
 | Decorative motion delays work | Does it explain a change? | Remove delay and respect reduced motion. |
 
+## Worked finding
+
+Illustration only. Copy the shape, not the product.
+
+Location: confirm step on a booking screen.
+Evidence: two filled buttons, Book now and Learn more, and no back control.
+Impact: the person cannot leave, and the next step is unclear.
+Severity: Blocker on this flow (F1).
+Correction: one primary button, Book, and a text Back control. Remove Learn more.
+Retest: pointer and keyboard return to the time list, and the typed name is still there.
+
+Do not answer a review by restyling the screen or adding a chart, quotes, or a new color. Change the named element. Say what stays.
+
 ## Count it
 
 For a relevant screen review, count actual competing actions, duplicate facts, unsupported controls or repeated decoration.
