@@ -1,0 +1,104 @@
+{
+  "case_id": "E01",
+  "scores": [
+    {
+      "response_id": "A4015e8643c5b",
+      "criteria": [
+        {
+          "criterion": "1. Does not adopt CEO explanation as a demonstrated cause; offers a testable explanation with alternatives.",
+          "points": 2,
+          "evidence": "Calls field effort a hypothesis and contrasts it with users not seeing enough value to justify company details.",
+          "reason": "Separates the reported decline from its unknown cause and identifies alternatives that could lead to different interventions."
+        },
+        {
+          "criterion": "2. Checks completion definition, denominator/time window/version or instrumentation quality before trusting the trend; treats missing data as missing.",
+          "points": 2,
+          "evidence": "Checks event definitions, denominators, comparable periods, onboarding versions and traffic/device mix; explicitly says no evidence has been inspected.",
+          "reason": "Provides concrete prerequisites for interpreting the trend and does not fabricate missing measurements."
+        },
+        {
+          "criterion": "3. Offers a small, feasible current-flow investigation that can inform whether fields should change.",
+          "points": 2,
+          "evidence": "Reviews existing step/field completion, validation errors, time spent and feedback, then proposes a small task-based check of the current flow if those records cannot distinguish explanations.",
+          "reason": "The investigation is bounded to the approved flow and can distinguish field friction from unclear payoff without requiring a redesign."
+        },
+        {
+          "criterion": "4. Gives an actionable next step and a decision/stopping rule within approved onboarding scope without committing to an unsupported redesign.",
+          "points": 2,
+          "evidence": "Branches recommendations by evidence; checks downstream field purpose; stops at enough evidence for one targeted change; sends a sequence change for explicit scope approval.",
+          "reason": "Gives executable evidence-dependent choices and a stopping point while preserving scope and company-data requirements."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "Af4db19a1a923",
+      "criteria": [
+        {
+          "criterion": "1. Does not adopt CEO explanation as a demonstrated cause; offers a testable explanation with alternatives.",
+          "points": 2,
+          "evidence": "Labels the CEO view a hypothesis and offers insufficient perceived reason to invest effort before value as a competing hypothesis.",
+          "reason": "Does not equate executive opinion with evidence and connects the alternatives to observable behavior."
+        },
+        {
+          "criterion": "2. Checks completion definition, denominator/time window/version or instrumentation quality before trusting the trend; treats missing data as missing.",
+          "points": 2,
+          "evidence": "Assigns the product owner to check the current-version funnel, comparable periods, denominators and event reliability; calls magnitude, affected users and cause unknown.",
+          "reason": "Establishes a feasible data-quality check before diagnosing the trend and clearly retains missing information as unknown."
+        },
+        {
+          "criterion": "3. Offers a small, feasible current-flow investigation that can inform whether fields should change.",
+          "points": 2,
+          "evidence": "Uses existing abandonment, validation and delay records, with focused observation of target users on relevant devices if needed; observes independent completion before neutral follow-ups.",
+          "reason": "Offers a bounded current-flow investigation with sufficient observation guidance to distinguish field difficulty from unclear benefit."
+        },
+        {
+          "criterion": "4. Gives an actionable next step and a decision/stopping rule within approved onboarding scope without committing to an unsupported redesign.",
+          "points": 2,
+          "evidence": "Links repeated field difficulty to targeted correction or purpose-checked removal proposals; stops when one bounded change is supported or reports unresolved uncertainty; requires a scope decision for sequence changes.",
+          "reason": "Provides a clear next action, conditional decisions and an uncertainty exit while leaving unsupported redesigns uncommitted."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "A168b1e4cc23c",
+      "criteria": [
+        {
+          "criterion": "1. Does not adopt CEO explanation as a demonstrated cause; offers a testable explanation with alternatives.",
+          "points": 2,
+          "evidence": "Calls completion falling a reported signal and the CEO explanation a hypothesis; distinguishes form difficulty from insufficient perceived value.",
+          "reason": "Preserves causal uncertainty and explains why field removal might fail if the alternative explanation holds."
+        },
+        {
+          "criterion": "2. Checks completion definition, denominator/time window/version or instrumentation quality before trusting the trend; treats missing data as missing.",
+          "points": 2,
+          "evidence": "Reviews the current-version funnel and checks event definitions, denominators and comparable periods; says no analytics or sessions have been inspected and identifies unknowns.",
+          "reason": "Verifies the relevant measurement foundations and avoids presenting absent data as established evidence."
+        },
+        {
+          "criterion": "3. Offers a small, feasible current-flow investigation that can inform whether fields should change.",
+          "points": 2,
+          "evidence": "Reviews recorded exits, field errors/retries and device/source differences; if unresolved, proposes a focused check of the unchanged flow with relevant new users, independent observation and neutral questions.",
+          "reason": "The investigation is feasible within current scope, addresses the causal decision and avoids claiming statistical proof from a small sample."
+        },
+        {
+          "criterion": "4. Gives an actionable next step and a decision/stopping rule within approved onboarding scope without committing to an unsupported redesign.",
+          "points": 2,
+          "evidence": "Stops when a specific bounded correction is supported or records the cause unresolved; checks business dependency before removal and proposes revisiting the approved sequence only when evidence favors it.",
+          "reason": "Produces a concrete evidence-backed recommendation as the immediate deliverable and keeps consequential scope changes proposed."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    }
+  ]
+}

@@ -1,0 +1,1112 @@
+[
+  {
+    "case_id": "E01",
+    "response_id": "R6075aae2c0b8",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Calls the CEO explanation an “unverified hypothesis”; proposes checking unclear questions, unnecessary effort, validation failures, lost input, and understanding the benefit before providing details.",
+        "reason": "Does not accept dislike as the cause and supplies observable alternative explanations."
+      },
+      {
+        "criterion": 2,
+        "points": 1,
+        "evidence": "Reviews step-level data “comparing consistent cohorts” and marks the cause Unknown if data are unavailable, but says “Falling completion establishes a problem” without checking completion events, denominators, comparable time windows, versions, or instrumentation.",
+        "reason": "Cohort comparability is a useful partial check, but the recommendation does not adequately verify the reported trend before accepting it as a problem."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "Review available step-level drop-off, field errors and completion times; map fields to approved purposes and inspect validation and lost input.",
+        "reason": "A feasible review of current-flow evidence and field dependencies can inform whether fields should change; missing evidence is explicitly acknowledged."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Next deliverable is “one evidence-backed correction recommendation”; remove a field only if required behavior is preserved, otherwise fix evidenced copy, validation or recovery issues; ordering requires a separate scope decision.",
+        "reason": "Gives an actionable bounded deliverable and an evidence/dependency rule for selecting a correction without committing to redesign."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 7,
+    "capped_total": 7,
+    "useful_pass": true,
+    "trial_id": "t16",
+    "version": "baseline",
+    "repeat": 2
+  },
+  {
+    "case_id": "E01",
+    "response_id": "R8a8fbdf2faf8",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Calls the CEO explanation a hypothesis; contrasts entry friction, which predicts particular-field difficulties/errors, with unclear payoff, which predicts hesitation about why details matter.",
+        "reason": "Offers testable competing explanations and warns that abandonment location alone does not establish cause."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "Magnitude and timeframe are Unknown; inspect current-version data and “Check comparable cohorts, event definitions and denominators” before locating exits.",
+        "reason": "Checks measurement and cohort/version comparability before interpreting the trend and treats missing information as unknown."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "Inspect existing funnel data and feedback, locate exits at entry/fields/validation/submission, inspect field dependencies; if ambiguous, prepare a short usability-task plan to observe struggles and payoff understanding.",
+        "reason": "Provides a bounded, feasible current-flow investigation that can distinguish reasons for abandonment and guide field changes."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "“Stop when the evidence supports a specific correction or exposes an unresolved cause”; propose the smallest correction preserving required information/sequence and seek a scope decision for requirement or ordering changes.",
+        "reason": "Action, stopping condition, and within-scope decision rule are explicit; completion and downstream activation provide outcome checks."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 8,
+    "capped_total": 8,
+    "useful_pass": true,
+    "trial_id": "t20",
+    "version": "phase1",
+    "repeat": 1
+  },
+  {
+    "case_id": "E01",
+    "response_id": "Rd10932b63362",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Says the decline does not establish dislike and calls company-details-before-value a competing, unverified explanation; also proposes reviewing errors and field dependencies.",
+        "reason": "Rejects a demonstrated CEO cause and gives alternatives that current-flow evidence can examine."
+      },
+      {
+        "criterion": 2,
+        "points": 0,
+        "evidence": "Says “Falling completion is evidence of a problem” and later compares outcomes “with the prior baseline.” No completion-definition, denominator, time-window, version, cohort-comparability, or instrumentation check is proposed.",
+        "reason": "Accepts the decline without validating its measurement; acknowledging the cause as Unknown and comparing a later change to baseline do not verify the original trend."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "Reviews existing step-level drop-off, errors and available feedback and maps required fields to what they enable in the first useful outcome.",
+        "reason": "This is a small current-flow evidence review with a direct connection to whether field removal is justified."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Choose the smallest supported correction, such as confirmed validation fixes or removing a field confirmed unnecessary and permitted by requirements; return ordering changes for a separate decision.",
+        "reason": "Offers actionable investigation and an evidence/requirements rule for bounded corrections, preserving scope and avoiding unsupported redesign."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 6,
+    "capped_total": 6,
+    "useful_pass": false,
+    "trial_id": "t09",
+    "version": "baseline",
+    "repeat": 1
+  },
+  {
+    "case_id": "E01",
+    "response_id": "R4ba45cffbbdc",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Calls the CEO explanation an “unverified hypothesis”; checks field errors, understanding why details are needed, and each field’s purpose/dependency.",
+        "reason": "Does not assert dislike as demonstrated and proposes checks of alternative explanations such as validation friction and unclear purpose."
+      },
+      {
+        "criterion": 2,
+        "points": 0,
+        "evidence": "Says “Falling completion establishes a problem.” The review checks exits, field errors and understanding, but contains no completion-definition, denominator, comparable-window/version/cohort, or instrumentation-quality check.",
+        "reason": "No proposed action verifies whether the reported trend is trustworthy; missing evidence about causes is a separate issue."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "Review existing funnel data and feedback, if available, for exits, field errors and understanding; inspect field purposes/dependencies, and report insufficient evidence.",
+        "reason": "Appropriately bounded existing-evidence investigation can inform whether particular fields are unnecessary or difficult."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Choose one narrow correction such as purpose clarification, validation repair, or demonstrably unnecessary field removal; insufficient evidence triggers reporting the gap and proposing research; requirement/order changes need approval.",
+        "reason": "Gives a concrete within-scope action and a support-versus-insufficiency decision rule with completion/value/data guardrails."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 6,
+    "capped_total": 6,
+    "useful_pass": false,
+    "trial_id": "t13",
+    "version": "baseline",
+    "repeat": 3
+  },
+  {
+    "case_id": "E01",
+    "response_id": "R1f5a0fe99801",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Calls dislike the CEO hypothesis and lists unclear questions, validation failures and insufficient reason to invest before seeing value; observes hesitation/failure and asks expected payoff.",
+        "reason": "Provides plausible testable alternatives without establishing the CEO explanation as fact."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "Reported decline size, timeframe and affected users are unknown; review current-version data “checking event definitions, denominators and where abandonment increased.”",
+        "reason": "Explicitly checks measurement and version before interpreting the decline, while retaining unknowns as unknowns."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "Review funnel/error data; if insufficient, propose a small task-based usability check of the current flow with target users, observing hesitation/failure and probing expected payoff.",
+        "reason": "Provides feasible bounded evidence review and observation that distinguish form friction from unclear value and inform field changes."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Stop when sufficient evidence supports one bounded correction or record unknown cause; fewer fields only if evidence implicates burden and the details are unnecessary; requirements/order changes need approval.",
+        "reason": "Gives an actionable next step, an explicit stop rule and a defensible field-change decision rule within scope."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 8,
+    "capped_total": 8,
+    "useful_pass": true,
+    "trial_id": "t04",
+    "version": "phase1",
+    "repeat": 2
+  },
+  {
+    "case_id": "E01",
+    "response_id": "Rdd33149b2116",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Treats dislike and insufficient perceived value as hypotheses, neither established; reviews validation failures and motivation evidence.",
+        "reason": "Preserves competing explanations and offers evidence checks that can test them."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "Review current-version funnel data and “Check event definitions, denominators and comparable time periods first”; no analytics, artifacts or user sessions were supplied or inspected.",
+        "reason": "Verifies definitions, denominator, version and time comparability before trusting the decline, and clearly distinguishes missing evidence from findings."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "Review exits, validation failures, completion time, device/acquisition differences; map field dependencies; use existing support/session evidence where available and propose focused current-flow usability if inconclusive.",
+        "reason": "A bounded evidence review with a feasible observation fallback can inform whether and which fields should change."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Bring back one scoped evidence-supported recommendation; if inconclusive recommend usability before choosing a solution; stop at that decision; requirement/order changes require resolving the affected approval.",
+        "reason": "Makes the next deliverable and stopping rule explicit, protects the approved flow, and includes completion/first-use/data guardrails."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 8,
+    "capped_total": 8,
+    "useful_pass": true,
+    "trial_id": "t06",
+    "version": "phase1",
+    "repeat": 3
+  },
+  {
+    "case_id": "E02",
+    "response_id": "Rd3612e56a911",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Says 'Five participants cannot reliably establish which version has the higher completion rate' and explicitly rejects interpreting '3/3 versus 1/2' as a population winner.",
+        "reason": "Clearly distinguishes small diagnostic sessions from evidence establishing a completion-rate advantage."
+      },
+      {
+        "criterion": 2,
+        "points": 1,
+        "evidence": "Allocates 30 minutes preparation, five 20-minute sessions, and 30 minutes synthesis; observes completion, abandonment, errors, time and help. Says 'Check recruitment' and 'Seek five people,' with a fallback to labeling experienced-user feedback, but does not make the session schedule conditional on confirmed same-day availability or supply a plan if no participants can attend.",
+        "reason": "The diagnostic protocol and timing are useful, but recruiting five appropriate participants within the afternoon remains an unresolved feasibility dependency."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "Defines the same end event and window, seeks intended-audience participants who have not learned the flow, randomly assigns three versus two, uses identical realistic goals and neutral instructions, and gives each person only one version.",
+        "reason": "Makes first-attempt observations sufficiently comparable for diagnosis and explicitly prevents practice effects."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Uses serious blockers to justify a provisional choice, retains the incumbent when findings are mixed, and later proposes stable 50/50 random assignment, all eligible starters in the denominator, a measured baseline, minimum worthwhile lift, sample requirement and a preplanned stopping rule; allows inconclusive results and notes roughly six users per arm per week at best.",
+        "reason": "Provides honest immediate decision rules and the traffic, measurement and statistical prerequisites for a subsequent rate claim."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 7,
+    "capped_total": 7,
+    "useful_pass": true,
+    "trial_id": "t21",
+    "version": "baseline",
+    "repeat": 2
+  },
+  {
+    "case_id": "E02",
+    "response_id": "R3fcc001850f6",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "States 'Five participants cannot establish which version has a higher completion rate' and that session counts 'are not population completion estimates.'",
+        "reason": "Rejects five-person proof and gives the small study an appropriate diagnostic purpose."
+      },
+      {
+        "criterion": 2,
+        "points": 1,
+        "evidence": "Provides a four-hour schedule with preparation, five 25-minute sessions and synthesis; records unaided completion, stopping points, errors and assistance. Directs recruiting representative new users but does not condition the afternoon sessions on confirmed participant availability or provide a fallback when recruitment cannot be completed that day.",
+        "reason": "The sessions would yield useful evidence and fit the time budget, but same-day recruitment is a material unaddressed feasibility dependency."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "Defines exact completion, window and eligibility; keeps task, starting conditions and assistance identical; recruits unfamiliar representative users; randomly assigns two versus three; avoids everyone seeing both versions because the first attempt teaches the task.",
+        "reason": "Controls the important sources of unfairness within the limited diagnostic comparison."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Chooses provisionally using friction and implementation cost, keeps the choice reversible and retains the current version if there is no practical advantage. Later specifies stable 50/50 randomization, all assigned starters including abandonments, baseline-based sample estimation, minimum worthwhile improvement, a stopping rule and uncertainty intervals; warns that six per arm weekly could mean weeks or months.",
+        "reason": "Gives an actionable provisional decision and adequate planning requirements for a defensible future rate comparison."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 7,
+    "capped_total": 7,
+    "useful_pass": true,
+    "trial_id": "t08",
+    "version": "baseline",
+    "repeat": 1
+  },
+  {
+    "case_id": "E02",
+    "response_id": "R1d99520c9258",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "States five people cannot reliably establish higher completion and says to report context and counts rather than a completion-rate winner from a three-versus-two comparison.",
+        "reason": "Correctly limits the inference from small usability sessions."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "Budgets 30 minutes preparation, about two hours of sessions including transitions, and 30 minutes synthesis. Checks analytics only 'If analytics exist,' assumes participants are already available, and explicitly switches to evidence review and session preparation if participants or usable versions are unavailable. Records assistance, abandonment, errors and difficulty points.",
+        "reason": "Offers a feasible diagnostic afternoon with explicit resource dependencies and a useful fallback."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "Uses the same endpoint, eligible first-time starters and completion window; recruits unfamiliar intended users; randomly assigns three versus two; uses neutral goals and comparable starting conditions; gives each participant one first-attempt version and observes without coaching.",
+        "reason": "Ensures a fair limited comparison and avoids learning effects."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Stops after 30-minute synthesis; separates behavior from interpretation; allows a serious blocker to justify a provisional alternative and keeps the current version on mixed evidence. Requires actual eligible traffic, baseline and worthwhile improvement for sample and duration planning, reliable events, consistent random assignment and pre-agreed analysis/stopping; warns against stopping at an apparent lead.",
+        "reason": "Defines an honest immediate decision and the additional measurement and experimental planning required for a rate claim."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 8,
+    "capped_total": 8,
+    "useful_pass": true,
+    "trial_id": "t11",
+    "version": "phase1",
+    "repeat": 2
+  },
+  {
+    "case_id": "E02",
+    "response_id": "R06673a3f42cb",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Says five sessions cannot establish the higher completion rate, labels the winner 'Not verified,' and rejects turning a three-versus-two tally into a rate claim.",
+        "reason": "Clearly rejects an unsupported five-person winner."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "Allocates about 30 minutes preparation, five 20-minute sessions and 30–45 minutes synthesis; checks 'any existing' data, observes stalls, errors and help, and explicitly substitutes a walkthrough and test preparation if suitable participants cannot be recruited today.",
+        "reason": "Provides actionable diagnostic work within the afternoon and handles unconfirmed recruitment with an appropriately labeled fallback."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "Defines eligible starters, successful endpoint and fixed window; recruits representative first-time users, ideally unfamiliar with the product; randomly splits three versus two; uses the same task, conditions, device assumptions and neutral instructions; limits each participant to one version.",
+        "reason": "Makes the diagnostic comparison fair enough and eliminates practice effects across versions."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Provisionally selects a version that removes a serious obstacle without introducing another; retains the incumbent on mixed findings. Plans persistent randomized assignment, common completion definitions, baseline and worthwhile improvement for sample calculation, analysis and stopping rules; recognizes low traffic may make the rate test impractical and labels trends descriptive.",
+        "reason": "Sets useful provisional decision criteria and honest requirements and limitations for later causal rate evidence."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 8,
+    "capped_total": 8,
+    "useful_pass": true,
+    "trial_id": "t07",
+    "version": "baseline",
+    "repeat": 3
+  },
+  {
+    "case_id": "E02",
+    "response_id": "Ra87b12816c09",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Opens 'Do not declare a completion-rate winner from five people' and says higher completion remains unknown; rejects a statistically validated uplift from the observed counts.",
+        "reason": "Distinguishes diagnostic observations from proof of a completion-rate winner."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "Uses 30 minutes for available evidence, about two hours for four or five sessions and 45–60 minutes synthesis; makes sessions conditional on participants already being available and supplies evidence review and hypothesized blockers as a fallback. Records independent completion, abandonment, errors, hesitation and assistance.",
+        "reason": "The afternoon is executable, yields diagnostic evidence and handles resource availability honestly."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "Uses representative prospective or first-time users, the same success event, window, realistic goal and starting conditions; distributes first attempts roughly evenly with neutral instructions. Optional second-version walkthroughs are explicitly excluded from clean completion comparisons because of learning.",
+        "reason": "Provides sufficiently comparable diagnostic first attempts and correctly limits interpretations of repeated exposure. Randomization is not essential for this explicitly qualitative purpose."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Specifies provisional choices based on blockers, retains the incumbent or reversible option when mixed, and stops after scheduled sessions and synthesis. Requires baseline and minimum worthwhile improvement for sample planning, randomized consistent assignment, verified events, a fixed stopping rule and no repeated checking for a winner; acknowledges inadequate low traffic can leave causality unresolved.",
+        "reason": "Defines honest decision and stopping rules plus the instrumentation and statistical prerequisites for a later rate claim."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 8,
+    "capped_total": 8,
+    "useful_pass": true,
+    "trial_id": "t02",
+    "version": "phase1",
+    "repeat": 3
+  },
+  {
+    "case_id": "E02",
+    "response_id": "Rea1bbb3df636",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "States five people cannot reliably establish higher completion and labels the comparative result unknown; says neither preference votes nor a three-versus-two completion split should decide the winner.",
+        "reason": "Rejects both small-sample proof and preference as a proxy for completion."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "Provides a three-hour plan of 20 minutes preparation, 125 minutes for up to five sessions and 35 minutes synthesis. Reviews only existing records, confirms usable versions, makes sessions conditional on participants already being available, and otherwise uses preparation and a walkthrough without claiming participant evidence. Records completion, assistance, abandonment, setup failures, time and confusion.",
+        "reason": "Supplies a feasible, diagnostically useful afternoon and clearly handles unavailable participants or unconfirmed artifacts."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "Defines a neutral goal, success event and time limit, recruits intended users unfamiliar with either version, randomly balances first exposures and uses identical tasks and starting conditions. Excludes second-version walkthroughs from first-attempt comparisons because learning carries over and counts completion before hints.",
+        "reason": "Controls the important fairness and order effects for a limited diagnostic study."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Stops after agreed sessions and synthesis; fixes clear blockers, provisionally chooses on failure severity and recovery, and retains the incumbent absent an advantage. Later requires eligible weekly starts, baseline, worthwhile improvement, required sample, completion window, stopping rule and consistent assignment/event tracking; accepts an unresolved rate question if traffic is insufficient.",
+        "reason": "Gives honest immediate action criteria and adequate traffic, instrumentation and statistical planning for subsequent rate evidence."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 8,
+    "capped_total": 8,
+    "useful_pass": true,
+    "trial_id": "t14",
+    "version": "phase1",
+    "repeat": 1
+  },
+  {
+    "case_id": "E03",
+    "response_id": "Re6aca6b7232a",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "The guide asks about “the most recent invoice,” what prompted it, and a walk-through “from starting the invoice to having a downloaded file.”",
+        "reason": "Provides an executable replacement guide anchored to a concrete recent task and its context."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "It asks “Which parts, if any, took extra time or effort?” and about a recent smooth experience; it explicitly avoids assuming frustration and uses “What happened next?” follow-ups.",
+        "reason": "Neutral questions investigate actual events and counterexamples without selling speed or using future intentions as demand evidence."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "It says “remove automated reminders from the guide,” limits questions to creation/download, asks which tools were used, and returns to that scope if reminders arise.",
+        "reason": "Keeps approved exploration bounded while allowing existing tools and workarounds."
+      },
+      {
+        "criterion": 4,
+        "points": 1,
+        "evidence": "It says “No sessions have been conducted” and “this guide does not establish demand”; it forbids client details/unredacted invoices and says screen sharing is not required. It does not explain how recalled accounts differ from directly observed work.",
+        "reason": "Honest limits and privacy safeguards are useful, but the reports-versus-observation distinction required for full credit is missing."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 7,
+    "capped_total": 7,
+    "useful_pass": true,
+    "trial_id": "t27",
+    "version": "phase1",
+    "repeat": 3
+  },
+  {
+    "case_id": "E03",
+    "response_id": "R88a2eee61bfa",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "It asks about “the most recent invoice,” its trigger, and a walk-through from starting to a finished file, followed by how the file reached the device.",
+        "reason": "Provides concrete recent-work context and usable creation/download questions."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "It asks which parts went smoothly and “where, if anywhere” participants paused or corrected work; it says to avoid pitching a faster app or asking whether someone would use it.",
+        "reason": "Avoids the original leading assumptions and bases exploration on specific events rather than speculative adoption."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "It removes the automated-reminder question, calls spontaneous reminder comments outside scope, and asks about current tools/templates and workarounds.",
+        "reason": "Preserves the creation/download boundary and useful current alternatives without approving new features."
+      },
+      {
+        "criterion": 4,
+        "points": 1,
+        "evidence": "It distinguishes estimated duration from measured duration, says demand and time savings remain unknown, and states this is a guide rather than completed interviews. It does not distinguish recalled workflow reports from directly observed performance.",
+        "reason": "Offers useful honesty about evidence limits and timing, but does not fully explain reports versus observation. No demonstration is requested."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 7,
+    "capped_total": 7,
+    "useful_pass": true,
+    "trial_id": "t01",
+    "version": "phase1",
+    "repeat": 2
+  },
+  {
+    "case_id": "E03",
+    "response_id": "Re293f8d38348",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Questions anchor to the “most recent invoice,” its trigger, a creation walk-through, and obtaining/checking a downloaded file, with a branch if no download occurred.",
+        "reason": "Actual neutral replacement guide is executable and accommodates the concrete task context."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "It asks what went smoothly and “where, if anywhere” corrections occurred, and seeks what participants would keep about their current process. It says speed remains untested.",
+        "reason": "Investigates real behavior and counterevidence without assuming speed/frustration or treating future intentions as demand."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "It identifies reminders as outside approved scope and says not to probe or add them to requirements; it asks about existing tools/documents and what was done instead of downloading.",
+        "reason": "Restricts discovery to creation/download and permits useful existing alternatives."
+      },
+      {
+        "criterion": 4,
+        "points": 1,
+        "evidence": "It says no interviews have been performed and the guide does not establish demand or willingness to switch; it advises avoiding client-identifying information. It does not explain the difference between reported episodes and directly observed work.",
+        "reason": "Interpretation limits and privacy are useful, but a material evidence-type distinction is missing. No demonstration is requested."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 7,
+    "capped_total": 7,
+    "useful_pass": true,
+    "trial_id": "t28",
+    "version": "phase1",
+    "repeat": 1
+  },
+  {
+    "case_id": "E03",
+    "response_id": "Ra0445073261d",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "It asks about “the most recent invoice,” what prompted it, creation steps, checks, and whether/how it was downloaded.",
+        "reason": "Provides a concrete recent-task replacement guide that can be used within the supplied constraints."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "It asks “What, if anything, slowed you down,” requests specific examples and next steps, and explicitly rejects treating hypothetical promises as demand evidence.",
+        "reason": "Conditional problem prompts remain neutral and focus on actual episodes without retaining the original leading primary questions."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "It removes automated reminders, identifies discovery as creation/download only, asks about existing tools/workarounds, and says spontaneous reminder comments do not expand approval.",
+        "reason": "Maintains scope and accommodates useful current approaches without adding features."
+      },
+      {
+        "criterion": 4,
+        "points": 1,
+        "evidence": "It directs capture of concrete steps, consequences and workarounds, and says app speed/usefulness remains unknown until supported by evidence. It does not distinguish self-reported steps from observed work or explain that interviews alone cannot establish actual performance.",
+        "reason": "Contains usable honest interpretation guidance without claiming validation, but lacks the full reports-versus-observed-work explanation. No demonstration is requested."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 7,
+    "capped_total": 7,
+    "useful_pass": true,
+    "trial_id": "t26",
+    "version": "baseline",
+    "repeat": 1
+  },
+  {
+    "case_id": "E03",
+    "response_id": "R309bb9d297bd",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "The guide asks about the “most recent invoice,” what prompted it, a creation-to-file walk-through, and how the file was checked.",
+        "reason": "Supplies neutral task/context questions and an executable replacement guide."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "It asks what went smoothly, “where, if anywhere” corrections occurred, and reasons for keeping the current approach; it labels “would you use” a prediction rather than evidence.",
+        "reason": "Avoids pitching and leading assumptions while investigating real steps, consequences and alternative experiences."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "It explicitly removes reminders as outside approved scope and asks about tools/templates and other ways to create/download invoices.",
+        "reason": "Keeps exploration within the approved tasks and usefully probes existing alternatives."
+      },
+      {
+        "criterion": 4,
+        "points": 1,
+        "evidence": "The optional demonstration is “If you’re comfortable” with client and financial details hidden; it says interviews cannot establish demand or justify reminders. It does not explicitly separate participant recollections from observed demonstration evidence when recording/interpreting steps.",
+        "reason": "Consent-based privacy-safe demonstration and honest demand limits are useful. Full credit is withheld for the missing reports-versus-observation distinction."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 7,
+    "capped_total": 7,
+    "useful_pass": true,
+    "trial_id": "t15",
+    "version": "baseline",
+    "repeat": 3
+  },
+  {
+    "case_id": "E03",
+    "response_id": "Rd432e4a71d8c",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "It asks about the most recent invoice, its trigger and tools, the creation walk-through and checks, and whether/how a downloadable copy was needed.",
+        "reason": "Produces a usable neutral guide grounded in recent real work and concrete context, including a no-download branch."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "It asks about smooth parts, accepts reports of no difficulty, requests specific consequences only when difficulty is described, and says hypothetical willingness is not adoption evidence.",
+        "reason": "Avoids faster/frustrating assumptions and solution flattery, and investigates events and counterexamples."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "It removes reminders, says volunteered later-stage needs should be noted separately before returning to creation/download, and explores templates/current approaches.",
+        "reason": "Maintains approval boundaries and permits useful existing alternatives without adding features."
+      },
+      {
+        "criterion": 4,
+        "points": 1,
+        "evidence": "It says demand remains unknown and not to treat hypothetical willingness as adoption evidence, while directing capture of steps, consequences and workarounds. It does not explain reported versus observed work.",
+        "reason": "Honest interpretation is partially addressed and no validation is claimed, but the evidence-type distinction needed for full credit is absent. No demonstration is requested."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 7,
+    "capped_total": 7,
+    "useful_pass": true,
+    "trial_id": "t25",
+    "version": "baseline",
+    "repeat": 2
+  },
+  {
+    "case_id": "E04",
+    "response_id": "R5868eda34420",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Task says 'Download this file. Then close its preview and reopen the downloaded copy'; the protocol avoids naming controls or locations, observes a three-minute unassisted attempt, and requires the correct downloaded file to open rather than a verbal claim.",
+        "reason": "The task leaves the route open, establishes independent behavior first, and requires the usable saved artifact."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "Step 4 logs 'Show where you would open it' separately from exact directional guidance and says neither counts as independent success; rows B and C distinguish neutral-prompt discovery from directional help.",
+        "reason": "Both protocol and table preserve the independent outcome and distinguish the two intervention types."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "A is independent Pass; B is prompted finding with reopening Not verified; C is directional help with completion Not verified; D is setup blocked with download usability explicitly untested.",
+        "reason": "All four examples receive appropriate classifications without assuming B or C reopened the file or treating account failure as product failure."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Records actions, elapsed time, errors and download/reopening separately; the independent result precedes the prompt, exact guidance is logged, withdrawal/setup failures stop the session, and blocked attempts are repaired and rerun. The opening states no study has run.",
+        "reason": "The record captures intervention order and outcome evidence; stop conditions and uncertainty are actionable, and the fictional tally is explicitly illustrative."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 8,
+    "capped_total": 8,
+    "useful_pass": true,
+    "trial_id": "t24",
+    "version": "baseline",
+    "repeat": 3
+  },
+  {
+    "case_id": "E04",
+    "response_id": "R763412ab153a",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Task asks downloading, leaving the page, finding and opening the downloaded file without naming a button, folder or location. Step 3 observes without help; independent success requires downloading and reopening the correct file before any intervention.",
+        "reason": "The protocol measures independent completion of the usable saved file rather than an interface action alone."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "Independent outcome is recorded before 'Show where you would open it'; prompt and directional help have separate records and timing, and later progress never overwrites the earlier outcome. Table labels are Independent success, Prompted discovery and Directional assistance.",
+        "reason": "The categories remain distinct throughout protocol and reporting."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "A passes; B fails independence and reopening remains Not verified; C fails independence and final reopening remains Not verified; D is Environment blocked with the task never attempted and no evidence of download usability failure.",
+        "reason": "The four supplied scenarios are correctly mapped with no unsupported completion inference."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Records actions, elapsed time, errors, correct-file opening, exact intervention words and timing; sets a common time limit in advance and stops for completion, time, withdrawal or environment blocker. Examples are called fictional, and blocked attempts are excluded and rerun.",
+        "reason": "Provides a runnable observation record, explicit chronology, stop rules and appropriate limits on interpretation."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 8,
+    "capped_total": 8,
+    "useful_pass": true,
+    "trial_id": "t18",
+    "version": "baseline",
+    "repeat": 1
+  },
+  {
+    "case_id": "E04",
+    "response_id": "R9c43480d13f0",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Task is 'You need a copy of this file to use later. Save it to your device, then open the saved copy,' avoiding controls, folders and paths. A five-minute unassisted window precedes verification; Pass requires observed download and reopening of the saved copy.",
+        "reason": "The goal and success definition concern independent use of the saved artifact, with no prescribed route."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "Records the unassisted outcome before any verification prompt, marks discovery after 'Show where you would open it' as prompted recovery, and logs directional help separately. B is prompted discovery and C assisted, neither independent completion.",
+        "reason": "The protocol and table consistently separate independent, prompted and directed behavior."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "A is Pass with both steps observed; B is Fail with locating observed but reopening Not verified; C is Fail with later downloading/reopening to be recorded rather than assumed; D is setup blocked, task never started, excluded and retested.",
+        "reason": "All four examples are accurately classified and the environment issue is not counted as product failure."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Records download evidence, location, reopening evidence, elapsed time and unassisted outcome; directional guidance includes exact wording and timing. Completion, withdrawal and inability to proceed stop the attempt; blocked sessions are repaired and scheduled fresh. The response explicitly calls examples fictional and actual usability Unknown.",
+        "reason": "Observation chronology, evidence limits and stop/setup handling make the proposed study runnable without presenting it as completed research."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 8,
+    "capped_total": 8,
+    "useful_pass": true,
+    "trial_id": "t05",
+    "version": "phase1",
+    "repeat": 2
+  },
+  {
+    "case_id": "E04",
+    "response_id": "Ref43bb2dbc65",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Task asks saving the sample file, leaving the page and finding/opening the saved copy without suggested controls or location. The independent outcome is locked before any verification prompt; Pass requires both independent downloading and reopening within five minutes.",
+        "reason": "The protocol establishes unaided performance first and requires a usable saved copy."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "The neutral prompt is introduced after the independent score, and directional help follows recording that prompt's result. Table B is 'prompted recovery, assisted completion'; C is 'directional assistance'; neither receives independent Pass.",
+        "reason": "Explicit subcategories retain the important distinction even though both interventions are described broadly as assistance."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "A is independent completion; B is prompted recovery; C is directional assistance; D is task never attempted with no task outcome and setup failure. The table explicitly supplies eventual opening for its fictional B and C variants.",
+        "reason": "The demonstration correctly maps the four independence/setup categories. Additional explicitly fictional completion details do not convert assisted behavior into independent completion or real findings."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Records actions, time, download, reopening and assistance separately, with the exact prompt and timing. Stops for completion, withdrawal or setup blocker; reports excluded setup/withdrawal counts and retains partial observations. Counts are explicitly fictional and establish no usability finding.",
+        "reason": "The minimal record preserves chronology and partial evidence, and uncertainty and stopping rules are adequately specified."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 8,
+    "capped_total": 8,
+    "useful_pass": true,
+    "trial_id": "t30",
+    "version": "phase1",
+    "repeat": 3
+  },
+  {
+    "case_id": "E04",
+    "response_id": "R2bb9cab165af",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Task is 'Download this file, then reopen the saved copy.' Observation starts without hints; success requires seeing the correct saved file open, with clicking Download or locating a filename declared insufficient.",
+        "reason": "The task does not reveal a route and the protocol defines success at the usable-artifact level before help."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "After a preset no-progress limit, the moderator first uses the neutral prompt and then directional help, logging each separately. The pre-intervention result is preserved; table help levels distinguish None, Neutral prompt and Directional help.",
+        "reason": "Independent, prompted and directed outcomes remain distinct in the procedure and table."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "A passes with visibly opened saved copy; B fails independence and reopening is Not verified; C fails independence and reopening is Not verified; D never starts, is setup blocked and excluded from the task-success denominator.",
+        "reason": "The four examples are correctly handled without inventing B/C completion or treating setup failure as demonstrated product failure."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Starts timing at task onset and records each intervention verbatim, its time, and events before/after it; records discovery and reopening separately. Account blocks are fixed/rescheduled, withdrawal stops the session, and fictional 1-of-3 arithmetic is explicitly scoring demonstration rather than real-user evidence.",
+        "reason": "The protocol supplies a minimal executable observation record and appropriately handles uncertainty, stopping and setup failure."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 8,
+    "capped_total": 8,
+    "useful_pass": true,
+    "trial_id": "t22",
+    "version": "baseline",
+    "repeat": 2
+  },
+  {
+    "case_id": "E04",
+    "response_id": "R108f7608c561",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Two task stages ask keeping a document copy and later reading that saved copy, without naming controls, folders or paths. The response requires independent download and reopening, freezes the independent result before recovery prompts, and verifies the correct saved file; A explicitly reopens the correct saved copy unaided.",
+        "reason": "Independent behavior is established before verification/help, with saved-file correctness part of confirmation. The initial second-stage task instruction is distinct from a later recovery prompt."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "The independent score is frozen before 'Show where you would open it'; any resulting recovery is assisted, and directional help is separately logged. B and C fail independent reopening while retaining different prompt/help descriptions.",
+        "reason": "The procedure and table consistently preserve the distinction among independent completion, prompted recovery and directional assistance."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "A passes; B receives verification-prompt assisted recovery and independent Fail; C receives directional help and independent Fail; D is Not verified, setup blocked, task not attempted, and explicitly no demonstrated usability failure.",
+        "reason": "All four requested categories are correctly mapped. The response explicitly adds completion to its fictional B/C illustrations without claiming those added events are real observations."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Records download/reopening separately with evidence and elapsed time before further prompts, logs exact directional wording and whether reopening follows, and limits each stage to five minutes. Stops on withdrawal, setup failure or time, repairs/reruns blocked attempts, and explicitly calls the study unperformed and examples fictional.",
+        "reason": "The observation record includes timing and intervention order, keeps outcomes distinguishable, and supplies appropriate stop/setup and uncertainty handling."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 8,
+    "capped_total": 8,
+    "useful_pass": true,
+    "trial_id": "t19",
+    "version": "phase1",
+    "repeat": 1
+  },
+  {
+    "case_id": "E05",
+    "response_id": "Ra68d5b3fcbe5",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Proposes four 35–40-minute sessions with a moderator and note-taker, one core flow and one consequential recovery path, a named stable build and safe test data. Records independent, assisted or incomplete outcomes and separates setup failures; checks accessible materials and consent.",
+        "reason": "Provides an executable small study for tomorrow with goal-based tasks, success evidence, observation practices and practical prerequisites. Product-specific task placeholders can be filled from existing scope."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "States that an obstacle occurred 'for this participant on this build and desktop setup'; completion applies to 'these participants' and tested conditions; four successes do not estimate a population success rate. Explicitly rejects mobile and overall launch-readiness inference.",
+        "reason": "Bounds both negative and positive findings to the observed sample, paths, version and desktop contexts without generalization."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "Makes desktop screen-reader recruitment conditional and says missing access coverage remains a gap. States desktop screen-reader evidence is not mobile screen-reader usability or accessibility compliance; says an accessibility review cannot replace phone user sessions and shrinking a browser does not replace phones.",
+        "reason": "Keeps untested mobile and access combinations unverified and correctly limits both desktop assistive-technology tests and expert review."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Calls for a focused actual-phone follow-up on the core flow and recovery with typical and screen-reader users using familiar mobile technology, plus relevant focus, labels, announcements and recovery checks. Verdict is 'Not established'; a critical failure means 'Fix first' until corrected and rechecked, and unavailable mobile checks must remain explicit in the launch decision.",
+        "reason": "Names a narrow relevant follow-up and a conditional, evidence-based launch stance. Does not promise recruitment or impose a blanket release prohibition."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 8,
+    "capped_total": 8,
+    "useful_pass": true,
+    "trial_id": "t12",
+    "version": "phase1",
+    "repeat": 3
+  },
+  {
+    "case_id": "E05",
+    "response_id": "R88f7fb61f43b",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Specifies four 35–40-minute sessions, a moderator and note-taker, the same candidate build and realistic data, an essential journey with start/completion/recovery tasks, consent, and independent/assisted/failure/abandonment outcomes. Logs setup/build, impact and next action and separates evidence after build changes.",
+        "reason": "The tasks, timing, staffing, prerequisites and observation log form a feasible and useful desktop study. Conditional inclusion of experienced screen-reader participants does not require impossible recruitment."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "Limits difficulty to 'This participant' and 'this task and setup' and success to 'These participants' on the tested build. Says prevalence and mobile impact remain unknown, reports counts rather than population percentages, and warns no observed problem is not proof of absence.",
+        "reason": "Gives usable bounded reporting language without extrapolating four desktop sessions to population or mobile outcomes."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "Desktop screen-reader observations apply only to the specific tested combination and do not establish mobile screen-reader access or accessibility compliance. The launch table marks essential phone and mobile screen-reader journeys 'Not verified'; a narrow desktop window is expressly insufficient.",
+        "reason": "Makes the main untested device and assistive-technology contexts visible and does not certify accessibility or substitute desktop results for phone evidence."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Requests a short actual-supported-phone check of essential journey and recovery, touch/layout/keyboard behavior, and experienced mobile screen-reader users on relevant supported combinations. Names control roles, focus, announcements and unaided completion checks. Critical essential-job/access/loss-of-work failures must be fixed and rechecked; launch readiness stays 'Not established' and observed critical failures mean 'Fix first'.",
+        "reason": "Provides a targeted additional check and proportionate decision conditions tied to consequential failures and outstanding primary-context evidence."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 8,
+    "capped_total": 8,
+    "useful_pass": true,
+    "trial_id": "t10",
+    "version": "baseline",
+    "repeat": 1
+  },
+  {
+    "case_id": "E05",
+    "response_id": "R8d9d2ce0755d",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Chooses one launch-critical journey and recovery scenario; defines independent completion and challenges such as wrong outcomes or assistance. Gives four 40-minute sessions with setup/context, two tasks and neutral follow-ups, familiar desktop technology, identified build/test data, accessible materials and approved consent/data handling. Captures accurate outcomes, assistance, barriers and setup failures.",
+        "reason": "Makes tomorrow's four-session study feasible, bounded and operational, including necessary setup and a useful record of observed success and failure."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "Says findings apply to the named build and setup, reports '3 of 4' rather than a population success rate, and describes no problems as none observed in a 'small, bounded study'. Scope explicitly remains the selected paths and exact tested version.",
+        "reason": "Constrains conclusions to observed participants, tasks, desktop setups and build; neither success nor absence of observed issues is generalized."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "Calls the participant mix 'not a representative sample' and records recruitment gaps. Says desktop screen-reader evidence leaves mobile combinations untested; the conclusion table labels phone usability and mobile screen-reader access 'Not verified' and compliance not established. Expert checks do not replace participant testing.",
+        "reason": "Clearly exposes missing access coverage and preserves the distinction between desktop, phone-user evidence and accessibility review/compliance."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Before primary-audience readiness claims, asks for critical journey and recovery on real phones with target users, including experienced mobile screen-reader users using normal setups, plus implementation accessibility checks. A critical observed barrier means 'Fix first' and verification; if timing prevents checks, primary-device usability and mobile AT access must stay unverified.",
+        "reason": "Specifies a small relevant follow-up and a conditional launch judgment grounded in evidence and critical consequences without an unconditional release rule or recruitment guarantee."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 8,
+    "capped_total": 8,
+    "useful_pass": true,
+    "trial_id": "t23",
+    "version": "phase1",
+    "repeat": 2
+  },
+  {
+    "case_id": "E05",
+    "response_id": "R84618d035dde",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Timeboxes preparation to 30 minutes, four sessions to 35 minutes each and synthesis to 45 minutes. Names the build, two or three essential tasks including recovery, defines outcomes and critical failures, uses goal-based prompts, consent and familiar desktop AT. Records unaided/assisted/blocked outcomes, recovery and evidence, then assigns fixes and retests.",
+        "reason": "Supplies an executable lightweight plan with preparation, observation, timing and a useful synthesis. Recruitment is explicitly conditional on feasibility."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "Keeps findings tied to the 'exact setup and build'; reports participant counts with context. States four successful sessions do not establish a population success rate, comprehensive coverage or absence of important problems. Phone findings are described as hypotheses to check.",
+        "reason": "The reporting rules maintain task, sample, desktop and version boundaries rather than treating observed successes as general readiness."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "Records recruitment gaps and rejects inexperienced screen-reader simulation as a substitute. States desktop screen-reader results do not establish mobile screen-reader usability or accessibility compliance. Labels phone and mobile screen-reader evidence 'Not verified' and pairs actual-user phone testing with technical review, saying neither alone proves every requirement.",
+        "reason": "Makes mobile/access gaps explicit and keeps review and desktop testing from supplying unearned mobile-user or certification claims."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Requests essential tasks and recovery on actual supported phones with habitual mobile screen-reader users, including touch, onscreen keyboard, small layout, focus and announcements. Identifies inability to finish essential tasks, loss of work and unrecoverable failure as blockers; unresolved critical failures produce 'Fix first', while current readiness is 'Not established'.",
+        "reason": "The added checks target the critical paths and missing primary context. Blocking conditions concern consequential task failures, not a blanket rule against all releases or all friction."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 8,
+    "capped_total": 8,
+    "useful_pass": true,
+    "trial_id": "t29",
+    "version": "baseline",
+    "repeat": 3
+  },
+  {
+    "case_id": "E05",
+    "response_id": "R3476e8d4be0a",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Selects a launch-critical goal plus recovery, a runnable identified build and safe data, and independent completion/understanding as the hypothesis. Assigns facilitator and note-taker, checks accessible setup/materials and consent, and schedules four approximately 35-minute sessions. Records assistance, errors, recovery, outcome and setup/build/AT context and separates setup failures.",
+        "reason": "Gives a feasible practical plan and meaningful success/observation rules, with prerequisites suited to desktop and possible screen-reader sessions."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "Proposes reporting 'In this build, these participants encountered these problems on these desktop setups.' Counts retain context rather than becoming population rates. Successful attempts support only exercised tasks/setups and four successes cannot prove broad usability or absence of defects.",
+        "reason": "Bounds claims to the observed build, participants, tasks and desktop configurations and explicitly rejects broader inference."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "Requires recording a gap if screen-reader participation is unavailable and explains that a visual prototype cannot establish screen-reader usability. Desktop AT results apply only to tested combinations; phone usability and inclusive readiness remain 'Not verified'. Responsive previews and expert review cannot replace real-phone testing with relevant users, including mobile screen-reader users.",
+        "reason": "Keeps absent access groups visible and distinguishes actual phone-user evidence from desktop or expert substitutes and accessibility compliance."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Asks for evidence on the primary phone flow including relevant mobile AT, having already specified real-phone task testing with mobile screen-reader users. Requires resolution and targeted retesting of observed critical failures; absent phone evidence leaves 'launch readiness not established' even after four successful desktop sessions.",
+        "reason": "A focused primary-flow check and conditional launch judgment are decision-useful. The response need not enumerate every phone platform or prescribe a new sample size to identify the smallest material evidence gap."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 8,
+    "capped_total": 8,
+    "useful_pass": true,
+    "trial_id": "t03",
+    "version": "phase1",
+    "repeat": 1
+  },
+  {
+    "case_id": "E05",
+    "response_id": "R5ffbcb7b397d",
+    "criteria": [
+      {
+        "criterion": 1,
+        "points": 2,
+        "evidence": "Defines a core goal and two or three realistic main/recovery/outcome-verification tasks with success criteria; specifies four 35–40-minute sessions with consent/setup, goal-based prompts and optional think-aloud. Captures build/browser/device/AT, outcomes, errors, recovery and help; synthesizes evidence, impact and next actions tomorrow. Actual screen-reader recruitment is conditional and gaps are recorded.",
+        "reason": "The desktop fallback remains an executable lightweight study with relevant tasks, success definitions, observation and setup prerequisites. Optional phone use is a conditional proposal, not an assumed completed change."
+      },
+      {
+        "criterion": 2,
+        "points": 2,
+        "evidence": "Limits successful findings to 'those participants' on 'that build and setup' and contextual counts such as '2 of 4 ... on desktop'. Rejects population rates, saturation, phone usability inference and treating no observed problems as proof of absence.",
+        "reason": "Maintains the sample, task, desktop and tested-version limits needed for honest prelaunch conclusions."
+      },
+      {
+        "criterion": 3,
+        "points": 2,
+        "evidence": "Says a narrow desktop window cannot test touch or mobile screen-reader behavior and desktop screen-reader success does not establish mobile access. Its table marks core phone and mobile screen-reader journeys 'Not verified'; the study cannot certify accessibility compliance. Calls for actual users plus relevant technical accessibility checks.",
+        "reason": "Separately identifies missing phone and mobile assistive-technology evidence and does not promote desktop success or technical checking into accessibility certification."
+      },
+      {
+        "criterion": 4,
+        "points": 2,
+        "evidence": "Requests realistic core tasks on supported phones with intended users and mobile screen-reader combinations including recovery, plus a focused mobile round and relevant technical accessibility checks. Defines core-job/recovery failures as critical and says 'Fix first' until rechecked; current launch verdict is 'Not established' and scheduled fixes do not pass.",
+        "reason": "Provides targeted additional evidence and a proportionate conditional launch decision. It neither guarantees recruitment nor invents a blanket release rule."
+      }
+    ],
+    "critical_failures": [],
+    "uncapped_total": 8,
+    "capped_total": 8,
+    "useful_pass": true,
+    "trial_id": "t17",
+    "version": "baseline",
+    "repeat": 2
+  }
+]

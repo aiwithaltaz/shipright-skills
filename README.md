@@ -49,7 +49,7 @@ Claude Design ingestion and all native client installs have not been verified fo
 
 ## Requested outputs
 
-### Phase 1 research update (working branch, not a new release)
+### Phase 1 research update (no new release)
 
 Product-design can select research methods, prepare lightweight guides and distinguish
 reported claims, observed behavior, interpretations, hypotheses and unknowns.
@@ -76,7 +76,8 @@ python3 evals/check_sources.py --self-test
 ```
 
 See [0.6 evaluation evidence](evals/v0.6/results.md). Source checks and controlled trials do not establish cross-model or client performance.
-See [Phase 1 research evaluation](evals/phase-1-ux-research/results.md) for new cases and limits.
+See [Phase 1 research evaluation](evals/phase-1-ux-research/results.md) for the preserved original comparison.
+See [stronger evaluations and final checks](evals/phase-1-ux-research/stronger/results.md) for the separate follow-up evidence and limits.
 The [IVC example](examples/ivc-2026-registration/README.md) is historical and includes documented defects and evidence limits.
 Do not use its prototype or training candidates as current approved implementation guidance.
 
@@ -120,5 +121,11 @@ Future updates keep a new folder under `examples/before-after/` and follow [test
 Both are authored teaching illustrations, not participant evidence or controlled model output.
 
 ![Phase 1 research output illustration](examples/before-after/phase-1-ux-research/product-design/compare.png)
+
+**Phase 1 guide fixes.** Recalled behavior is distinguished from directly observed work; prompting instructions and outcome tables share four categories. These are authored print-rendered illustrations, not model outputs or usability evidence.
+
+[Before](examples/before-after/phase-1-guide-fixes/product-design/before.png) and [after](examples/before-after/phase-1-guide-fixes/product-design/after.png).
+
+![Research guide distinctions and categories](examples/before-after/phase-1-guide-fixes/product-design/compare.png)
 
 MIT license for the pack. Example brand assets retain their existing ownership notices.

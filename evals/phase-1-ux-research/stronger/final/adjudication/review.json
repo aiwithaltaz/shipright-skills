@@ -1,0 +1,123 @@
+{
+  "review_type": "Independent adjudication under the supplied unchanged first-reply scope contract",
+  "scorer": "Independent Codex adjudicator",
+  "date": "2026-10-09",
+  "pack_version": "Not disclosed in the permitted materials; anonymous response IDs retained",
+  "sources_read": [
+    "rubric.md",
+    "responses.json",
+    "initial-grades.json",
+    "scope-contract.md"
+  ],
+  "interpretation": "The raw requests explicitly provide no URL or built site and provide no screenshot. A textual screen description is not one of the artifacts that satisfies this contract. The mandatory first-reply instruction is to ask one question for a URL, build, or screenshot and stop. The rubric is applied to that authorized first reply; it cannot require completed findings, all 20 checks, runtime evidence, or an implemented app at this point. No rubric criteria or point scale are changed.",
+  "responses": [
+    {
+      "response_id": "A1eff79154b3f",
+      "case_id": "DA-ship-check",
+      "criteria": [
+        {
+          "criterion": "Q",
+          "initial_points": 1,
+          "points": 2,
+          "deduction_justified": false,
+          "evidence": "One question requests screenshots of the relevant booking flow or a runnable build.",
+          "explanation": "The missing-artifact question is explicitly required. This is a clear evidence dependency, not a vague product idea needing decision cards, examples, or Let me decide. Penalizing it for delaying a description-based review contradicts the contract."
+        },
+        {
+          "criterion": "S",
+          "initial_points": 2,
+          "points": 2,
+          "deduction_justified": null,
+          "evidence": "The reply gives a bounded readiness statement, requests the missing artifact, and stops.",
+          "explanation": "This follows the first-reply stop requirement without premature design, a large draft, or launch certification."
+        },
+        {
+          "criterion": "D",
+          "initial_points": 1,
+          "points": 2,
+          "deduction_justified": false,
+          "evidence": "It says readiness is Not established and identifies the evidence needed for visual review and launch verification.",
+          "explanation": "The authorized first-reply deliverable is the artifact request and evidence boundary. Omitted defect findings, correction details, and retest conditions are deferred by the explicit stop instruction, not failed delivery. No implementation is assessed."
+        },
+        {
+          "criterion": "U",
+          "initial_points": 2,
+          "points": 2,
+          "deduction_justified": null,
+          "evidence": "No unavailable runtime behavior, testimonial authenticity, prices, or readiness is asserted.",
+          "explanation": "Unknown evidence remains unknown and the response stays within the booking task."
+        },
+        {
+          "criterion": "F",
+          "initial_points": 0,
+          "points": 1,
+          "deduction_justified": "Partly",
+          "evidence": "A readiness statement followed by a targeted artifact question provides a repeatable first-reply shape, but uses Not established rather than an explicit Not verified check status.",
+          "explanation": "A zero for absent substantive findings is a contract mismatch: findings are not required before the artifact. Some format weakness remains under the unchanged rubric because the response does not explicitly use the prescribed check-status vocabulary. A full four-status table or finding record would be premature."
+        }
+      ],
+      "total": 9,
+      "material_failures": [],
+      "preserved_weaknesses": [
+        "Only partial alignment with the prescribed status format; readiness is labeled Not established without an explicit Not verified check status."
+      ],
+      "outcome_classification": "The initial material-failure outcome is a grading/contract mismatch, not failed first-reply behavior.",
+      "explanation": "The initial material failures require assessing and correcting the described controls before obtaining an artifact. That is precisely the work the applicable contract says to defer. The evidence request and stop are justified; no readiness conclusion or built implementation exists to grade."
+    },
+    {
+      "response_id": "Ad835ee44e122",
+      "case_id": "DB-ship-check",
+      "criteria": [
+        {
+          "criterion": "Q",
+          "initial_points": 1,
+          "points": 2,
+          "deduction_justified": false,
+          "evidence": "One question asks for a screenshot of the current screen.",
+          "explanation": "This is the required artifact request. A screenshot supports visual inspection even though it cannot establish runtime readiness, a limitation the reply acknowledges. The description does not eliminate the required question."
+        },
+        {
+          "criterion": "S",
+          "initial_points": 2,
+          "points": 2,
+          "deduction_justified": null,
+          "evidence": "The reply bounds readiness, offers brief priorities and future verification needs, asks for the artifact, and ends.",
+          "explanation": "There is no full flow, finished screen, 20-row check, or large draft. The brief priorities go beyond the minimum artifact-request reply, but the rubric does not make a short provisional list a one-point large draft. The reply stops at the missing evidence dependency."
+        },
+        {
+          "criterion": "D",
+          "initial_points": 1,
+          "points": 2,
+          "deduction_justified": false,
+          "evidence": "It requests the missing artifact, explains the evidence limit, and records future verification needs for an unbuilt plan.",
+          "explanation": "This completes the authorized first-reply step. A substantive structured launch assessment and retest records are not yet required. The contract expressly calls for future verification needs for plans without a build."
+        },
+        {
+          "criterion": "U",
+          "initial_points": 2,
+          "points": 2,
+          "deduction_justified": null,
+          "evidence": "The reply treats dashboard hierarchy as proposed, leaves trash behavior unresolved, and does not claim permissions, persistence, or synchronization were tested.",
+          "explanation": "Relevant verification topics are future needs, not invented features or asserted findings about runtime behavior."
+        },
+        {
+          "criterion": "F",
+          "initial_points": 1,
+          "points": 1,
+          "deduction_justified": "Partly; retain the point level with corrected rationale",
+          "evidence": "It has a readiness label, priority bullets, verification needs, and an artifact question; it does not explicitly label checks Not verified.",
+          "explanation": "The response has some repeatable shape. Partial status-format alignment remains a justified weakness. Missing item severity, correction records, and retest conditions cannot justify a deduction at this mandatory artifact-request stage."
+        }
+      ],
+      "total": 9,
+      "material_failures": [],
+      "preserved_weaknesses": [
+        "Only partial alignment with the prescribed status format; readiness is labeled Not established without explicit Not verified check statuses.",
+        "The brief provisional priorities precede the required artifact question and make the reply broader than the simplest reading of ask one question and stop. They are a minor scope concern, not a large draft or material launch failure under this rubric."
+      ],
+      "outcome_classification": "The initial material-failure outcome is a grading/contract mismatch, not failed launch-check behavior.",
+      "explanation": "The response does identify the missing return route and proposes a correction, so the initial assertion that it does not identify that issue overstates the omission. Neither the raw description nor the supplied contract establishes that this specific issue must already be classified as critical. The required artifact gate precludes demanding a completed structured launch check now. No runtime readiness or implementation has been certified."
+    }
+  ],
+  "overall_explanation": "Preserve the status-format weaknesses and the warehouse response's minor first-reply scope concern. Reject the initial material failures and deductions that depend on treating text descriptions as qualifying artifacts or requiring the launch review before the mandatory artifact-request stop. The totals reflect the unchanged five 0-to-2 criteria applied to the actual first-reply phase, not a forced pass or an assessment of a nonexistent build."
+}

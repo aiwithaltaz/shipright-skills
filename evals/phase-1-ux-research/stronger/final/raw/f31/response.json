@@ -1,0 +1,8 @@
+{
+  "response": "Launch readiness is **Not established**. There is no URL, build, or screenshot to inspect.\n\nCan you provide screenshots of the booking flow, including confirmation and saved visits, or a runnable build? Screenshots allow a visual review; launch verification requires a runnable build.",
+  "consulted_files": [
+    "/workspace/scratch/ce965ed18a0f/sr-final-trials/f31/skills/ship-check/SKILL.md",
+    "/workspace/scratch/ce965ed18a0f/sr-final-trials/f31/skills/_shared/intake.md",
+    "/workspace/scratch/ce965ed18a0f/sr-final-trials/f31/skills/_shared/operating-contract.md"
+  ]
+}

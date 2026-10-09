@@ -1,0 +1,118 @@
+{
+  "scores": [
+    {
+      "response_id": "Ab133570c267d",
+      "case_id": "DB-product-design",
+      "criteria": [
+        {"criterion":"Q","points":1,"evidence":"States that the actor and outcome are clear, then asks one decision card: 'What does Mark packed commit?'","reason":"The question is consequential and includes examples and Let me decide, but the frozen format calls for zero questions for an already clear task or 3–5 cards for a vague frame. This falls between those patterns."},
+        {"criterion":"S","points":2,"evidence":"Proposes a packing queue after explicitly establishing warehouse staff and the packing outcome; distinguishes layout choice from build-ready rules.","reason":"The supplied task already provides a usable frame, so a proposed layout and behavior are appropriate in the first reply."},
+        {"criterion":"D","points":2,"evidence":"Provides open orders, order detail, return navigation, visual direction, packing states and unresolved operational inputs.","reason":"Delivers a coherent product direction for the stated job. Future build documents are not required prematurely in this first reply."},
+        {"criterion":"U","points":2,"evidence":"Uses actual source fields, labels source/status/correction capabilities Unknown and presents reversibility as alternatives rather than facts.","reason":"Keeps the proposal within viewing and packing orders without inventing operational policies or data."},
+        {"criterion":"F","points":2,"evidence":"The decision has why it matters, alternatives, examples, My pick, You decide and Let me decide; states use a repeatable situation/behavior table.","reason":"Provides a recognizable decision-card structure and reproducible interaction specification."}
+      ],
+      "total":9,
+      "minor_omissions":["One consequential card follows an explicitly clear frame, rather than the frozen zero-question clear-task pattern. The card is useful, but its count does not match the rubric."],
+      "material_failures":[]
+    },
+    {
+      "response_id":"Ac89c0f29da55",
+      "case_id":"DB-ux-critique",
+      "criteria":[
+        {"criterion":"Q","points":2,"evidence":"Reviews the supplied description without opening a founder-intake question sequence.","reason":"The artifact and warehouse job supply enough context for a bounded critique."},
+        {"criterion":"S","points":2,"evidence":"Begins 'Fix first' and identifies the review as a specification review, with runtime behavior Not verified.","reason":"Proceeds with the authorized critique at the established frame and does not claim a finished implementation."},
+        {"criterion":"D","points":2,"evidence":"Assesses the missing return route, unspecified packing action, trash icon, widget hierarchy and Synced chip; provides corrections and retests.","reason":"Delivers a substantive critique of the supplied artifact while separating launch verification from specification evidence."},
+        {"criterion":"U","points":2,"evidence":"Says the trash effect and sync accuracy are unknown and does not assert deletion, data loss or false synchronization.","reason":"Avoids inventing effects or results and limits recommendations to the warehouse task."},
+        {"criterion":"F","points":2,"evidence":"Findings identify locations, Blocker/Major severity, corrections and retests; a check table gives evidence and status.","reason":"Matches the rubric's finding format and creates a repeatable handoff."}
+      ],
+      "total":10,
+      "minor_omissions":[],
+      "material_failures":[]
+    },
+    {
+      "response_id":"A1eff79154b3f",
+      "case_id":"DA-ship-check",
+      "criteria":[
+        {"criterion":"Q","points":1,"evidence":"Asks for screenshots or a runnable build despite the supplied description of confirmation and removal controls.","reason":"The evidence request is relevant to runtime verification, but unnecessarily postpones the specification-level check already possible from the supplied artifact."},
+        {"criterion":"S","points":2,"evidence":"Says launch readiness is Not established and distinguishes visual review from launch verification.","reason":"Does not produce a premature finished design or certify an unbuilt product. The missing substantive check is scored under Deliverable and Format."},
+        {"criterion":"D","points":1,"evidence":"Provides only a readiness caveat and artifact request.","reason":"The launch verdict is appropriately bounded, but the reply omits checking the described defects and giving concrete correction or retest requirements."},
+        {"criterion":"U","points":2,"evidence":"Makes no claims about runtime, testimonial authenticity, pricing correctness or removal consequences.","reason":"Does not invent facts or certify unavailable evidence."},
+        {"criterion":"F","points":0,"evidence":"Contains two short paragraphs, with no per-check statuses or findings with location, severity, correction and retest.","reason":"The generic readiness caveat supplies no reusable substantive check structure."}
+      ],
+      "total":6,
+      "minor_omissions":["Requests another artifact before using the supplied description for the check it supports."],
+      "material_failures":["Does not assess the explicitly reported missing confirmation back control, competing filled buttons or ambiguous trash-only removal action.","Does not provide bounded launch checks, corrective actions or retest conditions; the absence of a build should limit runtime conclusions rather than prevent a specification-level review." ]
+    },
+    {
+      "response_id":"A2219e8a9e750",
+      "case_id":"DA-ux-critique",
+      "criteria":[
+        {"criterion":"Q","points":2,"evidence":"Uses the supplied booking description directly and lists unresolved scheduling/result/removal decisions without requiring intake before critique.","reason":"The described artifact and client-booking job are sufficient to begin the requested review."},
+        {"criterion":"S","points":2,"evidence":"Identifies specification-stage read-only review and immediately reports the confirmation exit defect.","reason":"Critiques within the existing frame and appropriately reserves runtime acceptance for a later build."},
+        {"criterion":"D","points":2,"evidence":"Three findings address confirmation navigation, competing primary actions and removal ambiguity; handoff gates and launch verification needs follow.","reason":"Delivers a complete first-reply critique with bounded evidence and actionable correction."},
+        {"criterion":"U","points":2,"evidence":"Does not call the purple banner defective, presume testimonials are fabricated or equate saved-visit removal with appointment cancellation.","reason":"Preserves unknowns and useful supplied content without introducing policies or unrelated features."},
+        {"criterion":"F","points":2,"evidence":"Findings have location, evidence, severity, correction and retest; gate table distinguishes Pass, Fail and Not verified.","reason":"Matches the rubric's repeatable finding format."}
+      ],
+      "total":10,
+      "minor_omissions":[],
+      "material_failures":[]
+    },
+    {
+      "response_id":"A4dbb4b0a12f3",
+      "case_id":"DB-ui-ux-design",
+      "criteria":[
+        {"criterion":"Q","points":2,"evidence":"Provides the screen specification without a question-card intake; identifies implementation inputs to confirm before build.","reason":"The warehouse actor, open-order task and packing action already establish the screen's frame."},
+        {"criterion":"S","points":2,"evidence":"Labels scope and direction v1 and Proposed, then supplies the screen hierarchy and states.","reason":"A screen specification is appropriate for this clear first-reply task; runtime evidence is explicitly deferred."},
+        {"criterion":"D","points":2,"evidence":"Specifies responsive list/detail layout, Mark packed placement, loading and save states, exit/recovery, accessibility and handoff checks.","reason":"Delivers the requested screen specification rather than a generic aesthetic treatment."},
+        {"criterion":"U","points":1,"evidence":"Confirmed success says to 'remove the order from the open list,' while the source definition of open is later described as unknown.","reason":"Mostly maintains unknowns, but fixes the queue effect before the operational definition supporting that effect has been supplied."},
+        {"criterion":"F","points":2,"evidence":"Interaction states and specification review use consistent tables; review includes Pass, Not applicable and Not verified with next actions.","reason":"Provides a clear, repeatable screen-spec and status format."}
+      ],
+      "total":9,
+      "minor_omissions":["Queue removal after successful packing should be conditional on the authoritative definition of open; the reply acknowledges that definition is unknown but does not carry that uncertainty into its success-state requirement."],
+      "material_failures":[]
+    },
+    {
+      "response_id":"A3db09762c850",
+      "case_id":"DA-ui-ux-design",
+      "criteria":[
+        {"criterion":"Q","points":1,"evidence":"Asks three cards about audience, booking outcome and version scope, with Let me decide on each. The scope card has no concrete example.","reason":"Questions are relevant and the count is correct for the vague frame, but the frozen example requirement is not met on every card."},
+        {"criterion":"S","points":2,"evidence":"The reply consists of three decision cards and does not produce screens, flows or implementation before decisions.","reason":"Appropriately stops at framing for the still-vague salon app."},
+        {"criterion":"D","points":2,"evidence":"Offers choices to establish audience, booking commitment and initial scope.","reason":"These cards are the appropriate first-reply output; a finished screen specification is not due before the product frame is settled."},
+        {"criterion":"U","points":2,"evidence":"Immediate confirmation and appointment requests are alternatives; appointment changes are an optional scope choice, while payments and reminders are explicitly excluded from the suggested scope.","reason":"No feature alternative is presented as an approved policy or implemented capability."},
+        {"criterion":"F","points":2,"evidence":"Each numbered card contains why it matters, A/B/C choices, My pick, You decide and Let me decide.","reason":"The decision-card format is consistent and matchable in a later run."}
+      ],
+      "total":9,
+      "minor_omissions":["The first-version scope card lacks a concrete example demonstrating the offered boundaries."],
+      "material_failures":[]
+    },
+    {
+      "response_id":"A5163af9b738f",
+      "case_id":"DA-product-design",
+      "criteria":[
+        {"criterion":"Q","points":2,"evidence":"Three cards cover submission outcome, availability model and version scope, each with examples and Let me decide.","reason":"Matches the frozen 3–5-card requirement and asks consequential framing questions."},
+        {"criterion":"S","points":2,"evidence":"Only decision cards are provided; no product documents, flow or finished screen is drafted.","reason":"Stops at the appropriate first-reply boundary for a vague product frame."},
+        {"criterion":"D","points":2,"evidence":"Cards establish whether booking confirms or requests, whose calendar supplies availability and whether appointment changes belong in scope.","reason":"Provides the framing deliverable needed now without requiring future documents prematurely."},
+        {"criterion":"U","points":2,"evidence":"Says staffing setup is unknown and makes no choice between immediate confirmation and approval; extra appointment changes remain optional.","reason":"Keeps unknown operational rules unknown and offers scope choices without asserting new requirements."},
+        {"criterion":"F","points":2,"evidence":"All cards repeat why it matters, labeled alternatives, examples, My pick, You decide and Let me decide.","reason":"Fully matches the decision-card format."}
+      ],
+      "total":10,
+      "minor_omissions":[],
+      "material_failures":[]
+    },
+    {
+      "response_id":"Ad835ee44e122",
+      "case_id":"DB-ship-check",
+      "criteria":[
+        {"criterion":"Q","points":1,"evidence":"Ends by asking for a screenshot after reviewing a supplied screen description.","reason":"The request is relevant for visual verification, but the supplied artifact already supports a more complete bounded check; no additional intake is necessary to report those findings."},
+        {"criterion":"S","points":2,"evidence":"Labels the output a pre-build assessment and launch readiness Not established.","reason":"Does not claim completion or runtime readiness before the necessary evidence exists."},
+        {"criterion":"D","points":1,"evidence":"Names priorities for the order focus, trash semantics, return route and Synced chip, followed by a short list of launch checks.","reason":"Gives useful partial check content, but does not turn evidenced defects and unverified checks into an actionable launch assessment with correction and retest detail."},
+        {"criterion":"U","points":2,"evidence":"Treats widget hierarchy as proposed and asks to establish trash behavior; it does not claim saved changes or permissions have been tested.","reason":"Stays within the supplied warehouse job and accurately bounds unknown behavior."},
+        {"criterion":"F","points":1,"evidence":"Has a readiness verdict, priority bullets and verification list, but no item statuses, severity or explicit retest conditions.","reason":"Some reusable shape is present, but the full finding/status format is missing."}
+      ],
+      "total":7,
+      "minor_omissions":["The screenshot request postpones completion of a description-based assessment that is already possible.","The proposed corrections lack item-level statuses and retest conditions."],
+      "material_failures":["Does not identify the reported missing return route as an evidenced critical launch defect or distinguish it clearly from runtime checks that remain unverified.","Does not provide a substantive structured launch check against the supplied artifact; unavailable build evidence is a valid limit on certification, not a reason to omit the bounded check." ]
+    }
+  ],
+  "total":70,
+  "maximum":80
+}

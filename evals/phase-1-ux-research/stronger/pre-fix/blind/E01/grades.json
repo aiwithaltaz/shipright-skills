@@ -1,0 +1,204 @@
+{
+  "case_id": "E01",
+  "scores": [
+    {
+      "response_id": "R6075aae2c0b8",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "Calls the CEO explanation an \u201cunverified hypothesis\u201d; proposes checking unclear questions, unnecessary effort, validation failures, lost input, and understanding the benefit before providing details.",
+          "reason": "Does not accept dislike as the cause and supplies observable alternative explanations."
+        },
+        {
+          "criterion": 2,
+          "points": 1,
+          "evidence": "Reviews step-level data \u201ccomparing consistent cohorts\u201d and marks the cause Unknown if data are unavailable, but says \u201cFalling completion establishes a problem\u201d without checking completion events, denominators, comparable time windows, versions, or instrumentation.",
+          "reason": "Cohort comparability is a useful partial check, but the recommendation does not adequately verify the reported trend before accepting it as a problem."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "Review available step-level drop-off, field errors and completion times; map fields to approved purposes and inspect validation and lost input.",
+          "reason": "A feasible review of current-flow evidence and field dependencies can inform whether fields should change; missing evidence is explicitly acknowledged."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Next deliverable is \u201cone evidence-backed correction recommendation\u201d; remove a field only if required behavior is preserved, otherwise fix evidenced copy, validation or recovery issues; ordering requires a separate scope decision.",
+          "reason": "Gives an actionable bounded deliverable and an evidence/dependency rule for selecting a correction without committing to redesign."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 7,
+      "capped_total": 7,
+      "useful_pass": true
+    },
+    {
+      "response_id": "R8a8fbdf2faf8",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "Calls the CEO explanation a hypothesis; contrasts entry friction, which predicts particular-field difficulties/errors, with unclear payoff, which predicts hesitation about why details matter.",
+          "reason": "Offers testable competing explanations and warns that abandonment location alone does not establish cause."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "Magnitude and timeframe are Unknown; inspect current-version data and \u201cCheck comparable cohorts, event definitions and denominators\u201d before locating exits.",
+          "reason": "Checks measurement and cohort/version comparability before interpreting the trend and treats missing information as unknown."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "Inspect existing funnel data and feedback, locate exits at entry/fields/validation/submission, inspect field dependencies; if ambiguous, prepare a short usability-task plan to observe struggles and payoff understanding.",
+          "reason": "Provides a bounded, feasible current-flow investigation that can distinguish reasons for abandonment and guide field changes."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "\u201cStop when the evidence supports a specific correction or exposes an unresolved cause\u201d; propose the smallest correction preserving required information/sequence and seek a scope decision for requirement or ordering changes.",
+          "reason": "Action, stopping condition, and within-scope decision rule are explicit; completion and downstream activation provide outcome checks."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "Rd10932b63362",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "Says the decline does not establish dislike and calls company-details-before-value a competing, unverified explanation; also proposes reviewing errors and field dependencies.",
+          "reason": "Rejects a demonstrated CEO cause and gives alternatives that current-flow evidence can examine."
+        },
+        {
+          "criterion": 2,
+          "points": 0,
+          "evidence": "Says \u201cFalling completion is evidence of a problem\u201d and later compares outcomes \u201cwith the prior baseline.\u201d No completion-definition, denominator, time-window, version, cohort-comparability, or instrumentation check is proposed.",
+          "reason": "Accepts the decline without validating its measurement; acknowledging the cause as Unknown and comparing a later change to baseline do not verify the original trend."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "Reviews existing step-level drop-off, errors and available feedback and maps required fields to what they enable in the first useful outcome.",
+          "reason": "This is a small current-flow evidence review with a direct connection to whether field removal is justified."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Choose the smallest supported correction, such as confirmed validation fixes or removing a field confirmed unnecessary and permitted by requirements; return ordering changes for a separate decision.",
+          "reason": "Offers actionable investigation and an evidence/requirements rule for bounded corrections, preserving scope and avoiding unsupported redesign."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 6,
+      "capped_total": 6,
+      "useful_pass": false
+    },
+    {
+      "response_id": "R4ba45cffbbdc",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "Calls the CEO explanation an \u201cunverified hypothesis\u201d; checks field errors, understanding why details are needed, and each field\u2019s purpose/dependency.",
+          "reason": "Does not assert dislike as demonstrated and proposes checks of alternative explanations such as validation friction and unclear purpose."
+        },
+        {
+          "criterion": 2,
+          "points": 0,
+          "evidence": "Says \u201cFalling completion establishes a problem.\u201d The review checks exits, field errors and understanding, but contains no completion-definition, denominator, comparable-window/version/cohort, or instrumentation-quality check.",
+          "reason": "No proposed action verifies whether the reported trend is trustworthy; missing evidence about causes is a separate issue."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "Review existing funnel data and feedback, if available, for exits, field errors and understanding; inspect field purposes/dependencies, and report insufficient evidence.",
+          "reason": "Appropriately bounded existing-evidence investigation can inform whether particular fields are unnecessary or difficult."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Choose one narrow correction such as purpose clarification, validation repair, or demonstrably unnecessary field removal; insufficient evidence triggers reporting the gap and proposing research; requirement/order changes need approval.",
+          "reason": "Gives a concrete within-scope action and a support-versus-insufficiency decision rule with completion/value/data guardrails."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 6,
+      "capped_total": 6,
+      "useful_pass": false
+    },
+    {
+      "response_id": "R1f5a0fe99801",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "Calls dislike the CEO hypothesis and lists unclear questions, validation failures and insufficient reason to invest before seeing value; observes hesitation/failure and asks expected payoff.",
+          "reason": "Provides plausible testable alternatives without establishing the CEO explanation as fact."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "Reported decline size, timeframe and affected users are unknown; review current-version data \u201cchecking event definitions, denominators and where abandonment increased.\u201d",
+          "reason": "Explicitly checks measurement and version before interpreting the decline, while retaining unknowns as unknowns."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "Review funnel/error data; if insufficient, propose a small task-based usability check of the current flow with target users, observing hesitation/failure and probing expected payoff.",
+          "reason": "Provides feasible bounded evidence review and observation that distinguish form friction from unclear value and inform field changes."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Stop when sufficient evidence supports one bounded correction or record unknown cause; fewer fields only if evidence implicates burden and the details are unnecessary; requirements/order changes need approval.",
+          "reason": "Gives an actionable next step, an explicit stop rule and a defensible field-change decision rule within scope."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "Rdd33149b2116",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "Treats dislike and insufficient perceived value as hypotheses, neither established; reviews validation failures and motivation evidence.",
+          "reason": "Preserves competing explanations and offers evidence checks that can test them."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "Review current-version funnel data and \u201cCheck event definitions, denominators and comparable time periods first\u201d; no analytics, artifacts or user sessions were supplied or inspected.",
+          "reason": "Verifies definitions, denominator, version and time comparability before trusting the decline, and clearly distinguishes missing evidence from findings."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "Review exits, validation failures, completion time, device/acquisition differences; map field dependencies; use existing support/session evidence where available and propose focused current-flow usability if inconclusive.",
+          "reason": "A bounded evidence review with a feasible observation fallback can inform whether and which fields should change."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Bring back one scoped evidence-supported recommendation; if inconclusive recommend usability before choosing a solution; stop at that decision; requirement/order changes require resolving the affected approval.",
+          "reason": "Makes the next deliverable and stopping rule explicit, protects the approved flow, and includes completion/first-use/data guardrails."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    }
+  ],
+  "notes": "Each response was assessed independently against the frozen E01 rubric. No critical failures were found. Total for the six supplied responses is 43/48 (89.58% of available rubric points); four of six satisfy useful-pass rules. Responses with a zero on trend verification fail useful-pass despite totaling six. The shared 120-point version denominator covers 15 responses; only six were supplied here, so a version score out of 120 is not determined by this case. This percentage describes rubric points, not overall UX quality or a population success estimate."
+}

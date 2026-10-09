@@ -1,0 +1,9 @@
+{
+  "response": "**Launch readiness: Not established.** This is a pre-build assessment based only on your description; there is no supplied screenshot, build, or URL to review. I can’t mark launch checks Pass or complete the 20-item review from the idea alone.\n\nThe reported issues set the priorities:\n\n- Make open orders and “Mark packed” the main focus. Treat the summary cards and chart as proposed secondary content.\n- Establish what the trash action does before choosing a clear label and recovery behavior.\n- Add a clear return from order detail. Show “Synced” only when supported by actual synchronization state.\n\nBefore launch, verify access permissions, saved packing changes, failure handling, keyboard access, and navigation on the intended warehouse devices. A modern appearance alone cannot establish readiness.\n\nCan you share a screenshot of the current screen?",
+  "consulted_files": [
+    "/workspace/scratch/ce965ed18a0f/sr-final-trials/f20/skills/ship-check/SKILL.md",
+    "/workspace/scratch/ce965ed18a0f/sr-final-trials/f20/skills/_shared/intake.md",
+    "/workspace/scratch/ce965ed18a0f/sr-final-trials/f20/skills/_shared/operating-contract.md",
+    "/workspace/scratch/ce965ed18a0f/sr-final-trials/f20/skills/ship-check/references/launch-items.md"
+  ]
+}

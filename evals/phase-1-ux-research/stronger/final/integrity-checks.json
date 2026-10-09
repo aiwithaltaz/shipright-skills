@@ -1,0 +1,14 @@
+{
+  "pre_fix_archive_files_byte_identical": 58,
+  "prior_repository_evidence_files_byte_identical": 12,
+  "final_raw_records_unchanged": 31,
+  "source_copies_unchanged": 31,
+  "source_hashes_match_current": true,
+  "rubric_hash_verified": true,
+  "patch_hash_verified": true,
+  "grader_artifacts_frozen": 7,
+  "score_arithmetic_verified": true,
+  "consulted_paths_within_assigned_trees": true,
+  "source_edits_or_answer_retries_after_freeze": false,
+  "scoring_corrections": []
+}

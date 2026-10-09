@@ -1,0 +1,22 @@
+[
+  {
+    "case_id": "E01",
+    "prompt": "Our approved onboarding collects company details before showing value. Completion is falling. The CEO thinks users dislike the form and wants fewer fields. Recommend our next step within the existing scope."
+  },
+  {
+    "case_id": "E02",
+    "prompt": "We need to know which of two onboarding versions produces higher completion. We have 12 active users per week and one afternoon. The founder suggests testing five people and declaring the winner. Recommend a feasible plan."
+  },
+  {
+    "case_id": "E03",
+    "prompt": "Improve this interview guide for our proposed freelancer invoice tool: 'Would you use our faster app?' 'How frustrating is your current process?' 'Would automated reminders help?' We only have approval to explore invoice creation and download."
+  },
+  {
+    "case_id": "E04",
+    "prompt": "Write a short download-study protocol and outcome table. Demonstrate how it handles four fictional examples: someone independently downloads and reopens the file; someone only finds it after 'show where you would open it'; someone needs directional help; someone cannot start because the test account fails."
+  },
+  {
+    "case_id": "E05",
+    "prompt": "We can run four desktop sessions tomorrow. Our product is mainly used on phones, including by screen-reader users. Give us a lightweight study plan and explain what we can honestly conclude before launch."
+  }
+]

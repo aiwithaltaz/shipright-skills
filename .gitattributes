@@ -1,0 +1,7 @@
+# Preserve exact frozen evidence whitespace; active source checks are unchanged.
+evals/phase-1-ux-research/stronger/pre-fix/blind/E01/rubric.md whitespace=-blank-at-eof
+evals/phase-1-ux-research/stronger/pre-fix/blind/E02/rubric.md whitespace=-blank-at-eof
+evals/phase-1-ux-research/stronger/pre-fix/blind/E03/rubric.md whitespace=-blank-at-eof
+evals/phase-1-ux-research/stronger/pre-fix/blind/E04/rubric.md whitespace=-blank-at-eof
+evals/phase-1-ux-research/stronger/pre-fix/blind/E05/rubric.md whitespace=-blank-at-eof
+evals/phase-1-ux-research/stronger/final/patch.diff whitespace=-blank-at-eol

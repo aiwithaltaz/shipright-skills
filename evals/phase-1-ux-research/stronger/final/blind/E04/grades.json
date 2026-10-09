@@ -1,0 +1,104 @@
+{
+  "case_id": "E04",
+  "scores": [
+    {
+      "response_id": "Ae436908303b8",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "Task: \u201cKeep a copy of this file on your device and open that saved copy\u201d; record saving and reopening before any prompt or help; narration alone does not establish completion.",
+          "reason": "The goal avoids prescribing a route and requires an observed saved file that can be reopened, with an independent observation phase preceding intervention."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "Prior-success confirmation is \u201cprompted verification with independence unverified\u201d; enabling finding/reopening is \u201cassisted completion through prompted recovery\u201d; directional help is logged separately.",
+          "reason": "The protocol and table consistently preserve the distinction between independent completion, verification, recovery prompted by a check, and directional assistance."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "A: independent completion; B: assisted recovery with completion unverified until reopening; C: assisted completion only if reopening is observed; D: setup failure with product performance not verified.",
+          "reason": "All four examples receive defensible outcomes, including the uncertainty about whether finding means reopening, and the account blocker is explicitly separated from product-task failure."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Records observed actions, elapsed time, errors, pre-prompt outcome, prompt timing, and verbatim help; stops on completion, withdrawal, timeout, or blocking setup failure; examples are explicitly fictional and the protocol unperformed.",
+          "reason": "Provides a minimal executable record, intervention order, uncertainty rules, and stop/setup handling without presenting examples as findings."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "Afa95872fb0ae",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "Task: \u201cKeep a copy of this report to read outside this app. Use your saved copy to tell me its first heading\u201d; independent outcome is closed before prompts/help; file saving and actual reopening are observed.",
+          "reason": "The task gives a goal without naming a route or control and checks a usable saved report, with independent behavior established before intervention."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "A check confirming prior success is prompted verification; a check enabling finding/reopening is assisted recovery; directional help is recorded separately, and cannot retroactively establish independence.",
+          "reason": "The protocol and table consistently distinguish the three forms of behavior and assistance, with no assisted action counted as independent."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "Independent observed download/reopen passes; prompt-dependent finding fails independence and leaves full completion unverified; directional help is assisted; failed test account is a setup failure, not product-task failure.",
+          "reason": "Correctly maps every example, preserving uncertainty where reopening is not specified and excluding setup blockage from task-success calculations."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Log actions, elapsed time, saving/reopening, and exact prompt wording/timing; unseen steps remain Not verified; stop on completion, exit, timeout, or technical blocker; rerun after setup repair; explicitly fictional examples.",
+          "reason": "The observation record, prompt order, uncertainty treatment, and stopping/withdrawal/setup handling are runnable and appropriately limited."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "Aaa364006eca3",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "Task: \u201cKeep a copy of this file on your device ... Then close it and open your saved copy again\u201d; observe without naming controls/locations; independently observe all required steps before prompts/help.",
+          "reason": "Goal-based wording tests saving and reopening a usable copy rather than a tap or success message, with an explicit independent observation phase."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "Neutral confirmation is prompted verification with unseen earlier behavior unverified; a prompt enabling discovery/recovery is assisted; directional help also makes completion assisted.",
+          "reason": "Both protocol and table distinguish independent behavior, prompted verification, and directional assistance using consistent labels and evidence rules."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "Independent download/reopen is independent completion; prompt-dependent finding is assisted recovery with reopening unverified; directional help is assisted; account failure is setup failure, not participant or product-task failure.",
+          "reason": "All four fictional scenarios are correctly mapped, including conditional full completion and the environmental blocker."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Log download, finding, and reopening separately with timestamps; record exact prompt/time and instruction/time; unseen actions remain unverified; stop on completion, withdrawal, timeout, or technical failure; restore access and rerun; examples explicitly fictional.",
+          "reason": "Supplies a minimal actionable record and clear uncertainty and stop/setup rules, with no claims of completed research."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    }
+  ]
+}

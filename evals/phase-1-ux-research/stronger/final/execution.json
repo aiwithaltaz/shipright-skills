@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-09",
+  "trial_author": "31 fresh isolated task-agent threads, no inherited context",
+  "initial_scorers": "Seven fresh anonymous AI grading threads",
+  "adjudicator": "One fresh independent anonymous AI review of two dry-run scoring/contract disputes",
+  "analyst": "Implementing Codex agent after score freeze",
+  "serving_model_id": "Not exposed",
+  "sampling_seed": "Not exposed",
+  "answer_retries": 0,
+  "source_edits_after_freeze": 0,
+  "source_words": 15996,
+  "final_stronger_score": 120,
+  "final_stronger_useful_passes": 15,
+  "original_tasks_material_passes": 8,
+  "dry_run_original_score": 70,
+  "dry_run_adjudicated_score": 75,
+  "adjudication_kept_separate": true,
+  "original_grades_unchanged": true,
+  "os_enforced_isolation": false,
+  "phase2_started": false
+}

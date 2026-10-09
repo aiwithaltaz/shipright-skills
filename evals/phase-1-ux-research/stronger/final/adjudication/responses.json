@@ -1,0 +1,14 @@
+[
+  {
+    "response_id": "A1eff79154b3f",
+    "case_id": "DA-ship-check",
+    "prompt": "I run a small hair salon. I want an app where clients can book appointments. Build it.\n\nThe current booking page is a purple banner, two filled buttons that say Book now and Learn more, a row of star ratings, three quotes, and three prices. The confirm step has no back control. A saved visit can be removed only by a trash icon. There is no URL and no built site. We want to launch next week.",
+    "response": "Launch readiness is **Not established**. There is no URL, build, or screenshot to inspect.\n\nCan you provide screenshots of the booking flow, including confirmation and saved visits, or a runnable build? Screenshots allow a visual review; launch verification requires a runnable build."
+  },
+  {
+    "response_id": "Ad835ee44e122",
+    "case_id": "DB-ship-check",
+    "prompt": "We need an internal dashboard for the warehouse team to see open orders and mark them packed. Make it look modern.\n\nThe current screen says Welcome back, shows four summary cards, a bar chart, and a chip that says Synced. The order table uses a trash icon with no word. The order detail has no way back. There is no URL and no built site. We want to launch next week.",
+    "response": "**Launch readiness: Not established.** This is a pre-build assessment based only on your description; there is no supplied screenshot, build, or URL to review. I can\u2019t mark launch checks Pass or complete the 20-item review from the idea alone.\n\nThe reported issues set the priorities:\n\n- Make open orders and \u201cMark packed\u201d the main focus. Treat the summary cards and chart as proposed secondary content.\n- Establish what the trash action does before choosing a clear label and recovery behavior.\n- Add a clear return from order detail. Show \u201cSynced\u201d only when supported by actual synchronization state.\n\nBefore launch, verify access permissions, saved packing changes, failure handling, keyboard access, and navigation on the intended warehouse devices. A modern appearance alone cannot establish readiness.\n\nCan you share a screenshot of the current screen?"
+  }
+]

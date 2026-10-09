@@ -83,6 +83,29 @@ class ResearchRegressions(unittest.TestCase):
         self.reject('skills/product-design/SKILL.md',
                     'Missing artifact content stays Unknown', 'Invent invoice content when missing')
 
+    def test_interview_guide_does_not_turn_recall_into_observation(self):
+        self.reject(BASE + 'research-planning.md',
+                    'recalled behavior is Reported', 'recalled behavior is Observed')
+
+    def test_interview_guide_distinguishes_witnessed_behavior(self):
+        self.reject(BASE + 'research-planning.md',
+                    'behavior directly witnessed during the session is Observed',
+                    'all narrated behavior is Observed')
+
+    def test_guide_instructions_and_table_must_agree(self):
+        self.reject(BASE + 'research-planning.md',
+                    'Match instructions and outcome tables', 'Allow contradictory outcome tables')
+
+    def test_verification_cannot_be_independent_success(self):
+        self.reject(BASE + 'research-planning.md',
+                    '| Prompted verification | Non-directional check confirms prior success; independence unverified.',
+                    '| Independent completion | Any verification prompt establishes independence.')
+
+    def test_setup_is_separate_from_product_task_failure(self):
+        self.reject(BASE + 'research-planning.md',
+                    '| Setup or technical failure | Assessment blocked; separate cause from product-task failure.',
+                    '| Product failure | Failed test accounts prove unusable downloads.')
+
     def test_paywall_is_not_inspected_evidence(self):
         self.reject(BASE + 'research-sources.md',
                     'Unavailable/paywalled text stays uninspected', 'Paywalled text counts as inspected')

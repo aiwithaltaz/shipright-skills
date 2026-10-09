@@ -1,0 +1,10 @@
+{
+  "response": "Recommend a focused diagnosis of the existing onboarding before committing to fewer fields. Keep the approved sequence, company details before value, as the baseline.\n\nCompletion falling is reported; its size, timeframe and affected users are unknown. “Users dislike the form” is the CEO’s hypothesis. Other plausible explanations include unclear questions, validation failures or insufficient reason to invest effort before seeing value.\n\nThe next step is to review existing funnel and error data for this version, checking event definitions, denominators and where abandonment increased. If that evidence cannot explain the difficulty, propose a small task-based usability check of the current flow with target users. Observe where they hesitate or fail, then ask what they expected to get from completing it. Analytics locates the drop; observed tasks help distinguish form difficulty from unclear value.\n\nStop when there is enough evidence to recommend one bounded correction, or explicitly record that the cause remains unknown. Fewer fields is justified only if the evidence implicates field burden and those details are unnecessary for the approved job. Changing which company details are required or showing value earlier remains a proposal needing approval before build.\n\nNo analytics or user sessions were inspected or conducted here; this is the recommended next step, not a validated finding.",
+  "consulted_files": [
+    "/workspace/scratch/ce965ed18a0f/sr-eval-trials/t04/skills/product-design/SKILL.md",
+    "/workspace/scratch/ce965ed18a0f/sr-eval-trials/t04/skills/_shared/intake.md",
+    "/workspace/scratch/ce965ed18a0f/sr-eval-trials/t04/skills/_shared/operating-contract.md",
+    "/workspace/scratch/ce965ed18a0f/sr-eval-trials/t04/skills/product-design/references/research-methods.md",
+    "/workspace/scratch/ce965ed18a0f/sr-eval-trials/t04/skills/product-design/references/research-evidence.md"
+  ]
+}

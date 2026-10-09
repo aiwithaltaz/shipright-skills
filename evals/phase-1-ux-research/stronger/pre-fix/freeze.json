@@ -1,0 +1,9 @@
+{
+  "protocol_sha256": "159b1adbac9d3e3ee79c7eb4e7133374062539c819cd15fa7292892e7280abaa",
+  "baseline_commit": "b5e80000f3069e46dfd49005a0c83b05b5e94564",
+  "phase1_commit": "9ef5a8e523a242bf49c2d91d723826a4d56af5ac",
+  "jobs": 30,
+  "source_copy_method": "git archive skills only; separate directory per trial; read-only files",
+  "known_isolation_limits": "Shared host filesystem; isolation is fresh-thread and instructed read boundary, not an OS sandbox.",
+  "frozen_before_trials": true
+}

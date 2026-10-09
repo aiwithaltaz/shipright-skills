@@ -1,0 +1,104 @@
+{
+  "case_id": "E03",
+  "scores": [
+    {
+      "response_id": "A3f7b741c49dc",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "\u201cThink about the most recent invoice you created and downloaded. What prompted you to create it?\u201d followed by creation, checks, download, and concrete-impact prompts.",
+          "reason": "Provides an executable replacement guide anchored in a recent real task, with context and step-by-step follow-ups."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "Identifies the assumptions in \u201cfaster\u201d and \u201cfrustrating\u201d; asks \u201cWhich parts went smoothly?\u201d and \u201cWhat happened, and what did you do next?\u201d; avoids asking whether participants would use the app.",
+          "reason": "Removes sales and assumed dissatisfaction, grounding probes in past behavior rather than future intention."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "\u201cRemove the reminders question\u201d; excluded features are later-phase notes without probing. Asks about another tool used to finish creation or download.",
+          "reason": "Maintains approved creation/download scope while permitting relevant current alternatives."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Requires the approved consent process and data-handling arrangements, avoids client details and uses redacted examples or safe sample data for appropriate demonstrations. Distinguishes Reported from directly witnessed Observed actions and separates interpretation from evidence.",
+          "reason": "Provides honest evidence-use instructions and privacy-safe, consent-governed optional demonstration guidance; explicitly says the guide does not establish demand and solutions remain hypotheses."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "A8ed7a58891e5",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "\u201cTell me about the most recent invoice you created\u201d with trigger, tool, device, and a walkthrough from starting to having the file ready.",
+          "reason": "Produces an actual neutral guide with a concrete recent task, context, creation process, download process, and alternative-case probes."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "Explains why \u201cfaster\u201d and \u201cfrustrating\u201d assume benefits or problems; asks \u201cWhat, if anything, interrupted that process?\u201d and advises concrete examples without selling the app.",
+          "reason": "Avoids leading solution framing and relies on actual behavior; explicitly says demand remains unknown."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "Removes automated reminders as outside approved scope and does not turn spontaneous mentions into requirements. Asks what participants did instead if they did not download.",
+          "reason": "Stays within creation/download and includes useful current alternatives without adding features."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Uses the approved consent process, avoids sensitive information, distinguishes recalled Reported behavior from directly witnessed Observed behavior, and limits optional demonstrations to safe test data and approved access.",
+          "reason": "Explains evidence limits and appropriate demonstration safeguards; makes no validation claim and states no interviews have been conducted."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "Aea98f1f7eda2",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "\u201cTell me about the most recent invoice you created. What prompted you to make it?\u201d with tool/device probes and a creation walkthrough; conditional download questions.",
+          "reason": "Provides a practical neutral replacement guide rooted in a recent real invoice task and its context."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "Rejects \u201cfaster\u201d as sales and \u201cfrustrating\u201d as an assumed problem; asks about smooth steps and accepts no difficulty; instructs concrete examples before opinions and avoids future-use questions.",
+          "reason": "Probes actual work without flattering the proposed solution and explicitly keeps demand and benefits unknown."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "Reminders are removed and spontaneous mentions remain outside scope without probing. Asks about current tool/device and what happened when a copy was needed, without requiring download.",
+          "reason": "Concentrates on approved creation/download exploration and allows existing approaches without expanding product scope."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Requires approved consent before any session, says a walkthrough is only if appropriate using dummy or redacted data, prohibits identifiable client details, and distinguishes Reported recall from directly witnessed Observed actions.",
+          "reason": "Gives consent-governed, privacy-safe optional walkthrough guidance and honest evidence classification. No unsupported validation claim; identifies hypotheses and disconfirming straightforward workflows."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    }
+  ]
+}

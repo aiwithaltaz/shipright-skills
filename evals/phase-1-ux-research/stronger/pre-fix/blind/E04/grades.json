@@ -1,0 +1,204 @@
+{
+  "case_id": "E04",
+  "scores": [
+    {
+      "response_id": "R5868eda34420",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "Task says 'Download this file. Then close its preview and reopen the downloaded copy'; the protocol avoids naming controls or locations, observes a three-minute unassisted attempt, and requires the correct downloaded file to open rather than a verbal claim.",
+          "reason": "The task leaves the route open, establishes independent behavior first, and requires the usable saved artifact."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "Step 4 logs 'Show where you would open it' separately from exact directional guidance and says neither counts as independent success; rows B and C distinguish neutral-prompt discovery from directional help.",
+          "reason": "Both protocol and table preserve the independent outcome and distinguish the two intervention types."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "A is independent Pass; B is prompted finding with reopening Not verified; C is directional help with completion Not verified; D is setup blocked with download usability explicitly untested.",
+          "reason": "All four examples receive appropriate classifications without assuming B or C reopened the file or treating account failure as product failure."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Records actions, elapsed time, errors and download/reopening separately; the independent result precedes the prompt, exact guidance is logged, withdrawal/setup failures stop the session, and blocked attempts are repaired and rerun. The opening states no study has run.",
+          "reason": "The record captures intervention order and outcome evidence; stop conditions and uncertainty are actionable, and the fictional tally is explicitly illustrative."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "R763412ab153a",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "Task asks downloading, leaving the page, finding and opening the downloaded file without naming a button, folder or location. Step 3 observes without help; independent success requires downloading and reopening the correct file before any intervention.",
+          "reason": "The protocol measures independent completion of the usable saved file rather than an interface action alone."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "Independent outcome is recorded before 'Show where you would open it'; prompt and directional help have separate records and timing, and later progress never overwrites the earlier outcome. Table labels are Independent success, Prompted discovery and Directional assistance.",
+          "reason": "The categories remain distinct throughout protocol and reporting."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "A passes; B fails independence and reopening remains Not verified; C fails independence and final reopening remains Not verified; D is Environment blocked with the task never attempted and no evidence of download usability failure.",
+          "reason": "The four supplied scenarios are correctly mapped with no unsupported completion inference."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Records actions, elapsed time, errors, correct-file opening, exact intervention words and timing; sets a common time limit in advance and stops for completion, time, withdrawal or environment blocker. Examples are called fictional, and blocked attempts are excluded and rerun.",
+          "reason": "Provides a runnable observation record, explicit chronology, stop rules and appropriate limits on interpretation."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "R9c43480d13f0",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "Task is 'You need a copy of this file to use later. Save it to your device, then open the saved copy,' avoiding controls, folders and paths. A five-minute unassisted window precedes verification; Pass requires observed download and reopening of the saved copy.",
+          "reason": "The goal and success definition concern independent use of the saved artifact, with no prescribed route."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "Records the unassisted outcome before any verification prompt, marks discovery after 'Show where you would open it' as prompted recovery, and logs directional help separately. B is prompted discovery and C assisted, neither independent completion.",
+          "reason": "The protocol and table consistently separate independent, prompted and directed behavior."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "A is Pass with both steps observed; B is Fail with locating observed but reopening Not verified; C is Fail with later downloading/reopening to be recorded rather than assumed; D is setup blocked, task never started, excluded and retested.",
+          "reason": "All four examples are accurately classified and the environment issue is not counted as product failure."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Records download evidence, location, reopening evidence, elapsed time and unassisted outcome; directional guidance includes exact wording and timing. Completion, withdrawal and inability to proceed stop the attempt; blocked sessions are repaired and scheduled fresh. The response explicitly calls examples fictional and actual usability Unknown.",
+          "reason": "Observation chronology, evidence limits and stop/setup handling make the proposed study runnable without presenting it as completed research."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "Ref43bb2dbc65",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "Task asks saving the sample file, leaving the page and finding/opening the saved copy without suggested controls or location. The independent outcome is locked before any verification prompt; Pass requires both independent downloading and reopening within five minutes.",
+          "reason": "The protocol establishes unaided performance first and requires a usable saved copy."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "The neutral prompt is introduced after the independent score, and directional help follows recording that prompt's result. Table B is 'prompted recovery, assisted completion'; C is 'directional assistance'; neither receives independent Pass.",
+          "reason": "Explicit subcategories retain the important distinction even though both interventions are described broadly as assistance."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "A is independent completion; B is prompted recovery; C is directional assistance; D is task never attempted with no task outcome and setup failure. The table explicitly supplies eventual opening for its fictional B and C variants.",
+          "reason": "The demonstration correctly maps the four independence/setup categories. Additional explicitly fictional completion details do not convert assisted behavior into independent completion or real findings."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Records actions, time, download, reopening and assistance separately, with the exact prompt and timing. Stops for completion, withdrawal or setup blocker; reports excluded setup/withdrawal counts and retains partial observations. Counts are explicitly fictional and establish no usability finding.",
+          "reason": "The minimal record preserves chronology and partial evidence, and uncertainty and stopping rules are adequately specified."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "R2bb9cab165af",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "Task is 'Download this file, then reopen the saved copy.' Observation starts without hints; success requires seeing the correct saved file open, with clicking Download or locating a filename declared insufficient.",
+          "reason": "The task does not reveal a route and the protocol defines success at the usable-artifact level before help."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "After a preset no-progress limit, the moderator first uses the neutral prompt and then directional help, logging each separately. The pre-intervention result is preserved; table help levels distinguish None, Neutral prompt and Directional help.",
+          "reason": "Independent, prompted and directed outcomes remain distinct in the procedure and table."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "A passes with visibly opened saved copy; B fails independence and reopening is Not verified; C fails independence and reopening is Not verified; D never starts, is setup blocked and excluded from the task-success denominator.",
+          "reason": "The four examples are correctly handled without inventing B/C completion or treating setup failure as demonstrated product failure."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Starts timing at task onset and records each intervention verbatim, its time, and events before/after it; records discovery and reopening separately. Account blocks are fixed/rescheduled, withdrawal stops the session, and fictional 1-of-3 arithmetic is explicitly scoring demonstration rather than real-user evidence.",
+          "reason": "The protocol supplies a minimal executable observation record and appropriately handles uncertainty, stopping and setup failure."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "R108f7608c561",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "Two task stages ask keeping a document copy and later reading that saved copy, without naming controls, folders or paths. The response requires independent download and reopening, freezes the independent result before recovery prompts, and verifies the correct saved file; A explicitly reopens the correct saved copy unaided.",
+          "reason": "Independent behavior is established before verification/help, with saved-file correctness part of confirmation. The initial second-stage task instruction is distinct from a later recovery prompt."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "The independent score is frozen before 'Show where you would open it'; any resulting recovery is assisted, and directional help is separately logged. B and C fail independent reopening while retaining different prompt/help descriptions.",
+          "reason": "The procedure and table consistently preserve the distinction among independent completion, prompted recovery and directional assistance."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "A passes; B receives verification-prompt assisted recovery and independent Fail; C receives directional help and independent Fail; D is Not verified, setup blocked, task not attempted, and explicitly no demonstrated usability failure.",
+          "reason": "All four requested categories are correctly mapped. The response explicitly adds completion to its fictional B/C illustrations without claiming those added events are real observations."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Records download/reopening separately with evidence and elapsed time before further prompts, logs exact directional wording and whether reopening follows, and limits each stage to five minutes. Stops on withdrawal, setup failure or time, repairs/reruns blocked attempts, and explicitly calls the study unperformed and examples fictional.",
+          "reason": "The observation record includes timing and intervention order, keeps outcomes distinguishable, and supplies appropriate stop/setup and uncertainty handling."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    }
+  ],
+  "notes": "Assessed each response independently against the frozen four-criterion rubric. All six satisfy the outcome criteria and have no critical failures: 48/48 available points, 100% for this six-response case set, six useful passes. This is rubric attainment, not overall UX quality or a population success estimate. The rubric's 120-point version denominator applies to a 15-response version, not these six responses. Explicit fictional completion details in Ref43bb2dbc65 and R108f7608c561 are treated as illustrative scenario elaborations; their prompted/directional classifications remain correct. R108f7608c561's later correctness verification is treated as confirmation of observed independent behavior, not intervention credit."
+}

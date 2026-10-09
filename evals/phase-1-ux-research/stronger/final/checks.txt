@@ -1,0 +1,107 @@
+Final source checks, Phase 1 guide fixes, 2026-10-09
+
+Intermediate integration check: two copied dry-run rubric links to prompts.md did not resolve. Frozen rubric unchanged; copied the original linked prompts beside it. Final commands below.
+
+$ python3 evals/check_sources.py --self-test
+FAIL
+evals/phase-1-ux-research/stronger/final/adjudication/prompts.md: broken local reference README.md
+evals/phase-1-ux-research/stronger/final/adjudication/scope-contract.md: broken local reference ../_shared/intake.md
+evals/phase-1-ux-research/stronger/final/adjudication/scope-contract.md: broken local reference ../_shared/operating-contract.md
+evals/phase-1-ux-research/stronger/final/adjudication/scope-contract.md: broken local reference references/launch-items.md
+evals/phase-1-ux-research/stronger/final/adjudication/scope-contract.md: broken local reference ../ux-critique/references/bounded-verification.md
+evals/phase-1-ux-research/stronger/final/blind/dry-run/prompts.md: broken local reference README.md
+evals/phase-1-ux-research/stronger/final/prompts.md: broken local reference README.md
+Exit code: 1
+
+$ python3 evals/check_sources.py --self-test
+PASS: 4 restricted metadata records; stable 8/10/10/20 gates; 216 local references; phase/feedback/intake contracts; synchronized F1-F3 exports; project paths; versions; 15996 skill words within budget; original paths and historical bytes retained.
+KNOWN LIMIT: Historical app.js hash mismatch is disclosed; old runtime evidence does not verify packaged app.js.
+KNOWN LIMIT: F03 raw evidence retains a quoted em dash; the style miss is disclosed.
+PASS: 52 mutation self-tests rejected.
+Source integrity only. Behavior trials, client installs and runtime verification require separate evidence.
+Exit code: 0
+
+$ python3 tests/test_phase1_research.py
+test_current_sources (__main__.ResearchRegressions.test_current_sources) ... ok
+test_guide_instructions_and_table_must_agree (__main__.ResearchRegressions.test_guide_instructions_and_table_must_agree) ... ok
+test_guide_is_not_founder_intake (__main__.ResearchRegressions.test_guide_is_not_founder_intake) ... ok
+test_interview_guide_distinguishes_witnessed_behavior (__main__.ResearchRegressions.test_interview_guide_distinguishes_witnessed_behavior) ... ok
+test_interview_guide_does_not_turn_recall_into_observation (__main__.ResearchRegressions.test_interview_guide_does_not_turn_recall_into_observation) ... ok
+test_missing_artifact_is_not_supplied_content (__main__.ResearchRegressions.test_missing_artifact_is_not_supplied_content) ... ok
+test_mobile_evidence_limits (__main__.ResearchRegressions.test_mobile_evidence_limits) ... ok
+test_no_universal_sample_size (__main__.ResearchRegressions.test_no_universal_sample_size) ... ok
+test_paywall_is_not_inspected_evidence (__main__.ResearchRegressions.test_paywall_is_not_inspected_evidence) ... ok
+test_plan_does_not_authorize_messages (__main__.ResearchRegressions.test_plan_does_not_authorize_messages) ... ok
+test_plans_are_not_performed_studies (__main__.ResearchRegressions.test_plans_are_not_performed_studies) ... ok
+test_prompted_completion_is_not_independent (__main__.ResearchRegressions.test_prompted_completion_is_not_independent) ... ok
+test_references_are_direct_links (__main__.ResearchRegressions.test_references_are_direct_links) ... ok
+test_reports_do_not_become_observations (__main__.ResearchRegressions.test_reports_do_not_become_observations) ... ok
+test_setup_is_separate_from_product_task_failure (__main__.ResearchRegressions.test_setup_is_separate_from_product_task_failure) ... ok
+test_simulation_does_not_become_research (__main__.ResearchRegressions.test_simulation_does_not_become_research) ... ok
+test_synthesis_is_deferred (__main__.ResearchRegressions.test_synthesis_is_deferred) ... ok
+test_verification_cannot_be_independent_success (__main__.ResearchRegressions.test_verification_cannot_be_independent_success) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 2.190s
+
+OK
+Exit code: 0
+
+$ python3 -m unittest discover -s tests -p test_*.py
+..................
+----------------------------------------------------------------------
+Ran 18 tests in 2.438s
+
+OK
+Exit code: 0
+
+$ git diff --check
+Exit code: 0
+
+Staged whitespace check initially flagged five original frozen rubric EOF blanks and the preserved patch context lines. Exact archive bytes retained. File-specific Git whitespace attributes apply only to those six frozen evidence files; active source validation and whitespace checks remain unchanged. Check log terminal blank removed. Final checks below.
+
+$ python3 evals/check_sources.py --self-test
+PASS: 4 restricted metadata records; stable 8/10/10/20 gates; 216 local references; phase/feedback/intake contracts; synchronized F1-F3 exports; project paths; versions; 15996 skill words within budget; original paths and historical bytes retained.
+KNOWN LIMIT: Historical app.js hash mismatch is disclosed; old runtime evidence does not verify packaged app.js.
+KNOWN LIMIT: F03 raw evidence retains a quoted em dash; the style miss is disclosed.
+PASS: 52 mutation self-tests rejected.
+Source integrity only. Behavior trials, client installs and runtime verification require separate evidence.
+Exit code: 0
+
+$ python3 tests/test_phase1_research.py
+test_current_sources (__main__.ResearchRegressions.test_current_sources) ... ok
+test_guide_instructions_and_table_must_agree (__main__.ResearchRegressions.test_guide_instructions_and_table_must_agree) ... ok
+test_guide_is_not_founder_intake (__main__.ResearchRegressions.test_guide_is_not_founder_intake) ... ok
+test_interview_guide_distinguishes_witnessed_behavior (__main__.ResearchRegressions.test_interview_guide_distinguishes_witnessed_behavior) ... ok
+test_interview_guide_does_not_turn_recall_into_observation (__main__.ResearchRegressions.test_interview_guide_does_not_turn_recall_into_observation) ... ok
+test_missing_artifact_is_not_supplied_content (__main__.ResearchRegressions.test_missing_artifact_is_not_supplied_content) ... ok
+test_mobile_evidence_limits (__main__.ResearchRegressions.test_mobile_evidence_limits) ... ok
+test_no_universal_sample_size (__main__.ResearchRegressions.test_no_universal_sample_size) ... ok
+test_paywall_is_not_inspected_evidence (__main__.ResearchRegressions.test_paywall_is_not_inspected_evidence) ... ok
+test_plan_does_not_authorize_messages (__main__.ResearchRegressions.test_plan_does_not_authorize_messages) ... ok
+test_plans_are_not_performed_studies (__main__.ResearchRegressions.test_plans_are_not_performed_studies) ... ok
+test_prompted_completion_is_not_independent (__main__.ResearchRegressions.test_prompted_completion_is_not_independent) ... ok
+test_references_are_direct_links (__main__.ResearchRegressions.test_references_are_direct_links) ... ok
+test_reports_do_not_become_observations (__main__.ResearchRegressions.test_reports_do_not_become_observations) ... ok
+test_setup_is_separate_from_product_task_failure (__main__.ResearchRegressions.test_setup_is_separate_from_product_task_failure) ... ok
+test_simulation_does_not_become_research (__main__.ResearchRegressions.test_simulation_does_not_become_research) ... ok
+test_synthesis_is_deferred (__main__.ResearchRegressions.test_synthesis_is_deferred) ... ok
+test_verification_cannot_be_independent_success (__main__.ResearchRegressions.test_verification_cannot_be_independent_success) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 2.485s
+
+OK
+Exit code: 0
+
+$ python3 -m unittest discover -s tests -p test_*.py
+..................
+----------------------------------------------------------------------
+Ran 18 tests in 2.419s
+
+OK
+Exit code: 0
+
+$ git diff --check HEAD
+
+Exit code: 0
