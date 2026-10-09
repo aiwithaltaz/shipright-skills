@@ -25,7 +25,8 @@ TEMPLATES = ['01-prd.md', '02-technical-architecture.md', '03-security-and-acces
              'PRODUCT.md', 'DESIGN.md', 'build-rules.md', 'ship-check.md']
 REFS = {
     'product-design': ['decision-checklist.md', 'doc-set.md', 'operational-flows.md',
-                       'opportunity-research.md', 'states-and-flows.md'],
+                       'opportunity-research.md', 'states-and-flows.md',
+                       'research-evidence.md', 'research-methods.md', 'research-planning.md', 'research-sources.md'],
     'ui-ux-design': ['anti-slop-rules.md', 'build-handoff.md', 'icons-and-placement.md',
                      'layout-and-hierarchy.md', 'motion.md', 'operator-workspaces.md',
                      'references-and-design-system.md', 'state-coverage.md', 'ui-copy.md'],
@@ -40,11 +41,34 @@ RULES = {
         '## Exact feedback', 'acceptance check', 'Clearing a selection is not deleting records',
         'Never invent brand values, data, features', 'Severity follows criticality',
         'Needs decision is a verdict, not a fifth item status', 'Score each criterion at the named review stage',
-        'If a required specification behavior is still missing, mark Fail', 'Deadline rule', '## Output shape'],
+        'If a required specification behavior is still missing, mark Fail', 'Deadline rule', '## Output shape',
+        'A **Hypothesis** is a testable proposition, not evidence',
+        'Simulated participants never establish research findings',
+        'unknown access, destructive effects and prices cannot become defaults'],
     'skills/_shared/intake.md': ['0-5 questions total before starting', 'Each requested decision counts separately',
         'aim for three useful questions', 'Why it matters', 'each with a concrete example', 'plus **Something else**',
         'You decide', 'Let me decide', 'No pick yet', 'Two front doors', '## Depth', 'Request traps',
-        'the first reply is the decision cards only', 'A request to build it is not a frame'],
+        'the first reply is the decision cards only', 'A request to build it is not a frame',
+        'Participant-guide questions are deliverables, not founder intake',
+        'Plans do not authorize recruitment, recording, payment or messages'],
+    'skills/product-design/SKILL.md': ['Inspect supplied evidence first', 'Load only needed references',
+                                       'Missing artifact content stays Unknown'],
+    'skills/product-design/references/research-evidence.md': [
+        '**Observed:**', '**Reported:**', '**Inferred:**', '**Hypothesis:**', '**Unknown:**',
+        'not gate statuses', 'Confidence needs a basis', 'grouping/synthesis belongs to Phase 2',
+        'not an observed action', 'not its cause', 'not research', 'Original guidance:'],
+    'skills/product-design/references/research-methods.md': [
+        'Skip new research', 'stopping point', 'hybrid sessions can collect both',
+        'expert review is not participant testing', 'do not generalize desktop evidence to mobile', 'Original sources:'],
+    'skills/product-design/references/research-planning.md': [
+        'no universal five-user rule', 'mark the plan unperformed', 'what would challenge it',
+        'without naming the control/path', 'record assistance', 'voluntary exit',
+        'Record independent completion before verification prompts; prompted recovery is assisted',
+        'does not authorize outreach', 'No responsive UI contract', 'Original sources:'],
+    'skills/product-design/references/research-sources.md': [
+        'All entries accessed', 'public page text', 'Paid courses/playbooks',
+        'publication/update and access dates, access type and limitations',
+        'Unavailable/paywalled text stays uninspected'],
     'skills/_shared/flow-rules.md': ['Do not trap the user', 'Hide routine system plumbing',
         'Selection, keyboard focus, validation errors and unread notifications are different states',
         'indeterminate indicator', 'F1', 'F2', 'F3', 'decided once in the design system'],
@@ -173,6 +197,10 @@ def validate(root):
             errors.append(f'{rel}: expected gate IDs 1-{count}, got {ids}')
         for ref in REFS[name]:
             need(rel, 'references/' + ref)
+            if ref.startswith('research-'):
+                links = re.findall(r'\[[^\]]+\]\((references/[^)]+)\)', strip_fences(text))
+                if 'references/' + ref not in links:
+                    errors.append(f'{rel}: research reference must link directly: {ref}')
         if name != 'ship-check':
             need(rel, '(../_shared/flow-rules.md)')
         if len(text.split()) > 1300:
@@ -336,6 +364,20 @@ def self_test(root):
         ('em dash', 'README.md', '# ShipRight', '# ShipRight ' + chr(0x2014)),
         ('phase rule', 'skills/_shared/operating-contract.md', 'Save later-phase ideas as notes, not UI', 'Render every later idea now'),
         ('question budget', 'skills/_shared/intake.md', '0-5 questions total before starting', 'Ask unlimited questions'),
+        ('research hypothesis', 'skills/_shared/operating-contract.md',
+         'A **Hypothesis** is a testable proposition, not evidence', 'Hypotheses are validated facts'),
+        ('simulated participants', 'skills/_shared/operating-contract.md',
+         'Simulated participants never establish research findings', 'Simulated participants establish real findings'),
+        ('research permissions', 'skills/_shared/intake.md',
+         'Plans do not authorize recruitment, recording, payment or messages', 'A plan authorizes external messages'),
+        ('participant guide budget', 'skills/_shared/intake.md',
+         'Participant-guide questions are deliverables, not founder intake', 'All guides must have at most five questions'),
+        ('reported versus observed', 'skills/product-design/references/research-evidence.md',
+         'not an observed action', 'always an observed action'),
+        ('unperformed study', 'skills/product-design/references/research-planning.md',
+         'mark the plan unperformed', 'claim the research was performed'),
+        ('direct research link', 'skills/product-design/SKILL.md',
+         '[research-methods.md](references/research-methods.md)', '`references/research-methods.md`'),
         ('feedback lesson', 'examples/ivc-2026-registration/feedback/round1-corrections.md', 'View all in progress', 'Browse everything'),
         ('export drift', 'docs/build-rules.md', 'Hide routine system plumbing', 'Show all system plumbing'),
         ('project path', 'docs/05-feature-ticket-list.md', 'docs/shipright/ship-check.md', 'docs/ship-check.md'),

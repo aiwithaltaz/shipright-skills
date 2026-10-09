@@ -28,6 +28,18 @@ Write the first reply you would actually send, then the score, then one sentence
 
 ## Reports
 
+### Phase 1 research
+
+Run `python3 tests/test_phase1_research.py` after the normal source check and mutation self-test.
+Cases and rubric live in evals/phase-1-ux-research/. Record raw responses before scoring.
+Fresh agents receive only the applicable skill, raw task and relevant artifacts, not the rubric or expected answers.
+Baseline/after reports identify the run, scorer and limits; do not overwrite older evidence.
+Screenshots use `python3 tests/capture_phase1.py --browser /path/to/chrome`.
+If no browser is available, explicitly use `--renderer weasyprint` with WeasyPrint,
+Pillow and pdftoppm installed. Label its output print-rendered illustrations, not browser screenshots.
+They illustrate authored research output, not observed user behavior or benchmark results.
+The existing 0.6.2 capture scripts and historical fixtures remain unchanged.
+
 Before editing skills, write `tests/reports/YYYY-MM-DD-baseline.md`.
 After editing, write `tests/reports/YYYY-MM-DD-after.md` with the same rubric.
 Keep both files.

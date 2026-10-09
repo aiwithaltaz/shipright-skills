@@ -13,7 +13,7 @@ This is a product/design instruction pack, not an application framework.
 | skills/_shared/intake.md | One bounded intake across skills |
 | skills/_shared/flow-rules.md | Canonical F1-F3 behavior |
 | skills/_shared/output-folder.md | Authorized project writes and export paths |
-| skills/product-design/ | Outcome, mechanism, flows and state effects |
+| skills/product-design/ | Outcome, research judgment, mechanism, flows and state effects |
 | skills/ui-ux-design/ | Layout, system use, UI states and handoff |
 | skills/ux-critique/ | Artifact findings and stage-specific verification |
 | skills/ship-check/ | Release evidence |
@@ -27,6 +27,11 @@ This is a product/design instruction pack, not an application framework.
 Load the active SKILL.md, shared contract and intake once. Then load only references required by the task.
 Use existing project context instead of generating redundant documents. Do not load historical examples as current product authority.
 Keep the entire pack accessible so relative links resolve. Native discovery is a client concern, not verified by source checks.
+
+Phase 1 research remains inside product-design. Its SKILL.md directly links evidence, method,
+planning and source-register references, each loaded only for the current need.
+The shared contract still owns truthfulness, approval and gate statuses; evidence kinds are not new statuses.
+Research plans are not performed research. Full synthesis and later phases remain outside this change.
 
 ## One owner per rule
 

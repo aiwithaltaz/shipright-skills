@@ -321,3 +321,14 @@ ShipRight now works like a product and design agency: it writes a folder your co
 
 - Draft for Altaz review. Pack name and Altaz’s existing Claude/Codex UX skill files still open.
 - No GitHub publish until Altaz approves.
+
+## Phase 1 UX research - 2026-10-09 (working branch)
+
+- Keep four skills and 0.6.2 release metadata; this branch is not a published release.
+- Add conditional research evidence, method, planning and source-register references to product-design.
+- Clarify hypotheses without turning Unknown facts, scope approval or simulated participants into evidence.
+- Preserve 0-5 founder intake, cards-only vague-idea reply, four statuses, F1-F3 and historical records.
+- Condense repeated wording to retain the existing 16,000-word limit.
+- Add mutation checks, raw fresh task outputs and [Phase 1 results](evals/phase-1-ux-research/results.md).
+- Add a new [before/after illustration](examples/before-after/phase-1-ux-research/product-design/compare.png).
+  These authored screenshots do not prove model performance or usability.
