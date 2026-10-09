@@ -35,6 +35,16 @@ Fill relevant sections from the request and named sources. Unknown facts stay Un
 
 Do not invent metrics, data, prices or proof.
 
+### Research basis (only when relevant)
+
+| Claim / hypothesis | Kind and source/date/version | Sample/context and limits | Decision or test needed |
+| --- | --- | --- | --- |
+| <!-- --> | <!-- Observed/Reported/Inferred/Hypothesis/Unknown --> | <!-- Unknown where unavailable --> | <!-- --> |
+
+Keep missing facts Unknown. Hypotheses are testable proposals, not findings or approved features.
+State unavailable research and the next test; no invented participants, quotes or validation.
+Exclude participant identities and raw private records from builder exports.
+
 ## 6. Objects and lifecycles
 
 | Object | Independent states | Actor / owner |

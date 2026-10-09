@@ -1,0 +1,10 @@
+{
+  "frozen_before_trials": true,
+  "time_utc": "2026-10-09T21:17:08.582924+00:00",
+  "prior_phase1_commit": "9ef5a8e523a242bf49c2d91d723826a4d56af5ac",
+  "stronger_rubric_sha256": "159b1adbac9d3e3ee79c7eb4e7133374062539c819cd15fa7292892e7280abaa",
+  "patch_sha256": "d72206affb1978231ace51306d6dd66e3776fdd4db8ea45e93366c458da92bde",
+  "skill_words": 15996,
+  "trials": 31,
+  "policy": "No source edits or answer retries after freeze. Blind new stronger outputs against the frozen rubric; compare to unchanged pre-fix scores. Original R01-R08 use original rubric plus the two approved output contracts; existing dry-runs use tests/README.md frozen rubric. Source version hashes identify all executed bytes."
+}

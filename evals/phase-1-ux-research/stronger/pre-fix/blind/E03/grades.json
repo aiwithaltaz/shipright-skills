@@ -1,0 +1,204 @@
+{
+  "case_id": "E03",
+  "scores": [
+    {
+      "response_id": "Re6aca6b7232a",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "The guide asks about \u201cthe most recent invoice,\u201d what prompted it, and a walk-through \u201cfrom starting the invoice to having a downloaded file.\u201d",
+          "reason": "Provides an executable replacement guide anchored to a concrete recent task and its context."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "It asks \u201cWhich parts, if any, took extra time or effort?\u201d and about a recent smooth experience; it explicitly avoids assuming frustration and uses \u201cWhat happened next?\u201d follow-ups.",
+          "reason": "Neutral questions investigate actual events and counterexamples without selling speed or using future intentions as demand evidence."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "It says \u201cremove automated reminders from the guide,\u201d limits questions to creation/download, asks which tools were used, and returns to that scope if reminders arise.",
+          "reason": "Keeps approved exploration bounded while allowing existing tools and workarounds."
+        },
+        {
+          "criterion": 4,
+          "points": 1,
+          "evidence": "It says \u201cNo sessions have been conducted\u201d and \u201cthis guide does not establish demand\u201d; it forbids client details/unredacted invoices and says screen sharing is not required. It does not explain how recalled accounts differ from directly observed work.",
+          "reason": "Honest limits and privacy safeguards are useful, but the reports-versus-observation distinction required for full credit is missing."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 7,
+      "capped_total": 7,
+      "useful_pass": true
+    },
+    {
+      "response_id": "R88a2eee61bfa",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "It asks about \u201cthe most recent invoice,\u201d its trigger, and a walk-through from starting to a finished file, followed by how the file reached the device.",
+          "reason": "Provides concrete recent-work context and usable creation/download questions."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "It asks which parts went smoothly and \u201cwhere, if anywhere\u201d participants paused or corrected work; it says to avoid pitching a faster app or asking whether someone would use it.",
+          "reason": "Avoids the original leading assumptions and bases exploration on specific events rather than speculative adoption."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "It removes the automated-reminder question, calls spontaneous reminder comments outside scope, and asks about current tools/templates and workarounds.",
+          "reason": "Preserves the creation/download boundary and useful current alternatives without approving new features."
+        },
+        {
+          "criterion": 4,
+          "points": 1,
+          "evidence": "It distinguishes estimated duration from measured duration, says demand and time savings remain unknown, and states this is a guide rather than completed interviews. It does not distinguish recalled workflow reports from directly observed performance.",
+          "reason": "Offers useful honesty about evidence limits and timing, but does not fully explain reports versus observation. No demonstration is requested."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 7,
+      "capped_total": 7,
+      "useful_pass": true
+    },
+    {
+      "response_id": "Re293f8d38348",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "Questions anchor to the \u201cmost recent invoice,\u201d its trigger, a creation walk-through, and obtaining/checking a downloaded file, with a branch if no download occurred.",
+          "reason": "Actual neutral replacement guide is executable and accommodates the concrete task context."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "It asks what went smoothly and \u201cwhere, if anywhere\u201d corrections occurred, and seeks what participants would keep about their current process. It says speed remains untested.",
+          "reason": "Investigates real behavior and counterevidence without assuming speed/frustration or treating future intentions as demand."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "It identifies reminders as outside approved scope and says not to probe or add them to requirements; it asks about existing tools/documents and what was done instead of downloading.",
+          "reason": "Restricts discovery to creation/download and permits useful existing alternatives."
+        },
+        {
+          "criterion": 4,
+          "points": 1,
+          "evidence": "It says no interviews have been performed and the guide does not establish demand or willingness to switch; it advises avoiding client-identifying information. It does not explain the difference between reported episodes and directly observed work.",
+          "reason": "Interpretation limits and privacy are useful, but a material evidence-type distinction is missing. No demonstration is requested."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 7,
+      "capped_total": 7,
+      "useful_pass": true
+    },
+    {
+      "response_id": "Ra0445073261d",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "It asks about \u201cthe most recent invoice,\u201d what prompted it, creation steps, checks, and whether/how it was downloaded.",
+          "reason": "Provides a concrete recent-task replacement guide that can be used within the supplied constraints."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "It asks \u201cWhat, if anything, slowed you down,\u201d requests specific examples and next steps, and explicitly rejects treating hypothetical promises as demand evidence.",
+          "reason": "Conditional problem prompts remain neutral and focus on actual episodes without retaining the original leading primary questions."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "It removes automated reminders, identifies discovery as creation/download only, asks about existing tools/workarounds, and says spontaneous reminder comments do not expand approval.",
+          "reason": "Maintains scope and accommodates useful current approaches without adding features."
+        },
+        {
+          "criterion": 4,
+          "points": 1,
+          "evidence": "It directs capture of concrete steps, consequences and workarounds, and says app speed/usefulness remains unknown until supported by evidence. It does not distinguish self-reported steps from observed work or explain that interviews alone cannot establish actual performance.",
+          "reason": "Contains usable honest interpretation guidance without claiming validation, but lacks the full reports-versus-observed-work explanation. No demonstration is requested."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 7,
+      "capped_total": 7,
+      "useful_pass": true
+    },
+    {
+      "response_id": "R309bb9d297bd",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "The guide asks about the \u201cmost recent invoice,\u201d what prompted it, a creation-to-file walk-through, and how the file was checked.",
+          "reason": "Supplies neutral task/context questions and an executable replacement guide."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "It asks what went smoothly, \u201cwhere, if anywhere\u201d corrections occurred, and reasons for keeping the current approach; it labels \u201cwould you use\u201d a prediction rather than evidence.",
+          "reason": "Avoids pitching and leading assumptions while investigating real steps, consequences and alternative experiences."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "It explicitly removes reminders as outside approved scope and asks about tools/templates and other ways to create/download invoices.",
+          "reason": "Keeps exploration within the approved tasks and usefully probes existing alternatives."
+        },
+        {
+          "criterion": 4,
+          "points": 1,
+          "evidence": "The optional demonstration is \u201cIf you\u2019re comfortable\u201d with client and financial details hidden; it says interviews cannot establish demand or justify reminders. It does not explicitly separate participant recollections from observed demonstration evidence when recording/interpreting steps.",
+          "reason": "Consent-based privacy-safe demonstration and honest demand limits are useful. Full credit is withheld for the missing reports-versus-observation distinction."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 7,
+      "capped_total": 7,
+      "useful_pass": true
+    },
+    {
+      "response_id": "Rd432e4a71d8c",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "It asks about the most recent invoice, its trigger and tools, the creation walk-through and checks, and whether/how a downloadable copy was needed.",
+          "reason": "Produces a usable neutral guide grounded in recent real work and concrete context, including a no-download branch."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "It asks about smooth parts, accepts reports of no difficulty, requests specific consequences only when difficulty is described, and says hypothetical willingness is not adoption evidence.",
+          "reason": "Avoids faster/frustrating assumptions and solution flattery, and investigates events and counterexamples."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "It removes reminders, says volunteered later-stage needs should be noted separately before returning to creation/download, and explores templates/current approaches.",
+          "reason": "Maintains approval boundaries and permits useful existing alternatives without adding features."
+        },
+        {
+          "criterion": 4,
+          "points": 1,
+          "evidence": "It says demand remains unknown and not to treat hypothetical willingness as adoption evidence, while directing capture of steps, consequences and workarounds. It does not explain reported versus observed work.",
+          "reason": "Honest interpretation is partially addressed and no validation is claimed, but the evidence-type distinction needed for full credit is absent. No demonstration is requested."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 7,
+      "capped_total": 7,
+      "useful_pass": true
+    }
+  ],
+  "notes": "Each response was assessed independently against the four frozen criteria. All supply useful neutral guides within creation/download scope. Criterion 4 receives partial credit where honest interpretation is addressed but the distinction between participant reports and directly observed work is not explained. Optional demonstrations are not mandatory; their absence alone is not penalized. No critical failures were found. Six-response aggregate: 42/48 (87.5% of available rubric points); 6 useful passes. This percentage is not an overall UX quality or population success estimate."
+}

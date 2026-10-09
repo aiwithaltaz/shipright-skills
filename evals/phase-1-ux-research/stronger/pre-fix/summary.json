@@ -1,0 +1,183 @@
+{
+  "versions": {
+    "baseline": {
+      "score": 110,
+      "maximum": 120,
+      "percent": 91.66666666666667,
+      "useful_passes": 13,
+      "trials": 15,
+      "critical_failures": 0
+    },
+    "phase1": {
+      "score": 117,
+      "maximum": 120,
+      "percent": 97.5,
+      "useful_passes": 15,
+      "trials": 15,
+      "critical_failures": 0
+    }
+  },
+  "cases": {
+    "E01": {
+      "baseline": {
+        "score": 19,
+        "maximum": 24,
+        "useful_passes": 1,
+        "trial_scores": [
+          6,
+          7,
+          6
+        ],
+        "trials": [
+          "t09",
+          "t16",
+          "t13"
+        ]
+      },
+      "phase1": {
+        "score": 24,
+        "maximum": 24,
+        "useful_passes": 3,
+        "trial_scores": [
+          8,
+          8,
+          8
+        ],
+        "trials": [
+          "t20",
+          "t04",
+          "t06"
+        ]
+      }
+    },
+    "E02": {
+      "baseline": {
+        "score": 22,
+        "maximum": 24,
+        "useful_passes": 3,
+        "trial_scores": [
+          7,
+          7,
+          8
+        ],
+        "trials": [
+          "t08",
+          "t21",
+          "t07"
+        ]
+      },
+      "phase1": {
+        "score": 24,
+        "maximum": 24,
+        "useful_passes": 3,
+        "trial_scores": [
+          8,
+          8,
+          8
+        ],
+        "trials": [
+          "t14",
+          "t11",
+          "t02"
+        ]
+      }
+    },
+    "E03": {
+      "baseline": {
+        "score": 21,
+        "maximum": 24,
+        "useful_passes": 3,
+        "trial_scores": [
+          7,
+          7,
+          7
+        ],
+        "trials": [
+          "t26",
+          "t25",
+          "t15"
+        ]
+      },
+      "phase1": {
+        "score": 21,
+        "maximum": 24,
+        "useful_passes": 3,
+        "trial_scores": [
+          7,
+          7,
+          7
+        ],
+        "trials": [
+          "t28",
+          "t01",
+          "t27"
+        ]
+      }
+    },
+    "E04": {
+      "baseline": {
+        "score": 24,
+        "maximum": 24,
+        "useful_passes": 3,
+        "trial_scores": [
+          8,
+          8,
+          8
+        ],
+        "trials": [
+          "t18",
+          "t22",
+          "t24"
+        ]
+      },
+      "phase1": {
+        "score": 24,
+        "maximum": 24,
+        "useful_passes": 3,
+        "trial_scores": [
+          8,
+          8,
+          8
+        ],
+        "trials": [
+          "t19",
+          "t05",
+          "t30"
+        ]
+      }
+    },
+    "E05": {
+      "baseline": {
+        "score": 24,
+        "maximum": 24,
+        "useful_passes": 3,
+        "trial_scores": [
+          8,
+          8,
+          8
+        ],
+        "trials": [
+          "t10",
+          "t17",
+          "t29"
+        ]
+      },
+      "phase1": {
+        "score": 24,
+        "maximum": 24,
+        "useful_passes": 3,
+        "trial_scores": [
+          8,
+          8,
+          8
+        ],
+        "trials": [
+          "t03",
+          "t23",
+          "t12"
+        ]
+      }
+    }
+  },
+  "scoring_corrections": []
+}

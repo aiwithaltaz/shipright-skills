@@ -1,0 +1,40 @@
+{
+  "score": 120,
+  "maximum": 120,
+  "useful_passes": 15,
+  "trials": 15,
+  "critical_failures": 0,
+  "cases": {
+    "E01": {
+      "score": 24,
+      "maximum": 24,
+      "useful_passes": 3,
+      "critical_failures": 0
+    },
+    "E02": {
+      "score": 24,
+      "maximum": 24,
+      "useful_passes": 3,
+      "critical_failures": 0
+    },
+    "E03": {
+      "score": 24,
+      "maximum": 24,
+      "useful_passes": 3,
+      "critical_failures": 0
+    },
+    "E04": {
+      "score": 24,
+      "maximum": 24,
+      "useful_passes": 3,
+      "critical_failures": 0
+    },
+    "E05": {
+      "score": 24,
+      "maximum": 24,
+      "useful_passes": 3,
+      "critical_failures": 0
+    }
+  },
+  "scoring_corrections": []
+}

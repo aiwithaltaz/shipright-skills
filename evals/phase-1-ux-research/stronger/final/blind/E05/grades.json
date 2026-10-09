@@ -1,0 +1,104 @@
+{
+  "case_id": "E05",
+  "scores": [
+    {
+      "response_id": "Aa40e84ec6601",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "Four 35-minute desktop sessions on two consequential goals; neutral goal prompts, an eight-minute task timebox, directly observed success and assistance categories; build, safe data, consent, accessible instructions and retention prerequisites.",
+          "reason": "Executable tomorrow within the four-session constraint, with clear tasks, outcomes, observation procedure and preparation."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "Reports only build X, task A and four desktop participants; explicitly says sample counts are not population success rates and excludes claims about most users or phones.",
+          "reason": "Conclusions stay tied to observed participants, tasks, desktop configurations and version."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "Desktop screen-reader evidence does not cover phone screen-reader use; excludes general accessibility and compliance conclusions; technical accessibility review complements participant testing.",
+          "reason": "Explicitly preserves mobile and assistive-technology gaps and avoids substituting review or desktop testing for mobile evidence."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Requests direct checks of critical flows on representative phones with customary mobile screen-reader users, including recovery and result feedback; critical barriers mean fix and recheck, missing critical evidence means readiness not established.",
+          "reason": "Focused additional coverage and a conditional readiness decision are proportional to the missing evidence, with no fixed recruitment guarantee or blanket release rule."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "A762c100b99b6",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "Twenty-minute preparation, four 30-minute sessions plus notes and review; one critical journey with success recognition and recovery; safe data, named build/configuration, consent and accessible instructions.",
+          "reason": "Feasible lightweight schedule and an operational task, observation and outcome protocol for tomorrow."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "Limits reports to build X, these four participants, these tasks and desktop contexts; three of four describes the sample only; warns that no serious observed issue does not prove absence.",
+          "reason": "Makes both positive and negative findings appropriately local and rejects population and mobile generalization."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "Labels phone journey, mobile screen-reader operation and untested states Not verified; desktop screen-reader evidence applies only to that combination; expert checks complement user testing.",
+          "reason": "Missing access coverage remains visible and no unsupported accessibility or mobile readiness claim is made."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Calls for focused follow-up on the same journey using customary phones and actual mobile screen-reader users, recovery states and implementation checks; size follows unresolved risk; critical barriers require fixes and rechecks.",
+          "reason": "Specifies the relevant smallest scope of further checks and conditions readiness on resolving critical evidence gaps without a mandatory sample count or impossible guarantee."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "A72506f9792de",
+      "criteria": [
+        {
+          "criterion": 1,
+          "points": 2,
+          "evidence": "Four 35\u201340-minute sessions on one critical journey and recovery scenario; named build, safe data, customary desktop setups and accessible consent; neutral prompts, timed assistance, stopping rules and review ownership.",
+          "reason": "A useful executable desktop study with prerequisites, behavioral success criteria and a defined review process; screen-reader recruitment is explicitly conditional on availability."
+        },
+        {
+          "criterion": 2,
+          "points": 2,
+          "evidence": "Reports observed counts and problems on build X and these desktop setups; four successes mean only those four succeeded in those conditions; rejects population success rates and mobile usability claims.",
+          "reason": "Accurately confines conclusions to the observed sample, tasks, version and context."
+        },
+        {
+          "criterion": 3,
+          "points": 2,
+          "evidence": "Desktop screen-reader experience is not a substitute for mobile testing; narrow desktop viewport does not reproduce touch or mobile screen-reader behavior; mobile coverage remains Not verified and technical and participant checks do not replace each other.",
+          "reason": "Explicitly distinguishes untested phone and assistive-technology coverage from desktop findings and avoids accessibility certification claims."
+        },
+        {
+          "criterion": 4,
+          "points": 2,
+          "evidence": "Focused checks of the same critical journey on actual phones and customary mobile screen readers, including touch, text entry, focus, announcements and recovery; readiness not established, critical barriers require fix and recheck, unavailable checks remain an explicit evidence gap.",
+          "reason": "Names concrete additional checks and a proportionate conditional launch assessment without treating recruitment targets or desktop success as a universal release rule."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    }
+  ]
+}

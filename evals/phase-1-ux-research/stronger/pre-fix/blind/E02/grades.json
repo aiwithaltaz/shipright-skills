@@ -1,0 +1,84 @@
+{
+  "case_id": "E02",
+  "scores": [
+    {
+      "response_id": "Rd3612e56a911",
+      "criteria": [
+        {"criterion": 1, "points": 2, "evidence": "Says 'Five participants cannot reliably establish which version has the higher completion rate' and explicitly rejects interpreting '3/3 versus 1/2' as a population winner.", "reason": "Clearly distinguishes small diagnostic sessions from evidence establishing a completion-rate advantage."},
+        {"criterion": 2, "points": 1, "evidence": "Allocates 30 minutes preparation, five 20-minute sessions, and 30 minutes synthesis; observes completion, abandonment, errors, time and help. Says 'Check recruitment' and 'Seek five people,' with a fallback to labeling experienced-user feedback, but does not make the session schedule conditional on confirmed same-day availability or supply a plan if no participants can attend.", "reason": "The diagnostic protocol and timing are useful, but recruiting five appropriate participants within the afternoon remains an unresolved feasibility dependency."},
+        {"criterion": 3, "points": 2, "evidence": "Defines the same end event and window, seeks intended-audience participants who have not learned the flow, randomly assigns three versus two, uses identical realistic goals and neutral instructions, and gives each person only one version.", "reason": "Makes first-attempt observations sufficiently comparable for diagnosis and explicitly prevents practice effects."},
+        {"criterion": 4, "points": 2, "evidence": "Uses serious blockers to justify a provisional choice, retains the incumbent when findings are mixed, and later proposes stable 50/50 random assignment, all eligible starters in the denominator, a measured baseline, minimum worthwhile lift, sample requirement and a preplanned stopping rule; allows inconclusive results and notes roughly six users per arm per week at best.", "reason": "Provides honest immediate decision rules and the traffic, measurement and statistical prerequisites for a subsequent rate claim."}
+      ],
+      "critical_failures": [],
+      "uncapped_total": 7,
+      "capped_total": 7,
+      "useful_pass": true
+    },
+    {
+      "response_id": "R3fcc001850f6",
+      "criteria": [
+        {"criterion": 1, "points": 2, "evidence": "States 'Five participants cannot establish which version has a higher completion rate' and that session counts 'are not population completion estimates.'", "reason": "Rejects five-person proof and gives the small study an appropriate diagnostic purpose."},
+        {"criterion": 2, "points": 1, "evidence": "Provides a four-hour schedule with preparation, five 25-minute sessions and synthesis; records unaided completion, stopping points, errors and assistance. Directs recruiting representative new users but does not condition the afternoon sessions on confirmed participant availability or provide a fallback when recruitment cannot be completed that day.", "reason": "The sessions would yield useful evidence and fit the time budget, but same-day recruitment is a material unaddressed feasibility dependency."},
+        {"criterion": 3, "points": 2, "evidence": "Defines exact completion, window and eligibility; keeps task, starting conditions and assistance identical; recruits unfamiliar representative users; randomly assigns two versus three; avoids everyone seeing both versions because the first attempt teaches the task.", "reason": "Controls the important sources of unfairness within the limited diagnostic comparison."},
+        {"criterion": 4, "points": 2, "evidence": "Chooses provisionally using friction and implementation cost, keeps the choice reversible and retains the current version if there is no practical advantage. Later specifies stable 50/50 randomization, all assigned starters including abandonments, baseline-based sample estimation, minimum worthwhile improvement, a stopping rule and uncertainty intervals; warns that six per arm weekly could mean weeks or months.", "reason": "Gives an actionable provisional decision and adequate planning requirements for a defensible future rate comparison."}
+      ],
+      "critical_failures": [],
+      "uncapped_total": 7,
+      "capped_total": 7,
+      "useful_pass": true
+    },
+    {
+      "response_id": "R1d99520c9258",
+      "criteria": [
+        {"criterion": 1, "points": 2, "evidence": "States five people cannot reliably establish higher completion and says to report context and counts rather than a completion-rate winner from a three-versus-two comparison.", "reason": "Correctly limits the inference from small usability sessions."},
+        {"criterion": 2, "points": 2, "evidence": "Budgets 30 minutes preparation, about two hours of sessions including transitions, and 30 minutes synthesis. Checks analytics only 'If analytics exist,' assumes participants are already available, and explicitly switches to evidence review and session preparation if participants or usable versions are unavailable. Records assistance, abandonment, errors and difficulty points.", "reason": "Offers a feasible diagnostic afternoon with explicit resource dependencies and a useful fallback."},
+        {"criterion": 3, "points": 2, "evidence": "Uses the same endpoint, eligible first-time starters and completion window; recruits unfamiliar intended users; randomly assigns three versus two; uses neutral goals and comparable starting conditions; gives each participant one first-attempt version and observes without coaching.", "reason": "Ensures a fair limited comparison and avoids learning effects."},
+        {"criterion": 4, "points": 2, "evidence": "Stops after 30-minute synthesis; separates behavior from interpretation; allows a serious blocker to justify a provisional alternative and keeps the current version on mixed evidence. Requires actual eligible traffic, baseline and worthwhile improvement for sample and duration planning, reliable events, consistent random assignment and pre-agreed analysis/stopping; warns against stopping at an apparent lead.", "reason": "Defines an honest immediate decision and the additional measurement and experimental planning required for a rate claim."}
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "R06673a3f42cb",
+      "criteria": [
+        {"criterion": 1, "points": 2, "evidence": "Says five sessions cannot establish the higher completion rate, labels the winner 'Not verified,' and rejects turning a three-versus-two tally into a rate claim.", "reason": "Clearly rejects an unsupported five-person winner."},
+        {"criterion": 2, "points": 2, "evidence": "Allocates about 30 minutes preparation, five 20-minute sessions and 30–45 minutes synthesis; checks 'any existing' data, observes stalls, errors and help, and explicitly substitutes a walkthrough and test preparation if suitable participants cannot be recruited today.", "reason": "Provides actionable diagnostic work within the afternoon and handles unconfirmed recruitment with an appropriately labeled fallback."},
+        {"criterion": 3, "points": 2, "evidence": "Defines eligible starters, successful endpoint and fixed window; recruits representative first-time users, ideally unfamiliar with the product; randomly splits three versus two; uses the same task, conditions, device assumptions and neutral instructions; limits each participant to one version.", "reason": "Makes the diagnostic comparison fair enough and eliminates practice effects across versions."},
+        {"criterion": 4, "points": 2, "evidence": "Provisionally selects a version that removes a serious obstacle without introducing another; retains the incumbent on mixed findings. Plans persistent randomized assignment, common completion definitions, baseline and worthwhile improvement for sample calculation, analysis and stopping rules; recognizes low traffic may make the rate test impractical and labels trends descriptive.", "reason": "Sets useful provisional decision criteria and honest requirements and limitations for later causal rate evidence."}
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "Ra87b12816c09",
+      "criteria": [
+        {"criterion": 1, "points": 2, "evidence": "Opens 'Do not declare a completion-rate winner from five people' and says higher completion remains unknown; rejects a statistically validated uplift from the observed counts.", "reason": "Distinguishes diagnostic observations from proof of a completion-rate winner."},
+        {"criterion": 2, "points": 2, "evidence": "Uses 30 minutes for available evidence, about two hours for four or five sessions and 45–60 minutes synthesis; makes sessions conditional on participants already being available and supplies evidence review and hypothesized blockers as a fallback. Records independent completion, abandonment, errors, hesitation and assistance.", "reason": "The afternoon is executable, yields diagnostic evidence and handles resource availability honestly."},
+        {"criterion": 3, "points": 2, "evidence": "Uses representative prospective or first-time users, the same success event, window, realistic goal and starting conditions; distributes first attempts roughly evenly with neutral instructions. Optional second-version walkthroughs are explicitly excluded from clean completion comparisons because of learning.", "reason": "Provides sufficiently comparable diagnostic first attempts and correctly limits interpretations of repeated exposure. Randomization is not essential for this explicitly qualitative purpose."},
+        {"criterion": 4, "points": 2, "evidence": "Specifies provisional choices based on blockers, retains the incumbent or reversible option when mixed, and stops after scheduled sessions and synthesis. Requires baseline and minimum worthwhile improvement for sample planning, randomized consistent assignment, verified events, a fixed stopping rule and no repeated checking for a winner; acknowledges inadequate low traffic can leave causality unresolved.", "reason": "Defines honest decision and stopping rules plus the instrumentation and statistical prerequisites for a later rate claim."}
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "Rea1bbb3df636",
+      "criteria": [
+        {"criterion": 1, "points": 2, "evidence": "States five people cannot reliably establish higher completion and labels the comparative result unknown; says neither preference votes nor a three-versus-two completion split should decide the winner.", "reason": "Rejects both small-sample proof and preference as a proxy for completion."},
+        {"criterion": 2, "points": 2, "evidence": "Provides a three-hour plan of 20 minutes preparation, 125 minutes for up to five sessions and 35 minutes synthesis. Reviews only existing records, confirms usable versions, makes sessions conditional on participants already being available, and otherwise uses preparation and a walkthrough without claiming participant evidence. Records completion, assistance, abandonment, setup failures, time and confusion.", "reason": "Supplies a feasible, diagnostically useful afternoon and clearly handles unavailable participants or unconfirmed artifacts."},
+        {"criterion": 3, "points": 2, "evidence": "Defines a neutral goal, success event and time limit, recruits intended users unfamiliar with either version, randomly balances first exposures and uses identical tasks and starting conditions. Excludes second-version walkthroughs from first-attempt comparisons because learning carries over and counts completion before hints.", "reason": "Controls the important fairness and order effects for a limited diagnostic study."},
+        {"criterion": 4, "points": 2, "evidence": "Stops after agreed sessions and synthesis; fixes clear blockers, provisionally chooses on failure severity and recovery, and retains the incumbent absent an advantage. Later requires eligible weekly starts, baseline, worthwhile improvement, required sample, completion window, stopping rule and consistent assignment/event tracking; accepts an unresolved rate question if traffic is insufficient.", "reason": "Gives honest immediate action criteria and adequate traffic, instrumentation and statistical planning for subsequent rate evidence."}
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    }
+  ],
+  "notes": "Independently assessed the six supplied responses using the frozen E02 rubric only. Aggregate uncapped and capped totals are both 46/48 (95.83% of available rubric points), with six useful passes and no critical failures. The rubric's 120-point denominator applies to a complete 15-response version; only six E02 responses were supplied, so no complete-version score out of 120 is inferred. The two partial criterion-2 scores concern unconfirmed same-day participant availability, not writing style or the absence of particular terminology. Plans are not treated as completed research."
+}

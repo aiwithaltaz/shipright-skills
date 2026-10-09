@@ -321,3 +321,25 @@ ShipRight now works like a product and design agency: it writes a folder your co
 
 - Draft for Altaz review. Pack name and Altaz’s existing Claude/Codex UX skill files still open.
 - No GitHub publish until Altaz approves.
+
+## Phase 1 UX research - 2026-10-09 (working branch)
+
+- Keep four skills and 0.6.2 release metadata; this branch is not a published release.
+- Add conditional research evidence, method, planning and source-register references to product-design.
+- Clarify hypotheses without turning Unknown facts, scope approval or simulated participants into evidence.
+- Preserve 0-5 founder intake, cards-only vague-idea reply, four statuses, F1-F3 and historical records.
+- Condense repeated wording to retain the existing 16,000-word limit.
+- Add mutation checks, raw fresh task outputs and [Phase 1 results](evals/phase-1-ux-research/results.md).
+- Add a new [before/after illustration](examples/before-after/phase-1-ux-research/product-design/compare.png).
+  These authored screenshots do not prove model performance or usability.
+
+## Phase 1 guide fixes and final evaluation - 2026-10-09
+
+- Distinguish recalled/reported past behavior from directly witnessed in-session behavior in interview guides.
+- Align download-study instructions and outcome tables: independent completion, prompted verification, assisted completion and setup or technical failure. Preserve incomplete tasks and unverified steps.
+- Replace repeated planning prose before adding the two rules; keep the unchanged cap at 15,996/16,000 skill words. No other skill guidance changed in this final patch.
+- Preserve the original baseline comparison and all stronger pre-fix outputs. Add fresh final trials and independent blind grades in [stronger results](evals/phase-1-ux-research/stronger/results.md).
+- Add five mutation checks and five source regressions; no Phase 2 or release/version change.
+- New authored print-rendered teaching pair: [before](examples/before-after/phase-1-guide-fixes/product-design/before.png), [after](examples/before-after/phase-1-guide-fixes/product-design/after.png). These pictures illustrate rules; they are not behavior-test or usability evidence.
+
+![Guide corrections, before and after](examples/before-after/phase-1-guide-fixes/product-design/compare.png)

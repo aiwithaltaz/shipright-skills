@@ -5,6 +5,7 @@
 | Request | Skill | Review size |
 | --- | --- | --- |
 | Rough idea, outcome or flow decision | [product-design](skills/product-design/SKILL.md) | 8 checks at handoff |
+| Research evidence, method or lightweight study plan | product-design | Decision-relevant evidence/plan, not invented validation |
 | Screen layout, system or exact correction | [ui-ux-design](skills/ui-ux-design/SKILL.md) | 10 checks at handoff |
 | Artifact review or plan score | [ux-critique](skills/ux-critique/SKILL.md) | 10 checks when relevant |
 | Full launch review | [ship-check](skills/ship-check/SKILL.md) | 20 items plus product-critical requirements |
@@ -16,7 +17,8 @@ Start with current instructions and relevant artifacts. Apply [shared intake](sk
 Use [the operating contract](skills/_shared/operating-contract.md) for exact feedback, phase scope, facts and evidence.
 
 New product work connects outcome, useful mechanism, objects, journey, screen jobs, UI and handoff.
-Do not force every task through that whole sequence. Research is a separate early stage when requested or agreed.
+Do not force every task through that whole sequence. Inspect supplied evidence quietly; use bounded research when authorized and decision-relevant.
+Broad market research remains requested/agreed. Missing research permits labeled hypotheses, not invented facts.
 Existing-product work inspects affected context, preserves what works, makes authorized changes and verifies the affected result.
 
 Load only the references named for the current task in its SKILL.md. Do not load all examples, templates or historical evals by default.

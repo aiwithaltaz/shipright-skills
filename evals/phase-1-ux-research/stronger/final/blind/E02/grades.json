@@ -1,0 +1,104 @@
+{
+  "case_id": "E02",
+  "scores": [
+    {
+      "response_id": "A25a2021b9b27",
+      "criteria": [
+        {
+          "criterion": "1. Small-study limits",
+          "points": 2,
+          "evidence": "\u201cFive people can reveal useful usability problems; they cannot establish a reliable winner.\u201d It leaves the comparative rate unknown and warns against winning percentages from groups of two and three.",
+          "reason": "Clearly distinguishes diagnostic usability evidence from a reliable population completion-rate comparison, without treating five participants as proof."
+        },
+        {
+          "criterion": "2. Feasible afternoon diagnostic plan",
+          "points": 2,
+          "evidence": "Allocates 30 minutes to defining success, about two hours to five 20-minute sessions with buffers, and 45 minutes to synthesis. Sessions depend on five relevant participants and working versions; unavailable participants lead to a labeled walkthrough and measurement checks.",
+          "reason": "Provides an executable afternoon timebox, concrete behavioral observations and a useful fallback, while explicitly conditioning sessions on resources rather than assuming they exist."
+        },
+        {
+          "criterion": "3. Fair limited comparison",
+          "points": 2,
+          "evidence": "Uses a common endpoint, time limit and neutral task; favors product newcomers and usual devices; randomly assigns three A-first and two B-first. Second attempts are explicitly excluded from comparable completion evidence due to learning.",
+          "reason": "Controls the task and success standard sufficiently for diagnosis, selects relevant participants, and handles crossover learning honestly."
+        },
+        {
+          "criterion": "4. Honest provisional decision and rate-claim requirements",
+          "points": 2,
+          "evidence": "Provisionally favors fewer serious observed barriers, fixes blockers, and retains the current version if mixed. For a rate claim it requires eligible new-user traffic, baseline, minimum worthwhile improvement, calculated sample/duration, randomization, a completion window and a stopping rule; warns against repeated peeking.",
+          "reason": "Gives usable provisional action criteria and a bounded afternoon endpoint, then identifies the traffic, instrumentation and statistical planning necessary for quantitative superiority."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "A530fba705dc4",
+      "criteria": [
+        {
+          "criterion": "1. Small-study limits",
+          "points": 2,
+          "evidence": "States that splitting five people between versions \u201ccannot reliably establish which version has higher completion,\u201d and rejects tiny completion percentages and preference votes.",
+          "reason": "Directly corrects the founder\u2019s proposed inference and distinguishes useful diagnostic observations from a rate winner."
+        },
+        {
+          "criterion": "2. Feasible afternoon diagnostic plan",
+          "points": 2,
+          "evidence": "Plans 30 minutes to define success and inspect available analytics, five 25-minute sessions if suitable participants are already available, and 45 minutes to synthesize. If participants or usable versions are unavailable, review flows and prepare the guide.",
+          "reason": "Fits an afternoon and yields a concrete blocker list from consistent outcome records, with explicit resource conditions and a preparation fallback."
+        },
+        {
+          "criterion": "3. Fair limited comparison",
+          "points": 2,
+          "evidence": "Specifies intended new-user participants, relevant devices/access needs, the same realistic neutral goal and consistent timeout, and randomized first exposure split three/two. Alternates crossover order and explicitly excludes learned second attempts from a clean completion comparison.",
+          "reason": "Makes the limited comparison sufficiently fair through participant relevance, shared success conditions and explicit treatment of learning/order effects."
+        },
+        {
+          "criterion": "4. Honest provisional decision and rate-claim requirements",
+          "points": 2,
+          "evidence": "Stops after 45-minute synthesis; recommends a reversible provisional choice when a consequential blocker has a plausible remedy, otherwise retaining the current version. Later requires eligible volume, reliable start/completion tracking, baseline, worthwhile effect, sample/duration calculation, randomization and predefined analysis rules.",
+          "reason": "Defines a credible practical decision without claiming superiority, supplies stopping criteria, and covers the measurement and statistical prerequisites for a future rate claim."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "A9f8d34f6fe6a",
+      "criteria": [
+        {
+          "criterion": "1. Small-study limits",
+          "points": 2,
+          "evidence": "\u201cFive people cannot reliably establish which version has the higher population completion rate.\u201d It leaves the winner unknown and treats preference comments as opinions rather than completion evidence.",
+          "reason": "Explains the central limitation directly and avoids both universal five-person proof and conflating preference with completion."
+        },
+        {
+          "criterion": "2. Feasible afternoon diagnostic plan",
+          "points": 2,
+          "evidence": "Schedules 30 minutes for outcome/evidence checks, five 25-minute sessions plus 25 minutes of buffer, and a final hour for synthesis. Conditions this four-hour plan on relevant participants and usable versions, with instrumentation checks and a labeled walkthrough if unavailable.",
+          "reason": "Offers a concrete afternoon plan producing observable blockers and classified outcomes, with feasible timing and appropriate resource contingencies."
+        },
+        {
+          "criterion": "3. Fair limited comparison",
+          "points": 2,
+          "evidence": "Defines endpoint, eligibility and completion window; uses onboarding-unfamiliar intended users and their usual devices, a shared neutral goal, and randomized first exposure split three/two. Optional second versions are treated as learning-affected.",
+          "reason": "Maintains consistent tasks and success definitions, relevant recruitment, and first-attempt comparison while acknowledging crossover contamination."
+        },
+        {
+          "criterion": "4. Honest provisional decision and rate-claim requirements",
+          "points": 2,
+          "evidence": "Chooses provisionally only for clear observed mechanisms, fixes serious blockers, and retains the current version for conflicting or minor differences. Stops at the afternoon\u2019s end. Future comparison requires eligible traffic, baseline, worthwhile effect, sample/duration calculation, randomization, outcome events and a predefined stopping rule.",
+          "reason": "Provides explicit practical choice/stopping rules and the necessary traffic, instrumentation and statistical planning for a defensible rate claim."
+        }
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    }
+  ]
+}

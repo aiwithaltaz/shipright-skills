@@ -1,0 +1,23 @@
+{
+  "verified_at_utc": "2026-10-09T21:00:47.842963+00:00",
+  "response_records": 30,
+  "source_copies_unchanged": 30,
+  "protocol_hash_verified": true,
+  "protocol_file_predates_all_responses": true,
+  "responses_unchanged_after_freeze": 30,
+  "original_grading_artifacts_unchanged": 5,
+  "score_arithmetic_and_pass_rules_verified": true,
+  "scoring_corrections": [],
+  "repository_clean": true,
+  "repository_head": "9ef5a8e523a242bf49c2d91d723826a4d56af5ac",
+  "pr_verified": {
+    "number": 8,
+    "open": true,
+    "draft": true,
+    "merged": false,
+    "head": "9ef5a8e523a242bf49c2d91d723826a4d56af5ac"
+  },
+  "source_checks_rerun": false,
+  "source_changes": false,
+  "phase2_started": false
+}

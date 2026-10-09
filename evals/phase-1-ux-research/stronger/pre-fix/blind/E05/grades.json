@@ -1,0 +1,84 @@
+{
+  "case_id": "E05",
+  "scores": [
+    {
+      "response_id": "Ra68d5b3fcbe5",
+      "criteria": [
+        {"criterion": 1, "points": 2, "evidence": "Proposes four 35–40-minute sessions with a moderator and note-taker, one core flow and one consequential recovery path, a named stable build and safe test data. Records independent, assisted or incomplete outcomes and separates setup failures; checks accessible materials and consent.", "reason": "Provides an executable small study for tomorrow with goal-based tasks, success evidence, observation practices and practical prerequisites. Product-specific task placeholders can be filled from existing scope."},
+        {"criterion": 2, "points": 2, "evidence": "States that an obstacle occurred 'for this participant on this build and desktop setup'; completion applies to 'these participants' and tested conditions; four successes do not estimate a population success rate. Explicitly rejects mobile and overall launch-readiness inference.", "reason": "Bounds both negative and positive findings to the observed sample, paths, version and desktop contexts without generalization."},
+        {"criterion": 3, "points": 2, "evidence": "Makes desktop screen-reader recruitment conditional and says missing access coverage remains a gap. States desktop screen-reader evidence is not mobile screen-reader usability or accessibility compliance; says an accessibility review cannot replace phone user sessions and shrinking a browser does not replace phones.", "reason": "Keeps untested mobile and access combinations unverified and correctly limits both desktop assistive-technology tests and expert review."},
+        {"criterion": 4, "points": 2, "evidence": "Calls for a focused actual-phone follow-up on the core flow and recovery with typical and screen-reader users using familiar mobile technology, plus relevant focus, labels, announcements and recovery checks. Verdict is 'Not established'; a critical failure means 'Fix first' until corrected and rechecked, and unavailable mobile checks must remain explicit in the launch decision.", "reason": "Names a narrow relevant follow-up and a conditional, evidence-based launch stance. Does not promise recruitment or impose a blanket release prohibition."}
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "R88f7fb61f43b",
+      "criteria": [
+        {"criterion": 1, "points": 2, "evidence": "Specifies four 35–40-minute sessions, a moderator and note-taker, the same candidate build and realistic data, an essential journey with start/completion/recovery tasks, consent, and independent/assisted/failure/abandonment outcomes. Logs setup/build, impact and next action and separates evidence after build changes.", "reason": "The tasks, timing, staffing, prerequisites and observation log form a feasible and useful desktop study. Conditional inclusion of experienced screen-reader participants does not require impossible recruitment."},
+        {"criterion": 2, "points": 2, "evidence": "Limits difficulty to 'This participant' and 'this task and setup' and success to 'These participants' on the tested build. Says prevalence and mobile impact remain unknown, reports counts rather than population percentages, and warns no observed problem is not proof of absence.", "reason": "Gives usable bounded reporting language without extrapolating four desktop sessions to population or mobile outcomes."},
+        {"criterion": 3, "points": 2, "evidence": "Desktop screen-reader observations apply only to the specific tested combination and do not establish mobile screen-reader access or accessibility compliance. The launch table marks essential phone and mobile screen-reader journeys 'Not verified'; a narrow desktop window is expressly insufficient.", "reason": "Makes the main untested device and assistive-technology contexts visible and does not certify accessibility or substitute desktop results for phone evidence."},
+        {"criterion": 4, "points": 2, "evidence": "Requests a short actual-supported-phone check of essential journey and recovery, touch/layout/keyboard behavior, and experienced mobile screen-reader users on relevant supported combinations. Names control roles, focus, announcements and unaided completion checks. Critical essential-job/access/loss-of-work failures must be fixed and rechecked; launch readiness stays 'Not established' and observed critical failures mean 'Fix first'.", "reason": "Provides a targeted additional check and proportionate decision conditions tied to consequential failures and outstanding primary-context evidence."}
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "R8d9d2ce0755d",
+      "criteria": [
+        {"criterion": 1, "points": 2, "evidence": "Chooses one launch-critical journey and recovery scenario; defines independent completion and challenges such as wrong outcomes or assistance. Gives four 40-minute sessions with setup/context, two tasks and neutral follow-ups, familiar desktop technology, identified build/test data, accessible materials and approved consent/data handling. Captures accurate outcomes, assistance, barriers and setup failures.", "reason": "Makes tomorrow's four-session study feasible, bounded and operational, including necessary setup and a useful record of observed success and failure."},
+        {"criterion": 2, "points": 2, "evidence": "Says findings apply to the named build and setup, reports '3 of 4' rather than a population success rate, and describes no problems as none observed in a 'small, bounded study'. Scope explicitly remains the selected paths and exact tested version.", "reason": "Constrains conclusions to observed participants, tasks, desktop setups and build; neither success nor absence of observed issues is generalized."},
+        {"criterion": 3, "points": 2, "evidence": "Calls the participant mix 'not a representative sample' and records recruitment gaps. Says desktop screen-reader evidence leaves mobile combinations untested; the conclusion table labels phone usability and mobile screen-reader access 'Not verified' and compliance not established. Expert checks do not replace participant testing.", "reason": "Clearly exposes missing access coverage and preserves the distinction between desktop, phone-user evidence and accessibility review/compliance."},
+        {"criterion": 4, "points": 2, "evidence": "Before primary-audience readiness claims, asks for critical journey and recovery on real phones with target users, including experienced mobile screen-reader users using normal setups, plus implementation accessibility checks. A critical observed barrier means 'Fix first' and verification; if timing prevents checks, primary-device usability and mobile AT access must stay unverified.", "reason": "Specifies a small relevant follow-up and a conditional launch judgment grounded in evidence and critical consequences without an unconditional release rule or recruitment guarantee."}
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "R84618d035dde",
+      "criteria": [
+        {"criterion": 1, "points": 2, "evidence": "Timeboxes preparation to 30 minutes, four sessions to 35 minutes each and synthesis to 45 minutes. Names the build, two or three essential tasks including recovery, defines outcomes and critical failures, uses goal-based prompts, consent and familiar desktop AT. Records unaided/assisted/blocked outcomes, recovery and evidence, then assigns fixes and retests.", "reason": "Supplies an executable lightweight plan with preparation, observation, timing and a useful synthesis. Recruitment is explicitly conditional on feasibility."},
+        {"criterion": 2, "points": 2, "evidence": "Keeps findings tied to the 'exact setup and build'; reports participant counts with context. States four successful sessions do not establish a population success rate, comprehensive coverage or absence of important problems. Phone findings are described as hypotheses to check.", "reason": "The reporting rules maintain task, sample, desktop and version boundaries rather than treating observed successes as general readiness."},
+        {"criterion": 3, "points": 2, "evidence": "Records recruitment gaps and rejects inexperienced screen-reader simulation as a substitute. States desktop screen-reader results do not establish mobile screen-reader usability or accessibility compliance. Labels phone and mobile screen-reader evidence 'Not verified' and pairs actual-user phone testing with technical review, saying neither alone proves every requirement.", "reason": "Makes mobile/access gaps explicit and keeps review and desktop testing from supplying unearned mobile-user or certification claims."},
+        {"criterion": 4, "points": 2, "evidence": "Requests essential tasks and recovery on actual supported phones with habitual mobile screen-reader users, including touch, onscreen keyboard, small layout, focus and announcements. Identifies inability to finish essential tasks, loss of work and unrecoverable failure as blockers; unresolved critical failures produce 'Fix first', while current readiness is 'Not established'.", "reason": "The added checks target the critical paths and missing primary context. Blocking conditions concern consequential task failures, not a blanket rule against all releases or all friction."}
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "R3476e8d4be0a",
+      "criteria": [
+        {"criterion": 1, "points": 2, "evidence": "Selects a launch-critical goal plus recovery, a runnable identified build and safe data, and independent completion/understanding as the hypothesis. Assigns facilitator and note-taker, checks accessible setup/materials and consent, and schedules four approximately 35-minute sessions. Records assistance, errors, recovery, outcome and setup/build/AT context and separates setup failures.", "reason": "Gives a feasible practical plan and meaningful success/observation rules, with prerequisites suited to desktop and possible screen-reader sessions."},
+        {"criterion": 2, "points": 2, "evidence": "Proposes reporting 'In this build, these participants encountered these problems on these desktop setups.' Counts retain context rather than becoming population rates. Successful attempts support only exercised tasks/setups and four successes cannot prove broad usability or absence of defects.", "reason": "Bounds claims to the observed build, participants, tasks and desktop configurations and explicitly rejects broader inference."},
+        {"criterion": 3, "points": 2, "evidence": "Requires recording a gap if screen-reader participation is unavailable and explains that a visual prototype cannot establish screen-reader usability. Desktop AT results apply only to tested combinations; phone usability and inclusive readiness remain 'Not verified'. Responsive previews and expert review cannot replace real-phone testing with relevant users, including mobile screen-reader users.", "reason": "Keeps absent access groups visible and distinguishes actual phone-user evidence from desktop or expert substitutes and accessibility compliance."},
+        {"criterion": 4, "points": 2, "evidence": "Asks for evidence on the primary phone flow including relevant mobile AT, having already specified real-phone task testing with mobile screen-reader users. Requires resolution and targeted retesting of observed critical failures; absent phone evidence leaves 'launch readiness not established' even after four successful desktop sessions.", "reason": "A focused primary-flow check and conditional launch judgment are decision-useful. The response need not enumerate every phone platform or prescribe a new sample size to identify the smallest material evidence gap."}
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "R5ffbcb7b397d",
+      "criteria": [
+        {"criterion": 1, "points": 2, "evidence": "Defines a core goal and two or three realistic main/recovery/outcome-verification tasks with success criteria; specifies four 35–40-minute sessions with consent/setup, goal-based prompts and optional think-aloud. Captures build/browser/device/AT, outcomes, errors, recovery and help; synthesizes evidence, impact and next actions tomorrow. Actual screen-reader recruitment is conditional and gaps are recorded.", "reason": "The desktop fallback remains an executable lightweight study with relevant tasks, success definitions, observation and setup prerequisites. Optional phone use is a conditional proposal, not an assumed completed change."},
+        {"criterion": 2, "points": 2, "evidence": "Limits successful findings to 'those participants' on 'that build and setup' and contextual counts such as '2 of 4 ... on desktop'. Rejects population rates, saturation, phone usability inference and treating no observed problems as proof of absence.", "reason": "Maintains the sample, task, desktop and tested-version limits needed for honest prelaunch conclusions."},
+        {"criterion": 3, "points": 2, "evidence": "Says a narrow desktop window cannot test touch or mobile screen-reader behavior and desktop screen-reader success does not establish mobile access. Its table marks core phone and mobile screen-reader journeys 'Not verified'; the study cannot certify accessibility compliance. Calls for actual users plus relevant technical accessibility checks.", "reason": "Separately identifies missing phone and mobile assistive-technology evidence and does not promote desktop success or technical checking into accessibility certification."},
+        {"criterion": 4, "points": 2, "evidence": "Requests realistic core tasks on supported phones with intended users and mobile screen-reader combinations including recovery, plus a focused mobile round and relevant technical accessibility checks. Defines core-job/recovery failures as critical and says 'Fix first' until rechecked; current launch verdict is 'Not established' and scheduled fixes do not pass.", "reason": "Provides targeted additional evidence and a proportionate conditional launch decision. It neither guarantees recruitment nor invents a blanket release rule."}
+      ],
+      "critical_failures": [],
+      "uncapped_total": 8,
+      "capped_total": 8,
+      "useful_pass": true
+    }
+  ],
+  "notes": "Assessed each response independently against the four frozen E05 criteria. All six supply feasible desktop plans, bounded conclusions, explicit unverified mobile/access coverage, and focused additional checks with conditional launch judgments. No critical failures are present, so no caps apply. The six supplied responses total 48/48 (100% of available rubric points), with 6 useful passes. The rubric's 120-point version denominator requires 15 responses; only six were supplied here, so no score out of 120 is inferred. This percentage is rubric attainment for these responses, not overall UX quality or a population success estimate. No actions or research results beyond the response text were inferred."
+}

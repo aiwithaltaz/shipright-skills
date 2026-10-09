@@ -1,0 +1,266 @@
+{
+  "scores": [
+    {
+      "response_id": "A2c637c8a0ecf",
+      "case_id": "R04",
+      "criteria": [
+        {
+          "criterion": "Original: exact label change",
+          "status": "Pass",
+          "evidence": "Change replaces Submit with Download invoice and preserves handler, PDF behavior, styles, scope and text-derived accessible name."
+        },
+        {
+          "criterion": "Original: bounded acceptance check only",
+          "status": "Pass",
+          "evidence": "Acceptance check covers the new visible/accessibility text, clipping and unchanged activation/focus/navigation/status behavior. It is explicitly Not verified; no research or file editing is proposed."
+        },
+        {
+          "criterion": "Approved contract: interview reports versus witnessed behavior",
+          "status": "Not applicable",
+          "evidence": "This is a copy correction and acceptance check, not an interview guide."
+        }
+      ],
+      "material_pass": true,
+      "minor_omissions": [],
+      "material_failures": []
+    },
+    {
+      "response_id": "Ab2a7a2016cf6",
+      "case_id": "R02",
+      "criteria": [
+        {
+          "criterion": "Original: provisional in-scope product direction",
+          "status": "Pass",
+          "evidence": "Provisional direction is entering invoice details, reviewing and downloading. Payments, accounts and reminders remain excluded; no intake questions are asked."
+        },
+        {
+          "criterion": "Original: label hypotheses and uncertainty without invented evidence",
+          "status": "Pass",
+          "evidence": "Compact form/review is explicitly a Hypothesis; alternatives, required details and usability are Unknown. Approval is distinguished from validation."
+        },
+        {
+          "criterion": "Original: feasible smallest proposed study, explicitly unperformed",
+          "status": "Pass",
+          "evidence": "Proposes one exploratory round of three 20-minute sessions after prototype and participant access exist, with a neutral fictional task, observed accuracy/completion, owner, stopping point and limited interpretation. Explicitly says no research, recruitment or testing has occurred."
+        },
+        {
+          "criterion": "Approved contract: interview reports versus witnessed behavior",
+          "status": "Not applicable",
+          "evidence": "The proposed guide is a usability task with inspection of the result; no interview guide or recalled-behavior questions are included."
+        }
+      ],
+      "material_pass": true,
+      "minor_omissions": [],
+      "material_failures": []
+    },
+    {
+      "response_id": "Aade23491318a",
+      "case_id": "R06",
+      "criteria": [
+        {
+          "criterion": "Original: current-flow behavioral study paired with reported experience",
+          "status": "Pass",
+          "evidence": "Next step is moderated testing of the current existing flow, then consistently worded ease rating and neutral retrospective questions. Correct usable-file completion is separate from initiation, and explanations remain reported evidence."
+        },
+        {
+          "criterion": "Original: account for stale/version-limited analytics",
+          "status": "Pass",
+          "evidence": "Older UI analytics are historical instrumented behavior; version, dates, denominator, definitions and missing events must be checked. Explicitly refuses transferring rates or causes to the current UI."
+        },
+        {
+          "criterion": "Original: constrain interviews and competitor claim",
+          "status": "Pass",
+          "evidence": "Three interviews do not establish prevalence or saturation; notes have not been supplied. Competitor report is unverified and cannot establish causal benefit or justify changes."
+        },
+        {
+          "criterion": "Original: respect scope and unperformed-study limits",
+          "status": "Pass",
+          "evidence": "No intake questions or features are added. Study is unperformed, timeboxed, access-dependent, with coverage gaps and unknown current causes/frequency stated."
+        },
+        {
+          "criterion": "Approved contract: interview reports versus witnessed behavior",
+          "status": "Pass",
+          "evidence": "Source table says recalled actions remain reported unless directly witnessed; retrospective answers remain reported even alongside observation. Unobserved task steps remain unverified."
+        }
+      ],
+      "material_pass": true,
+      "minor_omissions": [],
+      "material_failures": []
+    },
+    {
+      "response_id": "A6d200d029bbe",
+      "case_id": "R03",
+      "criteria": [
+        {
+          "criterion": "Original: distinguish reports from inspected behavioral records",
+          "status": "Pass",
+          "evidence": "Interviews are Reported. Recordings are behavioral evidence as described, with an explicit statement that they have not been inspected; failure mechanism remains unknown."
+        },
+        {
+          "criterion": "Original: avoid adding potentially overlapping samples",
+          "status": "Pass",
+          "evidence": "Recording/interview overlap is unknown and response explicitly says not to count these as seven independent people."
+        },
+        {
+          "criterion": "Original: limit analytics interpretation",
+          "status": "Pass",
+          "evidence": "52% is only a reported metric without definitions, denominator or dates. Response rejects inferring download success, conversion or failure from the remaining 48%."
+        },
+        {
+          "criterion": "Original: limit universal demand and causal uplift claims",
+          "status": "Pass",
+          "evidence": "Founder assertion is a stakeholder claim; dashboard need and 30% uplift remain unvalidated. No screens are designed and no shared cause or causal improvement is asserted."
+        },
+        {
+          "criterion": "Approved contract: interview reports versus witnessed behavior",
+          "status": "Not applicable",
+          "evidence": "Response reviews evidence rather than supplying an interview guide. The analogous source distinction is evaluated under the original rubric above."
+        }
+      ],
+      "material_pass": true,
+      "minor_omissions": [],
+      "material_failures": []
+    },
+    {
+      "response_id": "A791bff5cf92b",
+      "case_id": "R07",
+      "criteria": [
+        {
+          "criterion": "Original: seven neutral participant questions",
+          "status": "Pass",
+          "evidence": "Numbered questions 1–7 cover the recent invoice, tools, information gathering, checks, download steps, completion judgment and remaining experience. No control/path recommendations or payment questions are introduced."
+        },
+        {
+          "criterion": "Original: no founder intake, outreach or fabricated sessions",
+          "status": "Pass",
+          "evidence": "Guide directly addresses participant experience; it states no sessions or findings exist and contains no founder intake, recruitment or messages."
+        },
+        {
+          "criterion": "Original: reported experiences distinguished from observed behavior",
+          "status": "Pass",
+          "evidence": "Evidence notes label recollections and narration Reported; only directly witnessed behavior is Observed, and unwitnessed steps remain unverified."
+        },
+        {
+          "criterion": "Approved contract: interview reports versus witnessed behavior",
+          "status": "Pass",
+          "evidence": "Fix actually appears in output: narration alone is not observation, and the seven questions elicit reported experience without establishing observed behavior."
+        }
+      ],
+      "material_pass": true,
+      "minor_omissions": [],
+      "material_failures": []
+    },
+    {
+      "response_id": "Abba813a04e16",
+      "case_id": "R01",
+      "criteria": [
+        {
+          "criterion": "Original: zero to five material decision cards only",
+          "status": "Pass",
+          "evidence": "Three cards ask for the initial audience, first completed task and first-version exclusions. Each addresses one material framing decision; options are alternatives within those decisions, not extra intake questions."
+        },
+        {
+          "criterion": "Original: preserve unanswered frame before product/screens/research findings",
+          "status": "Pass",
+          "evidence": "Audience and task remain unselected, demand remains Unknown and no research finding or screen design is offered. Examples illustrate choices without declaring an approved product."
+        },
+        {
+          "criterion": "Approved contract: interview reports versus witnessed behavior",
+          "status": "Not applicable",
+          "evidence": "These are founder framing cards, not a participant interview guide."
+        }
+      ],
+      "material_pass": true,
+      "minor_omissions": [
+        "Card 3's option B heading names multiple integrations and unattended actions as exclusions, while its example describes exploring one tool with reviewed actions; this makes the proposed boundary less clear.",
+        "Each card's You decide text delegates the choice to the assistant, while Let me decide keeps it with the user. These perspective labels can confuse who owns the decision, although the explanatory text preserves ownership."
+      ],
+      "material_failures": []
+    },
+    {
+      "response_id": "Afbe845ab433b",
+      "case_id": "R05",
+      "criteria": [
+        {
+          "criterion": "Original: neutral mobile task and existing-flow scope",
+          "status": "Pass",
+          "evidence": "Main task asks for a PDF copy available on the phone using invoice identifying details and the ordinary entry point. Explicitly forbids control/menu/route hints; corrections stay within existing flow."
+        },
+        {
+          "criterion": "Original: access needs and approved consent",
+          "status": "Pass",
+          "evidence": "Participants use their own phones and habitual screen readers; accessible instructions, preferred settings, breaks and avoiding simultaneous narration are covered. Approved consent and observation/data arrangements are prerequisites."
+        },
+        {
+          "criterion": "Original: independent/assisted outcomes and stopping point",
+          "status": "Pass",
+          "evidence": "Guide records an initial outcome before follow-up, requires directly witnessed correct-file acquisition, distinguishes assistance, keeps incomplete attempts and timeouts, and ends at finish/withdrawal/time limit/blocker. Study stops after six or up to two targeted follow-ups."
+        },
+        {
+          "criterion": "Original: no recording/outreach or claimed sessions",
+          "status": "Pass",
+          "evidence": "Plan is explicitly proposed and unperformed, excludes recruitment/outreach/recording, tells participants the session will not be recorded, and ends with no validation claim."
+        },
+        {
+          "criterion": "Approved contract: interview reports versus witnessed behavior",
+          "status": "Pass",
+          "evidence": "Guide explicitly labels recalled behavior Reported and only directly witnessed session actions Observed; narration alone is not observation. Unwitnessed actions/results remain unverified."
+        },
+        {
+          "criterion": "Approved contract: consistent independent completion",
+          "status": "Pass",
+          "evidence": "Outcome table requires the correct PDF directly witnessed before verification or help. A tap, message or success statement alone does not establish completion; initial outcomes are retained separately."
+        },
+        {
+          "criterion": "Approved contract: prompted verification",
+          "status": "Pass",
+          "evidence": "Outcome table distinguishes a non-directional check from independent completion, and the actual prompt asks How would you check that you have the file you need? Earlier directly witnessed independent completion is recorded before this follow-up and preserved separately."
+        },
+        {
+          "criterion": "Approved contract: assisted completion",
+          "status": "Pass",
+          "evidence": "Directional help or prompted recovery is explicitly assisted completion; exact prompt, timing and changed outcome must be logged."
+        },
+        {
+          "criterion": "Approved contract: setup/technical failure and retained noncompletion",
+          "status": "Pass",
+          "evidence": "Assessment-blocking setup/technical failure is separated from product-task failure. Incomplete attempts, withdrawals and timeouts retain last observed step and reason; coaching does not erase initial outcomes."
+        }
+      ],
+      "material_pass": true,
+      "minor_omissions": [
+        "The prompted-verification table row says independent completion remains unverified without stating the already-witnessed-success exception within that row. The surrounding instructions to record and preserve initial outcomes supply the exception, but the row would be clearer with it explicit."
+      ],
+      "material_failures": []
+    },
+    {
+      "response_id": "Aca97e2b803a3",
+      "case_id": "R08",
+      "criteria": [
+        {
+          "criterion": "Original: proceed with supported prototype brief",
+          "status": "Pass",
+          "evidence": "Supplies actor/job, proposed hierarchy, placeholders and simulated invoice-download path within explicitly approved layout prototyping; research remains unvalidated."
+        },
+        {
+          "criterion": "Original: preserve unresolved access rule and decision ownership",
+          "status": "Pass",
+          "evidence": "A1 records who may download whose invoice, conditions and refusal outcome as unresolved and user-owned. No roles, users or default access policy are inferred."
+        },
+        {
+          "criterion": "Original: no implementable invented authorization policy/readiness claim",
+          "status": "Pass",
+          "evidence": "Requires an inert prototype with no invoice-record connection or access rule; states authorization behavior is not ready to implement and the missing specification is critical."
+        },
+        {
+          "criterion": "Approved contract: interview reports versus witnessed behavior",
+          "status": "Not applicable",
+          "evidence": "This is a layout prototype brief and readiness assessment, not an interview guide."
+        }
+      ],
+      "material_pass": true,
+      "minor_omissions": [],
+      "material_failures": []
+    }
+  ]
+}

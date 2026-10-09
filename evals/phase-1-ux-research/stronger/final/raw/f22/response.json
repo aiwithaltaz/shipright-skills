@@ -1,0 +1,11 @@
+{
+  "response": "Change: Replace the button text “Submit” with “Download invoice”. Preserve the existing handler, PDF download behavior, styles and scope; the accessible name continues to derive from the visible text.\n\nAcceptance check (Not verified): Confirm the visible text and accessible name are “Download invoice”, the longer label fits without clipping, and mouse and keyboard activation still download the same PDF with existing focus, navigation and status behavior unchanged.",
+  "consulted_files": [
+    "/workspace/scratch/ce965ed18a0f/sr-final-trials/f22/skills/ui-ux-design/SKILL.md",
+    "/workspace/scratch/ce965ed18a0f/sr-final-trials/f22/skills/_shared/intake.md",
+    "/workspace/scratch/ce965ed18a0f/sr-final-trials/f22/skills/_shared/operating-contract.md",
+    "/workspace/scratch/ce965ed18a0f/sr-final-trials/f22/skills/_shared/flow-rules.md",
+    "/workspace/scratch/ce965ed18a0f/sr-final-trials/f22/skills/ui-ux-design/references/state-coverage.md",
+    "/workspace/scratch/ce965ed18a0f/sr-final-trials/f22/skills/ui-ux-design/references/ui-copy.md"
+  ]
+}

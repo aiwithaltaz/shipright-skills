@@ -1,0 +1,91 @@
+[
+  {
+    "response_id": "A1eff79154b3f",
+    "case_id": "DA-ship-check",
+    "criteria": [
+      {
+        "criterion": "Q",
+        "points": 1,
+        "evidence": "Asks for screenshots or a runnable build despite the supplied description of confirmation and removal controls.",
+        "reason": "The evidence request is relevant to runtime verification, but unnecessarily postpones the specification-level check already possible from the supplied artifact."
+      },
+      {
+        "criterion": "S",
+        "points": 2,
+        "evidence": "Says launch readiness is Not established and distinguishes visual review from launch verification.",
+        "reason": "Does not produce a premature finished design or certify an unbuilt product. The missing substantive check is scored under Deliverable and Format."
+      },
+      {
+        "criterion": "D",
+        "points": 1,
+        "evidence": "Provides only a readiness caveat and artifact request.",
+        "reason": "The launch verdict is appropriately bounded, but the reply omits checking the described defects and giving concrete correction or retest requirements."
+      },
+      {
+        "criterion": "U",
+        "points": 2,
+        "evidence": "Makes no claims about runtime, testimonial authenticity, pricing correctness or removal consequences.",
+        "reason": "Does not invent facts or certify unavailable evidence."
+      },
+      {
+        "criterion": "F",
+        "points": 0,
+        "evidence": "Contains two short paragraphs, with no per-check statuses or findings with location, severity, correction and retest.",
+        "reason": "The generic readiness caveat supplies no reusable substantive check structure."
+      }
+    ],
+    "total": 6,
+    "minor_omissions": [
+      "Requests another artifact before using the supplied description for the check it supports."
+    ],
+    "material_failures": [
+      "Does not assess the explicitly reported missing confirmation back control, competing filled buttons or ambiguous trash-only removal action.",
+      "Does not provide bounded launch checks, corrective actions or retest conditions; the absence of a build should limit runtime conclusions rather than prevent a specification-level review."
+    ]
+  },
+  {
+    "response_id": "Ad835ee44e122",
+    "case_id": "DB-ship-check",
+    "criteria": [
+      {
+        "criterion": "Q",
+        "points": 1,
+        "evidence": "Ends by asking for a screenshot after reviewing a supplied screen description.",
+        "reason": "The request is relevant for visual verification, but the supplied artifact already supports a more complete bounded check; no additional intake is necessary to report those findings."
+      },
+      {
+        "criterion": "S",
+        "points": 2,
+        "evidence": "Labels the output a pre-build assessment and launch readiness Not established.",
+        "reason": "Does not claim completion or runtime readiness before the necessary evidence exists."
+      },
+      {
+        "criterion": "D",
+        "points": 1,
+        "evidence": "Names priorities for the order focus, trash semantics, return route and Synced chip, followed by a short list of launch checks.",
+        "reason": "Gives useful partial check content, but does not turn evidenced defects and unverified checks into an actionable launch assessment with correction and retest detail."
+      },
+      {
+        "criterion": "U",
+        "points": 2,
+        "evidence": "Treats widget hierarchy as proposed and asks to establish trash behavior; it does not claim saved changes or permissions have been tested.",
+        "reason": "Stays within the supplied warehouse job and accurately bounds unknown behavior."
+      },
+      {
+        "criterion": "F",
+        "points": 1,
+        "evidence": "Has a readiness verdict, priority bullets and verification list, but no item statuses, severity or explicit retest conditions.",
+        "reason": "Some reusable shape is present, but the full finding/status format is missing."
+      }
+    ],
+    "total": 7,
+    "minor_omissions": [
+      "The screenshot request postpones completion of a description-based assessment that is already possible.",
+      "The proposed corrections lack item-level statuses and retest conditions."
+    ],
+    "material_failures": [
+      "Does not identify the reported missing return route as an evidenced critical launch defect or distinguish it clearly from runtime checks that remain unverified.",
+      "Does not provide a substantive structured launch check against the supplied artifact; unavailable build evidence is a valid limit on certification, not a reason to omit the bounded check."
+    ]
+  }
+]

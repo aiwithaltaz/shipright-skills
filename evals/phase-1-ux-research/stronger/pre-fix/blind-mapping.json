@@ -1,0 +1,212 @@
+[
+  {
+    "response_id": "R6075aae2c0b8",
+    "trial_id": "t16",
+    "case_id": "E01",
+    "version": "baseline",
+    "repeat": 2
+  },
+  {
+    "response_id": "R8a8fbdf2faf8",
+    "trial_id": "t20",
+    "case_id": "E01",
+    "version": "phase1",
+    "repeat": 1
+  },
+  {
+    "response_id": "Rd10932b63362",
+    "trial_id": "t09",
+    "case_id": "E01",
+    "version": "baseline",
+    "repeat": 1
+  },
+  {
+    "response_id": "R4ba45cffbbdc",
+    "trial_id": "t13",
+    "case_id": "E01",
+    "version": "baseline",
+    "repeat": 3
+  },
+  {
+    "response_id": "R1f5a0fe99801",
+    "trial_id": "t04",
+    "case_id": "E01",
+    "version": "phase1",
+    "repeat": 2
+  },
+  {
+    "response_id": "Rdd33149b2116",
+    "trial_id": "t06",
+    "case_id": "E01",
+    "version": "phase1",
+    "repeat": 3
+  },
+  {
+    "response_id": "Rd3612e56a911",
+    "trial_id": "t21",
+    "case_id": "E02",
+    "version": "baseline",
+    "repeat": 2
+  },
+  {
+    "response_id": "R3fcc001850f6",
+    "trial_id": "t08",
+    "case_id": "E02",
+    "version": "baseline",
+    "repeat": 1
+  },
+  {
+    "response_id": "R1d99520c9258",
+    "trial_id": "t11",
+    "case_id": "E02",
+    "version": "phase1",
+    "repeat": 2
+  },
+  {
+    "response_id": "R06673a3f42cb",
+    "trial_id": "t07",
+    "case_id": "E02",
+    "version": "baseline",
+    "repeat": 3
+  },
+  {
+    "response_id": "Ra87b12816c09",
+    "trial_id": "t02",
+    "case_id": "E02",
+    "version": "phase1",
+    "repeat": 3
+  },
+  {
+    "response_id": "Rea1bbb3df636",
+    "trial_id": "t14",
+    "case_id": "E02",
+    "version": "phase1",
+    "repeat": 1
+  },
+  {
+    "response_id": "Re6aca6b7232a",
+    "trial_id": "t27",
+    "case_id": "E03",
+    "version": "phase1",
+    "repeat": 3
+  },
+  {
+    "response_id": "R88a2eee61bfa",
+    "trial_id": "t01",
+    "case_id": "E03",
+    "version": "phase1",
+    "repeat": 2
+  },
+  {
+    "response_id": "Re293f8d38348",
+    "trial_id": "t28",
+    "case_id": "E03",
+    "version": "phase1",
+    "repeat": 1
+  },
+  {
+    "response_id": "Ra0445073261d",
+    "trial_id": "t26",
+    "case_id": "E03",
+    "version": "baseline",
+    "repeat": 1
+  },
+  {
+    "response_id": "R309bb9d297bd",
+    "trial_id": "t15",
+    "case_id": "E03",
+    "version": "baseline",
+    "repeat": 3
+  },
+  {
+    "response_id": "Rd432e4a71d8c",
+    "trial_id": "t25",
+    "case_id": "E03",
+    "version": "baseline",
+    "repeat": 2
+  },
+  {
+    "response_id": "R5868eda34420",
+    "trial_id": "t24",
+    "case_id": "E04",
+    "version": "baseline",
+    "repeat": 3
+  },
+  {
+    "response_id": "R763412ab153a",
+    "trial_id": "t18",
+    "case_id": "E04",
+    "version": "baseline",
+    "repeat": 1
+  },
+  {
+    "response_id": "R9c43480d13f0",
+    "trial_id": "t05",
+    "case_id": "E04",
+    "version": "phase1",
+    "repeat": 2
+  },
+  {
+    "response_id": "Ref43bb2dbc65",
+    "trial_id": "t30",
+    "case_id": "E04",
+    "version": "phase1",
+    "repeat": 3
+  },
+  {
+    "response_id": "R2bb9cab165af",
+    "trial_id": "t22",
+    "case_id": "E04",
+    "version": "baseline",
+    "repeat": 2
+  },
+  {
+    "response_id": "R108f7608c561",
+    "trial_id": "t19",
+    "case_id": "E04",
+    "version": "phase1",
+    "repeat": 1
+  },
+  {
+    "response_id": "Ra68d5b3fcbe5",
+    "trial_id": "t12",
+    "case_id": "E05",
+    "version": "phase1",
+    "repeat": 3
+  },
+  {
+    "response_id": "R88f7fb61f43b",
+    "trial_id": "t10",
+    "case_id": "E05",
+    "version": "baseline",
+    "repeat": 1
+  },
+  {
+    "response_id": "R8d9d2ce0755d",
+    "trial_id": "t23",
+    "case_id": "E05",
+    "version": "phase1",
+    "repeat": 2
+  },
+  {
+    "response_id": "R84618d035dde",
+    "trial_id": "t29",
+    "case_id": "E05",
+    "version": "baseline",
+    "repeat": 3
+  },
+  {
+    "response_id": "R3476e8d4be0a",
+    "trial_id": "t03",
+    "case_id": "E05",
+    "version": "phase1",
+    "repeat": 1
+  },
+  {
+    "response_id": "R5ffbcb7b397d",
+    "trial_id": "t17",
+    "case_id": "E05",
+    "version": "baseline",
+    "repeat": 2
+  }
+]

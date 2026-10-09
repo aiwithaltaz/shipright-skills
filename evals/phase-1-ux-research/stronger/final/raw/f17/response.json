@@ -1,0 +1,9 @@
+{
+  "response": "Participant interview guide\n\nPurpose: Understand how freelancers currently create and download invoices. This guide is unperformed; no sessions or findings exist.\n\n1. Tell me about the most recent invoice you created and downloaded, starting with what prompted you to begin.\n2. Walk me through how you created that invoice, including the tools you used.\n3. How did you gather the information you included in that invoice?\n4. What, if anything, did you check or change before downloading it?\n5. Walk me through how you downloaded that invoice.\n6. How did you determine whether the download had completed as you intended?\n7. What else about that experience would help me understand how you create and download invoices?\n\nEvidence notes: Label recalled experiences and participant narration as **Reported**. Label only behavior directly witnessed during a session as **Observed**; narration alone is not observation. Steps not witnessed remain unverified. These questions elicit reported experiences and do not establish observed behavior.",
+  "consulted_files": [
+    "/workspace/scratch/ce965ed18a0f/sr-final-trials/f17/skills/product-design/SKILL.md",
+    "/workspace/scratch/ce965ed18a0f/sr-final-trials/f17/skills/_shared/intake.md",
+    "/workspace/scratch/ce965ed18a0f/sr-final-trials/f17/skills/_shared/operating-contract.md",
+    "/workspace/scratch/ce965ed18a0f/sr-final-trials/f17/skills/product-design/references/research-planning.md"
+  ]
+}
