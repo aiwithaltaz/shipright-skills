@@ -51,3 +51,22 @@ Preserve another tool's existing format and sections; do not claim universal DES
 Static source checks cover structural integrity, selected rule contracts and known historical limitations.
 Controlled trials exercise instruction behavior on specified requests. They are not client installation or cross-model benchmarks.
 Historical test logs remain historical. Hash mismatches and known defects must be disclosed, never rewritten into old passes.
+
+## Bounded context, growing knowledge
+
+[context-policy.json](evals/context-policy.json) declares normal loading paths and conditional entry links. [check_context.py](evals/check_context.py) enforces limits using tiktoken 0.12.0 / cl100k_base, including frontmatter, tables, links and code. Provider token counts may differ.
+
+| Guidance | Maximum tokens |
+| --- | ---: |
+| Each SKILL.md | 4,500 |
+| Each shared file | 2,000 |
+| Always-loaded contract and intake together | 3,000 |
+| Entire shared folder | 5,000 |
+| Each reference file | 4,000 |
+| Declared normal path, including entry and required shared rules | 12,000 |
+
+Keep the existing 1,300-word entry check as a secondary safeguard. Stored reference collections and the repository have no hard aggregate cap. Review warnings begin at 50,000 reference tokens per consuming skill, 100 MB for the repository, or 10 MB for a file. Warnings request review; they do not fail a compliant collection.
+
+Load only references relevant to the current task. Each consuming SKILL.md links directly to its references with a loading condition; related links within references are reminders, never the only access path. The checker flags broken links, orphan references, nested reference folders, missing conditions and undeclared reference use. Topic ownership is the containing skill directory. Cross-skill consumers reuse the original file; detailed research rules stay with product-design, visual rules with ui-ux-design, critique rules with ux-critique, launch checks with ship-check. No complex duplicate detection.
+
+A normal path is a declared guidance allowance, not a client-enforced context window. The checker conservatively includes linked skill-guidance dependencies from selected references. Include relevant dependencies when adding paths. Conversation, project artifacts, tool output, optional exported templates and opt-in taste files are outside these guidance totals. If a task needs more than a path allows, use bounded stages with concise decisions; never omit required safeguards or accessibility. Source checks cannot establish actual loading in every client.

@@ -33,6 +33,8 @@ Read [launch-items.md](references/launch-items.md) for evidence requirements.
 
 A review is read-only. Do not submit live forms, send messages, pay, delete or install services.
 Use authorized synthetic test data for interactive checks. Never print secrets; identify their file and line only.
+For accessibility, responsive access or form checks, read [state-coverage.md](../ui-ux-design/references/state-coverage.md).
+Load these references only when relevant to the requested check.
 Use [bounded verification](../ux-critique/references/bounded-verification.md) when relevant.
 
 **Deadline rule:** pressure to launch never turns an unknown into Pass. State the top gaps and what can be checked next.

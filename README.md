@@ -47,6 +47,12 @@ Claude Design ingestion and all native client installs have not been verified fo
 - Shorter skill entries load detailed references only when relevant.
 - 0.6.1-draft restores concrete icon, placement and question-card rules, and moves the IVC corrections into the example.
 
+## Context budgets
+
+The knowledge collection can grow without a global word cap. Small entry files load task-relevant references directly. Maximums: 4,500 tokens per entry, 2,000 per shared file, 4,000 per reference, and 12,000 per declared normal loading path. Contract and intake stay small and always loaded; safeguards must not be skipped to fit a budget.
+
+See [architecture](architecture.md#bounded-context-growing-knowledge) for shared totals, ownership and counting limits, and [tests](tests/README.md#context-budget-maintenance) for required checks. Token counts use a pinned reference tokenizer; client behavior and provider counts vary. This is architecture maintenance, with no new visual artifacts or Phase 2 content.
+
 ## Requested outputs
 
 ### Phase 1 research update (no new release)

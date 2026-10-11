@@ -46,7 +46,7 @@ Keep both files.
 
 ## Before and after screenshots
 
-Do this for every skill whose instructions changed.
+Do this for visual instruction changes. Architecture-only context-budget maintenance uses nonvisual checks below; no screenshots, HTML fixtures or before/after images are required.
 
 1. Pick one test idea.
 2. Build the same screen twice, at phone width 390 by 844 or a normal desktop width. Once as the old skill would allow it. Once as the new skill would allow it.
@@ -70,3 +70,19 @@ The script writes the HTML, screenshots it with headless Chrome, and builds the 
 State in the after report that the screenshots illustrate the written rules. They are not a second model's output.
 
 Save examples/before-after/ only after the PNG files exist. README links must resolve.
+
+## Context-budget maintenance
+
+Install and run all required checks from the pack root:
+
+```bash
+python3 -m pip install -r evals/requirements-context.txt
+python3 evals/check_sources.py --self-test
+python3 evals/check_context.py
+python3 -m unittest discover -s tests -p 'test_*.py'
+git diff --check
+```
+
+The standard-library source checker also runs link/orphan/loading-policy structure checks. The separate required token checker fails when its pinned dependency or encoding is unavailable. CI runs both and all regression tests. Word counts remain informational except for the retained entry concision check.
+
+[Migration protocol](../evals/context-budget-migration/protocol.md) defines boundary checks and loading trials. Preserve old reports and failures unchanged. Structural checks verify explicit loading conditions, not their semantic relevance. Fresh loading smoke tests do not prove every agent/client follows them. Keep canonical ownership documented; do not add complex duplicate-content detection. No visual artifacts for this migration.

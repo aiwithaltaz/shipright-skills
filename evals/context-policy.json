@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "tokenizer": {
+    "package": "tiktoken",
+    "version": "0.12.0",
+    "encoding": "cl100k_base"
+  },
+  "limits": {
+    "skill_tokens": 4500,
+    "shared_file_tokens": 2000,
+    "reference_tokens": 4000,
+    "normal_path_tokens": 12000,
+    "always_shared_tokens": 3000,
+    "shared_total_tokens": 5000
+  },
+  "review_thresholds": {
+    "skill_reference_tokens": 50000,
+    "repository_bytes": 100000000,
+    "asset_bytes": 10000000
+  },
+  "always_loaded_shared": [
+    "skills/_shared/operating-contract.md",
+    "skills/_shared/intake.md"
+  ],
+  "ownership": {
+    "shared": "Each shared file owns its universal rules; operating-contract owns authority/evidence, intake owns questions, flow-rules owns F1-F3, output-folder owns exports.",
+    "references": "The skill directory containing a reference is its canonical owner. Other skills link to that file; do not copy its detailed rules.",
+    "exceptions": [
+      "Short incomplete-pack fallback safeguards in SKILL.md",
+      "Synchronized marked F1-F3 export blocks in project templates"
+    ]
+  },
+  "skills": {
+    "product-design": {
+      "entry": "skills/product-design/SKILL.md",
+      "required_shared": [
+        "skills/_shared/operating-contract.md",
+        "skills/_shared/intake.md",
+        "skills/_shared/flow-rules.md"
+      ],
+      "conditional_references": {
+        "skills/product-design/references/decision-checklist.md": {
+          "when": "Read [decision-checklist.md](references/decision-checklist.md)."
+        },
+        "skills/product-design/references/research-methods.md": {
+          "when": "When uncertainty changes a decision, use [research-methods.md](references/research-methods.md)."
+        },
+        "skills/product-design/references/research-evidence.md": {
+          "when": "For claims, missing sources or provisional direction, use [research-evidence.md](references/research-evidence.md)."
+        },
+        "skills/product-design/references/research-planning.md": {
+          "when": "For requested/needed study preparation, use [research-planning.md](references/research-planning.md)."
+        },
+        "skills/product-design/references/research-sources.md": {
+          "when": "For source provenance or framework use, load [research-sources.md](references/research-sources.md)."
+        },
+        "skills/product-design/references/opportunity-research.md": {
+          "when": "Use [opportunity-research.md](references/opportunity-research.md) only for requested/agreed market scans."
+        },
+        "skills/product-design/references/states-and-flows.md": {
+          "when": "3. Read [states-and-flows.md](references/states-and-flows.md) for effects."
+        },
+        "skills/product-design/references/operational-flows.md": {
+          "when": "4. For staff/related records, read [operational-flows.md](references/operational-flows.md)."
+        },
+        "skills/product-design/references/doc-set.md": {
+          "when": "Use [doc-set.md](references/doc-set.md) and [output-folder.md](../_shared/output-folder.md) for requested files."
+        }
+      },
+      "normal_paths": [
+        {
+          "task": "Product framing",
+          "references": [
+            "skills/product-design/references/decision-checklist.md"
+          ]
+        },
+        {
+          "task": "Research decision or plan",
+          "references": [
+            "skills/product-design/references/research-evidence.md",
+            "skills/product-design/references/research-methods.md",
+            "skills/product-design/references/research-planning.md",
+            "skills/product-design/references/research-sources.md"
+          ]
+        },
+        {
+          "task": "Flows and state effects",
+          "references": [
+            "skills/product-design/references/states-and-flows.md",
+            "skills/product-design/references/operational-flows.md"
+          ]
+        },
+        {
+          "task": "Requested documents",
+          "references": [
+            "skills/product-design/references/doc-set.md",
+            "skills/_shared/output-folder.md"
+          ]
+        }
+      ]
+    },
+    "ship-check": {
+      "entry": "skills/ship-check/SKILL.md",
+      "required_shared": [
+        "skills/_shared/operating-contract.md",
+        "skills/_shared/intake.md"
+      ],
+      "conditional_references": {
+        "skills/ship-check/references/launch-items.md": {
+          "when": "Read [launch-items.md](references/launch-items.md) for evidence requirements."
+        },
+        "skills/ui-ux-design/references/state-coverage.md": {
+          "when": "For accessibility, responsive access or form checks, read [state-coverage.md](../ui-ux-design/references/state-coverage.md)."
+        },
+        "skills/ux-critique/references/bounded-verification.md": {
+          "when": "Use [bounded verification](../ux-critique/references/bounded-verification.md) when relevant."
+        }
+      },
+      "normal_paths": [
+        {
+          "task": "Full launch review",
+          "references": [
+            "skills/ship-check/references/launch-items.md",
+            "skills/ui-ux-design/references/state-coverage.md",
+            "skills/ux-critique/references/bounded-verification.md"
+          ]
+        },
+        {
+          "task": "Focused release item",
+          "references": [
+            "skills/ship-check/references/launch-items.md"
+          ]
+        }
+      ]
+    },
+    "ui-ux-design": {
+      "entry": "skills/ui-ux-design/SKILL.md",
+      "required_shared": [
+        "skills/_shared/operating-contract.md",
+        "skills/_shared/intake.md",
+        "skills/_shared/flow-rules.md"
+      ],
+      "conditional_references": {
+        "skills/ui-ux-design/references/anti-slop-rules.md": {
+          "when": "4. Trace every visible element to the current phase. Read \"Default screens to leave out\" in [anti-slop-rules.md](references/anti-slop-rules.md) before adding a region. Put later ideas in notes, not UI."
+        },
+        "skills/ui-ux-design/references/layout-and-hierarchy.md": {
+          "when": "| Sections, reading order, grid, mobile priorities | [layout-and-hierarchy.md](references/layout-and-hierarchy.md) |"
+        },
+        "skills/ui-ux-design/references/icons-and-placement.md": {
+          "when": "| Icons, profile home, selected rows, nav and action placement | [icons-and-placement.md](references/icons-and-placement.md) |"
+        },
+        "skills/ui-ux-design/references/operator-workspaces.md": {
+          "when": "| Operator desk, pending work and task-focused status | [operator-workspaces.md](references/operator-workspaces.md) |"
+        },
+        "skills/ui-ux-design/references/state-coverage.md": {
+          "when": "| Empty, loading, errors, pending work and difficult content | [state-coverage.md](references/state-coverage.md) |"
+        },
+        "skills/ui-ux-design/references/references-and-design-system.md": {
+          "when": "| Preserve/Establish, tokens and supplied references | [references-and-design-system.md](references/references-and-design-system.md) |"
+        },
+        "skills/ux-critique/references/slop-tells.md": {
+          "when": "| Concrete review prompts for competing actions or unsupported widgets | [slop-tells.md](../ux-critique/references/slop-tells.md) |"
+        },
+        "skills/ux-critique/references/bounded-verification.md": {
+          "when": "| Available implementation evidence | [bounded-verification.md](../ux-critique/references/bounded-verification.md) |"
+        },
+        "skills/ui-ux-design/references/motion.md": {
+          "when": "| Existing or requested animation | [motion.md](references/motion.md) |"
+        },
+        "skills/ui-ux-design/references/ui-copy.md": {
+          "when": "| Labels, errors and operator language | [ui-copy.md](references/ui-copy.md) |"
+        },
+        "skills/ui-ux-design/references/build-handoff.md": {
+          "when": "| Builder instructions | [build-handoff.md](references/build-handoff.md) |"
+        },
+        "skills/ux-critique/references/severity-rubric.md": {
+          "when": "| Severity of a concrete review finding | [severity-rubric.md](../ux-critique/references/severity-rubric.md) |"
+        }
+      },
+      "normal_paths": [
+        {
+          "task": "Screen handoff",
+          "references": [
+            "skills/ui-ux-design/references/anti-slop-rules.md",
+            "skills/ui-ux-design/references/layout-and-hierarchy.md",
+            "skills/ui-ux-design/references/icons-and-placement.md",
+            "skills/ui-ux-design/references/state-coverage.md",
+            "skills/ui-ux-design/references/references-and-design-system.md",
+            "skills/ui-ux-design/references/build-handoff.md"
+          ]
+        },
+        {
+          "task": "Focused UI copy",
+          "references": [
+            "skills/ui-ux-design/references/ui-copy.md"
+          ]
+        },
+        {
+          "task": "Implementation verification",
+          "references": [
+            "skills/ux-critique/references/bounded-verification.md",
+            "skills/ui-ux-design/references/state-coverage.md"
+          ]
+        }
+      ]
+    },
+    "ux-critique": {
+      "entry": "skills/ux-critique/SKILL.md",
+      "required_shared": [
+        "skills/_shared/operating-contract.md",
+        "skills/_shared/intake.md",
+        "skills/_shared/flow-rules.md"
+      ],
+      "conditional_references": {
+        "skills/ux-critique/references/requirements-and-feedback.md": {
+          "when": "Use [requirements-and-feedback.md](references/requirements-and-feedback.md) for stakeholder changes or multi-step flows."
+        },
+        "skills/ux-critique/references/existing-app.md": {
+          "when": "Use [existing-app.md](references/existing-app.md) for existing products. A review is read-only; already authorized fixes need no repeated approval."
+        },
+        "skills/ux-critique/references/bounded-verification.md": {
+          "when": "Use [bounded-verification.md](references/bounded-verification.md) for available runtime evidence."
+        },
+        "skills/ux-critique/references/slop-tells.md": {
+          "when": "[slop-tells.md](references/slop-tells.md) helps identify competing actions, duplicate identities and unsupported widgets."
+        },
+        "skills/ui-ux-design/references/ui-copy.md": {
+          "when": "Use [UI copy](../ui-ux-design/references/ui-copy.md). Do not guess whether AI wrote it."
+        },
+        "skills/ux-critique/references/plan-review.md": {
+          "when": "Only when requested, use [plan-review.md](references/plan-review.md) to score Product, Design and Build."
+        },
+        "skills/ux-critique/references/severity-rubric.md": {
+          "when": "Use [severity-rubric.md](references/severity-rubric.md): Blocker for critical failure, Major for substantial noncritical friction, Polish for small craft issues."
+        }
+      },
+      "normal_paths": [
+        {
+          "task": "Existing app review",
+          "references": [
+            "skills/ux-critique/references/existing-app.md",
+            "skills/ux-critique/references/requirements-and-feedback.md",
+            "skills/ux-critique/references/severity-rubric.md",
+            "skills/ux-critique/references/slop-tells.md",
+            "skills/ux-critique/references/bounded-verification.md",
+            "skills/ui-ux-design/references/ui-copy.md"
+          ]
+        },
+        {
+          "task": "Requested plan review",
+          "references": [
+            "skills/ux-critique/references/plan-review.md",
+            "skills/ux-critique/references/severity-rubric.md"
+          ]
+        }
+      ]
+    }
+  }
+}
