@@ -90,3 +90,7 @@ The standard-library source checker also runs link/orphan/loading-policy structu
 ## Phase 2 synthesis
 
 Run `python3 tests/test_phase2_synthesis.py` or normal unittest discovery after both required checkers. Preserve all Phase 1 protections; its old deferral test now rejects unsupported personas/findings under the new optional owner. [Protocol](../evals/phase-2-research-synthesis/protocol.md) and [rubric](../evals/phase-2-research-synthesis/rubric.md) were frozen before trials. Synthetic inputs are not performed research. Compare frozen main and Phase 2 using identical prompts, fresh isolated trials and blind grading; preserve outputs/failures and disclose limitations. No visual artifacts for this phase.
+
+## Phase 3 information architecture
+
+Run `python3 tests/test_phase3_ia.py` or unittest discovery with both required checkers. Protect optional/direct loading, sourced objects/relationships/routes/categories, actual capabilities, direct-entry/retrieval boundaries and honest unperformed studies. [Protocol](../evals/phase-3-information-architecture/protocol.md) and [rubric](../evals/phase-3-information-architecture/rubric.md) precede trials. Synthetic cases are not research or security validation. Keep historical evidence and known failures unchanged. No visual artifacts or Phase 4.

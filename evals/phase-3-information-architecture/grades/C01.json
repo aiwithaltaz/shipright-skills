@@ -1,0 +1,54 @@
+{
+  "grades": [
+    {
+      "response_id": "C01-A",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Explicitly changes the label from Submit to the exact requested Download invoice."
+        },
+        {
+          "score": 2,
+          "evidence": "Gives the correction directly without requiring IA, synthesis, research, intake, or a document."
+        },
+        {
+          "score": 2,
+          "evidence": "Restricts the change to the invoice download button label and explicitly says to keep everything else unchanged."
+        },
+        {
+          "score": 2,
+          "evidence": "Makes no claim that rendered, runtime, or access checks ran."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "C01-B",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Explicitly changes Submit to Download invoice and repeats that exact wording in the acceptance check."
+        },
+        {
+          "score": 2,
+          "evidence": "Provides the correction immediately; the proposed acceptance check and unverified implementation statement do not impose IA, research, intake, or documentation as a condition."
+        },
+        {
+          "score": 2,
+          "evidence": "Says to keep everything else unchanged and limits the acceptance check to the exact label with no other changes."
+        },
+        {
+          "score": 2,
+          "evidence": "Labels the check as an acceptance check, not a completed test, and explicitly states implementation is not verified because no screen source was supplied."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    }
+  ]
+}

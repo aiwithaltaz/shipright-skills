@@ -26,6 +26,8 @@ Use current explicit feedback, approved jobs and sourced components. Do not copy
 Profile/account home: <!-- one canonical location per layout -->
 An active nav item does not imply unread work. Notifications need their own real source.
 
+For relevant IA handoff, retain stable node/object IDs, parent/related destinations, known routes versus views/states, access source and direct-entry/return behavior. Maps may be tables; no automatic new screens/routes. For authorized reorganization, record affected old/new labels/addresses, bookmarks and migration limits; unavailable redirect support stays Unknown. Search/filter fields, match and combination rules require a source or explicit Proposed status.
+
 ## Flow rules (must pass)
 
 <!-- FLOW-EXPORT-START -->

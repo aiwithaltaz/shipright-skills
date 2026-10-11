@@ -23,6 +23,7 @@ Keep Proposed decisions separate from build scope. No fixed risk quota; include 
 
 - PRODUCT.md is a short export of the PRD, not a competing source.
 - Roles in access rules match the actors allowed on screens.
+- When IA is relevant, object/relationship IDs, labels and route maps agree with approved jobs and access boundaries. Proposed structure is not an implemented route or verified permission.
 - Screen IDs match jobs and tickets. Tickets name affected states or explain non-applicability.
 - Screen scope matches the current phase, including explicit exclusions.
 - DESIGN.md and screen specifications reference the same sourced tokens and components.

@@ -51,6 +51,10 @@ Claude Design ingestion and all native client installs have not been verified fo
 
 Product-design can optionally turn supplied records into traceable findings and proposed decisions. It preserves contradictory evidence and isolated serious problems, separates recalled accounts from observed actions, and keeps weak conclusions as hypotheses. Users see concise findings, limits and recommendations; evidence does not authorize new scope or validate a solution. Clear corrections and planning-only tasks skip synthesis. No automatic personas, screens or visual artifacts.
 
+## Phase 3 IA update (no new release)
+
+Product-design can optionally organize approved objects/content, relationships, labels, navigation, search/filter scope and structural maps before screens. Actual roles and capabilities control access; hidden navigation is never security enforcement. Card sorting and tree testing are optional plans unless real evidence exists. Clear corrections and sufficiently defined structures skip IA. No new features, invented routes or visual artifacts follow from a map. Results and limits are in [Phase 3 results](evals/phase-3-information-architecture/results.md).
+
 ## Context budgets
 
 The knowledge collection can grow without a global word cap. Small entry files load task-relevant references directly. Maximums: 4,500 tokens per entry, 2,000 per shared file, 4,000 per reference, and 12,000 per declared normal loading path. Contract and intake stay small and always loaded; safeguards must not be skipped to fit a budget.

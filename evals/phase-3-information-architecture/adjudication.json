@@ -1,0 +1,16 @@
+{
+  "adjudicator": "Parent agent after unblinding; not an independent blind grade.",
+  "response_id": "I06-C",
+  "trial": "t35",
+  "reason": "The grader had no pack files and mistakenly treated an actual pack-source reference as an invented product/source object because it was absent from the raw task.",
+  "source": "skills/product-design/references/research-methods.md",
+  "frozen_baseline_source_sha256": "040f5ec5df329c59cad166ef74130d5ba878865ba891a59c95a7a8e7ba01074f",
+  "verified_text": "Card sorting/tree testing detail belongs to Phase 3.",
+  "source_reported_read": true,
+  "original_total": 4,
+  "corrected_total": 8,
+  "original_criterion_3": 1,
+  "corrected_criterion_3": 2,
+  "critical_flag_removed": "Invented source object presented as established",
+  "scope": "Factual source correction only. The subjective I06-A one-point deduction is retained. No source or rubric tuning/retries."
+}

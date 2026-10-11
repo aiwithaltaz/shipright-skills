@@ -1,0 +1,154 @@
+{
+  "grades": [
+    {
+      "response_id": "I02-A",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Keeps Invoices, Templates and Help as the existing destinations; explicitly identifies Draft and Sent as metadata on individual invoice records, not content types or top-level navigation."
+        },
+        {
+          "score": 2,
+          "evidence": "Retains the concrete current labels, rejects unsupported divisions to reach seven categories, and explains that Work, Studio and Resources obscure the supplied content."
+        },
+        {
+          "score": 2,
+          "evidence": "Preserves R1\u2019s bills and R2\u2019s invoices vocabulary, states no navigation task or card sort occurred, and identifies the fictional records and hierarchy as unvalidated."
+        },
+        {
+          "score": 2,
+          "evidence": "Preserves existing routes and capabilities and adds no screens, filters or search; offers an optional short task-based check with confusion and invoice-location difficulty as reasons to reconsider."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I02-B",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "The table maps only the existing Invoices list, saved Templates and Help articles; Draft and Sent remain metadata on invoice records rather than separate content types or destinations."
+        },
+        {
+          "score": 2,
+          "evidence": "Retains Invoices, Templates and Help, rejects seven categories as unsupported, and declines the vague stakeholder groupings without inventing categories."
+        },
+        {
+          "score": 2,
+          "evidence": "Explicitly records R1\u2019s bills and R2\u2019s invoices as conflicting fictional vocabulary, not findability evidence; states no navigation task or card sort occurred and no actual validation exists."
+        },
+        {
+          "score": 2,
+          "evidence": "Preserves destinations and routes without new pages, filters or search; proposes an optional small existing-interface navigation task with neutral wording and a concrete confusion signal."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I02-C",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Flat navigation contains only the three approved destinations; Draft and Sent stay attached to invoice records in their existing presentation, not navigation entries or new capabilities."
+        },
+        {
+          "score": 2,
+          "evidence": "Retains existing concrete labels, refuses four unsupported additions to reach seven, and treats Bills only as a future candidate rather than another destination or approved interface synonym."
+        },
+        {
+          "score": 2,
+          "evidence": "Preserves both R1 and R2 terms, explicitly calls the records fictional, and denies evidence of a preferred label, shared mental model or navigation success; acknowledges absent tasks and card sort."
+        },
+        {
+          "score": 2,
+          "evidence": "Provides a complete scoped recommendation preserving destinations and capabilities with no screens or search; proposes a small optional location check across existing content, with confusion prompting reconsideration."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I02-D",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Maps only the existing invoices list, saved templates and help articles; Draft and Sent remain invoice lifecycle metadata and Bills is not a separate object or destination."
+        },
+        {
+          "score": 2,
+          "evidence": "Retains the current three labels and rejects the seven-category quota; explains possible ambiguity in Work, Studio and Resources as rationale rather than inventing approved mappings."
+        },
+        {
+          "score": 2,
+          "evidence": "Reports both R1\u2019s bills and R2\u2019s invoices, distinguishes reported terms from preference and successful navigation, and explicitly states fictional records, absent navigation tasks and absent card sort."
+        },
+        {
+          "score": 2,
+          "evidence": "Preserves scope without new screens, search, views or filters; suggests a conditional small navigation task using invoice and bill wording and identifies repeated wrong choices or inability to identify Invoices as reconsideration triggers."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I02-E",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Uses only Invoices, saved Templates and Help articles; identifies Draft and Sent as each invoice\u2019s status, not distinct content types or destinations."
+        },
+        {
+          "score": 2,
+          "evidence": "Keeps the three existing concrete labels, rejects four unsupported categories, and explains why a premium tone does not justify abstract replacements or grouping layers."
+        },
+        {
+          "score": 2,
+          "evidence": "Preserves R1\u2019s bills and R2\u2019s invoices as conflicting fictional terms, explicitly says neither establishes findability, and states no navigation task or card sort occurred."
+        },
+        {
+          "score": 2,
+          "evidence": "Preserves destinations, routes and capabilities without adding screens, search, filters or status destinations; offers an optional small task check only if the naming dispute needs resolution and gives difficulty locating invoices as a challenge signal."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I02-F",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "The table includes only existing invoice records, saved templates and help articles; Draft and Sent remain invoice lifecycle metadata with their existing display, not top-level destinations, tabs or filters."
+        },
+        {
+          "score": 2,
+          "evidence": "Retains Invoices, Templates and Help, rejects seven categories without supporting content, and explains that the stakeholder\u2019s abstract premium labels lack a findability basis."
+        },
+        {
+          "score": 2,
+          "evidence": "Preserves both fictional interview terms and says neither establishes successful navigation; explicitly notes no task or card sort occurred and synthetic records establish no actual research findings."
+        },
+        {
+          "score": 2,
+          "evidence": "Offers an actionable scope-preserving structure with no new screens, search or capabilities; suggests a conditional focused check of existing labels for concrete invoice, template and help tasks, with confusion prompting label reconsideration."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    }
+  ]
+}

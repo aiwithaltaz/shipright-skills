@@ -1,0 +1,154 @@
+{
+  "grades": [
+    {
+      "response_id": "I04-A",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Accurately maps Reviewer assigned-only and Coordinator all-invoice reads to /invoices and /invoices/:id; explicitly denies changes for both and preserves the two roles and existing destinations."
+        },
+        {
+          "score": 2,
+          "evidence": "Explicitly says hiding navigation only changes discoverability and requires the role/assignment boundary on each invoice request and collection/search query, independently of navigation."
+        },
+        {
+          "score": 2,
+          "evidence": "Separately identifies direct-link access as Fail and suggestions/facet-count disclosure as Fail, explaining bypass through changed identifiers and exposure of protected names or existence."
+        },
+        {
+          "score": 2,
+          "evidence": "Rejects Permissions Pass, distinguishes fictional requirement failures from runtime Not verified, and specifies allowed/denied reads, retrieval metadata, Coordinator access and write-denial checks after a scoped fix. Recovery is expressly Proposed and unspecified details are responsibly left open."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I04-B",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "The map gives Reviewer assigned-only and Coordinator all-invoice reads on both supplied routes, uses those scopes for navigation/search/counts, and denies any invoice-changing request for both without adding roles or routes."
+        },
+        {
+          "score": 2,
+          "evidence": "States that hidden navigation does not authorize access and places permission checks before returned data at the trusted server/data boundary for detail, list, suggestions and aggregate counts."
+        },
+        {
+          "score": 2,
+          "evidence": "Preserves separate Fail rows for direct-link detail disclosure and search/aggregate visibility, and explicitly identifies protected identifiers/details and count-based disclosure as consequences."
+        },
+        {
+          "score": 2,
+          "evidence": "Keeps permissions blocked, calls actual implementation behavior Not verified because no runtime tests ran, and assigns proportionate implementation/verification work covering both roles, allowed/denied links, scoped retrieval and rejected writes."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I04-C",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Precisely maps both approved roles to /invoices and /invoices/:id with assignment-only Reviewer access and all-invoice Coordinator access; both roles are read-only, and denial recovery returns to the existing list route."
+        },
+        {
+          "score": 2,
+          "evidence": "Rejects menu visibility as permission and requires authorization on every relevant request, including direct object reads and changed identifiers, before returning content or identifying metadata."
+        },
+        {
+          "score": 2,
+          "evidence": "Explicitly labels both direct-link disclosure and search metadata disclosure Fail against policy and explains how suggestions and facet counts expose unassigned records even without opening them."
+        },
+        {
+          "score": 2,
+          "evidence": "Separates synthetic scenario defects from runtime Not verified, blocks readiness, proposes correction within approved policy, and lists concrete checks including both roles, denied changes, missing IDs and assignment changes. Denial presentation and unresolved session behavior are identified as proposals/Unknowns rather than asserted implementation facts."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I04-D",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "The scoped table retains exactly Reviewer and Coordinator, assigned-only versus all-invoice reads on both existing routes, and denied invoice changes for both. Navigation follows the corresponding permitted set."
+        },
+        {
+          "score": 2,
+          "evidence": "Explicitly says hidden navigation is not an authorization boundary and requires trusted-boundary checks for list, detail, search and aggregation requests before data is returned."
+        },
+        {
+          "score": 2,
+          "evidence": "Gives distinct Fail findings for direct-link authorization and search/aggregation isolation, with evidence that any invoice opens and unassigned invoices contribute suggestions/counts; successful navigation does not dilute these failures."
+        },
+        {
+          "score": 2,
+          "evidence": "Blocks permissions readiness and explicitly leaves runtime access, denial recovery and mutation rejection Not verified. The narrowly labeled specification-stage Pass concerns supplied role/route constraints, not security or runtime validation. Proposed mechanisms, Unknown dependencies and concrete post-fix checks are appropriate to the evidence."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I04-E",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Maps Reviewer assigned-only and Coordinator all-invoice access to the two supplied routes and existing retrieval surfaces; denies invoice changes for both and explicitly preserves exactly two roles and no new destinations."
+        },
+        {
+          "score": 2,
+          "evidence": "Distinguishes discoverability and sign-in identity from authorization, requires per-invoice checks at the server/data boundary, and explains why hiding or filtering unauthorized data after receipt leaves exposure intact."
+        },
+        {
+          "score": 2,
+          "evidence": "Treats direct-link access and suggestions/count disclosure as critical failures and separate Fail rows, requiring inaccessible records to contribute no names, values or counts."
+        },
+        {
+          "score": 2,
+          "evidence": "Rejects Permissions Pass, marks runtime/read-only enforcement Not verified, and specifies both-role read/write and response-level disclosure checks. The enforcement approach remains Proposed, and fictional records are not presented as research or security certification."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I04-F",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Correctly gives Reviewer assigned-only reads and Coordinator all-invoice reads on /invoices and /invoices/:id, aligns navigation with the same scopes, and denies writes for both while retaining the existing destinations and roles."
+        },
+        {
+          "score": 2,
+          "evidence": "Explicitly rejects hidden navigation as enforcement and requires request/data-access authorization on every invoice request, including changed IDs, with retrieval scoped before results, suggestions or counts are produced."
+        },
+        {
+          "score": 2,
+          "evidence": "Identifies two architecture failures and preserves separate Fail rows for direct-entry reads and retrieval disclosure; explains that hidden results do not prevent metadata or aggregation from revealing protected content/names/existence."
+        },
+        {
+          "score": 2,
+          "evidence": "Keeps readiness blocked, states no runtime tests occurred, and gives proportionate allowed/denied cases for both roles, changed IDs, metadata and attempted writes. Recovery/session behavior is explicitly proposed or unresolved, and synthetic records are not called actual research or a security certification."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    }
+  ]
+}

@@ -74,6 +74,21 @@
         },
         "skills/product-design/references/synthesis-sources.md": {
           "when": "For synthesis-source provenance, use [synthesis-sources.md](references/synthesis-sources.md)."
+        },
+        "skills/product-design/references/information-architecture.md": {
+          "when": "For authorized object/content organization, labels or maps, use [information-architecture.md](references/information-architecture.md)."
+        },
+        "skills/product-design/references/findability.md": {
+          "when": "For approved browsing, search or filter decisions, use [findability.md](references/findability.md)."
+        },
+        "skills/product-design/references/roles-and-navigation.md": {
+          "when": "When actual capabilities affect destinations or retrieval, use [roles-and-navigation.md](references/roles-and-navigation.md)."
+        },
+        "skills/product-design/references/ia-research.md": {
+          "when": "When grouping/findability uncertainty warrants a study, use [ia-research.md](references/ia-research.md)."
+        },
+        "skills/product-design/references/ia-sources.md": {
+          "when": "For IA-source provenance, use [ia-sources.md](references/ia-sources.md)."
         }
       },
       "normal_paths": [
@@ -113,6 +128,36 @@
             "skills/product-design/references/research-synthesis.md",
             "skills/product-design/references/research-to-decisions.md",
             "skills/product-design/references/synthesis-sources.md"
+          ]
+        },
+        {
+          "task": "Optional content organization and maps",
+          "references": [
+            "skills/product-design/references/information-architecture.md",
+            "skills/product-design/references/roles-and-navigation.md"
+          ]
+        },
+        {
+          "task": "Optional findability contract",
+          "references": [
+            "skills/product-design/references/information-architecture.md",
+            "skills/product-design/references/findability.md",
+            "skills/product-design/references/roles-and-navigation.md"
+          ]
+        },
+        {
+          "task": "Optional IA study preparation",
+          "references": [
+            "skills/product-design/references/ia-research.md",
+            "skills/product-design/references/research-methods.md",
+            "skills/product-design/references/research-planning.md"
+          ]
+        },
+        {
+          "task": "IA provenance review",
+          "references": [
+            "skills/product-design/references/information-architecture.md",
+            "skills/product-design/references/ia-sources.md"
           ]
         }
       ]

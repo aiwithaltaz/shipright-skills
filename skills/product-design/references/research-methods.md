@@ -22,7 +22,7 @@ Attitudinal means reported beliefs/experience; behavioral means observed/measure
 Classify each record: hybrid sessions can collect both.
 Qualitative explores how/why; quantitative estimates how many/how much with adequate sampling.
 A/B testing needs traffic, sound instrumentation and a statistical plan; do not recommend automatically.
-Card sorting/tree testing detail belongs to Phase 3.
+For authorized IA uncertainty, optional card sorting/tree testing guidance is owned by ia-research.md, directly linked from SKILL.md; recommendations are not performed studies.
 
 ## Shared contract
 

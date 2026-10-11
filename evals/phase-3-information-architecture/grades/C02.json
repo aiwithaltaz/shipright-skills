@@ -1,0 +1,54 @@
+{
+  "grades": [
+    {
+      "response_id": "C02-A",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Uses three bounded questions to establish the first learner (students or self-directed learners), the outcome (organize/find versus choose what to learn next), and first-version exclusions, without deciding the full product."
+        },
+        {
+          "score": 2,
+          "evidence": "Keeps intake to three questions. Each provides two understandable alternatives plus a free-text option, a concrete example, a rationale, a proposed pick or explicit Unknown, and text explaining how to delegate or retain the choice."
+        },
+        {
+          "score": 2,
+          "evidence": "Emits only decision cards. Classes, tutorials, study planning, quizzes, summaries and sharing appear as examples or exclusion choices, not approved objects, routes, screens, taxonomy or a document set."
+        },
+        {
+          "score": 2,
+          "evidence": "Makes no research or market-validation claim. The outcome recommendation is grounded in the requested resource organization, the learner is explicitly unknown, and the exclusions make the next scope decision useful without a method lecture."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "C02-B",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Uses three bounded questions to establish independent learners versus students, saving/retrieval versus a learning sequence, and explicit exclusions. These establish actor, outcome and scope while leaving product decisions open."
+        },
+        {
+          "score": 2,
+          "evidence": "Keeps intake to three questions with understandable choices, concrete photography/coursework examples, a free-text alternative, recommendations or explicit Unknown, and explanatory text assigning delegation versus retained ownership."
+        },
+        {
+          "score": 2,
+          "evidence": "Provides decision cards only. Articles, videos, courses, sequences, shared collections and tracking are examples or proposed exclusion options; none is presented as an approved taxonomy, product object, architecture, screen or route."
+        },
+        {
+          "score": 2,
+          "evidence": "Explicitly identifies the saving/retrieval recommendation as a proposed direction, not a research finding. It makes no validation claim and offers practical outcome and scope decisions without a method lecture."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    }
+  ]
+}

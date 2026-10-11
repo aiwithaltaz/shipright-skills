@@ -1,0 +1,146 @@
+[
+  [
+    "optional_ia",
+    "skills/product-design/SKILL.md",
+    "Skip IA for clear corrections or sufficient existing structure",
+    "Always run IA for every correction"
+  ],
+  [
+    "framing_first",
+    "skills/product-design/references/information-architecture.md",
+    "An unframed idea still follows shared intake before objects or maps",
+    "Generate objects and maps for every vague idea"
+  ],
+  [
+    "sourced_structure",
+    "skills/product-design/references/information-architecture.md",
+    "Do not invent objects, roles, relationships, routes, categories or filters",
+    "Invent missing objects, roles, relationships, routes, categories and filters"
+  ],
+  [
+    "unknown_relationships",
+    "skills/product-design/references/information-architecture.md",
+    "Unknown cardinality, ownership or deletion stays Unknown",
+    "Assume ownership and cascade deletion for unknown relationships"
+  ],
+  [
+    "no_quotas",
+    "skills/product-design/references/information-architecture.md",
+    "not fixed category counts or depth limits",
+    "always seven categories and three levels"
+  ],
+  [
+    "grounded_labels",
+    "skills/product-design/references/information-architecture.md",
+    "Proposed grouping or label changes must derive from supplied content and authorized decisions",
+    "Create unsupported category labels to appear comprehensive"
+  ],
+  [
+    "views_not_routes",
+    "skills/product-design/references/information-architecture.md",
+    "Do not turn every tab or state into a route",
+    "Turn every state into a new route"
+  ],
+  [
+    "unknown_paths",
+    "skills/product-design/references/information-architecture.md",
+    "Mark addresses Unknown rather than inventing paths",
+    "Guess missing URL paths"
+  ],
+  [
+    "migration_limits",
+    "skills/product-design/references/information-architecture.md",
+    "Do not assume redirects, aliases or migration capabilities exist",
+    "Assume redirects always exist"
+  ],
+  [
+    "no_added_filters",
+    "skills/product-design/references/findability.md",
+    "Do not add search, filters, saved searches, tags or analytics to complete a checklist",
+    "Add filters, tags and analytics by default"
+  ],
+  [
+    "unknown_retrieval",
+    "skills/product-design/references/findability.md",
+    "Unknown matching, indexing, ranking, typo/synonym support, counts and scale stay Unknown",
+    "Invent search support and result counts"
+  ],
+  [
+    "combination_authority",
+    "skills/product-design/references/findability.md",
+    "Define within-facet and across-facet combination rules only when sourced or authorized",
+    "Choose OR and AND defaults without authority"
+  ],
+  [
+    "clear_is_not_delete",
+    "skills/product-design/references/findability.md",
+    "clearing criteria is not deleting records",
+    "clear filters by deleting records"
+  ],
+  [
+    "private_search",
+    "skills/product-design/references/findability.md",
+    "Do not put private queries, identifiers or tokens in URLs, analytics or logs",
+    "Persist private queries and tokens in URLs"
+  ],
+  [
+    "actual_roles",
+    "skills/product-design/references/roles-and-navigation.md",
+    "No default Owner/Admin/Member/Guest roles",
+    "Always seed Owner/Admin/Member/Guest roles"
+  ],
+  [
+    "hidden_not_authorization",
+    "skills/product-design/references/roles-and-navigation.md",
+    "Hidden navigation is never access control",
+    "Hidden navigation is sufficient access control"
+  ],
+  [
+    "direct_entry_scope",
+    "skills/product-design/references/roles-and-navigation.md",
+    "Require authorization on direct requests and object access",
+    "Allow any signed-in actor through direct links"
+  ],
+  [
+    "metadata_boundaries",
+    "skills/product-design/references/roles-and-navigation.md",
+    "Apply the same data boundary to search, previews, suggestions and facet/result counts",
+    "Expose protected metadata in search suggestions and counts"
+  ],
+  [
+    "isolated_risks",
+    "skills/product-design/references/roles-and-navigation.md",
+    "Retain isolated accessibility and safety issues even without repeated patterns",
+    "Drop isolated safety issues unless repeated"
+  ],
+  [
+    "unperformed_studies",
+    "skills/product-design/references/ia-research.md",
+    "Plans stay unperformed unless real session evidence is available",
+    "Treat study plans as completed research"
+  ],
+  [
+    "ai_not_participants",
+    "skills/product-design/references/ia-research.md",
+    "expert or AI sorting is not participant research",
+    "AI sorting counts as validated participant research"
+  ],
+  [
+    "neutral_tasks",
+    "skills/product-design/references/ia-research.md",
+    "Write realistic finding tasks without revealing the target label/path",
+    "Tell participants the target path in each task"
+  ],
+  [
+    "tree_limits",
+    "skills/product-design/references/ia-research.md",
+    "Text-only tree tests omit interface cues, search and interactive accessibility",
+    "Tree testing proves full interface accessibility"
+  ],
+  [
+    "source_limits",
+    "skills/product-design/references/ia-sources.md",
+    "Use the sources as guidance, never this product's user findings or permission policy",
+    "Use guides as validated findings and access approval"
+  ]
+]

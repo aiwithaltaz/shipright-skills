@@ -53,6 +53,8 @@ Exclude participant identities and raw private records from builder exports.
 | --- | --- | --- |
 | <!-- --> | <!-- --> | <!-- --> |
 
+For relevant IA work only, distinguish objects from fields/views and retain source-backed relationship directions, known one/many and required/optional constraints, ownership and unresolved effects. Unknown rules stay Unknown; no automatic database schema. Record proposed vocabulary/grouping decisions separately from approved scope.
+
 ## 7. Jobs and journey
 
 | Job ID | User job | Phase | Priority | Screen / flow |

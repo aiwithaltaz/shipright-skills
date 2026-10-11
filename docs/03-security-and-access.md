@@ -31,6 +31,7 @@ Use only actual roles and capabilities from the current phase. Do not seed Owner
 
 No secrets or sensitive phone/email searches in URLs, analytics or logs by default.
 UI visibility is not access enforcement. Record required server-side boundaries and verification limits.
+For role-based IA only when relevant, map actual capabilities to existing/approved destinations, direct-entry object scope and denied recovery. Include retrieval previews/suggestions/counts in data boundaries; hiding a menu never grants or enforces permission. No invented roles or security Pass from a map.
 
 ## Consequential actions
 
