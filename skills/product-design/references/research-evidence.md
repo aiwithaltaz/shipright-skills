@@ -20,7 +20,7 @@ Use existing notes, not a mandatory document:
 
 These are evidence kinds, not gate statuses. Facts have provenance; approval controls scope, not truth.
 Confidence needs a basis, never invented percentages.
-Keep contradictory records visible; grouping/synthesis belongs to Phase 2.
+Keep contradictory records visible; grouping/synthesis uses the optional synthesis guidance owned by product-design. Never generate unsupported personas or findings.
 
 ## Edges and delivery
 

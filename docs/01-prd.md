@@ -41,6 +41,8 @@ Do not invent metrics, data, prices or proof.
 | --- | --- | --- | --- |
 | <!-- --> | <!-- Observed/Reported/Inferred/Hypothesis/Unknown --> | <!-- Unknown where unavailable --> | <!-- --> |
 
+For synthesis only when relevant, retain finding IDs and supporting/contradictory record IDs, independent sample/context, confidence basis and limits. Keep needs separate from requested solutions; connect each proposed decision to the finding or labeled hypothesis and the next verification. No mandatory persona or screen list.
+
 Keep missing facts Unknown. Hypotheses are testable proposals, not findings or approved features.
 State unavailable research and the next test; no invented participants, quotes or validation.
 Exclude participant identities and raw private records from builder exports.

@@ -1,0 +1,42 @@
+{
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "tests/test_phase2_synthesis.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_confidence_integrity (__main__.SynthesisRegressions.test_confidence_integrity) ... ok\ntest_confidence_status (__main__.SynthesisRegressions.test_confidence_status) ... ok\ntest_contradictions (__main__.SynthesisRegressions.test_contradictions) ... ok\ntest_current_sources (__main__.SynthesisRegressions.test_current_sources) ... ok\ntest_decision_verification (__main__.SynthesisRegressions.test_decision_verification) ... ok\ntest_frequency_priority (__main__.SynthesisRegressions.test_frequency_priority) ... ok\ntest_historical_evidence_unchanged (__main__.SynthesisRegressions.test_historical_evidence_unchanged) ... ok\ntest_independent_support (__main__.SynthesisRegressions.test_independent_support) ... ok\ntest_isolated_accessibility_safety_entry (__main__.SynthesisRegressions.test_isolated_accessibility_safety_entry) ... ok\ntest_isolated_accessibility_safety_summary (__main__.SynthesisRegressions.test_isolated_accessibility_safety_summary) ... ok\ntest_isolated_issues (__main__.SynthesisRegressions.test_isolated_issues) ... ok\ntest_new_references_direct (__main__.SynthesisRegressions.test_new_references_direct) ... ok\ntest_no_UI_jump (__main__.SynthesisRegressions.test_no_UI_jump) ... ok\ntest_opportunity_approval (__main__.SynthesisRegressions.test_opportunity_approval) ... ok\ntest_optional_loading_is_preserved (__main__.SynthesisRegressions.test_optional_loading_is_preserved) ... ok\ntest_partial_inspection (__main__.SynthesisRegressions.test_partial_inspection) ... ok\ntest_persona_integrity (__main__.SynthesisRegressions.test_persona_integrity) ... ok\ntest_raw_interpretations (__main__.SynthesisRegressions.test_raw_interpretations) ... ok\ntest_recall_stays_reported (__main__.SynthesisRegressions.test_recall_stays_reported) ... ok\ntest_record_authority (__main__.SynthesisRegressions.test_record_authority) ... ok\ntest_scope_decision (__main__.SynthesisRegressions.test_scope_decision) ... ok\ntest_uncertain_isolated_risk_is_retained (__main__.SynthesisRegressions.test_uncertain_isolated_risk_is_retained) ... ok\n\n----------------------------------------------------------------------\nRan 22 tests in 2.661s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "evals/check_sources.py",
+        "--self-test"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: 4 restricted metadata records; stable 8/10/10/20 gates; 234 local references; phase/feedback/intake contracts; synchronized F1-F3 exports; project paths; versions; 17477 skill words (informational; run check_context.py for token budgets); original paths and historical bytes retained.\nKNOWN LIMIT: Historical app.js hash mismatch is disclosed; old runtime evidence does not verify packaged app.js.\nKNOWN LIMIT: F03 raw evidence retains a quoted em dash; the style miss is disclosed.\nPASS: 70 mutation self-tests rejected.\nSource integrity only. Behavior trials, client installs and runtime verification require separate evidence.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "evals/check_context.py"
+      ],
+      "exit_code": 1,
+      "stdout": "FAIL: bounded context and direct conditional references\ntoken check unavailable: RuntimeError: install evals/requirements-context.txt before token checks\nStatic declarations do not guarantee client loading or universal provider token counts.\n",
+      "stderr": ""
+    }
+  ],
+  "integrity": {
+    "source_files_sha256": {
+      "count": 48,
+      "mismatches": []
+    },
+    "preserved_evidence_sha256": {
+      "count": 171,
+      "mismatches": []
+    }
+  }
+}

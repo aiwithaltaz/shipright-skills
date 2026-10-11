@@ -14,7 +14,7 @@ Optional framing aids:
 - **Opportunity Solution Tree:** link owned outcomes, evidenced opportunities and risky assumptions; not validation (P1).
 - **Value Proposition Canvas:** frame proposed jobs/pains/gains and offer-fit hypotheses; not personas or validated demand (S1).
 
-No Phase 2 synthesis or new features.
+Planning prepares studies; optional synthesis analyzes supplied records separately. Plans authorize no new features.
 
 ## Guides and safeguards
 

@@ -1,0 +1,154 @@
+{
+  "grades": [
+    {
+      "response_id": "S04-A",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Separates E1 reported experience, E2 event counts, E3 observed stopping and E4 marketing claim; explicitly says 40/100 is not an established user rate and the stop does not establish causality."
+        },
+        {
+          "score": 1,
+          "evidence": "Addresses the founder-friend convenience sample, v1 versus v3, unknown users/duplicates/definitions/timeframe and desktop versus phone coverage, but does not address missing accessibility coverage."
+        },
+        {
+          "score": 2,
+          "evidence": "Rates removal support as very weak and ties each rating to specific gaps, including no field-specific E1 evidence and no E3 stopping reason; invents no confidence or sample threshold."
+        },
+        {
+          "score": 2,
+          "evidence": "Recommends checking company-detail dependencies and observing representative phone users in v3, then a reversible removal/deferral prototype if dependencies permit; checks downstream job success and disconfirming evidence without promising lift."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 7,
+      "total": 7,
+      "useful_pass": true
+    },
+    {
+      "response_id": "S04-B",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Distinguishes reported dissatisfaction, behavioral event counts, the isolated observed stop and an unverified vendor claim; expressly rejects a verified 40% user rate or a causal inference."
+        },
+        {
+          "score": 1,
+          "evidence": "Covers potentially biased founder friends, old/current versions, unknown duplicates/users/definitions/dates and lack of phone generalization from desktop; missing accessibility coverage is unaddressed."
+        },
+        {
+          "score": 2,
+          "evidence": "Explains very weak support through different devices/versions/measures, unknown stopping reasons and absence of a with/without-field comparison; uses no numerical confidence or universal sample requirement."
+        },
+        {
+          "score": 2,
+          "evidence": "Provides bounded v3 phone observations, field-purpose/dependency checks and verified analytics; suggests a conditional reversible prototype and a live comparison only with measurement/traffic support, including evidence that would weaken the hypothesis."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 7,
+      "total": 7,
+      "useful_pass": true
+    },
+    {
+      "response_id": "S04-C",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Separates founder reports, ambiguous event counts, one observed desktop stop and competitor advertising; clarifies the event ratio is not a user completion rate and that causes remain unknown."
+        },
+        {
+          "score": 1,
+          "evidence": "Discusses founder-friend selection bias, outdated v1 evidence, unknown instrumentation/timeframe and missing current mobile evidence, but omits missing accessibility coverage."
+        },
+        {
+          "score": 2,
+          "evidence": "Explains very weak removal support record by record and why heterogeneous evidence cannot establish causality; makes no invented confidence estimate or fixed sample-size claim."
+        },
+        {
+          "score": 2,
+          "evidence": "Keeps the field temporarily while checking downstream requirements and observing representative phone users in v3; makes removal/deferral testing conditional on evidence and checks downstream success and counterevidence."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 7,
+      "total": 7,
+      "useful_pass": true
+    },
+    {
+      "response_id": "S04-D",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Identifies E1 as reported experience, E2 as event counts, E3 as isolated observed stopping and E4 as an unverified marketing claim; explicitly rejects reliable user-rate and causal conclusions."
+        },
+        {
+          "score": 1,
+          "evidence": "Accounts for the narrow founder-friend sample, version differences, unknown duplicates/definitions/users/timeframe and desktop-phone mismatch; does not mention missing accessibility coverage."
+        },
+        {
+          "score": 2,
+          "evidence": "Explains very weak support using specific limitations and no current v3 phone evidence; offers possible obstacles explicitly as hypotheses and introduces no numerical confidence or threshold."
+        },
+        {
+          "score": 2,
+          "evidence": "Checks field use and target phone behavior first, with a conditional reversible removal/deferral trial using defined deduplicated current events and downstream outcome checks; names alternative stopping causes or downstream harm as counterevidence."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 7,
+      "total": 7,
+      "useful_pass": true
+    },
+    {
+      "response_id": "S04-E",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Distinguishes reported E1 experience, E2 event counts, observed E3 stopping and unverified E4 marketing; explicitly says neither 40% completion nor 60% user abandonment is established and the field's causal role is unknown."
+        },
+        {
+          "score": 1,
+          "evidence": "Addresses convenience sampling, older/current versions, missing unique users/duplicates/definitions/dates and desktop versus phone coverage, but does not address missing accessibility coverage."
+        },
+        {
+          "score": 2,
+          "evidence": "Explains very weak support using each record's limitations and lack of replication across versions/devices/measures; labels friction as a hypothesis without invented confidence or sample threshold."
+        },
+        {
+          "score": 2,
+          "evidence": "Checks field purpose, current phone behavior and trustworthy measurement, then conditionally proposes a reversible deferral trial with downstream checks and alternative causes; does not claim removal is validated or promise lift."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 7,
+      "total": 7,
+      "useful_pass": true
+    },
+    {
+      "response_id": "S04-F",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Separates founder reports, numerical event counts, the single observed desktop stop and competitor reporting; states 40% is only an event ratio and rejects established field causality or expected benefit."
+        },
+        {
+          "score": 1,
+          "evidence": "Covers potentially biased founder-friend selection, v1-v3 differences, unknown duplicates/users/definitions/timeframe and desktop-to-phone transfer limits; missing accessibility coverage remains unaddressed."
+        },
+        {
+          "score": 2,
+          "evidence": "Explains very weak support through record-specific weaknesses and disparate versions/devices/measures; rejects combining suggestive records into causal proof without inventing confidence or a sample cutoff."
+        },
+        {
+          "score": 2,
+          "evidence": "Checks company-detail dependencies and observes phone users in v3, then conditionally tests reversible omission/deferral while measuring completion and downstream losses; requires reliable instrumentation before estimating improvement and labels the benefit as a hypothesis."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 7,
+      "total": 7,
+      "useful_pass": true
+    }
+  ]
+}

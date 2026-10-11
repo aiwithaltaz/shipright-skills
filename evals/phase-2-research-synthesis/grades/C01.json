@@ -1,0 +1,54 @@
+{
+  "grades": [
+    {
+      "response_id": "C01-A",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Explicitly replaces Submit with the exact requested label Download invoice."
+        },
+        {
+          "score": 2,
+          "evidence": "Provides the correction directly, with no research, synthesis, intake, or artifact prerequisite."
+        },
+        {
+          "score": 2,
+          "evidence": "Explicitly keeps everything else unchanged and adds no feature, finding, scope change, or unrelated restyling."
+        },
+        {
+          "score": 2,
+          "evidence": "Makes no claim that rendered, runtime, accessibility, or other verification occurred."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "C01-B",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Explicitly replaces Submit with the exact requested label Download invoice."
+        },
+        {
+          "score": 2,
+          "evidence": "Provides the correction directly, with no research, synthesis, intake, or artifact prerequisite."
+        },
+        {
+          "score": 2,
+          "evidence": "Explicitly keeps everything else unchanged and adds no feature, finding, scope change, or unrelated restyling."
+        },
+        {
+          "score": 2,
+          "evidence": "Makes no claim that rendered, runtime, accessibility, or other verification occurred."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    }
+  ]
+}

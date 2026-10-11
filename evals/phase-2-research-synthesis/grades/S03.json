@@ -1,0 +1,154 @@
+{
+  "grades": [
+    {
+      "response_id": "S03-A",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "E1 is mapped to knowing which invoices were sent, E2 to identifying the correct invoice without retyping, and E3 to recognizable filenames; reminders and dashboards are explicitly treated as suggested solutions rather than established needs."
+        },
+        {
+          "score": 2,
+          "evidence": "Labels E1/E2 as participant reports and E3 as an observer-noted renaming workaround; explicitly limits the identification pattern to two distinct participants and rejects prevalence claims beyond the one founder community."
+        },
+        {
+          "score": 2,
+          "evidence": "Offers sourced role/job sketches for invoice identification (P2/P3) and sent-status checking (P1), labels them working profiles rather than validated segments, and leaves workload, income, tools and other attributes unknown."
+        },
+        {
+          "score": 2,
+          "evidence": "Proposes approval of a bounded filename test within creation/download, compares current behavior and tests locating an invoice among multiple files with renaming and confusion as challenges. The two screen jobs are explicitly proposed, may share one page, and exclude reminder, payment and sent-status screens."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "S03-B",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "E1 supports knowing which invoices were sent, E2 supports invoice identification with less manual work rather than payment monitoring, and E3 supports filename recognition; requested features are explicitly separated from these needs."
+        },
+        {
+          "score": 2,
+          "evidence": "Distinguishes the reported E1/E2 problems from the E3 observer note, identifies only E3 as directly concerning downloaded filenames, and states that this three-person community sample cannot establish prevalence or transfer to freelancers generally."
+        },
+        {
+          "score": 2,
+          "evidence": "Supplies two evidence-grounded job profiles traced to P2/P3 and P1 without invented demographics, names, income or personalities; expressly calls the related accounts distinct and rejects validated segments."
+        },
+        {
+          "score": 2,
+          "evidence": "Recommends a proposed identification prototype, first clarifying P2\u2019s retyping context and comparing a numbered filename with current behavior. Gives proceed/revise conditions and limits proposed screen jobs to creation/download while leaving excluded features outside approved scope."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "S03-C",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Each named record has a separate underlying need and opportunity: sent-invoice knowledge for E1, identifying without retyping for E2, and downloaded-file recognition for E3. Reminder/dashboard requests are distinguished from requirements."
+        },
+        {
+          "score": 2,
+          "evidence": "Marks E1/E2 as reported problems and E3 as an observed action, says identification records do not prove the same cause, and bounds claims to three freelancers from one founder community without broader prevalence or revenue conclusions."
+        },
+        {
+          "score": 2,
+          "evidence": "The two behavioral sketches use only E2/E3 task friction and E1 sent-status uncertainty, explicitly reject invented age, income, business size and biography, and state they are not validated segments."
+        },
+        {
+          "score": 2,
+          "evidence": "Gives a founder-owned proposed numbered-filename decision and an unperformed usability check of locating a downloaded invoice, including wrong selection and continued renaming as disconfirmation. Creation/review-download jobs stay within the approved phase, with screen behavior to specify before build and excluded features omitted."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "S03-D",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Traces E1 to knowing what was sent, E2 to identification with less transcription, and E3 to recognizing downloaded files. It explicitly treats reminders as one possible solution and refuses to infer a payment-monitoring need from the dashboard request."
+        },
+        {
+          "score": 2,
+          "evidence": "Identifies E1/E2 as reports and E3 as a one-session observed workaround, keeps their potentially differing workflows visible, and rejects population-level claims from the three-person founder-community sample."
+        },
+        {
+          "score": 2,
+          "evidence": "Provides sourced provisional need profiles linked to E2/E3 and E1, acknowledges they may describe the same person at different moments, and avoids invented personal details or established segment claims."
+        },
+        {
+          "score": 2,
+          "evidence": "Proposes a small filename-and-number prototype and uncued create/download/locate tasks with renaming, transcription and wrong-file observations plus revise conditions. Screen jobs remain proposed creation/download states; filename, number behavior and arrangement need approval before build, and excluded screens remain outside scope."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "S03-E",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Names E1\u2019s sent-invoice knowledge, E2\u2019s identification without retyping and E3\u2019s filename recognition as supported needs, keeping reminder/dashboard requests separate and noting payment tracking is not established."
+        },
+        {
+          "score": 2,
+          "evidence": "Explicitly calls E2 retyping reported rather than observed, E3 an observer-recorded workaround and E1 a separate participant report; limits the two-person identification theme and rejects consensus, prevalence and market claims from the founder community."
+        },
+        {
+          "score": 2,
+          "evidence": "Offers provisional job profiles sourced to P2/P3 and P1, with unknown workflow and naming details, and expressly refuses ages, biographies, income or personality traits and validated persona/segment claims."
+        },
+        {
+          "score": 2,
+          "evidence": "Recommends first inspecting current filename/number handling, then testing invoice recognition among similar documents with continued renaming or confusion as challenges. Proposed creation/download-result jobs are in scope and require approval before build; reminder, status and dashboard features remain outside current implementation."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "S03-F",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "The record table separates E1\u2019s sent-invoice knowledge from the reminder solution, E2\u2019s identification/transcription need from a payment dashboard, and E3\u2019s filename-recognition need from the proposed naming mechanism."
+        },
+        {
+          "score": 2,
+          "evidence": "Labels E1/E2 reported and E3 observed, treats E1 separately from invoice identification, and bounds conclusions to three freelancers from one founder community with unknown workflow context and no prevalence or willingness-to-pay claims."
+        },
+        {
+          "score": 2,
+          "evidence": "The working profiles are traced to E2/E3 and E1, make the combined identification profile provisional, preserve unknown shared workflow, and explicitly avoid names, age, income, industries or validated segment claims."
+        },
+        {
+          "score": 2,
+          "evidence": "Gives a proposed, reversible number-consistency/filename test within creation/download, with uncued identification tasks and errors, retyping or renaming as disconfirming evidence. The minimal creation/review-download screen model and detailed behavior remain unapproved for build; archives, sending, reminders and payment dashboards are excluded."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    }
+  ]
+}
