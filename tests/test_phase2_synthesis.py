@@ -54,6 +54,18 @@ class SynthesisRegressions(unittest.TestCase):
         self.reject(BASE + 'research-synthesis.md', 'Duplicate notes and repeated statements do not create independent support', "[removed protected synthesis rule]")
     def test_isolated_issues(self):
         self.reject(BASE + 'research-synthesis.md', 'Preserve isolated serious issues even without repetition', "[removed protected synthesis rule]")
+    def test_isolated_accessibility_safety_entry(self):
+        self.reject('skills/product-design/SKILL.md',
+                    'retain every supplied accessibility or safety issue even without a repeated pattern',
+                    'retain accessibility and safety issues only after repeated confirmation')
+    def test_isolated_accessibility_safety_summary(self):
+        self.reject(BASE + 'research-synthesis.md',
+                    'Always retain supplied accessibility or safety issues in the evidence trail and user risk summary, even when reported once and outside any repeated pattern',
+                    'Discard isolated accessibility or safety issues that lack a repeated pattern')
+    def test_uncertain_isolated_risk_is_retained(self):
+        self.reject(BASE + 'research-synthesis.md',
+                    'Unclear severity or cause does not justify omission',
+                    'Omit issues when severity or cause is unclear')
     def test_contradictions(self):
         self.reject(BASE + 'research-synthesis.md', 'Keep contradictory evidence and isolated exceptions traceable', "[removed protected synthesis rule]")
     def test_confidence_integrity(self):

@@ -1,0 +1,3 @@
+# Isolated risk follow-up protocol
+
+Frozen before responses on 2026-10-11. User-authorized focused fix, separate from the original frozen Phase 2 comparison. One fresh isolated trial for accessibility and one for safety/privacy. Agents receive only current pack and raw task, no criteria or earlier replies. Parent grades each predefined criterion Pass/Fail after response completion; no blind baseline comparison or claim of superiority. Preserve every output and failure. No tuning or retries. Synthetic records are not actual research; read lists are self-reported. Rerun affected tests and all required checks. Previous evaluation outputs and scores remain unchanged. No visuals or Phase 3.

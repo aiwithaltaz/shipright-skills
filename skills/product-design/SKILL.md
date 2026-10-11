@@ -65,7 +65,7 @@ For supplied records needing interpretation, use [research-synthesis.md](referen
 For findings affecting a product commitment, use [research-to-decisions.md](references/research-to-decisions.md).
 For synthesis-source provenance, use [synthesis-sources.md](references/synthesis-sources.md).
 Skip synthesis for clear corrections or planning-only work; missing evidence yields hypotheses, not findings.
-Keep raw records, interpretations and approval separate. Preserve contradictions and isolated serious issues.
+Keep raw records, interpretations and approval separate. Preserve contradictions; retain every supplied accessibility or safety issue even without a repeated pattern.
 Show concise findings, risks and recommended decisions; no automatic personas, screens or scope changes.
 
 ## Flows and states

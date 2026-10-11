@@ -16,6 +16,8 @@ Assign descriptive labels before proposing explanations. Group only records shar
 
 Count independent participants/sessions separately from notes. Duplicate notes and repeated statements do not create independent support. Unknown overlap or denominator stays Unknown; never add overlapping samples. No universal minimum proves a pattern or population prevalence. Recurrence supports a bounded pattern only within inspected records. Preserve isolated serious issues even without repetition; accessibility, safety, lost work or blocked critical tasks need attention on their own merits.
 
+Always retain supplied accessibility or safety issues in the evidence trail and user risk summary, even when reported once and outside any repeated pattern. Unclear severity or cause does not justify omission: preserve the source, evidence kind and limits, then name the next check. Do not label an isolated issue a repeated pattern or claim an unverified cause.
+
 ## Finding record
 
 Use existing working notes, not automatic project files:
