@@ -65,6 +65,15 @@
         },
         "skills/product-design/references/doc-set.md": {
           "when": "Use [doc-set.md](references/doc-set.md) and [output-folder.md](../_shared/output-folder.md) for requested files."
+        },
+        "skills/product-design/references/research-synthesis.md": {
+          "when": "For supplied records needing interpretation, use [research-synthesis.md](references/research-synthesis.md)."
+        },
+        "skills/product-design/references/research-to-decisions.md": {
+          "when": "For findings affecting a product commitment, use [research-to-decisions.md](references/research-to-decisions.md)."
+        },
+        "skills/product-design/references/synthesis-sources.md": {
+          "when": "For synthesis-source provenance, use [synthesis-sources.md](references/synthesis-sources.md)."
         }
       },
       "normal_paths": [
@@ -95,6 +104,15 @@
           "references": [
             "skills/product-design/references/doc-set.md",
             "skills/_shared/output-folder.md"
+          ]
+        },
+        {
+          "task": "Optional synthesis and decisions",
+          "references": [
+            "skills/product-design/references/research-evidence.md",
+            "skills/product-design/references/research-synthesis.md",
+            "skills/product-design/references/research-to-decisions.md",
+            "skills/product-design/references/synthesis-sources.md"
           ]
         }
       ]

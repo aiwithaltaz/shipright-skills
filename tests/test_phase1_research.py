@@ -110,9 +110,9 @@ class ResearchRegressions(unittest.TestCase):
         self.reject(BASE + 'research-sources.md',
                     'Unavailable/paywalled text stays uninspected', 'Paywalled text counts as inspected')
 
-    def test_synthesis_is_deferred(self):
+    def test_synthesis_does_not_authorize_unsupported_personas(self):
         self.reject(BASE + 'research-evidence.md',
-                    'grouping/synthesis belongs to Phase 2', 'automatically generate validated personas')
+                    'Never generate unsupported personas or findings', 'automatically generate validated personas')
 
 
 if __name__ == '__main__':

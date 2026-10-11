@@ -1,0 +1,962 @@
+[
+  {
+    "response_id": "S01-A",
+    "trial": "t03",
+    "case": "S01",
+    "version": "phase2",
+    "repeat": 3,
+    "response_text_sha256": "c2bca6ce41567658cab78b29992219f01e37768724a7ce88d9446872f84202f7",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "The E1\u2013E3 row identifies reported behavior, E4 identifies the supplied task action and successful download/open, and E5 identifies an untested report; it explicitly rejects the team\u2019s universal editor conclusion."
+      },
+      {
+        "score": 2,
+        "evidence": "It explicitly says E2 duplicates E1 and E3 repeats the same interview account, treating E1\u2013E3 as one participant/session and E1\u2013E4 as two participant sources without a population rate."
+      },
+      {
+        "score": 2,
+        "evidence": "It retains P3\u2019s differing account and lack of a download task, limits coverage to desktop prototype v2 on 10 October 2026, and states that prevalence and an integrated-editor need are unknown."
+      },
+      {
+        "score": 2,
+        "evidence": "It keeps creation/download scope, proposes comparing P2\u2019s input with output and clarifying P1\u2019s changes, and tests whether correct creation details yield usable output; possible input/export causes remain unresolved and editor scope is explicitly unapproved."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S01-B",
+    "trial": "t06",
+    "case": "S01",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "39d40964a8f08aa735ea7c9345c9c05edd3487f5ce9a3bd1ca179d8c06b83e86",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "The evidence table separates P1\u2019s report, P2\u2019s observed successful download/open and address edit, and P3\u2019s contrasting unverified report, then rejects the team\u2019s everybody-needs-an-editor inference."
+      },
+      {
+        "score": 2,
+        "evidence": "It treats E1\u2013E3 as one participant account and the copied note/repetition as nonindependent; the two distinct sources are correctly described as one reported account and one observed task."
+      },
+      {
+        "score": 2,
+        "evidence": "It preserves E5 as contrary evidence with no verifying task, explicitly states v2/desktop/date coverage, and leaves prevalence and other devices unknown."
+      },
+      {
+        "score": 2,
+        "evidence": "It recommends an in-scope intended-address creation/download comparison, observation of corrections and neutral cause inquiry, gives a disconfirming condition for its hypothesis, and requires a separate scope decision for an editor."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S01-C",
+    "trial": "t01",
+    "case": "S01",
+    "version": "baseline",
+    "repeat": 2,
+    "response_text_sha256": "1c7019045d4137acade8eb63a4802831e3f5dfeb33a76f29cc3e0a248840e17a",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Its record table distinguishes P1\u2019s reported edits from P2\u2019s observed task and P3\u2019s unverified contrary report; the later conclusion traces observed behavior only to P2 and rejects justification for an editor."
+      },
+      {
+        "score": 2,
+        "evidence": "It identifies E1\u2013E3 as one copied/repeated interview account, not three confirmations, and correctly identifies two distinct participants providing editing evidence without estimating frequency."
+      },
+      {
+        "score": 2,
+        "evidence": "It retains P3\u2019s account and missing download verification, opens with the specific v2 desktop date scope, and says neither user frequency nor embedded-editor need is established."
+      },
+      {
+        "score": 2,
+        "evidence": "It proposes observing the existing create/download/open/check flow and investigating several possible correction causes as possibilities; a before-download correction hypothesis has a disconfirming condition, and any editor requires separate evidence and approval."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S01-D",
+    "trial": "t02",
+    "case": "S01",
+    "version": "phase2",
+    "repeat": 1,
+    "response_text_sha256": "c3abe20444b3f7adce112abbf730b9987acf93f6eaf0b29812c72124478fbd83",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "It maps E1\u2013E3 to one reported account, E4 to an observed successful download/open followed by correction, and E5 to a contrary report without observed export success; the team\u2019s four-confirmation interpretation is explicitly rejected."
+      },
+      {
+        "score": 2,
+        "evidence": "It collapses E1\u2013E3 to one participant/interview and correctly describes two participants providing editing evidence among three represented participants, without asserting a population rate."
+      },
+      {
+        "score": 2,
+        "evidence": "It preserves E5, calls the editing signal bounded, rejects universal demand, and explicitly limits the records to v2 desktop on 10 October 2026 with mobile and population prevalence unknown."
+      },
+      {
+        "score": 2,
+        "evidence": "It proposes comparing entered details with the exported address and observing a create/download/check task; missing or incorrect details are explicitly a working hypothesis with unknown cause, and persistent edits trigger a separate editor scope proposal."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S01-E",
+    "trial": "t04",
+    "case": "S01",
+    "version": "phase2",
+    "repeat": 2,
+    "response_text_sha256": "0eb6b05e90357fbc5a7487eb5b148217510a338d888573034e615eec69a34869",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "The table separately identifies P1\u2019s report, P2\u2019s task action as described by the note, and P3\u2019s report, while explicitly rejecting the team\u2019s independent-confirmation and universal-editor conclusions."
+      },
+      {
+        "score": 2,
+        "evidence": "It identifies E1\u2013E3 as one participant, interview and repeated account, with no added independent confirmation; the limited editing finding correctly spans two distinct participants\u2019 accounts/actions."
+      },
+      {
+        "score": 2,
+        "evidence": "It preserves P3\u2019s counterevidence and absent verification, limits coverage to v2 desktop on the stated date, and keeps cause and prevalence unknown rather than treating the pattern as universal."
+      },
+      {
+        "score": 2,
+        "evidence": "It recommends a creation/download task comparing entered and exported addresses and neutrally asking what edits accomplish, with accurate output followed by necessary changes as counterevidence; fixes are contingent on reproduced defects and an editor remains a separate unapproved proposal."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S01-F",
+    "trial": "t05",
+    "case": "S01",
+    "version": "baseline",
+    "repeat": 3,
+    "response_text_sha256": "932bf9fa7495013bd062d903122e984d2d81a938c50f8f8ee0c554d4d102c8d6",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "It maps the repeated P1 report, P2\u2019s observed successful download/open and edit, and P3\u2019s contrary unobserved-download report to their records; it rejects universal need and the particular editor solution."
+      },
+      {
+        "score": 2,
+        "evidence": "It expressly identifies E2 as duplicate and E3 as the same interview account, treating E1\u2013E4 as two participant sources, one reported and one observed, with no population rate."
+      },
+      {
+        "score": 2,
+        "evidence": "It keeps P3\u2019s contrary account relevant without calling it verified export quality, specifies v2/desktop/date coverage, and leaves prevalence and other contexts unknown."
+      },
+      {
+        "score": 2,
+        "evidence": "It proposes inspecting entered details, output and subsequent edits in the current creation/download flow, tests whether correctable creation details avoid external edits, and conditions specific in-scope fixes on findings; persistent necessary editing returns for explicit scope approval."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S02-A",
+    "trial": "t11",
+    "case": "S02",
+    "version": "phase2",
+    "repeat": 1,
+    "response_text_sha256": "89ac69642e63d12db80d7b832d320087901743a9285be1b9c37dd91b2f4a32fc",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Traces E1\u2013E2 unaided mouse successes separately from E3 current-version uncertainty and E4 trapped keyboard focus; says the mobile underlying cause remains unverified."
+      },
+      {
+        "score": 2,
+        "evidence": "Keeps E3 older cached file/current-version ambiguity visible and calls E4 an isolated accessibility failure and release blocker despite mouse success."
+      },
+      {
+        "score": 2,
+        "evidence": "Limits the mouse pass to observed sessions, rejects a happy majority and population prevalence, and says the notes cannot establish overall accessibility or usability readiness."
+      },
+      {
+        "score": 2,
+        "evidence": "Holds shipment, retains approved scope, requests focus and mobile corrections followed by keyboard, cached-file mobile and mouse regression checks; explicitly leaves the mobile cause unverified."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S02-B",
+    "trial": "t08",
+    "case": "S02",
+    "version": "phase2",
+    "repeat": 3,
+    "response_text_sha256": "f48f2a3f46b2714051543f7a03563495db643a82472e41a5d70161168f4d26db",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Table independently traces E1\u2013E2 desktop mouse successes, E3 version-identification failure and E4 focus-trap failure; does not merge their causes."
+      },
+      {
+        "score": 2,
+        "evidence": "Explicitly identifies the older cached mobile file and says the isolated keyboard blocker warrants action."
+      },
+      {
+        "score": 2,
+        "evidence": "Says the successes support only the tested path, identifies limited coverage in four fictional participant records and leaves other contexts unverified without claiming overall usability."
+      },
+      {
+        "score": 2,
+        "evidence": "Holds v3, proposes corrections within approved scope and targeted keyboard, cached-file mobile and mouse retests; distinguishes unestablished mobile cause and planned tickets from actual resolution."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S02-C",
+    "trial": "t10",
+    "case": "S02",
+    "version": "phase2",
+    "repeat": 2,
+    "response_text_sha256": "ccabb3a69f1bbbb15db89180e94a0819d6fbab97484caa66e71209132b415794",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Separately links E1\u2013E2 mouse completion, E3 current-invoice ambiguity and E4 keyboard focus trapping to their respective decision implications."
+      },
+      {
+        "score": 2,
+        "evidence": "Preserves the uncertainty that the newly downloaded file itself may not be stale and explicitly treats the once-observed E4 as critical to the core task."
+      },
+      {
+        "score": 2,
+        "evidence": "Limits passes to observed paths and fictional scenario interpretations, rejects a happy majority and population estimates, and leaves broader usability unverified."
+      },
+      {
+        "score": 2,
+        "evidence": "Holds shipment, proposes approved-flow corrections and specific keyboard, cached-file mobile and mouse checks, requiring relevant evidence of resolution; acknowledges that E3 cannot establish a stale new download."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S02-D",
+    "trial": "t07",
+    "case": "S02",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "376ac853b54de68dbdcf015d7f809de18c6ceacc04b9a9df41f8c544547e1992",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Traces the two mouse successes to E1\u2013E2 and gives separate E3 mobile and E4 keyboard failures; separately marks other contexts as unverified."
+      },
+      {
+        "score": 2,
+        "evidence": "Keeps the mobile older-file ambiguity and keyboard release blocker visible and explicitly states that caching, download behavior or labeling are unestablished mobile causes."
+      },
+      {
+        "score": 2,
+        "evidence": "Rejects founder majority and population-rate claims, bounds success to tested paths, identifies other devices/access needs/conditions as lacking evidence and confines claims to fictional scenario analysis."
+      },
+      {
+        "score": 2,
+        "evidence": "Holds approved v3, requests focus repair and investigation of mobile confusion, then verification of revised failed paths and mouse regression checking; distinguishes potential mobile causes and tickets from verified resolution."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S02-E",
+    "trial": "t12",
+    "case": "S02",
+    "version": "baseline",
+    "repeat": 2,
+    "response_text_sha256": "01337ba73bdfddc71a8547aa7026030fe5c1fe8a6bdd9357962fa24b75c4a572",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Table separately traces E1\u2013E2 mouse completion, E3 mobile version uncertainty and E4 inability to reach Download; does not assert a common cause."
+      },
+      {
+        "score": 2,
+        "evidence": "Preserves the older cached file and unresolved current version, retains the keyboard blockage and treats both as release blockers despite mouse successes."
+      },
+      {
+        "score": 2,
+        "evidence": "Bounds the pass to two observed cases, rejects majority and population success-rate conclusions, leaves general usability unverified and explicitly labels the material synthetic."
+      },
+      {
+        "score": 2,
+        "evidence": "Holds v3 and retains approved scope, requests focus/current-file corrections, cached-invoice mobile and keyboard retesting plus mouse regression checking, while saying stale-file cause and prevalence are unestablished."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S02-F",
+    "trial": "t09",
+    "case": "S02",
+    "version": "baseline",
+    "repeat": 3,
+    "response_text_sha256": "d27e45622412425674c73dc13e11f669cb70b46f2ed18545b9f5c16f09f61b16",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Table independently sources E1\u2013E2 successful mouse cases, E3 older-file/current-version failure and E4 trapped keyboard focus, without imposing a common cause."
+      },
+      {
+        "score": 2,
+        "evidence": "Keeps both mobile ambiguity and keyboard-only inability to reach Download visible as release blockers, despite two successful mouse cases."
+      },
+      {
+        "score": 2,
+        "evidence": "Limits success to supplied cases, rejects a successful-majority inference, marks broader rates unverified and distinguishes fictional scenario analysis from real-world validation."
+      },
+      {
+        "score": 2,
+        "evidence": "Holds approved v3, keeps scope, pairs focus repair with mobile investigation and correction, then specifies keyboard activation, cached-invoice mobile identification and mouse regression checks; technical cause remains unverified."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S03-A",
+    "trial": "t13",
+    "case": "S03",
+    "version": "phase2",
+    "repeat": 3,
+    "response_text_sha256": "1eac6038616e78f80ea22df6f1101b8dff96f087bbf23ee17c46aa026142f416",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "E1 is mapped to knowing which invoices were sent, E2 to identifying the correct invoice without retyping, and E3 to recognizable filenames; reminders and dashboards are explicitly treated as suggested solutions rather than established needs."
+      },
+      {
+        "score": 2,
+        "evidence": "Labels E1/E2 as participant reports and E3 as an observer-noted renaming workaround; explicitly limits the identification pattern to two distinct participants and rejects prevalence claims beyond the one founder community."
+      },
+      {
+        "score": 2,
+        "evidence": "Offers sourced role/job sketches for invoice identification (P2/P3) and sent-status checking (P1), labels them working profiles rather than validated segments, and leaves workload, income, tools and other attributes unknown."
+      },
+      {
+        "score": 2,
+        "evidence": "Proposes approval of a bounded filename test within creation/download, compares current behavior and tests locating an invoice among multiple files with renaming and confusion as challenges. The two screen jobs are explicitly proposed, may share one page, and exclude reminder, payment and sent-status screens."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S03-B",
+    "trial": "t14",
+    "case": "S03",
+    "version": "phase2",
+    "repeat": 2,
+    "response_text_sha256": "2d3757b9fdb45d2314a09f646bb9c8f369cb52d52ebaf2569a3e4db80ccb57d8",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "E1 supports knowing which invoices were sent, E2 supports invoice identification with less manual work rather than payment monitoring, and E3 supports filename recognition; requested features are explicitly separated from these needs."
+      },
+      {
+        "score": 2,
+        "evidence": "Distinguishes the reported E1/E2 problems from the E3 observer note, identifies only E3 as directly concerning downloaded filenames, and states that this three-person community sample cannot establish prevalence or transfer to freelancers generally."
+      },
+      {
+        "score": 2,
+        "evidence": "Supplies two evidence-grounded job profiles traced to P2/P3 and P1 without invented demographics, names, income or personalities; expressly calls the related accounts distinct and rejects validated segments."
+      },
+      {
+        "score": 2,
+        "evidence": "Recommends a proposed identification prototype, first clarifying P2\u2019s retyping context and comparing a numbered filename with current behavior. Gives proceed/revise conditions and limits proposed screen jobs to creation/download while leaving excluded features outside approved scope."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S03-C",
+    "trial": "t17",
+    "case": "S03",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "e0abdd2f04beb2d7c345934b53d5bf858d016a777e6489391dad8a51f75f7db1",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Each named record has a separate underlying need and opportunity: sent-invoice knowledge for E1, identifying without retyping for E2, and downloaded-file recognition for E3. Reminder/dashboard requests are distinguished from requirements."
+      },
+      {
+        "score": 2,
+        "evidence": "Marks E1/E2 as reported problems and E3 as an observed action, says identification records do not prove the same cause, and bounds claims to three freelancers from one founder community without broader prevalence or revenue conclusions."
+      },
+      {
+        "score": 2,
+        "evidence": "The two behavioral sketches use only E2/E3 task friction and E1 sent-status uncertainty, explicitly reject invented age, income, business size and biography, and state they are not validated segments."
+      },
+      {
+        "score": 2,
+        "evidence": "Gives a founder-owned proposed numbered-filename decision and an unperformed usability check of locating a downloaded invoice, including wrong selection and continued renaming as disconfirmation. Creation/review-download jobs stay within the approved phase, with screen behavior to specify before build and excluded features omitted."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S03-D",
+    "trial": "t16",
+    "case": "S03",
+    "version": "baseline",
+    "repeat": 2,
+    "response_text_sha256": "deffd76b4326fc16edc880de8b6402dea8bc0d00e3cbe038c99a0d7bcf17bd8c",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Traces E1 to knowing what was sent, E2 to identification with less transcription, and E3 to recognizing downloaded files. It explicitly treats reminders as one possible solution and refuses to infer a payment-monitoring need from the dashboard request."
+      },
+      {
+        "score": 2,
+        "evidence": "Identifies E1/E2 as reports and E3 as a one-session observed workaround, keeps their potentially differing workflows visible, and rejects population-level claims from the three-person founder-community sample."
+      },
+      {
+        "score": 2,
+        "evidence": "Provides sourced provisional need profiles linked to E2/E3 and E1, acknowledges they may describe the same person at different moments, and avoids invented personal details or established segment claims."
+      },
+      {
+        "score": 2,
+        "evidence": "Proposes a small filename-and-number prototype and uncued create/download/locate tasks with renaming, transcription and wrong-file observations plus revise conditions. Screen jobs remain proposed creation/download states; filename, number behavior and arrangement need approval before build, and excluded screens remain outside scope."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S03-E",
+    "trial": "t15",
+    "case": "S03",
+    "version": "phase2",
+    "repeat": 1,
+    "response_text_sha256": "475c43180d12c53b1c55ce0ec52429c02bdf557795a269520c50daa779025fe3",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Names E1\u2019s sent-invoice knowledge, E2\u2019s identification without retyping and E3\u2019s filename recognition as supported needs, keeping reminder/dashboard requests separate and noting payment tracking is not established."
+      },
+      {
+        "score": 2,
+        "evidence": "Explicitly calls E2 retyping reported rather than observed, E3 an observer-recorded workaround and E1 a separate participant report; limits the two-person identification theme and rejects consensus, prevalence and market claims from the founder community."
+      },
+      {
+        "score": 2,
+        "evidence": "Offers provisional job profiles sourced to P2/P3 and P1, with unknown workflow and naming details, and expressly refuses ages, biographies, income or personality traits and validated persona/segment claims."
+      },
+      {
+        "score": 2,
+        "evidence": "Recommends first inspecting current filename/number handling, then testing invoice recognition among similar documents with continued renaming or confusion as challenges. Proposed creation/download-result jobs are in scope and require approval before build; reminder, status and dashboard features remain outside current implementation."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S03-F",
+    "trial": "t18",
+    "case": "S03",
+    "version": "baseline",
+    "repeat": 3,
+    "response_text_sha256": "90fd6dae465c3d7821cd3e2a597047b9a0aca1fca9b666b99b5100be231e0719",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "The record table separates E1\u2019s sent-invoice knowledge from the reminder solution, E2\u2019s identification/transcription need from a payment dashboard, and E3\u2019s filename-recognition need from the proposed naming mechanism."
+      },
+      {
+        "score": 2,
+        "evidence": "Labels E1/E2 reported and E3 observed, treats E1 separately from invoice identification, and bounds conclusions to three freelancers from one founder community with unknown workflow context and no prevalence or willingness-to-pay claims."
+      },
+      {
+        "score": 2,
+        "evidence": "The working profiles are traced to E2/E3 and E1, make the combined identification profile provisional, preserve unknown shared workflow, and explicitly avoid names, age, income, industries or validated segment claims."
+      },
+      {
+        "score": 2,
+        "evidence": "Gives a proposed, reversible number-consistency/filename test within creation/download, with uncued identification tasks and errors, retyping or renaming as disconfirming evidence. The minimal creation/review-download screen model and detailed behavior remain unapproved for build; archives, sending, reminders and payment dashboards are excluded."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S04-A",
+    "trial": "t19",
+    "case": "S04",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "89377aea70ed91477cdc49e019cbbd6bc31c2d3061ae5bb7a02796822320b743",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Separates E1 reported experience, E2 event counts, E3 observed stopping and E4 marketing claim; explicitly says 40/100 is not an established user rate and the stop does not establish causality."
+      },
+      {
+        "score": 1,
+        "evidence": "Addresses the founder-friend convenience sample, v1 versus v3, unknown users/duplicates/definitions/timeframe and desktop versus phone coverage, but does not address missing accessibility coverage."
+      },
+      {
+        "score": 2,
+        "evidence": "Rates removal support as very weak and ties each rating to specific gaps, including no field-specific E1 evidence and no E3 stopping reason; invents no confidence or sample threshold."
+      },
+      {
+        "score": 2,
+        "evidence": "Recommends checking company-detail dependencies and observing representative phone users in v3, then a reversible removal/deferral prototype if dependencies permit; checks downstream job success and disconfirming evidence without promising lift."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 7,
+    "total": 7,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S04-B",
+    "trial": "t22",
+    "case": "S04",
+    "version": "baseline",
+    "repeat": 2,
+    "response_text_sha256": "b3dd0cb7449d366c29d923a3604f2976af91a42c2b28a5ce83e0d7b88b0d7438",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Distinguishes reported dissatisfaction, behavioral event counts, the isolated observed stop and an unverified vendor claim; expressly rejects a verified 40% user rate or a causal inference."
+      },
+      {
+        "score": 1,
+        "evidence": "Covers potentially biased founder friends, old/current versions, unknown duplicates/users/definitions/dates and lack of phone generalization from desktop; missing accessibility coverage is unaddressed."
+      },
+      {
+        "score": 2,
+        "evidence": "Explains very weak support through different devices/versions/measures, unknown stopping reasons and absence of a with/without-field comparison; uses no numerical confidence or universal sample requirement."
+      },
+      {
+        "score": 2,
+        "evidence": "Provides bounded v3 phone observations, field-purpose/dependency checks and verified analytics; suggests a conditional reversible prototype and a live comparison only with measurement/traffic support, including evidence that would weaken the hypothesis."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 7,
+    "total": 7,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S04-C",
+    "trial": "t21",
+    "case": "S04",
+    "version": "phase2",
+    "repeat": 2,
+    "response_text_sha256": "99f9f847c754befea532d8c9c02267224e5c9c3ec37884802cd9287556773fb8",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Separates founder reports, ambiguous event counts, one observed desktop stop and competitor advertising; clarifies the event ratio is not a user completion rate and that causes remain unknown."
+      },
+      {
+        "score": 1,
+        "evidence": "Discusses founder-friend selection bias, outdated v1 evidence, unknown instrumentation/timeframe and missing current mobile evidence, but omits missing accessibility coverage."
+      },
+      {
+        "score": 2,
+        "evidence": "Explains very weak removal support record by record and why heterogeneous evidence cannot establish causality; makes no invented confidence estimate or fixed sample-size claim."
+      },
+      {
+        "score": 2,
+        "evidence": "Keeps the field temporarily while checking downstream requirements and observing representative phone users in v3; makes removal/deferral testing conditional on evidence and checks downstream success and counterevidence."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 7,
+    "total": 7,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S04-D",
+    "trial": "t23",
+    "case": "S04",
+    "version": "phase2",
+    "repeat": 3,
+    "response_text_sha256": "f0ebf83fd851c32c6a263757052fe9d85fea79c17611b037290b35f6c016d4b1",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Identifies E1 as reported experience, E2 as event counts, E3 as isolated observed stopping and E4 as an unverified marketing claim; explicitly rejects reliable user-rate and causal conclusions."
+      },
+      {
+        "score": 1,
+        "evidence": "Accounts for the narrow founder-friend sample, version differences, unknown duplicates/definitions/users/timeframe and desktop-phone mismatch; does not mention missing accessibility coverage."
+      },
+      {
+        "score": 2,
+        "evidence": "Explains very weak support using specific limitations and no current v3 phone evidence; offers possible obstacles explicitly as hypotheses and introduces no numerical confidence or threshold."
+      },
+      {
+        "score": 2,
+        "evidence": "Checks field use and target phone behavior first, with a conditional reversible removal/deferral trial using defined deduplicated current events and downstream outcome checks; names alternative stopping causes or downstream harm as counterevidence."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 7,
+    "total": 7,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S04-E",
+    "trial": "t24",
+    "case": "S04",
+    "version": "phase2",
+    "repeat": 1,
+    "response_text_sha256": "cdf5311e5a187b2422c5a20ec6568587cc3c44ba6d994ecf7ba9928d7ad87ea1",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Distinguishes reported E1 experience, E2 event counts, observed E3 stopping and unverified E4 marketing; explicitly says neither 40% completion nor 60% user abandonment is established and the field's causal role is unknown."
+      },
+      {
+        "score": 1,
+        "evidence": "Addresses convenience sampling, older/current versions, missing unique users/duplicates/definitions/dates and desktop versus phone coverage, but does not address missing accessibility coverage."
+      },
+      {
+        "score": 2,
+        "evidence": "Explains very weak support using each record's limitations and lack of replication across versions/devices/measures; labels friction as a hypothesis without invented confidence or sample threshold."
+      },
+      {
+        "score": 2,
+        "evidence": "Checks field purpose, current phone behavior and trustworthy measurement, then conditionally proposes a reversible deferral trial with downstream checks and alternative causes; does not claim removal is validated or promise lift."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 7,
+    "total": 7,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S04-F",
+    "trial": "t20",
+    "case": "S04",
+    "version": "baseline",
+    "repeat": 3,
+    "response_text_sha256": "0c8f0380948800644bf2f02aa5001eaa5678bf12bf79318c04e73664b830726c",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Separates founder reports, numerical event counts, the single observed desktop stop and competitor reporting; states 40% is only an event ratio and rejects established field causality or expected benefit."
+      },
+      {
+        "score": 1,
+        "evidence": "Covers potentially biased founder-friend selection, v1-v3 differences, unknown duplicates/users/definitions/timeframe and desktop-to-phone transfer limits; missing accessibility coverage remains unaddressed."
+      },
+      {
+        "score": 2,
+        "evidence": "Explains very weak support through record-specific weaknesses and disparate versions/devices/measures; rejects combining suggestive records into causal proof without inventing confidence or a sample cutoff."
+      },
+      {
+        "score": 2,
+        "evidence": "Checks company-detail dependencies and observes phone users in v3, then conditionally tests reversible omission/deferral while measuring completion and downstream losses; requires reliable instrumentation before estimating improvement and labels the benefit as a hypothesis."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 7,
+    "total": 7,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S05-A",
+    "trial": "t30",
+    "case": "S05",
+    "version": "phase2",
+    "repeat": 3,
+    "response_text_sha256": "562184c80a2471abdc8c1a3a9167541595ba40190f5f40c74ef9a90001a6d083",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Explicitly says no validated user findings are supported because E1 is founder interpretation without user evidence or sample details; invents no records."
+      },
+      {
+        "score": 2,
+        "evidence": "Labels all three claims as hypotheses and states PDF friction, collaboration need and dashboard fit are unknown."
+      },
+      {
+        "score": 2,
+        "evidence": "Offers checks of task failure location, multi-person work and comparative task outcomes, plus a reversible creation/download prototype; does not require interviews today."
+      },
+      {
+        "score": 2,
+        "evidence": "Keeps the PRD within approved creation/download scope, defers dashboard commitment, and explains a desk walkthrough cannot validate user needs."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S05-B",
+    "trial": "t28",
+    "case": "S05",
+    "version": "baseline",
+    "repeat": 3,
+    "response_text_sha256": "8338477b0ae5a3e74a45d79bd7151eb00c1365361e0eb9b4b405112fff8c7c80",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "States zero validated user findings and explains the absence of user evidence and sample details."
+      },
+      {
+        "score": 2,
+        "evidence": "Attributes E1 to the founder and explicitly marks PDF dissatisfaction, dashboard preference and collaboration need as not verified hypotheses."
+      },
+      {
+        "score": 2,
+        "evidence": "Provides counterevidence for each claim, including satisfactory PDF use and independent work, and recommends drafting the approved flow and task-based validation plan without arranging interviews."
+      },
+      {
+        "score": 2,
+        "evidence": "Distinguishes exploration approval from demand and retains dashboards and collaboration as unapproved proposals while giving concise PRD claims and a next step."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S05-C",
+    "trial": "t25",
+    "case": "S05",
+    "version": "phase2",
+    "repeat": 1,
+    "response_text_sha256": "1438292901d77a8ab43da1e5b3ec28ee4f8f5cbeb86e38f7f9a1c863132d21d0",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Explains that three validated findings are unsupported because E1 is founder interpretation without user evidence or sample context."
+      },
+      {
+        "score": 2,
+        "evidence": "Records all claims as hypotheses, calls the PDF cause unknown and the dashboard proposal an unsupported solution leap."
+      },
+      {
+        "score": 2,
+        "evidence": "Uses successful PDF use, independent task completion and a sufficient simpler flow as disconfirming checks, then recommends a reversible creation/download prototype and validation criteria."
+      },
+      {
+        "score": 2,
+        "evidence": "Keeps exploration within creation/download, says dashboard scope is unapproved and validation is not verified, and avoids interview scheduling today."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S05-D",
+    "trial": "t27",
+    "case": "S05",
+    "version": "baseline",
+    "repeat": 2,
+    "response_text_sha256": "15505e1d711bad087eba74414401e25031fd1060a8c4543772d176d2862dbee7",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Rejects validated findings from these records and explains that E1 establishes only founder interpretation with unknown user needs, frequency and context."
+      },
+      {
+        "score": 2,
+        "evidence": "Clearly titles the three claims unvalidated hypotheses derived from E1 rather than user findings."
+      },
+      {
+        "score": 2,
+        "evidence": "Pairs each hypothesis with concrete opposing outcomes and proposes a neutral task and evidence checklist for the approved flow, reserving observation for later without requiring interviews today."
+      },
+      {
+        "score": 2,
+        "evidence": "Keeps creation/download as scope, requires evidence and approval before dashboard or collaboration build, and notes usability observations cannot alone validate collaboration demand."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S05-E",
+    "trial": "t29",
+    "case": "S05",
+    "version": "phase2",
+    "repeat": 2,
+    "response_text_sha256": "e5f75d17c96966c0bd1819719a2039b839a0416b16998214f24479e3f6eea897",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "States no validated user findings because E1 is founder interpretation and user evidence and sample details are unavailable."
+      },
+      {
+        "score": 2,
+        "evidence": "Labels all three PRD statements unvalidated hypotheses attributed to E1 and keeps them separate from requirements."
+      },
+      {
+        "score": 2,
+        "evidence": "Supplies challenges such as PDFs meeting needs or simpler sharing/download improvements sufficing, and recommends drafting the approved flow and acceptance criteria today with later friction verification."
+      },
+      {
+        "score": 2,
+        "evidence": "States approval excludes collaborative dashboards, leaves expansion pending evidence and approval, and gives a concise recommendation without interview arrangements."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "S05-F",
+    "trial": "t26",
+    "case": "S05",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "401958cda4503c8ec076a6d792acd70b7dc627a8260cd4113daf21a75692b93b",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Says no validated findings are supported and identifies absent user evidence, sample, date and context; proposed labeled sample data are for a future prototype, not presented as research."
+      },
+      {
+        "score": 2,
+        "evidence": "Marks claims not verified and explicitly describes actual preferences as unknown and dashboard value as a founder proposal lacking comparison evidence."
+      },
+      {
+        "score": 2,
+        "evidence": "Gives useful counterchecks of PDF preference, lack of collaboration need and dashboard effort, plus a lightweight in-scope prototype and neutral evaluation plan whose preparation validates nothing."
+      },
+      {
+        "score": 2,
+        "evidence": "Restates approval for creation/download only, requires separate scope approval and evidence for dashboards, and gives concise limits and a feasible next step without recruitment requirements."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "C01-A",
+    "trial": "t32",
+    "case": "C01",
+    "version": "phase2",
+    "repeat": 1,
+    "response_text_sha256": "b24a95b6e209dcd46d66570a4f087d60661933c2b8ad8614f00f08cdfdbbc773",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Explicitly replaces Submit with the exact requested label Download invoice."
+      },
+      {
+        "score": 2,
+        "evidence": "Provides the correction directly, with no research, synthesis, intake, or artifact prerequisite."
+      },
+      {
+        "score": 2,
+        "evidence": "Explicitly keeps everything else unchanged and adds no feature, finding, scope change, or unrelated restyling."
+      },
+      {
+        "score": 2,
+        "evidence": "Makes no claim that rendered, runtime, accessibility, or other verification occurred."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "C01-B",
+    "trial": "t31",
+    "case": "C01",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "b24a95b6e209dcd46d66570a4f087d60661933c2b8ad8614f00f08cdfdbbc773",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Explicitly replaces Submit with the exact requested label Download invoice."
+      },
+      {
+        "score": 2,
+        "evidence": "Provides the correction directly, with no research, synthesis, intake, or artifact prerequisite."
+      },
+      {
+        "score": 2,
+        "evidence": "Explicitly keeps everything else unchanged and adds no feature, finding, scope change, or unrelated restyling."
+      },
+      {
+        "score": 2,
+        "evidence": "Makes no claim that rendered, runtime, accessibility, or other verification occurred."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  }
+]

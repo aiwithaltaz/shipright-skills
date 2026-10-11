@@ -1,0 +1,9 @@
+# Phase 2 synthesis evaluation protocol
+
+Frozen before any trial response on 2026-10-11. Baseline: 9bdcb74d6cc4e0efb774f4542ee6b2903336105a. Five cases, three fresh isolated trials per case per version: 30 responses. One fresh small-correction control per version: two additional responses, reported separately. Same raw prompts and wrapper; no version labels, rubric, expected answers, prior outputs or parent history. No model overrides; exact serving model/seed unavailable.
+
+Trial directories contain only a frozen skills tree, project templates, opt-in taste files and the raw task. No browsing, paid calls, app changes or unrelated reads. The output wrapper asks for the exact response and consulted pack-file list in response.json, without scoring. Synthetic fixtures test how evidence would be handled; they cannot establish actual user findings. Preserve every failure and incomplete run. Operational replacements must be separate records, never silent retries.
+
+Freeze the updated source before trials; do not tune guidance or criteria to win. After all outputs are saved, check file hashes, anonymize response texts and shuffle six responses per case. Fresh graders receive only raw prompt, rubric and anonymous replies; no skill sources, mapping or version labels. Preserve their initial scores and reasons. Parent checks arithmetic and factual grading discrepancies; any adjudication must be separate and disclose whether blinded. Unblind only after grading is complete.
+
+Run all old source/mutation, Phase 1 and context checks plus new Phase 2 checks. Historical evidence remains unchanged. No visual artifacts, merge or Phase 3. Report scores, useful passes, critical errors, regressions and limitations. This single-configuration AI evaluation cannot prove real usability, statistical superiority or cross-model reliability.

@@ -31,7 +31,7 @@ Keep the entire pack accessible so relative links resolve. Native discovery is a
 Phase 1 research remains inside product-design. Its SKILL.md directly links evidence, method,
 planning and source-register references, each loaded only for the current need.
 The shared contract still owns truthfulness, approval and gate statuses; evidence kinds are not new statuses.
-Research plans are not performed research. Full synthesis and later phases remain outside this change.
+Research plans are not performed research. Optional synthesis inside product-design separates records, patterns, findings and decisions. Its three references link directly from SKILL.md and load only for supplied-record interpretation, affected product commitments or provenance. research-evidence owns Phase 1 evidence kinds; research-synthesis owns grouping/finding discipline; research-to-decisions owns evidence-linked commitments under the shared authority contract. Do not copy these detailed rules into other skills. Phase 3 and later knowledge remain outside this change.
 
 ## One owner per rule
 

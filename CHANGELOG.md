@@ -349,3 +349,9 @@ ShipRight now works like a product and design agency: it writes a folder your co
 Replaced the aggregate 16,000-word failure with bounded entry, shared, reference and declared-loading-path token checks. Retained entry concision, all source safeguards, historical evidence and Phase 1 tests. Added direct conditional links for UI review/verification and launch accessibility; the link check also requires the directly consumed severity rubric. Canonical ownership and simple link/orphan checks replace any need for a duplicate detector. Architecture-only change: no screenshots, HTML fixtures or before/after images. No Phase 2 or merge.
 
 The pinned token checker is a separate required check; source validation remains standard-library only. CI runs both checkers, mutation tests and all regression tests. Results and limits are recorded in [migration results](evals/context-budget-migration/results.md).
+
+## Phase 2 research synthesis - 2026-10-11 (no new release)
+
+Added optional product-design guidance for raw records, defensible patterns/findings and evidence-linked proposed decisions. Preserves contradictory records, isolated serious issues, evidence kinds, approval boundaries and weak-evidence hypotheses. Three direct conditional references and a bounded synthesis path; no fifth skill, automatic persona, UI expansion, visual artifact or Phase 3 knowledge. Reconciled the Phase 1 synthesis deferral without removing its anti-fabrication protection. Original evaluations and source provenance remain unchanged.
+
+New source/mutation tests and controlled comparisons are recorded in [Phase 2 results](evals/phase-2-research-synthesis/results.md).

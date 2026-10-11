@@ -1,6 +1,6 @@
 ---
 name: product-design
-description: "Use this when framing a rough product idea, checking research evidence, selecting research methods or preparing lightweight research plans, deciding an in-scope flow, defining states or consequences, reviewing decisions, or writing requested documents. Preserve current phase and approved scope. Part of ShipRight."
+description: "Use this when framing a rough product idea, checking research evidence, synthesizing supplied research into findings and decisions, selecting methods or preparing lightweight plans, deciding an in-scope flow, defining states or consequences, reviewing decisions, or writing requested documents. Preserve current phase and approved scope. Part of ShipRight."
 ---
 
 # Product design
@@ -29,6 +29,7 @@ Continue without claiming a full check.
 | --- | --- |
 | Frame product | Actor, outcome, alternative, mechanism, phase and exclusions |
 | Research | Decision-relevant evidence or a lightweight plan |
+| Synthesize | Evidence-linked findings and proposed decisions, only when useful |
 | Shape flow | Entry, steps, cancel/failure and recovery |
 | Spec states | Triggers, UI, effects and preserved work |
 | Decision review | One grounded recommendation |
@@ -57,6 +58,15 @@ Use [opportunity-research.md](references/opportunity-research.md) only for reque
 No tools/participants: state the limit, keep facts Unknown and continue with testable hypotheses.
 Show recommendation, assumptions, risks and next step; useful/requested detail only.
 Do not claim performed sessions, validated demand or automatically alter approved scope.
+
+## Optional synthesis
+
+For supplied records needing interpretation, use [research-synthesis.md](references/research-synthesis.md).
+For findings affecting a product commitment, use [research-to-decisions.md](references/research-to-decisions.md).
+For synthesis-source provenance, use [synthesis-sources.md](references/synthesis-sources.md).
+Skip synthesis for clear corrections or planning-only work; missing evidence yields hypotheses, not findings.
+Keep raw records, interpretations and approval separate. Preserve contradictions and isolated serious issues.
+Show concise findings, risks and recommended decisions; no automatic personas, screens or scope changes.
 
 ## Flows and states
 

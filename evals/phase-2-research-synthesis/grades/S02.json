@@ -1,0 +1,154 @@
+{
+  "grades": [
+    {
+      "response_id": "S02-A",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Traces E1\u2013E2 unaided mouse successes separately from E3 current-version uncertainty and E4 trapped keyboard focus; says the mobile underlying cause remains unverified."
+        },
+        {
+          "score": 2,
+          "evidence": "Keeps E3 older cached file/current-version ambiguity visible and calls E4 an isolated accessibility failure and release blocker despite mouse success."
+        },
+        {
+          "score": 2,
+          "evidence": "Limits the mouse pass to observed sessions, rejects a happy majority and population prevalence, and says the notes cannot establish overall accessibility or usability readiness."
+        },
+        {
+          "score": 2,
+          "evidence": "Holds shipment, retains approved scope, requests focus and mobile corrections followed by keyboard, cached-file mobile and mouse regression checks; explicitly leaves the mobile cause unverified."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "S02-B",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Table independently traces E1\u2013E2 desktop mouse successes, E3 version-identification failure and E4 focus-trap failure; does not merge their causes."
+        },
+        {
+          "score": 2,
+          "evidence": "Explicitly identifies the older cached mobile file and says the isolated keyboard blocker warrants action."
+        },
+        {
+          "score": 2,
+          "evidence": "Says the successes support only the tested path, identifies limited coverage in four fictional participant records and leaves other contexts unverified without claiming overall usability."
+        },
+        {
+          "score": 2,
+          "evidence": "Holds v3, proposes corrections within approved scope and targeted keyboard, cached-file mobile and mouse retests; distinguishes unestablished mobile cause and planned tickets from actual resolution."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "S02-C",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Separately links E1\u2013E2 mouse completion, E3 current-invoice ambiguity and E4 keyboard focus trapping to their respective decision implications."
+        },
+        {
+          "score": 2,
+          "evidence": "Preserves the uncertainty that the newly downloaded file itself may not be stale and explicitly treats the once-observed E4 as critical to the core task."
+        },
+        {
+          "score": 2,
+          "evidence": "Limits passes to observed paths and fictional scenario interpretations, rejects a happy majority and population estimates, and leaves broader usability unverified."
+        },
+        {
+          "score": 2,
+          "evidence": "Holds shipment, proposes approved-flow corrections and specific keyboard, cached-file mobile and mouse checks, requiring relevant evidence of resolution; acknowledges that E3 cannot establish a stale new download."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "S02-D",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Traces the two mouse successes to E1\u2013E2 and gives separate E3 mobile and E4 keyboard failures; separately marks other contexts as unverified."
+        },
+        {
+          "score": 2,
+          "evidence": "Keeps the mobile older-file ambiguity and keyboard release blocker visible and explicitly states that caching, download behavior or labeling are unestablished mobile causes."
+        },
+        {
+          "score": 2,
+          "evidence": "Rejects founder majority and population-rate claims, bounds success to tested paths, identifies other devices/access needs/conditions as lacking evidence and confines claims to fictional scenario analysis."
+        },
+        {
+          "score": 2,
+          "evidence": "Holds approved v3, requests focus repair and investigation of mobile confusion, then verification of revised failed paths and mouse regression checking; distinguishes potential mobile causes and tickets from verified resolution."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "S02-E",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Table separately traces E1\u2013E2 mouse completion, E3 mobile version uncertainty and E4 inability to reach Download; does not assert a common cause."
+        },
+        {
+          "score": 2,
+          "evidence": "Preserves the older cached file and unresolved current version, retains the keyboard blockage and treats both as release blockers despite mouse successes."
+        },
+        {
+          "score": 2,
+          "evidence": "Bounds the pass to two observed cases, rejects majority and population success-rate conclusions, leaves general usability unverified and explicitly labels the material synthetic."
+        },
+        {
+          "score": 2,
+          "evidence": "Holds v3 and retains approved scope, requests focus/current-file corrections, cached-invoice mobile and keyboard retesting plus mouse regression checking, while saying stale-file cause and prevalence are unestablished."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "S02-F",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Table independently sources E1\u2013E2 successful mouse cases, E3 older-file/current-version failure and E4 trapped keyboard focus, without imposing a common cause."
+        },
+        {
+          "score": 2,
+          "evidence": "Keeps both mobile ambiguity and keyboard-only inability to reach Download visible as release blockers, despite two successful mouse cases."
+        },
+        {
+          "score": 2,
+          "evidence": "Limits success to supplied cases, rejects a successful-majority inference, marks broader rates unverified and distinguishes fictional scenario analysis from real-world validation."
+        },
+        {
+          "score": 2,
+          "evidence": "Holds approved v3, keeps scope, pairs focus repair with mobile investigation and correction, then specifies keyboard activation, cached-invoice mobile identification and mouse regression checks; technical cause remains unverified."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    }
+  ]
+}

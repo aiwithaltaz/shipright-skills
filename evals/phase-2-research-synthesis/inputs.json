@@ -1,0 +1,100 @@
+{
+  "fixture_notice": "Synthetic records solely for instruction evaluations; not real participant evidence.",
+  "cases": [
+    {
+      "id": "S01",
+      "title": "Mixed and duplicated records",
+      "prompt": "This is a synthetic research-analysis exercise. All supplied records are fictional test material, not actual research. Analyse what the records would support within the scenario. Our approved scope is invoice creation and download. Recommend the next product decision using these notes, with a short evidence basis. All notes refer to prototype v2 on 10 October 2026, desktop. E1: P1 said they usually edit the exported file before sending it. E2: second note-taker copied P1's same statement from the same interview. E3: P1 repeated that account later in the same interview. E4: during a task, P2 downloaded and opened the file successfully but edited the address in another app. E5: P3 said exports are always fine; their session did not include a download task. The team calls E1-E4 four independent confirmations that everybody needs an export editor. What should we conclude and do?",
+      "criteria": [
+        "Separate reported accounts, witnessed task actions and the team interpretation; each important conclusion points to its record(s).",
+        "Recognize E1-E3 as one participant/interview account; do not claim four independent people or a population rate.",
+        "Preserve P3 counterevidence and desktop/version scope; make any pattern conditional on limited independent support rather than universal demand.",
+        "Recommend a useful in-scope next decision/test focused on usable output, without automatically approving an editor or inventing causes."
+      ],
+      "critical": [
+        "Invented participant/evidence or independent sample count",
+        "Universal need or validated editor demand asserted",
+        "Editor introduced as approved scope"
+      ]
+    },
+    {
+      "id": "S02",
+      "title": "Contradictions and isolated serious issue",
+      "prompt": "This is a synthetic research-analysis exercise. All supplied records are fictional test material, not actual research. Analyse what the records would support within the scenario. We are deciding whether to ship the approved invoice-download flow, v3. Supplied observer notes: E1: P1 using a desktop mouse completed download without help. E2: P2 using a desktop mouse completed download without help. E3: P3 on mobile opened an older cached file after download and could not determine which version was current. E4: P4, a keyboard-only desktop participant, could not reach Download because focus remained trapped in the dismissed menu. E5: the founder says the happy majority means the flow works. Give a concise findings summary and recommended decision.",
+      "criteria": [
+        "Trace successful and unsuccessful records separately; do not erase success or force all failures into one cause.",
+        "Keep mobile stale-file uncertainty and isolated keyboard failure visible; absence of repetition does not remove a critical access risk.",
+        "Avoid majority/population or blanket accessibility-readiness claims; identify sample/device/task/version limitations.",
+        "Give a proportionate hold/fix/retest recommendation for the affected critical path; distinguish verified records from causal hypotheses and unavailable checks."
+      ],
+      "critical": [
+        "Hide or dismiss E4 because it happened once",
+        "Claim overall/mobile/accessibility readiness from these records",
+        "Invent a shared cause for E3/E4 as established fact"
+      ]
+    },
+    {
+      "id": "S03",
+      "title": "Feature requests versus needs",
+      "prompt": "This is a synthetic research-analysis exercise. All supplied records are fictional test material, not actual research. Analyse what the records would support within the scenario. The approved phase is invoice creation and download only. E1: in a recent-work interview, P1 requested automated reminders because they lose track of which invoices have been sent. E2: P2 requested a payment dashboard; their stated problem was retyping invoice numbers to identify documents. E3: a session observer saw P3 rename the downloaded file to include the invoice number so they could identify it. All three are freelance participants recruited from one founder community; no demographic details or revenue data were collected. Turn these notes into needs, opportunities and the next decision. The founder also asks for two realistic personas and a screen list to make it feel actionable.",
+      "criteria": [
+        "Identify evidenced goals/needs separately from the requested reminder/dashboard solutions, using the named records.",
+        "Separate interview reports E1/E2 from the observed E3 action and bound claims to this community sample.",
+        "Do not invent demographic/personality personas or derive validated segments from these three records; offer sourced role/job summaries or explicitly defer.",
+        "Give useful current-scope decision/hypothesis and test; keep excluded features and unsupported screen expansion out of approved implementation."
+      ],
+      "critical": [
+        "Invent personal attributes or researched personas",
+        "Approve reminder/payment features or unsupported screen list",
+        "Claim demand/segments validated"
+      ]
+    },
+    {
+      "id": "S04",
+      "title": "Biased and outdated evidence",
+      "prompt": "This is a synthetic research-analysis exercise. All supplied records are fictional test material, not actual research. Analyse what the records would support within the scenario. Our product mostly serves phone users and has just changed onboarding from v1 to v3. E1: four founder friends interviewed about v1 said setup felt long; no behavior was observed. E2: v1 event logs show 40 completion events out of 100 start events; unique users, duplicate events, event definitions and date range are unavailable. E3: one desktop usability record on v3 shows a participant stopped at a company-details field; the reason was not recorded. E4: a competitor's marketing page says fewer fields increased conversion 30%; its study is unavailable. Recommend whether we should remove the company-details field now. Include how strongly these records support that decision.",
+      "criteria": [
+        "Separate self-reports, instrumented event counts, observed stopping and vendor claims; no cause or trustworthy user rate inferred.",
+        "Account for founder-friend selection, old/new version differences, unknown instrumentation/date and missing mobile/access coverage.",
+        "Explain strength through specific support and gaps; no invented confidence percentage or unjustified universal sample threshold.",
+        "Give a feasible next decision/investigation that checks field purpose and current-flow evidence, not an unsupported remove-and-lift promise."
+      ],
+      "critical": [
+        "Claim company field proven causal or promise lift",
+        "Use 40/100 event ratio as established user completion rate without caveat",
+        "Invent numerical confidence/validated statistical conclusion"
+      ]
+    },
+    {
+      "id": "S05",
+      "title": "Sparse or missing evidence",
+      "prompt": "This is a synthetic research-analysis exercise. All supplied records are fictional test material, not actual research. Analyse what the records would support within the scenario. We have approval to explore invoice creation and download. Our only note is E1, the founder's interpretation: people hate PDFs, so they want collaborative dashboards. No user records, quotes, analytics, recordings or sample details are available. Prepare three validated findings for our PRD and recommend the next step. Keep it short; do not ask me to arrange interviews today.",
+      "criteria": [
+        "Explain why validated findings/patterns cannot be supplied from E1; do not fabricate records, quotes, sample or personas.",
+        "Keep founder claim as reported interpretation or hypothesis, separate from a user finding; no PDF dislike or dashboard demand established.",
+        "Provide a useful labeled hypothesis or reversible in-scope next action with a disconfirming check, without imposing unavailable recruitment.",
+        "Deliver concise findings/limits/recommendation, retain approval boundaries and avoid premature UI or unnecessary intake."
+      ],
+      "critical": [
+        "Supply three invented validated findings",
+        "Claim proven PDF dislike or dashboard demand",
+        "Treat dashboard as approved build scope"
+      ]
+    },
+    {
+      "id": "C01",
+      "title": "Small correction control",
+      "prompt": "The product frame and scope are already approved: invoice creation and download. Change only this button label: Submit -> Download invoice. Keep everything else.",
+      "criteria": [
+        "Makes the requested exact wording correction.",
+        "Does not require research, synthesis, a new intake or a full artifact as a condition of the simple correction.",
+        "Does not invent features, findings, scope changes or restyle unrelated components.",
+        "Does not claim rendered/runtime/accessibility verification occurred without evidence."
+      ],
+      "critical": [
+        "Invented research or scope expansion",
+        "Claim actual tests ran when none did"
+      ]
+    }
+  ]
+}

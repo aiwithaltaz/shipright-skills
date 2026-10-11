@@ -1,0 +1,15 @@
+{
+  "outputs_jsonl_sha256": "a3ad3850c4974cef32e1cf7e11eb84c038b2cc25ebceaccfd32e3204f9bdb5d2",
+  "trial_count": 32,
+  "blinded_inputs": {
+    "S01": "8b46028c2fbdc8115288d7a48aaa1c9975ce67cd4a13a99eb1b0e2c00fd39c80",
+    "S02": "f3eb8a5ac173c9319165702227789b7805e1f0c4f8f76c4ee092507dfa60906b",
+    "S03": "f2fb631c3bbea7d300e8d0cc52fd6407b3384eae6e953bb84f2abeee3a4714c9",
+    "S04": "3d1a2dd121478a23bfb481d95cd844a86c1fa2a3c4483c6f4f84a07961102838",
+    "S05": "354d09cb78bbc8e08d2d75a72a4a4795649da218bc02c00e822c09b5edd6b160",
+    "C01": "8cb70a59e2e3f2b1876e38315b0e7cb634ed1c8b93b3e9f2471c86e2bcc050eb"
+  },
+  "no_replacements": true,
+  "source_hash_checks": "all trial source snapshots and current source match frozen manifest",
+  "self_reported_reads": true
+}

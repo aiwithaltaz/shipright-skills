@@ -86,3 +86,7 @@ git diff --check
 The standard-library source checker also runs link/orphan/loading-policy structure checks. The separate required token checker fails when its pinned dependency or encoding is unavailable. CI runs both and all regression tests. Word counts remain informational except for the retained entry concision check.
 
 [Migration protocol](../evals/context-budget-migration/protocol.md) defines boundary checks and loading trials. Preserve old reports and failures unchanged. Structural checks verify explicit loading conditions, not their semantic relevance. Fresh loading smoke tests do not prove every agent/client follows them. Keep canonical ownership documented; do not add complex duplicate-content detection. No visual artifacts for this migration.
+
+## Phase 2 synthesis
+
+Run `python3 tests/test_phase2_synthesis.py` or normal unittest discovery after both required checkers. Preserve all Phase 1 protections; its old deferral test now rejects unsupported personas/findings under the new optional owner. [Protocol](../evals/phase-2-research-synthesis/protocol.md) and [rubric](../evals/phase-2-research-synthesis/rubric.md) were frozen before trials. Synthetic inputs are not performed research. Compare frozen main and Phase 2 using identical prompts, fresh isolated trials and blind grading; preserve outputs/failures and disclose limitations. No visual artifacts for this phase.
