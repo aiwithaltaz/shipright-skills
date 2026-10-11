@@ -1,0 +1,48 @@
+{
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "evals/check_sources.py",
+        "--self-test"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: 4 restricted metadata records; stable 8/10/10/20 gates; 243 local references; phase/feedback/intake contracts; synchronized F1-F3 exports; project paths; versions; 20170 skill words (informational; run check_context.py for token budgets); original paths and historical bytes retained.\nKNOWN LIMIT: Historical app.js hash mismatch is disclosed; old runtime evidence does not verify packaged app.js.\nKNOWN LIMIT: F03 raw evidence retains a quoted em dash; the style miss is disclosed.\nPASS: 94 mutation self-tests rejected.\nSource integrity only. Behavior trials, client installs and runtime verification require separate evidence.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "evals/check_context.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: bounded context and direct conditional references\n{'package': 'tiktoken', 'version': '0.12.0', 'encoding': 'cl100k_base'}: 41 files; always shared 1678; all shared 2986; no global knowledge cap.\nproduct-design: largest declared normal path 6172/12000 tokens\nship-check: largest declared normal path 5950/12000 tokens\nui-ux-design: largest declared normal path 10747/12000 tokens\nux-critique: largest declared normal path 6426/12000 tokens\nStatic declarations do not guarantee client loading or universal provider token counts.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "................................................................................................\n----------------------------------------------------------------------\nRan 96 tests in 11.204s\n\nOK\n"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

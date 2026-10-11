@@ -1,0 +1,154 @@
+{
+  "grades": [
+    {
+      "response_id": "I03-A",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Approved retrieval contract limits fields to invoice number and customer name, explicitly supports partial names, and offers Draft/Sent and Date range. It marks number matching, typo/synonym support, counts, and scale Unknown rather than inventing capabilities or metadata."
+        },
+        {
+          "score": 2,
+          "evidence": "F2 explicitly leaves Draft plus Sent combination unresolved and says not to assume OR or AND; F3 likewise leaves query/status/date combinations unresolved and requires owner decisions checked against backend support."
+        },
+        {
+          "score": 2,
+          "evidence": "The states table separates no matches, successfully established empty corpus, and retrieval failure. F6 proposes individual query/status/date removal with criteria retention, and explicitly says clearing never changes invoices or invoice drafts; acceptance checks preserve unrelated work."
+        },
+        {
+          "score": 2,
+          "evidence": "Provides concrete scoped labels, visible criteria, keyboard/status feedback, and acceptance checks conditioned on F1\u2013F5 decisions. Founder additions are explicitly outside approved scope with no controls or data requirements; ranking, performance, and validation are not promised."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I03-B",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Specifies invoice number or customer name with supported partial-name matching and only Draft/Sent status and date range. It does not promise typo correction, synonyms, or number prefix matching, and explicitly omits unsupported counts and scale claims."
+        },
+        {
+          "score": 2,
+          "evidence": "D1 blocks multiple-status behavior until product approval and backend confirmation rather than assuming OR. D2 explicitly declines AND across query/status/date and also leaves cross-field matching unresolved."
+        },
+        {
+          "score": 2,
+          "evidence": "Separates successful no-match results from a confirmed unfiltered empty list, loading, and failure. It allows query editing/clearing, individual status removal, and date changes while retaining criteria; clear scope explicitly excludes invoice deletion, status changes, and discarded drafts."
+        },
+        {
+          "score": 2,
+          "evidence": "Useful current-list presentation, ambiguous-name handling, scoped recovery, and unperformed acceptance checks are supplied. D6 keeps payment status, tags, and saved searches outside scope without placeholders or implied data models; no ranking or SDK is added."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I03-C",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Retrieval contract limits search to invoice number and customer name, states partial customer-name support, and specifies Draft/Sent multi-selection and date range. Other match details, ranking, counts, scale, and date semantics remain Unknown; no new metadata is established."
+        },
+        {
+          "score": 2,
+          "evidence": "The status contract explicitly rejects silently implementing OR or AND, while Combined criteria and F3 leave query/filter and cross-filter rules unresolved. F1\u2013F5 are decision dependencies rather than backend defaults."
+        },
+        {
+          "score": 2,
+          "evidence": "No-match recovery preserves all criteria and explicitly allows one change without losing the others. Named clearing changes retrieval only, never invoices or saved invoice work; confirmed empty permitted corpus and retrieval failure have separate conditions and feedback."
+        },
+        {
+          "score": 2,
+          "evidence": "Offers proposed interactions within existing Invoices, meaningful accessible feedback, and concrete checks after F1\u2013F5 decisions, with all verification explicitly unperformed. Founder additions stay outside scope with no implementation commitments; existing access enforcement remains unverified."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I03-D",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Contract uses only invoice number/customer name search, supported partial names, Draft/Sent multi-select, and date range. Unknown number matching, field combination, date semantics, counts, and dataset size are not filled with assumptions; it forbids unapproved columns and ranking."
+        },
+        {
+          "score": 2,
+          "evidence": "F2 requires approval for both selected statuses and neither selected, explicitly recognizing OR versus AND as unresolved. F3 says not to silently assume AND across query, status, and date."
+        },
+        {
+          "score": 2,
+          "evidence": "The proposed states distinguish no matches from an established accessible empty base list and request failure. Staff can clear search, selected statuses, or date range independently, retaining editable criteria; clearing never deletes invoices or changes their statuses."
+        },
+        {
+          "score": 2,
+          "evidence": "Provides scoped labels, pending/applied criteria guidance, invalid-date correction dependent on approved rules, and acceptance checks including accessibility and exit behavior. Payment status/tags/saved searches are excluded from controls, routes, and data models; runtime remains unverified."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I03-E",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Scope table specifies invoice number/customer name, partial customer-name support, Draft/Sent multiple selections, and date range only. Unknown number/date rules, counts, and scale remain unresolved; suggestions, typo correction, query rewriting, and numerical claims are not promised."
+        },
+        {
+          "score": 2,
+          "evidence": "D2 explicitly declines assuming OR, AND, or another within-Status interpretation. D3 leaves cross-criteria rules unresolved, and D4 separately identifies defaults and no-selected-status meaning for an approved decision."
+        },
+        {
+          "score": 2,
+          "evidence": "Proposed states distinguish a successful no-match query, distinguishable empty underlying list, and failed retrieval. Recovery is user-directed and individual clearing preserves other criteria; clear-all scope is explicit and never record deletion, while invalid dates do not discard unrelated criteria."
+        },
+        {
+          "score": 2,
+          "evidence": "Gives concrete scoped presentation and recovery, query/result consistency decisions, and acceptance checks with expected results deferred until rules are approved. Founder additions have no controls/placeholders/data requirements, no new ranking/SDK is added, and runtime/recovery validation is explicitly absent."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I03-F",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Only invoice number and customer name are approved searchable fields, with supported partial names; Status is Draft/Sent multi-select and Date range is the other facet. Match details, ranking, counts, scale, sorting/pagination support, and date interpretation remain unresolved rather than invented."
+        },
+        {
+          "score": 2,
+          "evidence": "Within-Status row says not to implement OR or AND without approval, including unresolved no-selection behavior. Combined criteria explicitly declines assuming intersection/AND and requires the owner to approve both combination rules."
+        },
+        {
+          "score": 2,
+          "evidence": "No matches retain visible editable query/status/date criteria with scoped removal, preservation of unrelated work, and no automatic relaxation. Empty collection requires established unfiltered emptiness; failures are separately described and preserve criteria as a requirement. Clearing cannot affect invoices, drafts, or selected records."
+        },
+        {
+          "score": 2,
+          "evidence": "Provides practical current-list labels, supported recovery and exit, acceptance checks for searches/combinations/states, and proposed accessible feedback. Payment status/tags/saved searches remain later-scope suggestions without placeholders or requirements; no ranking/SDK or validated-findability claim is introduced."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    }
+  ]
+}

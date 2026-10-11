@@ -9,6 +9,7 @@ description: "Use this when designing or refining an in-scope screen, layout, co
 **Context before generate. Product before pixels.**
 
 Turn a clear screen job into a useful layout. For an unclear product job, ask or route to product-design.
+For unresolved object organization, destinations or retrieval scope, use product-design before screens. Skip that detour for clear corrections or sufficient approved structure.
 For a critique request, use ux-critique. Do not start a full audit before an explicit small correction.
 
 ## INTAKE

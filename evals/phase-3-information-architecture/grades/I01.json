@@ -1,0 +1,154 @@
+{
+  "grades": [
+    {
+      "response_id": "I01-A",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Object and relationship tables trace exactly one Course per Lesson and many Lessons per Course to D1, both Resource-link directions to D2, and draft/published to D3. It explicitly identifies lifecycle states as Resource states and preserves a shared Resource identity across links."
+        },
+        {
+          "score": 2,
+          "evidence": "Ownership is Unknown for all three objects; minimum/maximum link counts and deletion effects remain decisions. It preserves the approved exactly-one Course constraint and explicitly says no cascade deletion is established."
+        },
+        {
+          "score": 2,
+          "evidence": "It explicitly keeps Author, Team, the complete schema and screen design outside this phase. Its ownership/access questions are scoped decisions, not new approved objects, roles or implementations."
+        },
+        {
+          "score": 2,
+          "evidence": "Provides compact object and relationship summaries, names deletion consequences for shared Resources, and recommends founder decisions before authorizing a separate schema task. It clearly marks implementation readiness as needing decisions."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I01-B",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "The object table attributes both Course/Lesson directions to D1, both Lesson/Resource directions to D2 and Resource states to D3. It identifies many-to-many associations separately from the shared Resource and distinguishes state names from unspecified transition/visibility rules."
+        },
+        {
+          "score": 2,
+          "evidence": "It preserves exactly one Course per Lesson while leaving zero cases and numerical limits undecided. Ownership, deletion, orphan handling and unlinking are open decisions; no destructive or ownership behavior is assumed."
+        },
+        {
+          "score": 2,
+          "evidence": "It calls the schema premature and Author/Team scope expansion, requiring an explicit scope revision before addition. Suggested founder or delegated product decision ownership is a grounded proposal, not an established product role."
+        },
+        {
+          "score": 2,
+          "evidence": "Gives an actionable three-object summary and decision table with reasons and proposed decision owners. Recommends concrete examples, approved decision records, then schema translation, with no screens designed."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I01-C",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "The object table traces Course/Lesson multiplicity to D1, links/reuse to D2 and Resource draft/published states to D3. The relationship table supplies both Course/Lesson directions and Resource reuse in both directions, retaining one Resource identity; lifecycle and link-exposure questions are kept distinct."
+        },
+        {
+          "score": 2,
+          "evidence": "Explicitly says Course membership cannot establish ownership. Deletion, unlinking, numerical count constraints, zero cases, transitions and propagation behavior remain unresolved; no cascade, restriction or recovery policy is approved."
+        },
+        {
+          "score": 2,
+          "evidence": "Author and Team remain proposals for later scope approval; storage representation is deferred to database design. D4-D8 are clearly labeled missing decisions to resolve, rather than invented approved records or relationships."
+        },
+        {
+          "score": 2,
+          "evidence": "Provides useful object/relationship tables and consequences-focused missing decisions, including shared-resource edits and visibility. Recommends founder resolution within the three-object scope, recording approval/source, then separate schema work; it designs no screens."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I01-D",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Object source/status entries and four directional relationship rows trace the model to D1-D3. It preserves exactly one Course per Lesson, many-to-many Resource reuse, and explicitly distinguishes Resource states and shared identity from Lesson links."
+        },
+        {
+          "score": 2,
+          "evidence": "Ownership is Unknown; zero links and numerical maxima remain unresolved. It distinguishes unlinking from deletion and says no cascade deletion is approved, while listing deletion consequences for each relationship."
+        },
+        {
+          "score": 2,
+          "evidence": "Author, Team and complete schema are proposals outside the phase and require approved scope/product decisions. No new objects, interfaces, routes or screens are introduced."
+        },
+        {
+          "score": 2,
+          "evidence": "Summarizes objects and all relationship directions, then provides decision statuses and founder next actions. Recommends a short review with concrete examples, recording outcomes before commissioning the scoped implementation schema."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I01-E",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Tables trace Course/Lesson structure to D1, both directions of Resource multiplicity/reuse to D2 and Resource states to D3. Resource identity is independent of a particular Lesson association, while zero links remain unknown; lifecycle behavior is discussed separately from links."
+        },
+        {
+          "score": 2,
+          "evidence": "It explicitly says content relationships are not ownership rules and links do not determine deletion effects. Ownership, empty cases, numerical caps and deletion/unlinking behavior require decisions, preserving exactly one Course per Lesson."
+        },
+        {
+          "score": 2,
+          "evidence": "Author/Team are out-of-scope proposals; adding either requires a concrete job and explicit scope approval. Relational storage is described as a later implementation concern without introducing a fourth product object or designing a schema."
+        },
+        {
+          "score": 2,
+          "evidence": "Supplies a small conceptual summary and decision table explaining consequences. Recommends resolving policies, recording owners/approval status and checking deletion of a multiply linked Resource before database translation; no screens are designed."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I01-F",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Source columns connect the three objects to D1-D3, and the relationship table states both directions, exactly one Course per Lesson and many-to-many Resource reuse. It explicitly locates draft/published on Resource and preserves a single Resource identity across Lesson links."
+        },
+        {
+          "score": 2,
+          "evidence": "All ownership entries are Unknown; membership and linking do not establish ownership. Counts remain unresolved except the approved one-Course requirement. Course/Lesson/Resource deletion effects are open and no cascade deletion is authorized."
+        },
+        {
+          "score": 2,
+          "evidence": "It keeps Author/Team outside scope and requires an approved concrete need before revisiting them. Database tables/schema are deferred to a separate implementation step, and no extra objects, routes or screens are invented."
+        },
+        {
+          "score": 2,
+          "evidence": "Provides concise object and relationship summaries with identity and consequences, plus a decisions table covering ownership, deletion, counts and lifecycle. Directs the founder to resolve and record decisions before handing the model to database implementation."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    }
+  ]
+}

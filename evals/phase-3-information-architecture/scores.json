@@ -1,0 +1,1204 @@
+[
+  {
+    "response_id": "I01-A",
+    "trial": "t03",
+    "case": "I01",
+    "version": "phase3",
+    "repeat": 3,
+    "response_text_sha256": "cfe1a9311f89fe2fee9a236543e337c009b9efa01497f8d878c3393d6cd1b85d",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Object and relationship tables trace exactly one Course per Lesson and many Lessons per Course to D1, both Resource-link directions to D2, and draft/published to D3. It explicitly identifies lifecycle states as Resource states and preserves a shared Resource identity across links."
+      },
+      {
+        "score": 2,
+        "evidence": "Ownership is Unknown for all three objects; minimum/maximum link counts and deletion effects remain decisions. It preserves the approved exactly-one Course constraint and explicitly says no cascade deletion is established."
+      },
+      {
+        "score": 2,
+        "evidence": "It explicitly keeps Author, Team, the complete schema and screen design outside this phase. Its ownership/access questions are scoped decisions, not new approved objects, roles or implementations."
+      },
+      {
+        "score": 2,
+        "evidence": "Provides compact object and relationship summaries, names deletion consequences for shared Resources, and recommends founder decisions before authorizing a separate schema task. It clearly marks implementation readiness as needing decisions."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I01-B",
+    "trial": "t02",
+    "case": "I01",
+    "version": "baseline",
+    "repeat": 2,
+    "response_text_sha256": "e8bdc6b57bcef2967b9c9eea388fc6aee1cd774a8f6584653d3cb3a06e5e9bf5",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "The object table attributes both Course/Lesson directions to D1, both Lesson/Resource directions to D2 and Resource states to D3. It identifies many-to-many associations separately from the shared Resource and distinguishes state names from unspecified transition/visibility rules."
+      },
+      {
+        "score": 2,
+        "evidence": "It preserves exactly one Course per Lesson while leaving zero cases and numerical limits undecided. Ownership, deletion, orphan handling and unlinking are open decisions; no destructive or ownership behavior is assumed."
+      },
+      {
+        "score": 2,
+        "evidence": "It calls the schema premature and Author/Team scope expansion, requiring an explicit scope revision before addition. Suggested founder or delegated product decision ownership is a grounded proposal, not an established product role."
+      },
+      {
+        "score": 2,
+        "evidence": "Gives an actionable three-object summary and decision table with reasons and proposed decision owners. Recommends concrete examples, approved decision records, then schema translation, with no screens designed."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I01-C",
+    "trial": "t06",
+    "case": "I01",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "ae934f741b98384fad6b5d6020940544de4c836c2d49afb7f4a9aef7b899d4f6",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "The object table traces Course/Lesson multiplicity to D1, links/reuse to D2 and Resource draft/published states to D3. The relationship table supplies both Course/Lesson directions and Resource reuse in both directions, retaining one Resource identity; lifecycle and link-exposure questions are kept distinct."
+      },
+      {
+        "score": 2,
+        "evidence": "Explicitly says Course membership cannot establish ownership. Deletion, unlinking, numerical count constraints, zero cases, transitions and propagation behavior remain unresolved; no cascade, restriction or recovery policy is approved."
+      },
+      {
+        "score": 2,
+        "evidence": "Author and Team remain proposals for later scope approval; storage representation is deferred to database design. D4-D8 are clearly labeled missing decisions to resolve, rather than invented approved records or relationships."
+      },
+      {
+        "score": 2,
+        "evidence": "Provides useful object/relationship tables and consequences-focused missing decisions, including shared-resource edits and visibility. Recommends founder resolution within the three-object scope, recording approval/source, then separate schema work; it designs no screens."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I01-D",
+    "trial": "t01",
+    "case": "I01",
+    "version": "phase3",
+    "repeat": 2,
+    "response_text_sha256": "07abd1a1cd441c8ae1a0ba39254fde74b46b50f781b056b1070ce6750d29c83d",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Object source/status entries and four directional relationship rows trace the model to D1-D3. It preserves exactly one Course per Lesson, many-to-many Resource reuse, and explicitly distinguishes Resource states and shared identity from Lesson links."
+      },
+      {
+        "score": 2,
+        "evidence": "Ownership is Unknown; zero links and numerical maxima remain unresolved. It distinguishes unlinking from deletion and says no cascade deletion is approved, while listing deletion consequences for each relationship."
+      },
+      {
+        "score": 2,
+        "evidence": "Author, Team and complete schema are proposals outside the phase and require approved scope/product decisions. No new objects, interfaces, routes or screens are introduced."
+      },
+      {
+        "score": 2,
+        "evidence": "Summarizes objects and all relationship directions, then provides decision statuses and founder next actions. Recommends a short review with concrete examples, recording outcomes before commissioning the scoped implementation schema."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I01-E",
+    "trial": "t05",
+    "case": "I01",
+    "version": "baseline",
+    "repeat": 3,
+    "response_text_sha256": "f16d720f9ef55f26f4f8ecd49807101dfd46636b1dc5b4484f44f09dc174591d",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Tables trace Course/Lesson structure to D1, both directions of Resource multiplicity/reuse to D2 and Resource states to D3. Resource identity is independent of a particular Lesson association, while zero links remain unknown; lifecycle behavior is discussed separately from links."
+      },
+      {
+        "score": 2,
+        "evidence": "It explicitly says content relationships are not ownership rules and links do not determine deletion effects. Ownership, empty cases, numerical caps and deletion/unlinking behavior require decisions, preserving exactly one Course per Lesson."
+      },
+      {
+        "score": 2,
+        "evidence": "Author/Team are out-of-scope proposals; adding either requires a concrete job and explicit scope approval. Relational storage is described as a later implementation concern without introducing a fourth product object or designing a schema."
+      },
+      {
+        "score": 2,
+        "evidence": "Supplies a small conceptual summary and decision table explaining consequences. Recommends resolving policies, recording owners/approval status and checking deletion of a multiply linked Resource before database translation; no screens are designed."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I01-F",
+    "trial": "t04",
+    "case": "I01",
+    "version": "phase3",
+    "repeat": 1,
+    "response_text_sha256": "e93a36d50162950eace9d4caa804c4756a2abe6629d2dbe8913ba16a947bc55b",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Source columns connect the three objects to D1-D3, and the relationship table states both directions, exactly one Course per Lesson and many-to-many Resource reuse. It explicitly locates draft/published on Resource and preserves a single Resource identity across Lesson links."
+      },
+      {
+        "score": 2,
+        "evidence": "All ownership entries are Unknown; membership and linking do not establish ownership. Counts remain unresolved except the approved one-Course requirement. Course/Lesson/Resource deletion effects are open and no cascade deletion is authorized."
+      },
+      {
+        "score": 2,
+        "evidence": "It keeps Author/Team outside scope and requires an approved concrete need before revisiting them. Database tables/schema are deferred to a separate implementation step, and no extra objects, routes or screens are invented."
+      },
+      {
+        "score": 2,
+        "evidence": "Provides concise object and relationship summaries with identity and consequences, plus a decisions table covering ownership, deletion, counts and lifecycle. Directs the founder to resolve and record decisions before handing the model to database implementation."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I02-A",
+    "trial": "t10",
+    "case": "I02",
+    "version": "phase3",
+    "repeat": 3,
+    "response_text_sha256": "1c92343608d6810dc22da3c6913682b6f8767070ea355fe8080605b5d7d771a8",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Keeps Invoices, Templates and Help as the existing destinations; explicitly identifies Draft and Sent as metadata on individual invoice records, not content types or top-level navigation."
+      },
+      {
+        "score": 2,
+        "evidence": "Retains the concrete current labels, rejects unsupported divisions to reach seven categories, and explains that Work, Studio and Resources obscure the supplied content."
+      },
+      {
+        "score": 2,
+        "evidence": "Preserves R1\u2019s bills and R2\u2019s invoices vocabulary, states no navigation task or card sort occurred, and identifies the fictional records and hierarchy as unvalidated."
+      },
+      {
+        "score": 2,
+        "evidence": "Preserves existing routes and capabilities and adds no screens, filters or search; offers an optional short task-based check with confusion and invoice-location difficulty as reasons to reconsider."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I02-B",
+    "trial": "t07",
+    "case": "I02",
+    "version": "phase3",
+    "repeat": 1,
+    "response_text_sha256": "4766220845a1505ef669b3816540d7f4d6cc06dfa2665f1db6470579ca262671",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "The table maps only the existing Invoices list, saved Templates and Help articles; Draft and Sent remain metadata on invoice records rather than separate content types or destinations."
+      },
+      {
+        "score": 2,
+        "evidence": "Retains Invoices, Templates and Help, rejects seven categories as unsupported, and declines the vague stakeholder groupings without inventing categories."
+      },
+      {
+        "score": 2,
+        "evidence": "Explicitly records R1\u2019s bills and R2\u2019s invoices as conflicting fictional vocabulary, not findability evidence; states no navigation task or card sort occurred and no actual validation exists."
+      },
+      {
+        "score": 2,
+        "evidence": "Preserves destinations and routes without new pages, filters or search; proposes an optional small existing-interface navigation task with neutral wording and a concrete confusion signal."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I02-C",
+    "trial": "t12",
+    "case": "I02",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "406f73151a3ac5a8656a84cdef406a23e4acd566a20cc2cb887610303dcab665",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Flat navigation contains only the three approved destinations; Draft and Sent stay attached to invoice records in their existing presentation, not navigation entries or new capabilities."
+      },
+      {
+        "score": 2,
+        "evidence": "Retains existing concrete labels, refuses four unsupported additions to reach seven, and treats Bills only as a future candidate rather than another destination or approved interface synonym."
+      },
+      {
+        "score": 2,
+        "evidence": "Preserves both R1 and R2 terms, explicitly calls the records fictional, and denies evidence of a preferred label, shared mental model or navigation success; acknowledges absent tasks and card sort."
+      },
+      {
+        "score": 2,
+        "evidence": "Provides a complete scoped recommendation preserving destinations and capabilities with no screens or search; proposes a small optional location check across existing content, with confusion prompting reconsideration."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I02-D",
+    "trial": "t09",
+    "case": "I02",
+    "version": "baseline",
+    "repeat": 2,
+    "response_text_sha256": "b26e86ee16f3885a0c9e0f3dcb40c3c99d8cc91c3f10870b303935eaf4b8b075",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Maps only the existing invoices list, saved templates and help articles; Draft and Sent remain invoice lifecycle metadata and Bills is not a separate object or destination."
+      },
+      {
+        "score": 2,
+        "evidence": "Retains the current three labels and rejects the seven-category quota; explains possible ambiguity in Work, Studio and Resources as rationale rather than inventing approved mappings."
+      },
+      {
+        "score": 2,
+        "evidence": "Reports both R1\u2019s bills and R2\u2019s invoices, distinguishes reported terms from preference and successful navigation, and explicitly states fictional records, absent navigation tasks and absent card sort."
+      },
+      {
+        "score": 2,
+        "evidence": "Preserves scope without new screens, search, views or filters; suggests a conditional small navigation task using invoice and bill wording and identifies repeated wrong choices or inability to identify Invoices as reconsideration triggers."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I02-E",
+    "trial": "t08",
+    "case": "I02",
+    "version": "phase3",
+    "repeat": 2,
+    "response_text_sha256": "7ed1c46199e141b2b79d19c87bf4516e5b15847d213953f0fb342ee86984e06c",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Uses only Invoices, saved Templates and Help articles; identifies Draft and Sent as each invoice\u2019s status, not distinct content types or destinations."
+      },
+      {
+        "score": 2,
+        "evidence": "Keeps the three existing concrete labels, rejects four unsupported categories, and explains why a premium tone does not justify abstract replacements or grouping layers."
+      },
+      {
+        "score": 2,
+        "evidence": "Preserves R1\u2019s bills and R2\u2019s invoices as conflicting fictional terms, explicitly says neither establishes findability, and states no navigation task or card sort occurred."
+      },
+      {
+        "score": 2,
+        "evidence": "Preserves destinations, routes and capabilities without adding screens, search, filters or status destinations; offers an optional small task check only if the naming dispute needs resolution and gives difficulty locating invoices as a challenge signal."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I02-F",
+    "trial": "t11",
+    "case": "I02",
+    "version": "baseline",
+    "repeat": 3,
+    "response_text_sha256": "8b954573718134de2594c695665b3d04bb7541c256bbaa2bb99317f746fe8796",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "The table includes only existing invoice records, saved templates and help articles; Draft and Sent remain invoice lifecycle metadata with their existing display, not top-level destinations, tabs or filters."
+      },
+      {
+        "score": 2,
+        "evidence": "Retains Invoices, Templates and Help, rejects seven categories without supporting content, and explains that the stakeholder\u2019s abstract premium labels lack a findability basis."
+      },
+      {
+        "score": 2,
+        "evidence": "Preserves both fictional interview terms and says neither establishes successful navigation; explicitly notes no task or card sort occurred and synthetic records establish no actual research findings."
+      },
+      {
+        "score": 2,
+        "evidence": "Offers an actionable scope-preserving structure with no new screens, search or capabilities; suggests a conditional focused check of existing labels for concrete invoice, template and help tasks, with confusion prompting label reconsideration."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I03-A",
+    "trial": "t16",
+    "case": "I03",
+    "version": "phase3",
+    "repeat": 2,
+    "response_text_sha256": "a35e2916e002ca968bf260e7f4f7e1453c09088a47fa239304b27bcfe3033dd5",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Approved retrieval contract limits fields to invoice number and customer name, explicitly supports partial names, and offers Draft/Sent and Date range. It marks number matching, typo/synonym support, counts, and scale Unknown rather than inventing capabilities or metadata."
+      },
+      {
+        "score": 2,
+        "evidence": "F2 explicitly leaves Draft plus Sent combination unresolved and says not to assume OR or AND; F3 likewise leaves query/status/date combinations unresolved and requires owner decisions checked against backend support."
+      },
+      {
+        "score": 2,
+        "evidence": "The states table separates no matches, successfully established empty corpus, and retrieval failure. F6 proposes individual query/status/date removal with criteria retention, and explicitly says clearing never changes invoices or invoice drafts; acceptance checks preserve unrelated work."
+      },
+      {
+        "score": 2,
+        "evidence": "Provides concrete scoped labels, visible criteria, keyboard/status feedback, and acceptance checks conditioned on F1\u2013F5 decisions. Founder additions are explicitly outside approved scope with no controls or data requirements; ranking, performance, and validation are not promised."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I03-B",
+    "trial": "t13",
+    "case": "I03",
+    "version": "baseline",
+    "repeat": 3,
+    "response_text_sha256": "8d796770f09809a80829a6551d763d0b0fae7e81783bde4187ca189d6d1842ad",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Specifies invoice number or customer name with supported partial-name matching and only Draft/Sent status and date range. It does not promise typo correction, synonyms, or number prefix matching, and explicitly omits unsupported counts and scale claims."
+      },
+      {
+        "score": 2,
+        "evidence": "D1 blocks multiple-status behavior until product approval and backend confirmation rather than assuming OR. D2 explicitly declines AND across query/status/date and also leaves cross-field matching unresolved."
+      },
+      {
+        "score": 2,
+        "evidence": "Separates successful no-match results from a confirmed unfiltered empty list, loading, and failure. It allows query editing/clearing, individual status removal, and date changes while retaining criteria; clear scope explicitly excludes invoice deletion, status changes, and discarded drafts."
+      },
+      {
+        "score": 2,
+        "evidence": "Useful current-list presentation, ambiguous-name handling, scoped recovery, and unperformed acceptance checks are supplied. D6 keeps payment status, tags, and saved searches outside scope without placeholders or implied data models; no ranking or SDK is added."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I03-C",
+    "trial": "t14",
+    "case": "I03",
+    "version": "phase3",
+    "repeat": 1,
+    "response_text_sha256": "911b926f3352ce3a76a2e311a889389280aca9171ff8fff7be41b7c716d4be9f",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Retrieval contract limits search to invoice number and customer name, states partial customer-name support, and specifies Draft/Sent multi-selection and date range. Other match details, ranking, counts, scale, and date semantics remain Unknown; no new metadata is established."
+      },
+      {
+        "score": 2,
+        "evidence": "The status contract explicitly rejects silently implementing OR or AND, while Combined criteria and F3 leave query/filter and cross-filter rules unresolved. F1\u2013F5 are decision dependencies rather than backend defaults."
+      },
+      {
+        "score": 2,
+        "evidence": "No-match recovery preserves all criteria and explicitly allows one change without losing the others. Named clearing changes retrieval only, never invoices or saved invoice work; confirmed empty permitted corpus and retrieval failure have separate conditions and feedback."
+      },
+      {
+        "score": 2,
+        "evidence": "Offers proposed interactions within existing Invoices, meaningful accessible feedback, and concrete checks after F1\u2013F5 decisions, with all verification explicitly unperformed. Founder additions stay outside scope with no implementation commitments; existing access enforcement remains unverified."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I03-D",
+    "trial": "t18",
+    "case": "I03",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "85fcdc24ca3c79cef48279aa7214bba6b9b535fefc5c01f2c698cfe0ba112cfc",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Contract uses only invoice number/customer name search, supported partial names, Draft/Sent multi-select, and date range. Unknown number matching, field combination, date semantics, counts, and dataset size are not filled with assumptions; it forbids unapproved columns and ranking."
+      },
+      {
+        "score": 2,
+        "evidence": "F2 requires approval for both selected statuses and neither selected, explicitly recognizing OR versus AND as unresolved. F3 says not to silently assume AND across query, status, and date."
+      },
+      {
+        "score": 2,
+        "evidence": "The proposed states distinguish no matches from an established accessible empty base list and request failure. Staff can clear search, selected statuses, or date range independently, retaining editable criteria; clearing never deletes invoices or changes their statuses."
+      },
+      {
+        "score": 2,
+        "evidence": "Provides scoped labels, pending/applied criteria guidance, invalid-date correction dependent on approved rules, and acceptance checks including accessibility and exit behavior. Payment status/tags/saved searches are excluded from controls, routes, and data models; runtime remains unverified."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I03-E",
+    "trial": "t15",
+    "case": "I03",
+    "version": "baseline",
+    "repeat": 2,
+    "response_text_sha256": "19887ef03986ab5ca96cebb427099cbcf434e3586daabb0a03435ad862af232c",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Scope table specifies invoice number/customer name, partial customer-name support, Draft/Sent multiple selections, and date range only. Unknown number/date rules, counts, and scale remain unresolved; suggestions, typo correction, query rewriting, and numerical claims are not promised."
+      },
+      {
+        "score": 2,
+        "evidence": "D2 explicitly declines assuming OR, AND, or another within-Status interpretation. D3 leaves cross-criteria rules unresolved, and D4 separately identifies defaults and no-selected-status meaning for an approved decision."
+      },
+      {
+        "score": 2,
+        "evidence": "Proposed states distinguish a successful no-match query, distinguishable empty underlying list, and failed retrieval. Recovery is user-directed and individual clearing preserves other criteria; clear-all scope is explicit and never record deletion, while invalid dates do not discard unrelated criteria."
+      },
+      {
+        "score": 2,
+        "evidence": "Gives concrete scoped presentation and recovery, query/result consistency decisions, and acceptance checks with expected results deferred until rules are approved. Founder additions have no controls/placeholders/data requirements, no new ranking/SDK is added, and runtime/recovery validation is explicitly absent."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I03-F",
+    "trial": "t17",
+    "case": "I03",
+    "version": "phase3",
+    "repeat": 3,
+    "response_text_sha256": "25bd22b91432df893e089a4ec9d6b88dfd16f27b2ee4fad583c7ddba318e25cb",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Only invoice number and customer name are approved searchable fields, with supported partial names; Status is Draft/Sent multi-select and Date range is the other facet. Match details, ranking, counts, scale, sorting/pagination support, and date interpretation remain unresolved rather than invented."
+      },
+      {
+        "score": 2,
+        "evidence": "Within-Status row says not to implement OR or AND without approval, including unresolved no-selection behavior. Combined criteria explicitly declines assuming intersection/AND and requires the owner to approve both combination rules."
+      },
+      {
+        "score": 2,
+        "evidence": "No matches retain visible editable query/status/date criteria with scoped removal, preservation of unrelated work, and no automatic relaxation. Empty collection requires established unfiltered emptiness; failures are separately described and preserve criteria as a requirement. Clearing cannot affect invoices, drafts, or selected records."
+      },
+      {
+        "score": 2,
+        "evidence": "Provides practical current-list labels, supported recovery and exit, acceptance checks for searches/combinations/states, and proposed accessible feedback. Payment status/tags/saved searches remain later-scope suggestions without placeholders or requirements; no ranking/SDK or validated-findability claim is introduced."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I04-A",
+    "trial": "t22",
+    "case": "I04",
+    "version": "phase3",
+    "repeat": 1,
+    "response_text_sha256": "af4dc2d1b05833da60965aefd3bd77bc620f8e7f0ab72853716ffefd64209dfa",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Accurately maps Reviewer assigned-only and Coordinator all-invoice reads to /invoices and /invoices/:id; explicitly denies changes for both and preserves the two roles and existing destinations."
+      },
+      {
+        "score": 2,
+        "evidence": "Explicitly says hiding navigation only changes discoverability and requires the role/assignment boundary on each invoice request and collection/search query, independently of navigation."
+      },
+      {
+        "score": 2,
+        "evidence": "Separately identifies direct-link access as Fail and suggestions/facet-count disclosure as Fail, explaining bypass through changed identifiers and exposure of protected names or existence."
+      },
+      {
+        "score": 2,
+        "evidence": "Rejects Permissions Pass, distinguishes fictional requirement failures from runtime Not verified, and specifies allowed/denied reads, retrieval metadata, Coordinator access and write-denial checks after a scoped fix. Recovery is expressly Proposed and unspecified details are responsibly left open."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I04-B",
+    "trial": "t21",
+    "case": "I04",
+    "version": "baseline",
+    "repeat": 3,
+    "response_text_sha256": "f49b7527cc74f069e1e4b47de4b292f92655d23c920cbfc60d93257937e91201",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "The map gives Reviewer assigned-only and Coordinator all-invoice reads on both supplied routes, uses those scopes for navigation/search/counts, and denies any invoice-changing request for both without adding roles or routes."
+      },
+      {
+        "score": 2,
+        "evidence": "States that hidden navigation does not authorize access and places permission checks before returned data at the trusted server/data boundary for detail, list, suggestions and aggregate counts."
+      },
+      {
+        "score": 2,
+        "evidence": "Preserves separate Fail rows for direct-link detail disclosure and search/aggregate visibility, and explicitly identifies protected identifiers/details and count-based disclosure as consequences."
+      },
+      {
+        "score": 2,
+        "evidence": "Keeps permissions blocked, calls actual implementation behavior Not verified because no runtime tests ran, and assigns proportionate implementation/verification work covering both roles, allowed/denied links, scoped retrieval and rejected writes."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I04-C",
+    "trial": "t23",
+    "case": "I04",
+    "version": "phase3",
+    "repeat": 3,
+    "response_text_sha256": "f36da0d19635b5df2fe45ce4e41e6759a9d16647dba0213aff5fed9cd7f829d9",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Precisely maps both approved roles to /invoices and /invoices/:id with assignment-only Reviewer access and all-invoice Coordinator access; both roles are read-only, and denial recovery returns to the existing list route."
+      },
+      {
+        "score": 2,
+        "evidence": "Rejects menu visibility as permission and requires authorization on every relevant request, including direct object reads and changed identifiers, before returning content or identifying metadata."
+      },
+      {
+        "score": 2,
+        "evidence": "Explicitly labels both direct-link disclosure and search metadata disclosure Fail against policy and explains how suggestions and facet counts expose unassigned records even without opening them."
+      },
+      {
+        "score": 2,
+        "evidence": "Separates synthetic scenario defects from runtime Not verified, blocks readiness, proposes correction within approved policy, and lists concrete checks including both roles, denied changes, missing IDs and assignment changes. Denial presentation and unresolved session behavior are identified as proposals/Unknowns rather than asserted implementation facts."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I04-D",
+    "trial": "t20",
+    "case": "I04",
+    "version": "baseline",
+    "repeat": 2,
+    "response_text_sha256": "12421c308e1cd52da4cd90769b3853c8dbc83be3ddba55a33744cd8a00bcb615",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "The scoped table retains exactly Reviewer and Coordinator, assigned-only versus all-invoice reads on both existing routes, and denied invoice changes for both. Navigation follows the corresponding permitted set."
+      },
+      {
+        "score": 2,
+        "evidence": "Explicitly says hidden navigation is not an authorization boundary and requires trusted-boundary checks for list, detail, search and aggregation requests before data is returned."
+      },
+      {
+        "score": 2,
+        "evidence": "Gives distinct Fail findings for direct-link authorization and search/aggregation isolation, with evidence that any invoice opens and unassigned invoices contribute suggestions/counts; successful navigation does not dilute these failures."
+      },
+      {
+        "score": 2,
+        "evidence": "Blocks permissions readiness and explicitly leaves runtime access, denial recovery and mutation rejection Not verified. The narrowly labeled specification-stage Pass concerns supplied role/route constraints, not security or runtime validation. Proposed mechanisms, Unknown dependencies and concrete post-fix checks are appropriate to the evidence."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I04-E",
+    "trial": "t24",
+    "case": "I04",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "3dd3808c894eb5d416fbefc717d218709e5235751d19d7a0e24cb77271870245",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Maps Reviewer assigned-only and Coordinator all-invoice access to the two supplied routes and existing retrieval surfaces; denies invoice changes for both and explicitly preserves exactly two roles and no new destinations."
+      },
+      {
+        "score": 2,
+        "evidence": "Distinguishes discoverability and sign-in identity from authorization, requires per-invoice checks at the server/data boundary, and explains why hiding or filtering unauthorized data after receipt leaves exposure intact."
+      },
+      {
+        "score": 2,
+        "evidence": "Treats direct-link access and suggestions/count disclosure as critical failures and separate Fail rows, requiring inaccessible records to contribute no names, values or counts."
+      },
+      {
+        "score": 2,
+        "evidence": "Rejects Permissions Pass, marks runtime/read-only enforcement Not verified, and specifies both-role read/write and response-level disclosure checks. The enforcement approach remains Proposed, and fictional records are not presented as research or security certification."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I04-F",
+    "trial": "t19",
+    "case": "I04",
+    "version": "phase3",
+    "repeat": 2,
+    "response_text_sha256": "7d13c1f7871d1e9d0d0f9d3fe208d88ffba7a8317b3609553e8de7ec81247024",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Correctly gives Reviewer assigned-only reads and Coordinator all-invoice reads on /invoices and /invoices/:id, aligns navigation with the same scopes, and denies writes for both while retaining the existing destinations and roles."
+      },
+      {
+        "score": 2,
+        "evidence": "Explicitly rejects hidden navigation as enforcement and requires request/data-access authorization on every invoice request, including changed IDs, with retrieval scoped before results, suggestions or counts are produced."
+      },
+      {
+        "score": 2,
+        "evidence": "Identifies two architecture failures and preserves separate Fail rows for direct-entry reads and retrieval disclosure; explains that hidden results do not prevent metadata or aggregation from revealing protected content/names/existence."
+      },
+      {
+        "score": 2,
+        "evidence": "Keeps readiness blocked, states no runtime tests occurred, and gives proportionate allowed/denied cases for both roles, changed IDs, metadata and attempted writes. Recovery/session behavior is explicitly proposed or unresolved, and synthetic records are not called actual research or a security certification."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I05-A",
+    "trial": "t30",
+    "case": "I05",
+    "version": "phase3",
+    "repeat": 3,
+    "response_text_sha256": "e53320b96972c5eeee935a373a314b6916207c3cdd4898a9b3f323fe3225fe15",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Lists only Projects, the project workspace and Account, and explicitly identifies Overview and Activity as workspace views. The route table retains /projects/:projectId and the two existing view query values."
+      },
+      {
+        "score": 2,
+        "evidence": "Proposes Activity \u2192 History only as a visible-label change requiring approval, explicitly retaining ?view=activity and rejecting assumed redirects, aliases and new query values."
+      },
+      {
+        "score": 2,
+        "evidence": "Covers direct deep links, retained project ID and view, Browser Back, Account return and existing bookmarks. Marks default view, runtime context handling and redirect capability Unknown or Not verified."
+      },
+      {
+        "score": 2,
+        "evidence": "Provides compact sitemap and route tables plus the M1 approval decision. Recommends no URL migration for the label-only change and separately deciding compatibility for future URL changes, without visual layout or excluded sections."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I05-B",
+    "trial": "t27",
+    "case": "I05",
+    "version": "phase3",
+    "repeat": 1,
+    "response_text_sha256": "99e4347b26fc7e35b9937095bd675e0630041ae6ed076115398a3b4d71588948",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Includes only the three supplied destinations and the two workspace views, explicitly keeping them in the same workspace. The route map exposes :projectId, view=overview and view=activity."
+      },
+      {
+        "score": 2,
+        "evidence": "States the change is label-only and implementation needs approval; keeps ?view=activity and says no URL migration is authorized and no redirects are assumed."
+      },
+      {
+        "score": 2,
+        "evidence": "Preserves full originating addresses and selected views, distinguishes direct workspace entry from a prior Projects visit, and protects existing bookmarks. Describes context mechanisms and handling as Unknown and leaves any later URL change dependent on a separate compatibility decision without assuming redirects."
+      },
+      {
+        "score": 2,
+        "evidence": "Provides usable sitemap and route tables and a specific approval-before-build decision for the label change. Calls for inspection of unknown existing behavior, adds no excluded destinations, database or layout decisions."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I05-C",
+    "trial": "t25",
+    "case": "I05",
+    "version": "baseline",
+    "repeat": 2,
+    "response_text_sha256": "e3b62b63183dc458a7c1460ee1f56cca27db9095744a49399a79db7a247ebe0c",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Tables map only Projects, project workspace and Account with exact existing paths and :projectId. Explicitly states Overview and Activity/History are view selections, not separate routes."
+      },
+      {
+        "score": 2,
+        "evidence": "History is consistently a proposed label, approval is required, and view=activity remains unchanged. Explicitly rejects view=history, aliases and new routes."
+      },
+      {
+        "score": 2,
+        "evidence": "Addresses direct view entry, bookmarks, project identity, view switching, Account return, Projects context and browser Back. Avoids fabricating an origin for direct entry, marks restoration unverified and explicitly notes unknown redirect capabilities."
+      },
+      {
+        "score": 2,
+        "evidence": "Delivers both structural tables and D1 as a proposed approval decision. Explains that the retained query value avoids migration and that additional behavior changes need separate scope decisions; supplies no visual layout or excluded sections."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I05-D",
+    "trial": "t29",
+    "case": "I05",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "cc0efefe9bcb2f493d7a046231d3683fd91ca869c74995f4c796013e0771b2e0",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Sitemap and route table contain only supplied destinations and workspace views. It explicitly clarifies that the relationship is existing, not a new hierarchy, and retains all exact paths and query parameters."
+      },
+      {
+        "score": 2,
+        "evidence": "Visible Activity \u2192 History change is proposed and subject to user approval. The Activity URL remains unchanged, while view=history is identified as exceeding scope and redirect support is explicitly unknown."
+      },
+      {
+        "score": 2,
+        "evidence": "Covers original-project bookmarks, exact workspace URL on return, browser Back, Account return, Projects context and unavailable-project exits. Existing default, return and recovery behavior is Not verified and additional behavior changes require separate approval."
+      },
+      {
+        "score": 2,
+        "evidence": "Provides compact structural tables and separate D1 label approval and D2 no-migration decisions. Calls for checking existing behaviors before implementation without adding excluded sections or prescribing visual layout."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I05-E",
+    "trial": "t26",
+    "case": "I05",
+    "version": "baseline",
+    "repeat": 3,
+    "response_text_sha256": "17206fe81d35af7f9defef07439c61964915e04c809ea095272b6575c906a9a2",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Only the three approved destinations appear, with Overview and Activity explicitly identified as workspace views. Route table preserves :projectId and both existing query values."
+      },
+      {
+        "score": 2,
+        "evidence": "History is pending approval and only a display-label proposal. Explicitly keeps view=activity, prohibits ?view=history and separate view routes, and marks redirect capability Unknown."
+      },
+      {
+        "score": 2,
+        "evidence": "Protects existing project/view bookmarks, project identity on switching, Back/Forward, Account return and existing Projects list context. Direct entry need not have a list origin; runtime entry/return behavior is Not verified and verification targets are specified."
+      },
+      {
+        "score": 2,
+        "evidence": "Includes usable sitemap and route tables and M1 requiring user approval. Explains why retained URLs avoid migration and specifies bookmark, switching and return checks before acceptance, without layout decisions or excluded destinations."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I05-F",
+    "trial": "t28",
+    "case": "I05",
+    "version": "phase3",
+    "repeat": 2,
+    "response_text_sha256": "58591ba4fc09be188e62fdb043a6d7d7202ded687582d477103353aebcfde402",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Lists only approved destinations and the two workspace views, with their relationships and status. Explicitly distinguishes views from routes and preserves every supplied address, including :projectId and view parameters."
+      },
+      {
+        "score": 2,
+        "evidence": "Activity \u2192 History remains a pending visible-label proposal requiring user approval; all paths and view=activity stay unchanged. Redirect capability is unknown and replacement routes or aliases are rejected."
+      },
+      {
+        "score": 2,
+        "evidence": "Covers deep-entry project/view preservation, bookmarks, actual originating addresses, Projects return context and direct bookmarks without fabricated origins. Marks context/error behavior unverified and explains future migration needs a separate compatibility decision."
+      },
+      {
+        "score": 2,
+        "evidence": "Offers structural tables and an actionable D1 approval decision plus runtime verification needs. Recommends no address migration for this label change, adds no excluded destination or database, and does not choose a visual layout."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I06-A",
+    "trial": "t34",
+    "case": "I06",
+    "version": "baseline",
+    "repeat": 3,
+    "response_text_sha256": "b0f84ce630d2b1b33ffc26f886df609da27587666685d65168228c708cd7e2ad",
+    "criteria": [
+      {
+        "score": 1,
+        "evidence": "Accurately distinguishes open sorting for employee groupings from text-tree testing for finding policies, but recommends and plans one sorting round followed by one testing round without a condition for choosing only the study needed. The stated next decision is to approve that staged plan."
+      },
+      {
+        "score": 2,
+        "evidence": "Replaces the disclosed Leave \u2192 Parental Leave route with an expecting-a-child time-off goal and privately identifies the supplied Parental Leave destination."
+      },
+      {
+        "score": 2,
+        "evidence": "Explicitly says there are no participants, tools or sessions, calls groupings and label effectiveness Not verified, and describes six to eight employees as a future exploratory proposal rather than evidence or statistical proof."
+      },
+      {
+        "score": 2,
+        "evidence": "Retains the isolated missing-accessible-name report, proposes inspection and correction if confirmed, states text testing cannot verify the actual menu, and excludes recruitment, purchases and library expansion."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 7,
+    "total": 7,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I06-B",
+    "trial": "t31",
+    "case": "I06",
+    "version": "phase3",
+    "repeat": 1,
+    "response_text_sha256": "7f6b8d5c7ae4f9536dd3d07a8686fc9f0677b6b0fd8257605e4e2985c024e32a",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Recommends preparing a tree test because the text hierarchy exists, distinguishes sorting as exploration of grouping, explicitly says sorting need not come first, and conditions further grouping work on paths and explanations."
+      },
+      {
+        "score": 2,
+        "evidence": "Offers a new-child time-away scenario without the navigation labels, specifies the supplied Parental Leave node as the private destination, and flags absent full inventory/hierarchy details before accepting alternate answers."
+      },
+      {
+        "score": 2,
+        "evidence": "Lists pilot, sorting, testing and runtime checks as unperformed; reports grouping and findability as Unknown and expressly disclaims participant findings, success rates and validated labels."
+      },
+      {
+        "score": 2,
+        "evidence": "Preserves the single fictional accessible-name report despite isolation, requires actual-interface verification, distinguishes tree testing from interactive accessibility, and states no recruitment or purchase occurred and no content expansion is proposed."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I06-C",
+    "trial": "t35",
+    "case": "I06",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "d8fea7d482e11012254a493d9642d18085aa7cffd71beafbfb7a5dd0eba3da6e",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Explains sorting as generating candidate groupings and testing as assessing policy finding. Although it proposes staged rounds, it also explicitly prioritizes testing if one study runs and conditions sorting on consequential grouping uncertainty."
+      },
+      {
+        "score": 2,
+        "evidence": "Replaces the quoted answer-leading route with an expecting-a-child time-away goal, keeps the expected destination in a private answer key, and requires checking actual policy scope. The quoted supplied path makes the target policy unambiguous."
+      },
+      {
+        "score": 1,
+        "evidence": "Clearly keeps sessions, analysis and accessibility verification unperformed and groupings/findability Unknown. However, it asserts that a 'pack\u2019s method guide' defers detailed guidance to 'Phase 3'; neither that guide nor that phase exists in the supplied records, so its asserted source basis is unsupported."
+      },
+      {
+        "score": 2,
+        "evidence": "Retains the single accessible-name report and explicitly says lack of repetition does not erase it; proposes confirmation and separate verification, and states no recruitment, purchase or inventory expansion has occurred."
+      }
+    ],
+    "critical_errors": [
+      "Invented source object presented as established: the response asserts a pack method guide and a Phase 3 deferral that are absent from the supplied records."
+    ],
+    "uncapped_total": 7,
+    "total": 4,
+    "useful_pass": false
+  },
+  {
+    "response_id": "I06-D",
+    "trial": "t36",
+    "case": "I06",
+    "version": "baseline",
+    "repeat": 2,
+    "response_text_sha256": "75aad62d830491ad697d2b01a571870ff8fd0182233477b68774aad43233ca01",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Selects a tree test for the existing hierarchy, explains open sorting as the separate grouping method, makes sorting optional, and ties later sorting to unresolved grouping questions rather than requiring both initially."
+      },
+      {
+        "score": 2,
+        "evidence": "Uses an expecting-a-child eligibility/time-away scenario without disclosing labels, requires a private correct destination and content-scope check, and explicitly marks the full hierarchy contents and suitability unverified instead of inventing nodes."
+      },
+      {
+        "score": 2,
+        "evidence": "Labels the plan proposed, the six-to-eight sample an estimate rather than proof, and all sessions and results unperformed. It states the fictional records establish no actual findings and keeps grouping, label comprehension and finding Unknown."
+      },
+      {
+        "score": 2,
+        "evidence": "Preserves the isolated missing-name report, proposes a focused check and correction if confirmed, requires a separate actual-menu screen-reader check, and expressly disclaims recruitment, purchases or approval to expand the library."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I06-E",
+    "trial": "t33",
+    "case": "I06",
+    "version": "phase3",
+    "repeat": 2,
+    "response_text_sha256": "462983f691814cff6b6f641acb9c33c90e4a6b1f4c958d5d9c2e1e2ec9e44f44",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Recommends preparing tree testing for existing labels and paths, distinguishes employee-created grouping candidates from findability, and explicitly rejects automatically requiring both studies in sequence."
+      },
+      {
+        "score": 2,
+        "evidence": "Supplies a becoming-a-parent time-away scenario with no path clues, retains exactly the supplied Leave \u2192 Parental Leave path privately, and calls for checking other defensible destinations against the actual approved inventory."
+      },
+      {
+        "score": 2,
+        "evidence": "Identifies the plan as unperformed, leaves missing hierarchy details Unknown, separates proposed hypotheses from findings, and expressly says no pilot, sessions, inspection or validated hierarchy exists."
+      },
+      {
+        "score": 2,
+        "evidence": "Preserves the single reported accessible-name issue without repeat reports, leaves runtime status Not verified, requires actual-menu verification after correction, and keeps tool purchases, recruitment and library expansion outside present actions."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "I06-F",
+    "trial": "t32",
+    "case": "I06",
+    "version": "phase3",
+    "repeat": 3,
+    "response_text_sha256": "cb4cf4dff6fed9d5e166852302379fe99f17307cd6dcee21ae7e4ca7f7350e15",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Chooses tree testing for the existing proposal, distinguishes open sorting for employee-generated grouping and vocabulary, and makes additional sorting conditional on evidence suggesting wrong grouping."
+      },
+      {
+        "score": 2,
+        "evidence": "Offers a new-child caregiving/time-away task without navigation labels, privately names the supplied Parental Leave policy, and requires verifying scenario fit and accounting for other defensible destinations."
+      },
+      {
+        "score": 2,
+        "evidence": "Keeps every study and runtime check unperformed, treats records as fictional, leaves employee grouping and label effectiveness unverified, and warns that a small successful pilot would not establish population-wide finding."
+      },
+      {
+        "score": 2,
+        "evidence": "Retains the single missing-accessible-name report despite no repetition, proposes actual-item inspection and correction if absent with runtime checks, says text testing cannot establish real-menu accessibility, and authorizes no recruitment, purchases or new content."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "C01-A",
+    "trial": "t37",
+    "case": "C01",
+    "version": "phase3",
+    "repeat": 1,
+    "response_text_sha256": "2a803016596bcc03f2b9c47a4e42679d0a3ac04eff11a6b32610cfb438895c26",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Explicitly changes the label from Submit to the exact requested Download invoice."
+      },
+      {
+        "score": 2,
+        "evidence": "Gives the correction directly without requiring IA, synthesis, research, intake, or a document."
+      },
+      {
+        "score": 2,
+        "evidence": "Restricts the change to the invoice download button label and explicitly says to keep everything else unchanged."
+      },
+      {
+        "score": 2,
+        "evidence": "Makes no claim that rendered, runtime, or access checks ran."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "C01-B",
+    "trial": "t38",
+    "case": "C01",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "ece88a6b737fcbbb615b57e1282ebb099e58353fa357fcdd3abf069bcc96d02a",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Explicitly changes Submit to Download invoice and repeats that exact wording in the acceptance check."
+      },
+      {
+        "score": 2,
+        "evidence": "Provides the correction immediately; the proposed acceptance check and unverified implementation statement do not impose IA, research, intake, or documentation as a condition."
+      },
+      {
+        "score": 2,
+        "evidence": "Says to keep everything else unchanged and limits the acceptance check to the exact label with no other changes."
+      },
+      {
+        "score": 2,
+        "evidence": "Labels the check as an acceptance check, not a completed test, and explicitly states implementation is not verified because no screen source was supplied."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "C02-A",
+    "trial": "t40",
+    "case": "C02",
+    "version": "phase3",
+    "repeat": 1,
+    "response_text_sha256": "9705a7565fe9f294b7270731bdcb80d50b50acfa28a768fd6f717b2e88c42970",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Uses three bounded questions to establish the first learner (students or self-directed learners), the outcome (organize/find versus choose what to learn next), and first-version exclusions, without deciding the full product."
+      },
+      {
+        "score": 2,
+        "evidence": "Keeps intake to three questions. Each provides two understandable alternatives plus a free-text option, a concrete example, a rationale, a proposed pick or explicit Unknown, and text explaining how to delegate or retain the choice."
+      },
+      {
+        "score": 2,
+        "evidence": "Emits only decision cards. Classes, tutorials, study planning, quizzes, summaries and sharing appear as examples or exclusion choices, not approved objects, routes, screens, taxonomy or a document set."
+      },
+      {
+        "score": 2,
+        "evidence": "Makes no research or market-validation claim. The outcome recommendation is grounded in the requested resource organization, the learner is explicitly unknown, and the exclusions make the next scope decision useful without a method lecture."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "C02-B",
+    "trial": "t39",
+    "case": "C02",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "d3b529b2a13e7a717a536b6bf207509fdd3f284649e37b2b68230d1c56fc7f1c",
+    "criteria": [
+      {
+        "score": 2,
+        "evidence": "Uses three bounded questions to establish independent learners versus students, saving/retrieval versus a learning sequence, and explicit exclusions. These establish actor, outcome and scope while leaving product decisions open."
+      },
+      {
+        "score": 2,
+        "evidence": "Keeps intake to three questions with understandable choices, concrete photography/coursework examples, a free-text alternative, recommendations or explicit Unknown, and explanatory text assigning delegation versus retained ownership."
+      },
+      {
+        "score": 2,
+        "evidence": "Provides decision cards only. Articles, videos, courses, sequences, shared collections and tracking are examples or proposed exclusion options; none is presented as an approved taxonomy, product object, architecture, screen or route."
+      },
+      {
+        "score": 2,
+        "evidence": "Explicitly identifies the saving/retrieval recommendation as a proposed direction, not a research finding. It makes no validation claim and offers practical outcome and scope decisions without a method lecture."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  }
+]

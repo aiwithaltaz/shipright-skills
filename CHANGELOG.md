@@ -355,3 +355,7 @@ The pinned token checker is a separate required check; source validation remains
 Added optional product-design guidance for raw records, defensible patterns/findings and evidence-linked proposed decisions. Preserves contradictory records, isolated serious issues, evidence kinds, approval boundaries and weak-evidence hypotheses. Three direct conditional references and a bounded synthesis path; no fifth skill, automatic persona, UI expansion, visual artifact or Phase 3 knowledge. Reconciled the Phase 1 synthesis deferral without removing its anti-fabrication protection. Original evaluations and source provenance remain unchanged.
 
 New source/mutation tests and controlled comparisons are recorded in [Phase 2 results](evals/phase-2-research-synthesis/results.md).
+
+## Phase 3 information architecture - 2026-10-11 (no new release)
+
+Added five optional product-design references for sourced organization, findability, role-based navigation, optional IA studies and provenance. Preserves actual scope, direct-entry access boundaries, unknown relationship/route rules and isolated risks. Small routing/template updates and declared bounded paths; four existing skills and unchanged budget limits. Earlier Phase 1/2 evidence and tests remain intact. No visual artifacts, merge or Phase 4. [Phase 3 results](evals/phase-3-information-architecture/results.md) record controlled comparisons and limits.

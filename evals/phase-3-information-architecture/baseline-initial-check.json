@@ -1,0 +1,6 @@
+{
+  "source_mutation_check_exit_code": 0,
+  "context_check_exit_code": 1,
+  "context_output": "FAIL: bounded context and direct conditional references\ntoken check unavailable: RuntimeError: install evals/requirements-context.txt before token checks\nStatic declarations do not guarantee client loading or universal provider token counts.\n",
+  "remaining_checks": "Not run in the interrupted initial baseline attempt; rerun against untouched main checkout after restoring pinned dependency."
+}

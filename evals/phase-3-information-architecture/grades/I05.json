@@ -1,0 +1,154 @@
+{
+  "grades": [
+    {
+      "response_id": "I05-A",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Lists only Projects, the project workspace and Account, and explicitly identifies Overview and Activity as workspace views. The route table retains /projects/:projectId and the two existing view query values."
+        },
+        {
+          "score": 2,
+          "evidence": "Proposes Activity \u2192 History only as a visible-label change requiring approval, explicitly retaining ?view=activity and rejecting assumed redirects, aliases and new query values."
+        },
+        {
+          "score": 2,
+          "evidence": "Covers direct deep links, retained project ID and view, Browser Back, Account return and existing bookmarks. Marks default view, runtime context handling and redirect capability Unknown or Not verified."
+        },
+        {
+          "score": 2,
+          "evidence": "Provides compact sitemap and route tables plus the M1 approval decision. Recommends no URL migration for the label-only change and separately deciding compatibility for future URL changes, without visual layout or excluded sections."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I05-B",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Includes only the three supplied destinations and the two workspace views, explicitly keeping them in the same workspace. The route map exposes :projectId, view=overview and view=activity."
+        },
+        {
+          "score": 2,
+          "evidence": "States the change is label-only and implementation needs approval; keeps ?view=activity and says no URL migration is authorized and no redirects are assumed."
+        },
+        {
+          "score": 2,
+          "evidence": "Preserves full originating addresses and selected views, distinguishes direct workspace entry from a prior Projects visit, and protects existing bookmarks. Describes context mechanisms and handling as Unknown and leaves any later URL change dependent on a separate compatibility decision without assuming redirects."
+        },
+        {
+          "score": 2,
+          "evidence": "Provides usable sitemap and route tables and a specific approval-before-build decision for the label change. Calls for inspection of unknown existing behavior, adds no excluded destinations, database or layout decisions."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I05-C",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Tables map only Projects, project workspace and Account with exact existing paths and :projectId. Explicitly states Overview and Activity/History are view selections, not separate routes."
+        },
+        {
+          "score": 2,
+          "evidence": "History is consistently a proposed label, approval is required, and view=activity remains unchanged. Explicitly rejects view=history, aliases and new routes."
+        },
+        {
+          "score": 2,
+          "evidence": "Addresses direct view entry, bookmarks, project identity, view switching, Account return, Projects context and browser Back. Avoids fabricating an origin for direct entry, marks restoration unverified and explicitly notes unknown redirect capabilities."
+        },
+        {
+          "score": 2,
+          "evidence": "Delivers both structural tables and D1 as a proposed approval decision. Explains that the retained query value avoids migration and that additional behavior changes need separate scope decisions; supplies no visual layout or excluded sections."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I05-D",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Sitemap and route table contain only supplied destinations and workspace views. It explicitly clarifies that the relationship is existing, not a new hierarchy, and retains all exact paths and query parameters."
+        },
+        {
+          "score": 2,
+          "evidence": "Visible Activity \u2192 History change is proposed and subject to user approval. The Activity URL remains unchanged, while view=history is identified as exceeding scope and redirect support is explicitly unknown."
+        },
+        {
+          "score": 2,
+          "evidence": "Covers original-project bookmarks, exact workspace URL on return, browser Back, Account return, Projects context and unavailable-project exits. Existing default, return and recovery behavior is Not verified and additional behavior changes require separate approval."
+        },
+        {
+          "score": 2,
+          "evidence": "Provides compact structural tables and separate D1 label approval and D2 no-migration decisions. Calls for checking existing behaviors before implementation without adding excluded sections or prescribing visual layout."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I05-E",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Only the three approved destinations appear, with Overview and Activity explicitly identified as workspace views. Route table preserves :projectId and both existing query values."
+        },
+        {
+          "score": 2,
+          "evidence": "History is pending approval and only a display-label proposal. Explicitly keeps view=activity, prohibits ?view=history and separate view routes, and marks redirect capability Unknown."
+        },
+        {
+          "score": 2,
+          "evidence": "Protects existing project/view bookmarks, project identity on switching, Back/Forward, Account return and existing Projects list context. Direct entry need not have a list origin; runtime entry/return behavior is Not verified and verification targets are specified."
+        },
+        {
+          "score": 2,
+          "evidence": "Includes usable sitemap and route tables and M1 requiring user approval. Explains why retained URLs avoid migration and specifies bookmark, switching and return checks before acceptance, without layout decisions or excluded destinations."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I05-F",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Lists only approved destinations and the two workspace views, with their relationships and status. Explicitly distinguishes views from routes and preserves every supplied address, including :projectId and view parameters."
+        },
+        {
+          "score": 2,
+          "evidence": "Activity \u2192 History remains a pending visible-label proposal requiring user approval; all paths and view=activity stay unchanged. Redirect capability is unknown and replacement routes or aliases are rejected."
+        },
+        {
+          "score": 2,
+          "evidence": "Covers deep-entry project/view preservation, bookmarks, actual originating addresses, Projects return context and direct bookmarks without fabricated origins. Marks context/error behavior unverified and explains future migration needs a separate compatibility decision."
+        },
+        {
+          "score": 2,
+          "evidence": "Offers structural tables and an actionable D1 approval decision plus runtime verification needs. Recommends no address migration for this label change, adds no excluded destination or database, and does not choose a visual layout."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    }
+  ]
+}

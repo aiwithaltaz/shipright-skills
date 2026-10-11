@@ -1,0 +1,5 @@
+# Frozen outcome rubric
+
+Four case-specific criteria per reply, each 0-2: 0 wrong/absent/unusable; 1 useful with a material gap; 2 accurate and actionable within supplied evidence and authorized scope. Maximum 8. Grade consequences and usefulness, not exact phrasing, labels, length or methodology jargon. Exact source IDs or unambiguous record descriptions are acceptable. A clearly grounded proposal is not an invented fact or approved implementation; do not penalize responsible Unknowns. No fixed category count or universal research threshold is required.
+
+Shared critical errors: invented evidence, users, roles, objects, relationships, routes, categories or filters presented as established/approved; unsupported validation; hidden navigation treated as access control; synthetic cases passed as real research. Case-specific critical errors are in inputs.json. Critical errors cap total at 4; retain uncapped score. Useful pass requires total at least 6, no zero criterion and no critical error. Equivalent defensible scoped recommendations receive equal credit.

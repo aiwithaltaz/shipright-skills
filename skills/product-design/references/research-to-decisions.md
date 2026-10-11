@@ -9,7 +9,7 @@ Use when findings or evidence gaps could change a product commitment. Skip pure 
 1. Name the current decision, approved phase and constraints. Connect it to finding/record IDs, affected jobs and desired outcomes.
 2. Separate the evidenced need from requested features. Identify material alternatives, including preserving the current approach, correcting a known defect or gathering missing evidence. Do not fill an option quota.
 3. Weigh consequence if wrong, reversibility, evidence limits, contradictory findings and access risks. Frequency alone does not determine priority. Never manufacture impact, effort, revenue or confidence numbers.
-4. Recommend the smallest justified commitment. A proposed opportunity is not an approved feature. Keep new features/roles, navigation and screen lists out of implementation unless already authorized; architecture/IA expansion belongs to later phases.
+4. Recommend the smallest justified commitment. A proposed opportunity is not an approved feature. Keep new features/roles, navigation and screen lists out of implementation unless already authorized; authorized IA organization uses product-design guidance; new scope still requires authority, and visual design belongs to its next authorized stage.
 5. Specify what would challenge the recommendation and the smallest feasible verification. Follow Phase 1 method/planning guidance only when a new study is actually needed. No recruitment, payments, messages or instrumentation installation follows automatically.
 
 ## Decision record and output

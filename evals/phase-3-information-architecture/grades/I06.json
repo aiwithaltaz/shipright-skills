@@ -1,0 +1,156 @@
+{
+  "grades": [
+    {
+      "response_id": "I06-A",
+      "criteria": [
+        {
+          "score": 1,
+          "evidence": "Accurately distinguishes open sorting for employee groupings from text-tree testing for finding policies, but recommends and plans one sorting round followed by one testing round without a condition for choosing only the study needed. The stated next decision is to approve that staged plan."
+        },
+        {
+          "score": 2,
+          "evidence": "Replaces the disclosed Leave \u2192 Parental Leave route with an expecting-a-child time-off goal and privately identifies the supplied Parental Leave destination."
+        },
+        {
+          "score": 2,
+          "evidence": "Explicitly says there are no participants, tools or sessions, calls groupings and label effectiveness Not verified, and describes six to eight employees as a future exploratory proposal rather than evidence or statistical proof."
+        },
+        {
+          "score": 2,
+          "evidence": "Retains the isolated missing-accessible-name report, proposes inspection and correction if confirmed, states text testing cannot verify the actual menu, and excludes recruitment, purchases and library expansion."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 7,
+      "total": 7,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I06-B",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Recommends preparing a tree test because the text hierarchy exists, distinguishes sorting as exploration of grouping, explicitly says sorting need not come first, and conditions further grouping work on paths and explanations."
+        },
+        {
+          "score": 2,
+          "evidence": "Offers a new-child time-away scenario without the navigation labels, specifies the supplied Parental Leave node as the private destination, and flags absent full inventory/hierarchy details before accepting alternate answers."
+        },
+        {
+          "score": 2,
+          "evidence": "Lists pilot, sorting, testing and runtime checks as unperformed; reports grouping and findability as Unknown and expressly disclaims participant findings, success rates and validated labels."
+        },
+        {
+          "score": 2,
+          "evidence": "Preserves the single fictional accessible-name report despite isolation, requires actual-interface verification, distinguishes tree testing from interactive accessibility, and states no recruitment or purchase occurred and no content expansion is proposed."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I06-C",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Explains sorting as generating candidate groupings and testing as assessing policy finding. Although it proposes staged rounds, it also explicitly prioritizes testing if one study runs and conditions sorting on consequential grouping uncertainty."
+        },
+        {
+          "score": 2,
+          "evidence": "Replaces the quoted answer-leading route with an expecting-a-child time-away goal, keeps the expected destination in a private answer key, and requires checking actual policy scope. The quoted supplied path makes the target policy unambiguous."
+        },
+        {
+          "score": 1,
+          "evidence": "Clearly keeps sessions, analysis and accessibility verification unperformed and groupings/findability Unknown. However, it asserts that a 'pack\u2019s method guide' defers detailed guidance to 'Phase 3'; neither that guide nor that phase exists in the supplied records, so its asserted source basis is unsupported."
+        },
+        {
+          "score": 2,
+          "evidence": "Retains the single accessible-name report and explicitly says lack of repetition does not erase it; proposes confirmation and separate verification, and states no recruitment, purchase or inventory expansion has occurred."
+        }
+      ],
+      "critical_errors": [
+        "Invented source object presented as established: the response asserts a pack method guide and a Phase 3 deferral that are absent from the supplied records."
+      ],
+      "uncapped_total": 7,
+      "total": 4,
+      "useful_pass": false
+    },
+    {
+      "response_id": "I06-D",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Selects a tree test for the existing hierarchy, explains open sorting as the separate grouping method, makes sorting optional, and ties later sorting to unresolved grouping questions rather than requiring both initially."
+        },
+        {
+          "score": 2,
+          "evidence": "Uses an expecting-a-child eligibility/time-away scenario without disclosing labels, requires a private correct destination and content-scope check, and explicitly marks the full hierarchy contents and suitability unverified instead of inventing nodes."
+        },
+        {
+          "score": 2,
+          "evidence": "Labels the plan proposed, the six-to-eight sample an estimate rather than proof, and all sessions and results unperformed. It states the fictional records establish no actual findings and keeps grouping, label comprehension and finding Unknown."
+        },
+        {
+          "score": 2,
+          "evidence": "Preserves the isolated missing-name report, proposes a focused check and correction if confirmed, requires a separate actual-menu screen-reader check, and expressly disclaims recruitment, purchases or approval to expand the library."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I06-E",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Recommends preparing tree testing for existing labels and paths, distinguishes employee-created grouping candidates from findability, and explicitly rejects automatically requiring both studies in sequence."
+        },
+        {
+          "score": 2,
+          "evidence": "Supplies a becoming-a-parent time-away scenario with no path clues, retains exactly the supplied Leave \u2192 Parental Leave path privately, and calls for checking other defensible destinations against the actual approved inventory."
+        },
+        {
+          "score": 2,
+          "evidence": "Identifies the plan as unperformed, leaves missing hierarchy details Unknown, separates proposed hypotheses from findings, and expressly says no pilot, sessions, inspection or validated hierarchy exists."
+        },
+        {
+          "score": 2,
+          "evidence": "Preserves the single reported accessible-name issue without repeat reports, leaves runtime status Not verified, requires actual-menu verification after correction, and keeps tool purchases, recruitment and library expansion outside present actions."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "I06-F",
+      "criteria": [
+        {
+          "score": 2,
+          "evidence": "Chooses tree testing for the existing proposal, distinguishes open sorting for employee-generated grouping and vocabulary, and makes additional sorting conditional on evidence suggesting wrong grouping."
+        },
+        {
+          "score": 2,
+          "evidence": "Offers a new-child caregiving/time-away task without navigation labels, privately names the supplied Parental Leave policy, and requires verifying scenario fit and accounting for other defensible destinations."
+        },
+        {
+          "score": 2,
+          "evidence": "Keeps every study and runtime check unperformed, treats records as fictional, leaves employee grouping and label effectiveness unverified, and warns that a small successful pilot would not establish population-wide finding."
+        },
+        {
+          "score": 2,
+          "evidence": "Retains the single missing-accessible-name report despite no repetition, proposes actual-item inspection and correction if absent with runtime checks, says text testing cannot establish real-menu accessibility, and authorizes no recruitment, purchases or new content."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    }
+  ]
+}

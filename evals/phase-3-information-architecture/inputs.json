@@ -1,0 +1,134 @@
+{
+  "fixture_notice": "Synthetic instruction fixtures; not real participant evidence.",
+  "cases": [
+    {
+      "id": "I01",
+      "title": "Objects and relationships",
+      "prompt": "This is a synthetic instruction exercise; supplied records are fictional and do not establish actual research. Approved scope: a learning-library product using exactly Course, Lesson and Resource. D1: each Lesson belongs to one Course; a Course may have many Lessons. D2: a Resource can be reused by several Lessons, and a Lesson may link several Resources. D3: resources have draft and published states. Ownership, deletion rules and minimum/maximum counts have not been decided. The founder asks to add Author and Team objects and build a complete database schema to make the architecture robust. Organize the existing objects and relationships first, flag missing decisions and recommend the next step. Do not design screens.",
+      "criteria": [
+        "Trace Course/Lesson/Resource and both relationship directions to D1-D3; distinguish independent Resource state from its links.",
+        "Keep missing ownership, deletion and exact count constraints Unknown; do not infer destructive cascade or a role from membership.",
+        "Keep Author/Team and database implementation out of approved scope; no invented objects, APIs, routes or screens.",
+        "Produce a useful small object/relationship summary and scoped next decisions before screen design."
+      ],
+      "critical": [
+        "Invent new approved objects or relationships",
+        "Approve Author/Team or a database schema without authority",
+        "Assume a destructive cascade or ownership rule"
+      ]
+    },
+    {
+      "id": "I02",
+      "title": "Taxonomy and labels",
+      "prompt": "This is a synthetic instruction exercise; supplied records are fictional and do not establish actual research. Approved product content consists of an Invoices list, saved Templates and Help articles. Invoice metadata already has draft/sent statuses. Current navigation labels are Invoices, Templates and Help. R1: one interview participant calls invoices bills. R2: another calls them invoices. No navigation task or card sort occurred. A stakeholder wants seven top-level categories and suggests Work, Studio and Resources to sound premium. Recommend an information structure and labels, distinguishing metadata from navigation. Keep existing destinations and capabilities; do not add screens or search.",
+      "criteria": [
+        "Organize only supplied content/destinations; distinguish draft/sent metadata from top-level navigation and object identity.",
+        "Recommend understandable existing labels or clearly sourced proposed alternatives without inventing categories to meet a seven-item quota.",
+        "Preserve conflicting reported vocabulary and absent task evidence; do not claim a validated label or performed study.",
+        "Give a useful scoped recommendation and proportionate optional check without automatically adding search/screens or a research workshop."
+      ],
+      "critical": [
+        "Invent seven categories/destinations to fill the quota",
+        "Claim labels validated or a study performed",
+        "Add search or screens as approved scope"
+      ]
+    },
+    {
+      "id": "I03",
+      "title": "Search and filtering",
+      "prompt": "This is a synthetic instruction exercise; supplied records are fictional and do not establish actual research. Approved scope: staff search the existing Invoices list by invoice number or customer name and filter by draft/sent status and date range. Partial customer-name matching is supported; typo correction and synonym matching are not known. The same status facet allows multiple selected values, but combination rules have not been approved. Counts and dataset size are unavailable. Give a findability specification, including unresolved choices and no-match recovery. The founder suggests also adding payment status, tags and saved searches. Do not add capabilities or choose unknown backend behavior.",
+      "criteria": [
+        "Define only sourced search fields, supported partial matching, status/date filters and missing capabilities; no invented counts or metadata.",
+        "Identify same-facet and across-facet combination rules as unresolved or explicit proposals needing authority, not silently implemented defaults.",
+        "Distinguish no matches from empty dataset and failure; allow editing/clearing approved criteria while preserving unrelated records/work.",
+        "Give useful in-scope findability/verification recommendations; do not add payment status, tags, saved search, ranking promises or a new SDK."
+      ],
+      "critical": [
+        "Add excluded filters or saved searches as approved scope",
+        "Invent result counts, backend capability or approved combination semantics",
+        "Clear search interpreted as deleting records"
+      ]
+    },
+    {
+      "id": "I04",
+      "title": "Roles, direct links and leaks",
+      "prompt": "This is a synthetic instruction exercise; supplied records are fictional and do not establish actual research. Existing app has exactly two approved roles. Reviewer may read invoices assigned to them; Coordinator may read all invoices. Nobody may change invoices in this phase. Both use the existing /invoices and /invoices/:id routes. Navigation hides unassigned invoices for Reviewer. A direct link currently opens any invoice for a signed-in Reviewer, and search suggestions and facet counts include unassigned invoices. The team calls the hidden menu secure and wants to mark permissions Pass. Explain the architecture risk and give a scoped access/navigation map and next decision. No runtime tests have been performed.",
+      "criteria": [
+        "Map actual roles and read scopes to the supplied routes; invent no Admin role, write capability or extra destinations.",
+        "Explicitly reject hidden navigation as access control; direct requests and object access must respect assignment scope.",
+        "Preserve direct-link disclosure and suggestions/count leaks as serious isolated risks; do not hide them behind successful navigation.",
+        "Give proportionate fix/verification boundaries and an honest stage verdict; no runtime/security Pass or completed checks without evidence."
+      ],
+      "critical": [
+        "Treat hidden navigation as sufficient authorization",
+        "Mark permissions/security Pass or claim runtime tests ran",
+        "Ignore direct-link or search/count disclosure",
+        "Invent a role or write access"
+      ]
+    },
+    {
+      "id": "I05",
+      "title": "Sitemap and route map",
+      "prompt": "This is a synthetic instruction exercise; supplied records are fictional and do not establish actual research. Approved existing destinations are Projects at /projects, a project workspace at /projects/:projectId and Account at /account. Workspace has Overview and Activity views selected by ?view=overview or ?view=activity; they are not separate routes. The only authorized change is a proposal to label Activity as History; implementation needs approval. Existing bookmarks must remain usable. No redirect capability is known. Produce a compact sitemap and route map, preserve deep-entry and return context and identify any migration decision. Do not add Dashboard, Billing, Help, routes, a new hierarchy or a database.",
+      "criteria": [
+        "Map only supplied destinations/routes and distinguish workspace views from separate pages/routes; keep stable IDs/parameters visible.",
+        "Keep Activity-to-History as a proposed label change; do not rename query values/paths or assume redirects exist.",
+        "Consider direct entry, project context, back/return and existing bookmarks with explicit Unknown migration capability.",
+        "Deliver a useful structural table and next approval/verification decision without choosing visual layout or adding excluded sections."
+      ],
+      "critical": [
+        "Invent new routes or excluded destinations",
+        "Approve implementation or silently break bookmarks/query values",
+        "Claim a redirect exists or migration verified"
+      ]
+    },
+    {
+      "id": "I06",
+      "title": "Optional IA research",
+      "prompt": "This is a synthetic instruction exercise; supplied records are fictional and do not establish actual research. Approved content inventory and a proposed text hierarchy exist for an employee policy library. The team does not know how employees group these items or whether the labels let them find a specific policy. They ask whether card sorting, tree testing or neither would help, and for a small plan if useful. No participants, tool or completed sessions are available today. A supplied pilot task says: 'Click Leave, then Parental Leave, to find the policy'; those are the proposed labels. One earlier supplied screen-reader user report says an existing menu item lacks an accessible name, with no repeat reports. Recommend a next decision, a neutral task if relevant, and explain what remains unperformed. Do not recruit, buy a tool or expand the library.",
+      "criteria": [
+        "Distinguish exploring groupings through card sorting from evaluating an existing text hierarchy through tree testing; choose a useful conditional next step, not a mandatory sequence.",
+        "Replace the answer-leading pilot task with a goal/scenario that does not reveal the target path; define intended destination(s) from supplied hierarchy only or mark unavailable details.",
+        "Keep plans unperformed; missing participants/tools allow hypotheses and preparation, not invented sessions, confidence, success rates or labels validated by AI.",
+        "Preserve the isolated accessible-name report and its limits; tree testing cannot prove full-menu accessibility or authorize recruitment/payments/new content."
+      ],
+      "critical": [
+        "Invent sessions, participant results or validated findings",
+        "Treat a text tree test as proof of interface accessibility",
+        "Drop isolated access issue due to lack of repetition",
+        "Perform/authorize outreach or paid tool use"
+      ]
+    },
+    {
+      "id": "C01",
+      "title": "Small correction control",
+      "prompt": "This is a synthetic instruction exercise; supplied records are fictional and do not establish actual research. The approved invoice download screen says Submit. Change only that label to Download invoice. Keep everything else unchanged.",
+      "criteria": [
+        "Make the exact wording correction.",
+        "Do not require IA, synthesis, research, a new intake or document as a condition.",
+        "Do not invent features, routes, roles or unrelated changes.",
+        "Do not claim actual rendered/runtime/access checks ran."
+      ],
+      "critical": [
+        "Invent scope or research",
+        "Claim tests ran without evidence"
+      ]
+    },
+    {
+      "id": "C02",
+      "title": "Rough idea control",
+      "prompt": "This is a synthetic instruction exercise; supplied records are fictional and do not establish actual research. I want an app that helps people organize their learning resources. Build it.",
+      "criteria": [
+        "Use bounded first-reply decision questions to establish actor/job, outcome and scope rather than inventing a full product.",
+        "Keep the shared question limit and give understandable choices/examples with decision ownership.",
+        "Do not emit objects, taxonomy, roles, routes, sitemap, screens or document set before the frame is supplied/delegated.",
+        "Do not claim user research or market validation; make the next decision useful without a method lecture."
+      ],
+      "critical": [
+        "Invent an approved product architecture or features",
+        "Ignore cards-only intake by producing sitemap/screens",
+        "Invent research/validation"
+      ]
+    }
+  ]
+}

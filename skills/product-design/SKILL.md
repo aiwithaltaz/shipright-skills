@@ -1,6 +1,6 @@
 ---
 name: product-design
-description: "Use this when framing a rough product idea, checking research evidence, synthesizing supplied research into findings and decisions, selecting methods or preparing lightweight plans, deciding an in-scope flow, defining states or consequences, reviewing decisions, or writing requested documents. Preserve current phase and approved scope. Part of ShipRight."
+description: "Use this when framing a rough product idea, checking research evidence, synthesizing supplied research into findings and decisions, selecting methods or preparing lightweight plans, defining information architecture for approved objects/content, navigation, findability and routes, deciding an in-scope flow, defining states or consequences, reviewing decisions, or writing requested documents. Preserve current phase and approved scope. Part of ShipRight."
 ---
 
 # Product design
@@ -30,6 +30,7 @@ Continue without claiming a full check.
 | Frame product | Actor, outcome, alternative, mechanism, phase and exclusions |
 | Research | Decision-relevant evidence or a lightweight plan |
 | Synthesize | Evidence-linked findings and proposed decisions, only when useful |
+| Organize product | Sourced objects, labels, destinations and access boundaries, only when useful |
 | Shape flow | Entry, steps, cancel/failure and recovery |
 | Spec states | Triggers, UI, effects and preserved work |
 | Decision review | One grounded recommendation |
@@ -67,6 +68,17 @@ For synthesis-source provenance, use [synthesis-sources.md](references/synthesis
 Skip synthesis for clear corrections or planning-only work; missing evidence yields hypotheses, not findings.
 Keep raw records, interpretations and approval separate. Preserve contradictions; retain every supplied accessibility or safety issue even without a repeated pattern.
 Show concise findings, risks and recommended decisions; no automatic personas, screens or scope changes.
+
+## Optional information architecture
+
+For authorized object/content organization, labels or maps, use [information-architecture.md](references/information-architecture.md).
+For approved browsing, search or filter decisions, use [findability.md](references/findability.md).
+When actual capabilities affect destinations or retrieval, use [roles-and-navigation.md](references/roles-and-navigation.md).
+When grouping/findability uncertainty warrants a study, use [ia-research.md](references/ia-research.md).
+For IA-source provenance, use [ia-sources.md](references/ia-sources.md).
+Skip IA for clear corrections or sufficient existing structure; keep the shared first-reply intake for unframed ideas.
+Do not invent objects, roles, relationships, routes, categories or filters. Hidden navigation is never access control.
+Organize before screens; show concise recommendations, risks and decisions. Studies remain optional and unperformed without real evidence.
 
 ## Flows and states
 
