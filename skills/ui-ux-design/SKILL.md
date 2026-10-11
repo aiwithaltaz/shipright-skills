@@ -48,6 +48,9 @@ Load only those needed for this task:
 | Empty, loading, errors, pending work and difficult content | [state-coverage.md](references/state-coverage.md) |
 | Preserve/Establish, tokens and supplied references | [references-and-design-system.md](references/references-and-design-system.md) |
 | Noise, invented elements and visual heuristics | [anti-slop-rules.md](references/anti-slop-rules.md) |
+| Concrete review prompts for competing actions or unsupported widgets | [slop-tells.md](../ux-critique/references/slop-tells.md) |
+| Severity of a concrete review finding | [severity-rubric.md](../ux-critique/references/severity-rubric.md) |
+| Available implementation evidence | [bounded-verification.md](../ux-critique/references/bounded-verification.md) |
 | Existing or requested animation | [motion.md](references/motion.md) |
 | Labels, errors and operator language | [ui-copy.md](references/ui-copy.md) |
 | Builder instructions | [build-handoff.md](references/build-handoff.md) |

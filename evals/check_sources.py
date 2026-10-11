@@ -290,8 +290,14 @@ def validate(root):
         errors.append('operating-contract.md: four-status table changed')
 
     words = sum(len(read(p.relative_to(root)).split()) for p in (root / 'skills').rglob('*.md'))
-    if words > 16000:
-        errors.append(f'skills/: exceeds 16000-word reference budget ({words})')
+    # Stored knowledge has no global cap. Required token checks run separately.
+    import importlib.util
+    module_spec = importlib.util.spec_from_file_location('context_structure', root / 'evals/check_context.py')
+    module = importlib.util.module_from_spec(module_spec)
+    module_spec.loader.exec_module(module)
+    check_structure = module.check_structure
+    context_errors, _, _ = check_structure(root)
+    errors.extend(context_errors)
     for p in sorted(root.rglob('*')):
         if not p.is_file() or '.git' in p.relative_to(root).parts or p.suffix in {'.png', '.zip', '.pyc'}:
             continue
@@ -460,7 +466,7 @@ def main():
         print('FAIL\n' + '\n'.join(errors)); return 1
     print(f'PASS: 4 restricted metadata records; stable 8/10/10/20 gates; {links} local references; '
           f'phase/feedback/intake contracts; synchronized F1-F3 exports; project paths; versions; '
-          f'{words} skill words within budget; original paths and historical bytes retained.')
+          f'{words} skill words (informational; run check_context.py for token budgets); original paths and historical bytes retained.')
     for warning in warnings:
         print('KNOWN LIMIT: ' + warning)
     if args.self_test:

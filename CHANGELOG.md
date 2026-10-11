@@ -343,3 +343,9 @@ ShipRight now works like a product and design agency: it writes a folder your co
 - New authored print-rendered teaching pair: [before](examples/before-after/phase-1-guide-fixes/product-design/before.png), [after](examples/before-after/phase-1-guide-fixes/product-design/after.png). These pictures illustrate rules; they are not behavior-test or usability evidence.
 
 ![Guide corrections, before and after](examples/before-after/phase-1-guide-fixes/product-design/compare.png)
+
+## Context-budget maintenance - 2026-10-11 (no new release)
+
+Replaced the aggregate 16,000-word failure with bounded entry, shared, reference and declared-loading-path token checks. Retained entry concision, all source safeguards, historical evidence and Phase 1 tests. Added direct conditional links for UI review/verification and launch accessibility; the link check also requires the directly consumed severity rubric. Canonical ownership and simple link/orphan checks replace any need for a duplicate detector. Architecture-only change: no screenshots, HTML fixtures or before/after images. No Phase 2 or merge.
+
+The pinned token checker is a separate required check; source validation remains standard-library only. CI runs both checkers, mutation tests and all regression tests. Results and limits are recorded in [migration results](evals/context-budget-migration/results.md).
