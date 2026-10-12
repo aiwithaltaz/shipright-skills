@@ -1,0 +1,170 @@
+[
+  [
+    "optional_mapping",
+    "skills/product-design/SKILL.md",
+    "Skip mapping for clear corrections or a sufficient existing map",
+    "Always map every correction"
+  ],
+  [
+    "framing_first",
+    "skills/product-design/references/mapping-types.md",
+    "An unframed idea still follows shared intake before maps",
+    "Always map before intake"
+  ],
+  [
+    "one_map",
+    "skills/product-design/references/mapping-types.md",
+    "Choose one smallest useful map; do not generate every map automatically",
+    "Generate all five maps automatically"
+  ],
+  [
+    "current_future",
+    "skills/product-design/references/mapping-types.md",
+    "Keep current-state evidence separate from future-state proposals",
+    "Mix current facts with future proposals"
+  ],
+  [
+    "no_invention",
+    "skills/product-design/references/mapping-types.md",
+    "Never invent emotions, teams, channels, dependencies or business processes",
+    "Invent missing emotions and business processes"
+  ],
+  [
+    "isolated_issues",
+    "skills/product-design/references/mapping-types.md",
+    "Retain every supplied accessibility or safety issue even without repetition",
+    "Only retain repeated accessibility and safety issues"
+  ],
+  [
+    "no_validation",
+    "skills/product-design/references/mapping-types.md",
+    "No map establishes accessibility, security, safety, service reliability or usability Pass",
+    "Every completed map establishes accessibility and safety Pass"
+  ],
+  [
+    "no_persona",
+    "skills/product-design/references/journey-mapping.md",
+    "Use actual records, not a newly invented persona",
+    "Create a persona to fill missing records"
+  ],
+  [
+    "no_forced_funnel",
+    "skills/product-design/references/journey-mapping.md",
+    "Do not force awareness, purchase and loyalty stages onto unrelated tasks",
+    "Force a sales funnel onto every journey"
+  ],
+  [
+    "separate_actors",
+    "skills/product-design/references/journey-mapping.md",
+    "Keep different people's accounts separate; do not splice them into one observed path",
+    "Combine all accounts into one observed actor"
+  ],
+  [
+    "reported_emotions",
+    "skills/product-design/references/journey-mapping.md",
+    "Keep recalled behavior and feelings Reported, even in a recorded interview",
+    "Treat recorded recalled feelings as Observed"
+  ],
+  [
+    "pause_not_emotion",
+    "skills/product-design/references/journey-mapping.md",
+    "An observed pause does not establish frustration",
+    "An observed pause proves frustration"
+  ],
+  [
+    "no_curve",
+    "skills/product-design/references/journey-mapping.md",
+    "do not invent emotions or an emotional curve",
+    "invent an emotional curve for every journey"
+  ],
+  [
+    "return_unknown",
+    "skills/product-design/references/journey-mapping.md",
+    "missing persistence stays Unknown",
+    "assume interrupted work is saved"
+  ],
+  [
+    "task_system",
+    "skills/product-design/references/task-and-system-flows.md",
+    "distinguish user actions from system steps when they intersect",
+    "Treat automatic system steps as user choices"
+  ],
+  [
+    "no_capabilities",
+    "skills/product-design/references/task-and-system-flows.md",
+    "Never invent APIs, queues, retries, cancellation, notifications or persistence",
+    "Assume APIs, queues and retries exist"
+  ],
+  [
+    "remote_unknown",
+    "skills/product-design/references/task-and-system-flows.md",
+    "A failed response does not prove the remote action failed",
+    "A failed response proves payment failed"
+  ],
+  [
+    "exit_not_cancel",
+    "skills/product-design/references/task-and-system-flows.md",
+    "Leaving a page does not cancel a submitted transaction",
+    "Leaving cancels every submitted transaction"
+  ],
+  [
+    "human_pending",
+    "skills/product-design/references/task-and-system-flows.md",
+    "Human pending work is not a background job",
+    "Human pending work should show a running job"
+  ],
+  [
+    "partial_blueprint",
+    "skills/product-design/references/service-blueprints.md",
+    "Do not require one backstage action for every touchpoint",
+    "Invent a backstage action for every touchpoint"
+  ],
+  [
+    "unknown_business",
+    "skills/product-design/references/service-blueprints.md",
+    "Missing teams, departments, systems, policies, dependencies, timing and SLA stay Unknown",
+    "Invent departments, systems and SLA for missing lanes"
+  ],
+  [
+    "props_not_research",
+    "skills/product-design/references/service-blueprints.md",
+    "Service artifacts are not research evidence or proof of successful delivery",
+    "Service artifacts prove validated reliable delivery"
+  ],
+  [
+    "handoff_acceptance",
+    "skills/product-design/references/service-blueprints.md",
+    "Transferred is not accepted or completed",
+    "Forwarding means accepted and completed"
+  ],
+  [
+    "visibility",
+    "skills/product-design/references/service-blueprints.md",
+    "Frontstage/backstage depends on visibility, not job title",
+    "Frontstage/backstage is fixed by job title"
+  ],
+  [
+    "source_limits",
+    "skills/product-design/references/mapping-sources.md",
+    "they are not this product's findings or business processes",
+    "they establish product findings and business processes"
+  ],
+  [
+    "template_emotions",
+    "docs/01-prd.md",
+    "Emotions require a supplied source; no mandatory emotion lane",
+    "Always fill an emotional curve"
+  ],
+  [
+    "template_capabilities",
+    "docs/02-technical-architecture.md",
+    "mapping does not verify runtime",
+    "mapping verifies runtime"
+  ],
+  [
+    "ticket_authority",
+    "docs/05-feature-ticket-list.md",
+    "A proposed map change is not an approved ticket",
+    "Every map proposal is an approved ticket"
+  ]
+]

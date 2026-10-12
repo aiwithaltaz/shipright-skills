@@ -1,0 +1,155 @@
+{
+  "scorer": "fresh blind agent",
+  "grades": [
+    {
+      "response_id": "M04-A",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "Aligns website submission, request number and Received status with the logged Dispatcher-to-Scheduling forwarding; unsupported backstage and support actions remain Unknown."
+        },
+        {
+          "score": 2,
+          "reason": "Explicitly separates receipt and forwarding from unrecorded acceptance and confirmation; retains responsibility, next actor, support processes and timing commitment as unresolved."
+        },
+        {
+          "score": 2,
+          "reason": "Labels the records fictional and not actual research, and expressly identifies form and request number as props that do not prove successful scheduling."
+        },
+        {
+          "score": 2,
+          "reason": "Provides a usable bounded map and proposes clarifying interim ownership and acceptance evidence before defining non-acceptance handling or any completion commitment."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "M04-B",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "Maps the supplied customer submission and visible number/status to Dispatcher forwarding request 41 to Scheduling; unknown lanes remain explicit and actor names are not promoted to departments."
+        },
+        {
+          "score": 2,
+          "reason": "Keeps recipient acceptance, post-forwarding ownership and confirmation unrecorded, with supporting processes Unknown and no supported SLA or timing promise."
+        },
+        {
+          "score": 2,
+          "reason": "Describes a fictional-record map rather than validated research and limits the form, number and forwarding log to their supported significance; none establishes scheduling success."
+        },
+        {
+          "score": 2,
+          "reason": "Recommends a concrete ownership and acceptance-record decision with the supplied actors and preserves Received while withholding an unsupported completion commitment."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "M04-C",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "Connects form submission and acknowledgement, visible Received status and logged forwarding using only Dispatcher and Scheduling, leaving unobserved actions Unknown."
+        },
+        {
+          "score": 2,
+          "reason": "Distinguishes forwarding from acceptance and appointment confirmation; ownership, support dependencies, software, SLA and department boundaries remain unknown."
+        },
+        {
+          "score": 2,
+          "reason": "Clearly limits the map to fictional supplied records and says the form and request number establish neither actual research nor successful scheduling."
+        },
+        {
+          "score": 2,
+          "reason": "Offers a useful partial blueprint and bounded proposal to establish accountability and acceptance evidence before recognizing handoff completion or setting a deadline."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "M04-D",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "Compactly aligns customer submission, request number and Received with the sole recorded staff forwarding; unsupported lanes remain Unknown and no additional actors are invented."
+        },
+        {
+          "score": 2,
+          "reason": "Explicitly preserves missing acceptance, ownership, subsequent work, dependencies and SLA, and separates receipt/forwarding from an appointment outcome."
+        },
+        {
+          "score": 2,
+          "reason": "Identifies B1-B3 as fictional rather than actual research and states that the form and number establish neither recipient acceptance nor a booked appointment."
+        },
+        {
+          "score": 2,
+          "reason": "Proposes establishing accountability and an acceptance event, then verifying acceptance and appointment outcome; any timing commitment requires separate evidence and authorization."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "M04-E",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "Preserves all supplied customer-visible events and maps the recorded forwarding across the two named staff lanes, with unsupported actions Unknown and no inferred department structure."
+        },
+        {
+          "score": 2,
+          "reason": "Shows forwarding recorded, acceptance unrecorded and confirmation unrecorded; accountable ownership and supporting relationships, software and SLA remain unknown."
+        },
+        {
+          "score": 2,
+          "reason": "Calls this a fictional-record blueprint rather than validated research and expressly says the service artifacts do not prove successful scheduling."
+        },
+        {
+          "score": 2,
+          "reason": "Provides an actionable partial map and bounded proposal to identify an authorized owner and acceptance evidence, verify confirmation and defer the unsupported 24-hour promise."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "M04-F",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "Aligns form submission, the request number and Received status with Dispatcher forwarding request 41 to Scheduling, retaining Unknown actions and using only supplied staff names."
+        },
+        {
+          "score": 2,
+          "reason": "Explicitly distinguishes forwarded from accepted and completed, and retains ownership, dependencies, timing, SLA and any ongoing work as Unknown."
+        },
+        {
+          "score": 2,
+          "reason": "Labels the scenario fictional and not actual research or validated performance; the form and number are props rather than proof of successful scheduling."
+        },
+        {
+          "score": 2,
+          "reason": "Gives a usable small blueprint and a grounded proposal to establish accountability, recipient acceptance evidence and the outstanding handoff decision before a completion commitment."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    }
+  ]
+}

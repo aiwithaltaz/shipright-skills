@@ -7,6 +7,7 @@
 | Rough idea, outcome or flow decision | [product-design](skills/product-design/SKILL.md) | 8 checks at handoff |
 | Supplied research synthesis and product decisions | product-design | Optional evidence-linked findings, risks and proposed decisions |
 | Approved product organization, navigation, findability or route maps | product-design | Optional sourced structure and decisions before screens |
+| Journey, task/system flow or service delivery decision | product-design | Optional one sourced map, risks and proposed decisions |
 | Research evidence, method or lightweight study plan | product-design | Decision-relevant evidence/plan, not invented validation |
 | Screen layout, system or exact correction | [ui-ux-design](skills/ui-ux-design/SKILL.md) | 10 checks at handoff |
 | Artifact review or plan score | [ux-critique](skills/ux-critique/SKILL.md) | 10 checks when relevant |

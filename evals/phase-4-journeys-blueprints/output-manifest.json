@@ -1,0 +1,17 @@
+{
+  "outputs_jsonl_sha256": "5bb71ced3be875120ff27bf6f8ad62ff54fe13c088b59b8eff849023310c10f3",
+  "trial_count": 40,
+  "blinded_input_sha256": {
+    "M01": "04142871afac0bda03b78a3656938100040a6944082dba04fd26c6795b639773",
+    "M02": "182964920fd010f73e5d2241428dbf6b5ee2522113376eebc436c57522341147",
+    "M03": "40da3e78d1461868742a47fd55b4788d73ef3855fef543b982e5171b0cbc036f",
+    "M04": "b7f7d114fa699c6ae325c38dae535dca6af95f43079d9061f86683bfe1fdb2d4",
+    "M05": "9b295ba3281e729ed40184f359909c649b79af9941388abfd6c95371733cdb53",
+    "M06": "593f50ac3e58220424b7573015748dcb2709cdac5d22ffe1f92d2f918b8f1ab1",
+    "C01": "ffa05eb4067f94bc4d08a97fbc529328bd89b80d6a8b9d30c1dea9304b00fc15",
+    "C02": "07b6430d484844ee50d3129763237d68aea0ebb4586fcd35c91b7dfee22305bd"
+  },
+  "no_replacements": true,
+  "source_hash_checks": "All frozen current/baseline and trial snapshots matched; prompts/rubric/protocol unchanged.",
+  "read_lists": "Agent self-reports, not independent runtime traces."
+}

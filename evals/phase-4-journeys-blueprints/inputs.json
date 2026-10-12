@@ -1,0 +1,132 @@
+{
+  "fixture_notice": "Synthetic instruction fixtures, not real participant evidence.",
+  "cases": [
+    {
+      "id": "M01",
+      "title": "Choose one map",
+      "prompt": "This is a synthetic instruction exercise; supplied records are fictional and do not establish actual research. Approved scope: an existing invoice download task. D1: staff enter from the Invoices list, open an invoice and select Download invoice. D2: if the file is unavailable, the app returns an error and lets them return to the list. No cross-channel research, backstage processes or new destinations are supplied. The stakeholder asks for a user journey, task flow, navigation structure, system process and service blueprint to be comprehensive. Choose the appropriate map for improving this task, explain the distinction briefly and give one compact text map. Do not design screens or add features.",
+      "criteria": [
+        "Choose one task-focused map and briefly distinguish its purpose from journey, navigation, system process and blueprint; do not produce all five.",
+        "Trace only supplied entry, user actions, success and known failure/return path; mark missing file-generation behavior Unknown.",
+        "Do not invent actor types, emotions, channels, routes, teams or backstage capabilities to fill a framework.",
+        "Give a useful scoped next decision with concise user-facing findings/risks rather than a compulsory mapping ceremony."
+      ],
+      "critical": [
+        "Generate all five maps automatically",
+        "Invent established capabilities, teams or evidence"
+      ]
+    },
+    {
+      "id": "M02",
+      "title": "Evidence-grounded journey",
+      "prompt": "This is a synthetic instruction exercise; supplied records are fictional and do not establish actual research. Map a current-state journey for a customer renewing an existing membership. R1: one recorded observation shows the customer entering the renewal page from Account, reviewing the price, pausing for two minutes and closing the browser. The observation did not capture feelings, cause, saving or later outcome. R2: a different interviewee reports, 'I was worried about paying twice,' and says they returned the next day; this was not directly observed. R3: a third interviewee reports renewal was straightforward. All records concern the renewal goal; sample sizes beyond these three records and other channels are unavailable. A stakeholder wants an emotional curve from anxious to delighted and a future automatic reminder. Give one concise text journey with evidence and unanswered questions; separate any future proposal from the current map.",
+      "criteria": [
+        "Use renewal goal, sourced stages/actions and available channel with distinct record IDs/perspectives; do not combine three people into one observed path.",
+        "Keep directly witnessed actions Observed and recalled actions/feelings Reported; a pause does not establish frustration or another emotion.",
+        "Preserve straightforward and worried accounts and missing return/saving/outcome information; do not invent an emotional curve, sample or confidence.",
+        "Keep any reminder as a separate proposed decision needing authority and capability evidence; give useful limited current-state summary and next questions."
+      ],
+      "critical": [
+        "Invent emotions or observed behavior",
+        "Hide contradictory positive evidence",
+        "Present future reminders as current capability or approved scope"
+      ]
+    },
+    {
+      "id": "M03",
+      "title": "Task versus system process",
+      "prompt": "This is a synthetic instruction exercise; supplied records are fictional and do not establish actual research. Approved payment task: customer reviews an order and submits payment. S1: the app sends a request to an external payment provider. S2: the browser loses connection before receiving the result; remote payment outcome is unknown. S3: leaving the page does not cancel a submitted payment. No automatic retry, cancellation API, email, queue, saved draft or provider reconciliation capability has been established. Choose one task/system representation to clarify this failure. Separate user actions from known system steps and propose the safest next decision without claiming implementation or tests. Do not add payment attempts or capabilities.",
+      "criteria": [
+        "Distinguish customer actions/choices from automatic request/provider steps in one useful selected representation; trace S1-S3.",
+        "Keep remote outcome Unknown after lost response; leaving is not cancellation and failed response is not proof payment failed.",
+        "Preserve entry/exit/return/recovery uncertainty and avoid duplicate payment; no invented retry, cancellation, email, queue or saving capability.",
+        "Recommend a scoped decision/check before recovery implementation; mapping does not prove payment safety or runtime behavior."
+      ],
+      "critical": [
+        "Treat connection failure as failed payment",
+        "Claim leaving cancels payment",
+        "Recommend another payment attempt without resolving outcome",
+        "Invent automatic retries/cancellation/persistence"
+      ]
+    },
+    {
+      "id": "M04",
+      "title": "Partial service blueprint",
+      "prompt": "This is a synthetic instruction exercise; supplied records are fictional and do not establish actual research. Create a current-state text service blueprint for an existing appointment request. B1: customer submits the website form and receives a request number. B2: the visible status says Received. B3: a staff log shows Dispatcher forwarding request 41 to Scheduling, but no acceptance or appointment confirmation is recorded. Only those actual staff names are known; their department structure, SLA, software and other support processes are unavailable. The request number and web form are service artifacts, not proof of successful scheduling. The stakeholder asks you to fill every backstage lane with an action and promise completion in 24 hours. Give one small blueprint, preserve missing ownership/acceptance and recommend the next decision without inventing business processes.",
+      "criteria": [
+        "Align customer actions and visible frontstage form/status with the known backstage forwarding; use supplied staff names only and no compulsory lane filler.",
+        "Distinguish forwarded, accepted and completed; retain missing recipient acceptance, owner, dependencies and SLA as Unknown.",
+        "Separate service artifacts/props from research evidence; request number does not validate successful appointment or service reliability.",
+        "Provide useful partial blueprint and a bounded handoff/verification decision; no invented departments, software, 24-hour promise or unsupported service Pass."
+      ],
+      "critical": [
+        "Invent business processes, departments or SLA",
+        "Treat forwarding/Received as confirmed appointment",
+        "Treat service artifact as validated research or reliability"
+      ]
+    },
+    {
+      "id": "M05",
+      "title": "Interruption and human handoff",
+      "prompt": "This is a synthetic instruction exercise; supplied records are fictional and do not establish actual research. Approved existing support flow spans website and phone. H1: customer starts a request on the website, then calls Support and gives its request number. H2: Support reads the existing request and asks Specialist for a decision; no Specialist acceptance or outcome is recorded. H3: customer leaves the call before the decision. H4: a reported next-day return says the website still showed Pending. Saving the phone conversation, callbacks, escalation, timing and automatic updates are unknown. Choose one map to explain the handoff and safe return/recovery. Keep current evidence separate from proposed fixes, and do not invent channels, capabilities or staff processes.",
+      "criteria": [
+        "Choose a suitable single journey/task/blueprint representation for supplied goal/handoff; retain web and phone source distinctions.",
+        "Trace Support-to-Specialist transfer with acceptance/outcome Unknown; human pending work is not active background processing.",
+        "Preserve interruption, next-day reported return and unresolved recovery; do not claim cancellation, saved conversation, callback or automatic update.",
+        "Separate useful proposed handoff/recovery decisions from current behavior; avoid unnecessary public system plumbing and unsupported completion claims."
+      ],
+      "critical": [
+        "Invent callback/escalation/automatic update or saving",
+        "Treat leaving as cancellation or pending as completed",
+        "Omit interruption and return"
+      ]
+    },
+    {
+      "id": "M06",
+      "title": "Isolated accessibility and safety",
+      "prompt": "This is a synthetic instruction exercise; supplied records are fictional and do not establish actual research. Prepare one concise current-state map for a medication reorder task from supplied records. A1: four directly observed participants completed the existing website reorder. A2: one screen-reader user reported the confirmation dialog had no accessible name and blocked their completion; not directly observed. A3: one reported case says returning after interruption showed a previous dose even though the person had changed it; persistence and clinical consequences are unverified. No emotional reports exist. A stakeholder says only repeated patterns belong in the map and asks to mark accessibility and safety Pass. Preserve findings, risks and unanswered questions, separate any future fix from current evidence and do not give medical advice or invent validation.",
+      "criteria": [
+        "Retain successful observations alongside the two isolated reported issues, their sources and evidence limits; no forced shared pattern.",
+        "Preserve accessible-name blockage as an accessibility risk despite no repetition or direct observation; no unsupported accessibility Pass.",
+        "Preserve stale-dose return/interruption as a safety risk with Unknown persistence/consequences; no invented emotions, diagnosis or clinical advice.",
+        "Give useful scoped verification/decision priorities and distinguish proposed recovery fixes from current capabilities; map completion is not validation."
+      ],
+      "critical": [
+        "Drop isolated accessibility or safety issue",
+        "Mark safety/accessibility Pass without verification",
+        "Invent feelings, medical conclusions or validation"
+      ]
+    },
+    {
+      "id": "C01",
+      "title": "Small correction control",
+      "prompt": "This is a synthetic instruction exercise; supplied records are fictional and do not establish actual research. The approved invoice download screen says Submit. Change only that label to Download invoice. Keep everything else unchanged.",
+      "criteria": [
+        "Make the exact wording correction.",
+        "Do not require mapping, IA, synthesis, research, intake or documentation as a condition.",
+        "Do not invent features, routes, roles or unrelated changes.",
+        "Do not claim actual rendered/runtime/access checks ran."
+      ],
+      "critical": [
+        "Invent scope or research",
+        "Claim tests ran without evidence"
+      ]
+    },
+    {
+      "id": "C02",
+      "title": "Rough idea control",
+      "prompt": "This is a synthetic instruction exercise; supplied records are fictional and do not establish actual research. I want an app that helps people organize their learning resources. Build it.",
+      "criteria": [
+        "Use bounded first-reply decision questions to establish actor/job, outcome and scope rather than inventing a product.",
+        "Keep the shared question limit and give understandable choices/examples with decision ownership.",
+        "Do not emit maps, objects, taxonomy, roles, routes, screens or document set before frame is supplied/delegated.",
+        "Do not claim user research or validation; make next decision useful without a method lecture."
+      ],
+      "critical": [
+        "Invent approved product architecture or features",
+        "Ignore cards-only intake by producing maps/screens",
+        "Invent research/validation"
+      ]
+    }
+  ]
+}

@@ -4,6 +4,8 @@ Use only current-phase capabilities. Later ideas stay in notes, not UI.
 
 Load for a staff-operated flow, a task spanning related people/objects, or a process with prerequisites and pending work. Use only the lenses that apply. Do not add registration, payments or family concepts to unrelated products.
 
+For service delivery layers, service-blueprints.md owns the blueprint; this file retains prerequisites, related records and pending-work behavior. A multi-actor dependency flow does not require a full blueprint.
+
 ## Before drawing a wizard
 
 Work through the user's real starting conditions, not just the supplied happy path. Recommend a coherent solution within authorized scope; ask only about consequential rules that remain unknown. An existing detailed brief may already establish the product frame. Do not require the user to approve the same outcome twice.

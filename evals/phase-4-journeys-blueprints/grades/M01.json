@@ -1,0 +1,155 @@
+{
+  "scorer": "fresh blind agent",
+  "grades": [
+    {
+      "response_id": "M01-A",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "Chooses one task flow and accurately distinguishes the other four map purposes without producing them."
+        },
+        {
+          "score": 2,
+          "reason": "Traces the supplied entry, download action and error-to-list recovery; treats success as the intended outcome and explicitly leaves processing and successful completion details unspecified/Unknown."
+        },
+        {
+          "score": 2,
+          "reason": "Uses only staff, the existing list and invoice, and the supplied error path; other behaviors are explicitly unknown rather than asserted capabilities."
+        },
+        {
+          "score": 2,
+          "reason": "Gives a scoped improvement focus on the error and return path and asks to clarify existing completion and interruption behavior before committing changes."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "M01-B",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "Selects a task flow and briefly distinguishes journey, navigation, system process and blueprint without generating all five."
+        },
+        {
+          "score": 1,
+          "reason": "Correctly traces entry, action, intended success and known failure/return, but does not identify the missing file-generation or delivery behavior as unknown."
+        },
+        {
+          "score": 2,
+          "reason": "No unsupported actors, channels, routes or backstage capabilities are introduced; the success branch describes the approved task goal."
+        },
+        {
+          "score": 2,
+          "reason": "Offers a concrete scoped check of error communication and usability of the approved return path while separating fictional scope from verified behavior."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 7,
+      "total": 7,
+      "useful_pass": true
+    },
+    {
+      "response_id": "M01-C",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "Chooses a task flow and distinguishes all map purposes in a comparison table, then supplies only the task map."
+        },
+        {
+          "score": 2,
+          "reason": "Includes supplied entry/actions, intended successful outcome and known error/return; identifies internal processing as not supplied and success feedback/navigation as unspecified."
+        },
+        {
+          "score": 2,
+          "reason": "Adds no unsupported actors, emotions, channels, destinations or backstage work and treats missing quality evidence as unknown."
+        },
+        {
+          "score": 2,
+          "reason": "Makes recovery explicit and gives a useful next decision to inspect existing success feedback and return behavior within the approved task."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "M01-D",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "Selects one task flow and briefly explains why journey, navigation, system process and blueprint serve broader purposes."
+        },
+        {
+          "score": 2,
+          "reason": "Traces entry, opening, download request and unavailable-file return; identifies obtaining the file as intended success and actual delivery/completion behavior as Unknown."
+        },
+        {
+          "score": 2,
+          "reason": "No additional actors, destinations or backstage capabilities are asserted; cancellation and preserved position are raised only as unspecified behavior."
+        },
+        {
+          "score": 2,
+          "reason": "Gives a scoped next step to review existing delivery and other relevant behavior gaps before extending the flow, without requiring additional maps or adding features."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "M01-E",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "Chooses a task flow and uses the other four map types only to distinguish their purposes and fit."
+        },
+        {
+          "score": 1,
+          "reason": "Traces the correct task and recovery and acknowledges that internal processing is not supplied, but presents successful completion as supplied fictional behavior without clearly qualifying missing file-generation/delivery details in the flow."
+        },
+        {
+          "score": 2,
+          "reason": "Uses only the supplied actor and destinations; the available-file success is a grounded task outcome rather than an invented backstage capability."
+        },
+        {
+          "score": 0,
+          "reason": "Provides no scoped next decision or actionable finding/risk after the map; the closing statements only restate provenance and scope."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 5,
+      "total": 5,
+      "useful_pass": false
+    },
+    {
+      "response_id": "M01-F",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "Chooses a task flow and accurately distinguishes the purposes of the four broader map types without producing them."
+        },
+        {
+          "score": 2,
+          "reason": "Traces the supplied entry, download action and error-to-list return, identifies success as a goal, and explicitly leaves successful completion details Unknown."
+        },
+        {
+          "score": 2,
+          "reason": "No actors, destinations, channels or backstage processes are invented; interruption and leaving behavior remain questions rather than established facts."
+        },
+        {
+          "score": 2,
+          "reason": "Gives a useful focus on the download outcome and approved recovery and a scoped next step to clarify existing-task unknowns before treating the flow as complete."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    }
+  ]
+}

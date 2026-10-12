@@ -1,6 +1,6 @@
 ---
 name: product-design
-description: "Use this when framing a rough product idea, checking research evidence, synthesizing supplied research into findings and decisions, selecting methods or preparing lightweight plans, defining information architecture for approved objects/content, navigation, findability and routes, deciding an in-scope flow, defining states or consequences, reviewing decisions, or writing requested documents. Preserve current phase and approved scope. Part of ShipRight."
+description: "Use this when framing a rough product idea, checking research evidence, synthesizing supplied research into findings and decisions, selecting methods or preparing lightweight plans, defining information architecture for approved objects/content, navigation, findability and routes, mapping evidence-grounded journeys, task flows, known system processes or service blueprints, deciding an in-scope flow, defining states or consequences, reviewing decisions, or writing requested documents. Preserve current phase and approved scope. Part of ShipRight."
 ---
 
 # Product design
@@ -31,6 +31,7 @@ Continue without claiming a full check.
 | Research | Decision-relevant evidence or a lightweight plan |
 | Synthesize | Evidence-linked findings and proposed decisions, only when useful |
 | Organize product | Sourced objects, labels, destinations and access boundaries, only when useful |
+| Map experience/service | One sourced map and decisions, only when useful |
 | Shape flow | Entry, steps, cancel/failure and recovery |
 | Spec states | Triggers, UI, effects and preserved work |
 | Decision review | One grounded recommendation |
@@ -79,6 +80,18 @@ For IA-source provenance, use [ia-sources.md](references/ia-sources.md).
 Skip IA for clear corrections or sufficient existing structure; keep the shared first-reply intake for unframed ideas.
 Do not invent objects, roles, relationships, routes, categories or filters. Hidden navigation is never access control.
 Organize before screens; show concise recommendations, risks and decisions. Studies remain optional and unperformed without real evidence.
+
+## Optional journeys and service mapping
+
+When the mapping choice is unclear, use [mapping-types.md](references/mapping-types.md).
+For experience over time or channels, use [journey-mapping.md](references/journey-mapping.md).
+For user actions versus known automatic steps, use [task-and-system-flows.md](references/task-and-system-flows.md).
+For frontstage/backstage delivery or human handoffs, use [service-blueprints.md](references/service-blueprints.md).
+For mapping-source provenance, use [mapping-sources.md](references/mapping-sources.md).
+Skip mapping for clear corrections or a sufficient existing map; preserve shared intake for unframed ideas.
+Choose one appropriate map, not every map. Keep current evidence separate from future proposals.
+Never invent emotions, teams, channels, dependencies or business processes. Preserve accessibility, safety, interruption, return and recovery issues.
+Work quietly; show concise findings, risks and recommended decisions. A map does not validate behavior or authorize UI/scope.
 
 ## Flows and states
 

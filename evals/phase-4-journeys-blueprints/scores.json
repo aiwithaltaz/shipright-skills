@@ -1,0 +1,1202 @@
+[
+  {
+    "response_id": "M01-A",
+    "trial": "t03",
+    "case": "M01",
+    "version": "phase4",
+    "repeat": 2,
+    "response_text_sha256": "a18f75fe2e52cdc50d4ed50ad8201e2d7eab33e6adb239513bd0cc074f15b6b4",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Chooses one task flow and accurately distinguishes the other four map purposes without producing them."
+      },
+      {
+        "score": 2,
+        "reason": "Traces the supplied entry, download action and error-to-list recovery; treats success as the intended outcome and explicitly leaves processing and successful completion details unspecified/Unknown."
+      },
+      {
+        "score": 2,
+        "reason": "Uses only staff, the existing list and invoice, and the supplied error path; other behaviors are explicitly unknown rather than asserted capabilities."
+      },
+      {
+        "score": 2,
+        "reason": "Gives a scoped improvement focus on the error and return path and asks to clarify existing completion and interruption behavior before committing changes."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M01-B",
+    "trial": "t02",
+    "case": "M01",
+    "version": "baseline",
+    "repeat": 2,
+    "response_text_sha256": "94908c7d489c6f2222a8311d16717acc51acd442155dc5e70932625197a13660",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Selects a task flow and briefly distinguishes journey, navigation, system process and blueprint without generating all five."
+      },
+      {
+        "score": 1,
+        "reason": "Correctly traces entry, action, intended success and known failure/return, but does not identify the missing file-generation or delivery behavior as unknown."
+      },
+      {
+        "score": 2,
+        "reason": "No unsupported actors, channels, routes or backstage capabilities are introduced; the success branch describes the approved task goal."
+      },
+      {
+        "score": 2,
+        "reason": "Offers a concrete scoped check of error communication and usability of the approved return path while separating fictional scope from verified behavior."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 7,
+    "total": 7,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M01-C",
+    "trial": "t06",
+    "case": "M01",
+    "version": "baseline",
+    "repeat": 3,
+    "response_text_sha256": "b5c918a8a066f9dc34a5887503827b2a88c85e7a8125cf89f3cbe9c56a5ecb44",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Chooses a task flow and distinguishes all map purposes in a comparison table, then supplies only the task map."
+      },
+      {
+        "score": 2,
+        "reason": "Includes supplied entry/actions, intended successful outcome and known error/return; identifies internal processing as not supplied and success feedback/navigation as unspecified."
+      },
+      {
+        "score": 2,
+        "reason": "Adds no unsupported actors, emotions, channels, destinations or backstage work and treats missing quality evidence as unknown."
+      },
+      {
+        "score": 2,
+        "reason": "Makes recovery explicit and gives a useful next decision to inspect existing success feedback and return behavior within the approved task."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M01-D",
+    "trial": "t01",
+    "case": "M01",
+    "version": "phase4",
+    "repeat": 1,
+    "response_text_sha256": "192ec2edfeec40503553547c6f0e2735316784c0b43768f203ab533419417900",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Selects one task flow and briefly explains why journey, navigation, system process and blueprint serve broader purposes."
+      },
+      {
+        "score": 2,
+        "reason": "Traces entry, opening, download request and unavailable-file return; identifies obtaining the file as intended success and actual delivery/completion behavior as Unknown."
+      },
+      {
+        "score": 2,
+        "reason": "No additional actors, destinations or backstage capabilities are asserted; cancellation and preserved position are raised only as unspecified behavior."
+      },
+      {
+        "score": 2,
+        "reason": "Gives a scoped next step to review existing delivery and other relevant behavior gaps before extending the flow, without requiring additional maps or adding features."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M01-E",
+    "trial": "t05",
+    "case": "M01",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "e125b6e0995aa1f222e442622dc067136f781d4d9e872173ea49034c47355bc5",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Chooses a task flow and uses the other four map types only to distinguish their purposes and fit."
+      },
+      {
+        "score": 1,
+        "reason": "Traces the correct task and recovery and acknowledges that internal processing is not supplied, but presents successful completion as supplied fictional behavior without clearly qualifying missing file-generation/delivery details in the flow."
+      },
+      {
+        "score": 2,
+        "reason": "Uses only the supplied actor and destinations; the available-file success is a grounded task outcome rather than an invented backstage capability."
+      },
+      {
+        "score": 0,
+        "reason": "Provides no scoped next decision or actionable finding/risk after the map; the closing statements only restate provenance and scope."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 5,
+    "total": 5,
+    "useful_pass": false
+  },
+  {
+    "response_id": "M01-F",
+    "trial": "t04",
+    "case": "M01",
+    "version": "phase4",
+    "repeat": 3,
+    "response_text_sha256": "d9c2b438d64523cab93f144e4b37f356405f36e6c4918fdc0c1c82661b1e950a",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Chooses a task flow and accurately distinguishes the purposes of the four broader map types without producing them."
+      },
+      {
+        "score": 2,
+        "reason": "Traces the supplied entry, download action and error-to-list return, identifies success as a goal, and explicitly leaves successful completion details Unknown."
+      },
+      {
+        "score": 2,
+        "reason": "No actors, destinations, channels or backstage processes are invented; interruption and leaving behavior remain questions rather than established facts."
+      },
+      {
+        "score": 2,
+        "reason": "Gives a useful focus on the download outcome and approved recovery and a scoped next step to clarify existing-task unknowns before treating the flow as complete."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M02-A",
+    "trial": "t10",
+    "case": "M02",
+    "version": "phase4",
+    "repeat": 2,
+    "response_text_sha256": "96c3e71168b6e2d0991d660bc56bc7cffb1e29f2adc3cdc58da3b9a136040164",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Maps the renewal goal and R1's Account/browser sequence while keeping R2 and R3 as separate accounts with unknown channels."
+      },
+      {
+        "score": 2,
+        "reason": "Labels witnessed R1 actions Observed and interview evidence Reported; explicitly leaves the pause's cause and feelings unknown."
+      },
+      {
+        "score": 2,
+        "reason": "Preserves both worry and the straightforward account, missing saving and outcomes, and limits on sample coverage; rejects an unsupported emotional curve."
+      },
+      {
+        "score": 2,
+        "reason": "Separates the reminder as a hypothesis needing approval, explicitly says no automatic process is established, and calls for saved-state/payment evidence and investigation of interruption and return."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M02-B",
+    "trial": "t07",
+    "case": "M02",
+    "version": "phase4",
+    "repeat": 1,
+    "response_text_sha256": "cb0640b924d7996666bf3a389ac5af102652dc9b0c63eb08ebbad879f7daea27",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Gives sourced renewal stages and the available web channel for R1, then expressly keeps the other interviewees from extending that observed path."
+      },
+      {
+        "score": 2,
+        "reason": "Distinguishes observed actions from reported worry and return and does not infer feelings from the pause."
+      },
+      {
+        "score": 2,
+        "reason": "Retains the positive account alongside worry, unknown saving/return/completion details, and unavailable wider samples and channels; does not infer duplicate charges or an emotional progression."
+      },
+      {
+        "score": 2,
+        "reason": "Makes the reminder a separate proposal requiring approval; asks about persisted renewal/payment state, timing, channel and eligibility before commitment, alongside useful questions about need and preference."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M02-C",
+    "trial": "t12",
+    "case": "M02",
+    "version": "baseline",
+    "repeat": 2,
+    "response_text_sha256": "918f9e62f515ce9a97c95c34b4a52d3293c448f71aa1df5ea609250fb3d68dc2",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Uses the renewal goal, Account entry and browser exit with a clearly sourced R1 sequence and distinct R2/R3 perspectives; no unified observed path is invented."
+      },
+      {
+        "score": 2,
+        "reason": "R1 is unambiguously identified as the observation record, while R2's return and worry and R3's assessment are reported; the pause supplies no inferred emotion."
+      },
+      {
+        "score": 2,
+        "reason": "Preserves straightforward and worried experiences and the unknown saving, return details and completion; rejects delight and broader sample claims."
+      },
+      {
+        "score": 2,
+        "reason": "Keeps the reminder outside the current map, requires approval and treats benefit as untested; return investigation and unresolved timing, channel, consent and stopping after renewal identify evidence needed before implementing automation."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M02-D",
+    "trial": "t09",
+    "case": "M02",
+    "version": "baseline",
+    "repeat": 3,
+    "response_text_sha256": "8e92a75fa472c82267f5fea23b023566c705a80f4f49c0aa9f630a61d8c598af",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Maps the sourced renewal sequence through Account and browser closure, explicitly identifying the other interviewees and prohibiting their use as R1's continuation."
+      },
+      {
+        "score": 2,
+        "reason": "Keeps observation-record actions distinct from reported worry and return and explicitly says the pause cannot establish anxiety or payment concern."
+      },
+      {
+        "score": 2,
+        "reason": "Retains R3's positive account, R2's worry and unknown saving/status/outcome, without inventing delight, resolution or broader sample coverage."
+      },
+      {
+        "score": 2,
+        "reason": "Separates the stakeholder reminder proposal and its required approval, questions need and permitted channel, and asks how confirmed renewal would prevent unnecessary reminders rather than asserting that capability exists."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M02-E",
+    "trial": "t08",
+    "case": "M02",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "7b8b8f38114efd340ad29a065f345ea63d80808afe136fdad4b21a15d1c008c2",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Bounds the map to renewal and the evidenced Account/renewal-page/browser actions, with R1's observed path and R2/R3 explicitly separate."
+      },
+      {
+        "score": 2,
+        "reason": "Clearly identifies recorded observation versus interview reports and leaves pause feelings/cause unknown; reported worry is not transferred to R1."
+      },
+      {
+        "score": 2,
+        "reason": "Preserves both concern and the straightforward account, unknown saved work, return and outcomes, and missing wider samples; rejects the requested emotional progression."
+      },
+      {
+        "score": 2,
+        "reason": "Provides a useful bounded summary and follow-up questions about persistence and return; the separate reminder proposal requires approval and evidence about need, preferences and completion, with no reminder capability or benefit claimed as established."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M02-F",
+    "trial": "t11",
+    "case": "M02",
+    "version": "phase4",
+    "repeat": 3,
+    "response_text_sha256": "e66c279c5eb66720dfc0644d3613edfae14c64b8d4f3b2b6a6b566d35b29a295",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Uses the renewal goal and available Account/browser route for R1's sourced stages, keeping the two interviewees as separate reported experiences."
+      },
+      {
+        "score": 2,
+        "reason": "Labels R1's actions Observed and R2/R3 evidence Reported, with no inferred anxiety from the pause or observed continuation from R2."
+      },
+      {
+        "score": 2,
+        "reason": "Retains the worried and positive accounts, unknown saving/submission/payment/return outcomes, and unavailable broader samples and channels; rejects a shared emotional curve."
+      },
+      {
+        "score": 2,
+        "reason": "Places the reminder outside the current journey as an unproven proposal needing approval, with saved/payment-state verification and unresolved trigger, timing and channel providing practical evidence questions before commitment."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M03-A",
+    "trial": "t16",
+    "case": "M03",
+    "version": "phase4",
+    "repeat": 2,
+    "response_text_sha256": "06a4479077d524732dbc12c26a51e4e4f3719f9cebb0c6968acf0e33da3eaa1b",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "The selected task-flow table separates review, submission and leaving from app/browser steps, and traces S1-S3 with an explicit return/recovery branch."
+      },
+      {
+        "score": 2,
+        "reason": "It keeps the payment outcome unknown after the missing response and explicitly states that leaving is not cancellation and connection failure proves only nonreceipt."
+      },
+      {
+        "score": 2,
+        "reason": "Entry, exit, retained inputs, return behavior and recovery are addressed without promising capabilities; preventing another submission is clearly proposed while outcome is unknown."
+      },
+      {
+        "score": 2,
+        "reason": "It scopes the next decision to establishing authoritative outcome evidence and return behavior before build, and explicitly disclaims implementation and verification."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M03-B",
+    "trial": "t13",
+    "case": "M03",
+    "version": "baseline",
+    "repeat": 2,
+    "response_text_sha256": "a5163805a1d35a409044a7342b27e7d76b658aa07bb3d1b729f8fd6c982c4323",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "The swimlane sequence table usefully separates customer, app/browser and provider, tracing review, S1 submission, S2 loss and S3 leaving."
+      },
+      {
+        "score": 2,
+        "reason": "It explicitly preserves the unknown provider outcome and rejects failed, cancelled, paid or ongoing-processing claims based on the missing result."
+      },
+      {
+        "score": 2,
+        "reason": "It preserves unestablished input retention and return behavior, identifies a missing recovery route, and proposes preventing duplicates including after return without inventing capabilities."
+      },
+      {
+        "score": 2,
+        "reason": "The proposed decisions address duplicate prevention and authoritative outcome evidence before recovery specification, with clear unresolved status and no runtime or test claims."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M03-C",
+    "trial": "t14",
+    "case": "M03",
+    "version": "phase4",
+    "repeat": 1,
+    "response_text_sha256": "ae3580d9308b515a5827c66417c4e76a5bbc35240c82fd247981ef72ffafcab4",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "The system process table includes separate customer and system columns and traces the approved review/submission entry, connection loss and leaving through S1-S3."
+      },
+      {
+        "score": 2,
+        "reason": "It clearly distinguishes an unknown result from failed payment and states that leaving does not cancel or resolve the payment."
+      },
+      {
+        "score": 2,
+        "reason": "The explicit return row preserves recovery and persistence unknowns; it disallows another attempt while unresolved and makes any exit route conditional on availability."
+      },
+      {
+        "score": 2,
+        "reason": "It calls for determining whether authoritative outcome confirmation is available and authorized, including after return, and leaves recovery incomplete without implementation or test claims."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M03-D",
+    "trial": "t18",
+    "case": "M03",
+    "version": "baseline",
+    "repeat": 3,
+    "response_text_sha256": "08111d98ebd67ce50cfd7c49d7608627f8dbdc46fd18ee69431a0133df713418",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "The selected state table separates customer actions from known system steps and faithfully traces review, S1 submission, S2 connection loss and S3 leaving."
+      },
+      {
+        "score": 2,
+        "reason": "It maintains Unknown remote outcome, rejects success, failure and confirmed processing, and explicitly says leaving will not cancel the submission."
+      },
+      {
+        "score": 2,
+        "reason": "It preserves uncertainty about inputs and status on return, rules out unsupported recovery capabilities, and forbids another submission until outcome confirmation; reconnecting or waiting is not evidence."
+      },
+      {
+        "score": 2,
+        "reason": "It recommends deciding how to confirm the original authoritative outcome before further submission and identifies recovery as unresolved, explicitly without implementation or test claims."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M03-E",
+    "trial": "t15",
+    "case": "M03",
+    "version": "phase4",
+    "repeat": 3,
+    "response_text_sha256": "a5894047316d440cf740116e967d66138c17a137522bcb59b151a2414e3f9905",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "The task-flow table distinguishes customer actions and system behavior, tracing the entry, S1 request, S2 lost connection, S3 leaving and unknown return/recovery."
+      },
+      {
+        "score": 2,
+        "reason": "It explicitly keeps outcome Unknown and explains that neither success nor failure follows from connection loss and leaving cannot be treated as cancellation."
+      },
+      {
+        "score": 2,
+        "reason": "It preserves persistence, exit route and return uncertainties and prohibits duplicate submission, while presenting exit and feedback as proposals and making no capability promises."
+      },
+      {
+        "score": 2,
+        "reason": "Its scoped next decision is to establish reliable original-outcome evidence before approving recovery or subsequent submission; it states that runtime behavior and implementation are unverified."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M03-F",
+    "trial": "t17",
+    "case": "M03",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "1d44fdb36269b5f5de0ed066a95ca7d2b1fec511099f980d87fb41af9315c639",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "The swimlane table separates review/submission/leaving customer actions from app/browser constraints and clearly traces S1-S3."
+      },
+      {
+        "score": 2,
+        "reason": "It distinguishes failure to receive a response from payment failure and keeps outcome unknown after leaving, expressly denying cancellation."
+      },
+      {
+        "score": 2,
+        "reason": "It identifies unknown return recognition and persistence, proposes preventing another submission without promising saved work or recovery capabilities, and conditions an exit on availability."
+      },
+      {
+        "score": 2,
+        "reason": "It calls for deciding how authoritative result evidence and recognition after exit can work before completing recovery, and clearly marks the result as a design proposal without implementation or tests."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M04-A",
+    "trial": "t22",
+    "case": "M04",
+    "version": "phase4",
+    "repeat": 1,
+    "response_text_sha256": "affcbcac0700efc464ce498b032feae9b8b9fc94d7a7ac748211f6ee3976d7c0",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Aligns website submission, request number and Received status with the logged Dispatcher-to-Scheduling forwarding; unsupported backstage and support actions remain Unknown."
+      },
+      {
+        "score": 2,
+        "reason": "Explicitly separates receipt and forwarding from unrecorded acceptance and confirmation; retains responsibility, next actor, support processes and timing commitment as unresolved."
+      },
+      {
+        "score": 2,
+        "reason": "Labels the records fictional and not actual research, and expressly identifies form and request number as props that do not prove successful scheduling."
+      },
+      {
+        "score": 2,
+        "reason": "Provides a usable bounded map and proposes clarifying interim ownership and acceptance evidence before defining non-acceptance handling or any completion commitment."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M04-B",
+    "trial": "t21",
+    "case": "M04",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "111bb200082493f639fc762e138bf5cbaecdda23d5ead14b9520bdd6ee59b491",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Maps the supplied customer submission and visible number/status to Dispatcher forwarding request 41 to Scheduling; unknown lanes remain explicit and actor names are not promoted to departments."
+      },
+      {
+        "score": 2,
+        "reason": "Keeps recipient acceptance, post-forwarding ownership and confirmation unrecorded, with supporting processes Unknown and no supported SLA or timing promise."
+      },
+      {
+        "score": 2,
+        "reason": "Describes a fictional-record map rather than validated research and limits the form, number and forwarding log to their supported significance; none establishes scheduling success."
+      },
+      {
+        "score": 2,
+        "reason": "Recommends a concrete ownership and acceptance-record decision with the supplied actors and preserves Received while withholding an unsupported completion commitment."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M04-C",
+    "trial": "t23",
+    "case": "M04",
+    "version": "baseline",
+    "repeat": 3,
+    "response_text_sha256": "b0d2b61a6dc1139fa5b5f1a3428053e7303d6e31199e1b48d5440dc62f451d4b",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Connects form submission and acknowledgement, visible Received status and logged forwarding using only Dispatcher and Scheduling, leaving unobserved actions Unknown."
+      },
+      {
+        "score": 2,
+        "reason": "Distinguishes forwarding from acceptance and appointment confirmation; ownership, support dependencies, software, SLA and department boundaries remain unknown."
+      },
+      {
+        "score": 2,
+        "reason": "Clearly limits the map to fictional supplied records and says the form and request number establish neither actual research nor successful scheduling."
+      },
+      {
+        "score": 2,
+        "reason": "Offers a useful partial blueprint and bounded proposal to establish accountability and acceptance evidence before recognizing handoff completion or setting a deadline."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M04-D",
+    "trial": "t20",
+    "case": "M04",
+    "version": "phase4",
+    "repeat": 2,
+    "response_text_sha256": "80b84b9e921f1d4cd1a4ee87374d2892b987065cffa911c4e8035ddda7e73f1d",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Compactly aligns customer submission, request number and Received with the sole recorded staff forwarding; unsupported lanes remain Unknown and no additional actors are invented."
+      },
+      {
+        "score": 2,
+        "reason": "Explicitly preserves missing acceptance, ownership, subsequent work, dependencies and SLA, and separates receipt/forwarding from an appointment outcome."
+      },
+      {
+        "score": 2,
+        "reason": "Identifies B1-B3 as fictional rather than actual research and states that the form and number establish neither recipient acceptance nor a booked appointment."
+      },
+      {
+        "score": 2,
+        "reason": "Proposes establishing accountability and an acceptance event, then verifying acceptance and appointment outcome; any timing commitment requires separate evidence and authorization."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M04-E",
+    "trial": "t24",
+    "case": "M04",
+    "version": "baseline",
+    "repeat": 2,
+    "response_text_sha256": "590824a318fc93fbe74a8884b6844f792e2d11222c67df1a535a62fe30efd925",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Preserves all supplied customer-visible events and maps the recorded forwarding across the two named staff lanes, with unsupported actions Unknown and no inferred department structure."
+      },
+      {
+        "score": 2,
+        "reason": "Shows forwarding recorded, acceptance unrecorded and confirmation unrecorded; accountable ownership and supporting relationships, software and SLA remain unknown."
+      },
+      {
+        "score": 2,
+        "reason": "Calls this a fictional-record blueprint rather than validated research and expressly says the service artifacts do not prove successful scheduling."
+      },
+      {
+        "score": 2,
+        "reason": "Provides an actionable partial map and bounded proposal to identify an authorized owner and acceptance evidence, verify confirmation and defer the unsupported 24-hour promise."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M04-F",
+    "trial": "t19",
+    "case": "M04",
+    "version": "phase4",
+    "repeat": 3,
+    "response_text_sha256": "54cd3869f815093c11a2edf22f18af09faba0acb55e719670e0da0957591693c",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Aligns form submission, the request number and Received status with Dispatcher forwarding request 41 to Scheduling, retaining Unknown actions and using only supplied staff names."
+      },
+      {
+        "score": 2,
+        "reason": "Explicitly distinguishes forwarded from accepted and completed, and retains ownership, dependencies, timing, SLA and any ongoing work as Unknown."
+      },
+      {
+        "score": 2,
+        "reason": "Labels the scenario fictional and not actual research or validated performance; the form and number are props rather than proof of successful scheduling."
+      },
+      {
+        "score": 2,
+        "reason": "Gives a usable small blueprint and a grounded proposal to establish accountability, recipient acceptance evidence and the outstanding handoff decision before a completion commitment."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M05-A",
+    "trial": "t30",
+    "case": "M05",
+    "version": "baseline",
+    "repeat": 3,
+    "response_text_sha256": "78c33bc7d43db606cd31372956553ea89aa4bc9bf88289d1c7f35c7451e61c93",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "The single service blueprint connects customer actions, visible contact, staff handoff and records while retaining the website-to-phone sequence and the reported website return."
+      },
+      {
+        "score": 2,
+        "reason": "It traces Support's decision request to unknown Specialist acceptance and outcome, explicitly distinguishing asking from receipt, ownership or completion and pending human work from an active job."
+      },
+      {
+        "score": 2,
+        "reason": "The departure before a decision and reported next-day Pending display are preserved. Conversation retention, continuation and return state remain unknown, with a grounded same-number phone recovery proposal and unresolved verification."
+      },
+      {
+        "score": 2,
+        "reason": "Proposed recovery guidance is labeled separately from current evidence. It identifies useful decisions about acknowledgment, persistence, Pending and missing-number recovery without asserting new capabilities or completion."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M05-B",
+    "trial": "t27",
+    "case": "M05",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "de6da5973b4d7cb017bdfeec2e9363f548cc11bf03a0da99cabfae45160fe721",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "The service blueprint is suitable for the cross-channel staff handoff and gives each supplied stage and channel a distinct place, including H4's reported status."
+      },
+      {
+        "score": 2,
+        "reason": "Support reading and asking are separated from unrecorded Specialist acceptance, work and outcome. The reply explicitly forbids treating the handoff as complete or pending human work as a running job."
+      },
+      {
+        "score": 2,
+        "reason": "It retains the interruption and next-day return, distinguishes departure from cancellation and leaves saving and continuation unknown. Repeating the existing number-and-phone actions is proposed with lookup and resolution limits stated."
+      },
+      {
+        "score": 2,
+        "reason": "Current behavior and proposals are clearly separated. Departure communication, useful Pending information and verifiable ownership are actionable decisions grounded in the records, while recovery and implementation readiness remain unverified."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M05-C",
+    "trial": "t25",
+    "case": "M05",
+    "version": "phase4",
+    "repeat": 3,
+    "response_text_sha256": "dad2e29b4a696514df46bd3c72704adf02679ca78ea4ccfc31d4ec2e4fd65c28",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "The partial service blueprint captures the customer-facing website/phone steps and known staff work in a single representation, preserving source attribution and the reported nature of H4."
+      },
+      {
+        "score": 2,
+        "reason": "It identifies the transfer as a decision request and leaves its exact contents, acceptance, ownership and outcome unknown. It rejects inferred work in progress and distinguishes human pending work from an automatic job."
+      },
+      {
+        "score": 2,
+        "reason": "The customer leaving before the decision and returning next day to reported Pending are explicit. Effects of exit and saved conversation remain unknown, and same-request recovery is proposed subject to a still-unknown way to verify the decision."
+      },
+      {
+        "score": 2,
+        "reason": "The proposed accountability, safe-exit, recovery and status decisions are tied to the supplied evidence. It adds no asserted channels or staff processes and does not claim a validated recovery or completed handoff."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M05-D",
+    "trial": "t29",
+    "case": "M05",
+    "version": "phase4",
+    "repeat": 2,
+    "response_text_sha256": "32830f965934a1034b4edc2dd98d1653dc5c640d6e5b55e464dbf29fe2c15495",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "A single partial service blueprint suits the handoff and return goal, with distinct website and Support-call actions and an explicitly reported next-day return stage."
+      },
+      {
+        "score": 2,
+        "reason": "The sender, recipient and decision request are explicit, while receipt, ownership, acceptance and outcome are not inferred. It also expressly separates human waiting from automatic background work."
+      },
+      {
+        "score": 2,
+        "reason": "Interruption before the decision and the unresolved next-day Pending return are preserved. It claims neither cancellation nor saved conversation or continued processing, and proposes a same-number phone return without promising immediate resolution."
+      },
+      {
+        "score": 2,
+        "reason": "Its proposed ownership, departure and return guidance is clearly separated from the evidence and depends on verification. The recommendations are useful within the existing channel scope without unnecessary system detail or unsupported completion."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M05-E",
+    "trial": "t26",
+    "case": "M05",
+    "version": "baseline",
+    "repeat": 2,
+    "response_text_sha256": "57a93f89e637c93a6c5419fc69f5a06d21e4b1ac187f5122c5568c6f2d730b17",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "The service blueprint connects customer-facing website/phone experience, Support and Specialist work, record evidence and recovery gaps, retaining H1-H4 and the reported return."
+      },
+      {
+        "score": 2,
+        "reason": "It maps Support reading and requesting a decision while leaving Specialist acceptance and outcome unknown. It explains that the outgoing request alone establishes neither ownership nor a running background job."
+      },
+      {
+        "score": 2,
+        "reason": "Departure before the decision and the next-day reported Pending display remain explicit and unresolved. It leaves saving and continuing work unknown and gives a grounded same-request return proposal with verification and missing-number limits."
+      },
+      {
+        "score": 2,
+        "reason": "Current-flow evidence and proposed changes are distinct. Safe exit, return, Pending meaning and verifiable handoff closure are useful decisions, with recording and update behavior left for explicit resolution rather than asserted as capabilities."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M05-F",
+    "trial": "t28",
+    "case": "M05",
+    "version": "phase4",
+    "repeat": 1,
+    "response_text_sha256": "f8ba97cd44b836fda6499b3a2cd4953f8604eca68a7123d6be4685beacae6a81",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "The partial service blueprint appropriately covers the cross-channel request and staff handoff. Website entry, phone interaction and reported website return remain distinct, with visibility boundaries responsibly left partial."
+      },
+      {
+        "score": 2,
+        "reason": "Support's request for a Specialist decision is traced with transferred detail, acceptance, responsibility and outcome unknown. Pending is treated as insufficient evidence of accepted or active work, with continuation and automatic updates also unknown."
+      },
+      {
+        "score": 2,
+        "reason": "It preserves the departure before the decision and next-day reported Pending return. It explicitly rejects inferred cancellation, completion or saving and proposes existing-number phone recovery while stating that reliable recovery is not established."
+      },
+      {
+        "score": 2,
+        "reason": "Proposed recovery is separated from the current map and uses the established channels. Departure communication, same-request checking and verification of retention, acceptance and ownership are actionable next decisions without invented processes or completion claims."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M06-A",
+    "trial": "t34",
+    "case": "M06",
+    "version": "baseline",
+    "repeat": 3,
+    "response_text_sha256": "681f04da384a97f0a42eed0794d62248810e4964ca1ae97a8c5db7cedbffe792",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Retains four directly observed completions, the single unobserved screen-reader report and the single return-state report, with bounded evidence and no forced pattern or combined sample."
+      },
+      {
+        "score": 2,
+        "reason": "Preserves the reported unnamed dialog and blocked completion as an accessibility barrier; explicitly rejects an unsupported Pass and proposes reproduction in the relevant context."
+      },
+      {
+        "score": 2,
+        "reason": "Preserves the previous-dose display after change and interruption as a potential safety risk, with cause, persistence and clinical consequences unverified; emotions remain Unknown and no medical advice is given."
+      },
+      {
+        "score": 2,
+        "reason": "Prioritizes dialog and change/save/return/submission checks, asks about recovery and affected contexts, and clearly separates future fixes from current evidence and validation."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M06-B",
+    "trial": "t31",
+    "case": "M06",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "f2c0bf531a12536fbc2b92961656efdaea84a921fb63c9f81149c355b68a30da",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Keeps the four observed successes and both isolated reports with explicit sourcing and evidence limits; treats rows as known moments rather than a verified common sequence."
+      },
+      {
+        "score": 2,
+        "reason": "Retains the accessible-name completion blocker despite isolation and lack of direct observation, marks accessibility Not verified and scopes inspection and reproduction."
+      },
+      {
+        "score": 2,
+        "reason": "Identifies the stale-dose return as a potential safety concern while saved persistence, cause and clinical consequences remain Unknown; assigns no emotions or medical conclusions."
+      },
+      {
+        "score": 2,
+        "reason": "Gives useful checks of dialog completion and stored/displayed/submitted values, and separates conditional future corrections and post-change checks from the unvalidated map."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M06-C",
+    "trial": "t35",
+    "case": "M06",
+    "version": "phase4",
+    "repeat": 2,
+    "response_text_sha256": "92fc52c87660d6753f7bfd8b69fad41ab90721e0fbd93f97706eac6c4dc1140d",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Retains observed completions and each single reported issue, explicitly preserves unknown sequence and evidence limits, and does not force them into a shared pattern."
+      },
+      {
+        "score": 2,
+        "reason": "Keeps the unobserved unnamed-dialog blockage as an accessibility risk despite a single occurrence and marks accessibility Not verified."
+      },
+      {
+        "score": 2,
+        "reason": "Keeps the interruption/return previous-dose report as a potential safety risk, asks about saved/displayed/submitted values, leaves persistence and clinical consequences unverified, and invents no emotions or medical advice."
+      },
+      {
+        "score": 2,
+        "reason": "Prioritizes verification of both reported paths and recovery, labels any fix a future proposal, and explicitly states that neither fixes nor validation have occurred."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M06-D",
+    "trial": "t36",
+    "case": "M06",
+    "version": "phase4",
+    "repeat": 1,
+    "response_text_sha256": "0223208c3eb9a40be1873f79d5f768da745ff4938c9cc8a8d947300917bec85c",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Preserves all three records and distinguishes four observed completion cases from the two isolated reports, framing branches as separate cases with unknown sequence and bounded success."
+      },
+      {
+        "score": 2,
+        "reason": "Retains the screen-reader accessible-name blockage as an unobserved reported blocker and rejects Pass pending verification."
+      },
+      {
+        "score": 2,
+        "reason": "Retains the previous-dose return discrepancy as a potential safety issue, with persisted value, submission outcome and clinical consequences unverified; assigns no emotions or medical conclusions."
+      },
+      {
+        "score": 2,
+        "reason": "Provides scoped dialog and dose-value tracing priorities plus exits, preserved work and recovery checks, and clearly separates investigated future corrections from current capabilities and validation."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M06-E",
+    "trial": "t33",
+    "case": "M06",
+    "version": "phase4",
+    "repeat": 3,
+    "response_text_sha256": "598492fee19a89f249855ccef97915e4110cb0ae6861b0ee47f872e7eea08dca",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Retains the four fictional observed completions and both isolated reported issues with evidence limits; avoids treating the accounts as one observed path or inferring a total sample."
+      },
+      {
+        "score": 2,
+        "reason": "Preserves the unnamed confirmation dialog and blocked screen-reader completion as an accessibility barrier, explicitly rejects Pass and proposes inspection."
+      },
+      {
+        "score": 2,
+        "reason": "Preserves the interruption/return previous-dose display as a potential safety risk, leaves persistence, cause and clinical consequences unverified, and assigns no emotions or medical advice."
+      },
+      {
+        "score": 2,
+        "reason": "Prioritizes screen-reader dialog checks and changed-dose tracing through return and submission, including exits and preserved work; separates proposed fixes and later verification from the unvalidated map."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "M06-F",
+    "trial": "t32",
+    "case": "M06",
+    "version": "baseline",
+    "repeat": 2,
+    "response_text_sha256": "1bf94b5d9f6a98585e1359d611b56d109af1639616e82f81bd335ca2c90e1992",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Retains the four observed successful reorders and both isolated reports with direct-observation limits, unknown context coverage and overlap, and no inferred common pattern or success rate."
+      },
+      {
+        "score": 2,
+        "reason": "Preserves the accessible-name blocker despite isolation and lack of observation. The qualified 'Fail in the reported scenario' describes the reported blockage while reproduction and broader accessibility remain Not verified; it claims no unsupported Pass."
+      },
+      {
+        "score": 2,
+        "reason": "Preserves the changed-dose interruption/return discrepancy as an isolated potential safety risk, leaves saved state, submitted values and clinical consequences unresolved, and supplies no emotions or medical advice."
+      },
+      {
+        "score": 2,
+        "reason": "Scopes reproduction to the relevant dialog and return paths, compares displayed/saved/submitted values, and identifies conditional future fixes as proposals with later verification rather than current behavior or completed validation."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "C01-A",
+    "trial": "t37",
+    "case": "C01",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "f4c1c4f327eaf006d982005b967e716019624333ba6e259f065c4bed3293402a",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Specifies the exact replacement of Submit with Download invoice on the approved screen."
+      },
+      {
+        "score": 2,
+        "reason": "Makes the correction directly without conditioning it on mapping, research, intake, or documentation."
+      },
+      {
+        "score": 2,
+        "reason": "Explicitly keeps everything else unchanged and introduces no additional scope."
+      },
+      {
+        "score": 2,
+        "reason": "Makes no claim that rendered, runtime, or access checks ran."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "C01-B",
+    "trial": "t38",
+    "case": "C01",
+    "version": "phase4",
+    "repeat": 1,
+    "response_text_sha256": "2a803016596bcc03f2b9c47a4e42679d0a3ac04eff11a6b32610cfb438895c26",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Specifies the exact label replacement from Submit to Download invoice."
+      },
+      {
+        "score": 2,
+        "reason": "Requests the wording correction without any mapping, research, intake, or documentation prerequisite."
+      },
+      {
+        "score": 2,
+        "reason": "Keeps everything else unchanged; describing the existing action label as a button adds no consequential feature or unrelated change."
+      },
+      {
+        "score": 2,
+        "reason": "Makes no claim that rendered, runtime, or access checks ran."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "C02-A",
+    "trial": "t40",
+    "case": "C02",
+    "version": "baseline",
+    "repeat": 1,
+    "response_text_sha256": "8a6775e34d8a500647a96ed264e5de91b1737009f5a05ab617d8434f70c641a5",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Three bounded questions establish the intended learner, the organizing outcome, and exclusions for the first version; alternatives remain choices rather than approved product decisions."
+      },
+      {
+        "score": 2,
+        "reason": "The reply uses three questions, supplies concrete examples and an open alternative for each, and explicitly distinguishes delegation from reserving a decision for the user. Recommendations are identified as picks."
+      },
+      {
+        "score": 2,
+        "reason": "The reply stays in intake questions and does not emit architecture, maps, taxonomy, roles, routes, screens, or a document set. Features mentioned in scope alternatives are proposed exclusions, not implementation commitments."
+      },
+      {
+        "score": 2,
+        "reason": "It makes no research or validation claim. Brief explanations connect each question to an actionable framing decision without a method lecture."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  },
+  {
+    "response_id": "C02-B",
+    "trial": "t39",
+    "case": "C02",
+    "version": "phase4",
+    "repeat": 1,
+    "response_text_sha256": "4b2ff6a0f10b2e012e94083df229dbabce0bed87a7b186ecc73f2435afdcfcad",
+    "criteria": [
+      {
+        "score": 2,
+        "reason": "Three bounded questions establish audience, the result of organizing resources, and a first-version scope boundary. The intended audience is explicitly unknown and proposed outcomes remain undecided."
+      },
+      {
+        "score": 2,
+        "reason": "The reply uses three questions with understandable options, concrete examples, open alternatives, and explicit delegation or user reservation for each decision. Proposed picks are clearly labeled."
+      },
+      {
+        "score": 2,
+        "reason": "It supplies only intake questions, with no maps, architecture, taxonomy, roles, routes, screens, or document set. Scheduling, tracking, and collaboration appear as optional exclusions rather than approved capabilities."
+      },
+      {
+        "score": 2,
+        "reason": "It claims no research or validation and gives concise reasons that help the user choose the next framing decisions without explaining a design methodology."
+      }
+    ],
+    "critical_errors": [],
+    "uncapped_total": 8,
+    "total": 8,
+    "useful_pass": true
+  }
+]

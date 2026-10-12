@@ -94,3 +94,7 @@ Run `python3 tests/test_phase2_synthesis.py` or normal unittest discovery after 
 ## Phase 3 information architecture
 
 Run `python3 tests/test_phase3_ia.py` or unittest discovery with both required checkers. Protect optional/direct loading, sourced objects/relationships/routes/categories, actual capabilities, direct-entry/retrieval boundaries and honest unperformed studies. [Protocol](../evals/phase-3-information-architecture/protocol.md) and [rubric](../evals/phase-3-information-architecture/rubric.md) precede trials. Synthetic cases are not research or security validation. Keep historical evidence and known failures unchanged. No visual artifacts or Phase 4.
+
+## Phase 4 journeys and service blueprints
+
+Run `python3 tests/test_phase4_mapping.py` or unittest discovery with both required checkers. Protect optional/direct loading, one-map selection, evidence/state separation, no invented emotions/processes, real handoffs and isolated risks. [Protocol](../evals/phase-4-journeys-blueprints/protocol.md) and [rubric](../evals/phase-4-journeys-blueprints/rubric.md) were frozen before implementation/trials. Preserve exact replies, all grades, historical records and correction. Synthetic checks do not establish real service usability, accessibility, safety or runtime behavior. No visual artifacts or Phase 5.

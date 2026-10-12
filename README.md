@@ -55,6 +55,10 @@ Product-design can optionally turn supplied records into traceable findings and 
 
 Product-design can optionally organize approved objects/content, relationships, labels, navigation, search/filter scope and structural maps before screens. Actual roles and capabilities control access; hidden navigation is never security enforcement. Card sorting and tree testing are optional plans unless real evidence exists. Clear corrections and sufficiently defined structures skip IA. No new features, invented routes or visual artifacts follow from a map. Results and limits are in [Phase 3 results](evals/phase-3-information-architecture/results.md).
 
+## Phase 4 mapping update (no new release)
+
+Product-design can optionally choose one evidence-grounded journey, task flow, known system process or service blueprint. Navigation remains with IA. Current evidence stays separate from proposed changes; missing emotions, teams, channels and business processes remain Unknown. Isolated accessibility/safety and interruption/return/recovery issues stay visible. Guidance loads only when relevant; no automatic maps, screens or visual artifacts. Results and limits are in [Phase 4 results](evals/phase-4-journeys-blueprints/results.md).
+
 ## Context budgets
 
 The knowledge collection can grow without a global word cap. Small entry files load task-relevant references directly. Maximums: 4,500 tokens per entry, 2,000 per shared file, 4,000 per reference, and 12,000 per declared normal loading path. Contract and intake stay small and always loaded; safeguards must not be skipped to fit a budget.

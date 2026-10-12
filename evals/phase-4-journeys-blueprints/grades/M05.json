@@ -1,0 +1,155 @@
+{
+  "scorer": "fresh blind agent",
+  "grades": [
+    {
+      "response_id": "M05-A",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "The single service blueprint connects customer actions, visible contact, staff handoff and records while retaining the website-to-phone sequence and the reported website return."
+        },
+        {
+          "score": 2,
+          "reason": "It traces Support's decision request to unknown Specialist acceptance and outcome, explicitly distinguishing asking from receipt, ownership or completion and pending human work from an active job."
+        },
+        {
+          "score": 2,
+          "reason": "The departure before a decision and reported next-day Pending display are preserved. Conversation retention, continuation and return state remain unknown, with a grounded same-number phone recovery proposal and unresolved verification."
+        },
+        {
+          "score": 2,
+          "reason": "Proposed recovery guidance is labeled separately from current evidence. It identifies useful decisions about acknowledgment, persistence, Pending and missing-number recovery without asserting new capabilities or completion."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "M05-B",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "The service blueprint is suitable for the cross-channel staff handoff and gives each supplied stage and channel a distinct place, including H4's reported status."
+        },
+        {
+          "score": 2,
+          "reason": "Support reading and asking are separated from unrecorded Specialist acceptance, work and outcome. The reply explicitly forbids treating the handoff as complete or pending human work as a running job."
+        },
+        {
+          "score": 2,
+          "reason": "It retains the interruption and next-day return, distinguishes departure from cancellation and leaves saving and continuation unknown. Repeating the existing number-and-phone actions is proposed with lookup and resolution limits stated."
+        },
+        {
+          "score": 2,
+          "reason": "Current behavior and proposals are clearly separated. Departure communication, useful Pending information and verifiable ownership are actionable decisions grounded in the records, while recovery and implementation readiness remain unverified."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "M05-C",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "The partial service blueprint captures the customer-facing website/phone steps and known staff work in a single representation, preserving source attribution and the reported nature of H4."
+        },
+        {
+          "score": 2,
+          "reason": "It identifies the transfer as a decision request and leaves its exact contents, acceptance, ownership and outcome unknown. It rejects inferred work in progress and distinguishes human pending work from an automatic job."
+        },
+        {
+          "score": 2,
+          "reason": "The customer leaving before the decision and returning next day to reported Pending are explicit. Effects of exit and saved conversation remain unknown, and same-request recovery is proposed subject to a still-unknown way to verify the decision."
+        },
+        {
+          "score": 2,
+          "reason": "The proposed accountability, safe-exit, recovery and status decisions are tied to the supplied evidence. It adds no asserted channels or staff processes and does not claim a validated recovery or completed handoff."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "M05-D",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "A single partial service blueprint suits the handoff and return goal, with distinct website and Support-call actions and an explicitly reported next-day return stage."
+        },
+        {
+          "score": 2,
+          "reason": "The sender, recipient and decision request are explicit, while receipt, ownership, acceptance and outcome are not inferred. It also expressly separates human waiting from automatic background work."
+        },
+        {
+          "score": 2,
+          "reason": "Interruption before the decision and the unresolved next-day Pending return are preserved. It claims neither cancellation nor saved conversation or continued processing, and proposes a same-number phone return without promising immediate resolution."
+        },
+        {
+          "score": 2,
+          "reason": "Its proposed ownership, departure and return guidance is clearly separated from the evidence and depends on verification. The recommendations are useful within the existing channel scope without unnecessary system detail or unsupported completion."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "M05-E",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "The service blueprint connects customer-facing website/phone experience, Support and Specialist work, record evidence and recovery gaps, retaining H1-H4 and the reported return."
+        },
+        {
+          "score": 2,
+          "reason": "It maps Support reading and requesting a decision while leaving Specialist acceptance and outcome unknown. It explains that the outgoing request alone establishes neither ownership nor a running background job."
+        },
+        {
+          "score": 2,
+          "reason": "Departure before the decision and the next-day reported Pending display remain explicit and unresolved. It leaves saving and continuing work unknown and gives a grounded same-request return proposal with verification and missing-number limits."
+        },
+        {
+          "score": 2,
+          "reason": "Current-flow evidence and proposed changes are distinct. Safe exit, return, Pending meaning and verifiable handoff closure are useful decisions, with recording and update behavior left for explicit resolution rather than asserted as capabilities."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "M05-F",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "The partial service blueprint appropriately covers the cross-channel request and staff handoff. Website entry, phone interaction and reported website return remain distinct, with visibility boundaries responsibly left partial."
+        },
+        {
+          "score": 2,
+          "reason": "Support's request for a Specialist decision is traced with transferred detail, acceptance, responsibility and outcome unknown. Pending is treated as insufficient evidence of accepted or active work, with continuation and automatic updates also unknown."
+        },
+        {
+          "score": 2,
+          "reason": "It preserves the departure before the decision and next-day reported Pending return. It explicitly rejects inferred cancellation, completion or saving and proposes existing-number phone recovery while stating that reliable recovery is not established."
+        },
+        {
+          "score": 2,
+          "reason": "Proposed recovery is separated from the current map and uses the established channels. Departure communication, same-request checking and verification of retention, acceptance and ownership are actionable next decisions without invented processes or completion claims."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    }
+  ]
+}

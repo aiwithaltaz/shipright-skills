@@ -1,0 +1,155 @@
+{
+  "scorer": "fresh blind agent",
+  "grades": [
+    {
+      "response_id": "M03-A",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "The selected task-flow table separates review, submission and leaving from app/browser steps, and traces S1-S3 with an explicit return/recovery branch."
+        },
+        {
+          "score": 2,
+          "reason": "It keeps the payment outcome unknown after the missing response and explicitly states that leaving is not cancellation and connection failure proves only nonreceipt."
+        },
+        {
+          "score": 2,
+          "reason": "Entry, exit, retained inputs, return behavior and recovery are addressed without promising capabilities; preventing another submission is clearly proposed while outcome is unknown."
+        },
+        {
+          "score": 2,
+          "reason": "It scopes the next decision to establishing authoritative outcome evidence and return behavior before build, and explicitly disclaims implementation and verification."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "M03-B",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "The swimlane sequence table usefully separates customer, app/browser and provider, tracing review, S1 submission, S2 loss and S3 leaving."
+        },
+        {
+          "score": 2,
+          "reason": "It explicitly preserves the unknown provider outcome and rejects failed, cancelled, paid or ongoing-processing claims based on the missing result."
+        },
+        {
+          "score": 2,
+          "reason": "It preserves unestablished input retention and return behavior, identifies a missing recovery route, and proposes preventing duplicates including after return without inventing capabilities."
+        },
+        {
+          "score": 2,
+          "reason": "The proposed decisions address duplicate prevention and authoritative outcome evidence before recovery specification, with clear unresolved status and no runtime or test claims."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "M03-C",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "The system process table includes separate customer and system columns and traces the approved review/submission entry, connection loss and leaving through S1-S3."
+        },
+        {
+          "score": 2,
+          "reason": "It clearly distinguishes an unknown result from failed payment and states that leaving does not cancel or resolve the payment."
+        },
+        {
+          "score": 2,
+          "reason": "The explicit return row preserves recovery and persistence unknowns; it disallows another attempt while unresolved and makes any exit route conditional on availability."
+        },
+        {
+          "score": 2,
+          "reason": "It calls for determining whether authoritative outcome confirmation is available and authorized, including after return, and leaves recovery incomplete without implementation or test claims."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "M03-D",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "The selected state table separates customer actions from known system steps and faithfully traces review, S1 submission, S2 connection loss and S3 leaving."
+        },
+        {
+          "score": 2,
+          "reason": "It maintains Unknown remote outcome, rejects success, failure and confirmed processing, and explicitly says leaving will not cancel the submission."
+        },
+        {
+          "score": 2,
+          "reason": "It preserves uncertainty about inputs and status on return, rules out unsupported recovery capabilities, and forbids another submission until outcome confirmation; reconnecting or waiting is not evidence."
+        },
+        {
+          "score": 2,
+          "reason": "It recommends deciding how to confirm the original authoritative outcome before further submission and identifies recovery as unresolved, explicitly without implementation or test claims."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "M03-E",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "The task-flow table distinguishes customer actions and system behavior, tracing the entry, S1 request, S2 lost connection, S3 leaving and unknown return/recovery."
+        },
+        {
+          "score": 2,
+          "reason": "It explicitly keeps outcome Unknown and explains that neither success nor failure follows from connection loss and leaving cannot be treated as cancellation."
+        },
+        {
+          "score": 2,
+          "reason": "It preserves persistence, exit route and return uncertainties and prohibits duplicate submission, while presenting exit and feedback as proposals and making no capability promises."
+        },
+        {
+          "score": 2,
+          "reason": "Its scoped next decision is to establish reliable original-outcome evidence before approving recovery or subsequent submission; it states that runtime behavior and implementation are unverified."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "M03-F",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "The swimlane table separates review/submission/leaving customer actions from app/browser constraints and clearly traces S1-S3."
+        },
+        {
+          "score": 2,
+          "reason": "It distinguishes failure to receive a response from payment failure and keeps outcome unknown after leaving, expressly denying cancellation."
+        },
+        {
+          "score": 2,
+          "reason": "It identifies unknown return recognition and persistence, proposes preventing another submission without promising saved work or recovery capabilities, and conditions an exit on availability."
+        },
+        {
+          "score": 2,
+          "reason": "It calls for deciding how authoritative result evidence and recognition after exit can work before completing recovery, and clearly marks the result as a design proposal without implementation or tests."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    }
+  ]
+}

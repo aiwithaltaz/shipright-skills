@@ -23,6 +23,8 @@ Record known systems and constraints. Do not choose a stack, API, provider or da
 Describe entry, request, processing, persistence and returned result for the current-phase job.
 Separate observed capabilities from proposals. UI copy should expose useful consequences, not internal architecture.
 
+When a system process or service handoff is relevant, distinguish user actions from known automatic steps and record sourced triggers/inputs/outputs/state changes, dependencies and acceptance/ownership gaps. Missing systems, saving, retries, cancellation, notifications, SLA and business processes stay Unknown. Separate current capabilities from proposed changes; mapping does not verify runtime.
+
 ## Constraints
 
 <!-- Supported devices, performance, scale, network/offline limits, environments and relevant security constraints. -->

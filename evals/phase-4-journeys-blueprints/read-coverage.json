@@ -1,0 +1,36 @@
+{
+  "baseline": {
+    "mapping_case_word_range": [
+      207,
+      637
+    ],
+    "controls_mapping_reads": {
+      "C01": [],
+      "C02": []
+    },
+    "mapping_reads": {
+      "mapping-types": 0,
+      "journey-mapping": 0,
+      "task-and-system-flows": 0,
+      "service-blueprints": 0,
+      "mapping-sources": 0
+    }
+  },
+  "phase4": {
+    "mapping_case_word_range": [
+      252,
+      559
+    ],
+    "controls_mapping_reads": {
+      "C01": [],
+      "C02": []
+    },
+    "mapping_reads": {
+      "mapping-types": 12,
+      "journey-mapping": 5,
+      "task-and-system-flows": 10,
+      "service-blueprints": 6,
+      "mapping-sources": 2
+    }
+  }
+}

@@ -359,3 +359,7 @@ New source/mutation tests and controlled comparisons are recorded in [Phase 2 re
 ## Phase 3 information architecture - 2026-10-11 (no new release)
 
 Added five optional product-design references for sourced organization, findability, role-based navigation, optional IA studies and provenance. Preserves actual scope, direct-entry access boundaries, unknown relationship/route rules and isolated risks. Small routing/template updates and declared bounded paths; four existing skills and unchanged budget limits. Earlier Phase 1/2 evidence and tests remain intact. No visual artifacts, merge or Phase 4. [Phase 3 results](evals/phase-3-information-architecture/results.md) record controlled comparisons and limits.
+
+## Phase 4 journeys and service blueprints - 2026-10-12 (no new release)
+
+Added five optional references inside product-design for selecting one map, grounded journeys, task/system distinctions, service delivery layers and provenance. Current evidence remains separate from proposals; missing emotions, channels, teams and processes stay Unknown. Preserves isolated accessibility/safety and interruption/return/recovery issues. Small template/routing updates, bounded paths and new regression/mutation protections. All prior evidence and Phase 3 grading correction remain unchanged. No visual artifacts, merge or Phase 5. [Phase 4 results](evals/phase-4-journeys-blueprints/results.md) record frozen comparisons and limits.

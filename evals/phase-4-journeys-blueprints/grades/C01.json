@@ -1,0 +1,55 @@
+{
+  "scorer": "fresh blind agent",
+  "grades": [
+    {
+      "response_id": "C01-A",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "Specifies the exact replacement of Submit with Download invoice on the approved screen."
+        },
+        {
+          "score": 2,
+          "reason": "Makes the correction directly without conditioning it on mapping, research, intake, or documentation."
+        },
+        {
+          "score": 2,
+          "reason": "Explicitly keeps everything else unchanged and introduces no additional scope."
+        },
+        {
+          "score": 2,
+          "reason": "Makes no claim that rendered, runtime, or access checks ran."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "C01-B",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "Specifies the exact label replacement from Submit to Download invoice."
+        },
+        {
+          "score": 2,
+          "reason": "Requests the wording correction without any mapping, research, intake, or documentation prerequisite."
+        },
+        {
+          "score": 2,
+          "reason": "Keeps everything else unchanged; describing the existing action label as a button adds no consequential feature or unrelated change."
+        },
+        {
+          "score": 2,
+          "reason": "Makes no claim that rendered, runtime, or access checks ran."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    }
+  ]
+}
