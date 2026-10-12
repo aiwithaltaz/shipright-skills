@@ -43,7 +43,7 @@ Use a [personal-taste profile](../../personal-taste/README.md) only when selecte
 Inspect and reuse the existing app system first. Missing documentation alone does not authorize replacement.
 Load system-selection guidance only for an affected reuse/extension choice or supplied reference; foundations only for requested foundations or a relevant gap; governance only for naming/contribution/maintenance.
 Keep the work behind the scenes and show concise decisions, gaps and risks. A small correction needs no full system exercise.
-Do not rebrand or replace the system without approval. Detailed token architecture is Phase 6; component contracts are Phase 7.
+Do not rebrand or replace the system without approval. Tokens record that system: primitive and semantic roles by default; component tokens need a clear reuse reason. Load token detail only for extraction, proposals, affected mappings or gaps. Component contracts are Phase 7.
 
 ## Craft references
 
@@ -62,6 +62,10 @@ Load only those needed for this task:
 | Naming controls in a spec | [component-vocabulary.md](references/component-vocabulary.md) |
 | Choosing between look-alike controls | [component-choice.md](references/component-choice.md) |
 | Creating a new system | [reference-systems.md](references/reference-systems.md) |
+| Token extraction, proposed system record or affected token gap | [design-tokens.md](references/design-tokens.md) |
+| Existing, requested or approved theme/mode mappings | [token-themes.md](references/token-themes.md) |
+| Token-to-code mapping, format check or affected migration | [token-implementation.md](references/token-implementation.md) |
+| Token-source provenance or actual interchange/tool choice | [token-sources.md](references/token-sources.md) |
 | Noise, invented elements and visual heuristics | [anti-slop-rules.md](references/anti-slop-rules.md) |
 | Concrete review prompts for competing actions or unsupported widgets | [slop-tells.md](../ux-critique/references/slop-tells.md) |
 | Severity of a concrete review finding | [severity-rubric.md](../ux-critique/references/severity-rubric.md) |

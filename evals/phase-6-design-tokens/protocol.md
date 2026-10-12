@@ -1,0 +1,7 @@
+# Phase 6 frozen comparison protocol
+
+Freeze Phase 5.1 main at 8233744e1111ab8afed021f201362ffcd45d2e35, tasks, criteria and historical hashes before edits/trials. One fresh reply per task/version: six token cases, two controls and one HTML task (18 outputs total). Trial agents receive only their pack, task and relevant raw sample artifacts, not rubric, version labels or intended answers. No model overrides. Save exact responses/read declarations and HTML without repairing outputs.
+
+Freeze updated guidance before updated trials. Anonymous pair grading uses fresh agents who receive tasks/replies/criteria, not packs or version mappings. Retain both graders' first scores and disagreements; report arithmetic means without rewriting scores. Do not tune after outputs. Limited synthetic tasks and one reply per case cannot establish reliability, cross-model superiority, client behavior or real usability.
+
+Capture both unchanged HTML files with the same browser/fonts at 1120x780 and 390x844. Preserve sample label, content, actual CSS values and provenance. Check visible styling, no overflow, labels, keyboard focus and resolved sample variables. These are real browser screenshots of generated sample illustrations, not measured IVC design tokens or production runtime evidence. Do not create an authored bad baseline. Preserve earlier evidence/limitations byte-for-byte. Record failed operations separately. Do not merge or begin Phase 7.

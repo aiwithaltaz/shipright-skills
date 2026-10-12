@@ -1,0 +1,398 @@
+[
+  {
+    "version": "before",
+    "viewport": [
+      1120,
+      780
+    ],
+    "browser": "134.0.6998.35",
+    "checks": {
+      "title": "IVC 2026 search results \u00b7 Sample illustration",
+      "text": "IVC 2026\n\nRegistration desk\nRegistrations\nActivities\n\nSample illustration. IVC scale pending from Altaz.\n\nFind a volunteer\nFirst name\nLast name\nPhone\nSearch records\n\n3 people found\n\nAL\nAltaz Lavji\nCOC needed\nActive volunteer\n\nBirth year not on list \u00b7 Mid-Cities JK \u00b7 Nandi team\n\nScan QR code\nEscalate\nCoC completed\nAL\nAltaz Lavji\nCOC complete\nActive volunteer\n\nBirth year not on list \u00b7 Mid-Cities JK \u00b7 Nandi team\n\nFacilitator confirmation\nEscalate\nAL\nAltaz Lavji\nCOC complete\nActive volunteer\n\nYouth 8-12 \u00b7 Dallas HQ \u00b7 Youth team\n\nAttending guardian: Altaz Lavji, non-volunteer. Change guardian.",
+      "width": 1120,
+      "scrollWidth": 1120,
+      "scrollHeight": 780,
+      "font": "Inter, system-ui, sans-serif",
+      "background": "rgb(247, 243, 238)",
+      "input": {
+        "font": "14px",
+        "height": "40px",
+        "radius": "10px",
+        "background": "rgb(255, 255, 255)"
+      },
+      "fields": [
+        {
+          "id": "fn",
+          "labels": [
+            "First name"
+          ]
+        },
+        {
+          "id": "ln",
+          "labels": [
+            "Last name"
+          ]
+        },
+        {
+          "id": "ph",
+          "labels": [
+            "Phone"
+          ]
+        }
+      ],
+      "variableNames": [],
+      "platform_fonts": {
+        "fonts": [
+          {
+            "familyName": "DejaVu Sans",
+            "postScriptName": "DejaVuSans-Bold",
+            "isCustomFont": false,
+            "glyphCount": 16
+          }
+        ]
+      },
+      "keyboard_focus": [
+        {
+          "tag": "A",
+          "id": "",
+          "text": "Registration desk",
+          "outline": "solid",
+          "width": "3px",
+          "boxShadow": "none",
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "text": "Registrations",
+          "outline": "solid",
+          "width": "3px",
+          "boxShadow": "none",
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "text": "Activities",
+          "outline": "solid",
+          "width": "3px",
+          "boxShadow": "none",
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "fn",
+          "text": "",
+          "outline": "solid",
+          "width": "3px",
+          "boxShadow": "none",
+          "visible": true
+        }
+      ],
+      "no_horizontal_overflow": true,
+      "all_fields_labeled": true,
+      "focus_visible": true,
+      "sample_label": true,
+      "page_errors": []
+    },
+    "html_sha256": "3ee3f818f4474541cb503589c6ee1f525444881652e7280381d28d3f6af5e42b",
+    "screenshot": "examples/before-after/phase-6-design-tokens/before-desktop.png"
+  },
+  {
+    "version": "before",
+    "viewport": [
+      390,
+      844
+    ],
+    "browser": "134.0.6998.35",
+    "checks": {
+      "title": "IVC 2026 search results \u00b7 Sample illustration",
+      "text": "IVC 2026\n\nRegistration desk\nRegistrations\nActivities\n\nSample illustration. IVC scale pending from Altaz.\n\nFind a volunteer\nFirst name\nLast name\nPhone\nSearch records\n\n3 people found\n\nAL\nAltaz Lavji\nCOC needed\nActive volunteer\n\nBirth year not on list \u00b7 Mid-Cities JK \u00b7 Nandi team\n\nScan QR code\nEscalate\nCoC completed\nAL\nAltaz Lavji\nCOC complete\nActive volunteer\n\nBirth year not on list \u00b7 Mid-Cities JK \u00b7 Nandi team\n\nFacilitator confirmation\nEscalate\nAL\nAltaz Lavji\nCOC complete\nActive volunteer\n\nYouth 8-12 \u00b7 Dallas HQ \u00b7 Youth team\n\nAttending guardian: Altaz Lavji, non-volunteer. Change guardian.",
+      "width": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 985,
+      "font": "Inter, system-ui, sans-serif",
+      "background": "rgb(247, 243, 238)",
+      "input": {
+        "font": "14px",
+        "height": "40px",
+        "radius": "10px",
+        "background": "rgb(255, 255, 255)"
+      },
+      "fields": [
+        {
+          "id": "fn",
+          "labels": [
+            "First name"
+          ]
+        },
+        {
+          "id": "ln",
+          "labels": [
+            "Last name"
+          ]
+        },
+        {
+          "id": "ph",
+          "labels": [
+            "Phone"
+          ]
+        }
+      ],
+      "variableNames": [],
+      "platform_fonts": {
+        "fonts": [
+          {
+            "familyName": "DejaVu Sans",
+            "postScriptName": "DejaVuSans-Bold",
+            "isCustomFont": false,
+            "glyphCount": 16
+          }
+        ]
+      },
+      "keyboard_focus": [
+        {
+          "tag": "A",
+          "id": "",
+          "text": "Registration desk",
+          "outline": "solid",
+          "width": "3px",
+          "boxShadow": "none",
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "text": "Registrations",
+          "outline": "solid",
+          "width": "3px",
+          "boxShadow": "none",
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "text": "Activities",
+          "outline": "solid",
+          "width": "3px",
+          "boxShadow": "none",
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "fn",
+          "text": "",
+          "outline": "solid",
+          "width": "3px",
+          "boxShadow": "none",
+          "visible": true
+        }
+      ],
+      "no_horizontal_overflow": true,
+      "all_fields_labeled": true,
+      "focus_visible": true,
+      "sample_label": true,
+      "page_errors": []
+    },
+    "html_sha256": "3ee3f818f4474541cb503589c6ee1f525444881652e7280381d28d3f6af5e42b",
+    "screenshot": "examples/before-after/phase-6-design-tokens/before-phone.png"
+  },
+  {
+    "version": "after",
+    "viewport": [
+      1120,
+      780
+    ],
+    "browser": "134.0.6998.35",
+    "checks": {
+      "title": "IVC 2026 search results \u2014 sample illustration",
+      "text": "IVC 2026\n\nRegistration desk\nRegistrations\nActivities\n\nSample illustration. IVC scale pending from Altaz.\n\nFind a volunteer\nFirst name\nLast name\nPhone\nSearch records\n\n3 people found\n\nAL\nAltaz Lavji\nCOC needed\nActive volunteer\n\nBirth year not on list \u00b7 Mid-Cities JK \u00b7 Nandi team\n\nScan QR code\nEscalate\nCoC completed\nAL\nAltaz Lavji\nCOC complete\nActive volunteer\n\nBirth year not on list \u00b7 Mid-Cities JK \u00b7 Nandi team\n\nFacilitator confirmation\nEscalate\nAL\nAltaz Lavji\nCOC complete\nActive volunteer\n\nYouth 8-12 \u00b7 Dallas HQ \u00b7 Youth team\n\nAttending guardian: Altaz Lavji, non-volunteer. Change guardian.",
+      "width": 1120,
+      "scrollWidth": 1120,
+      "scrollHeight": 780,
+      "font": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+      "background": "rgb(247, 243, 238)",
+      "input": {
+        "font": "14px",
+        "height": "40px",
+        "radius": "10px",
+        "background": "rgb(255, 255, 255)"
+      },
+      "fields": [
+        {
+          "id": "fn",
+          "labels": [
+            "First name"
+          ]
+        },
+        {
+          "id": "ln",
+          "labels": [
+            "Last name"
+          ]
+        },
+        {
+          "id": "ph",
+          "labels": [
+            "Phone"
+          ]
+        }
+      ],
+      "variableNames": [],
+      "platform_fonts": {
+        "fonts": [
+          {
+            "familyName": "DejaVu Sans",
+            "postScriptName": "DejaVuSans-Bold",
+            "isCustomFont": false,
+            "glyphCount": 16
+          }
+        ]
+      },
+      "keyboard_focus": [
+        {
+          "tag": "A",
+          "id": "",
+          "text": "Registration desk",
+          "outline": "solid",
+          "width": "2px",
+          "boxShadow": "none",
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "text": "Registrations",
+          "outline": "solid",
+          "width": "2px",
+          "boxShadow": "none",
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "text": "Activities",
+          "outline": "solid",
+          "width": "2px",
+          "boxShadow": "none",
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "fn",
+          "text": "",
+          "outline": "solid",
+          "width": "2px",
+          "boxShadow": "none",
+          "visible": true
+        }
+      ],
+      "no_horizontal_overflow": true,
+      "all_fields_labeled": true,
+      "focus_visible": true,
+      "sample_label": true,
+      "page_errors": []
+    },
+    "html_sha256": "d4090a91247bab494463773ed1d3d7481e74944e36213210e64931071885f471",
+    "screenshot": "examples/before-after/phase-6-design-tokens/after-desktop.png"
+  },
+  {
+    "version": "after",
+    "viewport": [
+      390,
+      844
+    ],
+    "browser": "134.0.6998.35",
+    "checks": {
+      "title": "IVC 2026 search results \u2014 sample illustration",
+      "text": "IVC 2026\n\nRegistration desk\nRegistrations\nActivities\n\nSample illustration. IVC scale pending from Altaz.\n\nFind a volunteer\nFirst name\nLast name\nPhone\nSearch records\n\n3 people found\n\nAL\nAltaz Lavji\nCOC needed\nActive volunteer\n\nBirth year not on list \u00b7 Mid-Cities JK \u00b7 Nandi team\n\nScan QR code\nEscalate\nCoC completed\nAL\nAltaz Lavji\nCOC complete\nActive volunteer\n\nBirth year not on list \u00b7 Mid-Cities JK \u00b7 Nandi team\n\nFacilitator confirmation\nEscalate\nAL\nAltaz Lavji\nCOC complete\nActive volunteer\n\nYouth 8-12 \u00b7 Dallas HQ \u00b7 Youth team\n\nAttending guardian: Altaz Lavji, non-volunteer. Change guardian.",
+      "width": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 995,
+      "font": "Inter, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+      "background": "rgb(247, 243, 238)",
+      "input": {
+        "font": "14px",
+        "height": "40px",
+        "radius": "10px",
+        "background": "rgb(255, 255, 255)"
+      },
+      "fields": [
+        {
+          "id": "fn",
+          "labels": [
+            "First name"
+          ]
+        },
+        {
+          "id": "ln",
+          "labels": [
+            "Last name"
+          ]
+        },
+        {
+          "id": "ph",
+          "labels": [
+            "Phone"
+          ]
+        }
+      ],
+      "variableNames": [],
+      "platform_fonts": {
+        "fonts": [
+          {
+            "familyName": "DejaVu Sans",
+            "postScriptName": "DejaVuSans-Bold",
+            "isCustomFont": false,
+            "glyphCount": 16
+          }
+        ]
+      },
+      "keyboard_focus": [
+        {
+          "tag": "A",
+          "id": "",
+          "text": "Registration desk",
+          "outline": "solid",
+          "width": "2px",
+          "boxShadow": "none",
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "text": "Registrations",
+          "outline": "solid",
+          "width": "2px",
+          "boxShadow": "none",
+          "visible": true
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "text": "Activities",
+          "outline": "solid",
+          "width": "2px",
+          "boxShadow": "none",
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "fn",
+          "text": "",
+          "outline": "solid",
+          "width": "2px",
+          "boxShadow": "none",
+          "visible": true
+        }
+      ],
+      "no_horizontal_overflow": true,
+      "all_fields_labeled": true,
+      "focus_visible": true,
+      "sample_label": true,
+      "page_errors": []
+    },
+    "html_sha256": "d4090a91247bab494463773ed1d3d7481e74944e36213210e64931071885f471",
+    "screenshot": "examples/before-after/phase-6-design-tokens/after-phone.png"
+  }
+]

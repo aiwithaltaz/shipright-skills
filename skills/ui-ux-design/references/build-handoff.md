@@ -17,6 +17,7 @@ Include the outcome, useful mechanism, current phase, jobs, allowed screens, exc
 Point to the existing design system and components. Use Approved or Observed values permitted by current instructions.
 Carry the canonical system source/version if known, existing component locations, reuse/extension reasons and approved exceptions. Unknown source versions stay Unknown. Keep the same decisions in DESIGN.md and affected screen briefs; do not require a new document for a small fix.
 Copy the compact **Flow rules (must pass)** block from [flow-rules.md](../../_shared/flow-rules.md) into exported build rules.
+For affected token work, carry the existing canonical token -> implementation name -> consumer, allowed modes/exceptions and generation command or explicitly Unknown. Proposed new-system tokens need the user's OK before screens; do not use an illustration scale as approved values.
 Do not leave unresolved pack-local references in a user's project.
 Preserve exact feedback with one acceptance check per item. Keep clear/reset effects unresolved if their meaning is not known.
 

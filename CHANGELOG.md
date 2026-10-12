@@ -386,3 +386,13 @@ The IVC desk frames are in [examples/ivc-2026-registration/figma-redesign](examp
 ![Person details, before and after the required system step](examples/before-after/phase-5-1-amendment/ui-ux-design/compare.png)
 
 Screen handoff is 10,888 of 12,000 tokens, down from 11,240. UI copy and the severity rubric stay on their own rows, so a screen handoff no longer pulls those files in through the critique reminder. Naming controls is 6,091. Choosing controls is 5,026. New system references is 4,749. Limits are unchanged. The frozen Phase 5 blind scores still describe the pre-amendment pack. No merge and no Phase 6.
+
+## Phase 6 design tokens - 2026-10-12 (no new release)
+
+Built on 8233744 (Phase 5.1), not the earlier Phase 5 merge. Added four conditional token references, bounded records/handoff updates, original credits and the IVC pending-scale worked example. Preserve the required design-system-first step, identity, source/status discipline, accessibility, icons/motion, existing formats, context limits and all prior evidence. No forced mode/tooling, replacement system or component contracts.
+
+199 tests, 177 mutation checks and source/context checks passed. Frozen comparison tied 48/48; no demonstrated behavioral gain or scored regression. Updated median replies were longer. First failure logs, all exact outputs/grades and [limitations](evals/phase-6-design-tokens/results.md) remain. No merge or Phase 7.
+
+[Actual generated desktop comparison](examples/before-after/phase-6-design-tokens/compare.png) and [phone comparison](examples/before-after/phase-6-design-tokens/compare-phone.png) show the same styled IVC sample, unchanged after generation. The real scale stays pending from Altaz. Exercised focus/labels/overflow checks passed; source-color contrast remains below the normal-text criterion. No improved visual design, real token propagation, full accessibility or usability claim.
+
+![IVC sample, baseline and Phase 6](examples/before-after/phase-6-design-tokens/compare-phone.png)

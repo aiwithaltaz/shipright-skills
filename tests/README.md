@@ -108,3 +108,9 @@ For this phase, compare actual independently generated outputs from identical fr
 ## Phase 5.1 design system first
 
 Run `python3 tests/test_phase5_amendment.py` with the same checkers. Keep the frozen Phase 5 trial files unchanged. The new phone-width pair under `examples/before-after/phase-5-1-amendment/ui-ux-design/` is an authored illustration of the written rules, not a second model and not the frozen Phase 5 captures. The IVC frames under `examples/ivc-2026-registration/figma-redesign/` record the observed desk layouts. Exact pixel values stay pending from Altaz.
+
+## Phase 6 design tokens
+
+Run tests/test_phase6_design_tokens.py or normal unittest discovery, both source/context checks and the mutation self-test. Preserve Phase 5.1's required small system and approval before new-app screens. Test minimal token layers, native reuse, typed aliases/errors, optional modes, contextual exceptions and separate loading. A source contract is not a runtime token compiler or complete DTCG validator.
+
+[Frozen protocol](../evals/phase-6-design-tokens/protocol.md), [tasks](../evals/phase-6-design-tokens/inputs.json) and [rubric](../evals/phase-6-design-tokens/rubric.md) precede edits/trials. Compare actual unchanged generated sample screens using the same styling source and settings; do not apply the old authored-bad-baseline recipe. Keep IVC's scale pending, not inferred from illustration or superseded v1. Capture styled browser screenshots in examples/before-after/phase-6-design-tokens/ and link from README/CHANGELOG. Preserve replies, grades, raw HTML, hashes, failed attempts and limits. No guidance/rubric tuning from the replies; no merge or Phase 7.

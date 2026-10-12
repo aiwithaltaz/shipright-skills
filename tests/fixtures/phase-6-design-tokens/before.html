@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IVC 2026 search results · Sample illustration</title>
+<style>
+/* Supplied Phase 5.1 illustration values only. IVC scale pending from Altaz. */
+@font-face { font-family: "Inter"; font-weight: 400; src: local("Inter Regular"), local("Inter"); }
+@font-face { font-family: "Inter"; font-weight: 600; src: local("Inter SemiBold"); }
+@font-face { font-family: "Inter"; font-weight: 700; src: local("Inter Bold"); }
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; background: #f7f3ee; color: #3a322c; font-family: Inter, system-ui, sans-serif; }
+button, input { font-family: inherit; }
+.app { display: grid; grid-template-columns: 188px minmax(0, 1fr); min-height: 100svh; }
+nav { padding: 20px 14px; border-right: 1px solid #eadfd4; }
+.mark { font-weight: 700; font-size: 14px; margin: 0 0 18px; }
+nav a { display: block; padding: 8px 10px; margin: 2px 0; border-radius: 8px; color: #5c5148; text-decoration: none; font-size: 13px; }
+nav a.on { background: #f3e4d4; color: #3a322c; font-weight: 600; }
+main { min-width: 0; padding: 20px 28px; }
+.sample-note { margin: 0 0 12px; color: #5c5148; font-size: 12px; }
+h1 { margin: 0 0 12px; font-size: 26px; letter-spacing: -0.03em; }
+.search { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; gap: 10px; align-items: end; margin-bottom: 16px; }
+label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 4px; }
+input { width: 100%; height: 40px; border: 1px solid #e4d8cb; border-radius: 10px; padding: 0 10px; font-size: 14px; }
+.search button { min-height: 40px; border: 0; border-radius: 10px; background: #c4622d; color: #fff; padding: 3px 14px; font-weight: 600; }
+.count { margin: 0 0 8px; font-size: 14px; color: #6d6258; }
+.hit { background: #fff; border: 1px solid #eadfd4; border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; }
+.line { display: grid; grid-template-columns: 28px minmax(0, 1fr); align-items: center; gap: 8px; }
+.identity { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; min-width: 0; }
+.av { width: 28px; height: 28px; border-radius: 50%; background: #f3e4d4; color: #6b3d1e; font-size: 11px; font-weight: 700; display: grid; place-items: center; }
+h2 { margin: 0; font-size: 16px; overflow-wrap: anywhere; }
+.pill { font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 999px; background: #f8ead3; color: #8a5a20; }
+.pill.ok { background: #e7f0e4; color: #2f6b45; }
+.meta { margin: 6px 0 8px 36px; color: #6d6258; font-size: 13px; }
+.actions { margin-left: 36px; display: flex; flex-wrap: wrap; gap: 8px; }
+.actions button { min-height: 32px; border-radius: 8px; border: 1px solid #e4d8cb; background: #fff; padding: 3px 10px; font-size: 12px; font-weight: 600; }
+.actions .go { background: #c4622d; color: #fff; border-color: #c4622d; }
+.guard { margin: 8px 0 0 36px; font-size: 13px; color: #5c5148; }
+.meta, .guard, .pill, button { overflow-wrap: anywhere; }
+button, .pill { max-width: 100%; }
+:where(a, button, input):focus-visible { outline: 3px solid #3a322c; outline-offset: 3px; }
+@media (max-width: 780px) {
+  .app { grid-template-columns: minmax(0, 1fr); }
+  nav { border-right: 0; border-bottom: 1px solid #eadfd4; }
+  .mark { margin-bottom: 8px; }
+  .nav-links { display: flex; flex-wrap: wrap; gap: 8px; }
+  nav a { margin: 0; }
+  main { padding: 20px 14px; }
+  .search { grid-template-columns: minmax(0, 1fr); }
+  .search button { justify-self: start; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <nav aria-label="IVC 2026 illustration navigation">
+    <p class="mark">IVC 2026</p>
+    <div class="nav-links">
+    <a class="on" aria-current="page" href="#desk">Registration desk</a>
+    <a href="#list">Registrations</a>
+    <a href="#act">Activities</a>
+    </div>
+  </nav>
+  <main id="desk">
+    <p class="sample-note">Sample illustration. IVC scale pending from Altaz.</p>
+    <h1>Find a volunteer</h1>
+    <form class="search" aria-label="Find a volunteer">
+      <div><label for="fn">First name</label><input id="fn" value="Altaz"></div>
+      <div><label for="ln">Last name</label><input id="ln" value=""></div>
+      <div><label for="ph">Phone</label><input type="tel" id="ph" placeholder="(000) 000-0000"></div>
+      <button type="button">Search records</button>
+    </form>
+    <p class="count">3 people found</p>
+    <article class="hit">
+      <div class="line"><span class="av" aria-hidden="true">AL</span><div class="identity"><h2>Altaz Lavji</h2><span class="pill">COC needed</span><span class="pill ok">Active volunteer</span></div></div>
+      <p class="meta">Birth year not on list · Mid-Cities JK · Nandi team</p>
+      <div class="actions"><button class="go" type="button">Scan QR code</button><button type="button">Escalate</button><button type="button">CoC completed</button></div>
+    </article>
+    <article class="hit">
+      <div class="line"><span class="av" aria-hidden="true">AL</span><div class="identity"><h2>Altaz Lavji</h2><span class="pill ok">COC complete</span><span class="pill ok">Active volunteer</span></div></div>
+      <p class="meta">Birth year not on list · Mid-Cities JK · Nandi team</p>
+      <div class="actions"><button class="go" type="button">Facilitator confirmation</button><button type="button">Escalate</button></div>
+    </article>
+    <article class="hit">
+      <div class="line"><span class="av" aria-hidden="true">AL</span><div class="identity"><h2>Altaz Lavji</h2><span class="pill ok">COC complete</span><span class="pill ok">Active volunteer</span></div></div>
+      <p class="meta">Youth 8-12 · Dallas HQ · Youth team</p>
+      <p class="guard">Attending guardian: Altaz Lavji, non-volunteer. Change guardian.</p>
+    </article>
+  </main>
+</div>
+<script>
+// These controls illustrate the supplied frame; no search, navigation or record updates occur.
+document.querySelector('.search').addEventListener('submit', event => event.preventDefault());
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', event => event.preventDefault());
+});
+</script>
+</body>
+</html>

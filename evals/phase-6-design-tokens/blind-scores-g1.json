@@ -1,0 +1,268 @@
+{
+  "cases": [
+    {
+      "id": "T01",
+      "responses": {
+        "A": {
+          "scores": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "reasons": [
+            "Preserves all six exact CSS names and values and identifies the supplied root definitions as Observed.",
+            "Keeps version and maintainer Unknown and distinguishes instructed preservation from prior approval of values.",
+            "Maps name-inferred purposes, marks exact bindings unverified, and avoids aliases or a component-token layer.",
+            "Restricts the result to documentation and carries contrast and runtime checks as unverified."
+          ],
+          "critical_errors": []
+        },
+        "B": {
+          "scores": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "reasons": [
+            "Records all six exact names and values as Observed from the supplied theme.css declaration.",
+            "Keeps version and maintainer Unknown and separates observed values from values that may later be approved.",
+            "Gives name-suggested roles and preserves current component bindings while noting they were not inspected.",
+            "Introduces no design or code changes and explicitly leaves contrast, focus, keyboard behavior and responsive fit unverified."
+          ],
+          "critical_errors": []
+        }
+      }
+    },
+    {
+      "id": "T02",
+      "responses": {
+        "A": {
+          "scores": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "reasons": [
+            "Labels v0.1 Proposed and supplies primitive values and purpose-based roles for color, spacing, typography, radius, shadow and motion.",
+            "States every value needs approval before screens and makes no claim of observed or approved new values.",
+            "Limits the system to light mode and explicitly omits component-specific tokens without adding tooling or density modes.",
+            "Provides hex colors, px dimensions, size/line-height and weight, shadow syntax, ms durations and value-to-role intent."
+          ],
+          "critical_errors": []
+        },
+        "B": {
+          "scores": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "reasons": [
+            "Labels v0.1 Proposed and provides concrete values and purposes for all six families, including spacing and typography scales.",
+            "States that all values await approval and explicitly requires approval before screens.",
+            "Keeps light mode only; the initial component list does not impose component tokens, tooling or additional modes.",
+            "Provides color formats, px sizes, typography size/line-height and weights, shadow syntax, ms durations and purpose mappings."
+          ],
+          "critical_errors": []
+        }
+      }
+    },
+    {
+      "id": "T03",
+      "responses": {
+        "A": {
+          "scores": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "reasons": [
+            "Preserves all supplied primitive names, values and semantic aliases across light and dark themes.",
+            "Separates color and density, lists all four approved combinations and identifies spacing-token names and selectors as needing inspection.",
+            "Checks computed aliases, actual contrast, focus, targets, text resizing and reflow, while leaving rendered accessibility unverified.",
+            "Keeps the existing selection mechanism and canonical architecture, adds no screens or modes, and uses only existing build commands if applicable."
+          ],
+          "critical_errors": []
+        },
+        "B": {
+          "scores": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "reasons": [
+            "Retains exact primitive values and both semantic roles, including their light/dark var references.",
+            "Treats theme and density independently, covers all four combinations and keeps unsupplied spacing names and typography unknown.",
+            "Requires rendered contrast, keyboard/focus, target size, resizing and reflow checks; numerical pair results do not certify runtime accessibility.",
+            "Preserves existing selection, components and source locations and explicitly forbids invented persistence, density selectors or replacement schemas."
+          ],
+          "critical_errors": []
+        }
+      }
+    },
+    {
+      "id": "T04",
+      "responses": {
+        "A": {
+          "scores": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "reasons": [
+            "Identifies the missing gap target, the a/b cycle and text referencing a dimension despite its color type.",
+            "Rejects guessed fallbacks and coercion and bounds the findings to the supplied snippet and reference version.",
+            "Requires the actual installed Tailwind version and build provenance, preserves source inputs and treats committed CSS as observed output.",
+            "Traces source paths to CSS/theme keys and consumers, checks emitted names and cascade, and leaves build reproducibility and runtime behavior unverified."
+          ],
+          "critical_errors": []
+        },
+        "B": {
+          "scores": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "reasons": [
+            "Reports the absent missing target, unresolved a/b cycle and color/dimension mismatch at text.",
+            "Forbids fallback guessing and coercion and explicitly states this is not complete DTCG conformance validation.",
+            "Checks resolved Tailwind and generator versions, recovers the canonical-input-to-output chain and forbids generated-CSS fixes or a second source of truth.",
+            "Specifies source-to-CSS/theme-to-consumer tracing and computed checks, with missing configuration explicitly preventing verified reproduction."
+          ],
+          "critical_errors": []
+        }
+      }
+    },
+    {
+      "id": "T05",
+      "responses": {
+        "A": {
+          "scores": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "reasons": [
+            "Rejects the two screenshot-based per-form gaps and selects the existing 12px token for comparable gaps while retaining existing 8px roles.",
+            "Records the approved 3px logo offset with optical-alignment reason, brand-notes.md authority, narrow scope and review trigger.",
+            "Keeps the logo exception literal and introduces neither a tokenize-every-literal policy nor component tokens.",
+            "Limits correction to affected form spacing and names token, rendered-fit and focus checks without global migration or contracts."
+          ],
+          "critical_errors": []
+        },
+        "B": {
+          "scores": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "reasons": [
+            "Rejects 11px and 13px form tokens and uses the existing 12px token for equivalent gaps while preserving existing 8px roles.",
+            "Preserves the approved logo offset with reason, source, scope and review trigger, and leaves its unspecified direction uninvented.",
+            "Explicitly says the logo offset does not create a new token and avoids compulsory component tokens.",
+            "States the bounded approved correction, preserves flow behavior and requires affected responsive/focus and logo checks without migration or tooling."
+          ],
+          "critical_errors": []
+        }
+      }
+    },
+    {
+      "id": "T06",
+      "responses": {
+        "A": {
+          "scores": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "reasons": [
+            "Keeps the scale unresolved pending Altaz and supplies no numeric illustration or historical values as tokens.",
+            "Excludes Phase 5.1 HTML illustration sizes and labels historical v1 scales superseded rather than current evidence.",
+            "Records unknown foundation values alongside useful search-result purposes and avoids invented identifiers or component layers.",
+            "Preserves all three layout decisions, generates no screens and requests the sourced authorized scale before numeric handoff."
+          ],
+          "critical_errors": []
+        },
+        "B": {
+          "scores": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "reasons": [
+            "Explicitly keeps the scale pending from Altaz and marks values, aliases and modes Unknown without numeric promotion.",
+            "Separates illustration HTML and superseded v1 scales from usable current token evidence and refuses executable Unknown exports.",
+            "Lists primitive-to-semantic pending purposes with types and unknown units while explicitly declining unwarranted component tokens.",
+            "Carries forward adjacent status, one meta line and removal of the guardian box, then requests sourced approved values before further handoff without screens."
+          ],
+          "critical_errors": []
+        }
+      }
+    },
+    {
+      "id": "C01",
+      "responses": {
+        "A": {
+          "scores": [
+            2,
+            2
+          ],
+          "reasons": [
+            "Specifies only Submit to Save draft and preserves all styles, handlers and states without expanding the token system.",
+            "States no source edit occurred, leaves source/runtime checks unverified and flags a possible action-label mismatch without changing behavior."
+          ],
+          "critical_errors": []
+        },
+        "B": {
+          "scores": [
+            2,
+            2
+          ],
+          "reasons": [
+            "Specifies the exact label change and matching duplicate accessible name while preserving existing styling and behavior without token expansion.",
+            "Explicitly says no component source was supplied or edited and leaves rendered and runtime checks unverified while reusing the component."
+          ],
+          "critical_errors": []
+        }
+      }
+    },
+    {
+      "id": "C02",
+      "responses": {
+        "A": {
+          "scores": [
+            2,
+            2
+          ],
+          "reasons": [
+            "Uses three bounded intake questions about audience, first useful result and exclusions before unsupported design or building.",
+            "Keeps examples hypothetical, states no audience or outcome is selected and invents no brand, token values or committed features."
+          ],
+          "critical_errors": []
+        },
+        "B": {
+          "scores": [
+            2,
+            2
+          ],
+          "reasons": [
+            "Asks bounded audience, outcome and scope questions and explains that the product purpose is required before building.",
+            "Explicitly marks examples as possibilities rather than selected features and adds no invented brand, values or token-document dump."
+          ],
+          "critical_errors": []
+        }
+      }
+    }
+  ]
+}

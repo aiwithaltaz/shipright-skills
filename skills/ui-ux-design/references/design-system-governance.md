@@ -19,7 +19,7 @@ Shared operating rules own decision status and readiness. System documentation d
 5. Update the canonical documentation and affected handoff, then check the changed artifact at the right evidence stage.
 
 Document purpose, source, use/non-use guidance, supported contexts, change date and relevant exceptions. Describe required checks without claiming they ran.
-Do not create detailed component contracts or token architecture in Phase 5. Do not add Storybook, Figma libraries, registries, telemetry or contribution forms just to appear mature.
+Conditional token guidance owns token records and implementation mappings; component contracts remain Phase 7. Do not add Storybook, Figma libraries, registries, telemetry or contribution forms just to appear mature.
 
 ## Exceptions and change
 

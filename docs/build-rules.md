@@ -22,6 +22,7 @@ No disabled placeholders, hidden routes or data models for later phases.
 Do not invent brand values or data. Use labeled sample data only for a requested prototype or test.
 Use existing sourced components. Proposed choices stay separate until approved or covered by explicit delegation.
 Reuse the canonical project system first. Carry its source/version if known and approved exceptions from DESIGN.md or the actual system record. Do not rebrand or replace it without approval; preserve unrelated schema keys. A documentation change does not migrate or verify consumers.
+For affected token work, use canonical tokens/approved utilities rather than arbitrary design literals. Preserve scoped exceptions and actual modes; change the authorized source and regenerate through the existing command, not by hand-editing generated output. Unknown commands/versions stay Unknown. New-system proposals need the user's OK before screens.
 
 ## Flow rules (must pass)
 

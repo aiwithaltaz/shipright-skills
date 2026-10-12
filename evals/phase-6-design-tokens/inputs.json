@@ -1,0 +1,41 @@
+{
+  "baseline": "8233744e1111ab8afed021f201362ffcd45d2e35",
+  "cases": [
+    {
+      "id": "T01",
+      "task": "Use ui-ux-design to document the token system for our existing app before its next screen handoff. The app has styles/theme.css with :root { --ink: #243044; --paper: #f7f9fc; --card: #ffffff; --gap: 16px; --corner: 8px; --font: system-ui; }. Existing Card and Button consume these variables. No DESIGN.md. System version and maintainer are not recorded. Keep the current identity and names. Give a compact record and any gaps. No screen or code rewrite."
+    },
+    {
+      "id": "T02",
+      "task": "Use ui-ux-design for a small new bookkeeping web app. We have no visual system yet. Propose a minimal token system for color, spacing, typography, radius, shadow and motion, plus purpose-based roles. I will decide whether to approve it. Do not draw screens yet. We only need light mode. Keep the response short and show the numeric proposals I must approve."
+    },
+    {
+      "id": "T03",
+      "task": "Use ui-ux-design to plan token mapping for our existing approved system, not new screens. CSS uses --white:#fff; --ink:#172b4d; --night:#101820; --mist:#e9eef5. Approved light: --text-primary:var(--ink), --surface-default:var(--white). Approved dark: --text-primary:var(--mist), --surface-default:var(--night). Approved compact spacing is 8px; comfortable is 16px. Font/targets must stay readable and usable. Theme selection already exists in the app. No other brands or modes approved. Tell the coding tool how to preserve these roles and check the supported combinations without renaming tokens."
+    },
+    {
+      "id": "T04",
+      "task": "Use ui-ux-design to review this DTCG-style token snippet and prepare mapping advice, not replacement code: {\"space\":{\"sm\":{\"$type\":\"dimension\",\"$value\":{\"value\":8,\"unit\":\"px\"}}},\"gap\":{\"$type\":\"dimension\",\"$value\":\"{missing}\"},\"a\":{\"$type\":\"color\",\"$value\":\"{b}\"},\"b\":{\"$type\":\"color\",\"$value\":\"{a}\"},\"text\":{\"$type\":\"color\",\"$value\":\"{space.sm}\"}}. We use Tailwind, but its version is unknown. Our generated CSS is committed and comes from a build step whose configuration is missing. Keep existing sources. What blocks mapping and what must be checked?"
+    },
+    {
+      "id": "T05",
+      "task": "Use ui-ux-design to advise on this existing app correction. Existing tokens: --space-2:8px and --space-3:12px. One optically aligned external logo has an approved 3px offset recorded in brand-notes.md; all forms must use the existing spacing tokens. A developer wants separate --form1-gap:11px and --form2-gap:13px because those screenshots look nicer. We only approved fixing inconsistent form spacing. Show the decision and a small exception record; no global migration, tooling, or component contracts."
+    },
+    {
+      "id": "T06",
+      "task": "Use ui-ux-design to write a token worked example for the IVC 2026 desk from our Phase 5.1 record. The record says: \"The scale is pending from Altaz. Type, spacing, color, radius and elevation in the HTML are illustration sizes only. Do not treat them as measured tokens.\" The redesigned search results place status beside the name, use one meta line and remove the nested guardian box. Historical v1 documents contain numeric scales but are superseded. Write the token record and next step without generating screens or approving those illustration values."
+    },
+    {
+      "id": "C01",
+      "task": "Use ui-ux-design for an existing app: change only the button label \"Submit\" to \"Save draft\" in its source component, preserving all current styles and behavior. No component file is attached, so specify the exact correction and limits."
+    },
+    {
+      "id": "C02",
+      "task": "Use ui-ux-design. I have an idea for a useful app. Make it modern and build it."
+    }
+  ],
+  "visual": {
+    "id": "V01",
+    "task": "Use ui-ux-design to produce one complete self-contained HTML sample of the IVC 2026 search results screen. Use the supplied Phase 5.1 after-search.html as the illustration styling/content source and its provenance README. This is an explicitly authorized sample illustration, not a real app/system approval. Keep the same search fields, three result cards, status placement, meta and guardian text. Label the page \"Sample illustration. IVC scale pending from Altaz.\" Use supplied illustration values only; do not add imagery, features, dark mode, claims, metrics or a new visual scale. Adapt layout for a 1120x780 desktop and 390x844 phone without hiding content. Buttons are illustration controls, not a connected backend. Reuse native labels, visible focus and the supplied font with a system fallback. Retain values as sample-only; do not put them in an approved or Observed real IVC token record. If extracting sample CSS variables, use a sample prefix. Output the exact HTML to result.html and a concise provenance/handoff note to result.md."
+  }
+}
