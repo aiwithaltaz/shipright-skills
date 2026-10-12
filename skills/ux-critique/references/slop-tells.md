@@ -18,6 +18,11 @@ Use these prompts to inspect actual impact. They are not a banned-style list or 
 | Unsupported proof or hidden cost | Is the claim sourced and consequence clear? | Correct the integrity failure, not just the styling. |
 | Generic marketing copy | Does it name a real job or supported outcome? | Use concrete, truthful language. |
 | Decorative motion delays work | Does it explain a change? | Remove delay and respect reduced motion. |
+| Carousel hides items a list could show | Is every item needed for the task? | Use a visible list or grid. |
+| Filler ratings or quotes | Is the proof supplied for this phase? | Remove unsourced ratings and quotes. |
+| Card around every section | Are the items separate and comparable? | Keep cards for those items only. |
+| Decorative badge | Does it show a real status? | Remove badges that are only decoration. |
+| Critical info only in a tooltip or popover | Can the person finish without opening it? | Put critical information on the page. Critical information is never only in a tooltip or popover. |
 
 ## Worked finding
 
@@ -40,8 +45,8 @@ A count supports judgment; it does not replace it.
 
 ## Detect
 
-Quote problematic copy, name the issue and give a grounded fix using [ui-copy.md](../../ui-ux-design/references/ui-copy.md).
+Quote problematic copy, name the issue and give a grounded fix using the UI copy reference.
 Do not fabricate specificity, data or capabilities in the replacement.
 
 Keep approved colors, gradients, familiar patterns and emoji when they serve the product.
-Use [severity-rubric.md](severity-rubric.md), not aesthetic dislike, to determine severity.
+Use the severity rubric, not aesthetic dislike, to determine severity.

@@ -67,6 +67,12 @@ The frozen comparison scored 138/144 baseline and 142/144 updated, with no score
 
 These are [actual generated Projects screens](examples/before-after/phase-5-design-systems/ui-ux-design/compare.png) and [detail screens](examples/before-after/phase-5-design-systems/ui-ux-design/compare-detail.png), from identical frozen tasks, not authored bad/good illustrations. Both generated previews passed the exercised desktop/phone navigation, keyboard focus and overflow checks. This does not prove superior visual design or real usability.
 
+## Phase 5.1 design system first (no new release)
+
+Before screens or a coding handoff, record a small system. An existing app is extracted and marked Observed. A new app stays Proposed until you agree. Numbers in a handoff come from that system. Vocabulary, control choice and reference systems load only for that job. Component Gallery by Iain Bean is credited. Definitions are not copied.
+
+The [IVC 2026 frames](examples/ivc-2026-registration/figma-redesign/README.md) show grouped form sections, status pills next to the name, and one named next step. The scale is pending from Altaz. The frozen Phase 5 scores are unchanged and do not cover this amendment.
+
 ## Context budgets
 
 The knowledge collection can grow without a global word cap. Small entry files load task-relevant references directly. Maximums: 4,500 tokens per entry, 2,000 per shared file, 4,000 per reference, and 12,000 per declared normal loading path. Contract and intake stay small and always loaded; safeguards must not be skipped to fit a budget.
@@ -153,5 +159,11 @@ Both are authored teaching illustrations, not participant evidence or controlled
 [Before](examples/before-after/phase-1-guide-fixes/product-design/before.png) and [after](examples/before-after/phase-1-guide-fixes/product-design/after.png).
 
 ![Research guide distinctions and categories](examples/before-after/phase-1-guide-fixes/product-design/compare.png)
+
+**Phase 5.1, person details.** An authored phone-width illustration of the required system step. Before is a generic screen: a gradient, filler ratings and a quote, a card around every section, and two filled buttons. After groups fields, puts a status pill next to the name, and keeps one next action. It is not model output and not Altaz's measured scale.
+
+[Before](examples/before-after/phase-5-1-amendment/ui-ux-design/before.png) and [after](examples/before-after/phase-5-1-amendment/ui-ux-design/after.png).
+
+![Person details, before and after the required system step](examples/before-after/phase-5-1-amendment/ui-ux-design/compare.png)
 
 MIT license for the pack. Example brand assets retain their existing ownership notices.

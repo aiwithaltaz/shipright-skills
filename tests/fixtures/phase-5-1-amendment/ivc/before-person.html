@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>IVC person details, before</title>
+<style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("file:///usr/share/fonts/truetype/macos/Inter-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 500; src: url("file:///usr/share/fonts/truetype/macos/Inter-Medium.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("file:///usr/share/fonts/truetype/macos/Inter-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 700; src: url("file:///usr/share/fonts/truetype/macos/Inter-Bold.ttf") format("truetype"); }
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 1120px; height: 760px; overflow: hidden; background: #f4efe8; color: #3a322c; font-family: Inter, sans-serif; }
+button, input, select { font-family: inherit; font-size: 13px; }
+.app { display: grid; grid-template-columns: 188px 1fr 200px; height: 760px; }
+nav { padding: 20px 14px; border-right: 1px solid #eadfd4; }
+.mark { font-weight: 700; font-size: 14px; margin: 0 0 18px; }
+nav a { display: block; padding: 8px 10px; margin: 2px 0; border-radius: 8px; color: #5c5148; text-decoration: none; font-size: 13px; }
+nav a.on { background: #f3e4d4; color: #3a322c; font-weight: 600; }
+main { padding: 18px 22px 16px; }
+.crumb { margin: 0; font-size: 12px; color: #8a7b6e; }
+h1 { margin: 8px 0 2px; font-size: 26px; letter-spacing: -0.03em; }
+.sub { margin: 0 0 12px; color: #6d6258; font-size: 13px; }
+.steps { display: grid; grid-template-columns: 1.2fr 1fr 0.8fr; border: 1px solid #eadfd4; border-radius: 10px; overflow: hidden; background: #fff; margin-bottom: 10px; }
+.step { padding: 8px 12px; font-size: 12px; color: #8a7b6e; }
+.step.on { background: #f8ebe1; color: #8a4b28; font-weight: 600; }
+.people { display: flex; gap: 8px; align-items: center; margin-bottom: 10px; font-size: 13px; }
+.chip { border: 0; border-radius: 8px; padding: 6px 10px; background: #fff; }
+.chip.on { background: #c4622d; color: #fff; }
+.card { background: #fff; border: 1px solid #eadfd4; border-radius: 12px; padding: 12px 14px 14px; }
+.who { display: flex; justify-content: space-between; align-items: baseline; }
+.who h2 { margin: 0; font-size: 16px; }
+.who span, .remove { font-size: 12px; color: #8a7b6e; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; margin-top: 10px; }
+label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 4px; }
+input, select { width: 100%; height: 32px; border: 1px solid #e4d8cb; border-radius: 8px; background: #fff; padding: 0 8px; }
+.foot { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
+.back { border: 0; background: transparent; color: #6d6258; font-weight: 600; }
+.next { border: 0; background: #c4622d; color: #fff; border-radius: 8px; height: 36px; padding: 0 14px; font-weight: 600; }
+aside { border-left: 1px solid #eadfd4; padding: 18px 14px; font-size: 13px; }
+aside h2 { margin: 0 0 8px; font-size: 14px; }
+.mini { background: #fff; border: 1px solid #eadfd4; border-radius: 10px; padding: 10px; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="app">
+  <nav>
+    <p class="mark">IVC 2026</p>
+    <a class="on" href="#desk">Registration desk</a>
+    <a href="#list">Registrations</a>
+    <a href="#act">Activities</a>
+    <a href="#rep">Reports</a>
+    <a href="#cash">Cash close</a>
+  </nav>
+  <main>
+    <p class="crumb">Central USA / Venue desk</p>
+    <h1>Visit · 2 people</h1>
+    <p class="sub">Ferroz Lakhani, Sahir Lakhani</p>
+    <div class="steps">
+      <div class="step on">Details · 0 of 2 saved</div>
+      <div class="step">Waivers · 0 of 2 signed</div>
+      <div class="step">Cash</div>
+    </div>
+    <div class="people">
+      <button class="chip on" type="button">Ferroz</button>
+      <button class="chip" type="button">Sahir</button>
+      <span>Person 1 of 2</span>
+    </div>
+    <section class="card">
+      <div class="who"><h2>Ferroz Lakhani</h2><span class="remove">Remove from visit</span></div>
+      <p class="sub">Adults 18-44 · Dallas HQ · Non-volunteer</p>
+      <div class="grid">
+        <div><label>First name</label><input value="Ferroz"></div>
+        <div><label>Last name</label><input value="Lakhani"></div>
+        <div><label>Date of birth</label><input value="05/10/1999"></div>
+        <div><label>Age group</label><input value="Adults 18-44"></div>
+        <div><label>Phone</label><input value="On file"></div>
+        <div><label>Email</label><input value="No email on file"></div>
+        <div><label>Emergency contact name</label><input value=""></div>
+        <div><label>Emergency contact phone</label><input value=""></div>
+        <div><label>Home JK</label><select><option>Dallas HQ</option></select></div>
+        <div><label>Team</label><input value="Non-volunteer"></div>
+        <div><label>T-shirt size</label><select><option>Choose a size</option></select></div>
+      </div>
+    </section>
+    <div class="foot">
+      <button class="back" type="button">Back</button>
+      <button class="next" type="button">Save and next person</button>
+    </div>
+  </main>
+  <aside>
+    <h2>Review</h2>
+    <div class="mini"><strong>Ferroz Lakhani</strong><p class="sub">Details still open</p></div>
+    <div class="mini"><strong>Sahir Lakhani</strong><p class="sub">Not started</p></div>
+  </aside>
+</div>
+</body>
+</html>

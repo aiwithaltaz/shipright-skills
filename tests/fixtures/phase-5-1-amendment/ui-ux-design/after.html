@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Person details, after the system rule</title>
+<style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("file:///usr/share/fonts/truetype/macos/Inter-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 500; src: url("file:///usr/share/fonts/truetype/macos/Inter-Medium.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("file:///usr/share/fonts/truetype/macos/Inter-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 700; src: url("file:///usr/share/fonts/truetype/macos/Inter-Bold.ttf") format("truetype"); }
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 390px; height: 844px; overflow: hidden; }
+body { font-family: Inter, sans-serif; color: #2b241e; background: #f6f1ea; }
+button, input { font-family: inherit; }
+.screen { width: 390px; height: 844px; display: flex; flex-direction: column; padding: 20px 20px 16px; }
+.top { display: flex; align-items: center; justify-content: space-between; height: 32px; }
+.back { border: 0; background: transparent; padding: 0; color: #8a4b28; font-size: 15px; font-weight: 600; }
+.sample { font-size: 12px; font-weight: 600; color: #8a7b6e; }
+h1 { margin: 20px 0 0; font-size: 28px; line-height: 1.15; letter-spacing: -0.03em; }
+.who { display: flex; align-items: center; gap: 8px; margin: 8px 0 0; }
+.who p { margin: 0; font-size: 16px; }
+.pill { padding: 3px 8px; border-radius: 999px; background: #efe2d2; color: #6b3d1e; font-size: 12px; font-weight: 600; }
+h2 { margin: 22px 0 8px; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: #8a7b6e; }
+label { display: block; margin: 10px 0 6px; font-size: 14px; font-weight: 600; }
+input { width: 100%; height: 48px; border: 1px solid #e4d8cb; border-radius: 12px; background: #fff; padding: 0 14px; font-size: 16px; color: #2b241e; }
+.note { margin: 16px 0 0; padding: 12px 14px; border-radius: 12px; background: #fff; border: 1px solid #e4d8cb; font-size: 14px; line-height: 1.4; }
+.dock { margin-top: auto; }
+.next { width: 100%; height: 52px; border: 0; border-radius: 14px; background: #c4622d; color: #fff; font-size: 16px; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="screen">
+  <div class="top">
+    <button class="back" type="button">Back</button>
+    <span class="sample">Sample</span>
+  </div>
+  <h1>Person details</h1>
+  <div class="who">
+    <p>Sample person</p>
+    <span class="pill">Guardian</span>
+  </div>
+  <h2>Name</h2>
+  <label for="first">First name</label>
+  <input id="first" value="Sample">
+  <label for="last">Last name</label>
+  <input id="last" value="Person">
+  <h2>Emergency contact</h2>
+  <label for="emergency">Full name</label>
+  <input id="emergency" value="">
+  <p class="note">Payment is still due. This stays on the page, not in a hint.</p>
+  <div class="dock">
+    <button class="next" type="button">Next: Waiver</button>
+  </div>
+</div>
+</body>
+</html>
