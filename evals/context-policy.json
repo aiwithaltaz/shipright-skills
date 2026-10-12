@@ -307,6 +307,18 @@
         },
         "skills/ui-ux-design/references/reference-systems.md": {
           "when": "| Creating a new system | [reference-systems.md](references/reference-systems.md) |"
+        },
+        "skills/ui-ux-design/references/design-tokens.md": {
+          "when": "| Token extraction, proposed system record or affected token gap | [design-tokens.md](references/design-tokens.md) |"
+        },
+        "skills/ui-ux-design/references/token-themes.md": {
+          "when": "| Existing, requested or approved theme/mode mappings | [token-themes.md](references/token-themes.md) |"
+        },
+        "skills/ui-ux-design/references/token-implementation.md": {
+          "when": "| Token-to-code mapping, format check or affected migration | [token-implementation.md](references/token-implementation.md) |"
+        },
+        "skills/ui-ux-design/references/token-sources.md": {
+          "when": "| Token-source provenance or actual interchange/tool choice | [token-sources.md](references/token-sources.md) |"
         }
       },
       "normal_paths": [
@@ -376,6 +388,36 @@
           "task": "New system references",
           "references": [
             "skills/ui-ux-design/references/reference-systems.md"
+          ]
+        },
+        {
+          "task": "Token record",
+          "references": [
+            "skills/ui-ux-design/references/design-tokens.md"
+          ]
+        },
+        {
+          "task": "Token theme mapping",
+          "references": [
+            "skills/ui-ux-design/references/design-tokens.md",
+            "skills/ui-ux-design/references/token-themes.md",
+            "skills/ui-ux-design/references/state-coverage.md",
+            "skills/ui-ux-design/references/motion.md"
+          ]
+        },
+        {
+          "task": "Token implementation mapping",
+          "references": [
+            "skills/ui-ux-design/references/design-tokens.md",
+            "skills/ui-ux-design/references/token-implementation.md",
+            "skills/ui-ux-design/references/state-coverage.md",
+            "skills/ux-critique/references/bounded-verification.md"
+          ]
+        },
+        {
+          "task": "Token source review",
+          "references": [
+            "skills/ui-ux-design/references/token-sources.md"
           ]
         }
       ]

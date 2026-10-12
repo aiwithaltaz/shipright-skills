@@ -31,6 +31,21 @@ Missing documentation alone does not authorize a replacement. Unknown facts stay
 
 <!-- Sourced semantic roles, uses and measured contrast. No placeholder hex values. -->
 
+## Token record
+
+<!-- Only affected tokens: canonical name/layer, purpose, type/unit, value or alias, actual source/version,
+evidence and decision status, consumer mapping and supported modes. Primitives + semantic roles by default;
+component tokens only with a clear reuse reason. Preserve the existing schema and names; this YAML is not DTCG JSON.
+Existing system extraction stays Observed; new-system proposals need the user's OK before screens.
+Unknown stays outside executable maps; illustration values are not measured/approved project tokens. -->
+
+| Canonical token / layer | Purpose / type / unit | Value or alias / mode | Source / status | Implementation / affected consumer |
+| --- | --- | --- | --- | --- |
+| <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> |
+
+<!-- No forced modes or tooling. Record scoped exceptions, missing references and verification gaps.
+Keep raw values in canonical definitions; consumers reuse their tokens or approved theme utilities. -->
+
 ## Typography
 
 <!-- Sourced family, size, weight, line height and role. -->
@@ -122,7 +137,7 @@ Record what is specified versus actually verified. -->
 
 <!-- Only when useful/requested: known maintainer or Unknown, canonical names, change note,
 affected uses, approved exceptions and migration/verification gaps. No mandatory council/tooling.
-Detailed token architecture is Phase 6; component contracts are Phase 7. -->
+Token records preserve this system's authority; component contracts are Phase 7. -->
 
 ## ShipRight status
 

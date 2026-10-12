@@ -11,6 +11,7 @@
 | Research evidence, method or lightweight study plan | product-design | Decision-relevant evidence/plan, not invented validation |
 | Screen layout, system or exact correction | [ui-ux-design](skills/ui-ux-design/SKILL.md) | 10 checks at handoff |
 | Existing system selection, foundations or maintenance | ui-ux-design | Small system before screens: Observed reuse, or Proposed until the user agrees. Vocabulary, control choice and reference systems load only when needed |
+| Token extraction, proposals, modes or code mapping | ui-ux-design | Conditional detail of the required system; primitives + semantic roles first, no forced modes/tooling |
 | Artifact review or plan score | [ux-critique](skills/ux-critique/SKILL.md) | 10 checks when relevant |
 | Full launch review | [ship-check](skills/ship-check/SKILL.md) | 20 items plus product-critical requirements |
 | One release item | ship-check | That item and direct dependencies |

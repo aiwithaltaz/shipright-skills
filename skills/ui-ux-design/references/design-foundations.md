@@ -32,6 +32,6 @@ Using an accessible library does not certify the composed experience. Written fo
 
 ## Scope and output
 
-Use existing tokens as implementation sources. Detailed token schemas, transforms and theme architecture belong to Phase 6; detailed component contracts belong to Phase 7.
+Use existing tokens as implementation sources. The conditional token references own small primitive/semantic records, mode mappings and implementation checks; do not duplicate that work here. Detailed component contracts belong to Phase 7.
 Show a concise direction, relevant decisions/gaps and next action. Export only requested/needed documentation; do not require a new DESIGN.md for every screen.
 Carry the same approved foundation decisions into screen specifications and builder prompts. Keep observations, proposals and runtime evidence distinct.

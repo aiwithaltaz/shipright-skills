@@ -1,0 +1,10 @@
+{
+  "examples/before-after/phase-6-design-tokens/after-phone.png": "75b6f6eb8dc39c13f15d4eda97d95aa39acd71ab0b58b2b20cad6f1832c589eb",
+  "examples/before-after/phase-6-design-tokens/after-desktop.png": "0ca9356f26e39991fa089a9645a2bbe527d001d0b06b9348898bc3198d5c323b",
+  "examples/before-after/phase-6-design-tokens/before-phone.png": "bd640b2563400738baf5b348f26c77cfbc62e955841a61492fda1c6fd991ada8",
+  "examples/before-after/phase-6-design-tokens/compare-phone.png": "371eea067a0e47a4063dc7abf119c5daef6330afdc814f03ea88ea6baff67853",
+  "examples/before-after/phase-6-design-tokens/before-desktop.png": "3285f86eadc69be09d3fc26ddcae4980419a4db06774e6bbc7dff3052e4eb224",
+  "examples/before-after/phase-6-design-tokens/compare.png": "3ccb238b759b6d9278fc385bf68e5964442cb58a33e1a34361bd34d5af7ef46a",
+  "tests/fixtures/phase-6-design-tokens/after.html": "d4090a91247bab494463773ed1d3d7481e74944e36213210e64931071885f471",
+  "tests/fixtures/phase-6-design-tokens/before.html": "3ee3f818f4474541cb503589c6ee1f525444881652e7280381d28d3f6af5e42b"
+}

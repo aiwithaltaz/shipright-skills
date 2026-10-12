@@ -1,0 +1,124 @@
+{
+  "aggregation": "Arithmetic mean of two original independent graders, no adjudication",
+  "cases": [
+    {
+      "id": "T01",
+      "baseline_grader_totals": [
+        8,
+        8
+      ],
+      "updated_grader_totals": [
+        8,
+        8
+      ],
+      "baseline_mean": 8,
+      "updated_mean": 8,
+      "delta": 0
+    },
+    {
+      "id": "T02",
+      "baseline_grader_totals": [
+        8,
+        8
+      ],
+      "updated_grader_totals": [
+        8,
+        8
+      ],
+      "baseline_mean": 8,
+      "updated_mean": 8,
+      "delta": 0
+    },
+    {
+      "id": "T03",
+      "baseline_grader_totals": [
+        8,
+        8
+      ],
+      "updated_grader_totals": [
+        8,
+        8
+      ],
+      "baseline_mean": 8,
+      "updated_mean": 8,
+      "delta": 0
+    },
+    {
+      "id": "T04",
+      "baseline_grader_totals": [
+        8,
+        8
+      ],
+      "updated_grader_totals": [
+        8,
+        8
+      ],
+      "baseline_mean": 8,
+      "updated_mean": 8,
+      "delta": 0
+    },
+    {
+      "id": "T05",
+      "baseline_grader_totals": [
+        8,
+        8
+      ],
+      "updated_grader_totals": [
+        8,
+        8
+      ],
+      "baseline_mean": 8,
+      "updated_mean": 8,
+      "delta": 0
+    },
+    {
+      "id": "T06",
+      "baseline_grader_totals": [
+        8,
+        8
+      ],
+      "updated_grader_totals": [
+        8,
+        8
+      ],
+      "baseline_mean": 8,
+      "updated_mean": 8,
+      "delta": 0
+    },
+    {
+      "id": "C01",
+      "baseline_grader_totals": [
+        4,
+        4
+      ],
+      "updated_grader_totals": [
+        4,
+        4
+      ],
+      "baseline_mean": 4,
+      "updated_mean": 4,
+      "delta": 0
+    },
+    {
+      "id": "C02",
+      "baseline_grader_totals": [
+        4,
+        4
+      ],
+      "updated_grader_totals": [
+        4,
+        4
+      ],
+      "baseline_mean": 4,
+      "updated_mean": 4,
+      "delta": 0
+    }
+  ],
+  "baseline_total": 48,
+  "updated_total": 48,
+  "design_maximum": 48,
+  "baseline_controls": 8,
+  "updated_controls": 8,
+  "controls_maximum": 8,
+  "critical_errors": []
+}

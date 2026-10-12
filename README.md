@@ -166,4 +166,14 @@ Both are authored teaching illustrations, not participant evidence or controlled
 
 ![Person details, before and after the required system step](examples/before-after/phase-5-1-amendment/ui-ux-design/compare.png)
 
+## Phase 6 design-token update (no new release)
+
+Tokens now record the required Phase 5.1 system on separate conditional paths: small primitives/semantic roles, component tokens only with a reuse reason, optional approved modes and actual consumer mappings. Existing systems remain Observed and reused; new systems need the user's OK before screens. No forced tooling, replacement system or Phase 7 contracts. [Source credits](skills/ui-ux-design/references/token-sources.md) are original summaries of DTCG, Atlassian, Style Dictionary and Tokens Studio guidance.
+
+All 199 tests and 177 mutation checks passed. The frozen comparison tied at 48/48; no behavioral improvement or scored regression was demonstrated. Replies became longer at the median (318.5 to 455 words). Preserve [full results and limitations](evals/phase-6-design-tokens/results.md).
+
+These are actual independently generated styled samples of the same screen, not an authored poor baseline. [Desktop](examples/before-after/phase-6-design-tokens/compare.png) and [phone](examples/before-after/phase-6-design-tokens/compare-phone.png) screenshots preserve the sample-only styling. The [IVC worked example](examples/ivc-2026-registration/token-worked-example.md) keeps the real scale pending from Altaz. Both samples retain a disclosed source-color contrast failure, and neither proves real token propagation, full accessibility or better visual design.
+
+![IVC sample search screen, Phase 5.1 baseline and Phase 6](examples/before-after/phase-6-design-tokens/compare-phone.png)
+
 MIT license for the pack. Example brand assets retain their existing ownership notices.

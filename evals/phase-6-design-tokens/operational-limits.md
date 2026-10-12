@@ -1,0 +1,15 @@
+# Operational notes
+
+Baseline main was fetched and confirmed as 8233744e1111ab8afed021f201362ffcd45d2e35. The earlier 9579e886 Phase 5 commit was not used for trials. The required tiktoken 0.12.0 dependency and evaluation-only Playwright 1.51.0 were installed into the evaluation environment; pack dependencies/CI commands are unchanged. Chromium provisioning's first CDN attempt downloaded an invalid archive, then its standard alternate source succeeded. The first atomic wiring patch failed on a mismatched architecture line and applied no changes; the corrected patch followed. No generated response, score or historic artifact was altered by these operations.
+
+Baseline trials were started while implementation proceeded. Their response bodies were not inspected by the primary agent until the updated guidance was frozen, and no guidance changes were based on baseline diagnoses. Agents inherited the serving model/configuration with no override; exact model and seed are unavailable. Shared filesystem isolation is instruction-based, not an access sandbox; self-reported reads do not independently prove isolation.
+
+Initial pretrial checks failed because a repeated pending-scale phrase defeated one presence mutation, and the initial preservation manifest incorrectly classified two mutable infrastructure files as historical. A unique full-sentence contract and an explicit preservation classification corrected the harness. Initial manifest and failure logs remain; no output, criterion, prior phase evidence or guidance answer was changed.
+
+A report-assembly Python heredoc included patch markers and failed at syntax parsing before writing files. The documentation was assembled with a corrected atomic patch. A premature freeze check also read the initial failed log while the corrected validation was still running; no pack was frozen or trial launched by that attempt. Only the successful completed checks authorized updated-pack freezing.
+
+Final assembly caught an em dash on line 6 of the exact updated generated HTML. The first final checks remain in final-checks-initial.json. The raw output was not edited. One path/line/content-hash-bound evidence exception records a warning; active files and any changed raw artifact still fail the style rule. Added checks protect both boundaries. This preserves a style Fail in the evidence, not a claim that the raw output now passes style.
+
+Direct git push failed because this terminal has no GitHub username/credential. Publication uses the connected GitHub API and compares each stored blob and the complete tree against the locally reviewed commit. No credentials were probed or printed.
+
+Automatic review initially rejected the visual-check manifest, flagging names and guardian/location details as potentially sensitive and insufficiently authorized. Read-only GitHub checks of the existing public Phase 5.1 after-search sample and its fictional-data notice confirmed the flagged fields already existed there. The user explicitly approved that same sample for the required screenshots and draft PR. The exact manifest then passed review. Raw outputs and images were preserved unchanged.

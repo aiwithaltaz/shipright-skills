@@ -70,6 +70,7 @@ Separate background work from saved unfinished human work. Do not add features m
 Use sourced Approved/Observed values permitted by current instructions. Proposed values stay labeled in Markdown.
 Unknown values stay Unknown; do not invent brand values.
 Carry the canonical system source/version if known, actual component locations, reuse/extension reason and approved exceptions. Preserve existing formats; do not create a replacement system for this screen.
+For affected token work, name canonical tokens, actual consumer mappings, supported modes and scoped exceptions. Unknown source/version stays explicit; new-system proposals need the user's OK before screens. No invented values or forced component layer.
 
 ## Exact acceptance checks
 
