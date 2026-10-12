@@ -49,7 +49,7 @@ Missing documentation alone does not authorize a replacement. Unknown facts stay
 
 ## Components
 
-<!-- Existing component source, variants and applicable default/hover/focus/selected/disabled/busy/error states. -->
+<!-- Short inventory before screens. Each control uses a canonical name or an existing app component. Handoff also names the library equivalent, for example Modal = shadcn Dialog. If a control cannot be named, justify it or remove it. Existing component source, variants and applicable default/hover/focus/selected/disabled/busy/error states. -->
 
 ## Icons
 

@@ -372,3 +372,17 @@ Added optional system selection, ten foundations, lightweight governance and ori
 All 158 tests, 146 mutation checks and context/source checks passed before trials. Frozen comparison: baseline 138/144, updated 142/144; four cases tied, no scored regressions or critical errors. Both controls passed. Two updated governance replies still omitted unavailable source-version information. Preserve [full evidence and limitations](evals/phase-5-design-systems/results.md).
 
 [Actual generated Projects comparison](examples/before-after/phase-5-design-systems/ui-ux-design/compare.png) and [detail comparison](examples/before-after/phase-5-design-systems/ui-ux-design/compare-detail.png) retain unchanged generated HTML and browser captures. Both previews passed the exercised navigation, keyboard-focus and overflow checks at desktop/phone widths. No superior visual quality or real usability claim. All 333 prior records remain unchanged, including historical failures. Draft review only; no merge or Phase 6.
+
+## Phase 5.1 design system first - 2026-10-12 (no new release)
+
+Design system first is now a required step before screens or a coding handoff. An existing app is extracted and marked Observed. A new app stays Proposed until the user agrees. Handoff numbers come from that observed or approved system. The old "No mandatory numeric design dials" line and the "Optional system work" label are removed. A small correction still skips a full system exercise.
+
+Three references load only when needed: component vocabulary when naming controls, component choice when choosing look-alike controls, and reference systems when creating a new system. Component Gallery by Iain Bean is credited in design-system-sources.md. Names, aliases and links only. Purposes are our own words. Anti-slop and critique now catch carousels used instead of a list, filler ratings or quotes, a card around every section, decorative badges, and critical information that lives only in a tooltip or popover.
+
+The IVC desk frames are in [examples/ivc-2026-registration/figma-redesign](examples/ivc-2026-registration/figma-redesign/README.md). The scale is pending from Altaz. The phone-width pair below illustrates the written rules. It is not the frozen Phase 5 model output.
+
+[Before](examples/before-after/phase-5-1-amendment/ui-ux-design/before.png), [after](examples/before-after/phase-5-1-amendment/ui-ux-design/after.png).
+
+![Person details, before and after the required system step](examples/before-after/phase-5-1-amendment/ui-ux-design/compare.png)
+
+Screen handoff is 10,888 of 12,000 tokens, down from 11,240. UI copy and the severity rubric stay on their own rows, so a screen handoff no longer pulls those files in through the critique reminder. Naming controls is 6,091. Choosing controls is 5,026. New system references is 4,749. Limits are unchanged. The frozen Phase 5 blind scores still describe the pre-amendment pack. No merge and no Phase 6.

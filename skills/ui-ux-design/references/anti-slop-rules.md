@@ -36,6 +36,14 @@ Internal desk or dashboard idea. Leave out a welcome line, four summary cards, a
 
 A form, list, or table is fine when it matches the job. Do not place two filled buttons side by side. Do not make delete or remove icon-only.
 
+## Component overuse
+
+Do not use a carousel when a visible list or grid works.
+Do not add filler ratings or quotes.
+Do not put a card around every section. Cards are for separate, comparable items.
+Badges are only for real status, not decoration.
+Critical information is never only in a tooltip or popover.
+
 ## Before handoff
 
 Check the exact change list, phase exclusions, sourced system values, applicable states and accessibility.

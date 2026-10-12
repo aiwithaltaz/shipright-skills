@@ -33,7 +33,8 @@ REFS = {
     'ui-ux-design': ['anti-slop-rules.md', 'build-handoff.md', 'icons-and-placement.md',
                      'layout-and-hierarchy.md', 'motion.md', 'operator-workspaces.md',
                      'references-and-design-system.md', 'state-coverage.md', 'ui-copy.md',
-                     'design-foundations.md', 'design-system-governance.md', 'design-system-sources.md'],
+                     'design-foundations.md', 'design-system-governance.md', 'design-system-sources.md',
+                     'component-vocabulary.md', 'component-choice.md', 'reference-systems.md'],
     'ux-critique': ['bounded-verification.md', 'existing-app.md', 'plan-review.md',
                     'requirements-and-feedback.md', 'severity-rubric.md', 'slop-tells.md'],
     'ship-check': ['launch-items.md'],
@@ -265,7 +266,35 @@ PHASE5_MUTATIONS = [('optional_system',
   'docs/04-frontend-spec.md',
   'Carry the canonical system source/version if known',
   'Invent a current system version')]
-for _label, _path, _required, _replacement in PHASE5_MUTATIONS:
+PHASE51_MUTATIONS = [('proposed_before_screens',
+  'skills/ui-ux-design/SKILL.md',
+  "mark it Proposed, and get the user's OK before screens.",
+  'mark it Proposed after the screens are already drawn.'),
+ ('observed_reuse',
+  'skills/ui-ux-design/SKILL.md',
+  'extract the current system, mark it Observed, and reuse it.',
+  'replace the current system with a new visual language.'),
+ ('numbers_from_system',
+  'skills/ui-ux-design/SKILL.md',
+  'Numbers are required for handoff, but they must come from the observed or approved system, never invented.',
+  'Invent numbers for handoff when no system exists.'),
+ ('invented_control',
+  'skills/ui-ux-design/references/component-vocabulary.md',
+  'If a control cannot be named, justify it or remove it.',
+  'If a control cannot be named, invent a custom control and keep it.'),
+ ('tooltip_critical',
+  'skills/ui-ux-design/references/anti-slop-rules.md',
+  'Critical information is never only in a tooltip or popover.',
+  'Critical information can live only in a tooltip or popover.'),
+ ('tooltip_critique',
+  'skills/ux-critique/references/slop-tells.md',
+  'Critical information is never only in a tooltip or popover.',
+  'Critical information can live only in a tooltip or popover.'),
+ ('select_versus_combobox',
+  'skills/ui-ux-design/references/component-choice.md',
+  'Use Select for one value from a short fixed list. Use Combobox when the person must type to filter a long list.',
+  'Use Combobox for one value from a short fixed list. Use Select when the person must type to filter a long list.')]
+for _label, _path, _required, _replacement in PHASE5_MUTATIONS + PHASE51_MUTATIONS:
     RULES.setdefault(_path, []).append(_required)
 
 DESIGN_PROMPTS = ['**Icon set:**', '**Style:**', '**Stroke weight:**', '**Icon-only allowed:** close, search, menu, more, back',
@@ -653,6 +682,7 @@ def self_test(root):
         ('button side', ICONS, 'Primary action side and button order are set once for the app.', 'Consistency means repeatable patterns, not one side for every action in every context.'),
     ]
     mutations.extend(PHASE5_MUTATIONS)
+    mutations.extend(PHASE51_MUTATIONS)
     with tempfile.TemporaryDirectory(prefix='shipright-check-') as tmp:
         copy = Path(tmp) / 'pack'
         shutil.copytree(root, copy, ignore=shutil.ignore_patterns('.git', '__pycache__'))

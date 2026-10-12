@@ -20,4 +20,9 @@ Atlassian, Spectrum, Fluent and Component Gallery supplied readable page content
 Record an unavailable source as unavailable; do not fill it with a guessed quote or current-version claim. Preserve prior research/mapping source registers and access dates.
 Keep source class, title/URL, version/date if known, access date, selected property, original summary and limitations. Do not copy complete source articles, paid books or screenshot collections.
 Screenshots and component galleries inform visual comparison, not observed user behavior or conversion. Apply the project's approved identity and current task before selecting reference properties.
+
+## Component Gallery credit
+
+Credit Component Gallery by Iain Bean: [component.gallery](https://component.gallery/), [about](https://component.gallery/about/), [components](https://component.gallery/components/), and the project site [github.com/inbn/component-gallery](https://github.com/inbn/component-gallery).
+The site does not publish a license. Names, aliases and links are enough. Write every purpose in our own words. Do not copy its definitions, guidance, code or screenshots. It is a comparison index, not this product's system.
 New animated libraries and Three.js remain optional later-phase references, not Phase 5 installs or mandatory foundations.

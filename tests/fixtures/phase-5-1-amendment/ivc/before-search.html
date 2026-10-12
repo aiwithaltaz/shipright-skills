@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>IVC search results, before</title>
+<style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("file:///usr/share/fonts/truetype/macos/Inter-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("file:///usr/share/fonts/truetype/macos/Inter-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 700; src: url("file:///usr/share/fonts/truetype/macos/Inter-Bold.ttf") format("truetype"); }
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 1120px; height: 780px; overflow: hidden; background: #f4efe8; color: #3a322c; font-family: Inter, sans-serif; }
+button { font-family: inherit; }
+.app { display: grid; grid-template-columns: 188px 1fr; height: 780px; }
+nav { padding: 20px 14px; border-right: 1px solid #eadfd4; }
+.mark { font-weight: 700; font-size: 14px; margin: 0 0 18px; }
+nav a { display: block; padding: 8px 10px; margin: 2px 0; border-radius: 8px; color: #5c5148; text-decoration: none; font-size: 13px; }
+nav a.on { background: #f3e4d4; color: #3a322c; font-weight: 600; }
+main { padding: 20px 24px; }
+h1 { margin: 0 0 4px; font-size: 22px; }
+.count { margin: 0 0 12px; color: #6d6258; font-size: 14px; }
+.card { background: #fff; border: 1px solid #eadfd4; border-radius: 12px; padding: 12px 14px; margin-bottom: 10px; }
+.row { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+h2 { margin: 0; font-size: 16px; }
+.meta { margin: 4px 0 8px; color: #6d6258; font-size: 13px; }
+.pills { display: flex; gap: 6px; margin-bottom: 8px; }
+.pill { font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 999px; background: #f3e4d4; color: #6b3d1e; }
+.pill.ok { background: #e7f0e4; color: #2f6b45; }
+.actions { display: flex; gap: 6px; }
+.actions button { height: 32px; border-radius: 8px; border: 1px solid #e4d8cb; background: #fff; padding: 0 10px; font-size: 12px; font-weight: 600; }
+.actions .go { background: #c4622d; color: #fff; border-color: #c4622d; }
+.nest { margin-top: 8px; background: #f8f1e8; border: 1px solid #eadfd4; border-radius: 10px; padding: 8px; }
+.inner { margin-top: 6px; background: #fff; border: 1px solid #eadfd4; border-radius: 8px; padding: 8px; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="app">
+  <nav>
+    <p class="mark">IVC 2026</p>
+    <a class="on" href="#desk">Registration desk</a>
+    <a href="#list">Registrations</a>
+    <a href="#act">Activities</a>
+  </nav>
+  <main>
+    <h1>Find a volunteer</h1>
+    <p class="count">3 people found</p>
+    <article class="card">
+      <div class="row"><div><h2>Sahira Karim</h2><p class="meta">Birth year not on list</p><p class="meta">Mid-Cities JK</p><p class="meta">Nandi team</p></div></div>
+      <div class="pills"><span class="pill">COC needed</span><span class="pill ok">COC completed</span></div>
+      <div class="actions"><button class="go" type="button">Open COC</button><button type="button">Escalate</button></div>
+    </article>
+    <article class="card">
+      <h2>Sahir Lakhani</h2>
+      <p class="meta">Youth 8-12 · Dallas HQ · Youth team</p>
+      <div class="pills"><span class="pill">Active volunteer</span><span class="pill ok">COC complete</span></div>
+      <div class="nest">
+        <strong>Youth 8-12 · attending guardian</strong>
+        <div class="inner">Ferroz Lakhani<br>Adults 18-44 · Dallas HQ<br><button type="button">Change guardian</button></div>
+      </div>
+    </article>
+    <article class="card">
+      <h2>Sahir Valliani</h2>
+      <div class="nest">
+        <strong>Under 18 · parent must be here to sign</strong>
+        <div class="inner">A parent or legal guardian signs. If they are not here, save and come back.</div>
+      </div>
+    </article>
+  </main>
+</div>
+</body>
+</html>

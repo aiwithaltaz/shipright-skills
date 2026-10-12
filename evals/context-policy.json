@@ -255,7 +255,7 @@
       ],
       "conditional_references": {
         "skills/ui-ux-design/references/anti-slop-rules.md": {
-          "when": "4. Trace every visible element to the current phase. Read \"Default screens to leave out\" in [anti-slop-rules.md](references/anti-slop-rules.md) before adding a region. Put later ideas in notes, not UI."
+          "when": "5. Trace every visible element to the current phase. Read \"Default screens to leave out\" in [anti-slop-rules.md](references/anti-slop-rules.md) before adding a region. Put later ideas in notes, not UI."
         },
         "skills/ui-ux-design/references/layout-and-hierarchy.md": {
           "when": "| Sections, reading order, grid, mobile priorities | [layout-and-hierarchy.md](references/layout-and-hierarchy.md) |"
@@ -298,6 +298,15 @@
         },
         "skills/ui-ux-design/references/design-system-sources.md": {
           "when": "| System-source provenance or decision-relevant comparison | [design-system-sources.md](references/design-system-sources.md) |"
+        },
+        "skills/ui-ux-design/references/component-vocabulary.md": {
+          "when": "| Naming controls in a spec | [component-vocabulary.md](references/component-vocabulary.md) |"
+        },
+        "skills/ui-ux-design/references/component-choice.md": {
+          "when": "| Choosing between look-alike controls | [component-choice.md](references/component-choice.md) |"
+        },
+        "skills/ui-ux-design/references/reference-systems.md": {
+          "when": "| Creating a new system | [reference-systems.md](references/reference-systems.md) |"
         }
       },
       "normal_paths": [
@@ -349,6 +358,24 @@
           "references": [
             "skills/ui-ux-design/references/references-and-design-system.md",
             "skills/ui-ux-design/references/design-system-sources.md"
+          ]
+        },
+        {
+          "task": "Naming controls",
+          "references": [
+            "skills/ui-ux-design/references/component-vocabulary.md"
+          ]
+        },
+        {
+          "task": "Choosing controls",
+          "references": [
+            "skills/ui-ux-design/references/component-choice.md"
+          ]
+        },
+        {
+          "task": "New system references",
+          "references": [
+            "skills/ui-ux-design/references/reference-systems.md"
           ]
         }
       ]

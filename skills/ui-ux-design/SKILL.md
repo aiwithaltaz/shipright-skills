@@ -26,18 +26,19 @@ Continue supported work; do not claim a full ShipRight check without its require
 ## Work sequence
 
 1. Identify the screen job, current phase and exact requested changes. Read the existing screen and component sources.
-2. Choose **Preserve** for an existing app. Use **Establish** only for a requested new system or approved overhaul.
-3. Build a keep/remove/change/add record for feedback. Reconcile liked crops with the whole screen.
-4. Trace every visible element to the current phase. Read "Default screens to leave out" in [anti-slop-rules.md](references/anti-slop-rules.md) before adding a region. Put later ideas in notes, not UI.
-5. State the design direction in one useful sentence. Do not invent brand personality or tokens.
-6. Specify reading order, action priority, components, responsive behavior and relevant states.
-7. Check F1-F3, accessibility and exact feedback. Remove unsupported additions.
-8. Deliver the requested design/specification or builder handoff. Keep implementation claims tied to observed evidence.
+2. Design system first, before any screen or coding handoff. Record a small system: type scale, spacing scale, color roles, radius, elevation, and a short component list. Existing app: extract the current system, mark it Observed, and reuse it. Do not replace it. New app: propose a small system, mark it Proposed, and get the user's OK before screens. Numbers are required for handoff, but they must come from the observed or approved system, never invented.
+3. Choose **Preserve** for an existing app. Use **Establish** only for a requested new system or approved overhaul.
+4. Build a keep/remove/change/add record for feedback. Reconcile liked crops with the whole screen.
+5. Trace every visible element to the current phase. Read "Default screens to leave out" in [anti-slop-rules.md](references/anti-slop-rules.md) before adding a region. Put later ideas in notes, not UI.
+6. State the design direction in one useful sentence. Do not invent brand personality or tokens.
+7. Specify reading order, action priority, components, responsive behavior and relevant states. Map each control to a canonical name or an existing app component.
+8. Check F1-F3, accessibility and exact feedback. Remove unsupported additions.
+9. Deliver the requested design/specification or builder handoff. Keep implementation claims tied to observed evidence.
 
-No mandatory numeric design dials. Describe density, motion and layout in words when they matter.
+Describe density, motion and layout in words when they matter, using numbers only from the observed or approved system.
 Use a [personal-taste profile](../../personal-taste/README.md) only when selected by the user or project.
 
-## Optional system work
+## Design system first
 
 Inspect and reuse the existing app system first. Missing documentation alone does not authorize replacement.
 Load system-selection guidance only for an affected reuse/extension choice or supplied reference; foundations only for requested foundations or a relevant gap; governance only for naming/contribution/maintenance.
@@ -58,6 +59,9 @@ Load only those needed for this task:
 | Requested foundations or a task-relevant foundation gap | [design-foundations.md](references/design-foundations.md) |
 | Requested system naming, contribution or maintenance | [design-system-governance.md](references/design-system-governance.md) |
 | System-source provenance or decision-relevant comparison | [design-system-sources.md](references/design-system-sources.md) |
+| Naming controls in a spec | [component-vocabulary.md](references/component-vocabulary.md) |
+| Choosing between look-alike controls | [component-choice.md](references/component-choice.md) |
+| Creating a new system | [reference-systems.md](references/reference-systems.md) |
 | Noise, invented elements and visual heuristics | [anti-slop-rules.md](references/anti-slop-rules.md) |
 | Concrete review prompts for competing actions or unsupported widgets | [slop-tells.md](../ux-critique/references/slop-tells.md) |
 | Severity of a concrete review finding | [severity-rubric.md](../ux-critique/references/severity-rubric.md) |

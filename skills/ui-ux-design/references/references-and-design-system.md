@@ -25,6 +25,7 @@ Capture only what the task needs: color roles, typography, spacing, layout, radi
 Protect unrelated routes, navigation, fields, data behavior and identity. An explicit request to change one of these authorizes that item.
 A broad "modernize" request does not silently approve replacing the brand or adding features.
 Do not require a new DESIGN.md or a full token extraction for a one-label change.
+Before screens, extract the current system, mark it Observed, and reuse it.
 
 ## Establish
 
@@ -33,6 +34,7 @@ Propose exact values only within this design scope; never describe them as the u
 Record a delegation when it authorizes choosing or applying values. Otherwise keep them Proposed until approval.
 Choose components before inventing custom controls. A named public design system is a proposal unless already selected.
 No palette, font count, radius scale or icon library is a universal ShipRight default.
+Before screens, propose a small system, mark it Proposed, and get the user's OK.
 
 ## Supplied references
 

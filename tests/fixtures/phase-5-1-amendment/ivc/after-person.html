@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>IVC person details, after</title>
+<style>
+@font-face { font-family: "Inter"; font-weight: 400; src: url("file:///usr/share/fonts/truetype/macos/Inter-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 500; src: url("file:///usr/share/fonts/truetype/macos/Inter-Medium.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("file:///usr/share/fonts/truetype/macos/Inter-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Inter"; font-weight: 700; src: url("file:///usr/share/fonts/truetype/macos/Inter-Bold.ttf") format("truetype"); }
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 1120px; height: 860px; overflow: hidden; background: #f7f3ee; color: #3a322c; font-family: Inter, sans-serif; }
+button, input, select { font-family: inherit; font-size: 15px; }
+.app { display: grid; grid-template-columns: 188px 1fr 210px; height: 860px; }
+nav { padding: 20px 14px; border-right: 1px solid #eadfd4; }
+.mark { font-weight: 700; font-size: 14px; margin: 0 0 18px; }
+nav a { display: block; padding: 8px 10px; margin: 2px 0; border-radius: 8px; color: #5c5148; text-decoration: none; font-size: 13px; }
+nav a.on { background: #f3e4d4; color: #3a322c; font-weight: 600; }
+main { padding: 18px 28px 16px; }
+.crumb { margin: 0; font-size: 12px; color: #8a7b6e; }
+h1 { margin: 8px 0 12px; font-size: 28px; letter-spacing: -0.03em; }
+.steps { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+.step { background: #fff; border: 1px solid #eadfd4; border-radius: 10px; padding: 8px 12px; font-size: 13px; color: #8a7b6e; }
+.step.on { border-color: #c4622d; color: #8a4b28; font-weight: 600; }
+.people { display: flex; gap: 8px; align-items: center; margin-bottom: 14px; }
+.chip { border: 1px solid #e4d8cb; background: #fff; border-radius: 8px; padding: 6px 12px; font-size: 14px; }
+.chip.on { background: #c4622d; color: #fff; border-color: #c4622d; }
+.who { display: flex; align-items: center; gap: 8px; }
+.who h2 { margin: 0; font-size: 20px; }
+.pill { font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 999px; background: #efe2d2; color: #6b3d1e; }
+.pill.alt { background: #e7f0e4; color: #2f6b45; }
+.remove { margin-left: auto; border: 0; background: transparent; color: #a14b32; font-size: 13px; font-weight: 600; }
+h3 { margin: 16px 0 8px; font-size: 13px; font-weight: 600; color: #8a7b6e; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+input, select { width: 100%; height: 44px; border: 1px solid #e4d8cb; border-radius: 10px; background: #fff; padding: 0 12px; }
+.foot { display: flex; justify-content: flex-end; margin-top: 18px; }
+.next { border: 0; background: #c4622d; color: #fff; border-radius: 10px; height: 44px; padding: 0 16px; font-weight: 600; }
+aside { border-left: 1px solid #eadfd4; padding: 18px 14px; }
+aside h2 { margin: 0 0 8px; font-size: 14px; }
+.mini { background: #fff; border: 1px solid #eadfd4; border-radius: 10px; padding: 10px; font-size: 13px; }
+.mini p { margin: 4px 0 0; color: #6d6258; }
+</style>
+</head>
+<body>
+<div class="app">
+  <nav>
+    <p class="mark">IVC 2026</p>
+    <a class="on" href="#desk">Registration desk</a>
+    <a href="#list">Registrations</a>
+    <a href="#act">Activities</a>
+    <a href="#rep">Reports</a>
+    <a href="#cash">Cash close</a>
+  </nav>
+  <main>
+    <p class="crumb">Central USA / Venue desk</p>
+    <h1>Visit · 2 people</h1>
+    <div class="steps">
+      <div class="step on">1 Details</div>
+      <div class="step">2 Waivers</div>
+      <div class="step">3 Cash</div>
+    </div>
+    <div class="people">
+      <button class="chip on" type="button">Altaz</button>
+      <button class="chip" type="button">Lavji</button>
+      <span style="font-size:13px;color:#8a7b6e;">Person 1 of 2</span>
+    </div>
+    <div class="who">
+      <h2>Altaz Lavji</h2>
+      <span class="pill">Guardian</span>
+      <span class="pill alt">Youth 8-12</span>
+      <button class="remove" type="button">Remove from visit</button>
+    </div>
+    <h3>Name</h3>
+    <div class="grid">
+      <div><label for="first">First name</label><input id="first" value="Altaz"></div>
+      <div><label for="last">Last name</label><input id="last" value="Lavji"></div>
+      <div><label for="phone">Phone</label><input id="phone" value="On file"></div>
+      <div><label for="email">Email</label><input id="email" value="name@example.com"></div>
+    </div>
+    <h3>Emergency contact</h3>
+    <div class="grid">
+      <div><label for="ename">Full name</label><input id="ename" value=""></div>
+      <div><label for="ephone">Phone</label><input id="ephone" value=""></div>
+    </div>
+    <h3>Other details</h3>
+    <div class="grid">
+      <div><label>Home JK</label><select><option>Dallas HQ</option></select></div>
+      <div><label>Team</label><select><option>Dallas HQ</option></select></div>
+      <div><label>T-shirt size</label><select><option>Choose a size</option></select></div>
+    </div>
+    <div class="foot"><button class="next" type="button">Next: Person name</button></div>
+  </main>
+  <aside>
+    <h2>Review</h2>
+    <div class="mini"><strong>Altaz Lavji</strong><p>Guardian · still due</p></div>
+  </aside>
+</div>
+</body>
+</html>
