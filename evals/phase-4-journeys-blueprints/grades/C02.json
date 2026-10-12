@@ -1,0 +1,55 @@
+{
+  "scorer": "fresh blind agent",
+  "grades": [
+    {
+      "response_id": "C02-A",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "Three bounded questions establish the intended learner, the organizing outcome, and exclusions for the first version; alternatives remain choices rather than approved product decisions."
+        },
+        {
+          "score": 2,
+          "reason": "The reply uses three questions, supplies concrete examples and an open alternative for each, and explicitly distinguishes delegation from reserving a decision for the user. Recommendations are identified as picks."
+        },
+        {
+          "score": 2,
+          "reason": "The reply stays in intake questions and does not emit architecture, maps, taxonomy, roles, routes, screens, or a document set. Features mentioned in scope alternatives are proposed exclusions, not implementation commitments."
+        },
+        {
+          "score": 2,
+          "reason": "It makes no research or validation claim. Brief explanations connect each question to an actionable framing decision without a method lecture."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    },
+    {
+      "response_id": "C02-B",
+      "criteria": [
+        {
+          "score": 2,
+          "reason": "Three bounded questions establish audience, the result of organizing resources, and a first-version scope boundary. The intended audience is explicitly unknown and proposed outcomes remain undecided."
+        },
+        {
+          "score": 2,
+          "reason": "The reply uses three questions with understandable options, concrete examples, open alternatives, and explicit delegation or user reservation for each decision. Proposed picks are clearly labeled."
+        },
+        {
+          "score": 2,
+          "reason": "It supplies only intake questions, with no maps, architecture, taxonomy, roles, routes, screens, or document set. Scheduling, tracking, and collaboration appear as optional exclusions rather than approved capabilities."
+        },
+        {
+          "score": 2,
+          "reason": "It claims no research or validation and gives concise reasons that help the user choose the next framing decisions without explaining a design methodology."
+        }
+      ],
+      "critical_errors": [],
+      "uncapped_total": 8,
+      "total": 8,
+      "useful_pass": true
+    }
+  ]
+}

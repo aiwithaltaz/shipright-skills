@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-12",
+  "writer": "40 fresh isolated agent threads, each reading only its frozen pack and raw task",
+  "scorer": "Fresh blind grader per case after all replies complete; parent validates arithmetic and completeness",
+  "model_configuration": "Inherited without overrides; serving model and seed unavailable",
+  "task_repetitions": "Three per version per M case; one per version per C control",
+  "baseline_commit": "d2df95b39574a737783187eda1d023429c735a88",
+  "trial_order_seed": 412026,
+  "blind_order_seed": 111003,
+  "wrapper": "Use product-design at {directory}/skills/product-design/SKILL.md to answer the raw user task in {directory}/task.txt. Rebuild context only from that directory: read relevant pack files as the skill directs. Do not read sibling directories, evals, repository or parent history. No browsing, external actions, source edits or visual artifacts; prose/Markdown tables only. Save the exact reply you would send to the user as JSON {response: string, read_files: [relative paths actually read]} in this directory response.json. Do not include grading or testing commentary in the reply. Final message only confirms the file was saved.",
+  "read_lists": "Self-reported, not independently traced",
+  "historical_records_unchanged": 245,
+  "operational_replacements": 0
+}

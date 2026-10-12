@@ -17,6 +17,8 @@ Model reachable behavior within current-phase scope. Do not create features to f
 Pending human work is not a loading spinner. Saved, valid, eligible, paid and complete are separate facts.
 Only include applicable states. An empty state does not authorize creation, import or a new help destination.
 
+Task/system representation choice belongs to task-and-system-flows.md; this file still owns reachable states and effects. Distinguish user choices from known automatic steps without generating another map.
+
 ## Flow shape
 
 Specify entry, necessary steps, decision points, success destination, back/cancel effects and failure recovery.

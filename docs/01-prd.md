@@ -61,6 +61,8 @@ For relevant IA work only, distinguish objects from fields/views and retain sour
 | --- | --- | --- | --- | --- |
 | <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> |
 
+For relevant mapping only, retain sourced actor/goal/scenario, stages/actions/channels, pain or positive outcomes, evidence kinds/IDs and unanswered questions. Emotions require a supplied source; no mandatory emotion lane. Keep current-state evidence separate from future proposals and retain isolated accessibility/safety and interruption/return/recovery issues.
+
 For relevant alternate entry and return visits:
 
 | Starting state | Missing dependency | Permitted next action | Preserved work | Completion condition |

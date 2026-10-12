@@ -89,6 +89,21 @@
         },
         "skills/product-design/references/ia-sources.md": {
           "when": "For IA-source provenance, use [ia-sources.md](references/ia-sources.md)."
+        },
+        "skills/product-design/references/mapping-types.md": {
+          "when": "When the mapping choice is unclear, use [mapping-types.md](references/mapping-types.md)."
+        },
+        "skills/product-design/references/journey-mapping.md": {
+          "when": "For experience over time or channels, use [journey-mapping.md](references/journey-mapping.md)."
+        },
+        "skills/product-design/references/task-and-system-flows.md": {
+          "when": "For user actions versus known automatic steps, use [task-and-system-flows.md](references/task-and-system-flows.md)."
+        },
+        "skills/product-design/references/service-blueprints.md": {
+          "when": "For frontstage/backstage delivery or human handoffs, use [service-blueprints.md](references/service-blueprints.md)."
+        },
+        "skills/product-design/references/mapping-sources.md": {
+          "when": "For mapping-source provenance, use [mapping-sources.md](references/mapping-sources.md)."
         }
       },
       "normal_paths": [
@@ -158,6 +173,41 @@
           "references": [
             "skills/product-design/references/information-architecture.md",
             "skills/product-design/references/ia-sources.md"
+          ]
+        },
+        {
+          "task": "Optional journey mapping",
+          "references": [
+            "skills/product-design/references/mapping-types.md",
+            "skills/product-design/references/journey-mapping.md",
+            "skills/product-design/references/research-evidence.md",
+            "skills/product-design/references/states-and-flows.md"
+          ]
+        },
+        {
+          "task": "Optional task or system mapping",
+          "references": [
+            "skills/product-design/references/mapping-types.md",
+            "skills/product-design/references/task-and-system-flows.md",
+            "skills/product-design/references/states-and-flows.md",
+            "skills/product-design/references/operational-flows.md"
+          ]
+        },
+        {
+          "task": "Optional service blueprint",
+          "references": [
+            "skills/product-design/references/mapping-types.md",
+            "skills/product-design/references/service-blueprints.md",
+            "skills/product-design/references/operational-flows.md",
+            "skills/product-design/references/states-and-flows.md",
+            "skills/product-design/references/research-evidence.md"
+          ]
+        },
+        {
+          "task": "Mapping provenance review",
+          "references": [
+            "skills/product-design/references/mapping-types.md",
+            "skills/product-design/references/mapping-sources.md"
           ]
         }
       ]

@@ -27,6 +27,8 @@ Copy this block per ticket:
 - **Verification evidence needed:** <!-- -->
 - **Open dependency:** <!-- -->
 
+For relevant mapping only, trace an accepted change to its mapped failure/handoff, source ID, affected job and recovery/access consequence. A proposed map change is not an approved ticket. Preserve unresolved dependencies and verification needs.
+
 ## Critique follow-up
 
 | Finding | Severity | Ticket / acceptance change | Evidence closing it |
