@@ -1,0 +1,106 @@
+{
+  "scores": [
+    {
+      "anonymous_id": "A01",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Uses the supplied CSS excerpt, records all observed values, and says \u201cReuse classes/variables directly\u201d and \u201cno new `DESIGN.md` is required.\u201d",
+        "Explicitly marks typography sizes/weights, component internals and fields unknown; \u201cVisual consistency and runtime readiness are **Not verified**\u201d separates specification checks from implementation proof.",
+        "Preserves typography, colors, spacing, corners and page/panel treatment; marks imagery, density and motion undocumented; defines wrapping, stacking and stable reading order on narrow screens.",
+        "Keeps \u201cProjects \u2192 inspect project \u2192 return,\u201d reuses ProjectHeader and supported fields, retains Back in relevant states, and explicitly excludes new tasks, counters and unrelated controls."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A02",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Reuses `src/ui` and `src/styles/theme.css`, accurately records observed values, and says to inspect full sources before implementation; \u201cMissing `DESIGN.md` does not authorize a replacement system.\u201d",
+        "Distinguishes excerpt evidence from rendered behavior; typography sizes and interaction treatments remain sourced from inspection, and implementation/rendered fit are explicitly untested.",
+        "Provides coherent shared alignment, single-column composition and existing foundations; imagery, density and motion are Unknown, with wrapping/stacking and viewport constraints specified.",
+        "Preserves the approved list/detail/return flow and existing components, restricts content to supported fields, keeps a return in recovery states, and excludes extra counters, saving and backend panels."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A03",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Accurately reuses observed theme values and components directly, calls for full-source inspection, and says a new design system is unnecessary despite missing DESIGN.md.",
+        "Says \u201cDo not infer additional font sizes, shadows, icons or breakpoint values\u201d and \u201cVisual consistency and implementation readiness are not established\u201d; unknown fields and rendered density remain explicit.",
+        "Connects existing typography/container/panel foundations to reading order and shared edges; preserves gaps in imagery, density and motion evidence and supplies narrow-screen wrapping/stacking priorities.",
+        "Keeps ProjectRow, ProjectHeader, current route/data conventions and supported fields; visible Back survives relevant states, with explicit exclusion of editing, task management, counters and other additions."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A04",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Reuses actual excerpt values and `src/ui`/theme.css, requires source inspection for fields/components, and does not mandate DESIGN.md or introduce replacement tokens.",
+        "Explicitly says readiness is \u201cNot established\u201d and visual fit, keyboard behavior and runtime status remain unverified; imagery/density/motion and field inventory are left for inspection.",
+        "Preserves the paper/ink/accent, Arial, spacing, corners and page/panel foundation; marks undocumented visual properties Unknown and defines reading order, wrapping, stacking and overflow constraints.",
+        "Retains existing navigation/back placement and ProjectHeader, limits content to supported detail fields and relevant states, and explicitly excludes tasks, counters, editing, widgets and feeds. Generic flow guidance does not introduce any actual new capability."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A05",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Accurately cites the supplied components and CSS values and rejects a replacement palette, font, token scheme or component library; missing DESIGN.md does not trigger a new-document requirement.",
+        "System version, imagery, density and motion are Unknown; exact field ordering needs source inspection, return persistence is conditional, and runtime/visual consistency is explicitly Not verified.",
+        "Provides shared alignment, existing typography/surfaces/spacing, density matching after inspection, wrapping/stacking and viewport containment, while preserving unknown imagery and motion decisions.",
+        "Uses existing ProjectHeader, ProjectRow navigation and supported data only; visible Back is retained across states, and editing, counters, activity feeds and additional features are expressly excluded."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A06",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Reuses supplied components and theme values with full-source inspection before coding; \u201cMissing `DESIGN.md` does not justify replacing the system\u201d and no new token architecture is introduced.",
+        "Full sources, system version, rendered appearance and schema are explicitly unavailable; \u201cVisual consistency and runtime readiness are not established\u201d preserves verification limits.",
+        "Carries existing color/type/spacing/page/panel decisions into aligned hierarchy; imagery, density and motion are Unknown, and responsive reuse, wrapping, stacking and overflow prevention are specified.",
+        "Keeps the approved list/detail/return flow, existing components and supported fields; all retrieval states retain an exit, conditional partial-state guidance is bounded by existing data support, and new product capabilities are excluded."
+      ],
+      "total": 8,
+      "critical_errors": []
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "scores": [
+    {
+      "anonymous_id": "A01",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "reasons": [
+        "Reuses the actual forms sources: 'Inspect `components/forms/TextField.tsx` and `Select.tsx`' and proposes native date entry or a minimal extension for the existing order form.",
+        "Explicitly uses canonical `form-gap`, reconciles stale `field-gap` references without migration claims, and preserves `consumer: willow-v1`.",
+        "Offers a brief change note and review and explicitly states 'Formal ownership remains **Unknown**'; no new roles or tools are required.",
+        "The dated small record covers 'component sources, delivery-date purpose, supported context ... decision status and verification gaps' and the response labels runtime/accessibility unverified. However, it never identifies the unavailable source/system version as a gap; the record instruction quoted above omits version status. The bounded reuse/extension reasoning is useful, so this is incomplete rather than absent."
+      ],
+      "total": 7,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A02",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "reasons": [
+        "Inspecting the two existing form components and conditionally reusing TextField with native date entry directly serves the delivery-date task; fallback is the smallest extension.",
+        "Keeps `form-gap`, corrects affected `field-gap` documentation, expressly avoids a code migration and preserves `consumer: willow-v1`.",
+        "Normal change review and a proposed founder/developer review arrangement are proportionate; 'Formal system ownership remains **Unknown**' is explicit.",
+        "Records 'component source ... reuse rationale, date of change and any deliberate exception' and expressly says component suitability, runtime and accessibility are not verified. This is useful source and verification handling, but neither that record nor the evidence statement acknowledges that source/system version is unavailable."
+      ],
+      "total": 7,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A03",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Uses the actual TextField and Select patterns; native date entry is conditional and only the smallest extension is proposed if reuse fails.",
+        "Retains reported canonical `form-gap`, reconciles documentation without a token rename, notes uninspected consumers and preserves YAML `consumer: willow-v1`.",
+        "An agreed reviewer in the existing workflow is proportionate; ownership explicitly remains Unknown without a committee or tools.",
+        "The short dated note records source, scoped reuse/extension reason, decision status and verification gaps. 'Do not invent ... a system version' appropriately handles unavailable version evidence, and compatibility/accessibility/runtime remain explicitly unverified."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A04",
+      "criterion_scores": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "reasons": [
+        "Inspects the two actual forms sources, uses their shared patterns and proposes native date entry or a thin DateInput within the existing delivery-date task.",
+        "Uses current `form-gap`, supersedes the conflicting documentation wording without inventing values or renaming source, and preserves `consumer: willow-v1`.",
+        "The three review prompts and two-person workflow are proportionate. However, 'This does not assign either person a formal design-system owner role' describes what the recommendation does, without explicitly recording the existing formal owner as unresolved/unknown. The ownership portion is therefore incomplete.",
+        "The proposed note contains 'source, intended use, relevant states and any deliberate exception' and current compatibility/accessibility/runtime gaps are stated. However, the note does not expressly record the reuse/extension reason or unavailable version evidence. The review prompt 'New pattern or exception documented?' partially supports rationale recording, but does not complete those gaps."
+      ],
+      "total": 6,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A05",
+      "criterion_scores": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "reasons": [
+        "Inspects TextField, Select and the order form, reuses native date support if present and otherwise proposes the smallest extension/wrapper with the existing patterns.",
+        "Standardizes affected documentation on current `form-gap` without inventing a value, and explicitly preserves document format and `consumer: willow-v1`.",
+        "Small contribution notes and proposed founder/developer reviews are proportionate. However, 'This is a proposed review arrangement, not an assignment of formal ownership' does not explicitly record the actual formal owner as unknown or unresolved; that required ownership statement is incomplete.",
+        "Each change records 'purpose, reused component/token sources, any proposed exception and the checks performed,' and source inspection/runtime/accessibility gaps are expressly stated. This provides useful scoped evidence and rationale, but does not acknowledge the missing source/system version anywhere in the record or evidence limit."
+      ],
+      "total": 6,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A06",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "reasons": [
+        "Inspects TextField and Select, conditionally reuses native date input and otherwise proposes a small DateField sharing their patterns for the existing order form.",
+        "Keeps canonical `form-gap`, corrects `field-gap` documentation and preserves existing document format/content and YAML `consumer: willow-v1` without unsupported migration claims.",
+        "Ordinary review by the existing pair is proportionate and 'No formal owner is established' explicitly identifies unresolved ownership; no team structure or tooling is required.",
+        "The small reference records 'date-field usage and any justified exception' and the response explains conditional reuse and expressly identifies source/runtime/accessibility verification gaps. However, it does not request recording component source/version evidence or identify the unavailable version as a gap; 'Document sourced values' is helpful but incomplete for that criterion."
+      ],
+      "total": 7,
+      "critical_errors": []
+    }
+  ]
+}

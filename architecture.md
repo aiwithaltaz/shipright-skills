@@ -42,6 +42,8 @@ Specialist gates retain 8/10/10/20 IDs. Their criteria point to shared policy; t
 
 ## Project exports
 
+Phase 5 system work stays in ui-ux-design. references-and-design-system owns inspection and reuse/extension/Establish selection; design-foundations owns coordinated foundation decisions; design-system-governance owns naming, proportionate contribution and maintenance; design-system-sources owns provenance and comparison. Each reference loads directly from SKILL.md only for the current task. Preserve shared authority, existing layout/icon/motion owners and approved exceptions. Small corrections do not trigger a full system exercise. Token architecture and component contracts remain later phases.
+
 PRODUCT.md and DESIGN.md go at the app root. Other requested templates go under docs/shipright/.
 Exported references use app-root paths and carry required behavior. They must not depend on an absent pack-local skills/ tree.
 Preserve another tool's existing format and sections; do not claim universal DESIGN.md parser compatibility.

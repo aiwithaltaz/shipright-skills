@@ -3,6 +3,17 @@
 Use a screen job before choosing visual values. A supplied reference grants only the properties the user selected.
 Never invent brand values or claim guessed tokens are existing values.
 
+Load for a task-relevant reuse/extension choice or supplied reference, not a compulsory whole-system inventory.
+The canonical selection owner is this reference. Foundations, maintenance and provenance load separately through SKILL.md only when needed.
+
+## Select from actual sources
+
+Record the actual system location/version if known, component sources, approved identity and task-relevant drift/gaps. Missing documentation is not evidence that no system exists.
+Choose reuse first, bounded extension for a supported gap, or Establish only under requested/delegated new-system or overhaul authority.
+Do not rebrand or replace an existing system without approval. A framework primitive or component catalog is not a complete project design system.
+Resolve conflicts using current authority; retain unrelated decisions. Unknown versions, values and ownership stay Unknown.
+Use existing names and roles; do not turn inspection into new token schemas or component contracts.
+
 ## Preserve
 
 For an existing product, inspect relevant components, CSS variables, design variables and screens before proposing changes.
@@ -10,7 +21,7 @@ Record exact values with a source. Screenshots can show appearance but rarely es
 Unknown values stay Unknown. Reuse an existing component directly when its token name is undocumented.
 Observation is not approval of a defect. Current user corrections outrank older components or screenshots.
 
-Capture only what the task needs: color roles, typography, spacing, radius/elevation, components, icons, motion and placement by context.
+Capture only what the task needs: color roles, typography, spacing, layout, radius/elevation, components, icons, imagery, motion, density and placement by context.
 Protect unrelated routes, navigation, fields, data behavior and identity. An explicit request to change one of these authorizes that item.
 A broad "modernize" request does not silently approve replacing the brand or adding features.
 Do not require a new DESIGN.md or a full token extraction for a one-label change.
@@ -29,6 +40,7 @@ Use at most a few relevant references. Do not require new research for a focused
 For each, name the property to borrow, why it serves this task and what should not carry over.
 A liked search form can supply spacing and button treatment without approving its filter dropdown.
 Do not import identity, copy, evidence, sections or features merely because they appear in a reference.
+Preserve approved role/platform/brand exceptions. New unrelated-system mixing needs a clear reason, scoped authority and reconciliation with the canonical system.
 External style tools produce proposals. Check them against scope, accessibility and approved identity before use.
 
 ## DESIGN.md export

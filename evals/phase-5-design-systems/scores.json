@@ -1,0 +1,829 @@
+{
+  "scores": [
+    {
+      "case": "C01",
+      "anonymous_id": "A01",
+      "variant": "baseline",
+      "trial": 1,
+      "response_sha256": "b133d6e5b81a1b4605b5486655f17914640d0b0c5005e9b8ed5c5d127c87ebed",
+      "criterion_scores": [
+        2,
+        2
+      ],
+      "reasons": [
+        "The entire response is \u2018Submit \u2192 Save\u2019, which returns only the exact requested label change.",
+        "The response adds no inventory, foundations, governance, documents, questions, or redesign."
+      ],
+      "total": 4,
+      "critical_errors": []
+    },
+    {
+      "case": "C01",
+      "anonymous_id": "A02",
+      "variant": "updated",
+      "trial": 1,
+      "response_sha256": "b133d6e5b81a1b4605b5486655f17914640d0b0c5005e9b8ed5c5d127c87ebed",
+      "criterion_scores": [
+        2,
+        2
+      ],
+      "reasons": [
+        "The entire response is \u2018Submit \u2192 Save\u2019, which returns only the exact requested label change.",
+        "The response adds no inventory, foundations, governance, documents, questions, or redesign."
+      ],
+      "total": 4,
+      "critical_errors": []
+    },
+    {
+      "case": "C02",
+      "anonymous_id": "A01",
+      "variant": "updated",
+      "trial": 1,
+      "response_sha256": "bedc0cb4df413c1aaaef240665f91ad32bfa617d81e9a7d932fd27ab644c4967",
+      "criterion_scores": [
+        2,
+        2
+      ],
+      "reasons": [
+        "Uses a bounded three-question intake covering audience, first outcome and scope boundary: \u2018Who should this app primarily serve first?\u2019, \u2018What should someone be able to finish with the first version?\u2019 and \u2018What should stay out of the first version?\u2019 Each includes choices, rationale and delegation controls.",
+        "Keeps the idea unframed without inventing a system, brand, features or screens. It explicitly states \u2018No pick yet; these are examples, and your app's job is still unknown.\u2019 The handoff, decision and exclusion suggestions are intake options rather than asserted product requirements."
+      ],
+      "total": 4,
+      "critical_errors": []
+    },
+    {
+      "case": "C02",
+      "anonymous_id": "A02",
+      "variant": "baseline",
+      "trial": 1,
+      "response_sha256": "38e092199172f0478498e3b860e6e08df85348fcb2df52c5912418f1c552f210",
+      "criterion_scores": [
+        2,
+        2
+      ],
+      "reasons": [
+        "Uses a bounded three-question intake covering audience, first outcome and scope boundary: \u2018Who should the app help first?\u2019, \u2018What should someone accomplish with the first version?\u2019 and \u2018What should stay outside the first version?\u2019 Each includes choices, rationale and delegation controls.",
+        "Does not invent a system, brand, features or screens before framing. It states \u2018the app\u2019s purpose is still open\u2019 and labels exclusions \u2018possible exclusions, not proposed features.\u2019 Its recommendation to avoid replacing existing tools is expressly \u2018a provisional boundary\u2019 for the user to decide."
+      ],
+      "total": 4,
+      "critical_errors": []
+    },
+    {
+      "case": "D01",
+      "anonymous_id": "A01",
+      "variant": "baseline",
+      "trial": 1,
+      "response_sha256": "7c215e86cb7e50411cf78a242c6050e1a1e1ef985d10f52dcac50614972a47cf",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Uses the supplied CSS excerpt, records all observed values, and says \u201cReuse classes/variables directly\u201d and \u201cno new `DESIGN.md` is required.\u201d",
+        "Explicitly marks typography sizes/weights, component internals and fields unknown; \u201cVisual consistency and runtime readiness are **Not verified**\u201d separates specification checks from implementation proof.",
+        "Preserves typography, colors, spacing, corners and page/panel treatment; marks imagery, density and motion undocumented; defines wrapping, stacking and stable reading order on narrow screens.",
+        "Keeps \u201cProjects \u2192 inspect project \u2192 return,\u201d reuses ProjectHeader and supported fields, retains Back in relevant states, and explicitly excludes new tasks, counters and unrelated controls."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D01",
+      "anonymous_id": "A02",
+      "variant": "updated",
+      "trial": 3,
+      "response_sha256": "ea68c5f74be237f98517bbe5de680add491b94754a5160e2366a0fc38b39867b",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Reuses `src/ui` and `src/styles/theme.css`, accurately records observed values, and says to inspect full sources before implementation; \u201cMissing `DESIGN.md` does not authorize a replacement system.\u201d",
+        "Distinguishes excerpt evidence from rendered behavior; typography sizes and interaction treatments remain sourced from inspection, and implementation/rendered fit are explicitly untested.",
+        "Provides coherent shared alignment, single-column composition and existing foundations; imagery, density and motion are Unknown, with wrapping/stacking and viewport constraints specified.",
+        "Preserves the approved list/detail/return flow and existing components, restricts content to supported fields, keeps a return in recovery states, and excludes extra counters, saving and backend panels."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D01",
+      "anonymous_id": "A03",
+      "variant": "baseline",
+      "trial": 3,
+      "response_sha256": "494ac93d717ca668defd8828d4c222038a1cc8a95f40d89ac3535887e9b9be14",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Accurately reuses observed theme values and components directly, calls for full-source inspection, and says a new design system is unnecessary despite missing DESIGN.md.",
+        "Says \u201cDo not infer additional font sizes, shadows, icons or breakpoint values\u201d and \u201cVisual consistency and implementation readiness are not established\u201d; unknown fields and rendered density remain explicit.",
+        "Connects existing typography/container/panel foundations to reading order and shared edges; preserves gaps in imagery, density and motion evidence and supplies narrow-screen wrapping/stacking priorities.",
+        "Keeps ProjectRow, ProjectHeader, current route/data conventions and supported fields; visible Back survives relevant states, with explicit exclusion of editing, task management, counters and other additions."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D01",
+      "anonymous_id": "A04",
+      "variant": "baseline",
+      "trial": 2,
+      "response_sha256": "312845fe17131fd383002d031bd6a6abf4f7154f90202db79ef28db3303f53d6",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Reuses actual excerpt values and `src/ui`/theme.css, requires source inspection for fields/components, and does not mandate DESIGN.md or introduce replacement tokens.",
+        "Explicitly says readiness is \u201cNot established\u201d and visual fit, keyboard behavior and runtime status remain unverified; imagery/density/motion and field inventory are left for inspection.",
+        "Preserves the paper/ink/accent, Arial, spacing, corners and page/panel foundation; marks undocumented visual properties Unknown and defines reading order, wrapping, stacking and overflow constraints.",
+        "Retains existing navigation/back placement and ProjectHeader, limits content to supported detail fields and relevant states, and explicitly excludes tasks, counters, editing, widgets and feeds. Generic flow guidance does not introduce any actual new capability."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D01",
+      "anonymous_id": "A05",
+      "variant": "updated",
+      "trial": 1,
+      "response_sha256": "1eaf00a63d9b776f2f09f8fb37b377fa99361cfcd131dab569958ab9a3981d7b",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Accurately cites the supplied components and CSS values and rejects a replacement palette, font, token scheme or component library; missing DESIGN.md does not trigger a new-document requirement.",
+        "System version, imagery, density and motion are Unknown; exact field ordering needs source inspection, return persistence is conditional, and runtime/visual consistency is explicitly Not verified.",
+        "Provides shared alignment, existing typography/surfaces/spacing, density matching after inspection, wrapping/stacking and viewport containment, while preserving unknown imagery and motion decisions.",
+        "Uses existing ProjectHeader, ProjectRow navigation and supported data only; visible Back is retained across states, and editing, counters, activity feeds and additional features are expressly excluded."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D01",
+      "anonymous_id": "A06",
+      "variant": "updated",
+      "trial": 2,
+      "response_sha256": "d2b4116cd132865442b2b1eb8e2e8b8c1bd7a6c3bb3c80864c48c006057fb029",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Reuses supplied components and theme values with full-source inspection before coding; \u201cMissing `DESIGN.md` does not justify replacing the system\u201d and no new token architecture is introduced.",
+        "Full sources, system version, rendered appearance and schema are explicitly unavailable; \u201cVisual consistency and runtime readiness are not established\u201d preserves verification limits.",
+        "Carries existing color/type/spacing/page/panel decisions into aligned hierarchy; imagery, density and motion are Unknown, and responsive reuse, wrapping, stacking and overflow prevention are specified.",
+        "Keeps the approved list/detail/return flow, existing components and supported fields; all retrieval states retain an exit, conditional partial-state guidance is bounded by existing data support, and new product capabilities are excluded."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D02",
+      "anonymous_id": "A01",
+      "variant": "updated",
+      "trial": 1,
+      "response_sha256": "48fcd89378868f48087a97bc59c41c7dff7b90f26ab8504874fad5e6da14c6e1",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Explicit hierarchy: \u201cCurrent instructions outrank the stale README and 2024 screenshot,\u201d with the already approved teal action retained.",
+        "Bounded repair: \u201cremove the local purple override\u201d and \u201creconcile the affected documentation\u201d; preserves Inter, the existing 4px step, identity, existing screen content and other screens.",
+        "Records current instruction/prior approval and reported code as authoritative sources, identifies the purple override and README conflict, and labels the 2024 screenshot historical with author/fonts/source values Unknown. Documentation records the billing scope without a global rebrand.",
+        "Distinguishes Approved/Observed/Unknown, describes changes prospectively, confines \u201cFails\u201d to source reconciliation, and explicitly says runtime behavior and accessibility are \u201cNot verified.\u201d"
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D02",
+      "anonymous_id": "A02",
+      "variant": "baseline",
+      "trial": 1,
+      "response_sha256": "448b9aa7ea25fa709d05c14939274088dc4918bf1c5536aae6d11e9425ec6838",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Explicitly states current instructions take precedence over README and the 2024 screenshot; recommendation uses approved teal.",
+        "Removes the billing override, corrects purple documentation, retains identity/Inter/4px step and existing card styling, and excludes other screens and pricing plans.",
+        "The source table establishes current instruction and observed code as the reusable foundation, records README/override conflicts and unknown screenshot provenance/values, and affected notes distinguish approved choices, observations and unknowns. Billing scope supplies the bounded approved departure from purple guidance.",
+        "Approved, Observed and Unknown labels distinguish source evidence from recommendations; checks are prospective and runtime accessibility/flow behavior explicitly remain \u201cNot verified.\u201d"
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D02",
+      "anonymous_id": "A03",
+      "variant": "baseline",
+      "trial": 3,
+      "response_sha256": "64e1a668073c770a846a9732429a59172ed9c1df9f5383bc4618071dc51231a7",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "\u201cCurrent instructions outrank the 2024 screenshot and stale README\u201d; uses the approved teal action.",
+        "Removes local #6947c7 override and corrects README for billing, preserving identity, Inter, reported spacing, invoice list, Download invoice and Settings; explicitly leaves other screens outside the change.",
+        "Source table and proposed decision record identify approval source, scope, Approved/Observed/Unknown status and superseded purple treatment. The dated screenshot remains historical with unknown provenance/source values; canonical documentation uses existing code without importing decorative cards.",
+        "Clearly distinguishes reported sources and proposals, with \u201cRuntime accessibility and behavior remain Not verified\u201d and explicit statement that this is a recommendation rather than an implemented/release-ready result."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D02",
+      "anonymous_id": "A04",
+      "variant": "baseline",
+      "trial": 2,
+      "response_sha256": "d15dde137f49676509e5cf02d5f7b9ecebafc95041e9e5abbdc2664859e53174",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "\u201cCurrent instructions outrank the 2024 screenshot and stale README\u201d; teal is identified as approved for billing.",
+        "Removes billing purple override, corrects only conflicting README guidance, and preserves Inter, existing spacing, unrelated identity/styling and existing billing content; excludes other screens/new pricing plans.",
+        "Source/property table and affected specification record current instruction, existing code values, billing scope and superseded purple guidance. The 2024 screenshot\u2019s author/fonts/source values are Unknown and no decorative values are imported; optional export is conditional and requires only sourced values.",
+        "Separates Approved/Observed/Unknown evidence and proposed changes. F2 \u201cFail\u201d is explicitly at supplied-source review stage; navigation, download feedback and runtime accessibility are explicitly \u201cNot verified.\u201d"
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D02",
+      "anonymous_id": "A05",
+      "variant": "updated",
+      "trial": 2,
+      "response_sha256": "34c2659035ac085997ce72ff3619e87dedcb53d501446b3e82a8246f230bf9d2",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "The \u201ccurrent instruction controls this refresh,\u201d with teal approved and historical screenshot denied authority to replace identity or features.",
+        "Removes the local purple override and corrects conflicting README within billing scope while retaining identity, Inter, 4px step, existing card treatment, invoice list/download/Settings and excluding other-screen edits or pricing additions.",
+        "The table plus existing decision/specification record establish approval/code sources, billing scope, observed values and replaced purple guidance; the dated historical screenshot has Unknown provenance/fonts/values and is excluded from canonical tokens.",
+        "Uses Approved/Observed/Unknown status, supplies prospective acceptance checks and says no implementation was inspected or changed; runtime behavior/accessibility explicitly remain \u201cNot verified.\u201d"
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D02",
+      "anonymous_id": "A06",
+      "variant": "updated",
+      "trial": 3,
+      "response_sha256": "cb5d798f6a6ad849f1c47f88fd0188c6942fd3a240d8d71edf9bdcc9bc98aeed",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Current instruction/approved billing direction is Approved; README is superseded for billing and the 2024 screenshot is historical appearance evidence only.",
+        "Removes purple override and documents scoped teal direction, retaining identity/Inter/spacing, established layout/component treatment and existing invoice/download/Settings content. Other screens and pricing plans remain outside scope.",
+        "Source table explicitly says system version is unknown and screenshot author/fonts/source values are Unknown. It identifies instruction and code as canonical sources, conflicts and the billing-only approval, and directs documentation of superseded affected references without importing rounded cards.",
+        "Distinguishes Approved/Observed/Change and source consistency failure from runtime evidence; runtime behavior/accessibility are \u201cNot verified\u201d and checks remain prospective rather than a readiness claim."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D03",
+      "anonymous_id": "A01",
+      "variant": "baseline",
+      "trial": 3,
+      "response_sha256": "c070be7f61073eb7806eddbd4ab8d03e83d6dd30d10c8cab5d8d86e196def31e",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Complete coherent foundation: the Foundation table selects colors, spacing, radius and elevation; typography/layout/density are specified, and \"No custom icons are needed\" and \"No illustrative assets, gradients or decorative transitions\" give justified no-use choices.",
+        "Decisions address outdoor long-text reading and desktop/phone layout through 18px/28px prose, full-text wrapping, 48px controls, visible focus, safe-area/keyboard clearance and 320px reflow checks.",
+        "Explicitly records \"Approved by delegation\" and \"There is no existing brand or component system\"; reusable semantic roles and D1\u2013D4 are canonical, and rendered verification/product-policy limits are stated.",
+        "Markdown handoff uses practical role/value tables and screen/state guidance, without serialization, a transformation pipeline, full component contracts or a compulsory toolchain. Explicit exclusions preserve the approved two-screen scope."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D03",
+      "anonymous_id": "A02",
+      "variant": "baseline",
+      "trial": 1,
+      "response_sha256": "b0a7a3d058ef23a469c41f31579830059d78a9342f511085ca5a6ca5db9971ff",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Covers all foundation areas through role/color and typography/spacing/corner tables, layout and comfortable targets, with justified no-use instructions: \"avoid nested cards, decorative illustrations and shadows\" and \"No icon library is needed\".",
+        "Ties choices to outdoor/desk tasks with calculated contrast, full observation text, readable line widths, desktop/phone arrangements, 48px targets, keyboard/dialog focus and 320px/200% reflow verification.",
+        "Explicitly calls the foundation \"Approved through your visual delegation\" and \"a new system, not an inferred existing brand\"; semantic reusable roles and decision sources are recorded alongside unverified rendering and unresolved functional policy.",
+        "Practical Markdown specification supplies no token serialization, transformation pipeline or full component contracts. Scope exclusions prevent extra features; list-order recommendation remains explicitly \"Proposed\", rather than fabricated approval."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D03",
+      "anonymous_id": "A03",
+      "variant": "updated",
+      "trial": 2,
+      "response_sha256": "ea5aed98c1ecc139f73bcedcf4fd56a7713e274d1707b3c705378dda378be8ac",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "D1\u2013D9 coherently cover color, type, spacing, layout, radius/elevation, density and justified omission of imagery/icons/motion: \"These assets do not help the approved logging and review tasks.\"",
+        "Outdoor readability and desk line length inform type/contrast/width; stacked phone layout, full-text wrapping, 44px targets, unobscured focus and 320px/200% acceptance checks support access and reflow.",
+        "Explicitly records \"Approved under that delegation\" and \"No existing brand or component system was supplied\"; concise semantic foundation roles and source/version are reusable, while rendered fit, outdoor usability and unspecified product details remain unverified.",
+        "Explicitly presents \"foundation work, not a coded app or a complete component specification\"; direct values and two-screen guidance contain no serialization, pipeline, compulsory toolchain or invented capabilities."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D03",
+      "anonymous_id": "A04",
+      "variant": "updated",
+      "trial": 1,
+      "response_sha256": "962b4c379e3c2f0ab07aea44529c1a7287b17db67cb436fed4fd4219bb65b088",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "D1\u2013D10 cover each required foundation category with coherent selected values and purposes, including \"No photography, illustrations or decorative assets\", no required icons, and immediate state changes without decorative animation.",
+        "Connects contrast/type/line length to outdoor and desk reading; desktop/phone widths, 44px targets, long-text expansion, focus/dialog guidance and 320px/200% checks address touch and reflow.",
+        "Authority is explicit: \"All decisions below are Approved under your visual delegation\"; source/date/artifact and absence of existing identity are recorded. Role values are reusable and actual rendered/functional limits are clearly unverified.",
+        "Direct foundation values are explicitly \"not a token architecture\"; there is no serialization, transformation pipeline, full component contract or required installation. Future Lucide use is conditional, and the handoff preserves the two-screen scope."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D03",
+      "anonymous_id": "A05",
+      "variant": "updated",
+      "trial": 3,
+      "response_sha256": "67d2ad34288a78a67664add8d3ce3e359d341353f555d63dfcc0a2397f18a269",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Foundation table supplies all required categories and purposes, including semantic color/type/spacing/layout roles, modal-only shadow, 44px density, and \"Imagery | None\" with no-use rationale.",
+        "Connects the outdoor/desk and long-text jobs to high contrast, readable widths/type and full-text expansion; phone arrangements, keyboard-safe normal-flow actions, visible focus and 320px/200% checks support access.",
+        "Explicit visual delegation authorizes new values: \"All choices in this table are new, authorized choices\". Canonical practical roles and D1\u2013D3 record authority; no invented history is claimed, and implementation/accessibility/persistence limits remain explicit.",
+        "\"practical role values, not a detailed token architecture or component library\" accurately describes the Markdown handoff. No serialization, pipeline or compulsory tools appear; list-order presentation adds no sorting control or extra capability."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D03",
+      "anonymous_id": "A06",
+      "variant": "baseline",
+      "trial": 2,
+      "response_sha256": "8fb4ca75f8d4b74d73cba222fc4c1e57da24ed3eb0a872dda2c1c66c7b7bcf8a",
+      "criterion_scores": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Useful coherent colors, type, spacing, layout, radius, depth, icons, motion and density are provided, but imagery has no selected rule or justified no-use decision. Exact foundation evidence covers neighboring areas only: \"| Depth | Borders only; no shadows or layered decorative panels |\", \"| Icons | Lucide line icons, 20px, 2px stroke; check for success, circle-alert for errors only |\", and \"| Motion | No decorative animation; state changes are immediate |\". The explicit exclusions also omit an imagery decision: \"No tags, analytics, accounts, AI, uploads, dark theme, 3D or decorative animation.\"",
+        "Outdoor/desk rationale drives contrast and 18px/28px text; desktop/phone arrangements, full prose, 48px controls, safe-area and keyboard clearance, focus/dialog semantics and 320px/200% checks address readability and accessibility.",
+        "Explicitly records \"Approved through explicit delegation\" and \"No existing brand values are claimed\". Semantic reusable roles, sourced decisions and unverified rendering/persistence/transaction limits are grounded; no brand history or existing approval is fabricated.",
+        "Practical role tables and component/screen guidance do not serialize tokens, prescribe a transformation pipeline or supply full component contracts. Lucide specifies visual status icons rather than a compulsory toolchain; explicit exclusions preserve the approved capabilities."
+      ],
+      "total": 7,
+      "critical_errors": []
+    },
+    {
+      "case": "D04",
+      "anonymous_id": "A01",
+      "variant": "baseline",
+      "trial": 1,
+      "response_sha256": "b5d6aed396d031a749137573700dc605fb88ff305264c0a026d5defb48662a96",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Explicitly keeps \u201cLucide line icons in navigation and Simple Icons for vendor logos only, with approved product stroke/size rules\u201d and forbids library substitution or normalization.",
+        "Limits adaptation to existing rows, keeps neutral surfaces, emerald actions and Inter, excludes carousel/glass/extra integrations/purple, and specifies 120ms opacity, 0ms reduced motion, labels and distinct keyboard focus.",
+        "Calls Component Gallery \u201cdiscovery provenance\u201d rather than a dependency and explains that links to unrelated systems neither select a package nor approve those systems; does not claim usability proof.",
+        "Explains that \u201cThe explicit approved role split takes precedence over ShipRight\u2019s general single-set guidance,\u201d implements within the existing row component, and excludes the unapproved purple proposal without blocking the authorized refinement."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D04",
+      "anonymous_id": "A02",
+      "variant": "updated",
+      "trial": 3,
+      "response_sha256": "6e70703e11d894cc744c865cb49a808688253f5a9a3e130199eeca4c0b8c19c0",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Retains Lucide navigation and Simple Icons exclusively for vendor logos with approved stroke/size rules; explicitly forbids replacement or cross-role use.",
+        "Preserves approved identity and the existing list, excludes incidental reference features and purple, and specifies 120ms opacity, 0ms reduced motion, labels, keyboard focus and complete touch access.",
+        "Explicitly states \u201cComponent Gallery is a comparison index, not an installable component package or usability evidence\u201d and explains that its unrelated links do not authorize mixing systems.",
+        "Identifies the approved role split as an exception to a single primary family and uses the existing component; any later external adoption is conditional, without registry installation or imposed governance."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D04",
+      "anonymous_id": "A03",
+      "variant": "baseline",
+      "trial": 3,
+      "response_sha256": "404adaab1f7e006195a4b30c9c03bd6e0433dad75b79915639d08897c8c32825",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Keeps Lucide navigation and Simple Icons vendor logos with approved stroke/size rules and states that the approved split overrides the generic one-set guideline.",
+        "Keeps identity, list structure/inventory, labels and focus, excludes purple/carousel/glass/extra integrations, and explicitly preserves 120ms opacity and 0ms reduced motion with keyboard/touch access.",
+        "Describes Component Gallery as a discovery reference linking unrelated source systems, \u201cnot a selected component library or installable package,\u201d without treating it as usability proof.",
+        "Reconciles the generic icon guideline with Orbit\u2019s explicit approved role split; directs reuse of existing components/tokens and forbids dependencies or combining source-system conventions."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D04",
+      "anonymous_id": "A04",
+      "variant": "updated",
+      "trial": 1,
+      "response_sha256": "fa7a931b8c1ee6cd7ad4c1e3af665abce1d3b4e9d20d0a98a7d757fc0e09c900",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Keeps both approved role-scoped families and product stroke/size rules; explicitly forbids forcing logos into Lucide or normalizing brand shapes to navigation strokes.",
+        "Preserves Orbit identity, existing list/integrations, labels and focus, excludes purple/glass/carousel/extra integrations, and retains 120ms opacity and zero duration reduced motion with keyboard/touch access.",
+        "Explicitly calls Component Gallery \u201ca comparison index, not an installable library or evidence that the interaction works for Orbit\u201d and says linked systems are not dependencies.",
+        "Uses approved Orbit roles and existing component/CSS to reconcile the reference; preserves logo-specific shapes, excludes unapproved purple, and makes future third-party source inspection conditional rather than installing or governing a new system."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D04",
+      "anonymous_id": "A05",
+      "variant": "updated",
+      "trial": 2,
+      "response_sha256": "ec7602ea325c34a3e9a4a2538c186e1507d362535b038eff51f6fd7bebc2f927",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Keeps Lucide navigation and Simple Icons vendor-only roles, preserves approved stroke/size rules and role exceptions, and forbids normalization of vendor logos into navigation icons.",
+        "Preserves approved identity, rows/data/labels/actions, excludes carousel/glass/extra integrations/purple, and retains 120ms opacity, zero-duration reduced motion and visibly distinct keyboard focus with touch access.",
+        "Calls Component Gallery \u201ca comparison index, not an installable component package or Orbit\u2019s canonical system,\u201d identifies linked systems as unapproved for mixing and does not use the reference as usability proof.",
+        "Grounds reconciliation in the approved Orbit system and icon-role exceptions, reuses existing hover treatment, excludes unapproved purple, and requires no package or registry adoption."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D04",
+      "anonymous_id": "A06",
+      "variant": "baseline",
+      "trial": 2,
+      "response_sha256": "b76420104d3befe3f2aadd66e860806377e2e8fc7df4b613018dff0379be992f",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Keeps Lucide navigation and Simple Icons vendor-only roles with approved size/stroke rules and explicitly prevents either family expanding into the other\u2019s role.",
+        "Preserves identity, list/layout/integrations/labels/actions/focus, excludes purple/glass/carousel/extra integrations, and retains 120ms opacity and zero-duration reduced motion with keyboard/touch access.",
+        "Describes Component Gallery as a discovery source rather than a package or single underlying system, requires identification of any later linked source, and makes no usability-proof claim.",
+        "Explicitly states \u201cOrbit\u2019s explicit approval takes precedence over ShipRight\u2019s generic single-set guidance,\u201d uses the existing component, and excludes the unapproved glow without requiring installation or a new governance process."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D05",
+      "anonymous_id": "A01",
+      "variant": "baseline",
+      "trial": 2,
+      "response_sha256": "95f39a8d13c42f8de2bde5e4bdee14605e4dc24e1e6ad29127e06f05ee46d410",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Explicitly says \"Existing use does not establish approval of #b8c4ce; no approval is recorded\" and chooses a local replacement under the authorized correction while retaining Harbor's identity.",
+        "Preserves the recorded keyboard-review finding: \"This remains unresolved; footer behavior is excluded from this change.\"",
+        "Accurate calculated color-pair ratios are labeled \"at specification stage\"; implementation is \"Not verified\" with a rendered-color and field-association check. Explicitly disclaims overall compliance and readiness.",
+        "Changes only the local hint color, preserves the button label, family, fields and layout, adds/removes nothing, and retains existing behavior without introducing a new system."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D05",
+      "anonymous_id": "A02",
+      "variant": "updated",
+      "trial": 3,
+      "response_sha256": "11a42542d8df7cb3be09a62b0dc63466e3304ce3b9ffc5cf55d5d2597ba55b86",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Says \"Existing appearance does not establish approval of the failing hint color\" and labels the new color a scoped authorized choice, not an existing token.",
+        "Explicitly retains the footer focus obstruction as \"Fail\" and \"unresolved\" while leaving footer behavior unchanged.",
+        "Correct ratios are explicitly \"Calculated\" and the pass is limited to \"the specified color pair\"; rendered colors and hint association require verification. No whole-form accessibility or compliance claim is made.",
+        "Preserves Source Sans 3, 12px, blue accent, fields, layout and Continue, makes one local color correction, and states exit/status behavior is unaffected and unassessed."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D05",
+      "anonymous_id": "A03",
+      "variant": "updated",
+      "trial": 2,
+      "response_sha256": "3a0ae46ddd33bb3b90e267096218143207efd627ebb49e1f4b468847600ef2e7",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Says \"Existing use does not establish approval of #b8c4ce\" and chooses only a local authorized hint color while preserving the existing identity.",
+        "The \"recorded sticky-footer focus obstruction remains Fail and unresolved\" and footer behavior is explicitly left unchanged.",
+        "Correct contrast ratios evaluate the current and specified replacement pairs; rendered application and programmatic association remain \"Not verified\". Explicitly says the refinement does not establish full accessibility compliance.",
+        "\"Change only the local hint color\" bounds the edit, with the blue accent, Source Sans 3, hint size/content, fields, layout and Continue preserved; no global palette or new governance is introduced."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D05",
+      "anonymous_id": "A04",
+      "variant": "updated",
+      "trial": 1,
+      "response_sha256": "4d875cb6e68ad26dfed1700cabfd713ce4e09db67be9e93bc724e7957143821f",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Explicitly distinguishes \"observed #b8c4ce\" from approval: \"has no recorded approval; existing usage does not approve its contrast defect\". The replacement is a scoped authorized choice, not an existing brand token.",
+        "Preserves the \"Fail\" from the recorded keyboard review and states it \"Remains unresolved and unchanged under this request.\"",
+        "Correct color-pair ratios are scoped to the specified replacement, with rendered implementation \"Not verified\" and a request to verify the rendered hint color. Explicitly disclaims full accessibility compliance and readiness.",
+        "Only the local hint color changes, preserving content, 12px size, blue accent, family, fields, layout, Continue, exit routes and submission/status behavior; no new system is required."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D05",
+      "anonymous_id": "A05",
+      "variant": "baseline",
+      "trial": 1,
+      "response_sha256": "8dfd43ccfb1084dddb45f12d8287e11c1156007c7bb94f9fc243a0e8318877e4",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Records \"#b8c4ce as Observed, not Approved\" and rejects existing usage and the team assertion as approval. Chooses an authorized local replacement without redefining the global muted-text color.",
+        "Explicitly keeps the recorded focus obstruction \"Fail, unresolved and outside this edit\" and preserves footer behavior.",
+        "Accurate calculated replacement contrast is \"Pass at specification stage\"; rendered application and field association remain \"Not verified\" and are specifically requested for verification. Overall compliance remains unverified.",
+        "Changes only this hint's color and preserves Harbor's accent, source family, Continue, fields, layout, hint size/content and footer behavior without expanding to a full system."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D05",
+      "anonymous_id": "A06",
+      "variant": "baseline",
+      "trial": 3,
+      "response_sha256": "97ea3c3f9ccea52f9a846655890471a06a7294883777ec1020caa790b396c5c1",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Calls the existing color \"observed, not recorded as approved\" and chooses the replacement under the authorized hint-color correction while preserving Harbor's identity.",
+        "Keeps last-input focus \"Fail\" based on the recorded review and states \"This remains unresolved and outside this change.\"",
+        "Accurate calculated pair contrasts are scoped to specification, while rendered implementation remains \"Not verified\"; explicitly requests rendered contrast and field-association verification and establishes no full compliance assessment.",
+        "Applies the color \"only to this hint\", preserves size, family, accent, button/Continue, fields, layout and exit/status behavior; no new governance or full system is introduced."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D06",
+      "anonymous_id": "A01",
+      "variant": "updated",
+      "trial": 2,
+      "response_sha256": "d238ea2f1f37456e3ffaf82f5b56a4fefa82f640c64e911a91e6df281c931502",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "reasons": [
+        "Reuses the actual forms sources: 'Inspect `components/forms/TextField.tsx` and `Select.tsx`' and proposes native date entry or a minimal extension for the existing order form.",
+        "Explicitly uses canonical `form-gap`, reconciles stale `field-gap` references without migration claims, and preserves `consumer: willow-v1`.",
+        "Offers a brief change note and review and explicitly states 'Formal ownership remains **Unknown**'; no new roles or tools are required.",
+        "The dated small record covers 'component sources, delivery-date purpose, supported context ... decision status and verification gaps' and the response labels runtime/accessibility unverified. However, it never identifies the unavailable source/system version as a gap; the record instruction quoted above omits version status. The bounded reuse/extension reasoning is useful, so this is incomplete rather than absent."
+      ],
+      "total": 7,
+      "critical_errors": []
+    },
+    {
+      "case": "D06",
+      "anonymous_id": "A02",
+      "variant": "updated",
+      "trial": 1,
+      "response_sha256": "cd5db3f1f877a070040e642b19c99b4a947c641c441a80ccb0ada1a6628868b6",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "reasons": [
+        "Inspecting the two existing form components and conditionally reusing TextField with native date entry directly serves the delivery-date task; fallback is the smallest extension.",
+        "Keeps `form-gap`, corrects affected `field-gap` documentation, expressly avoids a code migration and preserves `consumer: willow-v1`.",
+        "Normal change review and a proposed founder/developer review arrangement are proportionate; 'Formal system ownership remains **Unknown**' is explicit.",
+        "Records 'component source ... reuse rationale, date of change and any deliberate exception' and expressly says component suitability, runtime and accessibility are not verified. This is useful source and verification handling, but neither that record nor the evidence statement acknowledges that source/system version is unavailable."
+      ],
+      "total": 7,
+      "critical_errors": []
+    },
+    {
+      "case": "D06",
+      "anonymous_id": "A03",
+      "variant": "updated",
+      "trial": 3,
+      "response_sha256": "9fa562e54d91f8a6153343767a146195df46ef2b331f45322cf576405d4934ee",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Uses the actual TextField and Select patterns; native date entry is conditional and only the smallest extension is proposed if reuse fails.",
+        "Retains reported canonical `form-gap`, reconciles documentation without a token rename, notes uninspected consumers and preserves YAML `consumer: willow-v1`.",
+        "An agreed reviewer in the existing workflow is proportionate; ownership explicitly remains Unknown without a committee or tools.",
+        "The short dated note records source, scoped reuse/extension reason, decision status and verification gaps. 'Do not invent ... a system version' appropriately handles unavailable version evidence, and compatibility/accessibility/runtime remain explicitly unverified."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "case": "D06",
+      "anonymous_id": "A04",
+      "variant": "baseline",
+      "trial": 1,
+      "response_sha256": "fd2bdde414f845d5159cd0df780d59aef6e1369645854cf4d19190850637a30b",
+      "criterion_scores": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "reasons": [
+        "Inspects the two actual forms sources, uses their shared patterns and proposes native date entry or a thin DateInput within the existing delivery-date task.",
+        "Uses current `form-gap`, supersedes the conflicting documentation wording without inventing values or renaming source, and preserves `consumer: willow-v1`.",
+        "The three review prompts and two-person workflow are proportionate. However, 'This does not assign either person a formal design-system owner role' describes what the recommendation does, without explicitly recording the existing formal owner as unresolved/unknown. The ownership portion is therefore incomplete.",
+        "The proposed note contains 'source, intended use, relevant states and any deliberate exception' and current compatibility/accessibility/runtime gaps are stated. However, the note does not expressly record the reuse/extension reason or unavailable version evidence. The review prompt 'New pattern or exception documented?' partially supports rationale recording, but does not complete those gaps."
+      ],
+      "total": 6,
+      "critical_errors": []
+    },
+    {
+      "case": "D06",
+      "anonymous_id": "A05",
+      "variant": "baseline",
+      "trial": 3,
+      "response_sha256": "ca37b4d18884426bda9404c931ae5b174b56e0950082f2768ac4d9a268f2b852",
+      "criterion_scores": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "reasons": [
+        "Inspects TextField, Select and the order form, reuses native date support if present and otherwise proposes the smallest extension/wrapper with the existing patterns.",
+        "Standardizes affected documentation on current `form-gap` without inventing a value, and explicitly preserves document format and `consumer: willow-v1`.",
+        "Small contribution notes and proposed founder/developer reviews are proportionate. However, 'This is a proposed review arrangement, not an assignment of formal ownership' does not explicitly record the actual formal owner as unknown or unresolved; that required ownership statement is incomplete.",
+        "Each change records 'purpose, reused component/token sources, any proposed exception and the checks performed,' and source inspection/runtime/accessibility gaps are expressly stated. This provides useful scoped evidence and rationale, but does not acknowledge the missing source/system version anywhere in the record or evidence limit."
+      ],
+      "total": 6,
+      "critical_errors": []
+    },
+    {
+      "case": "D06",
+      "anonymous_id": "A06",
+      "variant": "baseline",
+      "trial": 2,
+      "response_sha256": "9d7f9f8eebc677e9d8d47280e405bcf3fa8314c47741ea16f8953c228ec44807",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "reasons": [
+        "Inspects TextField and Select, conditionally reuses native date input and otherwise proposes a small DateField sharing their patterns for the existing order form.",
+        "Keeps canonical `form-gap`, corrects `field-gap` documentation and preserves existing document format/content and YAML `consumer: willow-v1` without unsupported migration claims.",
+        "Ordinary review by the existing pair is proportionate and 'No formal owner is established' explicitly identifies unresolved ownership; no team structure or tooling is required.",
+        "The small reference records 'date-field usage and any justified exception' and the response explains conditional reuse and expressly identifies source/runtime/accessibility verification gaps. However, it does not request recording component source/version evidence or identify the unavailable version as a gap; 'Document sourced values' is helpful but incomplete for that criterion."
+      ],
+      "total": 7,
+      "critical_errors": []
+    }
+  ],
+  "scorers": "Eight fresh agents, one per case/control; rubric frozen; root arithmetic/completeness checks after grading"
+}

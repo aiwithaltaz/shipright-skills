@@ -1,0 +1,106 @@
+{
+  "scores": [
+    {
+      "anonymous_id": "A01",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Complete coherent foundation: the Foundation table selects colors, spacing, radius and elevation; typography/layout/density are specified, and \"No custom icons are needed\" and \"No illustrative assets, gradients or decorative transitions\" give justified no-use choices.",
+        "Decisions address outdoor long-text reading and desktop/phone layout through 18px/28px prose, full-text wrapping, 48px controls, visible focus, safe-area/keyboard clearance and 320px reflow checks.",
+        "Explicitly records \"Approved by delegation\" and \"There is no existing brand or component system\"; reusable semantic roles and D1\u2013D4 are canonical, and rendered verification/product-policy limits are stated.",
+        "Markdown handoff uses practical role/value tables and screen/state guidance, without serialization, a transformation pipeline, full component contracts or a compulsory toolchain. Explicit exclusions preserve the approved two-screen scope."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A02",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Covers all foundation areas through role/color and typography/spacing/corner tables, layout and comfortable targets, with justified no-use instructions: \"avoid nested cards, decorative illustrations and shadows\" and \"No icon library is needed\".",
+        "Ties choices to outdoor/desk tasks with calculated contrast, full observation text, readable line widths, desktop/phone arrangements, 48px targets, keyboard/dialog focus and 320px/200% reflow verification.",
+        "Explicitly calls the foundation \"Approved through your visual delegation\" and \"a new system, not an inferred existing brand\"; semantic reusable roles and decision sources are recorded alongside unverified rendering and unresolved functional policy.",
+        "Practical Markdown specification supplies no token serialization, transformation pipeline or full component contracts. Scope exclusions prevent extra features; list-order recommendation remains explicitly \"Proposed\", rather than fabricated approval."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A03",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "D1\u2013D9 coherently cover color, type, spacing, layout, radius/elevation, density and justified omission of imagery/icons/motion: \"These assets do not help the approved logging and review tasks.\"",
+        "Outdoor readability and desk line length inform type/contrast/width; stacked phone layout, full-text wrapping, 44px targets, unobscured focus and 320px/200% acceptance checks support access and reflow.",
+        "Explicitly records \"Approved under that delegation\" and \"No existing brand or component system was supplied\"; concise semantic foundation roles and source/version are reusable, while rendered fit, outdoor usability and unspecified product details remain unverified.",
+        "Explicitly presents \"foundation work, not a coded app or a complete component specification\"; direct values and two-screen guidance contain no serialization, pipeline, compulsory toolchain or invented capabilities."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A04",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "D1\u2013D10 cover each required foundation category with coherent selected values and purposes, including \"No photography, illustrations or decorative assets\", no required icons, and immediate state changes without decorative animation.",
+        "Connects contrast/type/line length to outdoor and desk reading; desktop/phone widths, 44px targets, long-text expansion, focus/dialog guidance and 320px/200% checks address touch and reflow.",
+        "Authority is explicit: \"All decisions below are Approved under your visual delegation\"; source/date/artifact and absence of existing identity are recorded. Role values are reusable and actual rendered/functional limits are clearly unverified.",
+        "Direct foundation values are explicitly \"not a token architecture\"; there is no serialization, transformation pipeline, full component contract or required installation. Future Lucide use is conditional, and the handoff preserves the two-screen scope."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A05",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Foundation table supplies all required categories and purposes, including semantic color/type/spacing/layout roles, modal-only shadow, 44px density, and \"Imagery | None\" with no-use rationale.",
+        "Connects the outdoor/desk and long-text jobs to high contrast, readable widths/type and full-text expansion; phone arrangements, keyboard-safe normal-flow actions, visible focus and 320px/200% checks support access.",
+        "Explicit visual delegation authorizes new values: \"All choices in this table are new, authorized choices\". Canonical practical roles and D1\u2013D3 record authority; no invented history is claimed, and implementation/accessibility/persistence limits remain explicit.",
+        "\"practical role values, not a detailed token architecture or component library\" accurately describes the Markdown handoff. No serialization, pipeline or compulsory tools appear; list-order presentation adds no sorting control or extra capability."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A06",
+      "criterion_scores": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Useful coherent colors, type, spacing, layout, radius, depth, icons, motion and density are provided, but imagery has no selected rule or justified no-use decision. Exact foundation evidence covers neighboring areas only: \"| Depth | Borders only; no shadows or layered decorative panels |\", \"| Icons | Lucide line icons, 20px, 2px stroke; check for success, circle-alert for errors only |\", and \"| Motion | No decorative animation; state changes are immediate |\". The explicit exclusions also omit an imagery decision: \"No tags, analytics, accounts, AI, uploads, dark theme, 3D or decorative animation.\"",
+        "Outdoor/desk rationale drives contrast and 18px/28px text; desktop/phone arrangements, full prose, 48px controls, safe-area and keyboard clearance, focus/dialog semantics and 320px/200% checks address readability and accessibility.",
+        "Explicitly records \"Approved through explicit delegation\" and \"No existing brand values are claimed\". Semantic reusable roles, sourced decisions and unverified rendering/persistence/transaction limits are grounded; no brand history or existing approval is fabricated.",
+        "Practical role tables and component/screen guidance do not serialize tokens, prescribe a transformation pipeline or supply full component contracts. Lucide specifies visual status icons rather than a compulsory toolchain; explicit exclusions preserve the approved capabilities."
+      ],
+      "total": 7,
+      "critical_errors": []
+    }
+  ]
+}

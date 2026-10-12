@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | Cedar Desk</title>
+  <style>
+    :root {--paper:#faf7f0;--ink:#242c29;--accent:#225d48;--gap:8px;--corner:8px;}
+    * {box-sizing:border-box;}
+    body {font-family:Arial,sans-serif;background:var(--paper);color:var(--ink);margin:0;line-height:1.5;}
+    .page {max-width:1120px;padding:24px;margin-inline:auto;}
+    .button {background:var(--accent);color:white;padding:12px 16px;border-radius:var(--corner);display:inline-block;text-decoration:none;}
+    .panel {border:1px solid #d7ddd5;border-radius:var(--corner);padding:24px;}
+    header {display:flex;flex-wrap:wrap;gap:var(--gap) 24px;align-items:baseline;margin-bottom:32px;}
+    header p {margin:0;}
+    .identity {font-weight:700;}
+    .sample {font-size:14px;}
+    h1 {font-size:32px;line-height:1.2;margin:0 0 24px;overflow-wrap:anywhere;}
+    a {color:var(--accent);}
+    a:focus-visible, h1:focus {outline:3px solid var(--ink);outline-offset:4px;}
+    [hidden] {display:none !important;}
+    .projects {list-style:none;margin:0;padding:0;}
+    .projects li + li {border-top:1px solid #d7ddd5;}
+    .project-link {display:block;padding:20px 0;font-size:18px;text-underline-offset:4px;overflow-wrap:anywhere;}
+    .projects li:first-child .project-link {padding-top:0;}
+    .projects li:last-child .project-link {padding-bottom:0;}
+    .project-link {min-height:44px;}
+    .back {margin-bottom:24px;}
+    dl {margin:0;}
+    dt {font-weight:700;margin-bottom:var(--gap);}
+    dd {margin:0;overflow-wrap:anywhere;}
+    dd + dt {margin-top:24px;}
+    @media (max-width:480px) {
+      h1 {font-size:28px;}
+      header {margin-bottom:24px;}
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <p class="identity">Cedar Desk</p>
+      <p class="sample">Sample data</p>
+    </header>
+    <section id="projects" aria-labelledby="projects-heading">
+      <h1 id="projects-heading" tabindex="-1">Projects</h1>
+      <div class="panel">
+        <ul class="projects">
+          <li><a class="project-link" id="orchard-link" href="#orchard-notes">Orchard notes</a></li>
+          <li><a class="project-link" id="harbor-link" href="#harbor-review">Harbor review</a></li>
+        </ul>
+      </div>
+    </section>
+    <section id="orchard-notes" aria-labelledby="orchard-heading" hidden>
+      <a class="button back" href="#projects">Back to Projects</a>
+      <h1 id="orchard-heading" tabindex="-1">Orchard notes</h1>
+      <div class="panel">
+        <dl>
+          <dt>Summary</dt><dd>Review the supplied observation notes.</dd>
+          <dt>Owner</dt><dd>Sam</dd>
+        </dl>
+      </div>
+    </section>
+    <section id="harbor-review" aria-labelledby="harbor-heading" hidden>
+      <a class="button back" href="#projects">Back to Projects</a>
+      <h1 id="harbor-heading" tabindex="-1">Harbor review</h1>
+      <div class="panel">
+        <dl>
+          <dt>Summary</dt><dd>Review the supplied harbor notes.</dd>
+          <dt>Owner</dt><dd>Priya</dd>
+        </dl>
+      </div>
+    </section>
+  </main>
+  <script>
+    (() => {
+      const routes = ['projects', 'orchard-notes', 'harbor-review'];
+      let current = 'projects';
+      let lastProject = null;
+      function render(moveFocus) {
+        const requested = location.hash.slice(1);
+        const next = routes.includes(requested) ? requested : 'projects';
+        if (current !== 'projects') lastProject = current;
+        for (const route of routes) {
+          document.getElementById(route).hidden = route !== next;
+        }
+        const section = document.getElementById(next);
+        document.title = section.querySelector('h1').textContent + ' | Cedar Desk';
+        if (moveFocus) {
+          const returnLink = lastProject === 'orchard-notes' ? 'orchard-link' : 'harbor-link';
+          const target = next === 'projects' && lastProject
+            ? document.getElementById(returnLink)
+            : section.querySelector('h1');
+          target.focus();
+        }
+        current = next;
+      }
+      window.addEventListener('hashchange', () => render(true));
+      render(false);
+    })();
+  </script>
+</body>
+</html>

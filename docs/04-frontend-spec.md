@@ -69,6 +69,7 @@ Separate background work from saved unfinished human work. Do not add features m
 **Source:** `DESIGN.md` at the project root, or <!-- existing component/token source -->.
 Use sourced Approved/Observed values permitted by current instructions. Proposed values stay labeled in Markdown.
 Unknown values stay Unknown; do not invent brand values.
+Carry the canonical system source/version if known, actual component locations, reuse/extension reason and approved exceptions. Preserve existing formats; do not create a replacement system for this screen.
 
 ## Exact acceptance checks
 

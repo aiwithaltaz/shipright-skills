@@ -1,0 +1,30 @@
+{
+  "scores": [
+    {
+      "anonymous_id": "A01",
+      "criterion_scores": [
+        2,
+        2
+      ],
+      "reasons": [
+        "The entire response is \u2018Submit \u2192 Save\u2019, which returns only the exact requested label change.",
+        "The response adds no inventory, foundations, governance, documents, questions, or redesign."
+      ],
+      "total": 4,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A02",
+      "criterion_scores": [
+        2,
+        2
+      ],
+      "reasons": [
+        "The entire response is \u2018Submit \u2192 Save\u2019, which returns only the exact requested label change.",
+        "The response adds no inventory, foundations, governance, documents, questions, or redesign."
+      ],
+      "total": 4,
+      "critical_errors": []
+    }
+  ]
+}

@@ -1,0 +1,388 @@
+{
+  "tokenizer": {
+    "package": "tiktoken",
+    "version": "0.12.0",
+    "encoding": "cl100k_base"
+  },
+  "files": {
+    "skills/_shared/flow-rules.md": 804,
+    "skills/_shared/intake.md": 689,
+    "skills/_shared/operating-contract.md": 989,
+    "skills/_shared/output-folder.md": 504,
+    "skills/product-design/SKILL.md": 1729,
+    "skills/product-design/references/decision-checklist.md": 749,
+    "skills/product-design/references/doc-set.md": 607,
+    "skills/product-design/references/findability.md": 578,
+    "skills/product-design/references/ia-research.md": 686,
+    "skills/product-design/references/ia-sources.md": 851,
+    "skills/product-design/references/information-architecture.md": 802,
+    "skills/product-design/references/journey-mapping.md": 604,
+    "skills/product-design/references/mapping-sources.md": 813,
+    "skills/product-design/references/mapping-types.md": 649,
+    "skills/product-design/references/operational-flows.md": 862,
+    "skills/product-design/references/opportunity-research.md": 170,
+    "skills/product-design/references/research-evidence.md": 403,
+    "skills/product-design/references/research-methods.md": 423,
+    "skills/product-design/references/research-planning.md": 480,
+    "skills/product-design/references/research-sources.md": 723,
+    "skills/product-design/references/research-synthesis.md": 820,
+    "skills/product-design/references/research-to-decisions.md": 594,
+    "skills/product-design/references/roles-and-navigation.md": 542,
+    "skills/product-design/references/service-blueprints.md": 696,
+    "skills/product-design/references/states-and-flows.md": 605,
+    "skills/product-design/references/synthesis-sources.md": 379,
+    "skills/product-design/references/task-and-system-flows.md": 526,
+    "skills/ship-check/SKILL.md": 1209,
+    "skills/ship-check/references/launch-items.md": 810,
+    "skills/ui-ux-design/SKILL.md": 1470,
+    "skills/ui-ux-design/references/anti-slop-rules.md": 561,
+    "skills/ui-ux-design/references/build-handoff.md": 681,
+    "skills/ui-ux-design/references/icons-and-placement.md": 913,
+    "skills/ui-ux-design/references/layout-and-hierarchy.md": 627,
+    "skills/ui-ux-design/references/motion.md": 271,
+    "skills/ui-ux-design/references/operator-workspaces.md": 490,
+    "skills/ui-ux-design/references/references-and-design-system.md": 652,
+    "skills/ui-ux-design/references/state-coverage.md": 1099,
+    "skills/ui-ux-design/references/ui-copy.md": 404,
+    "skills/ux-critique/SKILL.md": 1214,
+    "skills/ux-critique/references/bounded-verification.md": 350,
+    "skills/ux-critique/references/existing-app.md": 512,
+    "skills/ux-critique/references/plan-review.md": 187,
+    "skills/ux-critique/references/requirements-and-feedback.md": 460,
+    "skills/ux-critique/references/severity-rubric.md": 337,
+    "skills/ux-critique/references/slop-tells.md": 667
+  },
+  "normal_paths": {
+    "product-design": {
+      "Product framing": {
+        "tokens": 4960,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/product-design/SKILL.md",
+          "skills/product-design/references/decision-checklist.md"
+        ]
+      },
+      "Research decision or plan": {
+        "tokens": 6240,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/product-design/SKILL.md",
+          "skills/product-design/references/research-evidence.md",
+          "skills/product-design/references/research-methods.md",
+          "skills/product-design/references/research-planning.md",
+          "skills/product-design/references/research-sources.md"
+        ]
+      },
+      "Flows and state effects": {
+        "tokens": 5678,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/product-design/SKILL.md",
+          "skills/product-design/references/operational-flows.md",
+          "skills/product-design/references/states-and-flows.md"
+        ]
+      },
+      "Requested documents": {
+        "tokens": 5322,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/_shared/output-folder.md",
+          "skills/product-design/SKILL.md",
+          "skills/product-design/references/doc-set.md"
+        ]
+      },
+      "Optional synthesis and decisions": {
+        "tokens": 6407,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/product-design/SKILL.md",
+          "skills/product-design/references/research-evidence.md",
+          "skills/product-design/references/research-synthesis.md",
+          "skills/product-design/references/research-to-decisions.md",
+          "skills/product-design/references/synthesis-sources.md"
+        ]
+      },
+      "Optional content organization and maps": {
+        "tokens": 5555,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/product-design/SKILL.md",
+          "skills/product-design/references/information-architecture.md",
+          "skills/product-design/references/roles-and-navigation.md"
+        ]
+      },
+      "Optional findability contract": {
+        "tokens": 6133,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/product-design/SKILL.md",
+          "skills/product-design/references/findability.md",
+          "skills/product-design/references/information-architecture.md",
+          "skills/product-design/references/roles-and-navigation.md"
+        ]
+      },
+      "Optional IA study preparation": {
+        "tokens": 5800,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/product-design/SKILL.md",
+          "skills/product-design/references/ia-research.md",
+          "skills/product-design/references/research-methods.md",
+          "skills/product-design/references/research-planning.md"
+        ]
+      },
+      "IA provenance review": {
+        "tokens": 5864,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/product-design/SKILL.md",
+          "skills/product-design/references/ia-sources.md",
+          "skills/product-design/references/information-architecture.md"
+        ]
+      },
+      "Optional journey mapping": {
+        "tokens": 6472,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/product-design/SKILL.md",
+          "skills/product-design/references/journey-mapping.md",
+          "skills/product-design/references/mapping-types.md",
+          "skills/product-design/references/research-evidence.md",
+          "skills/product-design/references/states-and-flows.md"
+        ]
+      },
+      "Optional task or system mapping": {
+        "tokens": 6853,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/product-design/SKILL.md",
+          "skills/product-design/references/mapping-types.md",
+          "skills/product-design/references/operational-flows.md",
+          "skills/product-design/references/states-and-flows.md",
+          "skills/product-design/references/task-and-system-flows.md"
+        ]
+      },
+      "Optional service blueprint": {
+        "tokens": 7426,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/product-design/SKILL.md",
+          "skills/product-design/references/mapping-types.md",
+          "skills/product-design/references/operational-flows.md",
+          "skills/product-design/references/research-evidence.md",
+          "skills/product-design/references/service-blueprints.md",
+          "skills/product-design/references/states-and-flows.md"
+        ]
+      },
+      "Mapping provenance review": {
+        "tokens": 5673,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/product-design/SKILL.md",
+          "skills/product-design/references/mapping-sources.md",
+          "skills/product-design/references/mapping-types.md"
+        ]
+      }
+    },
+    "ship-check": {
+      "Full launch review": {
+        "tokens": 5950,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/ship-check/SKILL.md",
+          "skills/ship-check/references/launch-items.md",
+          "skills/ui-ux-design/references/state-coverage.md",
+          "skills/ux-critique/references/bounded-verification.md"
+        ]
+      },
+      "Focused release item": {
+        "tokens": 5600,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/ship-check/SKILL.md",
+          "skills/ship-check/references/launch-items.md",
+          "skills/ui-ux-design/references/state-coverage.md"
+        ]
+      }
+    },
+    "ui-ux-design": {
+      "Screen handoff": {
+        "tokens": 10747,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/_shared/output-folder.md",
+          "skills/ui-ux-design/SKILL.md",
+          "skills/ui-ux-design/references/anti-slop-rules.md",
+          "skills/ui-ux-design/references/build-handoff.md",
+          "skills/ui-ux-design/references/icons-and-placement.md",
+          "skills/ui-ux-design/references/layout-and-hierarchy.md",
+          "skills/ui-ux-design/references/references-and-design-system.md",
+          "skills/ui-ux-design/references/state-coverage.md",
+          "skills/ui-ux-design/references/ui-copy.md",
+          "skills/ux-critique/references/bounded-verification.md",
+          "skills/ux-critique/references/severity-rubric.md",
+          "skills/ux-critique/references/slop-tells.md"
+        ]
+      },
+      "Focused UI copy": {
+        "tokens": 4356,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/ui-ux-design/SKILL.md",
+          "skills/ui-ux-design/references/ui-copy.md"
+        ]
+      },
+      "Implementation verification": {
+        "tokens": 5401,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/ui-ux-design/SKILL.md",
+          "skills/ui-ux-design/references/state-coverage.md",
+          "skills/ux-critique/references/bounded-verification.md"
+        ]
+      }
+    },
+    "ux-critique": {
+      "Existing app review": {
+        "tokens": 6426,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/ui-ux-design/references/ui-copy.md",
+          "skills/ux-critique/SKILL.md",
+          "skills/ux-critique/references/bounded-verification.md",
+          "skills/ux-critique/references/existing-app.md",
+          "skills/ux-critique/references/requirements-and-feedback.md",
+          "skills/ux-critique/references/severity-rubric.md",
+          "skills/ux-critique/references/slop-tells.md"
+        ]
+      },
+      "Requested plan review": {
+        "tokens": 4220,
+        "files": [
+          "skills/_shared/flow-rules.md",
+          "skills/_shared/intake.md",
+          "skills/_shared/operating-contract.md",
+          "skills/ux-critique/SKILL.md",
+          "skills/ux-critique/references/plan-review.md",
+          "skills/ux-critique/references/severity-rubric.md"
+        ]
+      }
+    }
+  },
+  "always_shared_tokens": 1678,
+  "shared_total_tokens": 2986,
+  "stored_skill_tokens": 31191,
+  "repository_bytes": 8344998,
+  "direct_links": {
+    "product-design": [
+      "skills/_shared/flow-rules.md",
+      "skills/_shared/intake.md",
+      "skills/_shared/operating-contract.md",
+      "skills/_shared/output-folder.md",
+      "skills/product-design/references/decision-checklist.md",
+      "skills/product-design/references/doc-set.md",
+      "skills/product-design/references/findability.md",
+      "skills/product-design/references/ia-research.md",
+      "skills/product-design/references/ia-sources.md",
+      "skills/product-design/references/information-architecture.md",
+      "skills/product-design/references/journey-mapping.md",
+      "skills/product-design/references/mapping-sources.md",
+      "skills/product-design/references/mapping-types.md",
+      "skills/product-design/references/operational-flows.md",
+      "skills/product-design/references/opportunity-research.md",
+      "skills/product-design/references/research-evidence.md",
+      "skills/product-design/references/research-methods.md",
+      "skills/product-design/references/research-planning.md",
+      "skills/product-design/references/research-sources.md",
+      "skills/product-design/references/research-synthesis.md",
+      "skills/product-design/references/research-to-decisions.md",
+      "skills/product-design/references/roles-and-navigation.md",
+      "skills/product-design/references/service-blueprints.md",
+      "skills/product-design/references/states-and-flows.md",
+      "skills/product-design/references/synthesis-sources.md",
+      "skills/product-design/references/task-and-system-flows.md"
+    ],
+    "ship-check": [
+      "docs/ship-check.md",
+      "skills/_shared/intake.md",
+      "skills/_shared/operating-contract.md",
+      "skills/_shared/output-folder.md",
+      "skills/ship-check/references/launch-items.md",
+      "skills/ui-ux-design/references/state-coverage.md",
+      "skills/ux-critique/references/bounded-verification.md"
+    ],
+    "ui-ux-design": [
+      "personal-taste/README.md",
+      "skills/_shared/flow-rules.md",
+      "skills/_shared/intake.md",
+      "skills/_shared/operating-contract.md",
+      "skills/_shared/output-folder.md",
+      "skills/ui-ux-design/references/anti-slop-rules.md",
+      "skills/ui-ux-design/references/build-handoff.md",
+      "skills/ui-ux-design/references/icons-and-placement.md",
+      "skills/ui-ux-design/references/layout-and-hierarchy.md",
+      "skills/ui-ux-design/references/motion.md",
+      "skills/ui-ux-design/references/operator-workspaces.md",
+      "skills/ui-ux-design/references/references-and-design-system.md",
+      "skills/ui-ux-design/references/state-coverage.md",
+      "skills/ui-ux-design/references/ui-copy.md",
+      "skills/ux-critique/references/bounded-verification.md",
+      "skills/ux-critique/references/severity-rubric.md",
+      "skills/ux-critique/references/slop-tells.md"
+    ],
+    "ux-critique": [
+      "skills/_shared/flow-rules.md",
+      "skills/_shared/intake.md",
+      "skills/_shared/operating-contract.md",
+      "skills/ship-check/SKILL.md",
+      "skills/ui-ux-design/references/ui-copy.md",
+      "skills/ux-critique/references/bounded-verification.md",
+      "skills/ux-critique/references/existing-app.md",
+      "skills/ux-critique/references/plan-review.md",
+      "skills/ux-critique/references/requirements-and-feedback.md",
+      "skills/ux-critique/references/severity-rubric.md",
+      "skills/ux-critique/references/slop-tells.md"
+    ]
+  },
+  "status": "Pass",
+  "errors": [],
+  "warnings": []
+}

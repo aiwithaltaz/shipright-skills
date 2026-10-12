@@ -1,0 +1,96 @@
+{
+  "synthetic": true,
+  "cases": [
+    {
+      "id": "D01",
+      "task": "Use ShipRight to prepare the design direction and implementation notes for an additional project-detail screen in Cedar Desk. I want it to feel finished and consistent with the projects screen. Read artifact.md. Return concise Markdown; do not write an app.",
+      "artifact": "Cedar Desk is an existing internal web app. Approved project task: list projects and inspect a project detail. No additional task, status counter or feature is requested. The current code uses components in src/ui and CSS in src/styles/theme.css. There is no DESIGN.md. Source excerpt: :root { --paper:#faf7f0; --ink:#242c29; --accent:#225d48; --gap:8px; --corner:8px; } body {font-family:Arial,sans-serif; background:var(--paper); color:var(--ink);} .page{max-width:1120px;padding:24px} .button{background:var(--accent);color:white;padding:12px 16px;border-radius:var(--corner)} .panel{border:1px solid #d7ddd5;border-radius:var(--corner);padding:24px}. Existing ProjectRow and ProjectHeader use these classes. Current navigation is Projects then project detail; back returns to Projects. Existing imagery, density decisions and motion specification are undocumented. No screenshot or runtime supplied.",
+      "criteria": [
+        "Inspect and reuse the actual sources, without a replacement system or mandatory new DESIGN.md.",
+        "Keep unknown exact values and implementation verification explicit; existing CSS may be used without invented token provenance.",
+        "Carry coherent foundation decisions and relevant imagery, density and responsive priorities, using gaps where appropriate.",
+        "Keep the approved task, components and safe return; no invented features or claims."
+      ]
+    },
+    {
+      "id": "D02",
+      "task": "Use ShipRight to advise how we should reconcile these design sources before the billing-screen refresh. I need one recommendation and the changes we should make. Read artifact.md. Return concise Markdown.",
+      "artifact": "The current instruction is to keep Loom Ledger identity and Inter. Adopt the already approved teal primary action on billing. The 2024 screenshot shows purple actions and rounded decorative cards; its author, fonts and source values are unknown. Current code uses Inter, a 4px spacing step and teal #006b68 for actions, but billing CSS locally overrides the action to purple #6947c7. README still describes purple as brand primary. No approval is given to change other screens or add a pricing plan. Runtime accessibility has not been tested. The existing billing page already shows invoice list and Download invoice, with a back route to Settings.",
+      "criteria": [
+        "Current explicit/approved teal decision outranks the old screenshot and stale README.",
+        "Repair the bounded billing/documentation drift, preserve Inter and unrelated identity.",
+        "Record canonical source, source/version gap, conflicts and approved exceptions without copying every screenshot feature.",
+        "Separate proposed changes, source observations and unverified accessibility/runtime evidence."
+      ]
+    },
+    {
+      "id": "D03",
+      "task": "Use ShipRight to establish a small coherent design foundation for a new web tool called Fieldnote. I delegate its visual choices to you. Read artifact.md. Return a design handoff in Markdown, not a coded app.",
+      "artifact": "Approved tool: one field researcher logs observations and reviews a list of those observations. Desktop and phone supported. There is no existing brand or component system. Tool is used outdoors and at desks, sometimes with long observation text. Screens: Observations list and New observation form. Form fields: date, place, observation text. Save adds to the list; Cancel returns without saving, warning if text would be lost. No tags, analytics, accounts, AI or uploading. No need for dark theme, 3D or decorative animation was requested. Visual decisions can be selected and applied under this delegation.",
+      "criteria": [
+        "Give a coherent foundation across color, type, spacing, layout, radius, elevation, icons, imagery, motion and density, including justified no-use choices.",
+        "Tie decisions to outdoor/desk and desktop/phone tasks, readability, focus and accessible touch/reflow.",
+        "Record delegated authority, concise canonical reusable roles and existing/unverified limits without invented brand history.",
+        "No token serialization, transformation pipeline or full component contracts; no extra features or compulsory toolchain."
+      ]
+    },
+    {
+      "id": "D04",
+      "task": "Use ShipRight to decide how to adapt this new visual reference into our existing Orbit app. Read artifact.md. Give concise Markdown implementation guidance.",
+      "artifact": "Orbit already has an approved system: neutral surfaces, emerald actions, Inter, Lucide line icons in navigation, and Simple Icons for vendor logos only. Product-level stroke/size rules and role split were explicitly approved. We want the quiet hover feedback of a supplied motion-heavy carousel reference, for the existing integration list. Do not add a carousel, glass surfaces or extra integrations. The reference comes from Component Gallery and links to several unrelated source systems; no installable component package has been selected. A designer likes its purple glow but purple adoption is not approved. Existing motion is 120ms opacity change and zero duration under reduced motion. List has text labels and keyboard focus indicators.",
+      "criteria": [
+        "Preserve the approved role-scoped icon families rather than homogenize them or add another family.",
+        "Borrow only approved feedback properties; retain identity, labels, keyboard/reduced motion and actual existing list.",
+        "Recognize Component Gallery as comparison/index of original systems, not a package or usability proof.",
+        "Explain reconciliation/exception source without installing a registry, copying incidental features or imposing governance."
+      ]
+    },
+    {
+      "id": "D05",
+      "task": "Use ShipRight to refine the design-system guidance for this existing form. Keep it short. Read artifact.md.",
+      "artifact": "Harbor keeps a blue accent and Source Sans 3. Only a form field hint is being refined, and adjusting its unreadable hint color is authorized. Its local hint is #b8c4ce on white at 12px. Team says existing means approved, but there is no recorded approval of that hint color. A keyboard review separately recorded that the sticky footer hides focus on the last input; do not change footer behavior in this request. No full compliance assessment exists. Primary button, fields, source family and layout should remain. Hint content: Use your company email. Current button says Continue.",
+      "criteria": [
+        "Distinguish observation from approval of an inaccessible value; address authorized hint color without rebranding.",
+        "Retain the isolated footer/focus issue as unresolved outside fix scope, not erase it for lack of repetition.",
+        "Do not certify accessibility or infer measured contrast if not measured; provide relevant verification.",
+        "Keep the change bounded; preserve family, fields, layout and behavior, no new governance/full system."
+      ]
+    },
+    {
+      "id": "D06",
+      "task": "Use ShipRight to recommend a lightweight way for us to keep this design system consistent while adding a new date input. Read artifact.md. Return concise Markdown.",
+      "artifact": "A solo founder and one part-time developer maintain Willow. They use components/forms/TextField.tsx and components/forms/Select.tsx with a common label/error pattern. Their docs call the same spacing role form-gap and field-gap in different pages; real current source name is form-gap. DESIGN.md belongs to the project and has an unrelated custom YAML key consumer: willow-v1 which must be retained. Neither person has been named as formal design-system owner. No date input exists. The approved task is entering a delivery date inside the existing order form, no calendar, reminders or new product flow. Existing input source patterns may support a native date input; accessibility/runtime has not been checked. No publishing, new tool installation or new team structure is authorized.",
+      "criteria": [
+        "Reuse/extend the actual forms pattern for the delivery-date task rather than select an unrelated library or create a whole system.",
+        "Use canonical existing form-gap naming, preserve consumer key and reconcile documentation without unsupported migration claims.",
+        "Offer proportionate documentation/contribution review and explicit unresolved owner; no fictional committee or mandatory tools.",
+        "Record scoped reuse/extension reason and source/version/verification gaps without full token architecture/component contract."
+      ]
+    },
+    {
+      "id": "C01",
+      "control": true,
+      "task": "Use ShipRight to change the existing button label from Submit to Save. Everything else stays as it is. Return the exact label change only.",
+      "artifact": "Existing screen: one labeled input and a button labeled Submit. No design-system change requested.",
+      "criteria": [
+        "Return only the requested label change.",
+        "No forced system inventory/foundations/governance, document set, extra questions or redesign."
+      ]
+    },
+    {
+      "id": "C02",
+      "control": true,
+      "task": "Use ShipRight. I have an idea for an app for small teams. Help me start.",
+      "artifact": "No product job, audience details, scope or design artifacts have been supplied.",
+      "criteria": [
+        "Use the existing bounded intake for an unframed idea.",
+        "Do not invent a system, brand, features or screens before framing."
+      ]
+    }
+  ],
+  "visual": {
+    "id": "V01",
+    "task": "Use ShipRight to build a self-contained HTML preview for the two approved Cedar Desk screens in artifact.md. Write the complete runnable HTML to app.html and a concise explanation to response.md. Support desktop and phone. Use inline styles/scripts and local/system fonts only; no network packages or assets. Provide usable navigation between Projects and Project detail.",
+    "artifact": "Synthetic prototype data: projects Orchard notes and Harbor review. Detail for Orchard notes: Summary: Review the supplied observation notes. Owner: Sam. Detail for Harbor review: Summary: Review the supplied harbor notes. Owner: Priya. These are approved labeled sample data for this prototype. Screens and behavior: Projects displays just the two named projects as navigable rows. Selecting a row opens its detail with project name, summary and owner. Back to Projects returns to list. No editing, searching, filters, metrics, badges, accounts or other features. Approved identity/source CSS: :root {--paper:#faf7f0;--ink:#242c29;--accent:#225d48;--gap:8px;--corner:8px;} body{font-family:Arial,sans-serif;background:var(--paper);color:var(--ink)} .page{max-width:1120px;padding:24px} .button{background:var(--accent);color:white;padding:12px 16px;border-radius:var(--corner)} .panel{border:1px solid #d7ddd5;border-radius:var(--corner);padding:24px}. There is no DESIGN.md. Existing controls have visible keyboard focus. There is no approved imagery or animation. The app is used to read and review the sample content."
+  }
+}

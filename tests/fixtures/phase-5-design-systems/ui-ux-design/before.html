@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects · Cedar Desk</title>
+  <style>
+    :root {--paper:#faf7f0;--ink:#242c29;--accent:#225d48;--gap:8px;--corner:8px;}
+    * {box-sizing:border-box;}
+    body {margin:0;font-family:Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;}
+    .page {max-width:1120px;padding:24px;margin:0 auto;}
+    .button {display:inline-block;background:var(--accent);color:white;padding:12px 16px;border-radius:var(--corner);text-decoration:none;}
+    .panel {border:1px solid #d7ddd5;border-radius:var(--corner);padding:24px;}
+    .identity {margin:0;font-weight:700;}
+    .sample {margin:var(--gap) 0 0;font-size:14px;}
+    header {margin-bottom:32px;}
+    h1 {font-size:32px;line-height:1.2;margin:0 0 24px;overflow-wrap:anywhere;}
+    ul {list-style:none;margin:0;padding:0;}
+    li + li {border-top:1px solid #d7ddd5;}
+    .project-row {display:block;min-height:48px;padding:16px 0;color:var(--accent);font-weight:700;text-underline-offset:4px;overflow-wrap:anywhere;}
+    a:focus-visible {outline:3px solid var(--accent);outline-offset:4px;}
+    a:hover {text-decoration:underline;}
+    .back {margin-bottom:24px;}
+    dl {margin:0;}
+    dt {font-weight:700;margin-bottom:var(--gap);}
+    dd {margin:0;overflow-wrap:anywhere;}
+    dd + dt {margin-top:24px;}
+    [hidden] {display:none!important;}
+    @media (max-width:480px) {h1 {font-size:28px;} .panel {padding:24px;}}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <p class="identity">Cedar Desk</p>
+      <p class="sample">Sample data</p>
+    </header>
+    <main>
+      <section id="projects" aria-labelledby="projects-title">
+        <h1 id="projects-title" tabindex="-1">Projects</h1>
+        <div class="panel">
+          <ul>
+            <li><a class="project-row" id="orchard-link" href="#project/orchard-notes">Orchard notes</a></li>
+            <li><a class="project-row" id="harbor-link" href="#project/harbor-review">Harbor review</a></li>
+          </ul>
+        </div>
+      </section>
+      <section id="detail" aria-labelledby="detail-title" hidden>
+        <a class="button back" href="#projects">Back to Projects</a>
+        <h1 id="detail-title" tabindex="-1"></h1>
+        <div class="panel">
+          <dl>
+            <dt>Summary</dt>
+            <dd id="summary"></dd>
+            <dt>Owner</dt>
+            <dd id="owner"></dd>
+          </dl>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script>
+    (() => {
+      'use strict';
+      const projects = {
+        'orchard-notes': {name:'Orchard notes', summary:'Review the supplied observation notes.', owner:'Sam', link:'orchard-link'},
+        'harbor-review': {name:'Harbor review', summary:'Review the supplied harbor notes.', owner:'Priya', link:'harbor-link'}
+      };
+      const list = document.getElementById('projects');
+      const detail = document.getElementById('detail');
+      const title = document.getElementById('detail-title');
+      let lastProject = null;
+      function render(moveFocus) {
+        const route = window.location.hash;
+        const project = route.startsWith('#project/') ? projects[route.slice(9)] : null;
+        list.hidden = Boolean(project);
+        detail.hidden = !project;
+        if (project) {
+          lastProject = project;
+          title.textContent = project.name;
+          document.getElementById('summary').textContent = project.summary;
+          document.getElementById('owner').textContent = project.owner;
+          document.title = project.name + ' · Cedar Desk';
+          if (moveFocus) title.focus();
+        } else {
+          document.title = 'Projects · Cedar Desk';
+          if (moveFocus) document.getElementById(lastProject ? lastProject.link : 'projects-title').focus();
+        }
+      }
+      window.addEventListener('hashchange', () => render(true));
+      render(false);
+    })();
+  </script>
+</body>
+</html>

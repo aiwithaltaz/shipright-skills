@@ -270,7 +270,7 @@
           "when": "| Empty, loading, errors, pending work and difficult content | [state-coverage.md](references/state-coverage.md) |"
         },
         "skills/ui-ux-design/references/references-and-design-system.md": {
-          "when": "| Preserve/Establish, tokens and supplied references | [references-and-design-system.md](references/references-and-design-system.md) |"
+          "when": "| Affected system reuse/selection or supplied references | [references-and-design-system.md](references/references-and-design-system.md) |"
         },
         "skills/ux-critique/references/slop-tells.md": {
           "when": "| Concrete review prompts for competing actions or unsupported widgets | [slop-tells.md](../ux-critique/references/slop-tells.md) |"
@@ -289,6 +289,15 @@
         },
         "skills/ux-critique/references/severity-rubric.md": {
           "when": "| Severity of a concrete review finding | [severity-rubric.md](../ux-critique/references/severity-rubric.md) |"
+        },
+        "skills/ui-ux-design/references/design-foundations.md": {
+          "when": "| Requested foundations or a task-relevant foundation gap | [design-foundations.md](references/design-foundations.md) |"
+        },
+        "skills/ui-ux-design/references/design-system-governance.md": {
+          "when": "| Requested system naming, contribution or maintenance | [design-system-governance.md](references/design-system-governance.md) |"
+        },
+        "skills/ui-ux-design/references/design-system-sources.md": {
+          "when": "| System-source provenance or decision-relevant comparison | [design-system-sources.md](references/design-system-sources.md) |"
         }
       },
       "normal_paths": [
@@ -314,6 +323,32 @@
           "references": [
             "skills/ux-critique/references/bounded-verification.md",
             "skills/ui-ux-design/references/state-coverage.md"
+          ]
+        },
+        {
+          "task": "Optional system selection",
+          "references": [
+            "skills/ui-ux-design/references/references-and-design-system.md"
+          ]
+        },
+        {
+          "task": "Optional foundation decisions",
+          "references": [
+            "skills/ui-ux-design/references/references-and-design-system.md",
+            "skills/ui-ux-design/references/design-foundations.md"
+          ]
+        },
+        {
+          "task": "Optional naming and governance",
+          "references": [
+            "skills/ui-ux-design/references/design-system-governance.md"
+          ]
+        },
+        {
+          "task": "System comparison provenance",
+          "references": [
+            "skills/ui-ux-design/references/references-and-design-system.md",
+            "skills/ui-ux-design/references/design-system-sources.md"
           ]
         }
       ]

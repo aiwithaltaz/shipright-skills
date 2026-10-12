@@ -1,0 +1,30 @@
+{
+  "scores": [
+    {
+      "anonymous_id": "A01",
+      "criterion_scores": [
+        2,
+        2
+      ],
+      "reasons": [
+        "Uses a bounded three-question intake covering audience, first outcome and scope boundary: \u2018Who should this app primarily serve first?\u2019, \u2018What should someone be able to finish with the first version?\u2019 and \u2018What should stay out of the first version?\u2019 Each includes choices, rationale and delegation controls.",
+        "Keeps the idea unframed without inventing a system, brand, features or screens. It explicitly states \u2018No pick yet; these are examples, and your app's job is still unknown.\u2019 The handoff, decision and exclusion suggestions are intake options rather than asserted product requirements."
+      ],
+      "total": 4,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A02",
+      "criterion_scores": [
+        2,
+        2
+      ],
+      "reasons": [
+        "Uses a bounded three-question intake covering audience, first outcome and scope boundary: \u2018Who should the app help first?\u2019, \u2018What should someone accomplish with the first version?\u2019 and \u2018What should stay outside the first version?\u2019 Each includes choices, rationale and delegation controls.",
+        "Does not invent a system, brand, features or screens before framing. It states \u2018the app\u2019s purpose is still open\u2019 and labels exclusions \u2018possible exclusions, not proposed features.\u2019 Its recommendation to avoid replacing existing tools is expressly \u2018a provisional boundary\u2019 for the user to decide."
+      ],
+      "total": 4,
+      "critical_errors": []
+    }
+  ]
+}

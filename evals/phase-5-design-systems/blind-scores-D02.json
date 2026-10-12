@@ -1,0 +1,106 @@
+{
+  "scores": [
+    {
+      "anonymous_id": "A01",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Explicit hierarchy: \u201cCurrent instructions outrank the stale README and 2024 screenshot,\u201d with the already approved teal action retained.",
+        "Bounded repair: \u201cremove the local purple override\u201d and \u201creconcile the affected documentation\u201d; preserves Inter, the existing 4px step, identity, existing screen content and other screens.",
+        "Records current instruction/prior approval and reported code as authoritative sources, identifies the purple override and README conflict, and labels the 2024 screenshot historical with author/fonts/source values Unknown. Documentation records the billing scope without a global rebrand.",
+        "Distinguishes Approved/Observed/Unknown, describes changes prospectively, confines \u201cFails\u201d to source reconciliation, and explicitly says runtime behavior and accessibility are \u201cNot verified.\u201d"
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A02",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Explicitly states current instructions take precedence over README and the 2024 screenshot; recommendation uses approved teal.",
+        "Removes the billing override, corrects purple documentation, retains identity/Inter/4px step and existing card styling, and excludes other screens and pricing plans.",
+        "The source table establishes current instruction and observed code as the reusable foundation, records README/override conflicts and unknown screenshot provenance/values, and affected notes distinguish approved choices, observations and unknowns. Billing scope supplies the bounded approved departure from purple guidance.",
+        "Approved, Observed and Unknown labels distinguish source evidence from recommendations; checks are prospective and runtime accessibility/flow behavior explicitly remain \u201cNot verified.\u201d"
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A03",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "\u201cCurrent instructions outrank the 2024 screenshot and stale README\u201d; uses the approved teal action.",
+        "Removes local #6947c7 override and corrects README for billing, preserving identity, Inter, reported spacing, invoice list, Download invoice and Settings; explicitly leaves other screens outside the change.",
+        "Source table and proposed decision record identify approval source, scope, Approved/Observed/Unknown status and superseded purple treatment. The dated screenshot remains historical with unknown provenance/source values; canonical documentation uses existing code without importing decorative cards.",
+        "Clearly distinguishes reported sources and proposals, with \u201cRuntime accessibility and behavior remain Not verified\u201d and explicit statement that this is a recommendation rather than an implemented/release-ready result."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A04",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "\u201cCurrent instructions outrank the 2024 screenshot and stale README\u201d; teal is identified as approved for billing.",
+        "Removes billing purple override, corrects only conflicting README guidance, and preserves Inter, existing spacing, unrelated identity/styling and existing billing content; excludes other screens/new pricing plans.",
+        "Source/property table and affected specification record current instruction, existing code values, billing scope and superseded purple guidance. The 2024 screenshot\u2019s author/fonts/source values are Unknown and no decorative values are imported; optional export is conditional and requires only sourced values.",
+        "Separates Approved/Observed/Unknown evidence and proposed changes. F2 \u201cFail\u201d is explicitly at supplied-source review stage; navigation, download feedback and runtime accessibility are explicitly \u201cNot verified.\u201d"
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A05",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "The \u201ccurrent instruction controls this refresh,\u201d with teal approved and historical screenshot denied authority to replace identity or features.",
+        "Removes the local purple override and corrects conflicting README within billing scope while retaining identity, Inter, 4px step, existing card treatment, invoice list/download/Settings and excluding other-screen edits or pricing additions.",
+        "The table plus existing decision/specification record establish approval/code sources, billing scope, observed values and replaced purple guidance; the dated historical screenshot has Unknown provenance/fonts/values and is excluded from canonical tokens.",
+        "Uses Approved/Observed/Unknown status, supplies prospective acceptance checks and says no implementation was inspected or changed; runtime behavior/accessibility explicitly remain \u201cNot verified.\u201d"
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A06",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Current instruction/approved billing direction is Approved; README is superseded for billing and the 2024 screenshot is historical appearance evidence only.",
+        "Removes purple override and documents scoped teal direction, retaining identity/Inter/spacing, established layout/component treatment and existing invoice/download/Settings content. Other screens and pricing plans remain outside scope.",
+        "Source table explicitly says system version is unknown and screenshot author/fonts/source values are Unknown. It identifies instruction and code as canonical sources, conflicts and the billing-only approval, and directs documentation of superseded affected references without importing rounded cards.",
+        "Distinguishes Approved/Observed/Change and source consistency failure from runtime evidence; runtime behavior/accessibility are \u201cNot verified\u201d and checks remain prospective rather than a readiness claim."
+      ],
+      "total": 8,
+      "critical_errors": []
+    }
+  ]
+}
