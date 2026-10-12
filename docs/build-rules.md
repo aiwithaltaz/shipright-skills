@@ -21,6 +21,7 @@ Every visible element needs a current-phase source. No extra features, filters, 
 No disabled placeholders, hidden routes or data models for later phases.
 Do not invent brand values or data. Use labeled sample data only for a requested prototype or test.
 Use existing sourced components. Proposed choices stay separate until approved or covered by explicit delegation.
+Reuse the canonical project system first. Carry its source/version if known and approved exceptions from DESIGN.md or the actual system record. Do not rebrand or replace it without approval; preserve unrelated schema keys. A documentation change does not migrate or verify consumers.
 
 ## Flow rules (must pass)
 

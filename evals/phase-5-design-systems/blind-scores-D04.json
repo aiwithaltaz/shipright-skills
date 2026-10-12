@@ -1,0 +1,106 @@
+{
+  "scores": [
+    {
+      "anonymous_id": "A01",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Explicitly keeps \u201cLucide line icons in navigation and Simple Icons for vendor logos only, with approved product stroke/size rules\u201d and forbids library substitution or normalization.",
+        "Limits adaptation to existing rows, keeps neutral surfaces, emerald actions and Inter, excludes carousel/glass/extra integrations/purple, and specifies 120ms opacity, 0ms reduced motion, labels and distinct keyboard focus.",
+        "Calls Component Gallery \u201cdiscovery provenance\u201d rather than a dependency and explains that links to unrelated systems neither select a package nor approve those systems; does not claim usability proof.",
+        "Explains that \u201cThe explicit approved role split takes precedence over ShipRight\u2019s general single-set guidance,\u201d implements within the existing row component, and excludes the unapproved purple proposal without blocking the authorized refinement."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A02",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Retains Lucide navigation and Simple Icons exclusively for vendor logos with approved stroke/size rules; explicitly forbids replacement or cross-role use.",
+        "Preserves approved identity and the existing list, excludes incidental reference features and purple, and specifies 120ms opacity, 0ms reduced motion, labels, keyboard focus and complete touch access.",
+        "Explicitly states \u201cComponent Gallery is a comparison index, not an installable component package or usability evidence\u201d and explains that its unrelated links do not authorize mixing systems.",
+        "Identifies the approved role split as an exception to a single primary family and uses the existing component; any later external adoption is conditional, without registry installation or imposed governance."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A03",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Keeps Lucide navigation and Simple Icons vendor logos with approved stroke/size rules and states that the approved split overrides the generic one-set guideline.",
+        "Keeps identity, list structure/inventory, labels and focus, excludes purple/carousel/glass/extra integrations, and explicitly preserves 120ms opacity and 0ms reduced motion with keyboard/touch access.",
+        "Describes Component Gallery as a discovery reference linking unrelated source systems, \u201cnot a selected component library or installable package,\u201d without treating it as usability proof.",
+        "Reconciles the generic icon guideline with Orbit\u2019s explicit approved role split; directs reuse of existing components/tokens and forbids dependencies or combining source-system conventions."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A04",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Keeps both approved role-scoped families and product stroke/size rules; explicitly forbids forcing logos into Lucide or normalizing brand shapes to navigation strokes.",
+        "Preserves Orbit identity, existing list/integrations, labels and focus, excludes purple/glass/carousel/extra integrations, and retains 120ms opacity and zero duration reduced motion with keyboard/touch access.",
+        "Explicitly calls Component Gallery \u201ca comparison index, not an installable library or evidence that the interaction works for Orbit\u201d and says linked systems are not dependencies.",
+        "Uses approved Orbit roles and existing component/CSS to reconcile the reference; preserves logo-specific shapes, excludes unapproved purple, and makes future third-party source inspection conditional rather than installing or governing a new system."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A05",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Keeps Lucide navigation and Simple Icons vendor-only roles, preserves approved stroke/size rules and role exceptions, and forbids normalization of vendor logos into navigation icons.",
+        "Preserves approved identity, rows/data/labels/actions, excludes carousel/glass/extra integrations/purple, and retains 120ms opacity, zero-duration reduced motion and visibly distinct keyboard focus with touch access.",
+        "Calls Component Gallery \u201ca comparison index, not an installable component package or Orbit\u2019s canonical system,\u201d identifies linked systems as unapproved for mixing and does not use the reference as usability proof.",
+        "Grounds reconciliation in the approved Orbit system and icon-role exceptions, reuses existing hover treatment, excludes unapproved purple, and requires no package or registry adoption."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A06",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Keeps Lucide navigation and Simple Icons vendor-only roles with approved size/stroke rules and explicitly prevents either family expanding into the other\u2019s role.",
+        "Preserves identity, list/layout/integrations/labels/actions/focus, excludes purple/glass/carousel/extra integrations, and retains 120ms opacity and zero-duration reduced motion with keyboard/touch access.",
+        "Describes Component Gallery as a discovery source rather than a package or single underlying system, requires identification of any later linked source, and makes no usability-proof claim.",
+        "Explicitly states \u201cOrbit\u2019s explicit approval takes precedence over ShipRight\u2019s generic single-set guidance,\u201d uses the existing component, and excludes the unapproved glow without requiring installation or a new governance process."
+      ],
+      "total": 8,
+      "critical_errors": []
+    }
+  ]
+}

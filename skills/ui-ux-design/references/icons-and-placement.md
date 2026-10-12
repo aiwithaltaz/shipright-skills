@@ -5,6 +5,7 @@ Follow sourced components and tokens in DESIGN.md. Record unknown values; do not
 ## Icons
 
 - Use one icon set and one style (line or filled) in the product, with one stroke weight. Preserve the existing set.
+- Treat this as the coherent primary family. Preserve approved role/platform/brand exceptions rather than silently replacing them. Record each exception's role, source and authority in DESIGN.md or the existing system record; a new mixed set needs a clear reason and approval.
 - For a new design, choose one set and one style and record them in DESIGN.md as Proposed until approved. A filled variant for the selected state is allowed only when recorded.
 - Use icons for useful recognition: actions, navigation, status or familiar objects. Remove purely repetitive decoration.
 - Preserve approved navigation icons; do not strip them simply because labels also exist.

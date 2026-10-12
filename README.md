@@ -59,6 +59,14 @@ Product-design can optionally organize approved objects/content, relationships, 
 
 Product-design can optionally choose one evidence-grounded journey, task flow, known system process or service blueprint. Navigation remains with IA. Current evidence stays separate from proposed changes; missing emotions, teams, channels and business processes remain Unknown. Isolated accessibility/safety and interruption/return/recovery issues stay visible. Guidance loads only when relevant; no automatic maps, screens or visual artifacts. Results and limits are in [Phase 4 results](evals/phase-4-journeys-blueprints/results.md).
 
+## Phase 5 design-system update (no new release)
+
+Ui-ux-design now conditionally inspects/reuses the existing system, coordinates ten foundations and applies proportionate naming/documentation/contribution guidance. Existing identity and approved icon exceptions remain; no default rebrand, new token architecture, component contracts or mandatory governance. Component Gallery is a comparison/reference index, not an installable system or usability proof.
+
+The frozen comparison scored 138/144 baseline and 142/144 updated, with no scored regressions or critical errors; four cases tied. Two updated governance replies still omitted unavailable source-version information. [Full results and limitations](evals/phase-5-design-systems/results.md) retain every response/grade and historical evidence.
+
+These are [actual generated Projects screens](examples/before-after/phase-5-design-systems/ui-ux-design/compare.png) and [detail screens](examples/before-after/phase-5-design-systems/ui-ux-design/compare-detail.png), from identical frozen tasks, not authored bad/good illustrations. Both generated previews passed the exercised desktop/phone navigation, keyboard focus and overflow checks. This does not prove superior visual design or real usability.
+
 ## Context budgets
 
 The knowledge collection can grow without a global word cap. Small entry files load task-relevant references directly. Maximums: 4,500 tokens per entry, 2,000 per shared file, 4,000 per reference, and 12,000 per declared normal loading path. Contract and intake stay small and always loaded; safeguards must not be skipped to fit a budget.

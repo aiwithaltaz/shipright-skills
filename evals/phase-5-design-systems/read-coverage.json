@@ -1,0 +1,658 @@
+{
+  "self_reported_not_trace": true,
+  "records": [
+    {
+      "id": "D01",
+      "version": "baseline",
+      "trial": 1,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/anti-slop-rules.md",
+        "pack/skills/ui-ux-design/references/layout-and-hierarchy.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ui-ux-design/references/build-handoff.md"
+      ]
+    },
+    {
+      "id": "D01",
+      "version": "baseline",
+      "trial": 2,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/_shared/output-folder.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/anti-slop-rules.md",
+        "pack/skills/ui-ux-design/references/layout-and-hierarchy.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ui-ux-design/references/build-handoff.md",
+        "pack/skills/ui-ux-design/references/motion.md"
+      ]
+    },
+    {
+      "id": "D01",
+      "version": "baseline",
+      "trial": 3,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/anti-slop-rules.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/layout-and-hierarchy.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ui-ux-design/references/build-handoff.md",
+        "pack/skills/ui-ux-design/references/motion.md"
+      ]
+    },
+    {
+      "id": "D02",
+      "version": "baseline",
+      "trial": 1,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md"
+      ]
+    },
+    {
+      "id": "D02",
+      "version": "baseline",
+      "trial": 2,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/docs/DESIGN.md"
+      ]
+    },
+    {
+      "id": "D02",
+      "version": "baseline",
+      "trial": 3,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/docs/DESIGN.md"
+      ]
+    },
+    {
+      "id": "D03",
+      "version": "baseline",
+      "trial": 1,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/output-folder.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/anti-slop-rules.md",
+        "pack/skills/ui-ux-design/references/layout-and-hierarchy.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ui-ux-design/references/build-handoff.md",
+        "pack/skills/ui-ux-design/references/ui-copy.md",
+        "pack/skills/ui-ux-design/references/icons-and-placement.md"
+      ]
+    },
+    {
+      "id": "D03",
+      "version": "baseline",
+      "trial": 2,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/build-handoff.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/layout-and-hierarchy.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ui-ux-design/references/anti-slop-rules.md",
+        "pack/skills/ui-ux-design/references/icons-and-placement.md",
+        "pack/skills/ui-ux-design/references/ui-copy.md",
+        "pack/docs/DESIGN.md",
+        "pack/docs/build-rules.md",
+        "pack/skills/_shared/output-folder.md"
+      ]
+    },
+    {
+      "id": "D03",
+      "version": "baseline",
+      "trial": 3,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/_shared/output-folder.md",
+        "pack/skills/ui-ux-design/references/layout-and-hierarchy.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/anti-slop-rules.md",
+        "pack/skills/ui-ux-design/references/ui-copy.md",
+        "pack/skills/ui-ux-design/references/build-handoff.md",
+        "pack/skills/ui-ux-design/references/icons-and-placement.md"
+      ]
+    },
+    {
+      "id": "D04",
+      "version": "baseline",
+      "trial": 1,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/icons-and-placement.md",
+        "pack/skills/ui-ux-design/references/motion.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/build-handoff.md",
+        "pack/skills/_shared/output-folder.md"
+      ]
+    },
+    {
+      "id": "D04",
+      "version": "baseline",
+      "trial": 2,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/motion.md",
+        "pack/skills/ui-ux-design/references/icons-and-placement.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ui-ux-design/references/build-handoff.md",
+        "pack/skills/product-design/references/research-sources.md",
+        "pack/skills/_shared/output-folder.md"
+      ]
+    },
+    {
+      "id": "D04",
+      "version": "baseline",
+      "trial": 3,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/icons-and-placement.md",
+        "pack/skills/ui-ux-design/references/motion.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ui-ux-design/references/build-handoff.md",
+        "pack/skills/ui-ux-design/references/anti-slop-rules.md"
+      ]
+    },
+    {
+      "id": "D05",
+      "version": "baseline",
+      "trial": 1,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md"
+      ]
+    },
+    {
+      "id": "D05",
+      "version": "baseline",
+      "trial": 2,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/_shared/flow-rules.md"
+      ]
+    },
+    {
+      "id": "D05",
+      "version": "baseline",
+      "trial": 3,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md"
+      ]
+    },
+    {
+      "id": "D06",
+      "version": "baseline",
+      "trial": 1,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/docs/DESIGN.md",
+        "pack/skills/ui-ux-design/references/anti-slop-rules.md"
+      ]
+    },
+    {
+      "id": "D06",
+      "version": "baseline",
+      "trial": 2,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md"
+      ]
+    },
+    {
+      "id": "D06",
+      "version": "baseline",
+      "trial": 3,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ux-critique/references/bounded-verification.md"
+      ]
+    },
+    {
+      "id": "C01",
+      "version": "baseline",
+      "trial": 1,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/ui-copy.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md"
+      ]
+    },
+    {
+      "id": "C02",
+      "version": "baseline",
+      "trial": 1,
+      "reads": [
+        "pack/skills/product-design/SKILL.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/product-design/references/decision-checklist.md"
+      ]
+    },
+    {
+      "id": "V01",
+      "version": "baseline",
+      "trial": 1,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/_shared/output-folder.md",
+        "pack/skills/ui-ux-design/references/anti-slop-rules.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/layout-and-hierarchy.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ui-ux-design/references/build-handoff.md",
+        "pack/skills/ux-critique/references/bounded-verification.md"
+      ]
+    },
+    {
+      "id": "D01",
+      "version": "updated",
+      "trial": 1,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/anti-slop-rules.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/layout-and-hierarchy.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ui-ux-design/references/build-handoff.md"
+      ]
+    },
+    {
+      "id": "D01",
+      "version": "updated",
+      "trial": 2,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/anti-slop-rules.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/layout-and-hierarchy.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ui-ux-design/references/build-handoff.md",
+        "pack/skills/ux-critique/references/bounded-verification.md"
+      ]
+    },
+    {
+      "id": "D01",
+      "version": "updated",
+      "trial": 3,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/anti-slop-rules.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/layout-and-hierarchy.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ui-ux-design/references/build-handoff.md",
+        "pack/skills/ux-critique/references/bounded-verification.md",
+        "pack/skills/_shared/output-folder.md"
+      ]
+    },
+    {
+      "id": "D02",
+      "version": "updated",
+      "trial": 1,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/ui-ux-design/references/design-system-sources.md",
+        "pack/skills/ui-ux-design/references/design-system-governance.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md"
+      ]
+    },
+    {
+      "id": "D02",
+      "version": "updated",
+      "trial": 2,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/design-system-sources.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ux-critique/references/bounded-verification.md"
+      ]
+    },
+    {
+      "id": "D02",
+      "version": "updated",
+      "trial": 3,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/design-system-sources.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md"
+      ]
+    },
+    {
+      "id": "D03",
+      "version": "updated",
+      "trial": 1,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/design-foundations.md",
+        "pack/skills/ui-ux-design/references/anti-slop-rules.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ui-ux-design/references/layout-and-hierarchy.md",
+        "pack/skills/ui-ux-design/references/build-handoff.md",
+        "pack/skills/ui-ux-design/references/ui-copy.md"
+      ]
+    },
+    {
+      "id": "D03",
+      "version": "updated",
+      "trial": 2,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/design-foundations.md",
+        "pack/skills/ui-ux-design/references/anti-slop-rules.md",
+        "pack/skills/ui-ux-design/references/layout-and-hierarchy.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ui-ux-design/references/ui-copy.md",
+        "pack/skills/ui-ux-design/references/build-handoff.md",
+        "pack/skills/_shared/output-folder.md"
+      ]
+    },
+    {
+      "id": "D03",
+      "version": "updated",
+      "trial": 3,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/output-folder.md",
+        "pack/skills/ui-ux-design/references/design-foundations.md",
+        "pack/skills/ui-ux-design/references/anti-slop-rules.md",
+        "pack/skills/ui-ux-design/references/layout-and-hierarchy.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/build-handoff.md",
+        "pack/skills/ui-ux-design/references/ui-copy.md"
+      ]
+    },
+    {
+      "id": "D04",
+      "version": "updated",
+      "trial": 1,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/icons-and-placement.md",
+        "pack/skills/ui-ux-design/references/motion.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ui-ux-design/references/build-handoff.md",
+        "pack/skills/ui-ux-design/references/design-system-sources.md",
+        "pack/skills/_shared/output-folder.md"
+      ]
+    },
+    {
+      "id": "D04",
+      "version": "updated",
+      "trial": 2,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/icons-and-placement.md",
+        "pack/skills/ui-ux-design/references/motion.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ui-ux-design/references/build-handoff.md",
+        "pack/skills/ui-ux-design/references/design-system-sources.md"
+      ]
+    },
+    {
+      "id": "D04",
+      "version": "updated",
+      "trial": 3,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/design-system-sources.md",
+        "pack/skills/ui-ux-design/references/icons-and-placement.md",
+        "pack/skills/ui-ux-design/references/motion.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md"
+      ]
+    },
+    {
+      "id": "D05",
+      "version": "updated",
+      "trial": 1,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/ui-ux-design/references/design-system-governance.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ui-ux-design/references/design-foundations.md"
+      ]
+    },
+    {
+      "id": "D05",
+      "version": "updated",
+      "trial": 2,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/design-foundations.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md"
+      ]
+    },
+    {
+      "id": "D05",
+      "version": "updated",
+      "trial": 3,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/design-foundations.md"
+      ]
+    },
+    {
+      "id": "D06",
+      "version": "updated",
+      "trial": 1,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/design-system-governance.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md"
+      ]
+    },
+    {
+      "id": "D06",
+      "version": "updated",
+      "trial": 2,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/ui-ux-design/references/design-system-governance.md",
+        "pack/skills/ui-ux-design/references/design-system-sources.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md"
+      ]
+    },
+    {
+      "id": "D06",
+      "version": "updated",
+      "trial": 3,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/ui-ux-design/references/design-system-governance.md",
+        "pack/skills/ui-ux-design/references/references-and-design-system.md",
+        "pack/skills/ui-ux-design/references/design-system-sources.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md"
+      ]
+    },
+    {
+      "id": "C01",
+      "version": "updated",
+      "trial": 1,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/ui-copy.md"
+      ]
+    },
+    {
+      "id": "C02",
+      "version": "updated",
+      "trial": 1,
+      "reads": [
+        "pack/skills/product-design/SKILL.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/product-design/references/decision-checklist.md"
+      ]
+    },
+    {
+      "id": "V01",
+      "version": "updated",
+      "trial": 1,
+      "reads": [
+        "pack/skills/ui-ux-design/SKILL.md",
+        "pack/docs/build-rules.md",
+        "pack/skills/_shared/operating-contract.md",
+        "pack/skills/_shared/output-folder.md",
+        "pack/skills/_shared/intake.md",
+        "pack/skills/_shared/flow-rules.md",
+        "pack/skills/ui-ux-design/references/anti-slop-rules.md",
+        "pack/skills/ui-ux-design/references/state-coverage.md",
+        "pack/skills/ui-ux-design/references/layout-and-hierarchy.md",
+        "pack/skills/ui-ux-design/references/build-handoff.md",
+        "pack/skills/ux-critique/references/bounded-verification.md"
+      ]
+    }
+  ]
+}

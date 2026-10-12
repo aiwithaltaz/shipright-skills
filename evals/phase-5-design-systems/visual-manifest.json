@@ -1,0 +1,16 @@
+{
+  "examples/before-after/phase-5-design-systems/ui-ux-design/before-detail-mobile.png": "a04e26524b03566ef302835c1a2e68a4b1ca15d58c81d0d9e6cfdf73d33f2756",
+  "examples/before-after/phase-5-design-systems/ui-ux-design/before-detail-desktop.png": "a2ba894c70f5d78b2270506e0b7a1733a6753bf50b7ce9c9726141ba71e29dcd",
+  "examples/before-after/phase-5-design-systems/ui-ux-design/before.png": "e15ad78639d57e99ebb5eab31fecef55662648677605d55a9fb39a1408f1a287",
+  "examples/before-after/phase-5-design-systems/ui-ux-design/compare.png": "1f15bea42374381c1713e39ce5a2a518b430d3fce4ee004a769d1b882411191c",
+  "examples/before-after/phase-5-design-systems/ui-ux-design/after-projects-mobile.png": "1a05adf00d0f2a00a4fa7a4f3c33a6b6076dbadd09db50b8b50650040ec20fcd",
+  "examples/before-after/phase-5-design-systems/ui-ux-design/after-detail-mobile.png": "8b6f80277b654dce71684b8582b6095ef86465884850d66ab1a3330fe19bf145",
+  "examples/before-after/phase-5-design-systems/ui-ux-design/before-projects-desktop.png": "ada597bc46da9a612de400cd8d7f3ade20ca500804057aeb6df486afead54241",
+  "examples/before-after/phase-5-design-systems/ui-ux-design/before-projects-mobile.png": "e15ad78639d57e99ebb5eab31fecef55662648677605d55a9fb39a1408f1a287",
+  "examples/before-after/phase-5-design-systems/ui-ux-design/after.png": "1a05adf00d0f2a00a4fa7a4f3c33a6b6076dbadd09db50b8b50650040ec20fcd",
+  "examples/before-after/phase-5-design-systems/ui-ux-design/compare-detail.png": "0147b4f016c37f75248af71fec2412364ce2d02b401084be2354a1a1f2ebef85",
+  "examples/before-after/phase-5-design-systems/ui-ux-design/after-projects-desktop.png": "de90218915b65b102893703f29e077205fb424d5d177edc439ebf0891e3b5a6d",
+  "examples/before-after/phase-5-design-systems/ui-ux-design/after-detail-desktop.png": "fa787e958c732dcf8da8b584a885d8cff65abcd51165096ab8ed98b38d172655",
+  "tests/fixtures/phase-5-design-systems/ui-ux-design/after.html": "35c751cbab5b456e81b1c7164131c4e640f7f51146523363b4ed4f9863115fc8",
+  "tests/fixtures/phase-5-design-systems/ui-ux-design/before.html": "76965c2d74d7fba3ac039203ad20bf938a450794fe8b96a43ce7f6b372473bf0"
+}

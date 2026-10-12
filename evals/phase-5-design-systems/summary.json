@@ -1,0 +1,65 @@
+{
+  "cases": {
+    "D01": {
+      "baseline": 24,
+      "updated": 24,
+      "delta": 0
+    },
+    "D02": {
+      "baseline": 24,
+      "updated": 24,
+      "delta": 0
+    },
+    "D03": {
+      "baseline": 23,
+      "updated": 24,
+      "delta": 1
+    },
+    "D04": {
+      "baseline": 24,
+      "updated": 24,
+      "delta": 0
+    },
+    "D05": {
+      "baseline": 24,
+      "updated": 24,
+      "delta": 0
+    },
+    "D06": {
+      "baseline": 19,
+      "updated": 22,
+      "delta": 3
+    }
+  },
+  "controls": {
+    "C01": {
+      "baseline": 4,
+      "updated": 4,
+      "delta": 0
+    },
+    "C02": {
+      "baseline": 4,
+      "updated": 4,
+      "delta": 0
+    }
+  },
+  "critical_errors": [],
+  "totals": {
+    "baseline": 138,
+    "updated": 142
+  },
+  "max_per_version": 144,
+  "regressions": [],
+  "output_words": {
+    "baseline": {
+      "min": 158,
+      "max": 2511,
+      "median": 354.5
+    },
+    "updated": {
+      "min": 109,
+      "max": 2066,
+      "median": 361.0
+    }
+  }
+}

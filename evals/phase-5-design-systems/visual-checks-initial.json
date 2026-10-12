@@ -1,0 +1,260 @@
+{
+  "renderer": "Playwright Chromium",
+  "playwright_version": "1.51.0 during initial run",
+  "device_scale_factor": 1,
+  "rows": [
+    {
+      "variant": "before",
+      "viewport": [
+        1280,
+        900
+      ],
+      "browser": "134.0.6998.35",
+      "html_sha256": "76965c2d74d7fba3ac039203ad20bf938a450794fe8b96a43ce7f6b372473bf0",
+      "listing": {
+        "title": "Projects \u00b7 Cedar Desk",
+        "text": "Cedar Desk\n\nSample data\n\nProjects\nOrchard notes\nHarbor review",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "font": "Arial, sans-serif",
+        "active": "<body>\n  <div class=\"page\">\n    <header>\n      <p class=\"identity\">Cedar Desk</p>\n      <p class=\"sample\">Sample data</p>\n    </header>\n    <main>\n      <section id=\"projects\" aria-labelledby=\"projects-title\">\n        <h1 id=\"projects-title\" tabindex=\"-1\">Projects</h1>\n        <div class=\"panel\">\n          <ul>\n            <li><a class=\"project-row\" id=\"orchard-link\" href=\"#project/orchard-notes\">Orchard notes</a></li>\n            <li><a class=\"project-row\" id=\"harbor-link\" href=\"#project/harbor-review\">Harbor review</a></li>\n          </ul>\n        </div>\n      </section>\n      <section id=\"detail\" aria-labelledby=\"detail-title\" hidden=\"\">\n        <a class=\"button back\" href=\"#projects\">Back to Projects</a>\n        <h1 id=\"detail-title\" tabindex=\"-1\"></h1>\n        <div class=\"panel\">\n          <dl>\n            <dt>Summary</dt>\n            <dd id=\"summary\"></dd>\n            <dt>Owner</dt>\n            <dd id=\"owner\"></dd>\n          </dl>\n        </div>\n      </section>\n    </main>\n  </div>\n  <script>\n    (() => {\n      'use strict';\n      const projects = {\n        'orchard-notes': {name:'Orchard notes', summary:'Review the supplied observation notes.', owner:'Sam', link:'orchard-link'},\n        'harbor-review': {name:'Harbor review', summary:'Review the supplied harbor notes.', owner:'Priya', link:'harbor-link'}\n      };\n      const list = document.getElementById('projects');\n      const detail = document.getElementById('detail');\n      const title = document.getElementById('detail-title');\n      let lastProject = null;\n      function render(moveFocus) {\n        const route = window.location.hash;\n        const project = route.startsWith('#project/') ? projects[route.slice(9)] : null;\n        list.hidden = Boolean(project);\n        detail.hidden = !project;\n        if (project) {\n          lastProject = project;\n          title.textContent = project.name;\n          document.getElementById('summary').textContent = project.summary;\n          document.getElementById('owner').textContent = project.owner;\n          document.title = project.name + ' \u00b7 Cedar Desk';\n          if (moveFocus) title.focus();\n        } else {\n          document.title = 'Projects \u00b7 Cedar Desk';\n          if (moveFocus) document.getElementById(lastProject ? lastProject.link : 'projects-title').focus();\n        }\n      }\n      window.addEventListener('hashchange', () => render(true));\n      render(false);\n    })();\n  </script>\n\n\n</body>",
+        "activeVisible": true
+      },
+      "detail": {
+        "title": "Orchard notes \u00b7 Cedar Desk",
+        "text": "Cedar Desk\n\nSample data\n\nBack to Projects\nOrchard notes\nSummary\nReview the supplied observation notes.\nOwner\nSam",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "font": "Arial, sans-serif",
+        "active": "<h1 id=\"detail-title\" tabindex=\"-1\">Orchard notes</h1>",
+        "activeVisible": true
+      },
+      "returned": {
+        "title": "Projects \u00b7 Cedar Desk",
+        "text": "Cedar Desk\n\nSample data\n\nProjects\nOrchard notes\nHarbor review",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "font": "Arial, sans-serif",
+        "active": "<a class=\"project-row\" id=\"orchard-link\" href=\"#project/orchard-notes\">Orchard notes</a>",
+        "activeVisible": true
+      },
+      "keyboard_focus": {
+        "tag": "A",
+        "outlineStyle": "none",
+        "outlineWidth": "0px",
+        "boxShadow": "none"
+      },
+      "keyboard_detail": {
+        "title": "Harbor review \u00b7 Cedar Desk",
+        "text": "Cedar Desk\n\nSample data\n\nBack to Projects\nHarbor review\nSummary\nReview the supplied harbor notes.\nOwner\nPriya",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "font": "Arial, sans-serif",
+        "active": "<h1 id=\"detail-title\" tabindex=\"-1\">Harbor review</h1>",
+        "activeVisible": true
+      },
+      "platform_fonts": {
+        "fonts": []
+      },
+      "page_errors": [],
+      "checks": {
+        "list_both_projects": true,
+        "detail_content": true,
+        "return_list": true,
+        "keyboard_activation": true,
+        "no_horizontal_overflow": true,
+        "no_page_errors": true
+      }
+    },
+    {
+      "variant": "before",
+      "viewport": [
+        390,
+        844
+      ],
+      "browser": "134.0.6998.35",
+      "html_sha256": "76965c2d74d7fba3ac039203ad20bf938a450794fe8b96a43ce7f6b372473bf0",
+      "listing": {
+        "title": "Projects \u00b7 Cedar Desk",
+        "text": "Cedar Desk\n\nSample data\n\nProjects\nOrchard notes\nHarbor review",
+        "width": 390,
+        "scrollWidth": 390,
+        "font": "Arial, sans-serif",
+        "active": "<body>\n  <div class=\"page\">\n    <header>\n      <p class=\"identity\">Cedar Desk</p>\n      <p class=\"sample\">Sample data</p>\n    </header>\n    <main>\n      <section id=\"projects\" aria-labelledby=\"projects-title\">\n        <h1 id=\"projects-title\" tabindex=\"-1\">Projects</h1>\n        <div class=\"panel\">\n          <ul>\n            <li><a class=\"project-row\" id=\"orchard-link\" href=\"#project/orchard-notes\">Orchard notes</a></li>\n            <li><a class=\"project-row\" id=\"harbor-link\" href=\"#project/harbor-review\">Harbor review</a></li>\n          </ul>\n        </div>\n      </section>\n      <section id=\"detail\" aria-labelledby=\"detail-title\" hidden=\"\">\n        <a class=\"button back\" href=\"#projects\">Back to Projects</a>\n        <h1 id=\"detail-title\" tabindex=\"-1\"></h1>\n        <div class=\"panel\">\n          <dl>\n            <dt>Summary</dt>\n            <dd id=\"summary\"></dd>\n            <dt>Owner</dt>\n            <dd id=\"owner\"></dd>\n          </dl>\n        </div>\n      </section>\n    </main>\n  </div>\n  <script>\n    (() => {\n      'use strict';\n      const projects = {\n        'orchard-notes': {name:'Orchard notes', summary:'Review the supplied observation notes.', owner:'Sam', link:'orchard-link'},\n        'harbor-review': {name:'Harbor review', summary:'Review the supplied harbor notes.', owner:'Priya', link:'harbor-link'}\n      };\n      const list = document.getElementById('projects');\n      const detail = document.getElementById('detail');\n      const title = document.getElementById('detail-title');\n      let lastProject = null;\n      function render(moveFocus) {\n        const route = window.location.hash;\n        const project = route.startsWith('#project/') ? projects[route.slice(9)] : null;\n        list.hidden = Boolean(project);\n        detail.hidden = !project;\n        if (project) {\n          lastProject = project;\n          title.textContent = project.name;\n          document.getElementById('summary').textContent = project.summary;\n          document.getElementById('owner').textContent = project.owner;\n          document.title = project.name + ' \u00b7 Cedar Desk';\n          if (moveFocus) title.focus();\n        } else {\n          document.title = 'Projects \u00b7 Cedar Desk';\n          if (moveFocus) document.getElementById(lastProject ? lastProject.link : 'projects-title').focus();\n        }\n      }\n      window.addEventListener('hashchange', () => render(true));\n      render(false);\n    })();\n  </script>\n\n\n</body>",
+        "activeVisible": true
+      },
+      "detail": {
+        "title": "Orchard notes \u00b7 Cedar Desk",
+        "text": "Cedar Desk\n\nSample data\n\nBack to Projects\nOrchard notes\nSummary\nReview the supplied observation notes.\nOwner\nSam",
+        "width": 390,
+        "scrollWidth": 390,
+        "font": "Arial, sans-serif",
+        "active": "<h1 id=\"detail-title\" tabindex=\"-1\">Orchard notes</h1>",
+        "activeVisible": true
+      },
+      "returned": {
+        "title": "Projects \u00b7 Cedar Desk",
+        "text": "Cedar Desk\n\nSample data\n\nProjects\nOrchard notes\nHarbor review",
+        "width": 390,
+        "scrollWidth": 390,
+        "font": "Arial, sans-serif",
+        "active": "<a class=\"project-row\" id=\"orchard-link\" href=\"#project/orchard-notes\">Orchard notes</a>",
+        "activeVisible": true
+      },
+      "keyboard_focus": {
+        "tag": "A",
+        "outlineStyle": "none",
+        "outlineWidth": "0px",
+        "boxShadow": "none"
+      },
+      "keyboard_detail": {
+        "title": "Harbor review \u00b7 Cedar Desk",
+        "text": "Cedar Desk\n\nSample data\n\nBack to Projects\nHarbor review\nSummary\nReview the supplied harbor notes.\nOwner\nPriya",
+        "width": 390,
+        "scrollWidth": 390,
+        "font": "Arial, sans-serif",
+        "active": "<h1 id=\"detail-title\" tabindex=\"-1\">Harbor review</h1>",
+        "activeVisible": true
+      },
+      "platform_fonts": {
+        "fonts": []
+      },
+      "page_errors": [],
+      "checks": {
+        "list_both_projects": true,
+        "detail_content": true,
+        "return_list": true,
+        "keyboard_activation": true,
+        "no_horizontal_overflow": true,
+        "no_page_errors": true
+      }
+    },
+    {
+      "variant": "after",
+      "viewport": [
+        1280,
+        900
+      ],
+      "browser": "134.0.6998.35",
+      "html_sha256": "35c751cbab5b456e81b1c7164131c4e640f7f51146523363b4ed4f9863115fc8",
+      "listing": {
+        "title": "Projects | Cedar Desk",
+        "text": "Cedar Desk\n\nSample data\n\nProjects\nOrchard notes\nHarbor review",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "font": "Arial, sans-serif",
+        "active": "<body>\n  <main class=\"page\">\n    <header>\n      <p class=\"identity\">Cedar Desk</p>\n      <p class=\"sample\">Sample data</p>\n    </header>\n    <section id=\"projects\" aria-labelledby=\"projects-heading\">\n      <h1 id=\"projects-heading\" tabindex=\"-1\">Projects</h1>\n      <div class=\"panel\">\n        <ul class=\"projects\">\n          <li><a class=\"project-link\" id=\"orchard-link\" href=\"#orchard-notes\">Orchard notes</a></li>\n          <li><a class=\"project-link\" id=\"harbor-link\" href=\"#harbor-review\">Harbor review</a></li>\n        </ul>\n      </div>\n    </section>\n    <section id=\"orchard-notes\" aria-labelledby=\"orchard-heading\" hidden=\"\">\n      <a class=\"button back\" href=\"#projects\">Back to Projects</a>\n      <h1 id=\"orchard-heading\" tabindex=\"-1\">Orchard notes</h1>\n      <div class=\"panel\">\n        <dl>\n          <dt>Summary</dt><dd>Review the supplied observation notes.</dd>\n          <dt>Owner</dt><dd>Sam</dd>\n        </dl>\n      </div>\n    </section>\n    <section id=\"harbor-review\" aria-labelledby=\"harbor-heading\" hidden=\"\">\n      <a class=\"button back\" href=\"#projects\">Back to Projects</a>\n      <h1 id=\"harbor-heading\" tabindex=\"-1\">Harbor review</h1>\n      <div class=\"panel\">\n        <dl>\n          <dt>Summary</dt><dd>Review the supplied harbor notes.</dd>\n          <dt>Owner</dt><dd>Priya</dd>\n        </dl>\n      </div>\n    </section>\n  </main>\n  <script>\n    (() => {\n      const routes = ['projects', 'orchard-notes', 'harbor-review'];\n      let current = 'projects';\n      let lastProject = null;\n      function render(moveFocus) {\n        const requested = location.hash.slice(1);\n        const next = routes.includes(requested) ? requested : 'projects';\n        if (current !== 'projects') lastProject = current;\n        for (const route of routes) {\n          document.getElementById(route).hidden = route !== next;\n        }\n        const section = document.getElementById(next);\n        document.title = section.querySelector('h1').textContent + ' | Cedar Desk';\n        if (moveFocus) {\n          const returnLink = lastProject === 'orchard-notes' ? 'orchard-link' : 'harbor-link';\n          const target = next === 'projects' && lastProject\n            ? document.getElementById(returnLink)\n            : section.querySelector('h1');\n          target.focus();\n        }\n        current = next;\n      }\n      window.addEventListener('hashchange', () => render(true));\n      render(false);\n    })();\n  </script>\n\n\n</body>",
+        "activeVisible": true
+      },
+      "detail": {
+        "title": "Orchard notes | Cedar Desk",
+        "text": "Cedar Desk\n\nSample data\n\nBack to Projects\nOrchard notes\nSummary\nReview the supplied observation notes.\nOwner\nSam",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "font": "Arial, sans-serif",
+        "active": "<h1 id=\"orchard-heading\" tabindex=\"-1\">Orchard notes</h1>",
+        "activeVisible": true
+      },
+      "returned": {
+        "title": "Projects | Cedar Desk",
+        "text": "Cedar Desk\n\nSample data\n\nProjects\nOrchard notes\nHarbor review",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "font": "Arial, sans-serif",
+        "active": "<a class=\"project-link\" id=\"orchard-link\" href=\"#orchard-notes\">Orchard notes</a>",
+        "activeVisible": true
+      },
+      "keyboard_focus": {
+        "tag": "A",
+        "outlineStyle": "none",
+        "outlineWidth": "0px",
+        "boxShadow": "none"
+      },
+      "keyboard_detail": {
+        "title": "Harbor review | Cedar Desk",
+        "text": "Cedar Desk\n\nSample data\n\nBack to Projects\nHarbor review\nSummary\nReview the supplied harbor notes.\nOwner\nPriya",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "font": "Arial, sans-serif",
+        "active": "<h1 id=\"harbor-heading\" tabindex=\"-1\">Harbor review</h1>",
+        "activeVisible": true
+      },
+      "platform_fonts": {
+        "fonts": []
+      },
+      "page_errors": [],
+      "checks": {
+        "list_both_projects": true,
+        "detail_content": true,
+        "return_list": true,
+        "keyboard_activation": true,
+        "no_horizontal_overflow": true,
+        "no_page_errors": true
+      }
+    },
+    {
+      "variant": "after",
+      "viewport": [
+        390,
+        844
+      ],
+      "browser": "134.0.6998.35",
+      "html_sha256": "35c751cbab5b456e81b1c7164131c4e640f7f51146523363b4ed4f9863115fc8",
+      "listing": {
+        "title": "Projects | Cedar Desk",
+        "text": "Cedar Desk\n\nSample data\n\nProjects\nOrchard notes\nHarbor review",
+        "width": 390,
+        "scrollWidth": 390,
+        "font": "Arial, sans-serif",
+        "active": "<body>\n  <main class=\"page\">\n    <header>\n      <p class=\"identity\">Cedar Desk</p>\n      <p class=\"sample\">Sample data</p>\n    </header>\n    <section id=\"projects\" aria-labelledby=\"projects-heading\">\n      <h1 id=\"projects-heading\" tabindex=\"-1\">Projects</h1>\n      <div class=\"panel\">\n        <ul class=\"projects\">\n          <li><a class=\"project-link\" id=\"orchard-link\" href=\"#orchard-notes\">Orchard notes</a></li>\n          <li><a class=\"project-link\" id=\"harbor-link\" href=\"#harbor-review\">Harbor review</a></li>\n        </ul>\n      </div>\n    </section>\n    <section id=\"orchard-notes\" aria-labelledby=\"orchard-heading\" hidden=\"\">\n      <a class=\"button back\" href=\"#projects\">Back to Projects</a>\n      <h1 id=\"orchard-heading\" tabindex=\"-1\">Orchard notes</h1>\n      <div class=\"panel\">\n        <dl>\n          <dt>Summary</dt><dd>Review the supplied observation notes.</dd>\n          <dt>Owner</dt><dd>Sam</dd>\n        </dl>\n      </div>\n    </section>\n    <section id=\"harbor-review\" aria-labelledby=\"harbor-heading\" hidden=\"\">\n      <a class=\"button back\" href=\"#projects\">Back to Projects</a>\n      <h1 id=\"harbor-heading\" tabindex=\"-1\">Harbor review</h1>\n      <div class=\"panel\">\n        <dl>\n          <dt>Summary</dt><dd>Review the supplied harbor notes.</dd>\n          <dt>Owner</dt><dd>Priya</dd>\n        </dl>\n      </div>\n    </section>\n  </main>\n  <script>\n    (() => {\n      const routes = ['projects', 'orchard-notes', 'harbor-review'];\n      let current = 'projects';\n      let lastProject = null;\n      function render(moveFocus) {\n        const requested = location.hash.slice(1);\n        const next = routes.includes(requested) ? requested : 'projects';\n        if (current !== 'projects') lastProject = current;\n        for (const route of routes) {\n          document.getElementById(route).hidden = route !== next;\n        }\n        const section = document.getElementById(next);\n        document.title = section.querySelector('h1').textContent + ' | Cedar Desk';\n        if (moveFocus) {\n          const returnLink = lastProject === 'orchard-notes' ? 'orchard-link' : 'harbor-link';\n          const target = next === 'projects' && lastProject\n            ? document.getElementById(returnLink)\n            : section.querySelector('h1');\n          target.focus();\n        }\n        current = next;\n      }\n      window.addEventListener('hashchange', () => render(true));\n      render(false);\n    })();\n  </script>\n\n\n</body>",
+        "activeVisible": true
+      },
+      "detail": {
+        "title": "Orchard notes | Cedar Desk",
+        "text": "Cedar Desk\n\nSample data\n\nBack to Projects\nOrchard notes\nSummary\nReview the supplied observation notes.\nOwner\nSam",
+        "width": 390,
+        "scrollWidth": 390,
+        "font": "Arial, sans-serif",
+        "active": "<h1 id=\"orchard-heading\" tabindex=\"-1\">Orchard notes</h1>",
+        "activeVisible": true
+      },
+      "returned": {
+        "title": "Projects | Cedar Desk",
+        "text": "Cedar Desk\n\nSample data\n\nProjects\nOrchard notes\nHarbor review",
+        "width": 390,
+        "scrollWidth": 390,
+        "font": "Arial, sans-serif",
+        "active": "<a class=\"project-link\" id=\"orchard-link\" href=\"#orchard-notes\">Orchard notes</a>",
+        "activeVisible": true
+      },
+      "keyboard_focus": {
+        "tag": "A",
+        "outlineStyle": "none",
+        "outlineWidth": "0px",
+        "boxShadow": "none"
+      },
+      "keyboard_detail": {
+        "title": "Harbor review | Cedar Desk",
+        "text": "Cedar Desk\n\nSample data\n\nBack to Projects\nHarbor review\nSummary\nReview the supplied harbor notes.\nOwner\nPriya",
+        "width": 390,
+        "scrollWidth": 390,
+        "font": "Arial, sans-serif",
+        "active": "<h1 id=\"harbor-heading\" tabindex=\"-1\">Harbor review</h1>",
+        "activeVisible": true
+      },
+      "platform_fonts": {
+        "fonts": []
+      },
+      "page_errors": [],
+      "checks": {
+        "list_both_projects": true,
+        "detail_content": true,
+        "return_list": true,
+        "keyboard_activation": true,
+        "no_horizontal_overflow": true,
+        "no_page_errors": true
+      }
+    }
+  ],
+  "limits": "Generated synthetic previews only. Not full accessibility, usability, client installation or app verification."
+}

@@ -21,6 +21,12 @@ Preserve an existing project's schema and unrelated sections. This template does
 
 <!-- Screen jobs, mode Preserve/Establish and authority. No invented brand personality. -->
 
+## System source and reuse
+
+<!-- Only when relevant: canonical location/version, actual component sources, approved identity,
+reuse or bounded extension reason, source conflicts and authorized exception scope.
+Missing documentation alone does not authorize a replacement. Unknown facts stay Unknown. -->
+
 ## Colors
 
 <!-- Sourced semantic roles, uses and measured contrast. No placeholder hex values. -->
@@ -49,7 +55,8 @@ Preserve an existing project's schema and unrelated sections. This template does
 
 <!-- Fill from sources. Unknown stays Unknown; a new choice stays Proposed until approved. No invented values. -->
 
-- **Icon set:** <!-- one set for the product, or Unknown / Proposed -->
+- **Icon set:** <!-- coherent primary family, or Unknown / Proposed; preserve approved role/platform/brand exceptions -->
+- **Icon exceptions:** <!-- role, family, source/authority and reason; no unapproved mixing -->
 - **Style:** <!-- line or filled; filled for the selected state only if recorded here -->
 - **Stroke weight:** <!-- one weight for line icons, or Unknown -->
 - **Sizes:** <!-- tied to the adjacent text size token -->
@@ -92,6 +99,12 @@ Follow the platform convention when one applies. Record a deliberate exception u
 
 <!-- Existing/requested motion only: purpose, tokens, interruption and reduced-motion behavior. -->
 
+## Imagery and density
+
+<!-- Only relevant decisions: imagery purpose/type/source, permissions and alternatives, or no-use;
+task/content density, grouping, readable text, usable targets and supported width/input differences.
+Do not invent assets or force modes. Use observed or authorized values, not guessed brand facts. -->
+
 ## Accessibility
 
 <!-- Measurable contrast, semantics, keyboard/focus, error/status announcements, target sizes and reflow requirements.
@@ -104,6 +117,12 @@ Record what is specified versus actually verified. -->
 ## Reference properties
 
 <!-- Properties borrowed from supplied references, and incidental features/identity not adopted. -->
+
+## Maintenance
+
+<!-- Only when useful/requested: known maintainer or Unknown, canonical names, change note,
+affected uses, approved exceptions and migration/verification gaps. No mandatory council/tooling.
+Detailed token architecture is Phase 6; component contracts are Phase 7. -->
 
 ## ShipRight status
 

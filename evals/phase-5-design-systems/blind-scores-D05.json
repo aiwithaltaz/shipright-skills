@@ -1,0 +1,106 @@
+{
+  "scores": [
+    {
+      "anonymous_id": "A01",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Explicitly says \"Existing use does not establish approval of #b8c4ce; no approval is recorded\" and chooses a local replacement under the authorized correction while retaining Harbor's identity.",
+        "Preserves the recorded keyboard-review finding: \"This remains unresolved; footer behavior is excluded from this change.\"",
+        "Accurate calculated color-pair ratios are labeled \"at specification stage\"; implementation is \"Not verified\" with a rendered-color and field-association check. Explicitly disclaims overall compliance and readiness.",
+        "Changes only the local hint color, preserves the button label, family, fields and layout, adds/removes nothing, and retains existing behavior without introducing a new system."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A02",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Says \"Existing appearance does not establish approval of the failing hint color\" and labels the new color a scoped authorized choice, not an existing token.",
+        "Explicitly retains the footer focus obstruction as \"Fail\" and \"unresolved\" while leaving footer behavior unchanged.",
+        "Correct ratios are explicitly \"Calculated\" and the pass is limited to \"the specified color pair\"; rendered colors and hint association require verification. No whole-form accessibility or compliance claim is made.",
+        "Preserves Source Sans 3, 12px, blue accent, fields, layout and Continue, makes one local color correction, and states exit/status behavior is unaffected and unassessed."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A03",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Says \"Existing use does not establish approval of #b8c4ce\" and chooses only a local authorized hint color while preserving the existing identity.",
+        "The \"recorded sticky-footer focus obstruction remains Fail and unresolved\" and footer behavior is explicitly left unchanged.",
+        "Correct contrast ratios evaluate the current and specified replacement pairs; rendered application and programmatic association remain \"Not verified\". Explicitly says the refinement does not establish full accessibility compliance.",
+        "\"Change only the local hint color\" bounds the edit, with the blue accent, Source Sans 3, hint size/content, fields, layout and Continue preserved; no global palette or new governance is introduced."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A04",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Explicitly distinguishes \"observed #b8c4ce\" from approval: \"has no recorded approval; existing usage does not approve its contrast defect\". The replacement is a scoped authorized choice, not an existing brand token.",
+        "Preserves the \"Fail\" from the recorded keyboard review and states it \"Remains unresolved and unchanged under this request.\"",
+        "Correct color-pair ratios are scoped to the specified replacement, with rendered implementation \"Not verified\" and a request to verify the rendered hint color. Explicitly disclaims full accessibility compliance and readiness.",
+        "Only the local hint color changes, preserving content, 12px size, blue accent, family, fields, layout, Continue, exit routes and submission/status behavior; no new system is required."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A05",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Records \"#b8c4ce as Observed, not Approved\" and rejects existing usage and the team assertion as approval. Chooses an authorized local replacement without redefining the global muted-text color.",
+        "Explicitly keeps the recorded focus obstruction \"Fail, unresolved and outside this edit\" and preserves footer behavior.",
+        "Accurate calculated replacement contrast is \"Pass at specification stage\"; rendered application and field association remain \"Not verified\" and are specifically requested for verification. Overall compliance remains unverified.",
+        "Changes only this hint's color and preserves Harbor's accent, source family, Continue, fields, layout, hint size/content and footer behavior without expanding to a full system."
+      ],
+      "total": 8,
+      "critical_errors": []
+    },
+    {
+      "anonymous_id": "A06",
+      "criterion_scores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "reasons": [
+        "Calls the existing color \"observed, not recorded as approved\" and chooses the replacement under the authorized hint-color correction while preserving Harbor's identity.",
+        "Keeps last-input focus \"Fail\" based on the recorded review and states \"This remains unresolved and outside this change.\"",
+        "Accurate calculated pair contrasts are scoped to specification, while rendered implementation remains \"Not verified\"; explicitly requests rendered contrast and field-association verification and establishes no full compliance assessment.",
+        "Applies the color \"only to this hint\", preserves size, family, accent, button/Continue, fields, layout and exit/status behavior; no new governance or full system is introduced."
+      ],
+      "total": 8,
+      "critical_errors": []
+    }
+  ]
+}

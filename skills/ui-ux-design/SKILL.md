@@ -37,6 +37,13 @@ Continue supported work; do not claim a full ShipRight check without its require
 No mandatory numeric design dials. Describe density, motion and layout in words when they matter.
 Use a [personal-taste profile](../../personal-taste/README.md) only when selected by the user or project.
 
+## Optional system work
+
+Inspect and reuse the existing app system first. Missing documentation alone does not authorize replacement.
+Load system-selection guidance only for an affected reuse/extension choice or supplied reference; foundations only for requested foundations or a relevant gap; governance only for naming/contribution/maintenance.
+Keep the work behind the scenes and show concise decisions, gaps and risks. A small correction needs no full system exercise.
+Do not rebrand or replace the system without approval. Detailed token architecture is Phase 6; component contracts are Phase 7.
+
 ## Craft references
 
 Load only those needed for this task:
@@ -47,7 +54,10 @@ Load only those needed for this task:
 | Icons, profile home, selected rows, nav and action placement | [icons-and-placement.md](references/icons-and-placement.md) |
 | Operator desk, pending work and task-focused status | [operator-workspaces.md](references/operator-workspaces.md) |
 | Empty, loading, errors, pending work and difficult content | [state-coverage.md](references/state-coverage.md) |
-| Preserve/Establish, tokens and supplied references | [references-and-design-system.md](references/references-and-design-system.md) |
+| Affected system reuse/selection or supplied references | [references-and-design-system.md](references/references-and-design-system.md) |
+| Requested foundations or a task-relevant foundation gap | [design-foundations.md](references/design-foundations.md) |
+| Requested system naming, contribution or maintenance | [design-system-governance.md](references/design-system-governance.md) |
+| System-source provenance or decision-relevant comparison | [design-system-sources.md](references/design-system-sources.md) |
 | Noise, invented elements and visual heuristics | [anti-slop-rules.md](references/anti-slop-rules.md) |
 | Concrete review prompts for competing actions or unsupported widgets | [slop-tells.md](../ux-critique/references/slop-tells.md) |
 | Severity of a concrete review finding | [severity-rubric.md](../ux-critique/references/severity-rubric.md) |

@@ -1,0 +1,21 @@
+[
+  {
+    "attempt": 1,
+    "script_sha256": "b790184b6c461e67809690149de29fc968a030a59ff9f40d60b7fff7589cb5ef",
+    "exit_code": 1,
+    "error": "CSS.getPlatformFontsForNode: CSS agent was not enabled",
+    "disposition": "Enable DOM/CSS debugging domains in evaluation capture script; generated HTML unchanged."
+  },
+  {
+    "attempt": 2,
+    "exit_code": 0,
+    "result": "Navigation/overflow capture succeeded; initial focus probe used programmatic focus after mouse navigation and body font query yielded no fonts. Preserved in visual-checks-initial.json.",
+    "disposition": "Improve capture method with actual Tab navigation and h1 platform-font query. No generated HTML changes."
+  },
+  {
+    "attempt": 3,
+    "exit_code": 0,
+    "result": "All preview checks passed using actual Tab/Enter; h1 platform font resolved to DejaVu Sans (Arial CSS fallback).",
+    "script_sha256": "730ba205c9294514c4f09898c0f89e7898ea18c78a20050f31cad763bef11f44"
+  }
+]

@@ -363,3 +363,12 @@ Added five optional product-design references for sourced organization, findabil
 ## Phase 4 journeys and service blueprints - 2026-10-12 (no new release)
 
 Added five optional references inside product-design for selecting one map, grounded journeys, task/system distinctions, service delivery layers and provenance. Current evidence remains separate from proposals; missing emotions, channels, teams and processes stay Unknown. Preserves isolated accessibility/safety and interruption/return/recovery issues. Small template/routing updates, bounded paths and new regression/mutation protections. All prior evidence and Phase 3 grading correction remain unchanged. No visual artifacts, merge or Phase 5. [Phase 4 results](evals/phase-4-journeys-blueprints/results.md) record frozen comparisons and limits.
+
+
+## Phase 5 design systems - 2026-10-12 (no new release)
+
+Added optional system selection, ten foundations, lightweight governance and original source summaries in ui-ux-design. Reuse the existing app first; preserve identity, accessibility, motion and approved icon exceptions. Component Gallery is a comparison/reference index. New token architecture and component contracts remain Phases 6 and 7.
+
+All 158 tests, 146 mutation checks and context/source checks passed before trials. Frozen comparison: baseline 138/144, updated 142/144; four cases tied, no scored regressions or critical errors. Both controls passed. Two updated governance replies still omitted unavailable source-version information. Preserve [full evidence and limitations](evals/phase-5-design-systems/results.md).
+
+[Actual generated Projects comparison](examples/before-after/phase-5-design-systems/ui-ux-design/compare.png) and [detail comparison](examples/before-after/phase-5-design-systems/ui-ux-design/compare-detail.png) retain unchanged generated HTML and browser captures. Both previews passed the exercised navigation, keyboard-focus and overflow checks at desktop/phone widths. No superior visual quality or real usability claim. All 333 prior records remain unchanged, including historical failures. Draft review only; no merge or Phase 6.
