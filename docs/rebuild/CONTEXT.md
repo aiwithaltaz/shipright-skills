@@ -73,6 +73,7 @@ The frozen baseline (0.6.2 + 5.1) is stronger than the plan assumed. Do not buil
 | D16 | Trials keep the frozen run prompt, including "Do not run the page through any checker". The v1 look-and-fix loop is therefore not exercised in trials. | Changing the harness after seeing baseline output would break comparability. This is conservative against v1. | Made, Phase 3 |
 | D17 | Starter systems: four (calm dense, mobile native, editorial marketing, immersive dark) with measured contrast. Accent and type adapt to the subject. | D5 approved real numbers; four covers the four product types. | Made, Phase 3 |
 | D18 | Golden examples use different subjects from the four trial cases (invoices, dentist, note app, desk lamp). | Avoid teaching to the test. | Made, Phase 3 |
+| D19 | check-ui tiny-target rule follows WCAG 2.5.8: a checkbox or radio counts its label as target area, and an undersized target passes when a 24px circle on its center touches no other target. Both arms are re-measured with the fixed checker; raw outputs stay unchanged. | The first version flagged spaced table-row links and labeled radios that WCAG allows. Found while checking Phase 3 runs. | Made, Phase 3 trial |
 | D7 | Provenance and theory move to a SOURCES.md that skills never load. | Credit stays; tokens drop. | Made |
 
 ## Sources reviewed

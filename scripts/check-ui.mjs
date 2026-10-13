@@ -90,7 +90,25 @@ function measure(vp) {
   });
   const interactive = all.filter(el => el.matches('a[href],button,input:not([type=hidden]),select,textarea,[role=button],[role=link],[tabindex]:not([tabindex="-1"])'));
   const inlineLink = el => el.tagName === 'A' && el.closest('p,li') && el.closest('p,li').textContent.trim().length > el.textContent.trim().length + 20;
-  const small = interactive.filter(el => !inlineLink(el)).map(el => { const r = el.getBoundingClientRect(); return { el, w: r.width, h: r.height }; });
+  // A checkbox or radio also counts its associated label as target area.
+  const box = el => {
+    const r = el.getBoundingClientRect(); let x1 = r.left, y1 = r.top, x2 = r.right, y2 = r.bottom;
+    if (el.matches('input[type=checkbox],input[type=radio]') && el.labels) for (const l of el.labels) {
+      const q = l.getBoundingClientRect(); if (q.width && q.height) { x1 = Math.min(x1, q.left); y1 = Math.min(y1, q.top); x2 = Math.max(x2, q.right); y2 = Math.max(y2, q.bottom); }
+    }
+    return { x1, y1, x2, y2, w: x2 - x1, h: y2 - y1 };
+  };
+  const targets = interactive.filter(el => !inlineLink(el)).map(el => ({ el, ...box(el) }));
+  // WCAG 2.5.8 spacing exception: an undersized target passes if a 24px circle on its center touches no other target.
+  const spaced = t => {
+    const cx = (t.x1 + t.x2) / 2, cy = (t.y1 + t.y2) / 2;
+    return targets.every(o => {
+      if (o === t || o.el.contains(t.el) || t.el.contains(o.el) || (o.el.labels && [...o.el.labels].includes(t.el))) return true;
+      const dx = Math.max(o.x1 - cx, 0, cx - o.x2), dy = Math.max(o.y1 - cy, 0, cy - o.y2);
+      return Math.hypot(dx, dy) >= 12;
+    });
+  };
+  const small = targets.map(t => ({ ...t, ok24: (t.w >= 24 && t.h >= 24) || spaced(t) }));
   const pageBg = background(document.body) || { r: 255, g: 255, b: 255 };
   const filled = interactive.filter(el => {
     if (!el.matches('button,a,[role=button],input[type=submit]')) return false;
@@ -118,7 +136,7 @@ function measure(vp) {
     families: [...families.entries()].sort((a, b) => b[1] - a[1]),
     contrast, smallText, eyebrows,
     gradients: gradients.length, gradientText: gradientText.length, glows: glows.length,
-    smallTargets: small.filter(t => t.w < 24 || t.h < 24).length,
+    smallTargets: small.filter(t => !t.ok24).length,
     touchTargets: small.filter(t => t.w < 44 || t.h < 44).length,
     filledPairs, unlabeled, noAlt, namelessButtons, canvases,
     emDashes: (text.match(/\u2014/g) || []).length,
