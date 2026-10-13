@@ -15,6 +15,7 @@ It does not guarantee perfect designs or replace user testing.
 
 | Task | Entry file |
 | --- | --- |
+| Turn an idea into a build pack: PRD, stack, design system, screens and ticket prompts | [build-pack](skills/build-pack/SKILL.md) |
 | Frame an idea or define a flow | [product-design](skills/product-design/SKILL.md) |
 | Design a screen or apply exact visual feedback | [ui-ux-design](skills/ui-ux-design/SKILL.md) |
 | Review an existing artifact | [ux-critique](skills/ux-critique/SKILL.md) |
