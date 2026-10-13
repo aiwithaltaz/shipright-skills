@@ -1,6 +1,6 @@
 {
  "target": "evals/v1/runs/baseline/3d-product/index.html",
- "checkedAt": "2026-10-13T21:38:37.912Z",
+ "checkedAt": "2026-10-13T22:25:35.322Z",
  "viewports": {
   "desktop": {
    "results": [
@@ -43,6 +43,7 @@
       "labeled": true
      }
     ],
+    "hiddenText": 0,
     "emDashes": 0,
     "animated": true,
     "reducedMotionRule": true,
@@ -98,6 +99,7 @@
       "labeled": true
      }
     ],
+    "hiddenText": 0,
     "emDashes": 0,
     "animated": true,
     "reducedMotionRule": true,

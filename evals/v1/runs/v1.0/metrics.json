@@ -14,9 +14,10 @@
    "build-pack/docs/shipright/build-rules.md"
   ],
   "html_bytes": 39977,
-  "check_ui_fail": 1,
+  "check_ui_fail": 3,
   "check_ui_warn": 0,
   "check_ui_findings": [
+   "FAIL hidden-content",
    "FAIL overflow"
   ],
   "sha256": {
@@ -48,9 +49,10 @@
    "build-pack/docs/shipright/build-rules.md"
   ],
   "html_bytes": 39897,
-  "check_ui_fail": 0,
+  "check_ui_fail": 2,
   "check_ui_warn": 1,
   "check_ui_findings": [
+   "FAIL hidden-content",
    "WARN touch-targets"
   ],
   "sha256": {

@@ -1,9 +1,15 @@
 {
- "target": "/tmp/claude-0/-home-user-shipright-skills/c4321855-3d70-5918-a5cd-3732e18079ee/scratchpad/trial/runs/v1.0/marketing-site/index.html",
- "checkedAt": "2026-10-13T22:14:32.552Z",
+ "target": "evals/v1/runs/v1.0/marketing-site/index.html",
+ "checkedAt": "2026-10-13T22:26:40.432Z",
  "viewports": {
   "desktop": {
-   "results": [],
+   "results": [
+    {
+     "id": "hidden-content",
+     "level": "FAIL",
+     "message": "2 text elements are laid out but invisible at load (content hidden until a script or scroll runs)"
+    }
+   ],
    "metrics": {
     "overflowX": 0,
     "pageHeight": 3309,
@@ -31,6 +37,7 @@
     "noAlt": 0,
     "namelessButtons": 0,
     "canvases": [],
+    "hiddenText": 2,
     "emDashes": 0,
     "animated": true,
     "reducedMotionRule": true,
@@ -46,6 +53,11 @@
      "id": "touch-targets",
      "level": "WARN",
      "message": "6 controls smaller than 44x44px on a touch screen"
+    },
+    {
+     "id": "hidden-content",
+     "level": "FAIL",
+     "message": "2 text elements are laid out but invisible at load (content hidden until a script or scroll runs)"
     }
    ],
    "metrics": {
@@ -75,6 +87,7 @@
     "noAlt": 0,
     "namelessButtons": 0,
     "canvases": [],
+    "hiddenText": 2,
     "emDashes": 0,
     "animated": true,
     "reducedMotionRule": true,

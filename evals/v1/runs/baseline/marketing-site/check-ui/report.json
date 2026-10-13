@@ -1,6 +1,6 @@
 {
  "target": "evals/v1/runs/baseline/marketing-site/index.html",
- "checkedAt": "2026-10-13T21:38:32.267Z",
+ "checkedAt": "2026-10-13T22:25:29.559Z",
  "viewports": {
   "desktop": {
    "results": [],
@@ -31,6 +31,7 @@
     "noAlt": 0,
     "namelessButtons": 0,
     "canvases": [],
+    "hiddenText": 0,
     "emDashes": 0,
     "animated": false,
     "reducedMotionRule": true,
@@ -75,6 +76,7 @@
     "noAlt": 0,
     "namelessButtons": 0,
     "canvases": [],
+    "hiddenText": 0,
     "emDashes": 0,
     "animated": false,
     "reducedMotionRule": true,

@@ -1,9 +1,15 @@
 {
- "target": "/tmp/claude-0/-home-user-shipright-skills/c4321855-3d70-5918-a5cd-3732e18079ee/scratchpad/trial/runs/v1.0/3d-product/index.html",
- "checkedAt": "2026-10-13T22:18:58.535Z",
+ "target": "evals/v1/runs/v1.0/3d-product/index.html",
+ "checkedAt": "2026-10-13T22:26:46.808Z",
  "viewports": {
   "desktop": {
-   "results": [],
+   "results": [
+    {
+     "id": "hidden-content",
+     "level": "FAIL",
+     "message": "24 text elements are laid out but invisible at load (content hidden until a script or scroll runs)"
+    }
+   ],
    "metrics": {
     "overflowX": 0,
     "pageHeight": 2194,
@@ -33,6 +39,7 @@
       "labeled": true
      }
     ],
+    "hiddenText": 24,
     "emDashes": 0,
     "animated": true,
     "reducedMotionRule": true,
@@ -48,6 +55,11 @@
      "id": "overflow",
      "level": "FAIL",
      "message": "page scrolls sideways by 3px"
+    },
+    {
+     "id": "hidden-content",
+     "level": "FAIL",
+     "message": "24 text elements are laid out but invisible at load (content hidden until a script or scroll runs)"
     }
    ],
    "metrics": {
@@ -79,6 +91,7 @@
       "labeled": true
      }
     ],
+    "hiddenText": 24,
     "emDashes": 0,
     "animated": true,
     "reducedMotionRule": true,

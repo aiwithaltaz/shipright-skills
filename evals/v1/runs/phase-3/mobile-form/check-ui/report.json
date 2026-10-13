@@ -1,6 +1,6 @@
 {
- "target": "/tmp/claude-0/-home-user-shipright-skills/c4321855-3d70-5918-a5cd-3732e18079ee/scratchpad/trial/runs/phase-3/mobile-form/index.html",
- "checkedAt": "2026-10-13T21:38:18.172Z",
+ "target": "evals/v1/runs/phase-3/mobile-form/index.html",
+ "checkedAt": "2026-10-13T22:26:04.451Z",
  "viewports": {
   "desktop": {
    "results": [],
@@ -27,6 +27,7 @@
     "noAlt": 0,
     "namelessButtons": 0,
     "canvases": [],
+    "hiddenText": 0,
     "emDashes": 0,
     "animated": true,
     "reducedMotionRule": true,
@@ -61,6 +62,7 @@
     "noAlt": 0,
     "namelessButtons": 0,
     "canvases": [],
+    "hiddenText": 0,
     "emDashes": 0,
     "animated": true,
     "reducedMotionRule": true,
