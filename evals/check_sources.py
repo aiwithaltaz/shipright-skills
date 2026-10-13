@@ -30,11 +30,12 @@ TEMPLATES = ['01-prd.md', '02-technical-architecture.md', '03-security-and-acces
 REFS = {
     'product-design': ['framing.md', 'research.md', 'structure.md', 'journeys.md', 'flows-and-states.md'],
     'ui-ux-design': ['anti-slop-rules.md', 'components.md', 'design-system.md', 'icons-and-placement.md',
-                     'layout-and-hierarchy.md', 'motion.md', 'operator-workspaces.md', 'state-coverage.md', 'ui-copy.md'],
+                     'layout-and-hierarchy.md', 'marketing-pages.md', 'mobile.md', 'motion.md', 'operator-workspaces.md',
+                     'starter-systems.md', 'state-coverage.md', 'ui-copy.md'],
     'ux-critique': ['bounded-verification.md', 'existing-app.md', 'plan-review.md',
                     'requirements-and-feedback.md', 'severity-rubric.md', 'slop-tells.md'],
     'ship-check': ['launch-items.md'],
-    'build-pack': ['pack-contract.md', 'stack-choices.md', 'ticket-prompts.md'],
+    'build-pack': ['golden-examples.md', 'pack-contract.md', 'stack-choices.md', 'ticket-prompts.md'],
 }
 # v1.0 merged many references. Protected phrases keep their wording and move with their rule.
 _PD, _UI = 'skills/product-design/references/', 'skills/ui-ux-design/references/'

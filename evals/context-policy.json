@@ -136,14 +136,23 @@
         "skills/_shared/flow-rules.md"
       ],
       "conditional_references": {
+        "skills/ui-ux-design/references/starter-systems.md": {
+          "when": "2. Design system first, before any screen or coding handoff. Record a small system: type scale, spacing scale, color roles, radius, elevation, motion, and a short component list. The user's own system or Figma file always wins. Existing app: extract the current system, mark it Observed, and reuse it. Do not replace it. New app: start from the matching starter in [starter-systems.md](references/starter-systems.md), adapt the accent and type to the subject, propose a small system, mark it Proposed, and get the user's OK before screens. Numbers are required for handoff, but they must come from the observed or approved system, never invented. A starter shown to the user and accepted, or delegated with \"you decide\", counts as approved."
+        },
         "skills/ui-ux-design/references/anti-slop-rules.md": {
           "when": "5. Trace every visible element to the current phase. Read \"Default screens to leave out\" in [anti-slop-rules.md](references/anti-slop-rules.md) before adding a region. Put later ideas in notes, not UI."
         },
-        "skills/ui-ux-design/references/design-system.md": {
-          "when": "For a system choice, foundations, tokens, a supplied reference or naming and maintenance, read [design-system.md](references/design-system.md)."
+        "skills/ui-ux-design/references/mobile.md": {
+          "when": "6. State the design direction in one useful sentence. Do not invent brand personality. For a phone screen read [mobile.md](references/mobile.md); for a marketing or launch page read [marketing-pages.md](references/marketing-pages.md)."
+        },
+        "skills/ui-ux-design/references/marketing-pages.md": {
+          "when": "6. State the design direction in one useful sentence. Do not invent brand personality. For a phone screen read [mobile.md](references/mobile.md); for a marketing or launch page read [marketing-pages.md](references/marketing-pages.md)."
         },
         "skills/ui-ux-design/references/layout-and-hierarchy.md": {
-          "when": "| Sections, reading order, grid, mobile priorities | [layout-and-hierarchy.md](references/layout-and-hierarchy.md) |"
+          "when": "8. Check F1-F3, accessibility and exact feedback. Remove unsupported additions. If you render HTML, run the look-and-fix loop in [layout-and-hierarchy.md](references/layout-and-hierarchy.md): check-ui, then look at both screenshots, up to three rounds."
+        },
+        "skills/ui-ux-design/references/design-system.md": {
+          "when": "For a system choice, foundations, tokens, a supplied reference or naming and maintenance, read [design-system.md](references/design-system.md)."
         },
         "skills/ui-ux-design/references/icons-and-placement.md": {
           "when": "| Icons, profile home, selected rows, nav and action placement | [icons-and-placement.md](references/icons-and-placement.md) |"
@@ -189,13 +198,6 @@
           ]
         },
         {
-          "task": "New design system",
-          "references": [
-            "skills/ui-ux-design/references/design-system.md",
-            "skills/ui-ux-design/references/components.md"
-          ]
-        },
-        {
           "task": "Exact correction",
           "references": [
             "skills/ui-ux-design/references/layout-and-hierarchy.md",
@@ -213,6 +215,32 @@
         {
           "task": "Motion",
           "references": [
+            "skills/ui-ux-design/references/motion.md"
+          ]
+        },
+        {
+          "task": "New design system",
+          "references": [
+            "skills/ui-ux-design/references/design-system.md",
+            "skills/ui-ux-design/references/starter-systems.md",
+            "skills/ui-ux-design/references/components.md"
+          ]
+        },
+        {
+          "task": "Phone screen",
+          "references": [
+            "skills/ui-ux-design/references/mobile.md",
+            "skills/ui-ux-design/references/layout-and-hierarchy.md",
+            "skills/ui-ux-design/references/state-coverage.md",
+            "skills/ui-ux-design/references/components.md"
+          ]
+        },
+        {
+          "task": "Marketing page",
+          "references": [
+            "skills/ui-ux-design/references/marketing-pages.md",
+            "skills/ui-ux-design/references/layout-and-hierarchy.md",
+            "skills/ui-ux-design/references/anti-slop-rules.md",
             "skills/ui-ux-design/references/motion.md"
           ]
         }
@@ -290,16 +318,31 @@
           "when": "4. **Stack.** Read [stack-choices.md](references/stack-choices.md). Fit the user's coding tool. Give a reason and a switch point for each choice."
         },
         "skills/ui-ux-design/references/design-system.md": {
-          "when": "5. **Design system.** Read [design-system.md](../ui-ux-design/references/design-system.md). The user's system or Figma wins. A new app gets a small Proposed system, shown first for a quick OK; ticket T1 builds it as a preview page before any screen."
+          "when": "5. **Design system.** Read [design-system.md](../ui-ux-design/references/design-system.md). The user's system or Figma wins. A new app starts from the matching starter in [starter-systems.md](../ui-ux-design/references/starter-systems.md), adapted to the subject, marked Proposed and shown first for a quick OK; ticket T1 builds it as a preview page before any screen."
+        },
+        "skills/ui-ux-design/references/starter-systems.md": {
+          "when": "5. **Design system.** Read [design-system.md](../ui-ux-design/references/design-system.md). The user's system or Figma wins. A new app starts from the matching starter in [starter-systems.md](../ui-ux-design/references/starter-systems.md), adapted to the subject, marked Proposed and shown first for a quick OK; ticket T1 builds it as a preview page before any screen."
         },
         "skills/ui-ux-design/references/state-coverage.md": {
-          "when": "6. **Screens.** Follow the [ui-ux-design](../ui-ux-design/SKILL.md) work sequence for each screen: job, top-to-bottom layout, components, states, responsive behavior, accessibility, real copy. For accessibility and state criteria, read [state-coverage.md](../ui-ux-design/references/state-coverage.md)."
+          "when": "6. **Screens.** Follow the [ui-ux-design](../ui-ux-design/SKILL.md) work sequence for each screen: job, top-to-bottom layout, components, states, responsive behavior, accessibility, real copy. For accessibility and state criteria, read [state-coverage.md](../ui-ux-design/references/state-coverage.md). For phone screens, read [mobile.md](../ui-ux-design/references/mobile.md). For marketing pages, read [marketing-pages.md](../ui-ux-design/references/marketing-pages.md). For motion or 3D, read [motion.md](../ui-ux-design/references/motion.md)."
+        },
+        "skills/ui-ux-design/references/mobile.md": {
+          "when": "6. **Screens.** Follow the [ui-ux-design](../ui-ux-design/SKILL.md) work sequence for each screen: job, top-to-bottom layout, components, states, responsive behavior, accessibility, real copy. For accessibility and state criteria, read [state-coverage.md](../ui-ux-design/references/state-coverage.md). For phone screens, read [mobile.md](../ui-ux-design/references/mobile.md). For marketing pages, read [marketing-pages.md](../ui-ux-design/references/marketing-pages.md). For motion or 3D, read [motion.md](../ui-ux-design/references/motion.md)."
+        },
+        "skills/ui-ux-design/references/marketing-pages.md": {
+          "when": "6. **Screens.** Follow the [ui-ux-design](../ui-ux-design/SKILL.md) work sequence for each screen: job, top-to-bottom layout, components, states, responsive behavior, accessibility, real copy. For accessibility and state criteria, read [state-coverage.md](../ui-ux-design/references/state-coverage.md). For phone screens, read [mobile.md](../ui-ux-design/references/mobile.md). For marketing pages, read [marketing-pages.md](../ui-ux-design/references/marketing-pages.md). For motion or 3D, read [motion.md](../ui-ux-design/references/motion.md)."
+        },
+        "skills/ui-ux-design/references/motion.md": {
+          "when": "6. **Screens.** Follow the [ui-ux-design](../ui-ux-design/SKILL.md) work sequence for each screen: job, top-to-bottom layout, components, states, responsive behavior, accessibility, real copy. For accessibility and state criteria, read [state-coverage.md](../ui-ux-design/references/state-coverage.md). For phone screens, read [mobile.md](../ui-ux-design/references/mobile.md). For marketing pages, read [marketing-pages.md](../ui-ux-design/references/marketing-pages.md). For motion or 3D, read [motion.md](../ui-ux-design/references/motion.md)."
         },
         "skills/build-pack/references/ticket-prompts.md": {
-          "when": "7. **Tickets.** Read [ticket-prompts.md](references/ticket-prompts.md). Small, ordered, paste-ready prompts. Open choices get a Proposed default and a named place to change it, not a Blocked label."
+          "when": "7. **Tickets.** Read [ticket-prompts.md](references/ticket-prompts.md). For the expected level of detail, read the matching example in [golden-examples.md](references/golden-examples.md). Small, ordered, paste-ready prompts. Open choices get a Proposed default and a named place to change it, not a Blocked label."
+        },
+        "skills/build-pack/references/golden-examples.md": {
+          "when": "7. **Tickets.** Read [ticket-prompts.md](references/ticket-prompts.md). For the expected level of detail, read the matching example in [golden-examples.md](references/golden-examples.md). Small, ordered, paste-ready prompts. Open choices get a Proposed default and a named place to change it, not a Blocked label."
         },
         "skills/build-pack/references/pack-contract.md": {
-          "when": "8. **Check.** Read [pack-contract.md](references/pack-contract.md) for files, budgets and reconciliation. Run the Pack check below. If you produced an HTML preview and can run Node, run `node scripts/check-ui.mjs <page>` from the pack root and look at the screenshots before you reply."
+          "when": "8. **Check.** Read [pack-contract.md](references/pack-contract.md) for files, budgets and reconciliation. Run the Pack check below. If you produced an HTML preview and can run Node, run `node <pack>/scripts/check-ui.mjs <page> --root <site folder>`, fix every FAIL, and look at both screenshots before you reply."
         },
         "skills/ux-critique/references/bounded-verification.md": {
           "when": "When the user returns with built work, check it with [bounded-verification.md](../ux-critique/references/bounded-verification.md)."
@@ -319,6 +362,7 @@
           "task": "Stage 2: design system and screens",
           "references": [
             "skills/ui-ux-design/references/design-system.md",
+            "skills/ui-ux-design/references/starter-systems.md",
             "skills/ui-ux-design/references/state-coverage.md"
           ]
         },
@@ -326,7 +370,26 @@
           "task": "Stage 3: tickets and pack check",
           "references": [
             "skills/build-pack/references/ticket-prompts.md",
-            "skills/build-pack/references/pack-contract.md"
+            "skills/build-pack/references/pack-contract.md",
+            "skills/build-pack/references/golden-examples.md"
+          ]
+        },
+        {
+          "task": "Stage 2 for a phone app",
+          "references": [
+            "skills/ui-ux-design/references/design-system.md",
+            "skills/ui-ux-design/references/starter-systems.md",
+            "skills/ui-ux-design/references/mobile.md",
+            "skills/ui-ux-design/references/state-coverage.md"
+          ]
+        },
+        {
+          "task": "Stage 2 for a marketing or 3D site",
+          "references": [
+            "skills/ui-ux-design/references/design-system.md",
+            "skills/ui-ux-design/references/starter-systems.md",
+            "skills/ui-ux-design/references/marketing-pages.md",
+            "skills/ui-ux-design/references/motion.md"
           ]
         }
       ]

@@ -70,6 +70,9 @@ The frozen baseline (0.6.2 + 5.1) is stronger than the plan assumed. Do not buil
 | D13 | build-pack loads in three bounded stages (frame and stack; system and screens; tickets and check). | Keeps each stage well under 12,000 tokens as Phase 3 adds starter systems. | Made, Phase 2 |
 | D14 | Pack contract: 6 core files, about 5,000 words for a 4 to 6 screen product (baseline 8,000 to 10,400). Tickets are paste-ready prompts; T1 builds tokens and a /design preview and stops for a quick OK of the look (meets D5). | Baseline packs were complete but long and tickets were not paste-ready. | Made, Phase 2 |
 | D15 | Version lines stay 0.6.2 until the Phase 6 release bump. | One bump, one place. | Made |
+| D16 | Trials keep the frozen run prompt, including "Do not run the page through any checker". The v1 look-and-fix loop is therefore not exercised in trials. | Changing the harness after seeing baseline output would break comparability. This is conservative against v1. | Made, Phase 3 |
+| D17 | Starter systems: four (calm dense, mobile native, editorial marketing, immersive dark) with measured contrast. Accent and type adapt to the subject. | D5 approved real numbers; four covers the four product types. | Made, Phase 3 |
+| D18 | Golden examples use different subjects from the four trial cases (invoices, dentist, note app, desk lamp). | Avoid teaching to the test. | Made, Phase 3 |
 | D7 | Provenance and theory move to a SOURCES.md that skills never load. | Credit stays; tokens drop. | Made |
 
 ## Sources reviewed

@@ -1,6 +1,6 @@
 ---
 name: ui-ux-design
-description: "Use this when designing or refining an in-scope screen, layout, component, state, design system or build handoff. Also use for exact visual feedback on an existing app. Preserve approved identity and current-phase scope. Part of ShipRight."
+description: "Use this when designing or refining a screen, layout, component, state, design system or build handoff for a web app, mobile app or marketing page. Also use for exact visual feedback on an existing app. Preserve approved identity and current-phase scope. Part of ShipRight."
 ---
 
 # UI/UX design
@@ -26,16 +26,16 @@ Continue supported work; do not claim a full ShipRight check without its require
 ## Work sequence
 
 1. Identify the screen job, current phase and exact requested changes. Read the existing screen and component sources.
-2. Design system first, before any screen or coding handoff. Record a small system: type scale, spacing scale, color roles, radius, elevation, and a short component list. Existing app: extract the current system, mark it Observed, and reuse it. Do not replace it. New app: propose a small system, mark it Proposed, and get the user's OK before screens. Numbers are required for handoff, but they must come from the observed or approved system, never invented.
+2. Design system first, before any screen or coding handoff. Record a small system: type scale, spacing scale, color roles, radius, elevation, motion, and a short component list. The user's own system or Figma file always wins. Existing app: extract the current system, mark it Observed, and reuse it. Do not replace it. New app: start from the matching starter in [starter-systems.md](references/starter-systems.md), adapt the accent and type to the subject, propose a small system, mark it Proposed, and get the user's OK before screens. Numbers are required for handoff, but they must come from the observed or approved system, never invented. A starter shown to the user and accepted, or delegated with "you decide", counts as approved.
 3. Choose **Preserve** for an existing app. Use **Establish** only for a requested new system or approved overhaul.
 4. Build a keep/remove/change/add record for feedback. Reconcile liked crops with the whole screen.
 5. Trace every visible element to the current phase. Read "Default screens to leave out" in [anti-slop-rules.md](references/anti-slop-rules.md) before adding a region. Put later ideas in notes, not UI.
-6. State the design direction in one useful sentence. Do not invent brand personality or tokens.
+6. State the design direction in one useful sentence. Do not invent brand personality. For a phone screen read [mobile.md](references/mobile.md); for a marketing or launch page read [marketing-pages.md](references/marketing-pages.md).
 7. Specify reading order, action priority, components, responsive behavior and relevant states. Map each control to a canonical name or an existing app component.
-8. Check F1-F3, accessibility and exact feedback. Remove unsupported additions.
+8. Check F1-F3, accessibility and exact feedback. Remove unsupported additions. If you render HTML, run the look-and-fix loop in [layout-and-hierarchy.md](references/layout-and-hierarchy.md): check-ui, then look at both screenshots, up to three rounds.
 9. Deliver the requested design/specification or builder handoff. Keep implementation claims tied to observed evidence.
 
-Describe density, motion and layout in words when they matter, using numbers only from the observed or approved system.
+Dense but calm is the default for product screens: real information, clear hierarchy, nothing shouting. Use numbers only from the observed or approved system.
 Use a [personal-taste profile](../../personal-taste/README.md) only when selected by the user or project.
 
 ## Design system first
