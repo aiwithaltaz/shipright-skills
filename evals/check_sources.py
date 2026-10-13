@@ -16,6 +16,10 @@ import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
+# Verbatim user-supplied source documents. Kept byte-for-byte, so pack style rules do not apply.
+VERBATIM_SOURCES = {'docs/rebuild/BLUEPRINT.md'}
+# Raw trial outputs and grades are evidence. They stay unchanged; style misses are measured, not edited.
+RAW_EVIDENCE_DIRS = ('evals/v1/runs/', 'evals/v1/grades/')
 ICONS = 'skills/ui-ux-design/references/icons-and-placement.md'
 HEAVY_ACCENT = 'without a heavy accent bar unless the design system says so'
 VERSION = '0.6.2'
@@ -49,7 +53,8 @@ RULES = {
         'If a required specification behavior is still missing, mark Fail', 'Deadline rule', '## Output shape',
         'A **Hypothesis** is a testable proposition, not evidence',
         'Simulated participants never establish research findings',
-        'unknown access, destructive effects and prices cannot become defaults'],
+        'unknown access, destructive effects and prices cannot become defaults',
+        'silence is not approval', 'Readiness does not authorize deployment, publication, payment'],
     'skills/_shared/intake.md': ['0-5 questions total before starting', 'Each requested decision counts separately',
         'aim for three useful questions', 'Why it matters', 'each with a concrete example', 'plus **Something else**',
         'You decide', 'Let me decide', 'No pick yet', 'Two front doors', '## Depth', 'Request traps',
@@ -478,7 +483,8 @@ def validate(root):
         except UnicodeError:
             continue
         for n, line in enumerate(text.splitlines(), 1):
-            if '\u2014' in line:
+            rel_posix = p.relative_to(root).as_posix()
+            if '\u2014' in line and rel_posix not in VERBATIM_SOURCES and not rel_posix.startswith(RAW_EVIDENCE_DIRS):
                 errors.append(f'{p.relative_to(root)}:{n}: em dash')
             if '05-ticket-list.md' in line and p.name != 'check_sources.py':
                 errors.append(f'{p.relative_to(root)}:{n}: obsolete ticket filename')

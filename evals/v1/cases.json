@@ -1,0 +1,23 @@
+{
+  "frozen": "2026-10-13, before any v1.0 skill edits",
+  "scripted_answer": "You decide. Use your recommended picks for everything you asked. Do not wait for me.",
+  "harness_note": "The page is rendered offline in Chromium from a local web server. Google Fonts links work. Other CDNs do not. If you need three.js, GSAP, ScrollTrigger, SplitText or Lenis, load them from ../../../vendor/ with: <script type=\"importmap\">{\"imports\":{\"three\":\"../../../vendor/three/three.module.js\",\"three/addons/\":\"../../../vendor/three/addons/\"}}</script> (addons available: controls/OrbitControls.js, environments/RoomEnvironment.js, loaders/GLTFLoader.js), <script src=\"../../../vendor/gsap/gsap.min.js\"></script>, ../../../vendor/gsap/ScrollTrigger.min.js, ../../../vendor/gsap/SplitText.min.js, ../../../vendor/lenis/lenis.min.js. No photos, logos or 3D model files exist; build any visuals in code. Put everything else for the page in one index.html.",
+  "cases": [
+    {
+      "id": "saas-dashboard",
+      "user_message": "I want to build a dashboard for a small agency to track client projects, budgets and deadlines. Give me everything my coding tool (Cursor) needs to build it, and show me the main screen as one HTML file."
+    },
+    {
+      "id": "mobile-form",
+      "user_message": "I want to build a mobile app where a new user signs up and books their first home cleaning. Give me everything my coding tool (Cursor) needs to build it, and show me the key screen of the flow as one HTML file at phone size."
+    },
+    {
+      "id": "marketing-site",
+      "user_message": "I want a marketing website for SocialGhost (trysocialghost.com). It is a live AI tool that makes faceless YouTube videos. It is in limited beta: testers get free access if they give useful feedback within 2 to 3 days. The goal of the site is to get serious beta testers to apply. Give me everything my coding tool (Cursor) needs to build it, and show me the home page as one HTML file."
+    },
+    {
+      "id": "3d-product",
+      "user_message": "I want a product website for a premium wireless speaker with a 3D model the visitor can rotate. Give me everything my coding tool (Cursor) needs to build it, and show me the home page as one HTML file."
+    }
+  ]
+}

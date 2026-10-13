@@ -49,9 +49,12 @@ Simple English. No em dashes. Ask only when a decision truly needs Altaz.
 | D1 | Keep the blueprint verbatim, including em dashes; exempt that one file in check_sources in Phase 1. | Altaz asked to save the file. Editing it changes the source. | Made |
 | D2 | Score with fresh blind grader agents plus the rendered-screen checker. I never score. | "Do not grade your own homework loosely." | Made |
 | D3 | Freeze one baseline run of main 8233744 for all phase comparisons. | Saves reruns, keeps one fixed bar. | Made |
-| D4 | Fifth skill `build-pack` as front door. | One idea-in path. | Proposed, asking Altaz |
-| D5 | Starter systems with real numbers, marked Proposed. | Empty scales caused generic output. | Proposed, asking Altaz |
-| D6 | Retire phase tests that pin old wording; one v1 safeguard test. | Cutting text otherwise breaks 6 test files. | Proposed, asking Altaz |
+| D4 | Fifth skill `build-pack` as front door. | One idea-in path. | Approved by Altaz 2026-10-13 |
+| D5 | Starter systems with real numbers, marked Proposed. The user's own design system or Figma always wins. A new app shows its system for a quick OK before screens are built. | Empty scales caused generic output. | Approved by Altaz 2026-10-13, with those two conditions |
+| D6 | Retire phase tests that pin old wording. Keep tests for the safety rules: no invented facts, stay in scope, nothing ships without approval. | Cutting text otherwise breaks 6 test files. | Approved by Altaz 2026-10-13. Done in Phase 1 (tests/test_v1_safeguards.py) |
+| D8 | Trial pages load three.js, GSAP and Lenis from a committed offline vendor folder (evals/v1/vendor). | CDNs are blocked in this container; Google Fonts work. Same for both arms. | Made |
+| D9 | check-ui serves pages from a throwaway local server and uses SwiftShader WebGL. | Module scripts fail on file://; headless needs software GL for 3D. | Made |
+| D10 | Raw trial outputs and grades are exempt from the em dash source rule; the checker measures em dashes instead. | Evidence must stay unchanged; style misses are scored, not edited. | Made |
 | D7 | Provenance and theory move to a SOURCES.md that skills never load. | Credit stays; tokens drop. | Made |
 
 ## Sources reviewed
@@ -66,10 +69,10 @@ Borrow ideas only. Never copy text. Credit in SOURCES.md.
 | Emil Kowalski skills (github.com/emilkowalski/skill) | MIT | Should it animate (frequency gate), purpose word, duration and easing tables, never scale(0), interruption, reduced motion; worst-case content catalog. |
 | UI/UX Pro Max (nextlevelbuilder) | MIT | Design-system-first output persisted as one master file. Large style database rejected (see below). |
 | Vengeance UI (vengenceui.com; GitHub Ashutoshx7/VengeanceUI) | MIT on the GitHub repo; site says open source | Pattern names for landing-page motion (dock, spotlight nav, reveal loader). Ideas only. Not the default look. |
-| ThreeUI by Meng To (Community edition) | MIT for Community code; Pro excluded | Procedural 3D hero patterns with live controls; registry install via shadcn CLI. Ideas only. |
-| Skiper UI | Free and paid tiers; free use reportedly needs attribution; no license text found | Ideas only. No code or text. |
+| ThreeUI by Meng To (threeui.com/browse; Community edition) | MIT for Community code; Pro and remote thumbnails excluded; site unreachable here | Procedural 3D hero patterns with live controls; registry install via shadcn CLI. Ideas only. |
+| Skiper UI (skiper-ui.com, by Gurvinder Singh) | Free and Pro tiers; shadcn registry install; free use reportedly needs attribution; no license text found; site unreachable here | Ideas only: "uncommon" micro-interactions (image reveal, dynamic island, tooltips). No code or text. |
 | component.gallery (Iain Bean) | No license found | Component names and comparison index. Ideas only, already credited. |
-| Animaster | Not found after two searches | Nothing used. Ask Altaz for a link. |
+| Animmaster Lib (animmasterlib.dev, by Sergio Animmaster) | Site unreachable from this container; described as 300 PRO-level animated components (scroll effects, WebGL shaders, heroes, sliders, menus). No license text found. | Ideas only: pattern names for scroll and hero motion. Nothing copied. |
 | GSAP | Free for commercial use including plugins since 2025 (standard license, with a prohibited-use clause for Webflow competitors) | Safe to recommend ScrollTrigger, SplitText. Note the clause. |
 | Lenis | MIT; honors prefers-reduced-motion by default | Smooth scroll for marketing only; drive from GSAP ticker. |
 | React Three Fiber docs (pmndrs) | MIT | frameloop demand, capped dpr, instancing, adaptive performance. |
@@ -86,5 +89,5 @@ Borrow ideas only. Never copy text. Credit in SOURCES.md.
 
 ## Open questions
 
-- Animaster: what is it? A link would let me review it. Not blocking.
-- D4, D5, D6 in PLAN.md need Altaz's OK.
+- Animmaster: Altaz will send more later. Continue without it.
+- The three library sites (Skiper, Animmaster, ThreeUI) do not resolve from this container. Reviewed through search results only.
