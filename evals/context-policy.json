@@ -39,175 +39,57 @@
         "skills/_shared/flow-rules.md"
       ],
       "conditional_references": {
-        "skills/product-design/references/decision-checklist.md": {
-          "when": "Read [decision-checklist.md](references/decision-checklist.md)."
+        "skills/product-design/references/framing.md": {
+          "when": "Read [framing.md](references/framing.md)."
         },
-        "skills/product-design/references/research-methods.md": {
-          "when": "When uncertainty changes a decision, use [research-methods.md](references/research-methods.md)."
+        "skills/product-design/references/research.md": {
+          "when": "When evidence, a method, a study plan or supplied records change a decision, read [research.md](references/research.md)."
         },
-        "skills/product-design/references/research-evidence.md": {
-          "when": "For claims, missing sources or provisional direction, use [research-evidence.md](references/research-evidence.md)."
+        "skills/product-design/references/structure.md": {
+          "when": "For authorized objects, labels, routes, search, filters or role-based destinations, read [structure.md](references/structure.md)."
         },
-        "skills/product-design/references/research-planning.md": {
-          "when": "For requested/needed study preparation, use [research-planning.md](references/research-planning.md)."
+        "skills/product-design/references/journeys.md": {
+          "when": "When a journey, task flow, system process or service blueprint would resolve a decision, read [journeys.md](references/journeys.md)."
         },
-        "skills/product-design/references/research-sources.md": {
-          "when": "For source provenance or framework use, load [research-sources.md](references/research-sources.md)."
+        "skills/product-design/references/flows-and-states.md": {
+          "when": "3. For states, effects, consequences and related records, read [flows-and-states.md](references/flows-and-states.md)."
         },
-        "skills/product-design/references/opportunity-research.md": {
-          "when": "Use [opportunity-research.md](references/opportunity-research.md) only for requested/agreed market scans."
-        },
-        "skills/product-design/references/states-and-flows.md": {
-          "when": "3. Read [states-and-flows.md](references/states-and-flows.md) for effects."
-        },
-        "skills/product-design/references/operational-flows.md": {
-          "when": "4. For staff/related records, read [operational-flows.md](references/operational-flows.md)."
-        },
-        "skills/product-design/references/doc-set.md": {
-          "when": "Use [doc-set.md](references/doc-set.md) and [output-folder.md](../_shared/output-folder.md) for requested files."
-        },
-        "skills/product-design/references/research-synthesis.md": {
-          "when": "For supplied records needing interpretation, use [research-synthesis.md](references/research-synthesis.md)."
-        },
-        "skills/product-design/references/research-to-decisions.md": {
-          "when": "For findings affecting a product commitment, use [research-to-decisions.md](references/research-to-decisions.md)."
-        },
-        "skills/product-design/references/synthesis-sources.md": {
-          "when": "For synthesis-source provenance, use [synthesis-sources.md](references/synthesis-sources.md)."
-        },
-        "skills/product-design/references/information-architecture.md": {
-          "when": "For authorized object/content organization, labels or maps, use [information-architecture.md](references/information-architecture.md)."
-        },
-        "skills/product-design/references/findability.md": {
-          "when": "For approved browsing, search or filter decisions, use [findability.md](references/findability.md)."
-        },
-        "skills/product-design/references/roles-and-navigation.md": {
-          "when": "When actual capabilities affect destinations or retrieval, use [roles-and-navigation.md](references/roles-and-navigation.md)."
-        },
-        "skills/product-design/references/ia-research.md": {
-          "when": "When grouping/findability uncertainty warrants a study, use [ia-research.md](references/ia-research.md)."
-        },
-        "skills/product-design/references/ia-sources.md": {
-          "when": "For IA-source provenance, use [ia-sources.md](references/ia-sources.md)."
-        },
-        "skills/product-design/references/mapping-types.md": {
-          "when": "When the mapping choice is unclear, use [mapping-types.md](references/mapping-types.md)."
-        },
-        "skills/product-design/references/journey-mapping.md": {
-          "when": "For experience over time or channels, use [journey-mapping.md](references/journey-mapping.md)."
-        },
-        "skills/product-design/references/task-and-system-flows.md": {
-          "when": "For user actions versus known automatic steps, use [task-and-system-flows.md](references/task-and-system-flows.md)."
-        },
-        "skills/product-design/references/service-blueprints.md": {
-          "when": "For frontstage/backstage delivery or human handoffs, use [service-blueprints.md](references/service-blueprints.md)."
-        },
-        "skills/product-design/references/mapping-sources.md": {
-          "when": "For mapping-source provenance, use [mapping-sources.md](references/mapping-sources.md)."
+        "skills/build-pack/references/pack-contract.md": {
+          "when": "For requested documents, follow [pack-contract.md](../build-pack/references/pack-contract.md) and [output-folder.md](../_shared/output-folder.md)."
         }
       },
       "normal_paths": [
         {
-          "task": "Product framing",
+          "task": "Frame product",
           "references": [
-            "skills/product-design/references/decision-checklist.md"
+            "skills/product-design/references/framing.md"
           ]
         },
         {
-          "task": "Research decision or plan",
+          "task": "Research and synthesis",
           "references": [
-            "skills/product-design/references/research-evidence.md",
-            "skills/product-design/references/research-methods.md",
-            "skills/product-design/references/research-planning.md",
-            "skills/product-design/references/research-sources.md"
+            "skills/product-design/references/research.md"
           ]
         },
         {
-          "task": "Flows and state effects",
+          "task": "Structure and maps",
           "references": [
-            "skills/product-design/references/states-and-flows.md",
-            "skills/product-design/references/operational-flows.md"
+            "skills/product-design/references/structure.md",
+            "skills/product-design/references/journeys.md"
+          ]
+        },
+        {
+          "task": "Flow and states",
+          "references": [
+            "skills/product-design/references/flows-and-states.md"
           ]
         },
         {
           "task": "Requested documents",
           "references": [
-            "skills/product-design/references/doc-set.md",
-            "skills/_shared/output-folder.md"
-          ]
-        },
-        {
-          "task": "Optional synthesis and decisions",
-          "references": [
-            "skills/product-design/references/research-evidence.md",
-            "skills/product-design/references/research-synthesis.md",
-            "skills/product-design/references/research-to-decisions.md",
-            "skills/product-design/references/synthesis-sources.md"
-          ]
-        },
-        {
-          "task": "Optional content organization and maps",
-          "references": [
-            "skills/product-design/references/information-architecture.md",
-            "skills/product-design/references/roles-and-navigation.md"
-          ]
-        },
-        {
-          "task": "Optional findability contract",
-          "references": [
-            "skills/product-design/references/information-architecture.md",
-            "skills/product-design/references/findability.md",
-            "skills/product-design/references/roles-and-navigation.md"
-          ]
-        },
-        {
-          "task": "Optional IA study preparation",
-          "references": [
-            "skills/product-design/references/ia-research.md",
-            "skills/product-design/references/research-methods.md",
-            "skills/product-design/references/research-planning.md"
-          ]
-        },
-        {
-          "task": "IA provenance review",
-          "references": [
-            "skills/product-design/references/information-architecture.md",
-            "skills/product-design/references/ia-sources.md"
-          ]
-        },
-        {
-          "task": "Optional journey mapping",
-          "references": [
-            "skills/product-design/references/mapping-types.md",
-            "skills/product-design/references/journey-mapping.md",
-            "skills/product-design/references/research-evidence.md",
-            "skills/product-design/references/states-and-flows.md"
-          ]
-        },
-        {
-          "task": "Optional task or system mapping",
-          "references": [
-            "skills/product-design/references/mapping-types.md",
-            "skills/product-design/references/task-and-system-flows.md",
-            "skills/product-design/references/states-and-flows.md",
-            "skills/product-design/references/operational-flows.md"
-          ]
-        },
-        {
-          "task": "Optional service blueprint",
-          "references": [
-            "skills/product-design/references/mapping-types.md",
-            "skills/product-design/references/service-blueprints.md",
-            "skills/product-design/references/operational-flows.md",
-            "skills/product-design/references/states-and-flows.md",
-            "skills/product-design/references/research-evidence.md"
-          ]
-        },
-        {
-          "task": "Mapping provenance review",
-          "references": [
-            "skills/product-design/references/mapping-types.md",
-            "skills/product-design/references/mapping-sources.md"
+            "skills/build-pack/references/pack-contract.md",
+            "skills/product-design/references/flows-and-states.md",
+            "skills/product-design/references/framing.md"
           ]
         }
       ]
@@ -257,6 +139,9 @@
         "skills/ui-ux-design/references/anti-slop-rules.md": {
           "when": "5. Trace every visible element to the current phase. Read \"Default screens to leave out\" in [anti-slop-rules.md](references/anti-slop-rules.md) before adding a region. Put later ideas in notes, not UI."
         },
+        "skills/ui-ux-design/references/design-system.md": {
+          "when": "For a system choice, foundations, tokens, a supplied reference or naming and maintenance, read [design-system.md](references/design-system.md)."
+        },
         "skills/ui-ux-design/references/layout-and-hierarchy.md": {
           "when": "| Sections, reading order, grid, mobile priorities | [layout-and-hierarchy.md](references/layout-and-hierarchy.md) |"
         },
@@ -269,11 +154,14 @@
         "skills/ui-ux-design/references/state-coverage.md": {
           "when": "| Empty, loading, errors, pending work and difficult content | [state-coverage.md](references/state-coverage.md) |"
         },
-        "skills/ui-ux-design/references/references-and-design-system.md": {
-          "when": "| Affected system reuse/selection or supplied references | [references-and-design-system.md](references/references-and-design-system.md) |"
+        "skills/ui-ux-design/references/components.md": {
+          "when": "| Naming controls or choosing between look-alike controls | [components.md](references/components.md) |"
         },
         "skills/ux-critique/references/slop-tells.md": {
           "when": "| Concrete review prompts for competing actions or unsupported widgets | [slop-tells.md](../ux-critique/references/slop-tells.md) |"
+        },
+        "skills/ux-critique/references/severity-rubric.md": {
+          "when": "| Severity of a concrete review finding | [severity-rubric.md](../ux-critique/references/severity-rubric.md) |"
         },
         "skills/ux-critique/references/bounded-verification.md": {
           "when": "| Available implementation evidence | [bounded-verification.md](../ux-critique/references/bounded-verification.md) |"
@@ -284,98 +172,48 @@
         "skills/ui-ux-design/references/ui-copy.md": {
           "when": "| Labels, errors and operator language | [ui-copy.md](references/ui-copy.md) |"
         },
-        "skills/ui-ux-design/references/build-handoff.md": {
-          "when": "| Builder instructions | [build-handoff.md](references/build-handoff.md) |"
-        },
-        "skills/ux-critique/references/severity-rubric.md": {
-          "when": "| Severity of a concrete review finding | [severity-rubric.md](../ux-critique/references/severity-rubric.md) |"
-        },
-        "skills/ui-ux-design/references/design-foundations.md": {
-          "when": "| Requested foundations or a task-relevant foundation gap | [design-foundations.md](references/design-foundations.md) |"
-        },
-        "skills/ui-ux-design/references/design-system-governance.md": {
-          "when": "| Requested system naming, contribution or maintenance | [design-system-governance.md](references/design-system-governance.md) |"
-        },
-        "skills/ui-ux-design/references/design-system-sources.md": {
-          "when": "| System-source provenance or decision-relevant comparison | [design-system-sources.md](references/design-system-sources.md) |"
-        },
-        "skills/ui-ux-design/references/component-vocabulary.md": {
-          "when": "| Naming controls in a spec | [component-vocabulary.md](references/component-vocabulary.md) |"
-        },
-        "skills/ui-ux-design/references/component-choice.md": {
-          "when": "| Choosing between look-alike controls | [component-choice.md](references/component-choice.md) |"
-        },
-        "skills/ui-ux-design/references/reference-systems.md": {
-          "when": "| Creating a new system | [reference-systems.md](references/reference-systems.md) |"
+        "skills/build-pack/references/ticket-prompts.md": {
+          "when": "| Builder instructions and ticket prompts | [ticket-prompts.md](../build-pack/references/ticket-prompts.md) |"
         }
       },
       "normal_paths": [
         {
           "task": "Screen handoff",
           "references": [
-            "skills/ui-ux-design/references/anti-slop-rules.md",
             "skills/ui-ux-design/references/layout-and-hierarchy.md",
             "skills/ui-ux-design/references/icons-and-placement.md",
             "skills/ui-ux-design/references/state-coverage.md",
-            "skills/ui-ux-design/references/references-and-design-system.md",
-            "skills/ui-ux-design/references/build-handoff.md"
+            "skills/ui-ux-design/references/components.md",
+            "skills/ui-ux-design/references/anti-slop-rules.md",
+            "skills/build-pack/references/ticket-prompts.md"
           ]
         },
         {
-          "task": "Focused UI copy",
+          "task": "New design system",
           "references": [
-            "skills/ui-ux-design/references/ui-copy.md"
+            "skills/ui-ux-design/references/design-system.md",
+            "skills/ui-ux-design/references/components.md"
           ]
         },
         {
-          "task": "Implementation verification",
+          "task": "Exact correction",
           "references": [
-            "skills/ux-critique/references/bounded-verification.md",
+            "skills/ui-ux-design/references/layout-and-hierarchy.md",
             "skills/ui-ux-design/references/state-coverage.md"
           ]
         },
         {
-          "task": "Optional system selection",
+          "task": "Operator desk",
           "references": [
-            "skills/ui-ux-design/references/references-and-design-system.md"
+            "skills/ui-ux-design/references/operator-workspaces.md",
+            "skills/ui-ux-design/references/state-coverage.md",
+            "skills/ui-ux-design/references/icons-and-placement.md"
           ]
         },
         {
-          "task": "Optional foundation decisions",
+          "task": "Motion",
           "references": [
-            "skills/ui-ux-design/references/references-and-design-system.md",
-            "skills/ui-ux-design/references/design-foundations.md"
-          ]
-        },
-        {
-          "task": "Optional naming and governance",
-          "references": [
-            "skills/ui-ux-design/references/design-system-governance.md"
-          ]
-        },
-        {
-          "task": "System comparison provenance",
-          "references": [
-            "skills/ui-ux-design/references/references-and-design-system.md",
-            "skills/ui-ux-design/references/design-system-sources.md"
-          ]
-        },
-        {
-          "task": "Naming controls",
-          "references": [
-            "skills/ui-ux-design/references/component-vocabulary.md"
-          ]
-        },
-        {
-          "task": "Choosing controls",
-          "references": [
-            "skills/ui-ux-design/references/component-choice.md"
-          ]
-        },
-        {
-          "task": "New system references",
-          "references": [
-            "skills/ui-ux-design/references/reference-systems.md"
+            "skills/ui-ux-design/references/motion.md"
           ]
         }
       ]
@@ -427,6 +265,68 @@
           "references": [
             "skills/ux-critique/references/plan-review.md",
             "skills/ux-critique/references/severity-rubric.md"
+          ]
+        }
+      ]
+    },
+    "build-pack": {
+      "entry": "skills/build-pack/SKILL.md",
+      "required_shared": [
+        "skills/_shared/operating-contract.md",
+        "skills/_shared/intake.md",
+        "skills/_shared/flow-rules.md"
+      ],
+      "conditional_references": {
+        "skills/product-design/references/framing.md": {
+          "when": "1. **Frame.** Read [framing.md](../product-design/references/framing.md). Who, job, what they do today, this release, what stays out, one observable success check per job."
+        },
+        "skills/product-design/references/flows-and-states.md": {
+          "when": "2. **Flows and states.** For each core job, read [flows-and-states.md](../product-design/references/flows-and-states.md). Entry, steps, exits, failure and return. Check [Flow rules (must pass)](../_shared/flow-rules.md)."
+        },
+        "skills/product-design/references/structure.md": {
+          "when": "3. **Structure, only when needed.** With several roles, record types or navigation areas, read [structure.md](../product-design/references/structure.md). Hidden navigation is never access control."
+        },
+        "skills/build-pack/references/stack-choices.md": {
+          "when": "4. **Stack.** Read [stack-choices.md](references/stack-choices.md). Fit the user's coding tool. Give a reason and a switch point for each choice."
+        },
+        "skills/ui-ux-design/references/design-system.md": {
+          "when": "5. **Design system.** Read [design-system.md](../ui-ux-design/references/design-system.md). The user's system or Figma wins. A new app gets a small Proposed system, shown first for a quick OK; ticket T1 builds it as a preview page before any screen."
+        },
+        "skills/ui-ux-design/references/state-coverage.md": {
+          "when": "6. **Screens.** Follow the [ui-ux-design](../ui-ux-design/SKILL.md) work sequence for each screen: job, top-to-bottom layout, components, states, responsive behavior, accessibility, real copy. For accessibility and state criteria, read [state-coverage.md](../ui-ux-design/references/state-coverage.md)."
+        },
+        "skills/build-pack/references/ticket-prompts.md": {
+          "when": "7. **Tickets.** Read [ticket-prompts.md](references/ticket-prompts.md). Small, ordered, paste-ready prompts. Open choices get a Proposed default and a named place to change it, not a Blocked label."
+        },
+        "skills/build-pack/references/pack-contract.md": {
+          "when": "8. **Check.** Read [pack-contract.md](references/pack-contract.md) for files, budgets and reconciliation. Run the Pack check below. If you produced an HTML preview and can run Node, run `node scripts/check-ui.mjs <page>` from the pack root and look at the screenshots before you reply."
+        },
+        "skills/ux-critique/references/bounded-verification.md": {
+          "when": "When the user returns with built work, check it with [bounded-verification.md](../ux-critique/references/bounded-verification.md)."
+        }
+      },
+      "normal_paths": [
+        {
+          "task": "Stage 1: frame, flows, structure and stack",
+          "references": [
+            "skills/product-design/references/framing.md",
+            "skills/product-design/references/flows-and-states.md",
+            "skills/product-design/references/structure.md",
+            "skills/build-pack/references/stack-choices.md"
+          ]
+        },
+        {
+          "task": "Stage 2: design system and screens",
+          "references": [
+            "skills/ui-ux-design/references/design-system.md",
+            "skills/ui-ux-design/references/state-coverage.md"
+          ]
+        },
+        {
+          "task": "Stage 3: tickets and pack check",
+          "references": [
+            "skills/build-pack/references/ticket-prompts.md",
+            "skills/build-pack/references/pack-contract.md"
           ]
         }
       ]

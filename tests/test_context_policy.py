@@ -78,8 +78,10 @@ class ContextPolicyTests(unittest.TestCase):
 
     def shared_boundary_headroom(self):
         # Isolate a shared-rule threshold from unrelated path-total thresholds.
-        for name in ('layout-and-hierarchy', 'icons-and-placement'):
-            self.write(f'skills/ui-ux-design/references/{name}.md', self.exact_text(100))
+        for rel in ('skills/ui-ux-design/references/layout-and-hierarchy.md', 'skills/ui-ux-design/references/icons-and-placement.md',
+                    'skills/build-pack/references/stack-choices.md', 'skills/build-pack/references/pack-contract.md',
+                    'skills/product-design/references/structure.md'):
+            self.write(rel, self.exact_text(100))
 
     def test_shared_file_boundary(self):
         self.shared_boundary_headroom()
@@ -90,7 +92,7 @@ class ContextPolicyTests(unittest.TestCase):
         self.assert_error(self.tokens(), rel)
 
     def test_reference_boundary(self):
-        rel = 'skills/product-design/references/opportunity-research.md'
+        rel = 'skills/product-design/references/framing.md'
         self.write(rel, self.exact_text(4000))
         self.assertEqual([], self.tokens())
         self.write(rel, self.exact_text(4001))
@@ -98,14 +100,14 @@ class ContextPolicyTests(unittest.TestCase):
 
     def test_normal_path_boundary(self):
         config = self.policy['skills']['product-design']
-        selected = config['normal_paths'][1]['references']
+        selected = next(p for p in config['normal_paths'] if p['task'] == 'Requested documents')['references']
         sizes = {p.relative_to(self.copy).as_posix(): self.count(p.read_text())
                  for p in (self.copy / 'skills').rglob('*.md')}
         base = sum(sizes[p] for p in [config['entry']] + config['required_shared'])
         # Spread the exact remaining allowance across individually valid files.
         remainder = 12000 - base
         for p in selected:
-            amount = min(2500, remainder)
+            amount = min(3900, remainder)
             self.write(p, self.exact_text(amount))
             remainder -= amount
         self.assertEqual(0, remainder)
@@ -155,7 +157,7 @@ class ContextPolicyTests(unittest.TestCase):
         self.assert_error(self.structure(), 'chained-only')
 
     def test_missing_condition(self):
-        self.policy['skills']['product-design']['conditional_references']['skills/product-design/references/research-evidence.md']['when'] = ''
+        self.policy['skills']['product-design']['conditional_references']['skills/product-design/references/research.md']['when'] = ''
         self.policy_write()
         self.assert_error(self.structure(), 'loading condition')
 
@@ -234,12 +236,12 @@ class ContextPolicyTests(unittest.TestCase):
         loaded = report['normal_paths']['ui-ux-design']['Screen handoff']['files']
         self.assertIn('skills/ux-critique/references/slop-tells.md', loaded)
         self.assertIn('skills/ux-critique/references/bounded-verification.md', loaded)
-        self.assertIn('skills/_shared/output-folder.md', loaded)
+        self.assertIn('skills/build-pack/references/ticket-prompts.md', loaded)
 
     def test_linked_dependency_can_exceed_path_budget(self):
         rel = 'skills/ux-critique/references/slop-tells.md'
         text = (self.copy / rel).read_text()
-        self.write(rel, text + self.exact_text(1600))
+        self.write(rel, text + self.exact_text(2000))
         self.assert_error(self.tokens(), 'ui-ux-design/Screen handoff')
 
     def test_canonical_ownership_required(self):

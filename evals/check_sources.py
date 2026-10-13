@@ -23,26 +23,37 @@ RAW_EVIDENCE_DIRS = ('evals/v1/runs/', 'evals/v1/grades/')
 ICONS = 'skills/ui-ux-design/references/icons-and-placement.md'
 HEAVY_ACCENT = 'without a heavy accent bar unless the design system says so'
 VERSION = '0.6.2'
-SKILLS = {'product-design': 8, 'ui-ux-design': 10, 'ux-critique': 10, 'ship-check': 20}
+SKILLS = {'product-design': 8, 'ui-ux-design': 10, 'ux-critique': 10, 'ship-check': 20, 'build-pack': 10}
 TEMPLATES = ['01-prd.md', '02-technical-architecture.md', '03-security-and-access.md',
              '04-frontend-spec.md', '05-feature-ticket-list.md', '06-pitch-one-pager.md',
              'PRODUCT.md', 'DESIGN.md', 'build-rules.md', 'ship-check.md']
 REFS = {
-    'product-design': ['decision-checklist.md', 'doc-set.md', 'operational-flows.md',
-                       'opportunity-research.md', 'states-and-flows.md',
-                       'research-evidence.md', 'research-methods.md', 'research-planning.md', 'research-sources.md',
-                       'research-synthesis.md', 'research-to-decisions.md', 'synthesis-sources.md',
-                       'information-architecture.md', 'findability.md', 'roles-and-navigation.md', 'ia-research.md', 'ia-sources.md',
-                       'mapping-types.md', 'journey-mapping.md', 'task-and-system-flows.md', 'service-blueprints.md', 'mapping-sources.md'],
-    'ui-ux-design': ['anti-slop-rules.md', 'build-handoff.md', 'icons-and-placement.md',
-                     'layout-and-hierarchy.md', 'motion.md', 'operator-workspaces.md',
-                     'references-and-design-system.md', 'state-coverage.md', 'ui-copy.md',
-                     'design-foundations.md', 'design-system-governance.md', 'design-system-sources.md',
-                     'component-vocabulary.md', 'component-choice.md', 'reference-systems.md'],
+    'product-design': ['framing.md', 'research.md', 'structure.md', 'journeys.md', 'flows-and-states.md'],
+    'ui-ux-design': ['anti-slop-rules.md', 'components.md', 'design-system.md', 'icons-and-placement.md',
+                     'layout-and-hierarchy.md', 'motion.md', 'operator-workspaces.md', 'state-coverage.md', 'ui-copy.md'],
     'ux-critique': ['bounded-verification.md', 'existing-app.md', 'plan-review.md',
                     'requirements-and-feedback.md', 'severity-rubric.md', 'slop-tells.md'],
     'ship-check': ['launch-items.md'],
+    'build-pack': ['pack-contract.md', 'stack-choices.md', 'ticket-prompts.md'],
 }
+# v1.0 merged many references. Protected phrases keep their wording and move with their rule.
+_PD, _UI = 'skills/product-design/references/', 'skills/ui-ux-design/references/'
+MERGED = {**{_PD + n: _PD + 'research.md' for n in ('research-evidence.md', 'research-methods.md', 'research-planning.md',
+                                                     'research-synthesis.md', 'research-to-decisions.md')},
+          **{_PD + n: _PD + 'structure.md' for n in ('information-architecture.md', 'findability.md',
+                                                      'roles-and-navigation.md', 'ia-research.md')},
+          **{_PD + n: _PD + 'journeys.md' for n in ('mapping-types.md', 'journey-mapping.md',
+                                                     'task-and-system-flows.md', 'service-blueprints.md')},
+          **{_PD + n: 'SOURCES.md' for n in ('research-sources.md', 'synthesis-sources.md', 'ia-sources.md', 'mapping-sources.md')},
+          **{_UI + n: _UI + 'design-system.md' for n in ('references-and-design-system.md', 'design-foundations.md',
+                                                          'design-system-governance.md')},
+          _UI + 'design-system-sources.md': 'SOURCES.md',
+          _UI + 'component-vocabulary.md': _UI + 'components.md', _UI + 'component-choice.md': _UI + 'components.md',
+          _UI + 'build-handoff.md': 'skills/build-pack/references/ticket-prompts.md',
+          _UI + 'reference-systems.md': _UI + 'design-system.md',
+          _PD + 'decision-checklist.md': _PD + 'framing.md', _PD + 'opportunity-research.md': _PD + 'framing.md',
+          _PD + 'states-and-flows.md': _PD + 'flows-and-states.md', _PD + 'operational-flows.md': _PD + 'flows-and-states.md',
+          _PD + 'doc-set.md': 'skills/build-pack/references/pack-contract.md'}
 # Presence checks protect selected source contracts, not their interpretation.
 RULES = {
     'skills/_shared/operating-contract.md': [
@@ -301,6 +312,10 @@ PHASE51_MUTATIONS = [('proposed_before_screens',
   'Use Combobox for one value from a short fixed list. Use Select when the person must type to filter a long list.')]
 for _label, _path, _required, _replacement in PHASE5_MUTATIONS + PHASE51_MUTATIONS:
     RULES.setdefault(_path, []).append(_required)
+for _old in [k for k in RULES if k in MERGED]:
+    RULES.setdefault(MERGED[_old], []).extend(RULES.pop(_old))
+PHASE5_MUTATIONS = [(l, MERGED.get(p, p), a, b) for l, p, a, b in PHASE5_MUTATIONS]
+PHASE51_MUTATIONS = [(l, MERGED.get(p, p), a, b) for l, p, a, b in PHASE51_MUTATIONS]
 
 DESIGN_PROMPTS = ['**Icon set:**', '**Style:**', '**Stroke weight:**', '**Icon-only allowed:** close, search, menu, more, back',
     '**Never icon-only:** destructive', '**Status:** text + icon + color', '**Primary action side:**', '**Button order:**',
@@ -375,7 +390,7 @@ def validate(root):
         for required in ['## INTAKE', '(../_shared/intake.md)', '(../_shared/operating-contract.md)',
                          'Core rules if `../_shared` is unreachable']:
             need(rel, required)
-        gate = re.search(r'^## (?:Decision gate|Pre-flight|Audit|Launch gate):[^\n]*\n(.*?)(?=^## |\Z)', text, re.M | re.S)
+        gate = re.search(r'^## (?:Decision gate|Pre-flight|Audit|Launch gate|Pack check):[^\n]*\n(.*?)(?=^## |\Z)', text, re.M | re.S)
         ids = re.findall(r'^\| (\d+) \|', strip_fences(gate[1]), re.M) if gate else []
         if [int(x) for x in ids] != list(range(1, count + 1)):
             errors.append(f'{rel}: expected gate IDs 1-{count}, got {ids}')
@@ -429,7 +444,7 @@ def validate(root):
     # Exported paths are app-root paths, not pack paths. Only inspect path literals.
     project_paths = {'PRODUCT.md', 'DESIGN.md'} | {'docs/shipright/' + n for n in TEMPLATES if n not in {'PRODUCT.md', 'DESIGN.md'}}
     for p in (root / 'docs').glob('*.md'):
-        for value in re.findall(r'`([^`]+)`', read(p.relative_to(root))):
+        for value in re.findall(r'`([^`\n]+)`', strip_fences(read(p.relative_to(root)))):
             if value.endswith('.md') and ('/' in value or value in {'PRODUCT.md', 'DESIGN.md'}):
                 if value not in project_paths:
                     errors.append(f'{p.relative_to(root)}: invalid project export path {value}')
@@ -505,7 +520,9 @@ def validate(root):
         for entry in inventory:
             p = root / entry['path']
             if not p.is_file():
-                errors.append(f'{entry["path"]}: original path removed')
+                # v1.0 merges (Altaz approved 2026-10-13) may retire a guidance path only into an existing successor.
+                if not (entry['path'] in MERGED and (root / MERGED[entry['path']]).is_file()):
+                    errors.append(f'{entry["path"]}: original path removed')
             elif '/prototype/' in entry['path'] or '/evidence/' in entry['path']:
                 if hashlib.sha256(p.read_bytes()).hexdigest() != entry['sha256']:
                     errors.append(f'{entry["path"]}: historical bytes changed')
@@ -651,7 +668,7 @@ def self_test(root):
          '| Setup or technical failure | Assessment blocked; separate cause from product-task failure.',
          '| Product failure | Failed test accounts prove unusable downloads.'),
         ('direct research link', 'skills/product-design/SKILL.md',
-         '[research-methods.md](references/research-methods.md)', '`references/research-methods.md`'),
+         '[research.md](references/research.md)', '`references/research-methods.md`'),
         ('feedback lesson', 'examples/ivc-2026-registration/feedback/round1-corrections.md', 'View all in progress', 'Browse everything'),
         ('export drift', 'docs/build-rules.md', 'Hide routine system plumbing', 'Show all system plumbing'),
         ('project path', 'docs/05-feature-ticket-list.md', 'docs/shipright/ship-check.md', 'docs/ship-check.md'),
@@ -693,6 +710,7 @@ def self_test(root):
         copy = Path(tmp) / 'pack'
         shutil.copytree(root, copy, ignore=shutil.ignore_patterns('.git', '__pycache__'))
         for label, rel, old, new in mutations:
+            rel = MERGED.get(rel, rel)
             p = copy / rel; original = p.read_bytes()
             if old is None:
                 p.unlink()
@@ -715,7 +733,7 @@ def main():
     errors, warnings, links, words = validate(ROOT)
     if errors:
         print('FAIL\n' + '\n'.join(errors)); return 1
-    print(f'PASS: 4 restricted metadata records; stable 8/10/10/20 gates; {links} local references; '
+    print(f'PASS: 5 restricted metadata records; stable 8/10/10/20 gates plus build-pack 10; {links} local references; '
           f'phase/feedback/intake contracts; synchronized F1-F3 exports; project paths; versions; '
           f'{words} skill words (informational; run check_context.py for token budgets); original paths and historical bytes retained.')
     for warning in warnings:

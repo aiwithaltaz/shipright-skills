@@ -69,7 +69,9 @@ Written now, before building. Frozen in Phase 1 under `evals/v1/`.
 
 **Hard floor:** invented metrics, testimonials or legal text, a broken layout at 390px, or an inaccessible primary action makes that run "unshippable" whatever its score.
 
-**Pass bar per phase:** the new arm must beat the frozen baseline on its target criteria, with no criterion dropping by 1 or more on average, and reply length not growing more than 15% unless completeness rises. If not, fix or cut the phase.
+**When trials run (D11, Altaz 2026-10-13):** after every phase, only the test suite and the screen checker. The full 4-prompt comparison with blind graders runs after Phase 3 and after Phase 6.
+
+**Pass bar per trial:** the new arm must beat the frozen baseline on its target criteria, with no criterion dropping by 1 or more on average, and reply length not growing more than 15% unless completeness rises. If not, fix or cut the phase.
 
 **Limits I will state:** graders are the same model family; 1 run per prompt per arm per phase (2 in the final run); synthetic prompts are not user research.
 

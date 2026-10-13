@@ -12,6 +12,7 @@ Proceed after intake; ask later only for new consequential choices.
 
 | Request | Start |
 | --- | --- |
+| Idea to build ("build me X") | build-pack: frame first, then the full pack |
 | Rough idea without a job | product-design: Frame product |
 | Existing artifact review | ux-critique: Existing app |
 | Explicit screen correction | ui-ux-design: focused change |

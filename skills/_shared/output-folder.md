@@ -1,6 +1,7 @@
 # Project output files
 
 Write only requested deliverables. Reuse equivalent project documents; the full set is optional.
+A build pack uses the compact set and budgets in build-pack's pack contract; other files only when asked or needed.
 
 | Project path | Owner | Content |
 | --- | --- | --- |

@@ -41,9 +41,10 @@ Use a [personal-taste profile](../../personal-taste/README.md) only when selecte
 ## Design system first
 
 Inspect and reuse the existing app system first. Missing documentation alone does not authorize replacement.
-Load system-selection guidance only for an affected reuse/extension choice or supplied reference; foundations only for requested foundations or a relevant gap; governance only for naming/contribution/maintenance.
+For a system choice, foundations, tokens, a supplied reference or naming and maintenance, read [design-system.md](references/design-system.md).
+The user's own design system or Figma file always wins. A new app shows its Proposed system for a quick OK before screens are built.
 Keep the work behind the scenes and show concise decisions, gaps and risks. A small correction needs no full system exercise.
-Do not rebrand or replace the system without approval. Detailed token architecture is Phase 6; component contracts are Phase 7.
+Do not rebrand or replace the system without approval.
 
 ## Craft references
 
@@ -55,20 +56,14 @@ Load only those needed for this task:
 | Icons, profile home, selected rows, nav and action placement | [icons-and-placement.md](references/icons-and-placement.md) |
 | Operator desk, pending work and task-focused status | [operator-workspaces.md](references/operator-workspaces.md) |
 | Empty, loading, errors, pending work and difficult content | [state-coverage.md](references/state-coverage.md) |
-| Affected system reuse/selection or supplied references | [references-and-design-system.md](references/references-and-design-system.md) |
-| Requested foundations or a task-relevant foundation gap | [design-foundations.md](references/design-foundations.md) |
-| Requested system naming, contribution or maintenance | [design-system-governance.md](references/design-system-governance.md) |
-| System-source provenance or decision-relevant comparison | [design-system-sources.md](references/design-system-sources.md) |
-| Naming controls in a spec | [component-vocabulary.md](references/component-vocabulary.md) |
-| Choosing between look-alike controls | [component-choice.md](references/component-choice.md) |
-| Creating a new system | [reference-systems.md](references/reference-systems.md) |
+| Naming controls or choosing between look-alike controls | [components.md](references/components.md) |
 | Noise, invented elements and visual heuristics | [anti-slop-rules.md](references/anti-slop-rules.md) |
 | Concrete review prompts for competing actions or unsupported widgets | [slop-tells.md](../ux-critique/references/slop-tells.md) |
 | Severity of a concrete review finding | [severity-rubric.md](../ux-critique/references/severity-rubric.md) |
 | Available implementation evidence | [bounded-verification.md](../ux-critique/references/bounded-verification.md) |
 | Existing or requested animation | [motion.md](references/motion.md) |
 | Labels, errors and operator language | [ui-copy.md](references/ui-copy.md) |
-| Builder instructions | [build-handoff.md](references/build-handoff.md) |
+| Builder instructions and ticket prompts | [ticket-prompts.md](../build-pack/references/ticket-prompts.md) |
 | Requested files | [output-folder.md](../_shared/output-folder.md) |
 
 ## Flow rules (must pass)

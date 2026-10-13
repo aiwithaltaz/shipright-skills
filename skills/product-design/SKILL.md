@@ -1,6 +1,6 @@
 ---
 name: product-design
-description: "Use this when framing a rough product idea, checking research evidence, synthesizing supplied research into findings and decisions, selecting methods or preparing lightweight plans, defining information architecture for approved objects/content, navigation, findability and routes, mapping evidence-grounded journeys, task flows, known system processes or service blueprints, deciding an in-scope flow, defining states or consequences, reviewing decisions, or writing requested documents. Preserve current phase and approved scope. Part of ShipRight."
+description: "Use this when framing a product idea, judging research evidence or supplied research, organizing objects, navigation and access, mapping a journey or service, or defining flows, states and consequences. For a full idea-to-build pack with PRD, stack, design system and ticket prompts, use build-pack. Preserve current phase and approved scope. Part of ShipRight."
 ---
 
 # Product design
@@ -28,90 +28,51 @@ Continue without claiming a full check.
 | Mode | Output |
 | --- | --- |
 | Frame product | Actor, outcome, alternative, mechanism, phase and exclusions |
-| Research | Decision-relevant evidence or a lightweight plan |
-| Synthesize | Evidence-linked findings and proposed decisions, only when useful |
-| Organize product | Sourced objects, labels, destinations and access boundaries, only when useful |
-| Map experience/service | One sourced map and decisions, only when useful |
-| Shape flow | Entry, steps, cancel/failure and recovery |
-| Spec states | Triggers, UI, effects and preserved work |
-| Decision review | One grounded recommendation |
-| Edge-case harden | Material prerequisites, return or failure paths |
-| Doc set | Requested documents from the owned frame |
+| Research | Decision-relevant evidence, a lightweight plan, or findings from supplied records |
+| Organize product | Sourced objects, labels, destinations and access boundaries |
+| Map experience/service | One sourced map and decisions |
+| Shape flow and states | Entry, steps, cancel, failure, recovery and state effects |
+| Build pack | Use [build-pack](../build-pack/SKILL.md) for the full PRD-to-tickets set |
 
-Do not invent market evidence or differentiation.
+Do not invent market evidence or differentiation. Load only needed references.
 
 ## Frame product
 
-Read [decision-checklist.md](references/decision-checklist.md).
+Read [framing.md](references/framing.md).
 For a vague idea, follow shared intake's cards-only first reply and stop.
-After answers/delegation, recommend the narrowest useful version.
-Offer only material/requested alternatives. Unknown premises stay Unknown.
-Derive necessary objects, lifecycles, journey and screen jobs from the agreed job; no fixed counts or filler screens.
+After answers or delegation, recommend the narrowest useful version. Unknown premises stay Unknown.
+Derive objects, lifecycles, journey and screen jobs from the agreed job; no fixed counts or filler screens.
 
-## Research
+## Research and synthesis
 
 Inspect supplied evidence first; skip research for clear corrections or sufficient current evidence.
-When uncertainty changes a decision, use [research-methods.md](references/research-methods.md).
-For claims, missing sources or provisional direction, use [research-evidence.md](references/research-evidence.md).
-For requested/needed study preparation, use [research-planning.md](references/research-planning.md).
-For source provenance or framework use, load [research-sources.md](references/research-sources.md).
-Load only needed references, not every source.
-Use [opportunity-research.md](references/opportunity-research.md) only for requested/agreed market scans.
-No tools/participants: state the limit, keep facts Unknown and continue with testable hypotheses.
-Show recommendation, assumptions, risks and next step; useful/requested detail only.
-Do not claim performed sessions, validated demand or automatically alter approved scope.
-
-## Optional synthesis
-
-For supplied records needing interpretation, use [research-synthesis.md](references/research-synthesis.md).
-For findings affecting a product commitment, use [research-to-decisions.md](references/research-to-decisions.md).
-For synthesis-source provenance, use [synthesis-sources.md](references/synthesis-sources.md).
+When evidence, a method, a study plan or supplied records change a decision, read [research.md](references/research.md).
 Skip synthesis for clear corrections or planning-only work; missing evidence yields hypotheses, not findings.
-Keep raw records, interpretations and approval separate. Preserve contradictions; retain every supplied accessibility or safety issue even without a repeated pattern.
-Show concise findings, risks and recommended decisions; no automatic personas, screens or scope changes.
+Keep raw records, interpretations and approval separate; retain every supplied accessibility or safety issue even without a repeated pattern.
+No tools or participants: state the limit, keep facts Unknown, continue with testable hypotheses. Never claim performed sessions.
 
-## Optional information architecture
+## Structure and maps
 
-For authorized object/content organization, labels or maps, use [information-architecture.md](references/information-architecture.md).
-For approved browsing, search or filter decisions, use [findability.md](references/findability.md).
-When actual capabilities affect destinations or retrieval, use [roles-and-navigation.md](references/roles-and-navigation.md).
-When grouping/findability uncertainty warrants a study, use [ia-research.md](references/ia-research.md).
-For IA-source provenance, use [ia-sources.md](references/ia-sources.md).
-Skip IA for clear corrections or sufficient existing structure; keep the shared first-reply intake for unframed ideas.
-Do not invent objects, roles, relationships, routes, categories or filters. Hidden navigation is never access control.
-Organize before screens; show concise recommendations, risks and decisions. Studies remain optional and unperformed without real evidence.
-
-## Optional journeys and service mapping
-
-When the mapping choice is unclear, use [mapping-types.md](references/mapping-types.md).
-For experience over time or channels, use [journey-mapping.md](references/journey-mapping.md).
-For user actions versus known automatic steps, use [task-and-system-flows.md](references/task-and-system-flows.md).
-For frontstage/backstage delivery or human handoffs, use [service-blueprints.md](references/service-blueprints.md).
-For mapping-source provenance, use [mapping-sources.md](references/mapping-sources.md).
-Skip mapping for clear corrections or a sufficient existing map; preserve shared intake for unframed ideas.
-Choose one appropriate map, not every map. Keep current evidence separate from future proposals.
-Never invent emotions, teams, channels, dependencies or business processes. Preserve accessibility, safety, interruption, return and recovery issues.
-Work quietly; show concise findings, risks and recommended decisions. A map does not validate behavior or authorize UI/scope.
+For authorized objects, labels, routes, search, filters or role-based destinations, read [structure.md](references/structure.md).
+Skip IA for clear corrections or sufficient existing structure.
+When a journey, task flow, system process or service blueprint would resolve a decision, read [journeys.md](references/journeys.md).
+Skip mapping for clear corrections or a sufficient existing map. Choose one map, not every map.
+Do not invent objects, roles, routes, emotions or business processes. A map does not authorize UI or scope.
 
 ## Flows and states
 
 1. Name actor, job, phase, scope source and exclusions.
 2. Map entry, steps, branches, success, cancel and recovery.
-3. Read [states-and-flows.md](references/states-and-flows.md) for effects.
-4. For staff/related records, read [operational-flows.md](references/operational-flows.md).
-5. Check [Flow rules (must pass)](../_shared/flow-rules.md): F1 exit, F2 consistency, F3 useful status.
-6. Source actions, effects and recovery. Pending human work differs from background jobs.
+3. For states, effects, consequences and related records, read [flows-and-states.md](references/flows-and-states.md).
+4. Check [Flow rules (must pass)](../_shared/flow-rules.md): F1 exit, F2 consistency, F3 useful status.
 
 Do not add roles, filters, notifications or payments to satisfy checklists.
 Resolve unclear clear/reset/remove scope and saved effects before destructive behavior.
 
-## Doc set and handoff
+## Documents and handoff
 
-Use [doc-set.md](references/doc-set.md) and [output-folder.md](../_shared/output-folder.md) for requested files.
-No automatic document-by-document stops.
-ui-ux-design owns DESIGN.md/frontend specs. Reconcile IDs, actors, scope, states and acceptance checks.
-Carry job, paths, states, decisions, evidence limits and dependencies into handoff.
-Missing artifact content stays Unknown.
+For requested documents, follow [pack-contract.md](../build-pack/references/pack-contract.md) and [output-folder.md](../_shared/output-folder.md).
+ui-ux-design owns DESIGN.md and screen specs. Missing artifact content stays Unknown.
 Keep unresolved proposals under **Needs approval before build**.
 
 ## Decision gate: 8 checks

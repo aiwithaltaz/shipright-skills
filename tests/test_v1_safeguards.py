@@ -67,7 +67,7 @@ class V1Safeguards(unittest.TestCase):
         contract = (self.copy / CONTRACT).read_text()
         for status in ('Pass', 'Fail', 'Not verified', 'Not applicable'):
             self.assertIn(f'| {status} |', contract)
-        self.assertEqual({'product-design': 8, 'ui-ux-design': 10, 'ux-critique': 10, 'ship-check': 20}, checks.SKILLS)
+        self.assertEqual({'product-design': 8, 'ui-ux-design': 10, 'ux-critique': 10, 'ship-check': 20, 'build-pack': 10}, checks.SKILLS)
 
     def test_historical_evidence_unchanged(self):
         data = json.loads((self.copy / 'evals/v1/historical-manifest.json').read_text())

@@ -65,6 +65,11 @@ The frozen baseline (0.6.2 + 5.1) is stronger than the plan assumed. Do not buil
 | D8 | Trial pages load three.js, GSAP and Lenis from a committed offline vendor folder (evals/v1/vendor). | CDNs are blocked in this container; Google Fonts work. Same for both arms. | Made |
 | D9 | check-ui serves pages from a throwaway local server and uses SwiftShader WebGL. | Module scripts fail on file://; headless needs software GL for 3D. | Made |
 | D10 | Raw trial outputs and grades are exempt from the em dash source rule; the checker measures em dashes instead. | Evidence must stay unchanged; style misses are scored, not edited. | Made |
+| D11 | Per phase, run only the test suite and the screen checker. Run the full 4-prompt before/after comparison with blind graders only after Phase 3 and after Phase 6. | Altaz's instruction 2026-10-13, to save time and credits. Baseline runs were already done. | Approved by Altaz |
+| D12 | Merge 30 references into 9; keep every protected safety sentence word for word; checker maps old paths to successors (MERGED). | Cuts length without losing tested safety rules. | Made, Phase 2 |
+| D13 | build-pack loads in three bounded stages (frame and stack; system and screens; tickets and check). | Keeps each stage well under 12,000 tokens as Phase 3 adds starter systems. | Made, Phase 2 |
+| D14 | Pack contract: 6 core files, about 5,000 words for a 4 to 6 screen product (baseline 8,000 to 10,400). Tickets are paste-ready prompts; T1 builds tokens and a /design preview and stops for a quick OK of the look (meets D5). | Baseline packs were complete but long and tickets were not paste-ready. | Made, Phase 2 |
+| D15 | Version lines stay 0.6.2 until the Phase 6 release bump. | One bump, one place. | Made |
 | D7 | Provenance and theory move to a SOURCES.md that skills never load. | Credit stays; tokens drop. | Made |
 
 ## Sources reviewed
