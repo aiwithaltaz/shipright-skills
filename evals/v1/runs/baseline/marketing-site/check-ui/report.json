@@ -1,0 +1,88 @@
+{
+ "target": "/tmp/claude-0/-home-user-shipright-skills/c4321855-3d70-5918-a5cd-3732e18079ee/scratchpad/trial/runs/baseline/marketing-site/index.html",
+ "checkedAt": "2026-10-13T20:54:39.372Z",
+ "viewports": {
+  "desktop": {
+   "results": [],
+   "metrics": {
+    "overflowX": 0,
+    "pageHeight": 2493,
+    "h1": 1,
+    "families": [
+     [
+      "Inter",
+      30
+     ],
+     [
+      "Space Grotesk",
+      11
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 4,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [],
+    "emDashes": 0,
+    "animated": false,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true
+   }
+  },
+  "phone": {
+   "results": [
+    {
+     "id": "touch-targets",
+     "level": "WARN",
+     "message": "4 controls smaller than 44x44px on a touch screen"
+    }
+   ],
+   "metrics": {
+    "overflowX": 0,
+    "pageHeight": 3466,
+    "h1": 1,
+    "families": [
+     [
+      "Inter",
+      30
+     ],
+     [
+      "Space Grotesk",
+      11
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 4,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [],
+    "emDashes": 0,
+    "animated": false,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true
+   }
+  }
+ }
+}

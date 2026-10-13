@@ -1,0 +1,9 @@
+---
+description: SocialGhost beta site build rules
+alwaysApply: true
+---
+
+Before any change, read PRODUCT.md, DESIGN.md, docs/shipright/build-rules.md and docs/shipright/04-frontend-spec.md.
+Work one ticket at a time from docs/shipright/05-feature-ticket-list.md.
+Build only the P1 scope. Do not invent product features, numbers, testimonials, logos or brand values.
+Use only the CSS variables from DESIGN.md.

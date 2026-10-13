@@ -42,6 +42,16 @@ Simple English. No em dashes. Ask only when a decision truly needs Altaz.
 - Tokenizer: the official cl100k_base file is blocked. Taken from PyPI wheel tiktoken_offline 0.1.1; its SHA-256 matches tiktoken's own expected hash (223921b7...65b2a7). Use TIKTOKEN_CACHE_DIR in the scratchpad. CI on GitHub downloads normally.
 - Chromium at /opt/pw-browsers; Node 22 with global Playwright 1.56.1.
 
+## Baseline findings (Phase 1, 2026-10-13)
+
+The frozen baseline (0.6.2 + 5.1) is stronger than the plan assumed. Do not build a straw man.
+- Screens are clean and honest: sample-data labels, no invented metrics, labeled fields, one primary action.
+- Build packs are complete but long: 8,000 to 10,400 words per case, 8 to 9 files, plus a 600 to 840 word reply.
+- Stack is proposed with reasons (Next.js, Supabase, shadcn; Vite + three.js for 3D) but marked "Proposed, blocked until owner confirms".
+- Tickets have acceptance checks but are not paste-ready prompts: no files to read or change, no stop condition, several start Blocked.
+- Visual gaps: dashboard has 9 controls under 24px; 3D page uses an eyebrow label and a bordered card around the canvas; marketing hero is a generic split layout.
+- Headroom, so Phase 2 to 5 targets: (1) shorter pack with the same completeness, (2) tickets as prompts that can run without waiting, (3) denser, more crafted screens, (4) motion and 3D quality with budgets, (5) touch targets.
+
 ## Decisions
 
 | ID | Decision | Why | Status |

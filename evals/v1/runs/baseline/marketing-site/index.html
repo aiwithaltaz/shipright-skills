@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SocialGhost beta: make faceless YouTube videos with AI</title>
+<meta name="description" content="SocialGhost is a live AI tool that makes faceless YouTube videos. Apply for the limited beta. Testers get free access for useful feedback within 2 to 3 days.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
+<style>
+  /* Tokens: DESIGN.md (D6, delegated 2026-10-13). Use only these. */
+  :root {
+    --paper: #F6F5F1;
+    --surface: #FFFFFF;
+    --ink: #16161A;
+    --ink-hover: #2A2A31;
+    --muted: #55555F;
+    --line: #D9D8D1;
+    --field-border: #8A8A93;
+    --accent: #2F3BC4;
+    --accent-soft: #E7E8FA;
+    --error: #B42318;
+    --error-soft: #FDF1EF;
+    --success: #1B6B3A;
+    --success-soft: #ECF6EF;
+    --night: #1B1B24;
+
+    --font-display: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+    --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px;
+    --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px;
+
+    --r-sm: 6px; --r-md: 10px; --r-lg: 20px;
+    --gutter: 24px;
+    --section: var(--s9);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; }
+  p, ul, ol { margin: 0; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+  [tabindex="-1"]:focus { outline: none; }
+  [tabindex="-1"]:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 var(--gutter); }
+
+  .skip {
+    position: absolute; left: var(--s4); top: -100px; z-index: 20;
+    background: var(--ink); color: var(--surface);
+    padding: var(--s3) var(--s4); border-radius: var(--r-md); text-decoration: none; font-weight: 600;
+  }
+  .skip:focus { top: var(--s4); }
+
+  /* Buttons: one filled style per area (DESIGN.md Placement) */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: var(--s2);
+    min-height: 48px; padding: 0 var(--s5);
+    border-radius: var(--r-md); border: 1px solid var(--ink);
+    font: 600 1rem/1.2 var(--font-body);
+    text-decoration: none; cursor: pointer;
+  }
+  .btn-primary { background: var(--ink); color: var(--surface); }
+  .btn-primary:hover { background: var(--ink-hover); }
+  .btn-secondary { background: transparent; color: var(--ink); min-height: 44px; padding: 0 var(--s4); }
+  .btn-secondary:hover { background: var(--surface); }
+  .btn[aria-disabled="true"] { opacity: .6; cursor: wait; }
+
+  /* Header */
+  .site-header .wrap {
+    display: flex; align-items: center; justify-content: space-between; gap: var(--s4);
+    padding-top: var(--s5); padding-bottom: var(--s5);
+  }
+  .wordmark {
+    font-family: var(--font-display); font-weight: 600; font-size: 1.375rem;
+    letter-spacing: -0.01em; color: var(--ink); text-decoration: none;
+  }
+
+  /* Hero */
+  .hero { padding: var(--s8) 0 var(--section); }
+  .hero .wrap { display: grid; gap: var(--s7); align-items: center; }
+  .badge {
+    display: inline-block; padding: var(--s1) var(--s3);
+    background: var(--accent-soft); color: var(--accent);
+    border-radius: var(--r-sm); font-weight: 600; font-size: .875rem; line-height: 1.5;
+  }
+  .hero h1 {
+    margin-top: var(--s5);
+    font-size: clamp(2.5rem, 4.2vw + 1rem, 4rem); line-height: 1.05; letter-spacing: -0.02em;
+    max-width: 14ch;
+  }
+  .lead {
+    margin-top: var(--s5); max-width: 34rem;
+    font-size: clamp(1.125rem, .4vw + 1rem, 1.25rem); line-height: 1.55; color: var(--muted);
+  }
+  .hero-action { margin-top: var(--s6); }
+  .hero-note { margin-top: var(--s3); font-size: .875rem; color: var(--muted); max-width: 30rem; }
+
+  .art {
+    border-radius: var(--r-lg); overflow: hidden; background: var(--night);
+    box-shadow: 0 24px 60px -24px rgba(22,22,26,.35);
+    aspect-ratio: 16 / 10;
+  }
+  .art svg { display: block; width: 100%; height: 100%; }
+
+  /* Sections */
+  .section { padding: 0 0 var(--section); }
+  .section h2 { font-size: clamp(1.75rem, 1.6vw + 1.1rem, 2.5rem); line-height: 1.15; letter-spacing: -0.01em; }
+  .section-intro { margin-top: var(--s3); color: var(--muted); max-width: 40rem; }
+
+  .steps { list-style: none; padding: 0; margin-top: var(--s7); display: grid; gap: var(--s6); counter-reset: step; }
+  .steps li { border-top: 1px solid var(--line); padding-top: var(--s5); }
+  .step-num {
+    display: block; font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; color: var(--accent);
+  }
+  .steps h3 { margin-top: var(--s2); font-size: 1.25rem; line-height: 1.3; }
+  .steps p { margin-top: var(--s2); color: var(--muted); max-width: 32ch; }
+  .deal {
+    margin-top: var(--s7); padding: var(--s5) 0 0; border-top: 1px solid var(--line);
+    font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; line-height: 1.35;
+  }
+
+  /* Apply */
+  .apply-grid { display: grid; gap: var(--s7); margin-top: var(--s7); }
+  .criteria h3 { font-size: 1.25rem; line-height: 1.3; }
+  .criteria h3 + ul { margin-top: var(--s3); }
+  .criteria ul + h3 { margin-top: var(--s6); }
+  .criteria ul { padding: 0; list-style: none; display: grid; gap: var(--s2); }
+  .criteria li { position: relative; padding-left: var(--s5); max-width: 40ch; }
+  .criteria li::before {
+    content: ""; position: absolute; left: 0; top: .7em;
+    width: 10px; height: 2px; background: var(--accent);
+  }
+
+  .panel {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg);
+    padding: var(--s6);
+  }
+  .required-note { color: var(--muted); font-size: .875rem; }
+  .field { margin-top: var(--s5); max-width: 560px; }
+  .field label, .check label { display: block; font-weight: 600; line-height: 1.4; }
+  .label-extra { font-weight: 400; color: var(--muted); }
+  .hint { margin-top: var(--s1); color: var(--muted); font-size: .875rem; }
+  .error-text { margin-top: var(--s1); color: var(--error); font-size: .875rem; font-weight: 500; }
+  .error-text:empty { display: none; }
+  input[type="text"], input[type="email"], input[type="url"], textarea {
+    display: block; width: 100%; margin-top: var(--s2);
+    min-height: 48px; padding: var(--s3) var(--s4);
+    font: 400 16px/1.4 var(--font-body); color: var(--ink);
+    background: var(--surface); border: 1px solid var(--field-border); border-radius: var(--r-md);
+  }
+  textarea { min-height: 120px; resize: vertical; line-height: 1.5; }
+  input:focus-visible, textarea:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-color: var(--ink); }
+  [aria-invalid="true"] { border: 2px solid var(--error) !important; }
+
+  .check { margin-top: var(--s5); display: grid; grid-template-columns: 24px 1fr; gap: var(--s3); align-items: start; max-width: 560px; }
+  .check input { width: 24px; height: 24px; margin: 0; accent-color: var(--ink); cursor: pointer; }
+  .check label { font-weight: 500; cursor: pointer; }
+  .check .error-text { grid-column: 2; margin-top: 0; }
+  .check input[aria-invalid="true"] { outline: 2px solid var(--error); outline-offset: 2px; }
+
+  .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+
+  .alert {
+    display: grid; grid-template-columns: 20px 1fr; gap: var(--s2);
+    margin-top: var(--s5); padding: var(--s4);
+    border-radius: var(--r-md); border: 1px solid var(--error); background: var(--error-soft);
+  }
+  .alert svg { margin-top: 2px; color: var(--error); }
+  .alert-title { font-weight: 600; color: var(--error); }
+  .alert ul { margin-top: var(--s1); padding-left: var(--s4); }
+  .alert a { color: var(--error); font-weight: 500; }
+  .alert p { color: var(--ink); }
+
+  .form-actions { margin-top: var(--s6); }
+  .status { margin-top: var(--s3); color: var(--muted); font-size: .875rem; }
+  .status:empty { display: none; }
+  .status.preview { color: var(--ink); background: var(--accent-soft); padding: var(--s3) var(--s4); border-radius: var(--r-md); font-size: .9375rem; }
+
+  .sent { text-align: left; }
+  .sent-icon { color: var(--success); }
+  .sent h3 { margin-top: var(--s3); font-size: 1.5rem; line-height: 1.25; color: var(--success); }
+  .sent p { margin-top: var(--s3); max-width: 46ch; overflow-wrap: anywhere; }
+  .sent .back { display: inline-block; margin-top: var(--s5); font-weight: 600; }
+
+  /* Footer */
+  .site-footer { border-top: 1px solid var(--line); }
+  .site-footer .wrap {
+    display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); justify-content: space-between; align-items: baseline;
+    padding-top: var(--s6); padding-bottom: var(--s6);
+  }
+  .site-footer p { color: var(--muted); font-size: .875rem; }
+
+  /* Mobile apply bar (under 900px only) */
+  .mobile-bar { display: none; }
+
+  @media (min-width: 900px) {
+    .hero .wrap { grid-template-columns: 1fr 1fr; gap: var(--s7); }
+    .steps { grid-template-columns: repeat(3, 1fr); }
+    .apply-grid { grid-template-columns: 5fr 7fr; align-items: start; }
+    .criteria { padding-top: var(--s6); }
+  }
+  @media (max-width: 899.98px) {
+    :root { --section: var(--s8); }
+    html { scroll-padding-bottom: 88px; }
+    .hero { padding-top: var(--s6); }
+    .mobile-bar:not([hidden]) {
+      display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+      padding: var(--s3) var(--s4) calc(var(--s3) + env(safe-area-inset-bottom));
+      background: var(--paper); border-top: 1px solid var(--line);
+    }
+    .mobile-bar .btn { width: 100%; }
+    body.has-bar { padding-bottom: 76px; }
+  }
+  @media (max-width: 599.98px) {
+    :root { --gutter: 16px; }
+    .panel { padding: var(--s5) var(--s4); }
+    .form-actions .btn { width: 100%; }
+  }
+  @media (max-width: 359.98px) {
+    .wordmark { font-size: 1.125rem; }
+  }
+  section[id], h2[id] { scroll-margin-top: var(--s5); }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="#top" id="top">SocialGhost</a>
+    <a class="btn btn-secondary" href="#apply" data-apply-link>Apply</a>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <span class="badge">Limited beta</span>
+        <h1 id="hero-title">Make faceless YouTube videos with AI.</h1>
+        <p class="lead">SocialGhost is live and in limited beta. We are looking for serious testers.</p>
+        <div class="hero-action">
+          <a class="btn btn-primary" href="#apply" id="hero-cta" data-apply-link>Apply for the beta</a>
+        </div>
+        <p class="hero-note">Free access for testers who send useful feedback within 2 to 3 days.</p>
+      </div>
+
+      <!-- Decorative illustration (D5). Not a product screenshot. No text, captions or numbers. -->
+      <div class="art" aria-hidden="true">
+        <svg viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" focusable="false">
+          <defs>
+            <radialGradient id="glow" cx="50%" cy="42%" r="45%">
+              <stop offset="0" stop-color="#2F3BC4" stop-opacity=".55"/>
+              <stop offset="1" stop-color="#2F3BC4" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="ghostFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFFFFF"/>
+              <stop offset="1" stop-color="#E7E8FA"/>
+            </linearGradient>
+            <clipPath id="frameClip"><rect width="640" height="400"/></clipPath>
+          </defs>
+          <g clip-path="url(#frameClip)">
+            <rect width="640" height="400" fill="#1B1B24"/>
+            <!-- floor lines for depth -->
+            <g stroke="#FFFFFF" stroke-opacity=".07" stroke-width="1.5">
+              <line x1="0" y1="300" x2="640" y2="300"/>
+              <line x1="0" y1="318" x2="640" y2="318"/>
+              <line x1="0" y1="340" x2="640" y2="340"/>
+              <line x1="320" y1="300" x2="40" y2="400"/>
+              <line x1="320" y1="300" x2="180" y2="400"/>
+              <line x1="320" y1="300" x2="320" y2="400"/>
+              <line x1="320" y1="300" x2="460" y2="400"/>
+              <line x1="320" y1="300" x2="600" y2="400"/>
+            </g>
+            <rect width="640" height="400" fill="url(#glow)"/>
+            <!-- framing corners, like a camera viewfinder -->
+            <g fill="none" stroke="#FFFFFF" stroke-opacity=".35" stroke-width="3" stroke-linecap="round">
+              <path d="M40 72 V40 H72"/>
+              <path d="M568 40 H600 V72"/>
+              <path d="M600 268 V300 H568" />
+              <path d="M72 300 H40 V268"/>
+            </g>
+            <!-- shadow -->
+            <ellipse cx="320" cy="300" rx="78" ry="10" fill="#000000" fill-opacity=".45"/>
+            <!-- faceless ghost: no eyes, no mouth -->
+            <path d="M252 286 V176 C252 128 282 96 320 96 C358 96 388 128 388 176 V286
+                     C376 276 366 276 354 286 C342 296 332 296 320 286
+                     C308 276 298 276 286 286 C274 296 264 296 252 286 Z"
+                  fill="url(#ghostFill)"/>
+            <!-- player bar: play mark and progress, no time codes -->
+            <rect x="0" y="352" width="640" height="48" fill="#000000" fill-opacity=".35"/>
+            <path d="M40 366 L54 376 L40 386 Z" fill="#FFFFFF" fill-opacity=".9"/>
+            <rect x="76" y="374" width="524" height="4" rx="2" fill="#FFFFFF" fill-opacity=".2"/>
+            <rect x="76" y="374" width="210" height="4" rx="2" fill="#8A93FF"/>
+            <circle cx="286" cy="376" r="7" fill="#FFFFFF"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="how-title">
+    <div class="wrap">
+      <h2 id="how-title">How the beta works</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-num" aria-hidden="true">1</span>
+          <h3>Apply</h3>
+          <p>Tell us what faceless videos you make or plan to make.</p>
+        </li>
+        <li>
+          <span class="step-num" aria-hidden="true">2</span>
+          <h3>Get access if selected</h3>
+          <p>We read applications and email access to the testers we pick.</p>
+        </li>
+        <li>
+          <span class="step-num" aria-hidden="true">3</span>
+          <h3>Test and send feedback</h3>
+          <p>Make videos with SocialGhost. Send us useful feedback within 2 to 3 days of getting access.</p>
+        </li>
+      </ol>
+      <p class="deal">In return, you get free access to SocialGhost.</p>
+    </div>
+  </section>
+
+  <section class="section" id="apply" aria-labelledby="apply-title">
+    <div class="wrap">
+      <h2 id="apply-title" tabindex="-1">Apply for the beta</h2>
+      <p class="section-intro">Places are limited. Tell us a little about you and your videos.</p>
+
+      <div class="apply-grid">
+        <div class="criteria">
+          <h3>Apply if you</h3>
+          <ul>
+            <li>make faceless YouTube videos, or plan to start soon</li>
+            <li>can try SocialGhost in the days after you get access</li>
+            <li>will tell us plainly what worked and what did not</li>
+          </ul>
+          <h3>Useful feedback is specific</h3>
+          <ul>
+            <li>what you tried to make</li>
+            <li>where you got stuck, or where the video missed</li>
+            <li>what you would change first</li>
+          </ul>
+        </div>
+
+        <div class="panel" id="apply-panel">
+          <form id="apply-form" novalidate>
+            <p class="required-note">All fields are required unless marked optional.</p>
+
+            <div class="alert" id="error-summary" role="alert" tabindex="-1" hidden>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 7v6M12 17h.01"/></svg>
+              <div>
+                <p class="alert-title" id="error-summary-title">Check your answers</p>
+                <ul id="error-summary-list"></ul>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="f-name">Your name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" maxlength="100" required aria-describedby="f-name-error">
+              <p class="error-text" id="f-name-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" maxlength="254" required aria-describedby="f-email-error" spellcheck="false">
+              <p class="error-text" id="f-email-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="f-channel">YouTube channel link <span class="label-extra">(optional)</span></label>
+              <p class="hint" id="f-channel-hint">Leave blank if you have not started a channel yet.</p>
+              <input id="f-channel" name="channel_url" type="url" inputmode="url" autocomplete="url" maxlength="300" aria-describedby="f-channel-hint f-channel-error" spellcheck="false">
+              <p class="error-text" id="f-channel-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="f-plans">What faceless videos do you want to make?</label>
+              <p class="hint" id="f-plans-hint">Topic, format and how often you plan to post.</p>
+              <textarea id="f-plans" name="plans" rows="4" maxlength="1000" required aria-describedby="f-plans-hint f-plans-error"></textarea>
+              <p class="error-text" id="f-plans-error"></p>
+            </div>
+
+            <div class="check">
+              <input id="f-commit" name="feedback_commitment" type="checkbox" required aria-describedby="f-commit-error">
+              <label for="f-commit">I can try SocialGhost and send feedback within 2 to 3 days of getting access.</label>
+              <p class="error-text" id="f-commit-error"></p>
+            </div>
+
+            <div class="hp" aria-hidden="true">
+              <label for="f-website">Leave this empty</label>
+              <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="alert" id="send-error" role="alert" hidden>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 7v6M12 17h.01"/></svg>
+              <div>
+                <p class="alert-title" id="send-error-title">Your application was not sent.</p>
+                <p id="send-error-text">Check your connection and try again. Your answers are still here.</p>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit" id="submit-btn">Send application</button>
+              <p class="status" id="form-status" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+
+          <div class="sent" id="sent" hidden>
+            <svg class="sent-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6"/></svg>
+            <h3 id="sent-title" tabindex="-1">Application sent</h3>
+            <p>Thanks, <span id="sent-name"></span>. If you are selected, we will email access to <strong id="sent-email"></strong>.</p>
+            <p class="status preview" id="sent-preview-note" hidden>Preview of the sent state with sample answers. Nothing was sent.</p>
+            <a class="back" href="#top">Back to top</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="wordmark" href="#top">SocialGhost</a>
+    <p>trysocialghost.com</p>
+  </div>
+</footer>
+
+<div class="mobile-bar" id="mobile-bar" hidden>
+  <a class="btn btn-primary" href="#apply" data-apply-link>Apply for the beta</a>
+</div>
+
+<script>
+(function () {
+  // Production: set to "/api/apply" (docs/shipright/02-technical-architecture.md).
+  // Preview: empty, so nothing is ever sent from this file.
+  var APPLY_ENDPOINT = "";
+
+  var form = document.getElementById("apply-form");
+  var submitBtn = document.getElementById("submit-btn");
+  var statusEl = document.getElementById("form-status");
+  var summary = document.getElementById("error-summary");
+  var summaryTitle = document.getElementById("error-summary-title");
+  var summaryList = document.getElementById("error-summary-list");
+  var sendError = document.getElementById("send-error");
+  var sendErrorTitle = document.getElementById("send-error-title");
+  var sendErrorText = document.getElementById("send-error-text");
+  var sent = document.getElementById("sent");
+  var applyTitle = document.getElementById("apply-title");
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var fields = {
+    name: document.getElementById("f-name"),
+    email: document.getElementById("f-email"),
+    channel_url: document.getElementById("f-channel"),
+    plans: document.getElementById("f-plans"),
+    feedback_commitment: document.getElementById("f-commit")
+  };
+  var order = ["name", "email", "channel_url", "plans", "feedback_commitment"];
+  var submittedOnce = false;
+  var sending = false;
+
+  function normalizeUrl(v) {
+    v = v.trim();
+    if (v && !/^[a-z][a-z0-9+.-]*:\/\//i.test(v) && v.indexOf(".") > 0) v = "https://" + v;
+    return v;
+  }
+
+  function check(key) {
+    var el = fields[key];
+    if (key === "name") return el.value.trim() ? "" : "Enter your name.";
+    if (key === "email") {
+      var v = el.value.trim();
+      if (!v) return "Enter your email address.";
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? "" : "Enter an email address like name@example.com.";
+    }
+    if (key === "channel_url") {
+      var u = normalizeUrl(el.value);
+      if (!u) return "";
+      try {
+        var p = new URL(u);
+        if ((p.protocol === "http:" || p.protocol === "https:") && p.hostname.indexOf(".") > 0) return "";
+      } catch (e) {}
+      return "Enter a full link, like https://youtube.com/@yourchannel.";
+    }
+    if (key === "plans") return el.value.trim() ? "" : "Tell us what videos you want to make.";
+    if (key === "feedback_commitment") return el.checked ? "" : "Tick this box to apply. The beta needs feedback within 2 to 3 days.";
+    return "";
+  }
+
+  function showFieldError(key, msg) {
+    var el = fields[key];
+    var out = document.getElementById(el.id + "-error");
+    out.textContent = msg;
+    if (msg) el.setAttribute("aria-invalid", "true"); else el.removeAttribute("aria-invalid");
+  }
+
+  function validateAll() {
+    var errors = [];
+    order.forEach(function (key) {
+      var msg = check(key);
+      showFieldError(key, msg);
+      if (msg) errors.push({ key: key, msg: msg });
+    });
+    return errors;
+  }
+
+  function showSummary(errors) {
+    summaryList.textContent = "";
+    if (!errors.length) { summary.hidden = true; return; }
+    summaryTitle.textContent = errors.length === 1 ? "Check 1 answer" : "Check " + errors.length + " answers";
+    errors.forEach(function (err) {
+      var li = document.createElement("li");
+      var a = document.createElement("a");
+      a.href = "#" + fields[err.key].id;
+      a.textContent = err.msg;
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        fields[err.key].focus();
+      });
+      li.appendChild(a);
+      summaryList.appendChild(li);
+    });
+    summary.hidden = false;
+    summary.focus();
+  }
+
+  // Live re-check only for fields already shown as invalid, after the first submit.
+  order.forEach(function (key) {
+    var ev = key === "feedback_commitment" ? "change" : "input";
+    fields[key].addEventListener(ev, function () {
+      if (!submittedOnce || !fields[key].hasAttribute("aria-invalid")) return;
+      showFieldError(key, check(key));
+    });
+  });
+
+  fields.channel_url.addEventListener("blur", function () {
+    var v = normalizeUrl(fields.channel_url.value);
+    if (v !== fields.channel_url.value) fields.channel_url.value = v;
+  });
+
+  function setSending(on) {
+    sending = on;
+    if (on) {
+      submitBtn.setAttribute("aria-disabled", "true");
+      submitBtn.textContent = "Sending application";
+      statusEl.className = "status";
+      statusEl.textContent = "Sending your application.";
+    } else {
+      submitBtn.removeAttribute("aria-disabled");
+      submitBtn.textContent = "Send application";
+      statusEl.textContent = "";
+    }
+  }
+
+  function showSendError(title, text) {
+    sendErrorTitle.textContent = title;
+    sendErrorText.textContent = text;
+    sendError.hidden = false;
+  }
+
+  function showSent(name, email, isPreview) {
+    document.getElementById("sent-name").textContent = name;
+    document.getElementById("sent-email").textContent = email;
+    document.getElementById("sent-preview-note").hidden = !isPreview;
+    form.hidden = true;
+    sent.hidden = false;
+    document.getElementById("sent-title").focus();
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (sending) return; // one request at a time
+    submittedOnce = true;
+    sendError.hidden = true;
+    statusEl.textContent = "";
+
+    var errors = validateAll();
+    showSummary(errors);
+    if (errors.length) return;
+
+    var payload = {
+      name: fields.name.value.trim(),
+      email: fields.email.value.trim(),
+      channel_url: normalizeUrl(fields.channel_url.value),
+      plans: fields.plans.value.trim(),
+      feedback_commitment: true,
+      website: document.getElementById("f-website").value
+    };
+
+    if (!APPLY_ENDPOINT) {
+      statusEl.className = "status preview";
+      statusEl.textContent = "Preview only. No application endpoint is connected, so nothing was sent.";
+      return;
+    }
+
+    setSending(true);
+    fetch(APPLY_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    }).then(function (res) {
+      return res.json().catch(function () { return {}; }).then(function (body) {
+        setSending(false);
+        if (res.ok && body.ok) { showSent(payload.name, payload.email, false); return; }
+        if (res.status === 400 && body.fields) {
+          var errs = [];
+          order.forEach(function (key) {
+            if (body.fields[key]) { showFieldError(key, body.fields[key]); errs.push({ key: key, msg: body.fields[key] }); }
+          });
+          showSummary(errs);
+          return;
+        }
+        if (res.status === 429) {
+          showSendError("Too many attempts.", "Wait a few minutes and try again. Your answers are still here.");
+          return;
+        }
+        showSendError("Your application was not sent.", "Check your connection and try again. Your answers are still here.");
+      });
+    }).catch(function () {
+      setSending(false);
+      showSendError("Your application was not sent.", "Check your connection and try again. Your answers are still here.");
+    });
+  });
+
+  // "Apply" links: move to the Apply section and put focus on its heading.
+  Array.prototype.forEach.call(document.querySelectorAll("[data-apply-link]"), function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.getElementById("apply").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+      applyTitle.focus({ preventScroll: true });
+      if (history.replaceState) history.replaceState(null, "", "#apply");
+    });
+  });
+
+  // Mobile apply bar: show after the hero button leaves view, hide while the Apply section is visible.
+  var bar = document.getElementById("mobile-bar");
+  var heroCta = document.getElementById("hero-cta");
+  var applySection = document.getElementById("apply");
+  if ("IntersectionObserver" in window) {
+    var heroVisible = true, applyVisible = false;
+    var update = function () {
+      var show = !heroVisible && !applyVisible;
+      bar.hidden = !show;
+      document.body.classList.toggle("has-bar", show);
+    };
+    new IntersectionObserver(function (entries) {
+      heroVisible = entries[0].isIntersecting; update();
+    }).observe(heroCta);
+    new IntersectionObserver(function (entries) {
+      applyVisible = entries[0].isIntersecting; update();
+    }, { rootMargin: "0px 0px -20% 0px" }).observe(applySection);
+  }
+
+  // Design review only: ?preview=invalid | error | sent shows that state. Remove in production.
+  var preview = new URLSearchParams(location.search).get("preview");
+  if (preview === "invalid") {
+    submittedOnce = true;
+    showSummary(validateAll());
+  } else if (preview === "error") {
+    showSendError("Your application was not sent.", "Check your connection and try again. Your answers are still here.");
+  } else if (preview === "sent") {
+    showSent("Sam", "sam@example.com", true);
+  }
+})();
+</script>
+</body>
+</html>

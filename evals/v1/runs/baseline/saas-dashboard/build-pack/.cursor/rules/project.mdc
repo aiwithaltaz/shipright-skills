@@ -1,0 +1,18 @@
+---
+description: Phase 1 scope and sources for the agency project tracker
+alwaysApply: true
+---
+
+Before writing code, read in this order:
+1. PRODUCT.md (scope and exclusions)
+2. DESIGN.md (tokens, components, placement)
+3. docs/shipright/build-rules.md (rules and open decisions)
+4. docs/shipright/04-frontend-spec.md (the screen you are building)
+5. The ticket in docs/shipright/05-feature-ticket-list.md
+
+Rules:
+- Build only Phase 1: S0 Sign in, S1 Projects, S2 Project form. Nothing in the "Excluded" lists.
+- Use only values from DESIGN.md. No new colors, fonts, gradients or icons.
+- If a decision in "Needs approval before build" is still open, stop and ask the owner. Do not pick one yourself.
+- Keep money as numeric/decimal, never float. Health rules live in one function, getProjectHealth.
+- Never claim a save worked without a success response.
