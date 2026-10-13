@@ -40,25 +40,4 @@ Argument: (1) It captures a thought in two seconds: proof, a live demo field. (2
 - Loading: a still render of the lamp shows first; the canvas fades in when ready. No WebGL or reduced motion: the still image stays, with three angle buttons.
 - Below: specs table, materials with close-up stills, FAQ, footer. Scroll motion: one pinned section that turns the lamp 90 degrees, skipped under reduced motion.
 
-## Ticket example
-
-```text
-T4. Invoices list: states            Size: one sitting   After: T3
-Paste this into your coding tool:
----
-Goal: The invoices list handles empty, loading, error and long data without breaking.
-Read first: docs/shipright/build-rules.md, DESIGN.md, docs/shipright/04-frontend-spec.md (S1 States).
-Build:
-1. Loading: 8 skeleton rows at row height; header and control stay interactive.
-2. Empty Open tab: "No open invoices." with the New invoice button in the table area.
-3. Load error: Alert "Invoices did not load." with Try again; keep rows already shown.
-4. Long client names truncate with a title and full name on focus.
-Use only tokens from design/tokens.css.
-Do not add: filters, search, export, charts.
-Done when:
-- Each state renders at 1280 and 390 with no sideways scroll.
-- Try again refetches and the Alert leaves on success.
-- check-ui reports 0 FAIL on /invoices.
-Stop: Do not start the next ticket. Reply with changed files, decisions and how you checked.
----
-```
+Tickets follow the anatomy in ticket-prompts.md: goal, read first, ordered build steps, tokens, states, do-not-add, done-when checks and the stop line.

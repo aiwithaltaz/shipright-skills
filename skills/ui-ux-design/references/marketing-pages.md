@@ -34,6 +34,4 @@ If proof is missing, say what the product does and how it works instead, and lis
 - Motion is one signature move plus quiet section entrances, with reduced-motion fallbacks. See motion.md.
 - Forms: visible labels, the fewest fields that qualify the visitor, and a clear message after sending.
 
-## Check before handoff
-
-Screenshot at 1280 and 390. Check: headline lines, one primary action per view, every claim has proof, no invented proof, no sideways scroll, contrast, and that the page still reads with motion turned off.
+Before handoff, run the look-and-fix loop in layout-and-hierarchy.md, and confirm every claim has real proof and the page reads with motion off.

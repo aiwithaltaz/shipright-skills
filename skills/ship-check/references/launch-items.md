@@ -18,13 +18,13 @@ Not applicable requires a source and reason. Never invent requirements or silent
 | 9 | Icons | Verify approved favicon/app assets resolve and display at relevant sizes. Do not invent a logo. |
 | 10 | Indexing | Inspect actual sitemap, robots and indexing directives against approved public/private intent. These are not access controls. |
 | 11 | Alternatives | Inspect DOM/source for meaningful image alternatives and decorative images ignored by assistive technology. Screenshots cannot prove this. |
-| 12 | Contrast/focus | Measure actual color pairs and inspect keyboard focus. Use the UI state/accessibility reference; no screenshot-only compliance claim. |
+| 12 | Contrast/focus | Measure actual color pairs and inspect keyboard focus; check-ui reports both for the pages it loads. Use the UI state/accessibility reference; no screenshot-only compliance claim. |
 | 13 | Responsive access | Exercise supported widths, 200% text resizing, 320 CSS pixel reflow where applicable, long content and sticky overlap. One 390px screenshot is insufficient. |
 | 14 | Not-found recovery | Inspect a safe nonexistent route, actual response status and recovery link. A designed frame is not serving evidence. |
 | 15 | Forms | Exercise authorized test cases for labels, invalid fields, preserved values, duplicate submission and successful completion. Never submit live customer forms during a read-only audit. |
 | 16 | Links | Check relevant destinations and report scope. A sample cannot establish every external link remains healthy. |
 | 17 | Images | Inspect dimensions, transfer size, loading and layout stability. Do not lazy-load the primary visible image by default. |
-| 18 | Performance | Record measured page/build, device/network, tool and runs. Separate lab results from field experience; a navigation audit alone does not establish real-user responsiveness. |
+| 18 | Performance | Record measured page/build, device/network, tool and runs. Targets: LCP 2.5 s or less, INP 200 ms or less, CLS 0.1 or less at the 75th percentile. Separate lab results (Lighthouse) from field data (the web-vitals library or CrUX); a navigation audit alone does not establish real-user responsiveness. For 3D pages, also record model and texture size, draw calls, frame rate on a mid-range phone and the fallback image. |
 | 19 | Analytics | Check only wanted events, approved data and consent. No tracking is valid when the owner chose it. Never add analytics to satisfy a checklist. |
 | 20 | Primary task | Assess the next action within each task context. Multiple contextual actions need hierarchy, not arbitrary removal. |
 

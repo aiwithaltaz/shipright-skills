@@ -140,16 +140,16 @@
           "when": "2. Design system first, before any screen or coding handoff. Record a small system: type scale, spacing scale, color roles, radius, elevation, motion, and a short component list. The user's own system or Figma file always wins. Existing app: extract the current system, mark it Observed, and reuse it. Do not replace it. New app: start from the matching starter in [starter-systems.md](references/starter-systems.md), adapt the accent and type to the subject, propose a small system, mark it Proposed, and get the user's OK before screens. Numbers are required for handoff, but they must come from the observed or approved system, never invented. A starter shown to the user and accepted, or delegated with \"you decide\", counts as approved."
         },
         "skills/ui-ux-design/references/anti-slop-rules.md": {
-          "when": "5. Trace every visible element to the current phase. Read \"Default screens to leave out\" in [anti-slop-rules.md](references/anti-slop-rules.md) before adding a region. Put later ideas in notes, not UI."
+          "when": "4. Trace every visible element to the current phase. Read \"Default screens to leave out\" in [anti-slop-rules.md](references/anti-slop-rules.md) before adding a region. Put later ideas in notes, not UI."
         },
         "skills/ui-ux-design/references/mobile.md": {
-          "when": "6. State the design direction in one useful sentence. Do not invent brand personality. For a phone screen read [mobile.md](references/mobile.md); for a marketing or launch page read [marketing-pages.md](references/marketing-pages.md)."
+          "when": "5. State the design direction in one useful sentence. Do not invent brand personality. For a phone screen read [mobile.md](references/mobile.md); for a marketing or launch page read [marketing-pages.md](references/marketing-pages.md)."
         },
         "skills/ui-ux-design/references/marketing-pages.md": {
-          "when": "6. State the design direction in one useful sentence. Do not invent brand personality. For a phone screen read [mobile.md](references/mobile.md); for a marketing or launch page read [marketing-pages.md](references/marketing-pages.md)."
+          "when": "5. State the design direction in one useful sentence. Do not invent brand personality. For a phone screen read [mobile.md](references/mobile.md); for a marketing or launch page read [marketing-pages.md](references/marketing-pages.md)."
         },
         "skills/ui-ux-design/references/layout-and-hierarchy.md": {
-          "when": "8. Check F1-F3, accessibility and exact feedback. Remove unsupported additions. If you render HTML, run the look-and-fix loop in [layout-and-hierarchy.md](references/layout-and-hierarchy.md): check-ui, then look at both screenshots, up to three rounds."
+          "when": "7. Check F1-F3, accessibility and exact feedback. Remove unsupported additions. If you render HTML, run the look-and-fix loop in [layout-and-hierarchy.md](references/layout-and-hierarchy.md): check-ui, then look at both screenshots, up to three rounds."
         },
         "skills/ui-ux-design/references/design-system.md": {
           "when": "For a system choice, foundations, tokens, a supplied reference or naming and maintenance, read [design-system.md](references/design-system.md)."
@@ -168,9 +168,6 @@
         },
         "skills/ux-critique/references/slop-tells.md": {
           "when": "| Concrete review prompts for competing actions or unsupported widgets | [slop-tells.md](../ux-critique/references/slop-tells.md) |"
-        },
-        "skills/ux-critique/references/severity-rubric.md": {
-          "when": "| Severity of a concrete review finding | [severity-rubric.md](../ux-critique/references/severity-rubric.md) |"
         },
         "skills/ux-critique/references/bounded-verification.md": {
           "when": "| Available implementation evidence | [bounded-verification.md](../ux-critique/references/bounded-verification.md) |"
@@ -261,13 +258,13 @@
           "when": "Use [existing-app.md](references/existing-app.md) for existing products. A review is read-only; already authorized fixes need no repeated approval."
         },
         "skills/ux-critique/references/bounded-verification.md": {
-          "when": "Use [bounded-verification.md](references/bounded-verification.md) for available runtime evidence."
+          "when": "Use [bounded-verification.md](references/bounded-verification.md) for available runtime evidence, including the check-ui and screenshot loop for a rendered page."
         },
         "skills/ux-critique/references/slop-tells.md": {
-          "when": "[slop-tells.md](references/slop-tells.md) helps identify competing actions, duplicate identities and unsupported widgets."
+          "when": "Count competing actions, duplicate identities or unsupported widgets only when the count supports a finding; [slop-tells.md](references/slop-tells.md) has prompts. No empty counting rows for a label edit."
         },
         "skills/ui-ux-design/references/ui-copy.md": {
-          "when": "Use [UI copy](../ui-ux-design/references/ui-copy.md). Do not guess whether AI wrote it."
+          "when": "For a copy problem, quote the line, name the issue and give a grounded correction using [UI copy](../ui-ux-design/references/ui-copy.md). Do not guess whether AI wrote it."
         },
         "skills/ux-critique/references/plan-review.md": {
           "when": "Only when requested, use [plan-review.md](references/plan-review.md) to score Product, Design and Build."

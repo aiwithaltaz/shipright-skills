@@ -150,3 +150,13 @@ Screenshots and component galleries inform visual comparison, not observed user 
 Credit Component Gallery by Iain Bean: [component.gallery](https://component.gallery/), [about](https://component.gallery/about/), [components](https://component.gallery/components/), and the project site [github.com/inbn/component-gallery](https://github.com/inbn/component-gallery).
 The site does not publish a license. Names, aliases and links are enough. Write every purpose in our own words. Do not copy its definitions, guidance, code or screenshots. It is a comparison index, not this product's system.
 New animated libraries and Three.js remain optional later-phase references, not Phase 5 installs or mandatory foundations.
+
+## Accessibility criteria sources (state-coverage, checked October 4, 2026)
+
+Primary references, checked October 4, 2026:
+- [Text contrast](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)
+- [Non-text contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html)
+- [Target size](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html)
+- [Reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)
+- [Focus not obscured](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html)
+- [Modal dialog pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)

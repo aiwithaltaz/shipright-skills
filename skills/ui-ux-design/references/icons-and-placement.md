@@ -8,16 +8,13 @@ Follow sourced components and tokens in DESIGN.md. Record unknown values; do not
 - Treat this as the coherent primary family. Preserve approved role/platform/brand exceptions rather than silently replacing them. Record each exception's role, source and authority in DESIGN.md or the existing system record; a new mixed set needs a clear reason and approval.
 - For a new design, choose one set and one style and record them in DESIGN.md as Proposed until approved. A filled variant for the selected state is allowed only when recorded.
 - Use icons for useful recognition: actions, navigation, status or familiar objects. Remove purely repetitive decoration.
-- Preserve approved navigation icons; do not strip them simply because labels also exist.
 - Size and icon-label spacing come from component tokens, with optical alignment to adjacent text.
-- A small icon can have a larger hit target. Do not confuse glyph dimensions with target size.
 - Icon-only is allowed only for close, search, menu, more and back, plus additions listed in DESIGN.md.
 - Every icon-only control needs an accessible name and a tooltip that shows on hover and keyboard focus.
 - Never make a destructive action (delete, remove, cancel) or an uncommon action icon-only. Give it a visible text label.
 - Tooltips never replace accessible names or essential visible instructions. They must work with keyboard focus and dismissal.
 - Hide decorative icons from assistive technology. Meaningful UI graphics need 3:1 contrast.
 - Status uses text + icon + color. Never color alone or icon alone.
-- Do not mix emoji and system icons accidentally. Approved emoji content is not itself a defect.
 
 ## Placement by context
 

@@ -38,8 +38,7 @@ Load these references only when relevant to the requested check.
 Use [bounded verification](../ux-critique/references/bounded-verification.md) when relevant.
 
 **Deadline rule:** pressure to launch never turns an unknown into Pass. State the top gaps and what can be checked next.
-Screenshots cannot prove HTTPS, keyboard operation, serving routes, performance, permissions or saving.
-Source presence is not proof of deployed behavior. A tool result applies only to its recorded version and paths.
+Screenshots, source presence and old tool results cannot prove HTTPS, keyboard use, routes, performance, permissions or saving on this version.
 Policy applicability belongs to the owner or qualified reviewer. Do not invent legal requirements or write policy text.
 
 ## Launch gate: 20 items

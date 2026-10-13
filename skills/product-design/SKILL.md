@@ -49,7 +49,6 @@ Inspect supplied evidence first; skip research for clear corrections or sufficie
 When evidence, a method, a study plan or supplied records change a decision, read [research.md](references/research.md).
 Skip synthesis for clear corrections or planning-only work; missing evidence yields hypotheses, not findings.
 Keep raw records, interpretations and approval separate; retain every supplied accessibility or safety issue even without a repeated pattern.
-No tools or participants: state the limit, keep facts Unknown, continue with testable hypotheses. Never claim performed sessions.
 
 ## Structure and maps
 
@@ -57,7 +56,6 @@ For authorized objects, labels, routes, search, filters or role-based destinatio
 Skip IA for clear corrections or sufficient existing structure.
 When a journey, task flow, system process or service blueprint would resolve a decision, read [journeys.md](references/journeys.md).
 Skip mapping for clear corrections or a sufficient existing map. Choose one map, not every map.
-Do not invent objects, roles, routes, emotions or business processes. A map does not authorize UI or scope.
 
 ## Flows and states
 
@@ -67,7 +65,6 @@ Do not invent objects, roles, routes, emotions or business processes. A map does
 4. Check [Flow rules (must pass)](../_shared/flow-rules.md): F1 exit, F2 consistency, F3 useful status.
 
 Do not add roles, filters, notifications or payments to satisfy checklists.
-Resolve unclear clear/reset/remove scope and saved effects before destructive behavior.
 
 ## Documents and handoff
 

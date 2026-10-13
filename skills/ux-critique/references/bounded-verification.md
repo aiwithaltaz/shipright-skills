@@ -11,6 +11,8 @@ Use available tools; do not add installations, paid calls or deployments as hidd
 
 ## Checks
 
+For a rendered page, start with `node <pack>/scripts/check-ui.mjs <page> --root <site folder>`. It measures overflow, contrast, fonts, target size, labels, focus, motion handling and common slop tells at 1280 and 390 wide, and saves screenshots. Its FAILs are findings; its WARNs need a look. It is evidence for those measured rules only.
+Then open the screenshots. Name the single biggest visible problem, fix it when authorized, rerun, and stop after three rounds.
 Inspect relevant desktop and narrow layouts, plus zoom/reflow where supported. Use the project's widths, not a universal 390px-only rule.
 Check reading order, clipping, overflow, alignment, fonts, sticky overlap and difficult content.
 Exercise keyboard focus, labels, relevant dialogs, state transitions and affected saving/recovery when available.
@@ -24,7 +26,7 @@ Screenshots cannot verify persistence, permission enforcement or keyboard operat
 ## Fix and stop
 
 For authorized fixes, correct deviations from approved requirements and recheck the affected path.
-Use up to two optional visual refinement passes as a budget, not a reason to abandon a known required correction.
+Use up to three optional visual refinement rounds as a budget, not a reason to abandon a known required correction.
 Stop optional checks once the acceptance boundary is satisfied. If a tool or unresolved decision blocks completion, report it clearly.
 Record before/after evidence when useful. Keep historical results separate from new evidence.
 Use the shared readiness rule. Verification never authorizes publishing, deployment or payment.
