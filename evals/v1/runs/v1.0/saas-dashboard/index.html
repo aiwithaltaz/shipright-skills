@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects · Sample Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-bg: #F7F8FA;
+  --color-surface: #FFFFFF;
+  --color-sunken: #F1F2F4;
+  --color-text: #16181D;
+  --color-muted: #545B66;
+  --color-subtle: #6B7280;
+  --color-border: #E2E5EA;
+  --color-field-border: #848B96;
+  --color-accent: #1D5B79;
+  --color-accent-hover: #174C66;
+  --color-accent-text: #FFFFFF;
+  --color-accent-tint: #E8F0F5;
+  --color-success: #1B7A4B;
+  --color-success-bg: #E7F5EE;
+  --color-warning: #9A4F00;
+  --color-warning-bg: #FDF0E1;
+  --color-danger: #C1341F;
+  --color-danger-bg: #FCEBE7;
+  --color-meter: #545B66;
+
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --text-caption: 12px;  --leading-caption: 16px;
+  --text-meta: 13px;     --leading-meta: 18px;
+  --text-body: 14px;     --leading-body: 20px;
+  --text-section: 16px;  --leading-section: 20px;
+  --text-title: 20px;    --leading-title: 26px;
+
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px;
+  --space-6: 24px; --space-8: 32px; --space-10: 40px; --space-12: 48px; --space-16: 64px;
+
+  --radius-sm: 4px; --radius-control: 6px; --radius-panel: 8px; --radius-dialog: 12px;
+  --shadow-float: 0 8px 24px rgba(16, 24, 40, 0.12);
+  --duration-press: 120ms; --duration-popover: 180ms;
+  --ease-enter: cubic-bezier(0.23, 1, 0.32, 1);
+
+  --control-height: 36px;
+  --control-height-touch: 44px;
+  --topbar-height: 56px;
+  --row-height: 48px;
+  --table-header-height: 36px;
+  --meter-height: 6px;
+  --content-max: 1280px;
+  --gutter: 24px;
+}
+@media (max-width: 759px) { :root { --gutter: 16px; } }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+a { color: inherit; text-decoration: none; }
+button, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; border-radius: var(--radius-sm); }
+.num { font-variant-numeric: tabular-nums; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.icon { width: 16px; height: 16px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Preview strip: not part of the app */
+.preview {
+  border-bottom: 1px dashed var(--color-field-border);
+  background: var(--color-sunken);
+  font-size: var(--text-meta);
+  line-height: var(--leading-meta);
+  color: var(--color-muted);
+}
+.preview .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); padding-block: var(--space-2); }
+.preview p { margin: 0; flex: 1 1 320px; }
+.preview label { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--color-text); }
+.preview select {
+  height: 32px; padding: 0 var(--space-2); border: 1px solid var(--color-field-border);
+  border-radius: var(--radius-control); background: var(--color-surface);
+}
+
+.wrap { max-width: var(--content-max); margin-inline: auto; padding-inline: var(--gutter); }
+
+/* Top bar */
+.topbar { background: var(--color-surface); border-bottom: 1px solid var(--color-border); }
+.topbar .wrap { height: var(--topbar-height); display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+.workspace { font-size: var(--text-section); line-height: var(--leading-section); font-weight: 600; padding: var(--space-1) 0; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.account { position: relative; }
+.account-btn {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  height: var(--control-height); padding: 0 var(--space-2) 0 var(--space-1);
+  border: 0; background: transparent; border-radius: var(--radius-control); cursor: pointer;
+  transition: background var(--duration-press) var(--ease-enter);
+}
+.account-btn:hover { background: var(--color-sunken); }
+.avatar {
+  width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--color-accent-tint); color: var(--color-accent); font-size: var(--text-caption); font-weight: 600;
+}
+.menu {
+  position: absolute; right: 0; top: calc(100% + var(--space-1)); min-width: 220px; z-index: 20;
+  background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-float); padding: var(--space-1); display: none;
+}
+.menu.open { display: block; }
+.menu .who { padding: var(--space-2) var(--space-3); color: var(--color-muted); font-size: var(--text-meta); border-bottom: 1px solid var(--color-border); margin-bottom: var(--space-1); overflow-wrap: anywhere; }
+.menu button { display: block; width: 100%; text-align: left; height: var(--control-height); padding: 0 var(--space-3); border: 0; background: none; border-radius: var(--radius-control); cursor: pointer; }
+.menu button:hover { background: var(--color-sunken); }
+
+/* Page header */
+main { padding-block: var(--space-6) var(--space-12); }
+.page-head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-4); }
+h1 { margin: 0; font-size: var(--text-title); line-height: var(--leading-title); font-weight: 600; }
+.summary { margin: var(--space-1) 0 0; color: var(--color-muted); }
+.summary strong { color: var(--color-text); font-weight: 600; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  height: var(--control-height); padding: 0 var(--space-3); border-radius: var(--radius-control);
+  font-weight: 500; white-space: nowrap; cursor: pointer; border: 1px solid transparent;
+  transition: background var(--duration-press) var(--ease-enter), border-color var(--duration-press) var(--ease-enter);
+}
+.btn-primary { background: var(--color-accent); color: var(--color-accent-text); }
+.btn-primary:hover { background: var(--color-accent-hover); }
+.btn-secondary { background: var(--color-surface); border-color: var(--color-field-border); color: var(--color-text); }
+.btn-secondary:hover { background: var(--color-sunken); }
+
+/* View control */
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-4); margin: var(--space-5) 0 var(--space-3); }
+.segmented { display: inline-flex; padding: 2px; gap: 2px; background: var(--color-sunken); border: 1px solid var(--color-border); border-radius: var(--radius-control); }
+.segmented button {
+  height: 30px; padding: 0 var(--space-3); border: 0; border-radius: var(--radius-sm); background: transparent;
+  color: var(--color-muted); cursor: pointer; display: inline-flex; align-items: center; gap: var(--space-2);
+  transition: background var(--duration-press) var(--ease-enter);
+}
+.segmented button .count { color: var(--color-muted); font-variant-numeric: tabular-nums; }
+.segmented button[aria-pressed="true"] { background: var(--color-surface); color: var(--color-accent); font-weight: 500; box-shadow: 0 0 0 1px var(--color-border); }
+.segmented button[aria-pressed="true"] .count { color: var(--color-accent); }
+.sort-note { color: var(--color-muted); font-size: var(--text-meta); line-height: var(--leading-meta); margin: 0; }
+
+/* Panel and table */
+.panel { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-panel); }
+table { width: 100%; border-collapse: separate; border-spacing: 0; }
+thead th {
+  position: sticky; top: 0; z-index: 2;
+  height: var(--table-header-height); padding: 0 var(--space-3);
+  background: var(--color-sunken); color: var(--color-muted);
+  font-size: var(--text-meta); font-weight: 500; text-align: left; border-bottom: 1px solid var(--color-border);
+}
+thead th:first-child { border-top-left-radius: var(--radius-panel); padding-left: var(--space-4); }
+thead th:last-child { border-top-right-radius: var(--radius-panel); }
+tbody td { padding: var(--space-2) var(--space-3); vertical-align: top; border-bottom: 1px solid var(--color-border); }
+tbody td:first-child { padding-left: var(--space-4); }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr.row { cursor: pointer; transition: background var(--duration-press) var(--ease-enter); }
+tbody tr.row:hover { background: var(--color-accent-tint); }
+.col-project { width: 30%; }
+.col-lead { width: 14%; }
+.col-deadline { width: 25%; }
+.col-budget { width: auto; }
+.col-go { width: 40px; }
+.name { font-weight: 500; overflow-wrap: anywhere; }
+.name:hover { text-decoration: underline; text-underline-offset: 2px; }
+.sub { display: block; color: var(--color-muted); font-size: var(--text-meta); line-height: var(--leading-meta); overflow-wrap: anywhere; }
+.none { color: var(--color-muted); }
+.line { display: flex; align-items: center; gap: var(--space-2); min-height: var(--leading-body); flex-wrap: wrap; }
+.date { width: 76px; flex: none; }
+.go { color: var(--color-subtle); text-align: right; padding-right: var(--space-3); }
+.go .icon { margin-top: 2px; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: var(--space-1);
+  height: 20px; padding: 0 6px; border-radius: var(--radius-sm);
+  font-size: var(--text-caption); line-height: var(--leading-caption); font-weight: 500; white-space: nowrap;
+}
+.badge .icon { width: 14px; height: 14px; }
+.badge-danger { color: var(--color-danger); background: var(--color-danger-bg); }
+.badge-warning { color: var(--color-warning); background: var(--color-warning-bg); }
+.badge-success { color: var(--color-success); background: var(--color-success-bg); }
+
+.meter { width: 120px; flex: none; height: var(--meter-height); border-radius: 3px; background: var(--color-border); overflow: hidden; }
+.meter span { display: block; height: 100%; background: var(--color-meter); border-radius: 3px; }
+.meter.warning span { background: var(--color-warning); }
+.meter.danger span { background: var(--color-danger); }
+.pct { width: 40px; flex: none; text-align: right; font-weight: 500; }
+
+/* Narrow list */
+.list { display: none; list-style: none; margin: 0; padding: 0; }
+.list li + li { border-top: 1px solid var(--color-border); }
+.item { display: block; padding: var(--space-3) var(--space-4); }
+.item:hover { background: var(--color-accent-tint); }
+.item:focus-visible { outline-offset: -2px; border-radius: var(--radius-panel); }
+.item-top { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-3); }
+.item-badges { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-2); }
+.item-next { margin-top: var(--space-1); color: var(--color-muted); font-size: var(--text-meta); line-height: var(--leading-meta); }
+.item-budget { display: flex; align-items: center; gap: var(--space-3); margin-top: var(--space-2); font-size: var(--text-meta); line-height: var(--leading-meta); color: var(--color-muted); }
+.item-budget .meter { flex: 1 1 auto; width: auto; }
+
+/* States */
+.empty { padding: var(--space-8) var(--space-4); }
+.empty p { margin: 0 0 var(--space-1); }
+.empty .lead { font-weight: 500; }
+.empty .hint { color: var(--color-muted); margin-bottom: var(--space-4); }
+.alert {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3);
+  padding: var(--space-3) var(--space-4); margin-bottom: var(--space-3);
+  border: 1px solid var(--color-danger); border-radius: var(--radius-panel);
+  background: var(--color-danger-bg); color: var(--color-text);
+}
+.alert .icon { color: var(--color-danger); }
+.alert p { margin: 0; flex: 1 1 240px; }
+.skel { display: block; height: 10px; border-radius: 3px; background: var(--color-sunken); animation: pulse 1.4s ease-in-out infinite; }
+.skel + .skel { margin-top: var(--space-2); }
+@keyframes pulse { 50% { opacity: .55; } }
+.skel-row td { height: var(--row-height); }
+
+.bottombar { display: none; }
+
+@media (max-width: 899px) {
+  table { display: none; }
+  .list { display: block; }
+}
+@media (max-width: 759px) {
+  .page-head .btn-primary { display: none; }
+  .segmented { width: 100%; }
+  .segmented button { flex: 1 1 0; justify-content: center; height: 36px; }
+  main { padding-bottom: calc(var(--control-height-touch) + var(--space-12)); }
+  .bottombar {
+    display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+    background: var(--color-surface); border-top: 1px solid var(--color-border);
+    padding: var(--space-3) var(--gutter) calc(var(--space-3) + env(safe-area-inset-bottom));
+  }
+  .bottombar .btn { width: 100%; height: var(--control-height-touch); }
+  .item { padding: var(--space-3); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-late" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-over" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+</svg>
+
+<div class="preview">
+  <div class="wrap">
+    <p>Design preview of S1 Projects. All names and numbers are sample data. Today is Tue 13 Oct 2026.</p>
+    <label>Preview state
+      <select id="state-select">
+        <option value="populated">Populated</option>
+        <option value="loading">Loading</option>
+        <option value="empty">No projects yet</option>
+        <option value="error">Load failed</option>
+      </select>
+    </label>
+  </div>
+</div>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="workspace" href="#/projects">Sample Studio</a>
+    <div class="account">
+      <button class="account-btn" id="account-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="account-menu">
+        <span class="avatar" aria-hidden="true">MC</span>
+        <span>Maya Chen</span>
+        <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg>
+      </button>
+      <div class="menu" id="account-menu" role="menu" aria-label="Account">
+        <div class="who">maya@sample-studio.test</div>
+        <button role="menuitem" type="button">Sign out</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+  <div class="page-head">
+    <div>
+      <h1>Projects</h1>
+      <p class="summary" id="summary"></p>
+    </div>
+    <a class="btn btn-primary" href="#/projects/new"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>New project</a>
+  </div>
+
+  <div class="toolbar">
+    <div class="segmented" role="group" aria-label="Show projects">
+      <button type="button" data-view="active" aria-pressed="true">Active <span class="count" data-count="active"></span></button>
+      <button type="button" data-view="completed" aria-pressed="false">Completed <span class="count" data-count="completed"></span></button>
+      <button type="button" data-view="all" aria-pressed="false">All <span class="count" data-count="all"></span></button>
+    </div>
+    <p class="sort-note" id="sort-note">Late and over budget first</p>
+  </div>
+
+  <div id="alert-slot"></div>
+
+  <div class="panel" id="panel" aria-busy="false">
+    <table>
+      <caption class="sr-only" id="caption">Active projects, late and over budget first</caption>
+      <colgroup><col class="col-project"><col class="col-lead"><col class="col-deadline"><col class="col-budget"><col class="col-go"></colgroup>
+      <thead>
+        <tr>
+          <th scope="col">Project</th>
+          <th scope="col">Lead</th>
+          <th scope="col">Next deadline</th>
+          <th scope="col">Budget used</th>
+          <th scope="col"><span class="sr-only">Open</span></th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <ul class="list" id="list" aria-labelledby="caption"></ul>
+    <div id="empty-slot"></div>
+  </div>
+
+  <p class="sr-only" role="status" id="status"></p>
+</main>
+
+<div class="bottombar">
+  <a class="btn btn-primary" href="#/projects/new"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>New project</a>
+</div>
+
+<script>
+// Sample data for this preview only. Not real clients, people or amounts.
+const TODAY = Date.UTC(2026, 9, 13);
+const projects = [
+  { id: "website-rebuild", name: "Website rebuild and content migration", client: "Harbor & Pine", lead: "Maya Chen", status: "active", next: "2026-10-09", nextTitle: "Homepage design sign-off", budget: 24000, used: 21300 },
+  { id: "spring-campaign", name: "Spring campaign", client: "Juniper Foods", lead: "Tom Okafor", status: "active", next: "2026-10-11", nextTitle: "Final cut delivered", budget: 18000, used: 19350 },
+  { id: "brand-refresh", name: "Brand refresh", client: "Northfield Clinic", lead: "Ana Ruiz", status: "active", next: "2026-10-14", nextTitle: "Logo options review", budget: 12500, used: 13100 },
+  { id: "app-onboarding", name: "App onboarding screens", client: "Lumen Savings", lead: "Sam Patel", status: "active", next: "2026-10-13", nextTitle: "Prototype test session", budget: 9000, used: 4050 },
+  { id: "annual-report", name: "Annual report design", client: "Riverside Trust", lead: "Maya Chen", status: "active", next: "2026-10-19", nextTitle: "Draft layout to client", budget: 15000, used: 12450 },
+  { id: "launch-video", name: "Product launch video", client: "Kettle & Co", lead: null, status: "active", next: "2026-10-23", nextTitle: "Storyboard approval", budget: 30000, used: 9600 },
+  { id: "seo-plan", name: "SEO content plan", client: "Atlas Outdoor", lead: "Tom Okafor", status: "active", next: "2026-11-02", nextTitle: "Month 1 articles", budget: 6000, used: 2100 },
+  { id: "packaging", name: "Packaging design", client: "Juniper Foods", lead: "Ana Ruiz", status: "active", next: "2026-11-13", nextTitle: "Print-ready files", budget: 11000, used: 3300 },
+  { id: "intranet", name: "Intranet redesign", client: "Northfield Clinic", lead: "Sam Patel", status: "active", next: "2026-12-01", nextTitle: "Discovery report", budget: 40000, used: 6400 },
+  { id: "holiday-mailer", name: "Holiday mailer", client: "Kettle & Co", lead: "Ana Ruiz", status: "completed", completed: "2026-10-02", budget: 4500, used: 4320 },
+  { id: "event-microsite", name: "Event microsite", client: "Atlas Outdoor", lead: "Sam Patel", status: "completed", completed: "2026-09-21", budget: 8000, used: 8640 },
+  { id: "pitch-deck", name: "Pitch deck", client: "Harbor & Pine", lead: "Maya Chen", status: "completed", completed: "2026-09-09", budget: 3000, used: 2250 },
+  { id: "menu-redesign", name: "Menu redesign", client: "Juniper Foods", lead: null, status: "completed", completed: "2026-08-28", budget: 5500, used: 5060 }
+];
+
+// Mirrors lib/project-status.ts (D6). Thresholds are Proposed.
+const NEAR_BUDGET = 0.8, DUE_SOON_DAYS = 7;
+const money = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+const dayFmt = new Intl.DateTimeFormat("en-GB", { weekday: "short", day: "numeric", month: "short", timeZone: "UTC" });
+const toUTC = s => { const [y, m, d] = s.split("-").map(Number); return Date.UTC(y, m - 1, d); };
+const fmtDate = s => dayFmt.format(new Date(toUTC(s))).replace(",", "");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function deadlineStatus(p) {
+  if (p.status !== "active") return null;
+  const diff = Math.round((toUTC(p.next) - TODAY) / 86400000);
+  if (diff < 0) { const n = -diff; return { kind: "late", tone: "danger", icon: "i-late", text: n === 1 ? "1 day late" : n + " days late" }; }
+  if (diff === 0) return { kind: "soon", tone: "warning", icon: "i-clock", text: "Due today" };
+  if (diff === 1) return { kind: "soon", tone: "warning", icon: "i-clock", text: "Due tomorrow" };
+  if (diff <= DUE_SOON_DAYS) return { kind: "soon", tone: "warning", icon: "i-clock", text: "In " + diff + " days" };
+  return null;
+}
+function budgetStatus(p) {
+  const ratio = p.used / p.budget;
+  const pct = Math.round(ratio * 100);
+  if (p.status !== "active") return { pct, ratio, tone: "", badge: null };
+  if (ratio > 1) return { pct, ratio, tone: "danger", badge: { tone: "danger", icon: "i-over", text: money.format(p.used - p.budget) + " over" }, kind: "over" };
+  if (ratio >= NEAR_BUDGET) return { pct, ratio, tone: "warning", badge: { tone: "warning", icon: "i-gauge", text: "Near budget" }, kind: "near" };
+  return { pct, ratio, tone: "", badge: null };
+}
+function rank(p) {
+  const d = deadlineStatus(p), b = budgetStatus(p);
+  if (d && d.kind === "late") return 0;
+  if (b.kind === "over") return 1;
+  if (d && d.kind === "soon") return 2;
+  if (b.kind === "near") return 3;
+  return 4;
+}
+const badge = b => `<span class="badge badge-${b.tone}"><svg class="icon" aria-hidden="true"><use href="#${b.icon}"/></svg>${esc(b.text)}</span>`;
+const meter = b => `<span class="meter ${b.tone}" aria-hidden="true"><span style="width:${Math.min(100, b.pct)}%"></span></span>`;
+
+let view = "active";
+let state = "populated";
+
+function visible() {
+  const active = projects.filter(p => p.status === "active").sort((a, b) => rank(a) - rank(b) || toUTC(a.next) - toUTC(b.next));
+  const done = projects.filter(p => p.status === "completed").sort((a, b) => toUTC(b.completed) - toUTC(a.completed));
+  return view === "active" ? active : view === "completed" ? done : active.concat(done);
+}
+
+function rowHTML(p) {
+  const d = deadlineStatus(p), b = budgetStatus(p);
+  const href = "#/projects/" + p.id;
+  const lead = p.lead ? esc(p.lead) : '<span class="none">No lead</span>';
+  const deadline = p.status === "active"
+    ? `<div class="line"><span class="date num">${fmtDate(p.next)}</span>${d ? badge(d) : ""}</div><span class="sub">${esc(p.nextTitle)}</span>`
+    : `<div class="line"><span class="date num">${fmtDate(p.completed)}</span>${badge({ tone: "success", icon: "i-check", text: "Completed" })}</div>`;
+  return `<tr class="row" data-href="${href}">
+    <td><a class="name" href="${href}">${esc(p.name)}</a><span class="sub">${esc(p.client)}</span></td>
+    <td>${lead}</td>
+    <td>${deadline}</td>
+    <td><div class="line">${meter(b)}<span class="pct num">${b.pct}%</span>${b.badge ? badge(b.badge) : ""}</div><span class="sub num">${money.format(p.used)} of ${money.format(p.budget)}</span></td>
+    <td class="go"><svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></td>
+  </tr>`;
+}
+
+function itemHTML(p) {
+  const d = deadlineStatus(p), b = budgetStatus(p);
+  const badges = [];
+  if (p.status !== "active") badges.push(badge({ tone: "success", icon: "i-check", text: "Completed" }));
+  if (d) badges.push(badge(d));
+  if (b.badge) badges.push(badge(b.badge));
+  const next = p.status === "active"
+    ? `Next: <span class="num">${fmtDate(p.next)}</span>, ${esc(p.nextTitle)}`
+    : `Completed <span class="num">${fmtDate(p.completed)}</span>`;
+  return `<li><a class="item" href="#/projects/${p.id}">
+    <div class="item-top"><span class="name">${esc(p.name)}</span><span class="pct num">${b.pct}%</span></div>
+    <span class="sub">${esc(p.client)} · ${p.lead ? esc(p.lead) : "No lead"}</span>
+    ${badges.length ? `<div class="item-badges">${badges.join("")}</div>` : ""}
+    <div class="item-next">${next}</div>
+    <div class="item-budget">${meter(b)}<span class="num">${money.format(p.used)} of ${money.format(p.budget)}</span></div>
+  </a></li>`;
+}
+
+const $ = id => document.getElementById(id);
+
+function renderCounts(show) {
+  const n = { active: 0, completed: 0 };
+  if (show) projects.forEach(p => n[p.status]++);
+  document.querySelector('[data-count="active"]').textContent = show === null ? "" : n.active;
+  document.querySelector('[data-count="completed"]').textContent = show === null ? "" : n.completed;
+  document.querySelector('[data-count="all"]').textContent = show === null ? "" : n.active + n.completed;
+}
+
+function renderSummary() {
+  const active = projects.filter(p => p.status === "active");
+  const late = active.filter(p => { const d = deadlineStatus(p); return d && d.kind === "late"; }).length;
+  const over = active.filter(p => budgetStatus(p).kind === "over").length;
+  const soon = active.filter(p => { const d = deadlineStatus(p); return d && d.kind === "soon"; }).length;
+  const parts = [];
+  if (late) parts.push(`<strong class="num">${late}</strong> late`);
+  if (over) parts.push(`<strong class="num">${over}</strong> over budget`);
+  if (soon) parts.push(`<strong class="num">${soon}</strong> due this week`);
+  $("summary").innerHTML = parts.length ? parts.join(", ") : "Nothing late or over budget.";
+}
+
+function render() {
+  const rows = $("rows"), list = $("list"), emptySlot = $("empty-slot"), alertSlot = $("alert-slot"), panel = $("panel");
+  rows.innerHTML = ""; list.innerHTML = ""; emptySlot.innerHTML = ""; alertSlot.innerHTML = "";
+  panel.setAttribute("aria-busy", "false");
+  panel.hidden = false;
+  $("sort-note").hidden = false;
+  const labels = { active: "Active projects", completed: "Completed projects, most recent first", all: "All projects, active first" };
+  $("caption").textContent = view === "completed" ? labels.completed : view === "all" ? labels.all : "Active projects, late and over budget first";
+  $("sort-note").textContent = view === "completed" ? "Most recently completed first" : "Late and over budget first";
+
+  if (state === "loading") {
+    panel.setAttribute("aria-busy", "true");
+    $("summary").innerHTML = '<span class="skel" style="width:220px;margin-top:6px"></span>';
+    renderCounts(null);
+    for (let i = 0; i < 5; i++) {
+      rows.insertAdjacentHTML("beforeend", `<tr class="skel-row"><td><span class="skel" style="width:70%"></span><span class="skel" style="width:40%"></span></td><td><span class="skel" style="width:70%"></span></td><td><span class="skel" style="width:60%"></span><span class="skel" style="width:45%"></span></td><td><span class="skel" style="width:75%"></span><span class="skel" style="width:50%"></span></td><td></td></tr>`);
+      list.insertAdjacentHTML("beforeend", `<li><div class="item"><span class="skel" style="width:65%"></span><span class="skel" style="width:40%"></span><span class="skel" style="width:90%"></span></div></li>`);
+    }
+    $("status").textContent = "Loading projects.";
+    return;
+  }
+
+  if (state === "error") {
+    renderCounts(null);
+    $("summary").textContent = "";
+    $("sort-note").hidden = true;
+    alertSlot.innerHTML = `<div class="alert" role="alert"><svg class="icon" aria-hidden="true"><use href="#i-late"/></svg><p>Projects did not load. Check your connection and try again.</p><button class="btn btn-secondary" type="button" id="retry">Try again</button></div>`;
+    $("panel").hidden = true;
+    $("retry").addEventListener("click", () => {
+      $("panel").hidden = false;
+      state = "loading"; render();
+      setTimeout(() => { state = "populated"; $("state-select").value = "populated"; render(); $("status").textContent = "Projects loaded."; }, 900);
+    });
+    return;
+  }
+  if (state === "empty") {
+    renderCounts(false);
+    document.querySelectorAll("[data-count]").forEach(el => el.textContent = "0");
+    $("summary").textContent = "";
+    $("sort-note").hidden = true;
+    const msg = view === "completed"
+      ? `<div class="empty"><p class="lead">No completed projects yet.</p></div>`
+      : `<div class="empty"><p class="lead">No projects yet.</p><p class="hint">Add a project to track its deadlines and budget.</p><a class="btn btn-secondary" href="#/projects/new">New project</a></div>`;
+    emptySlot.innerHTML = msg;
+    document.querySelector("#panel table").style.display = "none";
+    $("status").textContent = "No projects yet.";
+    return;
+  }
+  document.querySelector("#panel table").style.display = "";
+
+  renderCounts(true);
+  renderSummary();
+  const items = visible();
+  rows.innerHTML = items.map(rowHTML).join("");
+  list.innerHTML = items.map(itemHTML).join("");
+  $("status").textContent = `Showing ${items.length} ${view === "all" ? "" : view + " "}projects.`;
+}
+
+// Row click opens the project, the name link is the keyboard target.
+$("rows").addEventListener("click", e => {
+  const tr = e.target.closest("tr.row");
+  if (!tr || e.target.closest("a")) return;
+  location.hash = tr.dataset.href.slice(1);
+});
+
+document.querySelectorAll(".segmented button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    view = btn.dataset.view;
+    document.querySelectorAll(".segmented button").forEach(b => b.setAttribute("aria-pressed", String(b === btn)));
+    render();
+  });
+});
+
+$("state-select").addEventListener("change", e => { state = e.target.value; render(); });
+
+// Account menu
+const accBtn = $("account-btn"), menu = $("account-menu");
+function closeMenu(focus) { menu.classList.remove("open"); accBtn.setAttribute("aria-expanded", "false"); if (focus) accBtn.focus(); }
+accBtn.addEventListener("click", () => {
+  const open = !menu.classList.contains("open");
+  menu.classList.toggle("open", open); accBtn.setAttribute("aria-expanded", String(open));
+  if (open) menu.querySelector("[role=menuitem]").focus();
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape" && menu.classList.contains("open")) closeMenu(true); });
+document.addEventListener("click", e => { if (!e.target.closest(".account")) closeMenu(false); });
+
+render();
+</script>
+</body>
+</html>

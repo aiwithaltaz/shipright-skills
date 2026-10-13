@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SocialGhost: make faceless YouTube videos with AI (beta)</title>
+<meta name="description" content="SocialGhost is a live AI tool that makes faceless YouTube videos. It is in limited beta. Testers get free access in return for useful feedback within 2 to 3 days.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+/* Tokens: copy of design/tokens.css (Proposed, delegated, 2026-10-13) */
+:root {
+  --color-bg: #fbfbfa;
+  --color-surface: #ffffff;
+  --color-sunken: #f1f1ee;
+  --color-text: #141519;
+  --color-muted: #55585f;
+  --color-border: #e2e2de;
+  --color-field-border: #85888f;
+  --color-accent: #4338ca;
+  --color-accent-hover: #3730a3;
+  --color-on-accent: #ffffff;
+  --color-danger: #b42318;
+  --color-focus: #4338ca;
+
+  --frame-bg: #121320;
+  --frame-layer-1: #1e2140;
+  --frame-layer-2: #2a2e5a;
+  --frame-layer-3: #3a3f78;
+  --frame-shadow: #16172a;
+  --frame-moon: #e8e6f5;
+  --frame-moon-shade: #d8d5ea;
+  --frame-text: #ffffff;
+  --frame-muted: #a6a9c9;
+  --frame-caption-bg: rgba(0, 0, 0, 0.72);
+
+  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --text-display: 64px;
+  --text-h2: 36px;
+  --text-lead: 20px;
+  --text-body: 17px;
+  --text-meta: 14px;
+  --leading-display: 1.05;
+  --leading-heading: 1.15;
+  --leading-body: 1.55;
+  --tracking-display: -0.02em;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-section: 96px;
+
+  --container-max: 1200px;
+  --gutter: 24px;
+
+  --radius-small: 4px;
+  --radius-control: 8px;
+  --radius-panel: 12px;
+
+  --control-height: 48px;
+  --check-size: 24px;
+
+  --duration-press: 120ms;
+  --duration-section: 600ms;
+  --ease-enter: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-move: cubic-bezier(0.65, 0, 0.35, 1);
+  --stagger: 80ms;
+  --rise: 20px;
+}
+@media (max-width: 760px) {
+  :root {
+    --text-display: 38px;
+    --text-h2: 28px;
+    --text-lead: 18px;
+    --text-body: 16px;
+    --space-section: 64px;
+    --gutter: 20px;
+  }
+}
+
+/* Base */
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 80px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p, ol, ul, figure, fieldset, dl, dd { margin: 0; }
+ol, ul { padding: 0; list-style: none; }
+a { color: var(--color-accent); text-underline-offset: 3px; }
+a:hover { color: var(--color-accent-hover); }
+:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--gutter); }
+section[id] { scroll-margin-top: 80px; }
+.meta { font-size: var(--text-meta); line-height: 1.45; color: var(--color-muted); }
+h2 { font-size: var(--text-h2); line-height: var(--leading-heading); font-weight: 600; letter-spacing: -0.01em; }
+h3 { font-size: var(--text-lead); line-height: 1.4; font-weight: 500; }
+
+.skip {
+  position: absolute; left: var(--space-4); top: -100px; z-index: 20;
+  background: var(--color-surface); color: var(--color-text);
+  padding: var(--space-3) var(--space-4); border-radius: var(--radius-control);
+  border: 1px solid var(--color-field-border);
+}
+.skip:focus { top: var(--space-3); }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  min-height: var(--control-height); padding: 0 var(--space-6);
+  border-radius: var(--radius-control); border: 1px solid transparent;
+  font: inherit; font-size: var(--text-body); font-weight: 500; line-height: 1.2;
+  text-decoration: none; cursor: pointer;
+  transition: background-color var(--duration-press) var(--ease-enter), color var(--duration-press) var(--ease-enter), border-color var(--duration-press) var(--ease-enter);
+}
+.btn-primary { background: var(--color-accent); color: var(--color-on-accent); }
+.btn-primary:hover { background: var(--color-accent-hover); color: var(--color-on-accent); }
+.btn-primary[disabled] { cursor: progress; background: var(--color-accent-hover); }
+.btn-secondary { background: transparent; color: var(--color-text); border-color: var(--color-text); min-height: 44px; padding: 0 var(--space-4); }
+.btn-secondary:hover { background: var(--color-text); color: var(--color-bg); }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--color-bg);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--duration-press) linear;
+}
+.site-header.scrolled { border-bottom-color: var(--color-border); }
+.site-header .container { height: 64px; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+.wordmark { font-size: var(--text-lead); font-weight: 600; letter-spacing: -0.01em; color: var(--color-text); text-decoration: none; }
+.wordmark:hover { color: var(--color-text); }
+.nav { display: flex; align-items: center; gap: var(--space-8); }
+.nav a.text { color: var(--color-text); text-decoration: none; }
+.nav a.text:hover { text-decoration: underline; }
+@media (max-width: 760px) { .nav a.text { display: none; } }
+
+/* Hero */
+.hero { padding: var(--space-16) 0 0; }
+.hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-10); align-items: center; }
+@media (min-width: 960px) { .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-12); } }
+.hero h1 {
+  font-size: clamp(34px, 10vw, var(--text-display));
+  line-height: var(--leading-display); letter-spacing: var(--tracking-display); font-weight: 600;
+}
+@media (min-width: 960px) { .hero h1 { font-size: clamp(48px, 5vw, var(--text-display)); } }
+.hero .lead { font-size: var(--text-lead); line-height: 1.5; margin-top: var(--space-6); max-width: 34em; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4) var(--space-6); margin-top: var(--space-8); }
+.hero .meta { margin-top: var(--space-4); }
+@media (max-width: 760px) {
+  .hero { padding-top: var(--space-10); }
+  .actions { flex-direction: column; align-items: stretch; }
+  .actions .btn { width: 100%; }
+  .actions .link { align-self: flex-start; min-height: 44px; display: inline-flex; align-items: center; }
+}
+
+/* Video frame illustration */
+.frame {
+  position: relative; aspect-ratio: 16 / 9; overflow: hidden;
+  border-radius: var(--radius-panel); background: var(--frame-bg); color: var(--frame-text);
+}
+.frame svg.scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.frame .layer { transition: none; }
+.cap {
+  position: absolute; left: 6%; right: 6%; bottom: calc(52px + 7%);
+  display: grid; justify-items: center; text-align: center;
+  font-size: clamp(14px, 2.1vw, var(--text-lead)); font-weight: 500; line-height: 1.5;
+}
+.cap-line { grid-area: 1 / 1; opacity: 0; transform: translateY(6px); }
+.cap-line.on { opacity: 1; transform: none; }
+.cap-line span {
+  background: var(--frame-caption-bg); padding: 2px 10px; border-radius: var(--radius-small);
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+.player {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 52px;
+  display: flex; align-items: center; gap: var(--space-3); padding: 0 var(--space-3);
+  background: rgba(10, 10, 18, 0.6);
+}
+.player-btn {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  min-height: 44px; min-width: 44px; padding: 0 var(--space-3);
+  background: transparent; color: var(--frame-text); border: 0; border-radius: var(--radius-small);
+  font: inherit; font-size: var(--text-meta); font-weight: 500; cursor: pointer;
+}
+.player-btn:hover { background: rgba(255, 255, 255, 0.12); }
+.frame :focus-visible { outline-color: var(--frame-text); outline-offset: -2px; }
+.track { flex: 1; height: 4px; border-radius: 2px; background: rgba(255, 255, 255, 0.28); overflow: hidden; }
+.track-fill { height: 100%; background: var(--frame-text); transform-origin: left center; transform: scaleX(1); }
+.time { font-family: var(--font-mono); font-size: var(--text-meta); color: var(--frame-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+figure figcaption { margin-top: var(--space-3); }
+
+/* Sections */
+.section { padding-top: var(--space-section); }
+#apply { padding-bottom: var(--space-section); }
+.section-head { max-width: 40em; margin-bottom: var(--space-10); }
+.section-head p { margin-top: var(--space-4); }
+
+/* How: numbered steps */
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-8); position: relative; }
+.steps::before {
+  content: ""; position: absolute; top: 16px; left: 16px; right: 16px; height: 1px; background: var(--color-field-border);
+}
+.step { position: relative; }
+.step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 1px solid var(--color-text); background: var(--color-bg);
+  font-size: var(--text-meta); font-weight: 600; font-variant-numeric: tabular-nums;
+  position: relative;
+}
+.step h3 { margin-top: var(--space-5); }
+.step p { margin-top: var(--space-2); max-width: 26em; }
+@media (max-width: 1023px) {
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-10); }
+  .steps::before { display: none; }
+}
+@media (max-width: 760px) {
+  .steps { grid-template-columns: 1fr; row-gap: var(--space-8); }
+  .steps::before { display: block; top: 16px; bottom: 16px; left: 16px; right: auto; width: 1px; height: auto; }
+  .step { padding-left: 56px; }
+  .step-num { position: absolute; left: 0; top: 0; }
+  .step h3 { margin-top: 2px; }
+}
+
+/* Fit: two lists */
+.fit-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: var(--space-12); }
+.fit-lists { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-10); }
+.fit-lists h3 { padding-bottom: var(--space-3); border-bottom: 1px solid var(--color-text); }
+.ticks li { display: grid; grid-template-columns: 20px 1fr; gap: var(--space-3); padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border); }
+.ticks svg { margin-top: 4px; }
+.fit-grid > div:first-child p { margin-top: var(--space-4); }
+@media (max-width: 960px) { .fit-grid { grid-template-columns: 1fr; gap: var(--space-8); } }
+@media (max-width: 760px) { .fit-lists { grid-template-columns: 1fr; gap: var(--space-8); } }
+
+/* Feedback band */
+.band { background: var(--color-sunken); padding: var(--space-section) 0; margin-top: var(--space-section); }
+.band-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-12); align-items: start; }
+.band-grid > div:first-child p { margin-top: var(--space-4); max-width: 26em; }
+.questions { counter-reset: q; }
+.questions li {
+  counter-increment: q; display: grid; grid-template-columns: 40px 1fr; gap: var(--space-3);
+  padding: var(--space-5) 0; border-top: 1px solid var(--color-field-border);
+  font-size: var(--text-lead); line-height: 1.4; font-weight: 500;
+}
+.questions li:last-child { border-bottom: 1px solid var(--color-field-border); }
+.questions li::before { content: counter(q); font-size: var(--text-meta); font-weight: 600; font-variant-numeric: tabular-nums; color: var(--color-muted); padding-top: 4px; }
+@media (max-width: 960px) { .band-grid { grid-template-columns: 1fr; gap: var(--space-8); } }
+
+/* FAQ */
+.faq { max-width: 760px; }
+.faq h2 { margin-bottom: var(--space-8); }
+.faq details { border-top: 1px solid var(--color-field-border); }
+.faq details:last-of-type { border-bottom: 1px solid var(--color-field-border); }
+.faq summary {
+  list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: var(--space-4);
+  min-height: 64px; padding: var(--space-4) 0; font-size: var(--text-lead); font-weight: 500; line-height: 1.4;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary svg { flex: none; }
+.faq details[open] summary svg { transform: rotate(45deg); }
+.faq details p { padding: 0 0 var(--space-5); max-width: 40em; }
+
+/* Apply */
+.apply-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-12); align-items: start; }
+.apply-intro p { margin-top: var(--space-4); max-width: 24em; }
+.apply-intro .deal { font-size: var(--text-lead); line-height: 1.45; font-weight: 500; }
+.panel { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-panel); padding: var(--space-8); }
+@media (max-width: 960px) { .apply-grid { grid-template-columns: 1fr; gap: var(--space-8); } }
+@media (max-width: 760px) { .panel { padding: var(--space-6) var(--space-5); } }
+
+form { display: grid; gap: var(--space-6); }
+.field { display: grid; gap: var(--space-1); }
+.field label, .field legend { font-weight: 500; }
+.field .help { margin-bottom: var(--space-1); }
+.input {
+  width: 100%; min-height: var(--control-height); padding: 0 14px;
+  border: 1px solid var(--color-field-border); border-radius: var(--radius-control);
+  background: var(--color-surface); color: var(--color-text);
+  font: inherit; font-size: max(16px, var(--text-body));
+}
+.input:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 0; border-color: var(--color-focus); }
+.input[aria-invalid="true"] { border: 2px solid var(--color-danger); padding: 0 13px; }
+fieldset.field { border: 0; padding: 0; min-width: 0; }
+fieldset.field legend { padding: 0; margin-bottom: var(--space-2); }
+.radios { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); }
+.choice { display: inline-flex; align-items: center; gap: var(--space-3); min-height: 44px; cursor: pointer; }
+.choice input { width: var(--check-size); height: var(--check-size); margin: 0; accent-color: var(--color-accent); flex: none; }
+.check-row { align-items: flex-start; }
+.check-row input { margin-top: 1px; }
+.error { display: none; align-items: flex-start; gap: var(--space-2); color: var(--color-danger); font-size: var(--text-meta); font-weight: 500; line-height: 1.45; margin-top: var(--space-1); }
+.error.show { display: flex; }
+.error svg { flex: none; margin-top: 1px; }
+.submit { width: 100%; }
+.form-error:empty { margin: 0; }
+.hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.sent h3 { font-size: var(--text-h2); line-height: var(--leading-heading); font-weight: 600; }
+.sent h3:focus { outline: none; }
+.sent p { margin-top: var(--space-4); }
+.sent p.meta { margin-top: var(--space-3); }
+.sent a { display: inline-flex; min-height: 44px; align-items: center; margin-top: var(--space-4); }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--color-border); padding: var(--space-10) 0 var(--space-12); }
+.site-footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-6); align-items: flex-start; }
+.site-footer p { margin-top: var(--space-2); }
+.site-footer nav ul { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); }
+.site-footer nav a { color: var(--color-text); display: inline-flex; min-height: 44px; align-items: center; }
+
+/* Section entrances: only armed after the first user scroll, so content never waits on script */
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal.pre { opacity: 0; transform: translateY(var(--rise)); }
+  .js .reveal.in {
+    transition: opacity var(--duration-section) var(--ease-enter), transform var(--duration-section) var(--ease-enter);
+    transition-delay: calc(var(--i, 0) * var(--stagger));
+  }
+  .cap-line { transition: opacity 320ms var(--ease-enter), transform 320ms var(--ease-enter); }
+  .faq summary svg { transition: transform 180ms var(--ease-enter); }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="container">
+    <a class="wordmark" href="#top">SocialGhost</a>
+    <nav class="nav" aria-label="Main">
+      <a class="text" href="#how">How it works</a>
+      <a class="text" href="#faq">FAQ</a>
+      <a class="btn btn-secondary" href="#apply">Apply</a>
+    </nav>
+  </div>
+</header>
+
+<main id="content">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div>
+        <h1 id="hero-title">Make faceless YouTube videos</h1>
+        <p class="lead">SocialGhost is a live AI tool that makes faceless YouTube videos. It is in limited beta. Testers get free access in return for useful feedback within 2 to 3 days.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#apply">Apply for the beta</a>
+          <a class="link" href="#how">How the beta works</a>
+        </div>
+        <p class="meta">Five questions. Free for testers we pick.</p>
+      </div>
+
+      <figure>
+        <div class="frame" data-frame>
+          <svg class="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+            <rect width="1600" height="900" fill="var(--frame-bg)"/>
+            <g fill="var(--frame-muted)" opacity="0.55">
+              <circle cx="120" cy="110" r="3"/><circle cx="260" cy="210" r="2"/><circle cx="410" cy="90" r="2.5"/>
+              <circle cx="560" cy="170" r="2"/><circle cx="700" cy="70" r="3"/><circle cx="820" cy="230" r="2"/>
+              <circle cx="960" cy="120" r="2.5"/><circle cx="1420" cy="90" r="2"/><circle cx="1500" cy="260" r="3"/>
+              <circle cx="1330" cy="380" r="2"/><circle cx="330" cy="360" r="2"/><circle cx="640" cy="320" r="2.5"/>
+              <circle cx="1060" cy="300" r="2"/><circle cx="180" cy="420" r="2"/>
+            </g>
+            <g class="layer" data-depth="0.25">
+              <circle cx="1190" cy="250" r="92" fill="var(--frame-moon)"/>
+              <circle cx="1160" cy="225" r="16" fill="var(--frame-moon-shade)"/>
+              <circle cx="1215" cy="290" r="10" fill="var(--frame-moon-shade)"/>
+            </g>
+            <g class="layer" data-depth="0.6">
+              <path fill="var(--frame-layer-3)" d="M-200 610 C 100 520 350 540 560 600 S 980 510 1220 575 S 1580 535 1800 590 L1800 900 L-200 900 Z"/>
+            </g>
+            <g class="layer" data-depth="1.1">
+              <path fill="var(--frame-layer-2)" d="M-200 705 C 160 610 420 640 700 690 S 1150 615 1420 680 S 1700 655 1800 665 L1800 900 L-200 900 Z"/>
+              <g fill="var(--frame-shadow)">
+                <rect x="372" y="600" width="72" height="50"/>
+                <polygon points="362,604 408,566 454,604"/>
+                <rect x="424" y="572" width="10" height="22"/>
+              </g>
+              <rect x="390" y="614" width="16" height="16" fill="var(--frame-moon)"/>
+            </g>
+            <g class="layer" data-depth="1.8">
+              <path fill="var(--frame-layer-1)" d="M-200 795 C 200 720 520 760 820 792 S 1320 730 1800 780 L1800 900 L-200 900 Z"/>
+            </g>
+          </svg>
+
+          <div class="cap">
+            <p class="cap-line"><span>No face on camera.</span></p>
+            <p class="cap-line"><span>Just the story, the visuals and the words.</span></p>
+            <p class="cap-line on"><span>This is a faceless video.</span></p>
+          </div>
+
+          <div class="player">
+            <button class="player-btn" type="button" data-player-btn>
+              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false" data-icon><path d="M3.5 8a4.5 4.5 0 1 0 1.3-3.2M3.5 2.5v2.6h2.6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-player-label>Replay</span>
+            </button>
+            <div class="track" aria-hidden="true"><div class="track-fill" data-fill></div></div>
+            <span class="time"><span data-time>0:09</span> / 0:09</span>
+          </div>
+        </div>
+        <figcaption class="meta">Illustration of a faceless video, made for this page. Not SocialGhost output.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="how" aria-labelledby="how-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="how-title" class="reveal">How the beta works</h2>
+      </div>
+      <ol class="steps">
+        <li class="step reveal" style="--i:0">
+          <span class="step-num" aria-hidden="true">1</span>
+          <h3>Apply.</h3>
+          <p>Answer five questions about your channel and your plans.</p>
+        </li>
+        <li class="step reveal" style="--i:1">
+          <span class="step-num" aria-hidden="true">2</span>
+          <h3>We pick testers.</h3>
+          <p>Places are limited. We choose people who can use it right away.</p>
+        </li>
+        <li class="step reveal" style="--i:2">
+          <span class="step-num" aria-hidden="true">3</span>
+          <h3>Make real videos.</h3>
+          <p>If you are picked, we email you access. Use SocialGhost for your own channel.</p>
+        </li>
+        <li class="step reveal" style="--i:3">
+          <span class="step-num" aria-hidden="true">4</span>
+          <h3>Send feedback within 2 to 3 days.</h3>
+          <p>That is the deal for free access.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="fit" aria-labelledby="fit-title">
+    <div class="container fit-grid">
+      <div>
+        <h2 id="fit-title" class="reveal">Who we are looking for</h2>
+        <p class="reveal" style="--i:1">The beta works when testers make real videos and tell us what happened.</p>
+      </div>
+      <div class="fit-lists">
+        <div class="reveal" style="--i:1">
+          <h3>A good fit</h3>
+          <ul class="ticks">
+            <li><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg><span>You run a faceless YouTube channel, or you are about to start one.</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg><span>You can make at least one real video in your first 2 to 3 days.</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg><span>You will tell us plainly what worked, what broke and what was slow.</span></li>
+          </ul>
+        </div>
+        <div class="reveal" style="--i:2">
+          <h3>Not a fit yet</h3>
+          <ul class="ticks">
+            <li><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M5 10h10" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span>You want to look around but have no time this week.</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M5 10h10" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span>You do not plan to publish on YouTube.</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M5 10h10" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg><span>You would rather not send feedback.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="feedback" aria-labelledby="feedback-title">
+    <div class="container band-grid">
+      <div>
+        <h2 id="feedback-title" class="reveal">What useful feedback looks like</h2>
+        <p class="reveal" style="--i:1">Short and specific beats long and polite. Good feedback answers these four questions.</p>
+      </div>
+      <ol class="questions reveal" style="--i:2">
+        <li>What video were you trying to make?</li>
+        <li>Where did you get stuck or slow down?</li>
+        <li>Would you post the result as it is? Why or why not?</li>
+        <li>What would make you use it every week?</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="faq">
+        <h2 id="faq-title" class="reveal">Questions</h2>
+        <div class="reveal" style="--i:1">
+          <details>
+            <summary>What does it cost?<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 4v12M4 10h12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></summary>
+            <p>Nothing for testers we pick. Free access is the deal, in return for useful feedback within 2 to 3 days.</p>
+          </details>
+          <details>
+            <summary>Do I need a YouTube channel already?<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 4v12M4 10h12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></summary>
+            <p>No. If you are about to start one, say so in the form and tell us what it will cover.</p>
+          </details>
+          <details>
+            <summary>How much time does it take?<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 4v12M4 10h12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></summary>
+            <p>Enough to make at least one real video and tell us how it went, within 2 to 3 days of getting access.</p>
+          </details>
+          <details>
+            <summary>What happens after I apply?<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 4v12M4 10h12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></summary>
+            <p>We read the applications and pick testers. If you are picked, we email you access.</p>
+          </details>
+          <details>
+            <summary>Is SocialGhost ready to use?<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 4v12M4 10h12" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></summary>
+            <p>Yes. It is live. Access is limited during the beta.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="apply" aria-labelledby="apply-title">
+    <div class="container apply-grid">
+      <div class="apply-intro">
+        <h2 id="apply-title" class="reveal">Apply for the beta</h2>
+        <p class="deal reveal" style="--i:1">It is free. The only cost is 2 to 3 days of honest feedback.</p>
+        <p class="reveal" style="--i:2">If you are picked, we email you access.</p>
+      </div>
+
+      <div class="panel reveal" style="--i:2">
+        <form name="beta-application" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate data-form>
+          <input type="hidden" name="form-name" value="beta-application">
+          <div class="hp" aria-hidden="true">
+            <label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+          </div>
+
+          <div class="field" data-field="email">
+            <label for="email">Email</label>
+            <p class="help meta" id="email-help">We send access here if you are picked.</p>
+            <input class="input" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-help email-error">
+            <p class="error" id="email-error"></p>
+          </div>
+
+          <div class="field" data-field="channel_url">
+            <label for="channel_url">YouTube channel link (optional)</label>
+            <p class="help meta" id="channel-help">Leave it empty if you have not started yet.</p>
+            <input class="input" id="channel_url" name="channel_url" type="url" inputmode="url" autocomplete="url" aria-describedby="channel-help channel_url-error">
+            <p class="error" id="channel_url-error"></p>
+          </div>
+
+          <div class="field" data-field="topic">
+            <label for="topic">What will your videos be about?</label>
+            <p class="help meta" id="topic-help">Example: short history stories</p>
+            <input class="input" id="topic" name="topic" type="text" maxlength="120" required aria-describedby="topic-help topic-error">
+            <p class="error" id="topic-error"></p>
+          </div>
+
+          <fieldset class="field" data-field="planned_videos" aria-describedby="planned_videos-error">
+            <legend>How many videos do you plan to make in your first 3 days?</legend>
+            <div class="radios">
+              <label class="choice"><input type="radio" name="planned_videos" value="1" required> 1</label>
+              <label class="choice"><input type="radio" name="planned_videos" value="2-3"> 2 to 3</label>
+              <label class="choice"><input type="radio" name="planned_videos" value="4+"> 4 or more</label>
+            </div>
+            <p class="error" id="planned_videos-error"></p>
+          </fieldset>
+
+          <div class="field" data-field="feedback_commitment">
+            <label class="choice check-row"><input type="checkbox" id="feedback_commitment" name="feedback_commitment" value="yes" required aria-describedby="feedback_commitment-error"> <span>I can send useful feedback within 2 to 3 days of getting access.</span></label>
+            <p class="error" id="feedback_commitment-error"></p>
+          </div>
+
+          <div>
+            <button class="btn btn-primary submit" type="submit" data-submit>Apply for the beta</button>
+            <p class="error show form-error" role="alert" data-form-error></p>
+          </div>
+        </form>
+        <div class="status sent" role="status" data-status></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <a class="wordmark" href="#top">SocialGhost</a>
+      <p class="meta">A live AI tool for faceless YouTube videos. In limited beta.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#apply">Apply</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Header border after scroll */
+  var header = document.querySelector('.site-header');
+  function onScrollHeader() { header.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScrollHeader, { passive: true });
+  onScrollHeader();
+
+  /* Signature move: the video frame plays once, 9 seconds */
+  var frame = document.querySelector('[data-frame]');
+  var lines = frame.querySelectorAll('.cap-line');
+  var fill = frame.querySelector('[data-fill]');
+  var timeEl = frame.querySelector('[data-time]');
+  var btn = frame.querySelector('[data-player-btn]');
+  var label = frame.querySelector('[data-player-label]');
+  var icon = frame.querySelector('[data-icon]');
+  var layers = frame.querySelectorAll('[data-depth]');
+  var DURATION = 9000;
+  var elapsed = DURATION, startAt = 0, state = 'ended', raf = 0;
+  var ICONS = {
+    Pause: '<path d="M5.5 3.5v9M10.5 3.5v9" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>',
+    Play: '<path d="M5 3.2v9.6L12.5 8z" fill="currentColor"/>',
+    Replay: '<path d="M3.5 8a4.5 4.5 0 1 0 1.3-3.2M3.5 2.5v2.6h2.6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>'
+  };
+  function setButton(name) { label.textContent = name; icon.innerHTML = ICONS[name]; }
+  function render(t) {
+    var p = Math.min(t / DURATION, 1);
+    fill.style.transform = 'scaleX(' + p + ')';
+    timeEl.textContent = '0:0' + Math.min(9, Math.floor(t / 1000));
+    var idx = Math.min(lines.length - 1, Math.floor(t / (DURATION / lines.length)));
+    for (var i = 0; i < lines.length; i++) lines[i].classList.toggle('on', i === idx);
+    for (var j = 0; j < layers.length; j++) {
+      var d = parseFloat(layers[j].getAttribute('data-depth'));
+      layers[j].style.transform = 'translate(' + (-d * 20 * p).toFixed(2) + 'px,' + (d < 0.5 ? (-10 * p).toFixed(2) : 0) + 'px)';
+    }
+  }
+  function tick(now) {
+    elapsed = now - startAt;
+    if (elapsed >= DURATION) { elapsed = DURATION; render(elapsed); state = 'ended'; setButton('Replay'); return; }
+    render(elapsed);
+    raf = requestAnimationFrame(tick);
+  }
+  function play(from) {
+    state = 'playing'; setButton('Pause');
+    startAt = performance.now() - from;
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(tick);
+  }
+  btn.addEventListener('click', function () {
+    if (state === 'playing') { cancelAnimationFrame(raf); state = 'paused'; setButton('Play'); }
+    else if (state === 'paused') { play(elapsed); }
+    else { play(0); }
+  });
+  if (reduce) {
+    render(DURATION);
+    btn.hidden = true;
+  } else {
+    render(0);
+    play(0);
+  }
+
+  /* Quiet section entrances. Armed only after the first scroll, so content is never hidden waiting for script. */
+  if (!reduce) {
+    var items = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+    var armed = false, queued = false;
+    var check = function () {
+      queued = false;
+      var limit = window.innerHeight * 0.92;
+      items.forEach(function (el) {
+        if (el.classList.contains('pre') && el.getBoundingClientRect().top < limit) {
+          el.classList.remove('pre'); el.classList.add('in');
+        }
+      });
+    };
+    window.addEventListener('scroll', function () {
+      if (!armed) {
+        armed = true;
+        items.forEach(function (el) { if (el.getBoundingClientRect().top > window.innerHeight) el.classList.add('pre'); });
+      }
+      if (!queued) { queued = true; requestAnimationFrame(check); }
+    }, { passive: true });
+  }
+
+  /* Apply form */
+  var form = document.querySelector('[data-form]');
+  var submitBtn = form.querySelector('[data-submit]');
+  var formError = form.querySelector('[data-form-error]');
+  var statusEl = document.querySelector('[data-status]');
+  var ERROR_ICON = '<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.8v3.6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><circle cx="8" cy="11" r="1" fill="currentColor"/></svg>';
+  var sending = false;
+  var touched = {};
+
+  var rules = {
+    email: function () {
+      var v = form.email.value.trim();
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? '' : 'Enter an email address like name@example.com.';
+    },
+    channel_url: function () {
+      var v = form.channel_url.value.trim();
+      if (!v) return '';
+      var ok = /^https:\/\//i.test(v);
+      try { new URL(v); } catch (e) { ok = false; }
+      return ok ? '' : 'Paste the full link, starting with https://';
+    },
+    topic: function () {
+      return form.topic.value.trim() ? '' : 'Tell us what your videos will be about.';
+    },
+    planned_videos: function () {
+      return form.querySelector('input[name="planned_videos"]:checked') ? '' : 'Pick how many videos you plan to make.';
+    },
+    feedback_commitment: function () {
+      return form.feedback_commitment.checked ? '' : 'Tick this box to apply. Feedback within 2 to 3 days is the deal for free access.';
+    }
+  };
+  var order = ['email', 'channel_url', 'topic', 'planned_videos', 'feedback_commitment'];
+
+  function controlsFor(name) { return form.querySelectorAll('[name="' + name + '"]'); }
+  function show(name, msg) {
+    var err = document.getElementById(name + '-error');
+    var controls = controlsFor(name);
+    if (msg) {
+      err.innerHTML = ERROR_ICON + '<span></span>';
+      err.lastChild.textContent = msg;
+      err.classList.add('show');
+    } else {
+      err.textContent = '';
+      err.classList.remove('show');
+    }
+    for (var i = 0; i < controls.length; i++) {
+      if (controls[i].type === 'radio') continue;
+      if (msg) controls[i].setAttribute('aria-invalid', 'true'); else controls[i].removeAttribute('aria-invalid');
+    }
+    return !msg;
+  }
+  function validate(name) { return show(name, rules[name]()); }
+
+  order.forEach(function (name) {
+    var controls = controlsFor(name);
+    for (var i = 0; i < controls.length; i++) {
+      controls[i].addEventListener('blur', function () {
+        if (name === 'channel_url' && !form.channel_url.value.trim() && !touched[name]) return;
+        touched[name] = true;
+        if (name === 'planned_videos' || name === 'feedback_commitment') return;
+        validate(name);
+      });
+      controls[i].addEventListener('change', function () {
+        if (touched[name] || document.getElementById(name + '-error').classList.contains('show')) validate(name);
+      });
+      controls[i].addEventListener('input', function () {
+        /* Typing only clears a fixed error; it never shows a new one. */
+        if (document.getElementById(name + '-error').classList.contains('show') && !rules[name]()) show(name, '');
+      });
+    }
+  });
+
+  /* Preview only: nothing is sent. In the build, this POSTs to Netlify Forms (see 02-technical-architecture.md).
+     Add ?preview=error to the URL to see the failed state. */
+  function sendApplication() {
+    var fail = /[?&]preview=error/.test(location.search);
+    return new Promise(function (resolve, reject) {
+      setTimeout(function () { fail ? reject(new Error('preview')) : resolve(); }, 1200);
+    });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (sending) return;
+    if (form['bot-field'].value) return;
+    var firstBad = null;
+    order.forEach(function (name) {
+      touched[name] = true;
+      if (!validate(name) && !firstBad) firstBad = controlsFor(name)[0];
+    });
+    if (firstBad) { firstBad.focus(); return; }
+
+    sending = true;
+    formError.textContent = '';
+    submitBtn.disabled = true;
+    submitBtn.setAttribute('aria-busy', 'true');
+    submitBtn.textContent = 'Sending...';
+
+    sendApplication().then(function () {
+      var email = form.email.value.trim();
+      form.hidden = true;
+      statusEl.innerHTML = '<h3 tabindex="-1">Application sent</h3><p>If you are picked, we email access to <strong></strong>.</p><p class="meta">Preview only: nothing was sent.</p><a href="#top">Back to top</a>';
+      statusEl.querySelector('strong').textContent = email;
+      statusEl.querySelector('h3').focus();
+    }).catch(function () {
+      formError.innerHTML = ERROR_ICON + '<span>Your application did not send. Your answers are still here. Try again.</span>';
+    }).then(function () {
+      sending = false;
+      submitBtn.disabled = false;
+      submitBtn.removeAttribute('aria-busy');
+      submitBtn.textContent = 'Apply for the beta';
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+/* Model 01 design tokens. Status: Proposed (delegated), 2026-10-13.
+   Source: ShipRight starter D (immersive dark), accent changed to brass.
+   Components use semantic tokens only. */
+
+:root {
+  /* Primitive colors */
+  --ink-950: #0D0E11;
+  --ink-900: #16181D;
+  --ink-850: #1E2127;
+  --ink-800: #2A2E35;
+  --ink-500: #6B7280;
+  --ink-300: #A6ACB6;
+  --ink-50: #F3F4F6;
+  --brass-400: #DDB878;
+  --brass-ink: #15130D;
+  --danger-300: #F2A193;
+
+  /* Semantic colors */
+  --color-bg: var(--ink-950);
+  --color-surface: var(--ink-900);
+  --color-raised: var(--ink-850);
+  --color-border: var(--ink-800);
+  --color-field-border: var(--ink-500);
+  --color-text: var(--ink-50);
+  --color-muted: var(--ink-300);
+  --color-accent: var(--brass-400);
+  --color-on-accent: var(--brass-ink);
+  --color-danger: var(--danger-300);
+  --color-focus: var(--brass-400);
+
+  /* Type */
+  --font-sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --text-meta: 14px;
+  --text-body: 17px;
+  --text-lead: 20px;
+  --text-h2: 36px;
+  --text-display: 80px;
+  --leading-body: 1.55;
+  --leading-heading: 1.1;
+  --leading-display: 1.02;
+  --tracking-display: -0.02em;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-section: 104px;
+
+  /* Layout */
+  --container-max: 1200px;
+  --gutter: 32px;
+  --header-height: 64px;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-control: 8px;
+  --radius-panel: 12px;
+
+  /* Elevation: borders at rest; shadow only on floating layers */
+  --shadow-float: 0 8px 24px rgba(0, 0, 0, 0.45);
+
+  /* Motion */
+  --dur-press: 120ms;
+  --dur-menu: 180ms;
+  --dur-view: 700ms;
+  --dur-fade: 400ms;
+  --ease-enter: cubic-bezier(.23, 1, .32, 1);
+  --ease-move: cubic-bezier(.65, 0, .35, 1);
+
+  /* Components */
+  --button-height: 48px;
+  --control-height: 44px;
+  --hero-height: clamp(560px, calc(100vh - 100px), 860px);
+}
+
+@media (max-width: 760px) {
+  :root {
+    --text-body: 16px;
+    --text-lead: 18px;
+    --text-h2: 28px;
+    --text-display: 44px;
+    --gutter: 20px;
+    --header-height: 56px;
+    --space-section: 64px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-press: 0ms;
+    --dur-menu: 0ms;
+    --dur-view: 0ms;
+    --dur-fade: 0ms;
+  }
+}
