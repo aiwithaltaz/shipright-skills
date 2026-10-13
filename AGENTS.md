@@ -1,6 +1,6 @@
 # Maintaining ShipRight
 
-**Pack version: 0.6.2**
+**Pack version: 1.0.0**
 **Context before generate. Product before pixels.**
 
 These rules govern this pack, not an end-user app. Preserve the five skill names (build-pack, product-design, ui-ux-design, ux-critique, ship-check) and one canonical source tree.

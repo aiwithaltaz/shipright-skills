@@ -1,6 +1,6 @@
 # Skills catalog
 
-**ShipRight 0.6.2**
+**ShipRight 1.0.0**
 
 | Request | Skill | Review size |
 | --- | --- | --- |

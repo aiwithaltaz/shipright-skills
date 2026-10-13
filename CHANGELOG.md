@@ -1,5 +1,36 @@
 # Changelog
 
+## 1.0.0 - 2026-10-13
+
+Idea in, build pack out. ShipRight now works like a small agency team and hands your coding tool small, exact prompts. See [release notes](RELEASE-NOTES.md).
+
+### Added
+
+- **build-pack skill**, the new front door: PRD, stack with reasons, design system with tokens, screen specs and paste-ready ticket prompts in one pass. Ten pack checks before the reply.
+- **Starter systems** with real, contrast-checked numbers: calm dense, mobile native, editorial marketing, immersive dark. Your own system or Figma always wins; a new app shows its system for a quick OK first.
+- **Mobile and marketing guidance**: platform conventions, form flows, argument-first marketing pages with real proof only.
+- **Motion and 3D guidance**: a should-it-move gate, GSAP and Lenis rules for marketing, React Three Fiber budgets, fallback images, keyboard and screen-reader access.
+- **scripts/check-ui.mjs**: measures a rendered page in Chromium at 1280 and 390 wide. Used in a look-and-fix loop before handoff and in critique.
+- **Stack choices** by product type and coding tool, with switch points.
+- **Worked examples** per product type on subjects unlike the trial cases.
+- **SOURCES.md** with every source and license. Skills cite it and never load it.
+- **evals/v1**: frozen prompts, rubric, run and grader protocol, offline vendor libraries, baseline and new runs, blind grades.
+
+### Changed
+
+- 30 references merged into 9. Every protected safety sentence kept its wording. Guidance fell from 37,070 to about 30,000 tokens while adding the new skill and topics.
+- Tickets are prompts with files to read, done-when checks and a stop line. Reversible choices use a Proposed default instead of blocking.
+- Dense-but-calm layout rules, measured slop tells, preview pages that open in the default state.
+- Core Web Vitals targets and 3D budgets in ship-check.
+
+### Removed
+
+- The Phase 1 to 5 tests that pinned exact reference wording. Safety rules keep tests in tests/test_v1_safeguards.py. Historical evidence is hash-checked and unchanged.
+
+### Evidence
+
+Blind trial after Phase 3: 107/120 for v1.0 against 94/120 for 0.6.2, four of four cases better, no unshippable runs. Limits are in [evals/v1/results-phase-3.md](evals/v1/results-phase-3.md).
+
 ## 0.6.2 - 2026-10-08
 
 A vague idea was still turning into a full product and a generic screen before anyone answered. This version stops that, and keeps a picture of the difference.

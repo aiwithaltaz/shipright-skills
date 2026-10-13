@@ -1,17 +1,17 @@
 # ShipRight
 
-**Version 0.6.2**
+**Version 1.0.0**
 **Context before generate. Product before pixels.**
 
-ShipRight helps AI design and coding tools follow your product decisions before generating UI.
-It connects the user job, current phase, flows, screen layout and verification evidence.
-It does not guarantee perfect designs or replace user testing.
+ShipRight is a skill pack for Claude Code, Cursor, Codex and other AI coding tools.
+Bring an idea for a website, a SaaS app, a mobile app or a 3D site. You get a build pack: a PRD, a stack with reasons, a design system with tokens, screen specs, and small ordered tickets written as prompts you paste into your coding tool.
+It does not guarantee a perfect product or replace testing with real users.
 
 ## Start
 
-1. Unzip this pack and keep the entire `shipright-skills/` folder together.
-2. Make that folder readable by your tool. Start with the matching skill path below.
-3. Supply your task, current phase and existing screen/docs when available. The skill asks only material missing questions.
+1. Keep the whole `shipright-skills/` folder together and readable by your tool.
+2. Start with the entry file for your task.
+3. Answer up to three quick questions, or say "you decide". Then you get the whole pack in one pass.
 
 | Task | Entry file |
 | --- | --- |
@@ -19,152 +19,93 @@ It does not guarantee perfect designs or replace user testing.
 | Frame an idea or define a flow | [product-design](skills/product-design/SKILL.md) |
 | Design a screen or apply exact visual feedback | [ui-ux-design](skills/ui-ux-design/SKILL.md) |
 | Review an existing artifact | [ux-critique](skills/ux-critique/SKILL.md) |
-| Check a launch or specific release item | [ship-check](skills/ship-check/SKILL.md) |
+| Check a launch or a specific release item | [ship-check](skills/ship-check/SKILL.md) |
 
-Example for a local coding tool:
+Example:
 
-> Read shipright-skills/skills/ui-ux-design/SKILL.md and its required references. Our current phase is registration. Apply this feedback exactly: [changes]. Preserve the existing design system. Keep later ideas out of the UI.
+> Read shipright-skills/skills/build-pack/SKILL.md. I want a booking app for my salon. Give me everything Cursor needs to build it.
 
-Use the actual unpacked path if different. Keep `_shared`, references, docs and personal-taste available at their original relative locations.
-A single pasted SKILL.md is incomplete; its fallback rules do not reproduce the full pack.
-Do not copy this pack's AGENTS.md into your app. It is for maintaining ShipRight itself.
+Then paste ticket T1 into your coding tool. It sets up the project and a `/design` preview page. Check the look, then continue with T2.
 
-## Tool setup
+## What you get
 
-Claude Code, Cursor, Codex, and ChatGPT can read the local Markdown pack when it is available in their workspace or attached files.
-For automatic skill discovery, use the current client's supported registration method and point it to the canonical skill files.
-Avoid separate edited copies for each client. Symlink handling and sandbox access vary; confirm references resolve in your client.
-For a design tool without local file access, provide the whole pack through its supported file/project context mechanism.
-Claude Design ingestion and all native client installs have not been verified for this release. Manual file-based use is the portable route.
+| File | What it holds |
+| --- | --- |
+| `docs/shipright/01-prd.md` | Who, the job, this release, what stays out, flows, success checks, open questions |
+| `docs/shipright/02-technical-architecture.md` | Stack with reasons and switch points, data, routes, access, budgets |
+| `DESIGN.md` and a token file | The design system. Your own system or Figma always wins; a new app starts from a starter system you approve |
+| `docs/shipright/04-frontend-spec.md` | Each screen: layout order, components, states, phone behavior, accessibility, real copy |
+| `docs/shipright/05-feature-ticket-list.md` | Paste-ready prompts, each with files to read, done-when checks and a stop line |
+| `docs/shipright/build-rules.md` | Standing rules your coding tool reads before every change |
 
-## What changes in 0.6
+In trials a full pack ran 6,600 to 7,900 words (0.6.2: 8,000 to 10,400), and the chat reply about 300 words.
 
-- Exact feedback becomes keep/remove/change/add instructions with acceptance checks.
-- Current-phase scope controls every visible element. Later ideas stay in notes, not UI.
-- Intake asks 0-5 questions total before starting; clear tasks need none.
-- Existing identity and components are preserved. Brand values, data and features are never invented.
-- Flow feedback uses the operator's language and hides routine system plumbing.
-- Layout, selection, pending work and accessibility have concrete checks.
-- Shorter skill entries load detailed references only when relevant.
-- 0.6.1-draft restores concrete icon, placement and question-card rules, and moves the IVC corrections into the example.
+## What it is good at
 
-## Phase 2 synthesis update (no new release)
-
-Product-design can optionally turn supplied records into traceable findings and proposed decisions. It preserves contradictory evidence and isolated serious problems, separates recalled accounts from observed actions, and keeps weak conclusions as hypotheses. Users see concise findings, limits and recommendations; evidence does not authorize new scope or validate a solution. Clear corrections and planning-only tasks skip synthesis. No automatic personas, screens or visual artifacts.
-
-## Phase 3 IA update (no new release)
-
-Product-design can optionally organize approved objects/content, relationships, labels, navigation, search/filter scope and structural maps before screens. Actual roles and capabilities control access; hidden navigation is never security enforcement. Card sorting and tree testing are optional plans unless real evidence exists. Clear corrections and sufficiently defined structures skip IA. No new features, invented routes or visual artifacts follow from a map. Results and limits are in [Phase 3 results](evals/phase-3-information-architecture/results.md).
-
-## Phase 4 mapping update (no new release)
-
-Product-design can optionally choose one evidence-grounded journey, task flow, known system process or service blueprint. Navigation remains with IA. Current evidence stays separate from proposed changes; missing emotions, teams, channels and business processes remain Unknown. Isolated accessibility/safety and interruption/return/recovery issues stay visible. Guidance loads only when relevant; no automatic maps, screens or visual artifacts. Results and limits are in [Phase 4 results](evals/phase-4-journeys-blueprints/results.md).
-
-## Phase 5 design-system update (no new release)
-
-Ui-ux-design now conditionally inspects/reuses the existing system, coordinates ten foundations and applies proportionate naming/documentation/contribution guidance. Existing identity and approved icon exceptions remain; no default rebrand, new token architecture, component contracts or mandatory governance. Component Gallery is a comparison/reference index, not an installable system or usability proof.
-
-The frozen comparison scored 138/144 baseline and 142/144 updated, with no scored regressions or critical errors; four cases tied. Two updated governance replies still omitted unavailable source-version information. [Full results and limitations](evals/phase-5-design-systems/results.md) retain every response/grade and historical evidence.
-
-These are [actual generated Projects screens](examples/before-after/phase-5-design-systems/ui-ux-design/compare.png) and [detail screens](examples/before-after/phase-5-design-systems/ui-ux-design/compare-detail.png), from identical frozen tasks, not authored bad/good illustrations. Both generated previews passed the exercised desktop/phone navigation, keyboard focus and overflow checks. This does not prove superior visual design or real usability.
-
-## Phase 5.1 design system first (no new release)
-
-Before screens or a coding handoff, record a small system. An existing app is extracted and marked Observed. A new app stays Proposed until you agree. Numbers in a handoff come from that system. Vocabulary, control choice and reference systems load only for that job. Component Gallery by Iain Bean is credited. Definitions are not copied.
-
-The [IVC 2026 frames](examples/ivc-2026-registration/figma-redesign/README.md) show grouped form sections, status pills next to the name, and one named next step. The scale is pending from Altaz. The frozen Phase 5 scores are unchanged and do not cover this amendment.
-
-## Context budgets
-
-The knowledge collection can grow without a global word cap. Small entry files load task-relevant references directly. Maximums: 4,500 tokens per entry, 2,000 per shared file, 4,000 per reference, and 12,000 per declared normal loading path. Contract and intake stay small and always loaded; safeguards must not be skipped to fit a budget.
-
-See [architecture](architecture.md#bounded-context-growing-knowledge) for shared totals, ownership and counting limits, and [tests](tests/README.md#context-budget-maintenance) for required checks. Token counts use a pinned reference tokenizer; client behavior and provider counts vary. This is architecture maintenance, with no new visual artifacts or Phase 2 content.
-
-## Requested outputs
-
-### Phase 1 research update (no new release)
-
-Product-design can select research methods, prepare lightweight guides and distinguish
-reported claims, observed behavior, interpretations, hypotheses and unknowns.
-It inspects supplied evidence first; clear corrections do not trigger discovery.
-Unavailable tools or participants remain explicit. Simulated users never count as research.
-Users see concise decisions, material assumptions and limits; detailed plans are supplied only when useful/requested.
-This update does not add full research synthesis or establish demand through a competitor scan.
-
-A small fix gets a small response. A full project can use PRODUCT.md, DESIGN.md and the templates under docs/.
-Other project documents normally live under docs/shipright/. Reuse existing equivalents.
-A request to write authorizes the requested files. Read before updating and preserve unrelated content.
-The pitch and full launch report are optional. Readiness never authorizes deployment, publication or payment.
-
-## Evidence
-
-Reviews distinguish specifications, visible designs and exercised implementation.
-Checks use Pass, Fail, Not verified or Not applicable with a reason. A ticket does not resolve a failure.
-
-Run source validation from the unpacked folder:
+- **Dense but calm screens.** Real information, clear hierarchy, nothing shouting. Four starter systems with measured contrast: calm dense product UI, mobile native, editorial marketing, immersive dark.
+- **No AI slop.** No invented metrics, quotes, logos or prices. No gradient glow, eyebrow labels or rows of icon cards.
+- **Motion and 3D with budgets.** GSAP, Lenis and React Three Fiber where they help, always with reduced-motion and a fallback image.
+- **Checked, not hoped.** [scripts/check-ui.mjs](scripts/check-ui.mjs) opens a page in Chromium at 1280 and 390 wide and measures overflow, contrast, fonts, target size, labels, focus, motion handling and common slop tells.
 
 ```bash
-python3 evals/check_sources.py
-python3 evals/check_sources.py --self-test
+node scripts/check-ui.mjs path/to/index.html --root path/to/site
 ```
 
-See [0.6 evaluation evidence](evals/v0.6/results.md). Source checks and controlled trials do not establish cross-model or client performance.
-See [Phase 1 research evaluation](evals/phase-1-ux-research/results.md) for the preserved original comparison.
-See [stronger evaluations and final checks](evals/phase-1-ux-research/stronger/results.md) for the separate follow-up evidence and limits.
-The [IVC example](examples/ivc-2026-registration/README.md) is historical and includes documented defects and evidence limits.
-Do not use its prototype or training candidates as current approved implementation guidance.
-
-## Optional preferences and map
-
-[Altaz's profile](personal-taste/altaz.md) is active only when selected. It cannot change scope or override approved identity.
-[skills.md](skills.md) routes tasks. [architecture.md](architecture.md) explains file ownership and loading.
-[CHANGELOG.md](CHANGELOG.md) records the release. Names and original paths are retained.
+It needs Node 18+ and Playwright with Chromium. It measures rules; it does not prove good design or full accessibility.
 
 ## How it improved
 
-Each pair is the same idea, shown on a phone-width screen. Before is the polished generic screen 0.6.1-draft allowed. After is what this version asks for. Numbers, quotes, and prices on the before screens were not supplied.
+Same four requests, run by fresh agents with the old pack (0.6.2) and the new pack, then graded blind by separate agents who did not know which was which.
 
-**Product design.** A salon booking idea. The old path drew a marketing site. The new path keeps one booking task.
+| Case | 0.6.2 | v1.0 (Phase 3) |
+| --- | ---: | ---: |
+| SaaS dashboard | 25 | 27 |
+| Mobile form flow | 25 | 28 |
+| Marketing site | 21 | 27 |
+| 3D product site | 23 | 25 |
+| **Total of 120** | **94** | **107** |
 
-[Before](examples/before-after/0.6.2/product-design/before.png) and [after](examples/before-after/0.6.2/product-design/after.png).
+Biggest gains: paste-ready tickets, complete build packs, denser screens, less slop. Replies got about half as long; build packs about a quarter shorter.
+Full results and limits: [Phase 3 trial](evals/v1/results-phase-3.md). The final v1.0 trial is in [results-final](evals/v1/results-final.md).
 
-![Salon booking, before and after the frame rule](examples/before-after/0.6.2/product-design/compare.png)
+**SaaS dashboard.** More projects visible, each with its next deadline and budget, in one calm table.
 
-**UI/UX design.** The same booking task. The old layout has a gradient, summary cards, unlabeled fields, and two filled buttons. The new layout has labels, one action, and a way back.
+![Dashboard, 0.6.2 and v1.0](examples/before-after/v1.0-phase-3/saas-dashboard/compare-desktop.png)
 
-[Before](examples/before-after/0.6.2/ui-ux-design/before.png) and [after](examples/before-after/0.6.2/ui-ux-design/after.png).
+**Marketing site.** No pill badge or glow; a full-width primary action on the phone with one text link.
 
-![Booking form, before and after the layout rule](examples/before-after/0.6.2/ui-ux-design/compare.png)
+![Marketing home on phone, 0.6.2 and v1.0](examples/before-after/v1.0-phase-3/marketing-site/compare-phone.png)
 
-**UX critique.** The same order desk. The old write-up restyles it. The new write-up names the fix.
+**Mobile form flow** and **3D product site**: [mobile](examples/before-after/v1.0-phase-3/mobile-form/compare-phone.png), [3D](examples/before-after/v1.0-phase-3/3d-product/compare-desktop.png).
 
-[Before](examples/before-after/0.6.2/ux-critique/before.png) and [after](examples/before-after/0.6.2/ux-critique/after.png).
+These are actual generated outputs from identical frozen prompts, not authored illustrations.
+Earlier phases keep their own folders under `examples/before-after/`, for example [0.6.2](examples/before-after/0.6.2/ui-ux-design/compare.png).
 
-![Order desk critique, before and after a worked finding](examples/before-after/0.6.2/ux-critique/compare.png)
+## Tool setup
 
-**Ship check.** No site was supplied. The old path filled a launch list. The new path asks one question and stops.
+Claude Code, Cursor, Codex and ChatGPT can read the pack when it is in their workspace or attached.
+For automatic discovery, register the canonical skill folders with your client's supported method. Avoid edited copies per client.
+Native installs and Claude Design ingestion are not verified for this release. Manual file-based use is the portable route.
+Do not copy this pack's AGENTS.md into your app. It is for maintaining ShipRight itself.
 
-[Before](examples/before-after/0.6.2/ship-check/before.png) and [after](examples/before-after/0.6.2/ship-check/after.png).
+## Evidence and limits
 
-![Launch check, before and after an artifact question](examples/before-after/0.6.2/ship-check/compare.png)
+Reviews separate specifications, visible designs and exercised implementation. Checks use Pass, Fail, Not verified or Not applicable.
+Trials use one or two runs per case, graders from the same model family, and synthetic prompts. They are not user research or a cross-model benchmark.
+Run the source checks from the pack root:
 
-Future updates keep a new folder under `examples/before-after/` and follow [tests/README.md](tests/README.md).
+```bash
+python3 -m pip install -r evals/requirements-context.txt
+python3 evals/check_sources.py --self-test
+python3 evals/check_context.py
+python3 -m unittest discover -s tests -p 'test_*.py'
+```
 
-**Phase 1 research output.** A task-aligned research plan versus an ungrounded research claim.
-Both are authored teaching illustrations, not participant evidence or controlled model output.
+Historical evaluations stay unchanged under `evals/`. The [IVC example](examples/ivc-2026-registration/README.md) is historical and documents its own defects.
 
-![Phase 1 research output illustration](examples/before-after/phase-1-ux-research/product-design/compare.png)
+## Map
 
-**Phase 1 guide fixes.** Recalled behavior is distinguished from directly observed work; prompting instructions and outcome tables share four categories. These are authored print-rendered illustrations, not model outputs or usability evidence.
+[skills.md](skills.md) routes tasks. [architecture.md](architecture.md) explains file ownership and loading. [SOURCES.md](SOURCES.md) credits every source. [CHANGELOG.md](CHANGELOG.md) and [release notes](RELEASE-NOTES.md) record changes.
+[Altaz's profile](personal-taste/altaz.md) is opt-in and cannot change scope or override an approved identity.
 
-[Before](examples/before-after/phase-1-guide-fixes/product-design/before.png) and [after](examples/before-after/phase-1-guide-fixes/product-design/after.png).
-
-![Research guide distinctions and categories](examples/before-after/phase-1-guide-fixes/product-design/compare.png)
-
-**Phase 5.1, person details.** An authored phone-width illustration of the required system step. Before is a generic screen: a gradient, filler ratings and a quote, a card around every section, and two filled buttons. After groups fields, puts a status pill next to the name, and keeps one next action. It is not model output and not Altaz's measured scale.
-
-[Before](examples/before-after/phase-5-1-amendment/ui-ux-design/before.png) and [after](examples/before-after/phase-5-1-amendment/ui-ux-design/after.png).
-
-![Person details, before and after the required system step](examples/before-after/phase-5-1-amendment/ui-ux-design/compare.png)
-
-MIT license for the pack. Example brand assets retain their existing ownership notices.
+MIT license for the pack. Example brand assets keep their existing ownership notices.

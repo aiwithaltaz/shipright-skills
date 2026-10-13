@@ -1,6 +1,6 @@
 # Pack architecture
 
-**ShipRight 0.6.2** (v1.0 rebuild in progress; see docs/rebuild/PROGRESS.md)
+**ShipRight 1.0.0**
 
 This is a product, design and build-planning instruction pack, not an application framework.
 

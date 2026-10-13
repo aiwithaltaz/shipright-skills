@@ -1,6 +1,6 @@
 # Build rules
 
-**Status: Template (ShipRight 0.6.2).**
+**Status: Template (ShipRight 1.0.0).**
 **Project path:** `docs/shipright/build-rules.md`
 
 **Version/date:** <!-- -->  **Sources and approval:** <!-- -->

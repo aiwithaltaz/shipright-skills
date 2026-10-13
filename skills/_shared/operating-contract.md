@@ -1,6 +1,6 @@
 # Decision ownership and evidence
 
-ShipRight 0.6.2. Read once per task.
+ShipRight 1.0.0. Read once per task.
 
 ## Authority
 

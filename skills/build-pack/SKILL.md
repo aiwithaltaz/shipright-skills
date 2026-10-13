@@ -5,7 +5,7 @@ description: "Use this when someone brings an idea for a website, SaaS app, mobi
 
 # Build pack
 
-**Pack version:** 0.6.2
+**Pack version:** 1.0.0
 **Context before generate. Product before pixels.**
 
 Idea in, build pack out. Work like a small senior agency: product, design and engineering decide together, then hand the builder small, exact prompts.
