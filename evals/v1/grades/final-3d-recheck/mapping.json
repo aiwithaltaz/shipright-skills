@@ -1,0 +1,10 @@
+{
+ "trial": "final-3d-recheck",
+ "seed": 20261015,
+ "cases": {
+  "3d-product": {
+   "A": "v1.0-fix",
+   "B": "baseline"
+  }
+ }
+}

@@ -38,7 +38,7 @@ Then paste ticket T1 into your coding tool. It sets up the project and a `/desig
 | `docs/shipright/05-feature-ticket-list.md` | Paste-ready prompts, each with files to read, done-when checks and a stop line |
 | `docs/shipright/build-rules.md` | Standing rules your coding tool reads before every change |
 
-In trials a full pack ran 6,600 to 7,900 words (0.6.2: 8,000 to 10,400), and the chat reply about 300 words.
+In trials a full pack ran about 6,600 to 8,200 words (0.6.2: 8,000 to 10,400), and the chat reply about 300 words.
 
 ## What it is good at
 
@@ -57,26 +57,32 @@ It needs Node 18+ and Playwright with Chromium. It measures rules; it does not p
 
 Same four requests, run by fresh agents with the old pack (0.6.2) and the new pack, then graded blind by separate agents who did not know which was which.
 
-| Case | 0.6.2 | v1.0 (Phase 3) |
+| Case | 0.6.2 | v1.0 |
 | --- | ---: | ---: |
-| SaaS dashboard | 25 | 27 |
-| Mobile form flow | 25 | 28 |
-| Marketing site | 21 | 27 |
-| 3D product site | 23 | 25 |
-| **Total of 120** | **94** | **107** |
+| SaaS dashboard | 24 | 29 |
+| Mobile form flow | 24 | 29 |
+| Marketing site | 22 | 28 |
+| 3D product site | 23 | 26 (after fix; first run 19, see below) |
+| **Total of 120** | **93** | **112** |
+
+The first final 3D run hid its content behind a scroll animation and was marked unshippable. The motion rule and the checker were fixed, and a fresh blind re-check scored 26. An earlier trial after Phase 3 scored 107 against 94.
 
 Biggest gains: paste-ready tickets, complete build packs, denser screens, less slop. Replies got about half as long; build packs about a quarter shorter.
-Full results and limits: [Phase 3 trial](evals/v1/results-phase-3.md). The final v1.0 trial is in [results-final](evals/v1/results-final.md).
+Full results and limits: [final trial](evals/v1/results-final.md) and [Phase 3 trial](evals/v1/results-phase-3.md).
 
 **SaaS dashboard.** More projects visible, each with its next deadline and budget, in one calm table.
 
-![Dashboard, 0.6.2 and v1.0](examples/before-after/v1.0-phase-3/saas-dashboard/compare-desktop.png)
+![Dashboard, 0.6.2 and v1.0](examples/before-after/v1.0/saas-dashboard/compare-desktop.png)
 
-**Marketing site.** No pill badge or glow; a full-width primary action on the phone with one text link.
+**Marketing site.** No pill badge or glow; the real beta terms and steps on the first screen.
 
-![Marketing home on phone, 0.6.2 and v1.0](examples/before-after/v1.0-phase-3/marketing-site/compare-phone.png)
+![Marketing home, 0.6.2 and v1.0](examples/before-after/v1.0/marketing-site/compare-desktop.png)
 
-**Mobile form flow** and **3D product site**: [mobile](examples/before-after/v1.0-phase-3/mobile-form/compare-phone.png), [3D](examples/before-after/v1.0-phase-3/3d-product/compare-desktop.png).
+**3D product site**, after the fix: Buy in the hero, view buttons and a working name instead of placeholders.
+
+![3D product site, 0.6.2 and v1.0](examples/before-after/v1.0/3d-product-fixed/compare-desktop.png)
+
+**Mobile form flow:** [phone comparison](examples/before-after/v1.0/mobile-form/compare-phone.png). Phase 3 images are in `examples/before-after/v1.0-phase-3/`.
 
 These are actual generated outputs from identical frozen prompts, not authored illustrations.
 Earlier phases keep their own folders under `examples/before-after/`, for example [0.6.2](examples/before-after/0.6.2/ui-ux-design/compare.png).

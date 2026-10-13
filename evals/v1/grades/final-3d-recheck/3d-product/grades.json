@@ -1,0 +1,40 @@
+{
+  "A": {
+    "scores": {"1": 3, "2": 2, "3": 2, "4": 2, "5": 3, "6": 3, "7": 2, "8": 3, "9": 3, "10": 3},
+    "reasons": {
+      "1": "Name, one-line lead, one filled 'Buy Model 01' and the turnable speaker read at once on desktop and phone.",
+      "2": "On phone the viewer controls wrap so 'Reset view' sits alone on a second row; the large top-cap close-up has empty dark bands above and below the image inside its panel; desktop hero leaves a big empty block under the text column.",
+      "3": "Phone page is about 3,700px long, largely three big close-up images of a placeholder model; the 3D stage floats in open black space with no frame.",
+      "4": "No glow, eyebrow or fake stats, but 'Look closer' states product facts (knit body, single control ring, back plate) that the reply admits are unconfirmed, and says close-ups are 'drawn from the same model' while the hero shows horizontal ribbing and the close-ups show chevron knit.",
+      "5": "",
+      "6": "",
+      "7": "Works at 390 with full-width Buy and no sideways scroll, but checker flags 1 control under 44px on phone and the view-button row wraps unevenly.",
+      "8": "",
+      "9": "",
+      "10": ""
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Cut or mark the 'Look closer' feature copy as sample until the owner confirms the real details, and make the close-up textures match the turnable model."
+  },
+  "B": {
+    "scores": {"1": 2, "2": 2, "3": 2, "4": 2, "5": 3, "6": 3, "7": 2, "8": 3, "9": 2, "10": 2},
+    "reasons": {
+      "1": "The hero has no Buy action; its only action is a small 'See the specs' text link, so the primary action lives only in the header pill on the first screen.",
+      "2": "Hero copy floats vertically centered beside a much taller card, and the spec rows are very tall (about 78px each) for one-word placeholder values.",
+      "3": "Thin page: four of five spec rows are 'To be confirmed' pills, the buy section holds only a price placeholder, and the 3D viewer sits inside a bordered card.",
+      "4": "Letter-spaced eyebrow 'WIRELESS SPEAKER' above the h1 and a radial gradient glow inside the viewer card (checker flags 1 gradient, 1 eyebrow).",
+      "5": "",
+      "6": "",
+      "7": "No sideways scroll at 390, but checker flags 2 controls under 44px on phone and there is no Buy action in the phone hero; the visitor must use the header pill or scroll to the bottom.",
+      "8": "",
+      "9": "Stack table has no reasons column (only decision IDs), hosting is left Unknown, and design tokens exist only as YAML in DESIGN.md with no tokens file.",
+      "10": "T1 to T5 have change, exclusions and acceptance checks but no files to touch and no explicit stop point; T6 to T10 are one-line notes."
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Put a filled 'Buy on our store' in the hero next to 'See the specs' and drop the eyebrow and the glow card around the viewer."
+  },
+  "better": "A",
+  "why": "A puts the buy action in the hero, ships a fuller page and tighter paste-ready tickets with goal, files, done-when and stop, while B hides Buy from the hero and its tickets lack files and stop points."
+}

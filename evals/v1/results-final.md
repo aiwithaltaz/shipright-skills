@@ -40,7 +40,17 @@ Fix (commit 462d445): entrances never start content invisible; fallback controls
 
 ## 3D re-check after the fix
 
-Pending: one fresh 3D run with the fixed pack, graded blind against the same frozen baseline.
+One fresh 3D run with the fixed pack (462d445), graded blind by a new grader against the same frozen baseline output (seed 20261015). Raw: [runs/v1.0-fix](runs/v1.0-fix/), [grades/final-3d-recheck](grades/final-3d-recheck/).
+
+| | Baseline | v1.0 after fix |
+| --- | ---: | ---: |
+| 3D product site | 23 | 26 |
+| Unshippable | No | No |
+| check-ui FAIL | 0 | 0 |
+
+The grader preferred the fixed run: Buy in the hero, a fuller page and paste-ready tickets. Its top fix: mark the feature copy as sample until the owner confirms it.
+With this re-check in place of the failed 3D run, the four cases total **112 / 120 for v1.0 against 93 / 120 for baseline**, four of four better, no unshippable runs.
+The marketing run also failed the new hidden-content rule but was graded 28 and was not re-run; the same fix applies to it, unverified by a trial.
 
 ## Measured (current checker, both arms)
 
@@ -50,6 +60,9 @@ Pending: one fresh 3D run with the fixed pack, graded blind against the same fro
 | Mobile form flow | 840 to 315 | 10,394 to 8,150 | 0 to 0 |
 | Marketing site | 653 to 321 | 9,379 to 7,209 | 0 to 2 (hidden content) |
 | 3D product site | 801 to 282 | 7,972 to 7,559 | 0 to 3 (hidden content, overflow) |
+| 3D re-check after fix | 801 to 311 | 7,972 to 11,432 | 0 to 0 |
+
+The re-check pack is longer because it added an HTML copy of the preview inside the pack; the Markdown documents alone are shorter. The pack contract does not ask for that file.
 
 ## Limits
 

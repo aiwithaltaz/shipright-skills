@@ -23,13 +23,14 @@ Bring an idea; get a build pack your coding tool can follow ticket by ticket, wi
 Four fixed requests (SaaS dashboard, mobile booking flow, SocialGhost marketing site, 3D speaker site), run by fresh agents with the old and new packs, graded blind with a rubric written before any change.
 
 | | 0.6.2 | 1.0 |
-| --- | ---: | ---: |
+| ---: | ---: | ---: |
+| Final trial, total of 120 (3D after fix) | 93 | 112 |
+| Final trial as first run (3D unshippable) | 93 | 105 |
 | Phase 3 trial, total of 120 | 94 | 107 |
-| Cases graded better | 0 | 4 |
-| Average reply words | 725 | 310 |
-| Average build pack words | 9,480 | 7,200 |
+| Average reply words (final) | 725 | 305 |
+| Average build pack words (final, excluding the 3D re-run) | 9,480 | 7,670 |
 
-The final trial on the release candidate is in [evals/v1/results-final.md](evals/v1/results-final.md).
+The first final 3D run hid its content behind a scroll animation. The motion rule now forbids that and check-ui fails it; a fresh blind re-check scored 26 against 23. Details: [evals/v1/results-final.md](evals/v1/results-final.md).
 
 ## Limits
 

@@ -1,6 +1,6 @@
 # ShipRight v1.0 rebuild: progress
 
-**Next step:** Phase 6: README, CHANGELOG, v1.0 release notes, version bump, gallery; then the final trial (2 runs per case, blind) and one PR. No merge.
+**Next step:** Done. One PR is open for Altaz's review. Do not merge. Possible follow-ups: re-run the marketing case after the hidden-content fix; let trial runs use check-ui (would need a new frozen protocol).
 
 Branch: `claude/nifty-brahmagupta-ds6xrg`. One PR at the end. No merge, no publish.
 
@@ -12,7 +12,7 @@ Branch: `claude/nifty-brahmagupta-ds6xrg`. One PR at the end. No merge, no publi
 | 3. Visual craft | done | 5fbe6f3, 20f0a20, a33ebe4 | **Blind trial: 107/120 vs baseline 94/120, 4 of 4 wins** ([results](../../evals/v1/results-phase-3.md)) | Grader fixes applied: previews open in default state, working names, aligned meters, stacked columns |
 | 4. Motion and 3D | done | see git log | Tests pass; no trial (D11) | motion.md rewritten: should-it-move gate, marketing scroll with GSAP and Lenis, 3D budgets, fallbacks, keyboard and screen reader |
 | 5. Critique and launch | done | see git log | Tests pass, 153 self-tests; no trial (D11) | check-ui plus screenshot loop in critique; Core Web Vitals and 3D budgets in ship-check. Guidance 30,025 tokens (target 30,000) |
-| 6. Release | not started | - | - | |
+| 6. Release | done | see PR | **Final blind trial: 112/120 vs 93/120 with the fixed 3D re-check (105 vs 93 as first run)** ([results](../../evals/v1/results-final.md)) | 1.0.0 version, README, CHANGELOG, RELEASE-NOTES, gallery under examples/before-after/v1.0 |
 
 ## Known state
 

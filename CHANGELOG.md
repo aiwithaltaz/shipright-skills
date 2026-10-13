@@ -29,7 +29,7 @@ Idea in, build pack out. ShipRight now works like a small agency team and hands 
 
 ### Evidence
 
-Blind trial after Phase 3: 107/120 for v1.0 against 94/120 for 0.6.2, four of four cases better, no unshippable runs. Limits are in [evals/v1/results-phase-3.md](evals/v1/results-phase-3.md).
+Final blind trial: 112/120 for v1.0 against 93/120 for 0.6.2 with the fixed 3D re-check (105/120 as first run, when the 3D page hid content behind a scroll animation and was unshippable). Phase 3 trial: 107 against 94. Details and limits: [evals/v1/results-final.md](evals/v1/results-final.md).
 
 ## 0.6.2 - 2026-10-08
 
