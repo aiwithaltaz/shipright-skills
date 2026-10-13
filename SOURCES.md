@@ -17,7 +17,7 @@ Registers below are kept from earlier phases with their original access dates. N
 | Skiper UI (skiper-ui.com) by Gurvinder Singh | Free and Pro tiers; no license text found | Pattern names only. No code or text. |
 | ThreeUI (threeui.com) by Meng To, Community edition | MIT for Community code | Procedural 3D hero ideas only. No code or text. |
 | Animmaster Lib (animmasterlib.dev) | No license text found | Pattern names only. No code or text. |
-| GSAP (gsap.com) | Standard no-charge license, commercial use allowed, with a prohibited-use clause | Recommended for scroll and timeline motion. |
+| GSAP (gsap.com) | **Not MIT.** GSAP standard no-charge license: commercial use allowed, with a prohibited-use clause | Recommended for scroll and timeline motion. A copy sits only in evals/v1/vendor/gsap/ for offline trial pages. It is not part of the MIT pack; projects install GSAP themselves under its license. |
 | Lenis (darkroomengineering) | MIT | Smooth scroll for marketing pages; honors reduced motion. |
 | React Three Fiber docs (pmnd.rs) | MIT | On-demand rendering, capped pixel ratio, instancing. |
 | Laws of UX by Jon Yablonski | CC BY-NC-ND 4.0 | Ideas only; cite the original research names. |

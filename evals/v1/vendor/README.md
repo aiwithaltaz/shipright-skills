@@ -1,6 +1,7 @@
 # Offline libraries for v1 trial pages
 
 Trial pages render without network access to CDNs. These unmodified files come from npm.
+These files exist only so trial pages render offline. They are not part of the MIT-licensed ShipRight pack. GSAP is not MIT: it keeps its own standard no-charge license.
 
 | Folder | Package | License |
 | --- | --- | --- |

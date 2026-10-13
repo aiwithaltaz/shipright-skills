@@ -78,7 +78,7 @@ Full results and limits: [final trial](evals/v1/results-final.md) and [Phase 3 t
 
 ![Marketing home, 0.6.2 and v1.0](examples/before-after/v1.0/marketing-site/compare-desktop.png)
 
-**3D product site**, after the fix: Buy in the hero, view buttons and a working name instead of placeholders.
+**3D product site.** This image is the re-run after the motion fix, not the first final run (which scored 19 and hid its content). Buy is in the hero, view buttons sit under the model, and it uses a working name instead of placeholders.
 
 ![3D product site, 0.6.2 and v1.0](examples/before-after/v1.0/3d-product-fixed/compare-desktop.png)
 
@@ -114,4 +114,9 @@ Historical evaluations stay unchanged under `evals/`. The [IVC example](examples
 [skills.md](skills.md) routes tasks. [architecture.md](architecture.md) explains file ownership and loading. [SOURCES.md](SOURCES.md) credits every source. [CHANGELOG.md](CHANGELOG.md) and [release notes](RELEASE-NOTES.md) record changes.
 [Altaz's profile](personal-taste/altaz.md) is opt-in and cannot change scope or override an approved identity.
 
+## License
+
 MIT license for the pack. Example brand assets keep their existing ownership notices.
+
+**GSAP is not MIT.** It uses GSAP's own standard no-charge license (gsap.com/standard-license), which allows commercial use but has a prohibited-use clause. A copy is included only in `evals/v1/vendor/gsap/`, so the trial pages render offline. It is not part of the MIT pack. If your project uses GSAP, install it yourself under its own license.
+three.js and Lenis in the same vendor folder are MIT and keep their own license files.
