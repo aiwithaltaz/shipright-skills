@@ -35,7 +35,7 @@ class CheckUiFixtures(unittest.TestCase):
         self.assertEqual(1, proc.returncode, proc.stderr)
         found = {r['id'] for v in json.loads(proc.stdout)['report']['viewports'].values() for r in v['results']}
         for rule in ('overflow', 'fonts-loaded', 'contrast', 'tiny-targets', 'unlabeled-fields', 'image-alt',
-                     'nameless-buttons', 'focus-visible', 'page-errors', 'em-dash', 'reduced-motion', 'gradient-text',
+                     'nameless-buttons', 'focus-visible', 'page-errors', 'em-dash', 'hidden-content', 'reduced-motion', 'gradient-text',
                      'gradients', 'glows', 'two-filled-buttons', 'eyebrows', 'one-h1', 'touch-targets'):
             with self.subTest(rule=rule):
                 self.assertIn(rule, found)

@@ -31,7 +31,7 @@ If proof is missing, say what the product does and how it works instead, and lis
 - Section spacing from the starter system: 80 to 112 desktop, 56 to 72 phone. No full-screen empty bands.
 - Text in full ink at 16 or larger. Gray is for secondary notes only.
 - Flat color fields or real images over gradients. No glows, no glass panels, no blurred blobs, no gradient text.
-- Motion is one signature move plus quiet section entrances, with reduced-motion fallbacks. See motion.md.
+- Motion is one signature move plus optional quiet entrances that never hide content at load, with reduced-motion fallbacks. See motion.md.
 - Forms: visible labels, the fewest fields that qualify the visitor, and a clear message after sending.
 
 Before handoff, run the look-and-fix loop in layout-and-hierarchy.md, and confirm every claim has real proof and the page reads with motion off.

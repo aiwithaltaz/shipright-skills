@@ -81,6 +81,11 @@ function measure(vp) {
     if (size < 12 && !el.closest('sup,sub,small')) smallText++;
     if (s.textTransform === 'uppercase' && parseFloat(s.letterSpacing) / size > 0.04 && size <= 14) eyebrows++;
   }
+  // Text that is laid out but faded to nothing, usually a scroll reveal that has not run.
+  const effOpacity = el => { let o = 1; for (let n = el; n && n !== document.documentElement; n = n.parentElement) o *= +getComputedStyle(n).opacity; return o; };
+  const laidOut = el => { const r = el.getBoundingClientRect(); const s = getComputedStyle(el); return r.width > 0 && r.height > 0 && s.display !== 'none' && s.visibility !== 'hidden'; };
+  const hiddenText = [...document.querySelectorAll('body *')].filter(el => [...el.childNodes].some(n => n.nodeType === 3 && n.textContent.trim().length > 1)
+    && laidOut(el) && !el.closest('svg,[aria-hidden="true"],dialog:not([open]),[hidden]') && effOpacity(el) < 0.1).length;
   const all = [...document.querySelectorAll('body *')].filter(vis);
   const gradients = all.filter(el => /gradient/.test(getComputedStyle(el).backgroundImage));
   const gradientText = gradients.filter(el => /text/.test(getComputedStyle(el).webkitBackgroundClip || getComputedStyle(el).backgroundClip));
@@ -139,6 +144,7 @@ function measure(vp) {
     smallTargets: small.filter(t => !t.ok24).length,
     touchTargets: small.filter(t => t.w < 44 || t.h < 44).length,
     filledPairs, unlabeled, noAlt, namelessButtons, canvases,
+    hiddenText,
     emDashes: (text.match(/\u2014/g) || []).length,
     animated: document.getAnimations().length > 0 || /@keyframes|transition:\s*(?!none)/.test(css) || /gsap|requestAnimationFrame|Lenis/.test(scripts),
     reducedMotionRule: /prefers-reduced-motion/.test(css + scripts),
@@ -157,6 +163,7 @@ const RULES = [
   ['nameless-buttons', 'FAIL', m => m.namelessButtons, m => `${m.namelessButtons} buttons have no accessible name`],
   ['focus-visible', 'FAIL', m => m.focusVisible === false, () => 'first Tab stop shows no visible focus'],
   ['page-errors', 'FAIL', m => m.errors.length, m => `script errors: ${m.errors.slice(0, 2).join(' | ')}`],
+  ['hidden-content', 'FAIL', m => m.hiddenText, m => `${m.hiddenText} text elements are laid out but invisible at load (content hidden until a script or scroll runs)`],
   ['em-dash', 'FAIL', m => m.emDashes, m => `${m.emDashes} em dashes in visible text`],
   ['reduced-motion', 'FAIL', m => m.animated && !m.reducedMotionRule, () => 'motion found with no prefers-reduced-motion handling'],
   ['gradient-text', 'FAIL', m => m.gradientText, m => `${m.gradientText} gradient text elements`],

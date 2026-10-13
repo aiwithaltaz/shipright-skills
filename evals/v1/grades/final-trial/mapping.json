@@ -1,0 +1,22 @@
+{
+ "trial": "final-trial",
+ "seed": 20261014,
+ "cases": {
+  "saas-dashboard": {
+   "A": "v1.0",
+   "B": "baseline"
+  },
+  "mobile-form": {
+   "A": "v1.0",
+   "B": "baseline"
+  },
+  "marketing-site": {
+   "A": "baseline",
+   "B": "v1.0"
+  },
+  "3d-product": {
+   "A": "baseline",
+   "B": "v1.0"
+  }
+ }
+}

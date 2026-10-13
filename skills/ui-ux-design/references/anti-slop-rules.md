@@ -23,6 +23,7 @@ A checklist cannot authorize extra navigation, filters, counters, widgets or not
 | More than two type families | One family, or a display face plus a text face |
 | Sideways scroll on a phone, clipped controls | Wrap, stack or scroll inside the container |
 | Motion with no reduced-motion handling | A reduced-motion fallback with the same content |
+| Content invisible until a scroll animation runs | Visible at load; animate transform only |
 | Em dashes in UI copy | A period, comma or colon |
 
 ## Looked-for tells

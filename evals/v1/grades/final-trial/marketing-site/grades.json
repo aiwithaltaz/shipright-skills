@@ -1,0 +1,40 @@
+{
+ "A": {
+  "scores": {"1": 3, "2": 2, "3": 2, "4": 2, "5": 3, "6": 1, "7": 2, "8": 3, "9": 2, "10": 2},
+  "reasons": {
+   "1": "",
+   "2": "The form card sits beside a short left column that leaves a large empty block below it. The lone line 'In return, you get free access' floats between sections.",
+   "3": "The page is thin: three steps and a form. Beside the form there is a lot of empty space, and nothing helps a visitor judge the beta beyond the deal.",
+   "4": "There is a 'Limited beta' pill badge above the H1. The illustration uses a radial glow and a fake play button and scrubber, which suggest a video that does not exist.",
+   "5": "",
+   "6": "The spec defines the states well, but the rendered page shows 'Check your answers' and 'Your application was not sent' on load, with every field still empty. That breaks the spec's own rule of no errors before the first submit.",
+   "7": "No overflow at 390px, but the checker flags 3 controls under 44px on touch. The sticky phone apply bar described in the reply cannot be seen in any screenshot.",
+   "8": "",
+   "9": "All docs are present, but the stack is 'Unknown, proposed Next.js' and storage and notification are left Unknown. Tokens live only as prose in DESIGN.md, with no token file.",
+   "10": "Tickets have a bounded change, preserve rules and acceptance checks, but they name no file paths and no explicit stop line. T1 is gated on an undecided stack and T5 is partly blocked."
+  },
+  "unshippable": false,
+  "unshippable_reason": "",
+  "top_fix": "Hide the error summary and the 'not sent' alert until a submit actually fails. Right now both show on first load over an empty form."
+ },
+ "B": {
+  "scores": {"1": 3, "2": 2, "3": 3, "4": 3, "5": 3, "6": 3, "7": 2, "8": 3, "9": 3, "10": 3},
+  "reasons": {
+   "1": "",
+   "2": "The Questions FAQ takes only the left half of the desktop width and leaves the right half empty. On phone, the gaps between the CTA, the 'How the beta works' link and the meta line are loose.",
+   "3": "",
+   "4": "",
+   "5": "",
+   "6": "",
+   "7": "No overflow at 390px and reduced motion is handled, but the checker flags 6 controls under 44px on touch. These are likely the radio options, the checkbox and the footer links.",
+   "8": "",
+   "9": "",
+   "10": ""
+  },
+  "unshippable": false,
+  "unshippable_reason": "",
+  "top_fix": "Make the radio options, the commitment checkbox and the footer links at least 44px tall on touch screens. Use the empty space next to the FAQ, or center the FAQ."
+ },
+ "better": "B",
+ "why": "B's page has more useful content for deciding to apply (fit and not-fit lists, feedback questions, FAQ), shows a clean form, and comes with a committed stack and paste-ready tickets with files and stop lines. A shows error alerts on load and leaves its stack and storage undecided."
+}
