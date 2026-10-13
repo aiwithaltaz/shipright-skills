@@ -1,6 +1,6 @@
 {
- "target": "/tmp/claude-0/-home-user-shipright-skills/c4321855-3d70-5918-a5cd-3732e18079ee/scratchpad/trial/runs/baseline/marketing-site/index.html",
- "checkedAt": "2026-10-13T20:54:39.372Z",
+ "target": "evals/v1/runs/baseline/marketing-site/index.html",
+ "checkedAt": "2026-10-13T21:38:32.267Z",
  "viewports": {
   "desktop": {
    "results": [],
@@ -25,7 +25,7 @@
     "gradientText": 0,
     "glows": 0,
     "smallTargets": 0,
-    "touchTargets": 4,
+    "touchTargets": 3,
     "filledPairs": 0,
     "unlabeled": 0,
     "noAlt": 0,
@@ -45,7 +45,7 @@
     {
      "id": "touch-targets",
      "level": "WARN",
-     "message": "4 controls smaller than 44x44px on a touch screen"
+     "message": "3 controls smaller than 44x44px on a touch screen"
     }
    ],
    "metrics": {
@@ -69,7 +69,7 @@
     "gradientText": 0,
     "glows": 0,
     "smallTargets": 0,
-    "touchTargets": 4,
+    "touchTargets": 3,
     "filledPairs": 0,
     "unlabeled": 0,
     "noAlt": 0,

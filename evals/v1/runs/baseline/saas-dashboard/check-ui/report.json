@@ -1,15 +1,9 @@
 {
- "target": "/tmp/claude-0/-home-user-shipright-skills/c4321855-3d70-5918-a5cd-3732e18079ee/scratchpad/trial/runs/baseline/saas-dashboard/index.html",
- "checkedAt": "2026-10-13T20:55:17.791Z",
+ "target": "evals/v1/runs/baseline/saas-dashboard/index.html",
+ "checkedAt": "2026-10-13T21:38:22.665Z",
  "viewports": {
   "desktop": {
-   "results": [
-    {
-     "id": "tiny-targets",
-     "level": "FAIL",
-     "message": "9 controls smaller than 24x24px"
-    }
-   ],
+   "results": [],
    "metrics": {
     "overflowX": 0,
     "pageHeight": 1363,
@@ -26,7 +20,7 @@
     "gradients": 0,
     "gradientText": 0,
     "glows": 0,
-    "smallTargets": 9,
+    "smallTargets": 0,
     "touchTargets": 14,
     "filledPairs": 0,
     "unlabeled": 0,
@@ -44,11 +38,6 @@
   },
   "phone": {
    "results": [
-    {
-     "id": "tiny-targets",
-     "level": "FAIL",
-     "message": "8 controls smaller than 24x24px"
-    },
     {
      "id": "touch-targets",
      "level": "WARN",
@@ -71,7 +60,7 @@
     "gradients": 0,
     "gradientText": 0,
     "glows": 0,
-    "smallTargets": 8,
+    "smallTargets": 0,
     "touchTargets": 14,
     "filledPairs": 0,
     "unlabeled": 0,

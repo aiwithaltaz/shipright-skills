@@ -1,0 +1,5 @@
+---
+description: Project build rules
+alwaysApply: true
+---
+Read docs/shipright/build-rules.md before any change.

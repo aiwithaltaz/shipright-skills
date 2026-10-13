@@ -1,0 +1,136 @@
+{
+ "3d-product": {
+  "reply_words": 341,
+  "questions_words": 420,
+  "build_pack_words": 6590,
+  "build_pack_files": [
+   "build-pack/.cursor/rules/shipright.mdc",
+   "build-pack/DESIGN.md",
+   "build-pack/design/tokens.css",
+   "build-pack/docs/shipright/01-prd.md",
+   "build-pack/docs/shipright/02-technical-architecture.md",
+   "build-pack/docs/shipright/04-frontend-spec.md",
+   "build-pack/docs/shipright/05-feature-ticket-list.md",
+   "build-pack/docs/shipright/build-rules.md"
+  ],
+  "html_bytes": 33765,
+  "check_ui_fail": 0,
+  "check_ui_warn": 1,
+  "check_ui_findings": [
+   "WARN touch-targets"
+  ],
+  "sha256": {
+   "build-pack/.cursor/rules/shipright.mdc": "94a8ee598152293b779e4b4e8afcc31743c63d0cecf8ac95f164d69ff93ad12d",
+   "build-pack/DESIGN.md": "8e229fe2dbe48b206dae90aacc0d9c29813c9ab55ea8460af9cd4ee379c6c5a9",
+   "build-pack/design/tokens.css": "5b3202531945b3686797a469d312e9d22b188a52ff6664010079d8ebfaa7d6a7",
+   "build-pack/docs/shipright/01-prd.md": "b8461898266cb2e7c314b4676b873f814de0dc2c4af7d9064886e73811f42cbc",
+   "build-pack/docs/shipright/02-technical-architecture.md": "90ab06e2407c383cd8bd00d2895abe0edc79042ed45e506dda7a4534e6928fa2",
+   "build-pack/docs/shipright/04-frontend-spec.md": "4296f30c5a3432615c1a86bf09fb6b8fefb308190a0a1638d51a9d8117bfc280",
+   "build-pack/docs/shipright/05-feature-ticket-list.md": "c95a69826f18462f586ac16005d469b56c8357f908b4586d65331bdabab60036",
+   "build-pack/docs/shipright/build-rules.md": "084f4cf7536ff3cf8cdc6f1e58408713017dd4c29758fa7d39f81cfedc97d20a",
+   "index.html": "a47ac3c3ad5c7fd827e5e086535edfa5767642f91379fe4fe385459f9328413b",
+   "questions.md": "27d39105911120870763805dd0300670d549a0407ac4800c922e826bd1d827c7",
+   "reply.md": "c1b3a86c714a1c7e68e2b8bb236e6dcf2b969db6d4e7749c6adf16de9b4dbed7"
+  }
+ },
+ "marketing-site": {
+  "reply_words": 300,
+  "questions_words": 365,
+  "build_pack_words": 7851,
+  "build_pack_files": [
+   "build-pack/.cursor/rules/shipright.mdc",
+   "build-pack/DESIGN.md",
+   "build-pack/design/tokens.css",
+   "build-pack/docs/shipright/01-prd.md",
+   "build-pack/docs/shipright/02-technical-architecture.md",
+   "build-pack/docs/shipright/04-frontend-spec.md",
+   "build-pack/docs/shipright/05-feature-ticket-list.md",
+   "build-pack/docs/shipright/build-rules.md"
+  ],
+  "html_bytes": 38050,
+  "check_ui_fail": 0,
+  "check_ui_warn": 1,
+  "check_ui_findings": [
+   "WARN touch-targets"
+  ],
+  "sha256": {
+   "build-pack/.cursor/rules/shipright.mdc": "3dcea2d435d57ff2225208983081d71e727a51fe58b89c27e4a40f4732d8faf9",
+   "build-pack/DESIGN.md": "0969afe497b2068be27a8838a157a4581f19f7122aa249af6885a9cfa57ffabb",
+   "build-pack/design/tokens.css": "834f1ef7788602b653c04f7d37083f733e92879baace94145ed57dcfff317eba",
+   "build-pack/docs/shipright/01-prd.md": "d66bd1c10722fbccf7c8bc52f3b99e9e04f1582c96428112e9213b41093ca5f9",
+   "build-pack/docs/shipright/02-technical-architecture.md": "63c9aa9a45d25881fc8d544b494d2e80f51535c50714ff4848642f09f4d1cf5d",
+   "build-pack/docs/shipright/04-frontend-spec.md": "d2047163ad458dddda28de191c3e2b2475ef711eb4a345893ffb2eea7aee052f",
+   "build-pack/docs/shipright/05-feature-ticket-list.md": "f98e29f09209876e6328677053bd974c451d01f962d8ac816d1c733703c03ffd",
+   "build-pack/docs/shipright/build-rules.md": "0897ec497441d0c0781a3a7e663eace9194ace07444413de0d9e5617557739af",
+   "index.html": "ec315921100fb491a864bbf918f984f1038a4026ed4bfe689df6e45fc947afc1",
+   "questions.md": "ed3cfd7b74a471bd85ee03045cc3b3ff2ac7b1e2c09ddfe93155364b4c898470",
+   "reply.md": "25dd47e2fa1508ff8bdcc9974061aaf5a7c4337403ffd1f25a7e1d2fe04b9d9c"
+  }
+ },
+ "mobile-form": {
+  "reply_words": 293,
+  "questions_words": 405,
+  "build_pack_words": 7248,
+  "build_pack_files": [
+   "build-pack/.cursor/rules/shipright.mdc",
+   "build-pack/DESIGN.md",
+   "build-pack/design/tokens.ts",
+   "build-pack/docs/shipright/01-prd.md",
+   "build-pack/docs/shipright/02-technical-architecture.md",
+   "build-pack/docs/shipright/04-frontend-spec.md",
+   "build-pack/docs/shipright/05-feature-ticket-list.md",
+   "build-pack/docs/shipright/build-rules.md"
+  ],
+  "html_bytes": 21011,
+  "check_ui_fail": 0,
+  "check_ui_warn": 0,
+  "check_ui_findings": [],
+  "sha256": {
+   "build-pack/.cursor/rules/shipright.mdc": "ad315672a056fed46898ad53d401274ae05948954ff41ef1bb56945778d12f90",
+   "build-pack/DESIGN.md": "7ae6c4193545f27490e3feb1359fea8e04546ccaefc8f56c757d7a5806ed22fe",
+   "build-pack/design/tokens.ts": "f418c30d2e60a9545cf0497fac32d89bc8b190d6ed8eec50a6ed9582cdb7a398",
+   "build-pack/docs/shipright/01-prd.md": "43e3475be36d5e692f6a7141f2a5eb6877047c8dedec56500e42568868b68e82",
+   "build-pack/docs/shipright/02-technical-architecture.md": "cb83a346d46fffeae06b2c057246a6749ab463e5050cfe7b39cf79b7f280accc",
+   "build-pack/docs/shipright/04-frontend-spec.md": "05ca60d0adfdb8906d7485ffc6e5c06b336155323278e5eba2f4581706a46777",
+   "build-pack/docs/shipright/05-feature-ticket-list.md": "d94f1dc09241b9f176632e3795461320fed594b58490bb363440e2a2d1cdc90c",
+   "build-pack/docs/shipright/build-rules.md": "82bce16607e509a2348d867b38985eba4e738d65d8354e01a9b7f9a351c85651",
+   "index.html": "08059d76fe1b600cd079d29948f578f54a70ccc0181ffa5c2aebf7e1de6facd2",
+   "questions.md": "506eebdf7a1727c0de577d9180f33dc87e8f50f13ff517024ff5db0c91aba48a",
+   "reply.md": "e1c3a5cef861e202eb7873df967f91ea507eaedd997f7a7caf91950909495a2a"
+  }
+ },
+ "saas-dashboard": {
+  "reply_words": 305,
+  "questions_words": 382,
+  "build_pack_words": 7108,
+  "build_pack_files": [
+   "build-pack/.cursor/rules/shipright.mdc",
+   "build-pack/DESIGN.md",
+   "build-pack/design/tokens.css",
+   "build-pack/docs/shipright/01-prd.md",
+   "build-pack/docs/shipright/02-technical-architecture.md",
+   "build-pack/docs/shipright/04-frontend-spec.md",
+   "build-pack/docs/shipright/05-feature-ticket-list.md",
+   "build-pack/docs/shipright/build-rules.md"
+  ],
+  "html_bytes": 26689,
+  "check_ui_fail": 0,
+  "check_ui_warn": 1,
+  "check_ui_findings": [
+   "WARN touch-targets"
+  ],
+  "sha256": {
+   "build-pack/.cursor/rules/shipright.mdc": "f408cbf311f16207b557a7af1eba2f31f20da1d51998a351f6c069ad219f7108",
+   "build-pack/DESIGN.md": "ba93581026a7051ea8caae41c81a4bbc4537db39d902af9f6baec884dcf85255",
+   "build-pack/design/tokens.css": "b91a3756bc3ceaf6d07069d1cbda6a8f15c746747c9fc581cfbb19373a1ef790",
+   "build-pack/docs/shipright/01-prd.md": "89421c0282422679b5d40295e73ade9f327dcb1d003f2edf5df71c72c664ddc4",
+   "build-pack/docs/shipright/02-technical-architecture.md": "cc06f4d111f742e0b8a068728c1f9e2b9f7ff6605fe51f60909bda61d79eb502",
+   "build-pack/docs/shipright/04-frontend-spec.md": "7c41272ec809b275a0cc5dc4352951c87e18a7a054782e7272c43d16dfe5cd33",
+   "build-pack/docs/shipright/05-feature-ticket-list.md": "b569f30ffc7720cdafb2ebcc29f52ec06ac1212be1937ba086142b1b7c702902",
+   "build-pack/docs/shipright/build-rules.md": "59070a2247074ffc6a13793822659600c7d29674f20def4501aaadfe2d490d89",
+   "index.html": "c4f9ab361bed61b81ce6b8ceaf0911393b5c79480295496345c3d56652ccf9fa",
+   "questions.md": "cfb173b735f2018899b3fe4f696e4237d8bdabe1bdec1565f7fe094dd81788dc",
+   "reply.md": "19a7ca7dd94b6db1fa1b90f83b29f9c0dc05e32a8fa9a8a7df629032546ea4e7"
+  }
+ }
+}

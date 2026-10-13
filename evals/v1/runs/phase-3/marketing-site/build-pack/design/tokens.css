@@ -1,0 +1,94 @@
+/* SocialGhost design tokens. Status: Proposed (delegated, D3). Source: DESIGN.md.
+   Components use semantic tokens only. Never use raw values in components. */
+:root {
+  /* Color: page */
+  --color-bg: #FBFBFA;
+  --color-surface: #FFFFFF;
+  --color-sunken: #F1F1EE;
+  --color-text: #141519;          /* 17.6:1 on bg */
+  --color-muted: #55585F;         /* 6.9:1 on bg, 6.3:1 on sunken */
+  --color-border: #E2E2DE;        /* decorative dividers only */
+  --color-field-border: #84878F;  /* 3.6:1 on surface */
+
+  /* Color: action */
+  --color-accent: #4338CA;        /* 7.6:1 on bg, white text on it 7.9:1 */
+  --color-accent-hover: #372DB0;
+  --color-on-accent: #FFFFFF;
+  --color-accent-tint: #ECEBFB;   /* accent text on it 6.7:1 */
+  --color-focus: #4338CA;
+
+  /* Color: status (always with a text label) */
+  --color-danger: #C1341F;        /* 5.6:1 on surface */
+  --color-danger-tint: #FCEBE7;
+  --color-success: #1B7A4B;
+  --color-success-tint: #E7F5EE;
+
+  /* Color: hero stage (the drawn video frame) */
+  --color-stage: #16181D;
+  --color-stage-raised: #232630;
+  --color-on-stage: #F3F4F6;      /* 16.1:1 on stage */
+  --color-on-stage-muted: #A6ACB6;/* 7.8:1 on stage */
+
+  /* Type */
+  --font-sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --text-display: 4rem;      /* 64 */
+  --text-h2: 2.25rem;        /* 36 */
+  --text-h3: 1.25rem;        /* 20 */
+  --text-body: 1.125rem;     /* 18 */
+  --text-small: 0.9375rem;   /* 15 */
+  --leading-display: 1.05;
+  --leading-heading: 1.2;
+  --leading-body: 1.55;
+  --tracking-display: -0.02em;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 600;
+  --measure: 66ch;
+
+  /* Space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-section: 96px;
+
+  /* Layout */
+  --container: 1200px;
+  --gutter: 24px;
+
+  /* Radius */
+  --radius-control: 8px;  /* buttons, fields */
+  --radius-panel: 12px;   /* hero frame, form panel */
+
+  /* Elevation: borders at rest; no shadows in this release (nothing floats) */
+  --border-width: 1px;
+
+  /* Controls */
+  --control-height: 48px;
+  --focus-ring: 2px solid var(--color-focus);
+  --focus-offset: 2px;
+
+  /* Motion */
+  --duration-press: 120ms;
+  --duration-enter: 240ms;
+  --ease-out: cubic-bezier(.23, 1, .32, 1);
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+}
+
+@media (max-width: 640px) {
+  :root {
+    --text-display: 2.375rem;  /* 38 */
+    --text-h2: 1.75rem;        /* 28 */
+    --text-h3: 1.125rem;       /* 18 */
+    --text-body: 1rem;         /* 16 */
+    --text-small: 0.875rem;    /* 14 */
+    --space-section: 64px;
+    --gutter: 20px;
+  }
+}
