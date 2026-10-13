@@ -1,0 +1,40 @@
+{
+  "A": {
+    "scores": {"1": 2, "2": 2, "3": 2, "4": 2, "5": 3, "6": 1, "7": 2, "8": 3, "9": 2, "10": 2},
+    "reasons": {
+      "1": "Hero is clear with one primary button, but in the form two red alerts ('Check your answers', 'Your application was not sent') show at rest and pull the eye ahead of 'Send application'.",
+      "2": "Desktop Apply section: short criteria column floats beside a much taller form panel, leaving a large empty block under it; big uneven gaps around the hero and the 'In return' line.",
+      "3": "Thin content for a recruiting page: no FAQ, no fit/not-fit, no answer to 'what happens after I apply' beyond one step; much of the page is padding.",
+      "4": "Hero illustration uses a radial indigo glow and fake player chrome (play icon and progress bar) that suggests a playable demo; 'Limited beta' pill acts as an eyebrow label.",
+      "5": "",
+      "6": "Spec defines states well, but the rendered pristine form shows the invalid-summary and failed-send alerts on load, contradicting its own rule 'Do not show errors before the first submit'.",
+      "7": "No sideways scroll at 390px, but the checker reports 3 controls under 44x44px on phone, and the described mobile apply bar is not visible in the phone screenshots.",
+      "8": "",
+      "9": "All documents are present, but the stack is 'Unknown' with a Next.js proposal and almost no reasons or switch points.",
+      "10": "Tickets have bounded change, exclusions and acceptance checks, but no file paths, no 'read first' list and no explicit stop-and-report point, so they are not paste-ready."
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Hide the error summary and failed-send alerts until a submit actually fails; the pristine form currently greets every visitor with two red error boxes."
+  },
+  "B": {
+    "scores": {"1": 3, "2": 2, "3": 3, "4": 2, "5": 3, "6": 3, "7": 2, "8": 3, "9": 3, "10": 3},
+    "reasons": {
+      "1": "",
+      "2": "At 390px the 'Who should apply' heading column stays narrow (about a quarter width), so the H2 and its line break into one or two words per line while the lists below run full width.",
+      "3": "",
+      "4": "Drawn hero frame carries a play button and progress bar that look like a playable video even though nothing plays; the caption helps but the chrome still implies a demo.",
+      "5": "",
+      "6": "",
+      "7": "No sideways scroll, but the checker reports 5 controls under 44x44px on phone, and the squeezed 'Who should apply' column hurts reading at 390px.",
+      "8": "",
+      "9": "",
+      "10": ""
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Under 760px, stack the 'Who should apply' heading column full width above the fit lists instead of keeping its narrow desktop column."
+  },
+  "better": "B",
+  "why": "B renders a clean pristine form and answers real applicant questions (fit, FAQ, what useful feedback means), and its tickets are paste-ready with files, done-when checks and stop points, while A's preview shows error alerts on load and its tickets lack files and stops."
+}

@@ -1,0 +1,22 @@
+{
+ "trial": "phase-3-trial",
+ "seed": 20261013,
+ "cases": {
+  "saas-dashboard": {
+   "A": "baseline",
+   "B": "phase-3"
+  },
+  "mobile-form": {
+   "A": "phase-3",
+   "B": "baseline"
+  },
+  "marketing-site": {
+   "A": "baseline",
+   "B": "phase-3"
+  },
+  "3d-product": {
+   "A": "baseline",
+   "B": "phase-3"
+  }
+ }
+}

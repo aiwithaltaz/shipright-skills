@@ -1,0 +1,40 @@
+{
+  "A": {
+    "scores": {"1": 3, "2": 2, "3": 2, "4": 3, "5": 2, "6": 3, "7": 2, "8": 3, "9": 3, "10": 2},
+    "reasons": {
+      "1": "Title, one filled 'Add project' button and the 'Needs attention (4)' group make the job obvious at a glance.",
+      "2": "Large empty gap between the Active/Completed tabs and 'Needs attention', and a wide dead zone between the Lead and Due columns. Each budget cell is stacked three lines high, so rows are about 100px tall.",
+      "3": "Only 4 projects fit on the 1280x800 first screen because each budget cell repeats bar, '% used' and 'Spent updated' lines. On phone, 8 projects make a page 3037px tall.",
+      "4": "No gradients, filler stats, logos, eyebrows or emoji. Sample data is labeled in a notice.",
+      "5": "The same accent blue is used for the button, every project-name link and every normal budget bar, so the blue is not kept for action or meaning.",
+      "6": "The spec covers loading, load failure, empty, none or all needing attention, save failure, conflict, signed out and the unsaved prompt. The reply says #empty, #loading and #error preview states exist.",
+      "7": "No sideways scroll at 390px and the bottom bar is labeled. The checker flags 14 controls under 44px on phone, and each stacked card repeats Lead, Due and Budget labels, so cards are very tall.",
+      "8": "Only a drawer slide is specified, with a reduced-motion rule. The checker confirms the rule exists.",
+      "9": "PRD, stack with a short reason, security doc, DESIGN.md tokens with measured contrast, screen specs and 9 tickets all agree.",
+      "10": "Tickets have a bounded change, acceptance checks and evidence, but no files to read first, no paste-ready block and no stop line. T1 to T3 are blocked until four owner decisions, so Cursor cannot start."
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Rewrite the tickets as paste-ready prompts with read-first files and a stop line, and let T1 start on the proposed stack instead of blocking on four decisions."
+  },
+  "B": {
+    "scores": {"1": 3, "2": 2, "3": 3, "4": 3, "5": 3, "6": 2, "7": 2, "8": 3, "9": 3, "10": 3},
+    "reasons": {
+      "1": "Title, one filled 'New project' button and a data-built line ('2 projects have late deadlines. 1 is over budget.') above a list sorted with problems first.",
+      "2": "Budget meters start at different x positions on desktop because their width depends on the badge beside them (rows 1, 3 and 6). On phone, client and lead wrap mid-name ('Priya / Nair', 'Jonas / Berg').",
+      "3": "All 9 active projects fit on the first desktop screen in calm two-line rows, with status inside each row and no summary cards.",
+      "4": "No gradients, filler stats, logos, eyebrows or emoji. A footer labels the sample data and the USD formatting.",
+      "5": "One family (IBM Plex Sans) with clear 20, 14 and 13 steps. Accent is used only on the primary button. Normal meters are gray, and warning or danger colors appear only with text and icon badges.",
+      "6": "The spec defines loading, empty, error, not-found and save-failure states, but the preview shows only the populated list and the reply does not show any other state.",
+      "7": "No sideways scroll at 390px and the bottom bar is fine. The checker flags 13 controls under 44px on phone. The reply says the preview was not checked at phone width.",
+      "8": "Small feedback durations are tokenized, with a reduced-motion override in tokens.css.",
+      "9": "PRD, stack table with 'why' and 'switch when', tokens.css plus DESIGN.md, specs for S0 to S3 and 10 tickets all agree. Access rules are in the architecture doc.",
+      "10": "Each ticket is a paste-ready block with goal, read-first files, numbered build steps, do-not-add, done-when checks and a stop line."
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Give the budget meter a fixed-width slot so bars line up across rows, and keep client and lead on separate lines on phone so names do not wrap mid-name."
+  },
+  "better": "B",
+  "why": "B shows all active projects in one calm, scannable sorted table and its tickets can be pasted straight into Cursor with stop lines. A's main screen fits only four tall rows, and its tickets stay blocked and are not paste-ready."
+}

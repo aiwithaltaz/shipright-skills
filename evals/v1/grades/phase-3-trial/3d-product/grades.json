@@ -1,0 +1,40 @@
+{
+  "A": {
+    "scores": {"1": 2, "2": 2, "3": 2, "4": 2, "5": 3, "6": 3, "7": 2, "8": 3, "9": 2, "10": 2},
+    "reasons": {
+      "1": "Hero has no Buy action; the only primary action on the first screen is the small header pill, and the hero offers just a 'See the specs' text link.",
+      "2": "Specs and Buy sections leave a tall empty left column under short headings; section padding is large and uneven against content height.",
+      "3": "3D viewer sits inside a framed card, and Buy section is one short line of content inside a large band; little real information per screen.",
+      "4": "Uppercase eyebrow 'WIRELESS SPEAKER' above the h1, and the checker flags one gradient background (vignette behind the model).",
+      "5": "",
+      "6": "",
+      "7": "Checker reports 2 controls under 44x44 px on phone; otherwise 390 px layout stacks cleanly with no sideways scroll.",
+      "8": "",
+      "9": "02-technical-architecture.md lists the stack (Vite, three.js) with only decision IDs, not reasons; otherwise PRD, DESIGN.md tokens, frontend spec and tickets are consistent.",
+      "10": "Tickets have checks but no explicit file list or stop point, and T6 to T10 are one-line notes rather than pasteable prompts."
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Add a primary Buy button in the hero next to 'See the specs' so the main action is visible without the header, and drop the eyebrow label."
+  },
+  "B": {
+    "scores": {"1": 2, "2": 2, "3": 2, "4": 3, "5": 3, "6": 2, "7": 2, "8": 3, "9": 3, "10": 3},
+    "reasons": {
+      "1": "Giant dashed '[Speaker name]' placeholder dominates the hero, and a stray 'Try again' link under the viewer competes with the Buy button.",
+      "2": "Front/Side/Back/Top group and 'Reset view' run past the container to the window's right edge and are cut off at the bottom of the desktop first screen.",
+      "3": "Yellow dashed underlines on nearly every value (header, h1, price, every spec row, buy band, footer) make the page visually noisy.",
+      "4": "",
+      "5": "",
+      "6": "'Try again' (the failed-state retry) is visible while the model has rendered normally, so the shown state contradicts the spec's state table.",
+      "7": "Checker reports 1 control under 44x44 px on phone (the 'Reset view' text link sits alone on its own row); no sideways scroll at 390 px.",
+      "8": "",
+      "9": "",
+      "10": ""
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Hide 'Try again' unless the viewer is in the failed state, and pull the view buttons and Reset view back inside the 1200 px container."
+  },
+  "better": "B",
+  "why": "B gives Cursor a more complete, pasteable build pack (stack with reasons, tokens.css, tickets with goal, files, checks and a stop point) and puts Buy in the hero, while A's page is calmer but its hero lacks a primary action and its tickets lack stop points."
+}

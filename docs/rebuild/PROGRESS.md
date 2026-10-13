@@ -1,6 +1,6 @@
 # ShipRight v1.0 rebuild: progress
 
-**Next step:** Phase 3 trial: run the 4 cases with the Phase 3 pack, render, blind-grade against the frozen baseline (D11).
+**Next step:** Phase 5: ux-critique look-and-fix loop with check-ui, ship-check Core Web Vitals and 3D budgets. Then Phase 6 release and the final trial (2 runs per case).
 
 Branch: `claude/nifty-brahmagupta-ds6xrg`. One PR at the end. No merge, no publish.
 
@@ -9,8 +9,8 @@ Branch: `claude/nifty-brahmagupta-ds6xrg`. One PR at the end. No merge, no publi
 | 0. Research and plan | done, approved 2026-10-13 | 4fc0e76 | - | Docs only under docs/rebuild |
 | 1. Harness and baseline | done | 5492756 + baseline commit | Baseline checker: 2 FAIL (dashboard tiny targets), 5 WARN total | 4 runs frozen in evals/v1/runs/baseline with metrics.json |
 | 2. Lean core and build pack | done | see git log | Tests 35/35, source + context checks pass. No trial (D11). | Guidance 37,070 -> 24,982 tokens. 30 references merged into 9 + SOURCES.md. New build-pack skill; largest stage 7,517 tokens. |
-| 3. Visual craft | content done, trial pending | see git log | Tests pass; 29,518 guidance tokens | starter-systems, mobile, marketing-pages, dense-but-calm layout, measured anti-slop, golden examples |
-| 4. Motion and 3D | not started | - | - | |
+| 3. Visual craft | done | 5fbe6f3, 20f0a20, a33ebe4 | **Blind trial: 107/120 vs baseline 94/120, 4 of 4 wins** ([results](../../evals/v1/results-phase-3.md)) | Grader fixes applied: previews open in default state, working names, aligned meters, stacked columns |
+| 4. Motion and 3D | done | see git log | Tests pass; no trial (D11) | motion.md rewritten: should-it-move gate, marketing scroll with GSAP and Lenis, 3D budgets, fallbacks, keyboard and screen reader |
 | 5. Critique and launch | not started | - | - | |
 | 6. Release | not started | - | - | |
 

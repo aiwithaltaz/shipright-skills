@@ -7,6 +7,7 @@ Read [the operating contract](../../_shared/operating-contract.md) for scope, ex
 
 Unsupported features, fabricated proof, hidden costs, misleading consequences and inaccessible critical controls are defects.
 Never invent metrics, user counts, ratings, testimonials, customer logos, press, prices or legal text. Label sample data as sample data.
+When a name or price is unknown, use a clearly labeled working name ("Working name: Model 01") and leave the price out, rather than bracket placeholders in headlines. Note it once in a sample-data line.
 A checklist cannot authorize extra navigation, filters, counters, widgets or notifications.
 
 ## Measured tells

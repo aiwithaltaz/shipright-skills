@@ -1,0 +1,201 @@
+{
+ "trial": "phase-3-trial",
+ "cases": {
+  "saas-dashboard": {
+   "baseline": {
+    "total": 25,
+    "scores": {
+     "1": 3,
+     "2": 2,
+     "3": 2,
+     "4": 3,
+     "5": 2,
+     "6": 3,
+     "7": 2,
+     "8": 3,
+     "9": 3,
+     "10": 2
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Rewrite the tickets as paste-ready prompts with read-first files and a stop line, and let T1 start on the proposed stack instead of blocking on four decisions."
+   },
+   "phase-3": {
+    "total": 27,
+    "scores": {
+     "1": 3,
+     "2": 2,
+     "3": 3,
+     "4": 3,
+     "5": 3,
+     "6": 2,
+     "7": 2,
+     "8": 3,
+     "9": 3,
+     "10": 3
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Give the budget meter a fixed-width slot so bars line up across rows, and keep client and lead on separate lines on phone so names do not wrap mid-name."
+   },
+   "better": "phase-3",
+   "why": "B shows all active projects in one calm, scannable sorted table and its tickets can be pasted straight into Cursor with stop lines. A's main screen fits only four tall rows, and its tickets stay blocked and are not paste-ready."
+  },
+  "mobile-form": {
+   "phase-3": {
+    "total": 28,
+    "scores": {
+     "1": 3,
+     "2": 2,
+     "3": 3,
+     "4": 3,
+     "5": 3,
+     "6": 2,
+     "7": 3,
+     "8": 3,
+     "9": 3,
+     "10": 3
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Fit the preview frame to the phone viewport so the bottom bar sits flush with no empty grey band and Continue is visible in the first desktop view."
+   },
+   "baseline": {
+    "total": 25,
+    "scores": {
+     "1": 3,
+     "2": 3,
+     "3": 3,
+     "4": 2,
+     "5": 3,
+     "6": 2,
+     "7": 3,
+     "8": 3,
+     "9": 2,
+     "10": 1
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Rewrite T5 and T7 to T12 as full paste-ready prompts with goal, files to create, do-not-add list, acceptance checks and a stop point."
+   },
+   "better": "phase-3",
+   "why": "The screens are close in quality, but A's tickets are complete paste-ready prompts with files and stop points and its stack is justified, while most of B's tickets are bare acceptance lists."
+  },
+  "marketing-site": {
+   "baseline": {
+    "total": 21,
+    "scores": {
+     "1": 2,
+     "2": 2,
+     "3": 2,
+     "4": 2,
+     "5": 3,
+     "6": 1,
+     "7": 2,
+     "8": 3,
+     "9": 2,
+     "10": 2
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Hide the error summary and failed-send alerts until a submit actually fails; the pristine form currently greets every visitor with two red error boxes."
+   },
+   "phase-3": {
+    "total": 27,
+    "scores": {
+     "1": 3,
+     "2": 2,
+     "3": 3,
+     "4": 2,
+     "5": 3,
+     "6": 3,
+     "7": 2,
+     "8": 3,
+     "9": 3,
+     "10": 3
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Under 760px, stack the 'Who should apply' heading column full width above the fit lists instead of keeping its narrow desktop column."
+   },
+   "better": "phase-3",
+   "why": "B renders a clean pristine form and answers real applicant questions (fit, FAQ, what useful feedback means), and its tickets are paste-ready with files, done-when checks and stop points, while A's preview shows error alerts on load and its tickets lack files and stops."
+  },
+  "3d-product": {
+   "baseline": {
+    "total": 23,
+    "scores": {
+     "1": 2,
+     "2": 2,
+     "3": 2,
+     "4": 2,
+     "5": 3,
+     "6": 3,
+     "7": 2,
+     "8": 3,
+     "9": 2,
+     "10": 2
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Add a primary Buy button in the hero next to 'See the specs' so the main action is visible without the header, and drop the eyebrow label."
+   },
+   "phase-3": {
+    "total": 25,
+    "scores": {
+     "1": 2,
+     "2": 2,
+     "3": 2,
+     "4": 3,
+     "5": 3,
+     "6": 2,
+     "7": 2,
+     "8": 3,
+     "9": 3,
+     "10": 3
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Hide 'Try again' unless the viewer is in the failed state, and pull the view buttons and Reset view back inside the 1200 px container."
+   },
+   "better": "phase-3",
+   "why": "B gives Cursor a more complete, pasteable build pack (stack with reasons, tokens.css, tickets with goal, files, checks and a stop point) and puts Buy in the hero, while A's page is calmer but its hero lacks a primary action and its tickets lack stop points."
+  }
+ },
+ "arms": {
+  "baseline": {
+   "total": 94,
+   "by_criterion": {
+    "1": 10,
+    "2": 9,
+    "3": 9,
+    "4": 9,
+    "5": 11,
+    "6": 9,
+    "7": 9,
+    "8": 12,
+    "9": 9,
+    "10": 7
+   },
+   "unshippable": 0,
+   "wins": 0
+  },
+  "phase-3": {
+   "total": 107,
+   "by_criterion": {
+    "1": 11,
+    "2": 8,
+    "3": 11,
+    "4": 11,
+    "5": 12,
+    "6": 9,
+    "7": 9,
+    "8": 12,
+    "9": 12,
+    "10": 12
+   },
+   "unshippable": 0,
+   "wins": 4
+  }
+ }
+}

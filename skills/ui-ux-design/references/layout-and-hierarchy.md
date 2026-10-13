@@ -53,6 +53,13 @@ Explicit removals override controls visible in a reference. Do not copy incident
 For selected rows, use the approved selection treatment. Keep it clear and clean, without a heavy accent bar unless the design system says so.
 Keep selection distinct from keyboard focus and validation.
 
+## Previews
+
+- A preview opens in the normal, populated state. Loading, empty and error states appear behind a labeled state switcher or in a separate states section, never as failure text on first view.
+- Values that compare across rows (meters, amounts, dates) get fixed-width slots so they line up.
+- Below about 760px, side-by-side text columns stack full width; nothing keeps a narrow desktop column.
+- Controls stay inside the page container at every width.
+
 ## Look before handoff
 
 Render the screen at 1280 and 390 wide with 0, 1 and many records and difficult content.
