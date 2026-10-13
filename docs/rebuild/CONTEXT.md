@@ -74,6 +74,7 @@ The frozen baseline (0.6.2 + 5.1) is stronger than the plan assumed. Do not buil
 | D17 | Starter systems: four (calm dense, mobile native, editorial marketing, immersive dark) with measured contrast. Accent and type adapt to the subject. | D5 approved real numbers; four covers the four product types. | Made, Phase 3 |
 | D18 | Golden examples use different subjects from the four trial cases (invoices, dentist, note app, desk lamp). | Avoid teaching to the test. | Made, Phase 3 |
 | D19 | check-ui tiny-target rule follows WCAG 2.5.8: a checkbox or radio counts its label as target area, and an undersized target passes when a 24px circle on its center touches no other target. Both arms are re-measured with the fixed checker; raw outputs stay unchanged. | The first version flagged spaced table-row links and labeled radios that WCAG allows. Found while checking Phase 3 runs. | Made, Phase 3 trial |
+| D20 | Final trial uses one new v1.0 run per case against the frozen baseline, not two runs per arm. | Altaz asked to save time and credits (D11); one run keeps the same comparison design. Stated as a limit. | Made, Phase 6 |
 | D7 | Provenance and theory move to a SOURCES.md that skills never load. | Credit stays; tokens drop. | Made |
 
 ## Sources reviewed
