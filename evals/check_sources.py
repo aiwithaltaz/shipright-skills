@@ -674,7 +674,7 @@ def self_test(root):
         ('export drift', 'docs/build-rules.md', 'Hide routine system plumbing', 'Show all system plumbing'),
         ('project path', 'docs/05-feature-ticket-list.md', 'docs/shipright/ship-check.md', 'docs/ship-check.md'),
         ('placeholder token', 'docs/DESIGN.md', 'colors: {}', 'colors: {accent: "#000000"}'),
-        ('version', 'skills/ship-check/SKILL.md', '**Pack version:** 0.6.2', '**Pack version:** 0.5.1-draft'),
+        ('version', 'skills/ship-check/SKILL.md', '**Pack version:** ' + VERSION, '**Pack version:** 0.5.1-draft'),
         ('frame first', 'skills/_shared/intake.md', 'the first reply is the decision cards only', 'the first reply is the full product'),
         ('how it improved', 'README.md', '## How it improved', '## Notes'),
         ('default screens', 'skills/ui-ux-design/references/anti-slop-rules.md', 'Default screens to leave out', 'Screens to invent'),
