@@ -1,0 +1,69 @@
+/* SocialGhost design tokens. Status: Proposed (delegated, D3). Becomes Approved when the owner OKs /design in T1.
+   Source of truth for values. DESIGN.md explains roles. Components use semantic tokens, never raw values. */
+:root {
+  /* Color: page */
+  --color-bg: #FBFBFA;
+  --color-surface: #FFFFFF;
+  --color-sunken: #F1F1EE;
+  --color-text: #141519;          /* 16.1:1 on sunken */
+  --color-muted: #55585F;         /* 6.9:1 on bg, 6.3:1 on sunken */
+  --color-border: #E2E2DE;
+  --color-field-border: #848B96;  /* 3.4:1 on surface */
+
+  /* Color: action (record red). Used on the primary button, focus ring and the illustration's progress bar only. */
+  --color-accent: #B42318;        /* white text 6.6:1; as text on bg 6.4:1 */
+  --color-accent-hover: #9A1D13;  /* white text 8.2:1 */
+  --color-on-accent: #FFFFFF;
+
+  /* Color: status. Always with a text label and an icon. */
+  --color-danger: #B42318;
+  --color-danger-bg: #FCEBE7;     /* danger text 5.7:1 */
+  --color-success: #1B7A4B;
+  --color-success-bg: #E7F5EE;    /* success text 4.8:1 */
+
+  /* Color: dark media frame (hero illustration) */
+  --color-media-bg: #15171C;
+  --color-media-raised: #23262E;
+  --color-media-line: #3A3F4A;
+  --color-media-text: #E8E9EC;    /* 14.8:1 on media-bg */
+  --color-media-muted: #A6ACB6;   /* 7.9:1 on media-bg */
+
+  /* Type: one family, five sizes per width */
+  --font-sans: "Instrument Sans", -apple-system, "Segoe UI", Roboto, sans-serif;
+  --text-display: 56px;  /* weight 700, line height 1.05, tracking -0.02em */
+  --text-h2: 32px;       /* 600, 1.15 */
+  --text-h3: 20px;       /* 600, 1.3; also hero lead and wordmark */
+  --text-body: 18px;     /* 400, 1.55; labels 600, buttons 600 */
+  --text-small: 15px;    /* 400, hints and notes, muted */
+
+  /* Space */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-10: 40px;
+  --space-12: 48px; --space-16: 64px;
+  --space-section: 96px;
+
+  /* Shape and size */
+  --radius-control: 8px;  /* buttons, fields, alerts */
+  --radius-panel: 12px;   /* media frame, feedback panel, success panel */
+  --control-height: 48px; /* primary button and fields; header button 44px */
+  --container: 1200px;
+  --gutter: 24px;
+
+  /* Motion */
+  --dur-press: 120ms;
+  --dur-menu: 180ms;
+  --dur-signature: 1600ms;
+  --ease-out: cubic-bezier(.23, 1, .32, 1);
+}
+
+@media (max-width: 759px) {
+  :root {
+    --text-display: 34px;
+    --text-h2: 26px;
+    --text-h3: 18px;
+    --text-body: 16px;
+    --text-small: 14px;
+    --space-section: 64px;
+    --gutter: 20px;
+  }
+}

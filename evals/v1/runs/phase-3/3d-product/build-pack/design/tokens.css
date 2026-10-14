@@ -1,0 +1,107 @@
+/*
+  Design tokens. Status: Proposed (delegated), 2026-10-13.
+  Source: ShipRight starter D "Immersive dark", accent changed to brass. See DESIGN.md.
+  Becomes Approved when the owner OKs the /design preview (ticket T1).
+  Components use the semantic tokens below, never raw values.
+*/
+:root {
+  /* Color: primitives */
+  --ink-950: #0D0E11;
+  --ink-900: #16181D;
+  --ink-850: #1E2127;
+  --ink-700: #2A2E35;
+  --gray-500: #6B7280;
+  --gray-300: #A6ACB6;
+  --gray-50: #F3F4F6;
+  --brass-400: #D9A75A;
+  --brass-ink: #15130D;
+
+  /* Color: semantic roles (measured contrast in DESIGN.md) */
+  --color-bg: var(--ink-950);
+  --color-surface: var(--ink-900);
+  --color-raised: var(--ink-850);
+  --color-text: var(--gray-50);
+  --color-muted: var(--gray-300);
+  --color-border: var(--ink-700);
+  --color-control-border: var(--gray-500);
+  --color-accent: var(--brass-400);
+  --color-on-accent: var(--brass-ink);
+  --color-selected-bg: var(--gray-50);
+  --color-on-selected: var(--ink-950);
+  --color-focus: var(--brass-400);
+
+  /* Type */
+  --font-sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --text-meta: 14px;
+  --text-ui: 16px;
+  --text-body: 18px;
+  --text-h2: 28px;
+  --text-display: 64px;
+  --leading-body: 1.55;
+  --leading-display: 1.05;
+  --tracking-display: -0.02em;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+
+  /* Space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-section: 96px;
+
+  /* Layout */
+  --container-max: 1200px;
+  --gutter: 24px;
+  --measure: 62ch;
+  --stage-height: min(78vh, 760px);
+  --stage-min-height: 520px;
+
+  /* Radius */
+  --radius-control: 8px;
+
+  /* Elevation: borders at rest; this shadow only for floating layers (none in this release) */
+  --shadow-float: 0 8px 24px rgba(0, 0, 0, 0.4);
+
+  /* Components */
+  --button-height: 48px;
+  --view-button-height: 44px;
+  --focus-ring: 2px solid var(--color-focus);
+  --focus-offset: 2px;
+
+  /* Motion */
+  --duration-press: 120ms;
+  --duration-fade: 240ms;
+  --duration-view: 700ms;
+  --duration-intro: 1600ms;
+  --ease-enter: cubic-bezier(.23, 1, .32, 1);
+  --ease-move: cubic-bezier(.65, 0, .35, 1);
+}
+
+@media (max-width: 859px) {
+  :root {
+    --text-ui: 16px;
+    --text-body: 17px;
+    --text-h2: 24px;
+    --text-display: 40px;
+    --gutter: 20px;
+    --space-section: 64px;
+    --stage-height: 56vh;
+    --stage-min-height: 340px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fade: 0ms;
+    --duration-view: 0ms;
+    --duration-intro: 0ms;
+  }
+}

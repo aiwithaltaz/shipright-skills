@@ -13,7 +13,7 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILLS = {'product-design', 'ui-ux-design', 'ux-critique', 'ship-check'}
+SKILLS = {'product-design', 'ui-ux-design', 'ux-critique', 'ship-check', 'build-pack'}
 LIMITS = {'skill_tokens': 4500, 'shared_file_tokens': 2000, 'reference_tokens': 4000,
           'normal_path_tokens': 12000, 'always_shared_tokens': 3000, 'shared_total_tokens': 5000}
 ALWAYS = {'skills/_shared/operating-contract.md', 'skills/_shared/intake.md'}
@@ -44,7 +44,7 @@ def check_structure(root):
         if policy['schema_version'] != 1 or policy['limits'] != LIMITS or policy['tokenizer'] != TOKENIZER:
             errors.append('context-policy: changed schema, approved limits or pinned tokenizer')
         if set(policy['skills']) != SKILLS:
-            errors.append('context-policy: skill inventory must match the four protected skills')
+            errors.append('context-policy: skill inventory must match the five protected skills')
         if set(policy['always_loaded_shared']) != ALWAYS or len(policy['always_loaded_shared']) != len(ALWAYS):
             errors.append('context-policy: contract and intake must remain always loaded once')
         ownership = policy['ownership']

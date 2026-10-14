@@ -1,33 +1,43 @@
 # 05 - Feature tickets
 
-**Status: Template (ShipRight 0.6.2).**
+**Status: Template (ShipRight 1.0.0).**
 **Project path:** `docs/shipright/05-feature-ticket-list.md`
 
 **Version/date:** <!-- -->  **Sources and approval:** <!-- -->
 
+Each ticket is one prompt to paste into the coding tool. The tool finishes it in one sitting, reports and stops.
+Use approved current-phase jobs only. Later ideas stay in the PRD's "Not in this release" list, not here.
+Order: T1 foundation and `/design` preview (stop for a quick OK of the look), shell, core job, states, secondary jobs, motion, QA, launch check.
+Open reversible choices use the Proposed default and name where to change it. Only prices, legal text, access policy and payments block their own ticket.
 
-Use approved current-phase jobs. Later ideas remain notes, not implementation tickets unless the user requests planning for them.
-P0 means required for this release; P1/P2 describe delivery priority, not defect severity.
+## Order
 
-## Ordered tickets
+| ID | Ticket | Screen or capability | After | Size |
+| --- | --- | --- | --- | --- |
+| <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- one sitting --> |
 
-| ID | Change | Phase / job / screen | Depends on | Owner | Status |
-| --- | --- | --- | --- | --- | --- |
-| <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> |
-
-## Ticket detail
+## Tickets
 
 Copy this block per ticket:
 
-- **ID, priority and source:** <!-- -->
-- **Bounded change:** <!-- -->
-- **Preserve / do not add:** <!-- -->
-- **Affected screen, state or non-UI job:** <!-- -->
-- **Acceptance checks:** <!-- exact feedback, behavior, recovery and access where relevant -->
-- **Verification evidence needed:** <!-- -->
-- **Open dependency:** <!-- -->
+```text
+T<n>. <title>            Size: one sitting   After: T<n-1>
+Paste this into your coding tool:
+---
+Goal: <who can do what when this is done>
+Read first: docs/shipright/build-rules.md, DESIGN.md, <spec section>
+Build:
+1. <ordered, testable step with the real route, file or copy>
+Use: <tokens and existing components>
+States: <loading, empty, error, permission, as the spec requires>
+Do not add: <nearby ideas that are out of scope>
+Done when:
+- <observable check: route, keyboard path, width, value or test>
+Stop: Do not start the next ticket. Reply with changed files, any decision you made, and how you checked.
+---
+```
 
-For relevant mapping only, trace an accepted change to its mapped failure/handoff, source ID, affected job and recovery/access consequence. A proposed map change is not an approved ticket. Preserve unresolved dependencies and verification needs.
+A proposed map change is not an approved ticket. Preserve unresolved dependencies and verification needs.
 
 ## Critique follow-up
 
@@ -36,5 +46,4 @@ For relevant mapping only, trace an accepted change to its mapped failure/handof
 | <!-- --> | <!-- --> | <!-- --> | <!-- --> |
 
 A ticket does not turn Fail into Pass. Check the changed artifact before closing the finding.
-A small UI fix does not require a full launch audit. For a launch task, reference `docs/shipright/ship-check.md`.
-Before handoff, reconcile approved jobs, screen IDs, roles and current-phase exclusions across documents.
+For a launch task, reference `docs/shipright/ship-check.md`.

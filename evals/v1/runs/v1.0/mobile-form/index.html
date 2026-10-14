@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Choose a time</title>
+<meta name="description" content="S3 Choose a time, step 2 of 4 of the first home cleaning booking. Preview with sample data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+<!--
+  Screen S3 "Choose a time" from docs/shipright/04-frontend-spec.md.
+  Tokens from src/design/tokens.ts (Proposed, delegated). Roboto stands in for the platform font (Android).
+  Sample data only: address, dates and open windows are examples.
+  Shown after the customer has picked a time. Other states: add #loading, #error or #taken to the URL.
+-->
+<style>
+:root {
+  --color-bg: #FFFFFF;
+  --color-sunken: #F3F4F6;
+  --color-text: #121417;
+  --color-muted: #5A616B;
+  --color-border: #E3E6EA;
+  --color-field-border: #868D97;
+  --color-accent: #0B6A88;
+  --color-accent-pressed: #08546C;
+  --color-accent-tint: #E8F3F7;
+  --color-on-accent: #FFFFFF;
+  --color-disabled-bg: #E3E6EA;
+  --color-disabled-text: #5A616B;
+  --color-danger: #C1341F;
+  --color-danger-tint: #FCEBE7;
+
+  --font: -apple-system, "SF Pro Text", Roboto, "Segoe UI", sans-serif;
+  --size-caption: 13px; --lh-caption: 18px;
+  --size-secondary: 15px; --lh-secondary: 20px;
+  --size-body: 17px; --lh-body: 24px;
+  --size-section: 20px; --lh-section: 26px;
+  --size-title: 28px; --lh-title: 34px;
+
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px;
+  --space-6: 24px; --space-8: 32px;
+
+  --radius-control: 10px;
+  --touch: 48px;
+  --field: 52px;
+  --button: 52px;
+  --day-chip: 64px;
+  --slot-row: 56px;
+  --page-padding: 20px;
+
+  --motion-press: 120ms;
+  --motion-select: 180ms;
+  --ease-out: cubic-bezier(.23, 1, .32, 1);
+  --bar-height: 112px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--color-sunken);
+  color: var(--color-text);
+  font-family: var(--font);
+  font-size: var(--size-body);
+  line-height: var(--lh-body);
+}
+.app {
+  max-width: 430px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: var(--color-bg);
+  padding: 0 var(--page-padding) calc(var(--bar-height) + var(--space-6) + env(safe-area-inset-bottom));
+}
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+/* Header */
+.header {
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: var(--touch);
+  padding-top: env(safe-area-inset-top);
+  margin: 0 calc(var(--space-3) * -1);
+}
+.back {
+  display: inline-flex; align-items: center; gap: var(--space-1);
+  min-height: var(--touch); padding: 0 var(--space-3);
+  background: none; border: 0; border-radius: var(--radius-control);
+  color: var(--color-accent); font-size: var(--size-body); cursor: pointer;
+}
+.back svg { width: 20px; height: 20px; }
+.step { padding: 0 var(--space-3); font-size: var(--size-secondary); line-height: var(--lh-secondary); color: var(--color-muted); }
+h1 {
+  margin: var(--space-2) 0 var(--space-1);
+  font-size: var(--size-title); line-height: var(--lh-title); font-weight: 700; letter-spacing: -0.01em;
+}
+.context { margin: 0; font-size: var(--size-secondary); line-height: var(--lh-secondary); color: var(--color-muted); }
+
+/* Groups */
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.group { margin-top: var(--space-8); }
+legend, .legend {
+  padding: 0; font-size: var(--size-section); line-height: var(--lh-section); font-weight: 600;
+}
+.help { margin: var(--space-1) 0 0; font-size: var(--size-secondary); line-height: var(--lh-secondary); color: var(--color-muted); }
+
+/* Week row */
+.week {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+.week-label { font-size: var(--size-secondary); line-height: var(--lh-secondary); font-weight: 600; font-variant-numeric: tabular-nums; }
+.week-nav { display: flex; gap: var(--space-2); }
+.icon-btn {
+  width: var(--touch); height: var(--touch);
+  display: inline-grid; place-items: center;
+  background: var(--color-bg); border: 1px solid var(--color-field-border); border-radius: var(--radius-control);
+  color: var(--color-text); cursor: pointer;
+}
+.icon-btn svg { width: 20px; height: 20px; }
+.icon-btn:disabled { border-color: var(--color-border); color: var(--color-field-border); cursor: default; }
+
+/* Day chips */
+.days {
+  display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px;
+  margin-top: var(--space-3);
+}
+.day { position: relative; }
+.day input, .slot input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+.day label {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: var(--day-chip); padding: var(--space-1) 0;
+  border: 1px solid var(--color-field-border); border-radius: var(--radius-control);
+  background: var(--color-bg); cursor: pointer; text-align: center;
+  transition: background-color var(--motion-select) var(--ease-out), color var(--motion-select) var(--ease-out), border-color var(--motion-select) var(--ease-out);
+}
+.day .dow { font-size: var(--size-caption); line-height: var(--lh-caption); color: var(--color-muted); }
+.day .num { font-size: var(--size-body); line-height: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.day .mark { height: 16px; display: grid; place-items: center; font-size: var(--size-caption); line-height: 16px; }
+.day .mark svg { width: 16px; height: 16px; }
+.day input:checked + label { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-on-accent); }
+.day input:checked + label .dow { color: var(--color-on-accent); }
+.day input:disabled + label { background: var(--color-sunken); border-color: var(--color-sunken); color: var(--color-muted); cursor: default; }
+.day input:disabled + label .num { font-weight: 400; }
+.day input:focus-visible + label, .slot input:focus-visible + label { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+/* Slot rows */
+.slots { display: grid; gap: var(--space-2); margin-top: var(--space-3); }
+.slot { position: relative; }
+.slot label {
+  display: flex; align-items: center; gap: var(--space-3);
+  min-height: var(--slot-row); padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-field-border); border-radius: var(--radius-control);
+  background: var(--color-bg); cursor: pointer;
+  transition: background-color var(--motion-select) var(--ease-out), border-color var(--motion-select) var(--ease-out);
+}
+.radio {
+  flex: none; width: 22px; height: 22px; border-radius: 50%;
+  border: 2px solid var(--color-field-border); display: grid; place-items: center; color: var(--color-on-accent);
+}
+.radio svg { width: 14px; height: 14px; opacity: 0; }
+.slot .time { flex: 1; font-weight: 600; font-variant-numeric: tabular-nums; }
+.slot .state { font-size: var(--size-secondary); color: var(--color-muted); }
+.slot input:checked + label { border: 2px solid var(--color-accent); padding: calc(var(--space-2) - 1px) calc(var(--space-4) - 1px); background: var(--color-accent-tint); }
+.slot input:checked + label .radio { background: var(--color-accent); border-color: var(--color-accent); }
+.slot input:checked + label .radio svg { opacity: 1; }
+.slot input:disabled + label { background: var(--color-sunken); border-color: var(--color-sunken); color: var(--color-muted); cursor: default; }
+.slot input:disabled + label .time { font-weight: 400; }
+.slot input:disabled + label .radio { border-color: var(--color-field-border); background: var(--color-sunken); }
+.slots.needs-choice .slot input:not(:disabled) + label { border-color: var(--color-accent); }
+
+/* Alerts and skeletons */
+.alert {
+  display: flex; gap: var(--space-3); align-items: flex-start;
+  margin-top: var(--space-3); padding: var(--space-3) var(--space-4);
+  background: var(--color-danger-tint); border-radius: var(--radius-control); color: var(--color-text);
+}
+.alert svg { flex: none; width: 20px; height: 20px; margin-top: 2px; color: var(--color-danger); }
+.alert p { margin: 0; }
+.text-btn {
+  display: inline-flex; align-items: center; min-height: var(--touch); margin-top: var(--space-1);
+  padding: 0; background: none; border: 0; color: var(--color-accent); font-weight: 600; cursor: pointer;
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.skeleton { background: var(--color-sunken); border-radius: var(--radius-control); }
+.skeleton.chip { height: var(--day-chip); }
+.skeleton.row { height: var(--slot-row); }
+
+.sample-note { margin: var(--space-8) 0 0; font-size: var(--size-caption); line-height: var(--lh-caption); color: var(--color-muted); }
+
+/* Bottom bar */
+.bar {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  max-width: 430px; margin: 0 auto;
+  padding: var(--space-3) var(--page-padding) calc(var(--space-3) + env(safe-area-inset-bottom));
+  background: var(--color-bg); border-top: 1px solid var(--color-border);
+}
+.bar-line {
+  margin: 0 0 var(--space-2); min-height: var(--lh-secondary);
+  font-size: var(--size-secondary); line-height: var(--lh-secondary); font-variant-numeric: tabular-nums;
+}
+.bar-line.hint { color: var(--color-muted); }
+.primary {
+  width: 100%; min-height: var(--button);
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 0; border-radius: var(--radius-control);
+  background: var(--color-accent); color: var(--color-on-accent);
+  font-size: var(--size-body); font-weight: 600; cursor: pointer;
+  transition: background-color var(--motion-press) var(--ease-out);
+}
+.primary:active { background: var(--color-accent-pressed); }
+.primary[aria-disabled="true"] { background: var(--color-disabled-bg); color: var(--color-disabled-text); cursor: default; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="header">
+    <button class="back" type="button" aria-label="Back to Your home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+      <span>Back</span>
+    </button>
+    <span class="step">Step 2 of 4</span>
+  </header>
+
+  <main>
+    <h1>Choose a time</h1>
+    <p class="context">2 bedrooms, 1 bathroom, 24 Elm Street</p>
+
+    <div id="region"></div>
+
+    <p class="sample-note">Preview with sample data. Address, dates and open times are examples.</p>
+  </main>
+</div>
+
+<div class="bar">
+  <p class="bar-line" id="bar-line" aria-live="polite"></p>
+  <button class="primary" id="continue" type="button">Continue</button>
+</div>
+
+<script>
+(function () {
+  var ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
+  var ICON_LEFT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>';
+  var ICON_RIGHT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>';
+  var ICON_ALERT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>';
+
+  // Sample data. Bookable from tomorrow (Wed 14 Oct 2026) for 28 days, in 2-hour arrival windows.
+  var FIRST = new Date(2026, 9, 14);
+  var DAYS = 28;
+  var WINDOWS = [["8:00", "10:00"], ["10:00", "12:00"], ["12:00", "14:00"], ["14:00", "16:00"]];
+  var DOW = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  var DOW_LONG = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  var MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  var MON_LONG = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+  function addDays(d, n) { var x = new Date(d); x.setDate(x.getDate() + n); return x; }
+  // Which windows are full, per day offset. Days 3 and 4 (Sat 17, Sun 18) are fully booked.
+  function fullWindows(i) {
+    var dow = addDays(FIRST, i).getDay();
+    if (i === 3 || i === 4 || (dow === 0 && i > 7)) return [0, 1, 2, 3];
+    if (i === 0) return [0];
+    if (i === 1) return [0, 2];
+    if (i % 5 === 2) return [1];
+    return [];
+  }
+  function dayOpen(i) { return fullWindows(i).length < WINDOWS.length; }
+  function short(d) { return DOW[d.getDay()] + " " + d.getDate() + " " + MON[d.getMonth()]; }
+  function long(d) { return DOW_LONG[d.getDay()] + " " + d.getDate() + " " + MON_LONG[d.getMonth()]; }
+
+  var state = {
+    week: 0,
+    day: 0,
+    slot: 1, // preview opens after the customer picked 10:00 to 12:00
+    view: "times",
+    takenNotice: false
+  };
+
+  var hash = (location.hash || "").replace("#", "");
+  if (hash === "loading") state.view = "loading";
+  if (hash === "error") state.view = "error";
+  if (hash === "taken") { state.slot = null; state.takenNotice = true; }
+
+  var region = document.getElementById("region");
+  var barLine = document.getElementById("bar-line");
+  var btn = document.getElementById("continue");
+
+  function weekLabel(w) {
+    var a = addDays(FIRST, w * 7), b = addDays(FIRST, w * 7 + 6);
+    var left = DOW[a.getDay()] + " " + a.getDate() + (a.getMonth() !== b.getMonth() ? " " + MON[a.getMonth()] : "");
+    return left + " to " + DOW[b.getDay()] + " " + b.getDate() + " " + MON[b.getMonth()];
+  }
+
+  function render() {
+    var html = "";
+    var weeks = DAYS / 7;
+
+    html += '<fieldset class="group" aria-describedby="week-label">';
+    html += '<legend>Day</legend>';
+    html += '<div class="week"><span class="week-label" id="week-label" aria-live="polite">' + weekLabel(state.week) + '</span>';
+    html += '<div class="week-nav">';
+    html += '<button type="button" class="icon-btn" id="prev" aria-label="Previous week"' + (state.week === 0 || state.view !== "times" ? " disabled" : "") + '>' + ICON_LEFT + '</button>';
+    html += '<button type="button" class="icon-btn" id="next" aria-label="Next week"' + (state.week === weeks - 1 || state.view !== "times" ? " disabled" : "") + '>' + ICON_RIGHT + '</button>';
+    html += '</div></div>';
+
+    html += '<div class="days">';
+    for (var k = 0; k < 7; k++) {
+      var i = state.week * 7 + k;
+      if (state.view !== "times") { html += '<div class="skeleton chip" aria-hidden="true"></div>'; continue; }
+      var d = addDays(FIRST, i), open = dayOpen(i), checked = state.day === i;
+      html += '<div class="day"><input type="radio" name="day" id="d' + i + '" value="' + i + '"' + (checked ? " checked" : "") + (open ? "" : " disabled") + '>';
+      html += '<label for="d' + i + '"><span class="dow" aria-hidden="true">' + DOW[d.getDay()] + '</span><span class="num" aria-hidden="true">' + d.getDate() + '</span>';
+      html += '<span class="mark" aria-hidden="true">' + (checked ? ICON_CHECK : (open ? "" : "Full")) + '</span>';
+      html += '<span class="visually-hidden">' + long(d) + (open ? "" : ", full") + '</span></label></div>';
+    }
+    html += '</div></fieldset>';
+
+    html += '<fieldset class="group" id="times" tabindex="-1" aria-describedby="times-help">';
+    html += '<legend>Arrival time</legend>';
+    html += '<p class="help" id="times-help">The cleaner arrives during this window.</p>';
+
+    if (state.view === "loading") {
+      html += '<p class="visually-hidden" role="status">Loading times</p><div class="slots" aria-hidden="true">';
+      for (var s = 0; s < 4; s++) html += '<div class="skeleton row"></div>';
+      html += '</div>';
+    } else if (state.view === "error") {
+      html += '<div class="alert" role="alert">' + ICON_ALERT + '<div><p>Times did not load. Check your connection and try again.</p>';
+      html += '<button type="button" class="text-btn" id="retry">Try again</button></div></div>';
+    } else {
+      var full = fullWindows(state.day).slice();
+      if (state.takenNotice && state.day === 0 && full.indexOf(1) < 0) full.push(1);
+      if (state.takenNotice && state.day === 0) {
+        html += '<div class="alert" role="status">' + ICON_ALERT + '<p>Your earlier time, 10:00 to 12:00, is now full. Pick another.</p></div>';
+      }
+      html += '<div class="slots" id="slot-list">';
+      for (var j = 0; j < WINDOWS.length; j++) {
+        var isFull = full.indexOf(j) >= 0, on = state.slot === j && !isFull;
+        html += '<div class="slot"><input type="radio" name="slot" id="s' + j + '" value="' + j + '"' + (on ? " checked" : "") + (isFull ? " disabled" : "") + '>';
+        html += '<label for="s' + j + '"><span class="radio" aria-hidden="true">' + ICON_CHECK + '</span>';
+        html += '<span class="time">' + WINDOWS[j][0] + ' to ' + WINDOWS[j][1] + '</span>';
+        html += (isFull ? '<span class="state">Full</span>' : '') + '</label></div>';
+      }
+      html += '</div>';
+    }
+    html += '</fieldset>';
+
+    region.innerHTML = html;
+    bind();
+    updateBar();
+  }
+
+  function updateBar() {
+    var ready = state.view === "times" && state.slot !== null;
+    if (ready) {
+      var d = addDays(FIRST, state.day), w = WINDOWS[state.slot];
+      barLine.textContent = short(d) + ", arrives " + w[0] + " to " + w[1];
+      barLine.className = "bar-line";
+      btn.removeAttribute("aria-disabled");
+      btn.removeAttribute("aria-describedby");
+    } else {
+      barLine.textContent = state.view === "times" ? "Pick an arrival time to continue." : "";
+      barLine.className = "bar-line hint";
+      btn.setAttribute("aria-disabled", "true");
+      btn.setAttribute("aria-describedby", "bar-line");
+    }
+  }
+
+  function bind() {
+    var prev = document.getElementById("prev"), next = document.getElementById("next");
+    if (prev) prev.onclick = function () { moveWeek(-1); };
+    if (next) next.onclick = function () { moveWeek(1); };
+    Array.prototype.forEach.call(document.querySelectorAll('input[name="day"]'), function (el) {
+      el.onchange = function () {
+        state.day = +el.value; state.slot = null; state.takenNotice = false;
+        render();
+        var again = document.getElementById("d" + state.day); if (again) again.focus();
+      };
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('input[name="slot"]'), function (el) {
+      el.onchange = function () {
+        state.slot = +el.value;
+        var list = document.getElementById("slot-list"); if (list) list.classList.remove("needs-choice");
+        updateBar();
+      };
+    });
+    var retry = document.getElementById("retry");
+    if (retry) retry.onclick = function () {
+      state.view = "loading"; render();
+      setTimeout(function () { state.view = "times"; render(); }, 900);
+    };
+  }
+
+  function moveWeek(dir) {
+    state.week += dir;
+    state.day = null; state.slot = null; state.takenNotice = false;
+    for (var k = 0; k < 7; k++) { var i = state.week * 7 + k; if (dayOpen(i)) { state.day = i; break; } }
+    render();
+    var b = document.getElementById(dir < 0 ? "prev" : "next");
+    if (b && !b.disabled) b.focus(); else { var o = document.getElementById(dir < 0 ? "next" : "prev"); if (o) o.focus(); }
+  }
+
+  btn.addEventListener("click", function () {
+    if (btn.getAttribute("aria-disabled") === "true") {
+      var list = document.getElementById("slot-list");
+      if (list) list.classList.add("needs-choice");
+      var first = document.querySelector('input[name="slot"]:not(:disabled)');
+      if (first) first.focus();
+    }
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

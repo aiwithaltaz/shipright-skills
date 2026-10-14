@@ -1,0 +1,82 @@
+{
+ "target": "evals/v1/runs/v1.0/saas-dashboard/index.html",
+ "checkedAt": "2026-10-13T22:26:30.449Z",
+ "viewports": {
+  "desktop": {
+   "results": [],
+   "metrics": {
+    "overflowX": 0,
+    "pageHeight": 828,
+    "h1": 1,
+    "families": [
+     [
+      "IBM Plex Sans",
+      91
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 16,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [],
+    "hiddenText": 0,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true
+   }
+  },
+  "phone": {
+   "results": [
+    {
+     "id": "touch-targets",
+     "level": "WARN",
+     "message": "6 controls smaller than 44x44px on a touch screen"
+    }
+   ],
+   "metrics": {
+    "overflowX": 0,
+    "pageHeight": 1556,
+    "h1": 1,
+    "families": [
+     [
+      "IBM Plex Sans",
+      76
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 6,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [],
+    "hiddenText": 0,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true
+   }
+  }
+ }
+}

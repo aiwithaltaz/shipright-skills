@@ -1,0 +1,40 @@
+{
+  "A": {
+    "scores": {"1": 3, "2": 2, "3": 3, "4": 3, "5": 3, "6": 2, "7": 3, "8": 3, "9": 3, "10": 3},
+    "reasons": {
+      "1": "Title 'Your home', one-line question, step text and a single full-width Continue: the task is clear at a glance.",
+      "2": "phone-full.png shows an empty grey band of about 80px below the Continue button, and on desktop.png the frame's bottom bar is cut at the fold so Continue is not in the first view.",
+      "3": "Labeled fields, grouped Address and Home size, no decorative cards or filler.",
+      "4": "No gradients, stats, logos, eyebrows or emoji; text is plain and specific.",
+      "5": "One system family, clear 28/20/17/15/13 steps, teal accent only on Back and the primary button.",
+      "6": "Spec covers loading, empty, error, slot_full and unknown-result states, but S6 has no change or cancel exit after booking (marked as an open F1 gap pending owner contact line).",
+      "7": "No sideways scroll at 390, visible labels, 48px targets, focus visible, reduced-motion rule present per checker.",
+      "8": "Platform transitions only, reduced motion handled; nothing extra added.",
+      "9": "PRD, stack with Why and Switch-when columns, DESIGN.md plus tokens.ts, six screen specs with copy and errors, and T1 to T11 are present and consistent.",
+      "10": "Every ticket has Goal, Read first files, numbered Build steps with paths, Do not add, Done when checks and an explicit Stop."
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Fit the preview frame to the phone viewport so the bottom bar sits flush with no empty grey band and Continue is visible in the first desktop view."
+  },
+  "B": {
+    "scores": {"1": 3, "2": 3, "3": 3, "4": 2, "5": 3, "6": 2, "7": 3, "8": 3, "9": 2, "10": 1},
+    "reasons": {
+      "1": "'Book a home cleaning' title, Where and When groups, one full-width Continue with a status line above it.",
+      "2": "Shared left edge, City and Postal code paired with even gap, groups clearly separated.",
+      "3": "Address and date on the first screen with a useful status line; no decorative cards.",
+      "4": "phone-full.png and desktop-full.png show a caption 'Prototype of S2 Booking details ... (D-14)' that leaks internal screen and decision IDs onto the page.",
+      "5": "One system family, clear size steps, green accent only on Back and the primary button.",
+      "6": "Spec covers draft restore, storage failure, unknown send result and session expiry, but S6 has no change or cancel exit after sending (flagged as F1 Fail, D-12).",
+      "7": "No sideways scroll at 390, visible labels, 44px+ targets, focus visible, reduced-motion rule present per checker.",
+      "8": "Platform transitions only, reduced motion respected; nothing extra added.",
+      "9": "Stack table lists components and sources but gives no reasons or alternatives; tokens live only in DESIGN.md front matter with no code token file; S4 and S4R specs are compressed to one paragraph; home size is left out so a cleaner has no job size.",
+      "10": "Only T1 to T4 and T6 have a bounded change; T5 and T7 to T11 are acceptance checks only, with no goal, no file paths and no per-ticket stop point."
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Rewrite T5 and T7 to T12 as full paste-ready prompts with goal, files to create, do-not-add list, acceptance checks and a stop point."
+  },
+  "better": "A",
+  "why": "The screens are close in quality, but A's tickets are complete paste-ready prompts with files and stop points and its stack is justified, while most of B's tickets are bare acceptance lists."
+}

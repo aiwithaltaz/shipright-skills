@@ -1,0 +1,113 @@
+{
+ "target": "evals/v1/runs/baseline/3d-product/index.html",
+ "checkedAt": "2026-10-13T22:25:35.322Z",
+ "viewports": {
+  "desktop": {
+   "results": [
+    {
+     "id": "gradients",
+     "level": "WARN",
+     "message": "1 gradient backgrounds; keep only a scrim under text on media"
+    }
+   ],
+   "metrics": {
+    "overflowX": 0,
+    "pageHeight": 2087,
+    "h1": 1,
+    "families": [
+     [
+      "Inter",
+      30
+     ],
+     [
+      "Instrument Serif",
+      4
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 1,
+    "gradients": 1,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 2,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [
+     {
+      "w": 614,
+      "h": 590,
+      "labeled": true
+     }
+    ],
+    "hiddenText": 0,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true
+   }
+  },
+  "phone": {
+   "results": [
+    {
+     "id": "touch-targets",
+     "level": "WARN",
+     "message": "2 controls smaller than 44x44px on a touch screen"
+    },
+    {
+     "id": "gradients",
+     "level": "WARN",
+     "message": "1 gradient backgrounds; keep only a scrim under text on media"
+    }
+   ],
+   "metrics": {
+    "overflowX": 0,
+    "pageHeight": 2404,
+    "h1": 1,
+    "families": [
+     [
+      "Inter",
+      30
+     ],
+     [
+      "Instrument Serif",
+      4
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 1,
+    "gradients": 1,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 2,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [
+     {
+      "w": 356,
+      "h": 488,
+      "labeled": true
+     }
+    ],
+    "hiddenText": 0,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true
+   }
+  }
+ }
+}

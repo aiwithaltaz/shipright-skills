@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects | Client projects (preview)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Tokens: copy of design/tokens.css (Proposed, delegated D-03) */
+:root {
+  --color-bg: #F7F8FA;
+  --color-surface: #FFFFFF;
+  --color-sunken: #F1F2F4;
+  --color-text: #16181D;
+  --color-text-muted: #545B66;
+  --color-text-subtle: #6B7280;
+  --color-border: #E2E5EA;
+  --color-border-field: #848B96;
+  --color-accent: #2E5BDB;
+  --color-accent-hover: #2549B8;
+  --color-on-accent: #FFFFFF;
+  --color-accent-tint: #EEF2FC;
+  --color-row-hover: #F4F6FB;
+  --color-success: #1B7A4B;
+  --color-success-bg: #E7F5EE;
+  --color-warning: #9A4F00;
+  --color-warning-bg: #FDF0E1;
+  --color-danger: #C1341F;
+  --color-danger-bg: #FCEBE7;
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --text-caption: 12px;
+  --text-meta: 13px;
+  --text-body: 14px;
+  --text-section: 16px;
+  --text-page: 20px;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --leading-text: 1.45;
+  --leading-heading: 1.25;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --radius-tag: 4px;
+  --radius-control: 6px;
+  --radius-panel: 8px;
+  --shadow-float: 0 8px 24px rgba(16, 24, 40, .12);
+  --duration-press: 120ms;
+  --duration-popover: 180ms;
+  --ease-enter: cubic-bezier(.23, 1, .32, 1);
+  --control-height: 36px;
+  --control-height-touch: 44px;
+  --control-padding-x: 12px;
+  --topbar-height: 56px;
+  --row-height: 48px;
+  --cell-padding-x: 12px;
+  --meter-height: 4px;
+  --meter-width: 72px;
+  --content-max: 1280px;
+  --gutter-desktop: 24px;
+  --gutter-phone: 16px;
+  --icon-size: 16px;
+  --bottombar-height: 68px;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { --duration-press: 0ms; --duration-popover: 0ms; }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--leading-text);
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.icon { width: var(--icon-size); height: var(--icon-size); flex: none; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+.skip-link {
+  position: absolute; left: var(--space-4); top: -100px; z-index: 30;
+  background: var(--color-surface); padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-control); box-shadow: var(--shadow-float);
+}
+.skip-link:focus { top: var(--space-2); }
+
+/* Top bar */
+.topbar {
+  height: var(--topbar-height);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+.topbar-inner {
+  max-width: var(--content-max); margin: 0 auto; height: 100%;
+  padding: 0 var(--gutter-desktop);
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+}
+.app-label {
+  font-size: var(--text-section); font-weight: var(--weight-semibold);
+  text-decoration: none; border-radius: var(--radius-tag);
+}
+.account { position: relative; }
+.account-button {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  min-height: var(--control-height); padding: 0 var(--space-2) 0 var(--space-1);
+  background: transparent; border: 0; border-radius: var(--radius-control);
+  font: inherit; color: var(--color-text); cursor: pointer;
+  transition: background-color var(--duration-press) var(--ease-enter);
+}
+.account-button:hover { background: var(--color-sunken); }
+.avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  display: inline-grid; place-items: center;
+  background: var(--color-sunken); color: var(--color-text-muted);
+  font-size: var(--text-caption); font-weight: var(--weight-semibold);
+}
+.menu {
+  position: absolute; right: 0; top: calc(100% + var(--space-1)); z-index: 20;
+  min-width: 180px; padding: var(--space-1);
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel); box-shadow: var(--shadow-float);
+}
+.menu[hidden] { display: none; }
+.menu-meta { padding: var(--space-2) var(--space-3); color: var(--color-text-muted); font-size: var(--text-meta); border-bottom: 1px solid var(--color-border); margin-bottom: var(--space-1); }
+.menu-item {
+  display: block; width: 100%; text-align: left;
+  min-height: var(--control-height); padding: 0 var(--space-3);
+  background: transparent; border: 0; border-radius: var(--radius-control);
+  font: inherit; color: var(--color-text); cursor: pointer;
+}
+.menu-item:hover, .menu-item:focus-visible { background: var(--color-sunken); }
+
+/* Page */
+main {
+  max-width: var(--content-max); margin: 0 auto;
+  padding: var(--space-6) var(--gutter-desktop) var(--space-10);
+}
+.page-header {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+}
+h1 {
+  margin: 0; font-size: var(--text-page); font-weight: var(--weight-semibold);
+  line-height: var(--leading-heading);
+}
+.button {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-1);
+  min-height: var(--control-height); padding: 0 var(--control-padding-x);
+  border-radius: var(--radius-control); border: 1px solid transparent;
+  font: inherit; font-weight: var(--weight-medium); cursor: pointer; text-decoration: none;
+  transition: background-color var(--duration-press) var(--ease-enter);
+}
+.button-primary { background: var(--color-accent); color: var(--color-on-accent); }
+.button-primary:hover { background: var(--color-accent-hover); }
+
+.toolbar {
+  margin-top: var(--space-4);
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-3) var(--space-4);
+  flex-wrap: wrap;
+}
+.segmented {
+  display: inline-flex; padding: 2px; gap: 2px;
+  background: var(--color-sunken); border-radius: var(--radius-control);
+}
+.segment {
+  min-height: 32px; padding: 0 var(--space-3);
+  border: 1px solid transparent; border-radius: var(--radius-tag);
+  background: transparent; color: var(--color-text-muted);
+  font: inherit; font-weight: var(--weight-medium); cursor: pointer;
+  transition: background-color var(--duration-press) var(--ease-enter);
+}
+.segment:hover { color: var(--color-text); }
+.segment[aria-pressed="true"] {
+  background: var(--color-surface); color: var(--color-text);
+  border-color: var(--color-border-field);
+}
+.segment .count { font-variant-numeric: tabular-nums; color: var(--color-text-muted); font-weight: var(--weight-regular); }
+.attention-line { margin: 0; color: var(--color-text-muted); font-size: var(--text-meta); }
+.attention-line strong { color: var(--color-text); font-weight: var(--weight-medium); }
+
+/* Table */
+.table-wrap {
+  margin-top: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel);
+}
+table { width: 100%; border-collapse: separate; border-spacing: 0; }
+thead th {
+  position: sticky; top: 0; z-index: 1;
+  background: var(--color-surface);
+  text-align: left; font-size: var(--text-meta); font-weight: var(--weight-medium);
+  color: var(--color-text-muted);
+  padding: var(--space-2) var(--cell-padding-x);
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+thead th:first-child { border-top-left-radius: var(--radius-panel); }
+thead th:last-child { border-top-right-radius: var(--radius-panel); }
+th.num, td.num { text-align: right; }
+tbody td {
+  padding: var(--space-2) var(--cell-padding-x);
+  height: var(--row-height);
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-border);
+}
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr { cursor: pointer; transition: background-color var(--duration-press) var(--ease-enter); }
+tbody tr:hover { background: var(--color-row-hover); }
+tbody tr:last-child td:first-child { border-bottom-left-radius: var(--radius-panel); }
+tbody tr:last-child td:last-child { border-bottom-right-radius: var(--radius-panel); }
+.col-project { width: 34%; }
+.col-lead { width: 14%; }
+.col-deadline { width: 24%; }
+.col-budget { width: 28%; }
+
+.project-name {
+  font-weight: var(--weight-medium); text-decoration: none;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  overflow-wrap: anywhere; border-radius: var(--radius-tag);
+}
+.project-name:hover { text-decoration: underline; }
+.project-name:focus-visible { display: block; -webkit-line-clamp: unset; overflow: visible; }
+.secondary { display: block; color: var(--color-text-muted); font-size: var(--text-meta); overflow-wrap: anywhere; }
+.lead-inline { display: none; }
+.nums { font-variant-numeric: tabular-nums; }
+.line2 {
+  margin-top: 2px;
+  display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap;
+  font-size: var(--text-meta); color: var(--color-text-muted);
+}
+td.num .line2 { justify-content: flex-end; }
+.muted { color: var(--color-text-muted); }
+
+.badge {
+  display: inline-flex; align-items: center; gap: var(--space-1);
+  padding: 0 6px; min-height: 20px;
+  border-radius: var(--radius-tag);
+  font-size: var(--text-caption); font-weight: var(--weight-medium);
+  white-space: nowrap; font-variant-numeric: tabular-nums;
+}
+.badge .icon { width: 14px; height: 14px; }
+.badge-danger { color: var(--color-danger); background: var(--color-danger-bg); }
+.badge-warning { color: var(--color-warning); background: var(--color-warning-bg); }
+.badge-success { color: var(--color-success); background: var(--color-success-bg); }
+
+.meter {
+  width: var(--meter-width); height: var(--meter-height);
+  background: var(--color-sunken); border-radius: 2px; overflow: hidden; flex: none;
+}
+.meter span { display: block; height: 100%; background: var(--color-text-muted); }
+.meter.is-warning span { background: var(--color-warning); }
+.meter.is-danger span { background: var(--color-danger); }
+
+.empty { padding: var(--space-10) var(--space-4); text-align: center; color: var(--color-text-muted); }
+
+.sample-note { margin: var(--space-3) 0 0; font-size: var(--text-caption); color: var(--color-text-subtle); }
+
+.bottombar { display: none; }
+
+/* Phone and narrow tablet: stacked rows, primary action in a bottom bar */
+@media (max-width: 720px) {
+  .topbar-inner { padding: 0 var(--gutter-phone); }
+  .account-name { display: none; }
+  main { padding: var(--space-5) var(--gutter-phone) calc(var(--bottombar-height) + var(--space-6)); }
+  .page-header .button-primary { display: none; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .segment { min-height: 40px; }
+
+  table, tbody { display: block; }
+  thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  tbody tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) fit-content(50%);
+    grid-template-areas: "project budget" "deadline deadline";
+    column-gap: var(--space-3); row-gap: var(--space-2);
+    padding: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+  }
+  tbody tr:last-child { border-bottom: 0; }
+  tbody td { display: block; padding: 0; height: auto; border: 0; }
+  td.c-project { grid-area: project; }
+  td.c-lead { display: none; }
+  td.c-deadline { grid-area: deadline; display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
+  td.c-deadline .line2 { margin-top: 0; }
+  td.c-budget { grid-area: budget; }
+  td.c-done { grid-area: deadline; text-align: left; }
+  .lead-inline { display: inline; }
+  .bottombar {
+    display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+    background: var(--color-surface); border-top: 1px solid var(--color-border);
+    padding: var(--space-3) var(--gutter-phone) calc(var(--space-3) + env(safe-area-inset-bottom));
+  }
+  .bottombar .button { width: 100%; min-height: var(--control-height-touch); }
+  .project-name { padding: 2px 0; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to projects</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="app-label" href="#main">Client projects</a>
+    <div class="account">
+      <button class="account-button" id="account-button" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Account menu, Sam Rivera">
+        <span class="avatar" aria-hidden="true">SR</span>
+        <span class="account-name">Sam Rivera</span>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="menu" id="account-menu" role="menu" aria-labelledby="account-button" hidden>
+        <div class="menu-meta">sam@example.com</div>
+        <button class="menu-item" type="button" role="menuitem">Sign out</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-header">
+    <h1>Projects</h1>
+    <a class="button button-primary" href="#new-project">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+      New project
+    </a>
+  </div>
+
+  <div class="toolbar">
+    <div class="segmented" role="group" aria-label="Which projects to show">
+      <button class="segment" type="button" data-view="active" aria-pressed="true">Active <span class="count" id="count-active"></span></button>
+      <button class="segment" type="button" data-view="completed" aria-pressed="false">Completed <span class="count" id="count-completed"></span></button>
+    </div>
+    <p class="attention-line" id="attention-line"></p>
+  </div>
+
+  <div class="table-wrap">
+    <table role="table" aria-describedby="table-caption">
+      <caption class="visually-hidden" id="table-caption">Active projects, sorted with late and over-budget projects first</caption>
+      <thead role="rowgroup" id="table-head"></thead>
+      <tbody role="rowgroup" id="table-body"></tbody>
+    </table>
+  </div>
+  <p class="sample-note">Preview with sample data. Clients, people and amounts are made up. Dates are counted from 13 Oct 2026. Currency is not decided yet; USD is used for formatting only.</p>
+  <div class="visually-hidden" role="status" id="view-status"></div>
+</main>
+
+<div class="bottombar">
+  <a class="button button-primary" href="#new-project">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+    New project
+  </a>
+</div>
+
+<script>
+(function () {
+  // Sample data for the preview only. Not real clients or figures.
+  var TODAY = new Date(Date.UTC(2026, 9, 13));
+  var DUE_SOON_DAYS = 7;      // D-07, Proposed
+  var BUDGET_WARNING = 0.8;   // D-07, Proposed
+
+  var active = [
+    { id: "p1", name: "Website rebuild", client: "Harbor Lane Dental", lead: "Priya Nair", budget: 24000, spent: 19850, deadline: { title: "Homepage copy", due: "2026-10-10" } },
+    { id: "p2", name: "Spring menu campaign", client: "Northfield Bakery", lead: "Sam Rivera", budget: 8500, spent: 6100, deadline: { title: "Print proofs", due: "2026-10-12" } },
+    { id: "p3", name: "Packaging redesign", client: "Tidewell Tea Co.", lead: "Jonas Berg", budget: 12000, spent: 13200, deadline: { title: "Final artwork files", due: "2026-10-30" } },
+    { id: "p4", name: "App onboarding screens", client: "Lumen Fitness", lead: "Priya Nair", budget: 15000, spent: 8100, deadline: { title: "Prototype handoff", due: "2026-10-13" } },
+    { id: "p5", name: "Annual report design", client: "Greenline Housing Trust", lead: "Ama Owusu", budget: 11000, spent: 3400, deadline: { title: "Layout review", due: "2026-10-15" } },
+    { id: "p6", name: "Social content, Q4", client: "Marlow Cycles", lead: "Jonas Berg", budget: 9000, spent: 7650, deadline: { title: "November posts", due: "2026-10-24" } },
+    { id: "p7", name: "Trade show stand", client: "Kestrel Tools", lead: "Ama Owusu", budget: 18500, spent: 4100, deadline: { title: "Stand artwork", due: "2026-11-06" } },
+    { id: "p8", name: "Members area content migration and accessibility fixes", client: "Association of Independent Bookshops", lead: "Sam Rivera", budget: 21000, spent: 6900, deadline: { title: "Content audit", due: "2026-11-20" } },
+    { id: "p9", name: "Newsletter templates", client: "Brightwater Library", lead: "Ama Owusu", budget: 3000, spent: 900, deadline: null }
+  ];
+  var completed = [
+    { id: "c1", name: "Logo and signage", client: "Fernhill Vets", lead: "Jonas Berg", budget: 10000, spent: 9800, completed: "2026-10-02" },
+    { id: "c2", name: "Summer festival posters", client: "Riverside Arts Hall", lead: "Priya Nair", budget: 4500, spent: 4900, completed: "2026-09-18" },
+    { id: "c3", name: "Online shop launch", client: "Northfield Bakery", lead: "Sam Rivera", budget: 16000, spent: 15200, completed: "2026-09-05" },
+    { id: "c4", name: "Recruitment microsite", client: "Greenline Housing Trust", lead: "Ama Owusu", budget: 7000, spent: 6300, completed: "2026-08-22" }
+  ];
+
+  var money = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+  var shortDate = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
+  var longDate = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+
+  var ICONS = {
+    alert: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>',
+    clock: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+    gauge: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>',
+    check: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>'
+  };
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function parse(d) { var p = d.split("-"); return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])); }
+  function daysFromToday(d) { return Math.round((parse(d) - TODAY) / 86400000); }
+
+  function attention(p) {
+    var a = { late: 0, dueSoon: null, ratio: p.budget > 0 ? p.spent / p.budget : 0 };
+    if (p.deadline) {
+      var days = daysFromToday(p.deadline.due);
+      a.days = days;
+      if (days < 0) a.late = -days;
+      else if (days <= DUE_SOON_DAYS) a.dueSoon = days;
+    }
+    a.over = p.spent > p.budget;
+    a.warn = !a.over && a.ratio >= BUDGET_WARNING;
+    if (a.late) a.rank = [0, -a.late];
+    else if (a.over) a.rank = [1, 0];
+    else if (a.dueSoon !== null) a.rank = [2, a.dueSoon];
+    else if (a.warn) a.rank = [3, 0];
+    else if (p.deadline) a.rank = [4, a.days];
+    else a.rank = [5, 0];
+    return a;
+  }
+
+  function deadlineCell(p, a) {
+    if (!p.deadline) return '<span class="muted">No open deadlines</span>';
+    var badge;
+    if (a.late) {
+      badge = '<span class="badge badge-danger">' + ICONS.alert + a.late + (a.late === 1 ? " day late" : " days late") + '</span>';
+    } else if (a.dueSoon === 0) {
+      badge = '<span class="badge badge-warning">' + ICONS.clock + 'Due today</span>';
+    } else if (a.dueSoon !== null) {
+      badge = '<span class="badge badge-warning">' + ICONS.clock + 'Due in ' + a.dueSoon + (a.dueSoon === 1 ? " day" : " days") + '</span>';
+    }
+    var dateText = '<span class="nums">' + (a.late ? "Was due " : "Due ") + shortDate.format(parse(p.deadline.due)) + '</span>';
+    return '<span>' + esc(p.deadline.title) + '</span><span class="line2">' + (badge || "") + dateText + '</span>';
+  }
+
+  function budgetCell(p, a) {
+    var pct = Math.round(a.ratio * 100);
+    var meterClass = a.over ? "is-danger" : (a.warn ? "is-warning" : "");
+    var status;
+    if (a.over) status = '<span class="badge badge-danger">' + ICONS.alert + 'Over by ' + money.format(p.spent - p.budget) + '</span>';
+    else if (a.warn) status = '<span class="badge badge-warning">' + ICONS.gauge + pct + '% used</span>';
+    else status = '<span class="nums">' + pct + '%</span>';
+    return '<span class="nums">' + money.format(p.spent) + ' <span class="muted">of</span> ' + money.format(p.budget) + '</span>' +
+      '<span class="line2"><span class="meter ' + meterClass + '" aria-hidden="true"><span style="width:' + Math.min(pct, 100) + '%"></span></span>' + status + '</span>';
+  }
+
+  function projectCell(p) {
+    return '<a class="project-name" href="#project-' + p.id + '" title="' + esc(p.name) + '">' + esc(p.name) + '</a>' +
+      '<span class="secondary">' + esc(p.client) + '<span class="lead-inline">, ' + esc(p.lead) + '</span></span>';
+  }
+
+  var head = document.getElementById("table-head");
+  var body = document.getElementById("table-body");
+  var caption = document.getElementById("table-caption");
+  var line = document.getElementById("attention-line");
+  var status = document.getElementById("view-status");
+
+  function renderActive() {
+    var rows = active.map(function (p) { return { p: p, a: attention(p) }; });
+    rows.sort(function (x, y) {
+      if (x.a.rank[0] !== y.a.rank[0]) return x.a.rank[0] - y.a.rank[0];
+      if (x.a.rank[1] !== y.a.rank[1]) return x.a.rank[1] - y.a.rank[1];
+      return x.p.name.localeCompare(y.p.name);
+    });
+    head.innerHTML = '<tr role="row"><th role="columnheader" scope="col" class="col-project">Project</th><th role="columnheader" scope="col" class="col-lead">Lead</th><th role="columnheader" scope="col" class="col-deadline">Next deadline</th><th role="columnheader" scope="col" class="col-budget num">Budget used</th></tr>';
+    body.innerHTML = rows.map(function (r) {
+      return '<tr role="row" data-href="#project-' + r.p.id + '">' +
+        '<td role="cell" class="c-project">' + projectCell(r.p) + '</td>' +
+        '<td role="cell" class="c-lead">' + esc(r.p.lead) + '</td>' +
+        '<td role="cell" class="c-deadline">' + deadlineCell(r.p, r.a) + '</td>' +
+        '<td role="cell" class="c-budget num">' + budgetCell(r.p, r.a) + '</td></tr>';
+    }).join("");
+    caption.textContent = "Active projects, sorted with late and over-budget projects first";
+
+    var late = rows.filter(function (r) { return r.a.late; }).length;
+    var over = rows.filter(function (r) { return r.a.over; }).length;
+    var parts = [];
+    if (late) parts.push('<strong>' + late + (late === 1 ? " project has a late deadline." : " projects have late deadlines.") + '</strong>');
+    if (over) parts.push((late ? over + (over === 1 ? " is" : " are") : over + (over === 1 ? " project is" : " projects are")) + " over budget.");
+    line.innerHTML = parts.length ? parts.join(" ") : "Nothing late or over budget.";
+    line.hidden = false;
+  }
+
+  function renderCompleted() {
+    head.innerHTML = '<tr role="row"><th role="columnheader" scope="col" class="col-project">Project</th><th role="columnheader" scope="col" class="col-lead">Lead</th><th role="columnheader" scope="col" class="col-deadline">Completed</th><th role="columnheader" scope="col" class="col-budget num">Final spend</th></tr>';
+    body.innerHTML = completed.map(function (p) {
+      var a = { ratio: p.spent / p.budget, over: p.spent > p.budget, warn: false };
+      var pct = Math.round(a.ratio * 100);
+      var finalStatus = a.over
+        ? '<span class="badge badge-danger">' + ICONS.alert + 'Over by ' + money.format(p.spent - p.budget) + '</span>'
+        : '<span class="nums">' + pct + '%</span>';
+      return '<tr role="row" data-href="#project-' + p.id + '">' +
+        '<td role="cell" class="c-project">' + projectCell(p) + '</td>' +
+        '<td role="cell" class="c-lead">' + esc(p.lead) + '</td>' +
+        '<td role="cell" class="c-deadline"><span class="nums"><span class="lead-inline muted">Completed </span>' + longDate.format(parse(p.completed)) + '</span></td>' +
+        '<td role="cell" class="c-budget num"><span class="nums">' + money.format(p.spent) + ' <span class="muted">of</span> ' + money.format(p.budget) + '</span><span class="line2">' + finalStatus + '</span></td></tr>';
+    }).join("");
+    caption.textContent = "Completed projects, most recent first";
+    line.hidden = true;
+  }
+
+  document.getElementById("count-active").textContent = "(" + active.length + ")";
+  document.getElementById("count-completed").textContent = "(" + completed.length + ")";
+
+  var segments = document.querySelectorAll(".segment");
+  function setView(view, announce) {
+    segments.forEach(function (s) { s.setAttribute("aria-pressed", String(s.dataset.view === view)); });
+    if (view === "completed") renderCompleted(); else renderActive();
+    if (announce) {
+      status.textContent = view === "completed"
+        ? "Showing " + completed.length + " completed projects."
+        : "Showing " + active.length + " active projects.";
+    }
+  }
+  segments.forEach(function (s) {
+    s.addEventListener("click", function () { setView(s.dataset.view, true); });
+  });
+
+  // Whole row opens the project for pointer users. The name link is the keyboard target.
+  body.addEventListener("click", function (e) {
+    if (e.target.closest("a")) return;
+    if (window.getSelection && String(window.getSelection()).length) return;
+    var tr = e.target.closest("tr[data-href]");
+    if (tr) window.location.hash = tr.getAttribute("data-href");
+  });
+
+  // Account menu
+  var btn = document.getElementById("account-button");
+  var menu = document.getElementById("account-menu");
+  function closeMenu(focusButton) {
+    menu.hidden = true; btn.setAttribute("aria-expanded", "false");
+    if (focusButton) btn.focus();
+  }
+  btn.addEventListener("click", function () {
+    var open = menu.hidden;
+    menu.hidden = !open; btn.setAttribute("aria-expanded", String(open));
+    if (open) menu.querySelector(".menu-item").focus();
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !menu.hidden) closeMenu(true); });
+  document.addEventListener("click", function (e) { if (!menu.hidden && !e.target.closest(".account")) closeMenu(false); });
+
+  setView("active", false);
+})();
+</script>
+</body>
+</html>

@@ -108,3 +108,11 @@ For this phase, compare actual independently generated outputs from identical fr
 ## Phase 5.1 design system first
 
 Run `python3 tests/test_phase5_amendment.py` with the same checkers. Keep the frozen Phase 5 trial files unchanged. The new phone-width pair under `examples/before-after/phase-5-1-amendment/ui-ux-design/` is an authored illustration of the written rules, not a second model and not the frozen Phase 5 captures. The IVC frames under `examples/ivc-2026-registration/figma-redesign/` record the observed desk layouts. Exact pixel values stay pending from Altaz.
+
+## v1.0 rebuild
+
+The Phase 1 to 5 test files that pinned exact reference wording were retired on 2026-10-13 (Altaz approved, decision D6 in docs/rebuild/CONTEXT.md). Git history keeps them. Their evidence folders under evals/ stay unchanged and are hash-checked.
+
+- `tests/test_v1_safeguards.py` protects the safety rules: no invented facts or research, stay in the current phase, exact feedback becomes checks, silence is not approval, nothing ships or publishes without approval, bounded questions, and launch checks need an artifact. It also checks every historical evidence file against `evals/v1/historical-manifest.json`.
+- `tests/test_v1_checker.py` runs `scripts/check-ui.mjs` on a known sloppy page and a known clean page. It skips when Node, Playwright or Chromium is missing.
+- Controlled trials and the frozen rubric live in [evals/v1](../evals/v1/README.md). Screenshots go under `examples/before-after/v1.0-<phase>/`.

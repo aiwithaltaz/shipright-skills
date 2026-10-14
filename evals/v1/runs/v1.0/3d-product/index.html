@@ -1,0 +1,903 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Model 01 wireless speaker</title>
+<meta name="description" content="A premium wireless speaker. Turn it around and see every side before you buy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="importmap">{"imports":{"three":"../../../vendor/three/three.module.js","three/addons/":"../../../vendor/three/addons/"}}</script>
+<script src="../../../vendor/gsap/gsap.min.js" defer></script>
+<script src="../../../vendor/gsap/ScrollTrigger.min.js" defer></script>
+<script src="../../../vendor/lenis/lenis.min.js" defer></script>
+<style>
+/* Tokens: design/tokens.css, Proposed (delegated) */
+:root {
+  --color-bg: #0D0E11;
+  --color-surface: #16181D;
+  --color-raised: #1E2127;
+  --color-border: #2A2E35;
+  --color-field-border: #6B7280;
+  --color-text: #F3F4F6;
+  --color-muted: #A6ACB6;
+  --color-accent: #DDB878;
+  --color-on-accent: #15130D;
+  --color-danger: #F2A193;
+  --color-focus: #DDB878;
+
+  --font-sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --text-meta: 14px;
+  --text-body: 17px;
+  --text-lead: 20px;
+  --text-h2: 36px;
+  --text-display: clamp(44px, 6.2vw, 80px);
+
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px;
+  --space-6: 24px; --space-8: 32px; --space-10: 40px; --space-12: 48px; --space-16: 64px;
+  --space-section: 104px;
+
+  --container-max: 1200px;
+  --gutter: 32px;
+  --header-height: 64px;
+
+  --radius-sm: 4px;
+  --radius-control: 8px;
+  --radius-panel: 12px;
+
+  --dur-press: 120ms;
+  --dur-fade: 400ms;
+  --ease-enter: cubic-bezier(.23, 1, .32, 1);
+
+  --button-height: 48px;
+  --control-height: 44px;
+  --hero-height: clamp(560px, calc(100vh - 100px), 860px);
+}
+@media (max-width: 760px) {
+  :root {
+    --text-body: 16px;
+    --text-lead: 18px;
+    --text-h2: 28px;
+    --text-display: 44px;
+    --gutter: 20px;
+    --header-height: 56px;
+    --space-section: 64px;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, p, dl, dd, figure { margin: 0; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+
+.container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--gutter); }
+.muted { color: var(--color-muted); }
+
+/* Preview note */
+.preview-note { background: var(--color-raised); color: var(--color-muted); font-size: var(--text-meta); line-height: 1.4; }
+.preview-note p { max-width: var(--container-max); margin: 0 auto; padding: 9px var(--gutter); }
+
+/* Header */
+.site-header { height: var(--header-height); border-bottom: 1px solid var(--color-border); }
+.header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+.brand { font-size: var(--text-body); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; min-height: var(--control-height); }
+.site-nav { display: flex; gap: var(--space-2); }
+.site-nav a { font-size: var(--text-meta); font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; min-height: var(--control-height); padding: 0 var(--space-3); border-radius: var(--radius-control); }
+.site-nav a:last-child { margin-right: calc(var(--space-3) * -1); }
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: var(--button-height); padding: 0 var(--space-6);
+  background: var(--color-accent); color: var(--color-on-accent);
+  border: 0; border-radius: var(--radius-control);
+  font-size: var(--text-body); font-weight: 600; text-decoration: none; cursor: pointer;
+  transition: transform var(--dur-press) var(--ease-enter);
+}
+.btn-primary:active { transform: scale(.98); }
+.btn-outline {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: var(--control-height); padding: 0 var(--space-4);
+  background: transparent; color: var(--color-text);
+  border: 1px solid var(--color-field-border); border-radius: var(--radius-control);
+  font-size: var(--text-meta); font-weight: 500; cursor: pointer;
+}
+.text-link {
+  font-weight: 500; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px;
+  display: inline-flex; align-items: center; min-height: var(--control-height);
+}
+@media (hover: hover) and (pointer: fine) {
+  .text-link:hover, .site-nav a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
+  .btn-outline:hover { background: var(--color-raised); }
+  .views button:hover { background: var(--color-surface); }
+}
+
+/* Hero and viewer */
+.hero { position: relative; height: var(--hero-height); overflow: hidden; border-bottom: 1px solid var(--color-border); }
+.viewer { position: absolute; inset: 0; }
+.stage { position: absolute; top: 40px; bottom: 112px; left: 44%; right: 3%; transition: opacity var(--dur-fade) var(--ease-enter); }
+.stage svg { position: absolute; inset: 0; width: 100%; height: 100%; display: none; }
+.stage svg.on { display: block; }
+#scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity var(--dur-fade) var(--ease-enter); cursor: grab; }
+#scene:active { cursor: grabbing; }
+#scene:focus-visible { outline: 2px solid var(--color-focus); outline-offset: -4px; }
+.viewer.is-3d #scene { opacity: 1; }
+.viewer.is-3d .stage { opacity: 0; }
+
+.hero-inner {
+  position: relative; z-index: 1; height: 100%;
+  max-width: var(--container-max); margin: 0 auto; padding: 0 var(--gutter) 88px;
+  display: flex; align-items: center; pointer-events: none;
+}
+.hero-copy { pointer-events: auto; max-width: min(460px, 38vw); }
+.hero-copy h1 { font-size: var(--text-display); font-weight: 600; line-height: 1.02; letter-spacing: -0.02em; }
+.hero-copy .lead { margin-top: var(--space-5); font-size: var(--text-lead); line-height: 1.5; max-width: 30ch; }
+.hero-actions { margin-top: var(--space-8); display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-6); }
+
+.viewer-bar { position: absolute; z-index: 1; left: 0; right: 0; bottom: 28px; pointer-events: none; }
+.bar-inner { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-4); }
+.bar-inner > * { pointer-events: auto; }
+.views { display: inline-flex; align-items: center; gap: 2px; padding: 2px; background: var(--color-raised); border: 1px solid var(--color-border); border-radius: var(--radius-control); }
+.views-label { font-size: var(--text-meta); color: var(--color-muted); padding: 0 var(--space-3) 0 var(--space-3); }
+.views button {
+  min-height: var(--control-height); min-width: 56px; padding: 0 var(--space-3);
+  background: transparent; border: 0; border-radius: 6px;
+  font-size: var(--text-meta); font-weight: 500; cursor: pointer;
+}
+.views button[aria-pressed="true"] { color: var(--color-accent); box-shadow: inset 0 -2px 0 var(--color-accent); background: var(--color-surface); }
+.status { font-size: var(--text-meta); color: var(--color-muted); min-height: 1px; }
+.status[data-kind="error"] { color: var(--color-danger); }
+.hint { font-size: var(--text-meta); color: var(--color-muted); margin-left: auto; }
+
+/* Sections */
+.section { padding: var(--space-section) 0; }
+.section h2 { font-size: var(--text-h2); font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; }
+.section-intro { margin-top: var(--space-3); color: var(--color-muted); }
+
+.specs-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--space-8); align-items: start; }
+.specs-figure { grid-column: 1 / span 5; }
+.specs-body { grid-column: 7 / span 6; }
+.outline { width: 100%; max-width: 420px; height: auto; display: block; }
+.specs-figure figcaption { margin-top: var(--space-3); font-size: var(--text-meta); color: var(--color-muted); max-width: 40ch; }
+.spec-list { margin-top: var(--space-8); border-bottom: 1px solid var(--color-border); }
+.spec-row { display: grid; grid-template-columns: minmax(120px, 200px) 1fr; gap: var(--space-4); padding: var(--space-4) 0; border-top: 1px solid var(--color-border); }
+.spec-row dt { font-weight: 500; }
+.spec-row dd { color: var(--color-muted); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+
+.buy-band {
+  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--space-8); align-items: center;
+  background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-panel);
+  padding: var(--space-12);
+}
+.buy-copy { grid-column: 1 / span 7; }
+.buy-copy h2:focus { outline: none; }
+.buy-copy h2:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 4px; }
+.buy-facts { margin-top: var(--space-8); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-6); }
+.buy-facts div { border-top: 1px solid var(--color-border); padding-top: var(--space-3); }
+.buy-facts dt { font-size: var(--text-meta); color: var(--color-muted); }
+.buy-facts dd { margin-top: var(--space-1); color: var(--color-muted); }
+.buy-actions { margin-top: var(--space-8); display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-5); }
+.buy-figure { grid-column: 9 / span 4; display: flex; justify-content: center; }
+.buy-figure svg { width: 100%; max-width: 240px; height: auto; }
+
+.site-footer { border-top: 1px solid var(--color-border); padding: var(--space-10) 0; }
+.footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-3) var(--space-8); font-size: var(--text-meta); }
+.footer-inner .brand { font-size: var(--text-meta); min-height: 0; }
+
+/* Phone */
+@media (max-width: 760px) {
+  .hero { height: auto; display: flex; flex-direction: column; overflow: visible; }
+  .hero-inner { height: auto; padding: var(--space-8) var(--gutter) var(--space-2); display: block; }
+  .hero-copy { max-width: none; }
+  .hero-actions { flex-direction: column; align-items: stretch; gap: var(--space-2); }
+  .hero-actions .btn-primary { width: 100%; }
+  .hero-actions .text-link { align-self: flex-start; }
+  .viewer { position: relative; inset: auto; height: 400px; }
+  .stage { top: 12px; bottom: 12px; left: var(--gutter); right: var(--gutter); }
+  .viewer-bar { position: static; padding: var(--space-2) 0 var(--space-8); }
+  .views { flex-wrap: wrap; }
+  .views-label { display: none; }
+  .hint { margin-left: 0; width: 100%; }
+
+  .specs-figure, .specs-body { grid-column: 1 / -1; }
+  .specs-body { order: -1; }
+  .specs-figure { display: flex; flex-direction: column; align-items: center; }
+  .outline { max-width: 300px; }
+  .spec-row { grid-template-columns: 1fr 1fr; }
+
+  .buy-band { padding: var(--space-6) var(--space-5); }
+  .buy-copy { grid-column: 1 / -1; }
+  .buy-figure { display: none; }
+  .buy-facts { grid-template-columns: 1fr; gap: var(--space-3); }
+  .buy-actions .btn-primary { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0ms !important; animation-duration: 0ms !important; scroll-behavior: auto !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- Shared SVG definitions for the still views. Drawn from the placeholder model. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="weave" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="#8f8b84"/>
+      <rect width="6" height="2" fill="#a29e96"/>
+      <rect width="2" height="6" fill="#77736c" opacity=".6"/>
+    </pattern>
+    <linearGradient id="shade" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#000" stop-opacity=".6"/>
+      <stop offset=".3" stop-color="#fff" stop-opacity=".1"/>
+      <stop offset=".5" stop-color="#000" stop-opacity="0"/>
+      <stop offset=".85" stop-color="#000" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".65"/>
+    </linearGradient>
+    <linearGradient id="shade-34" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#000" stop-opacity=".5"/>
+      <stop offset=".42" stop-color="#fff" stop-opacity=".12"/>
+      <stop offset=".7" stop-color="#000" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".7"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#5f6368"/>
+      <stop offset=".3" stop-color="#dadde1"/>
+      <stop offset=".55" stop-color="#aeb2b8"/>
+      <stop offset=".85" stop-color="#73777d"/>
+      <stop offset="1" stop-color="#4d5156"/>
+    </linearGradient>
+    <linearGradient id="metal-top" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e6e8eb"/>
+      <stop offset=".6" stop-color="#b3b7bd"/>
+      <stop offset="1" stop-color="#8e9298"/>
+    </linearGradient>
+    <radialGradient id="floor-shadow">
+      <stop offset="0" stop-color="#000" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+
+    <symbol id="sym-start" viewBox="0 0 400 480">
+      <ellipse cx="200" cy="424" rx="150" ry="16" fill="url(#floor-shadow)"/>
+      <path d="M83 108 A117 19 0 0 0 317 108 L317 394 A117 19 0 0 1 83 394 Z" fill="url(#weave)"/>
+      <path d="M83 108 A117 19 0 0 0 317 108 L317 394 A117 19 0 0 1 83 394 Z" fill="url(#shade-34)"/>
+      <path d="M83 78 L83 108 A117 19 0 0 0 317 108 L317 78 A117 19 0 0 1 83 78 Z" fill="url(#metal)"/>
+      <path d="M83 108 A117 19 0 0 0 317 108" fill="none" stroke="#d9b27a" stroke-width="3"/>
+      <ellipse cx="200" cy="78" rx="117" ry="19" fill="url(#metal-top)"/>
+      <ellipse cx="200" cy="78" rx="45" ry="7.4" fill="none" stroke="#d9b27a" stroke-width="2"/>
+      <ellipse cx="200" cy="78" rx="38" ry="6.2" fill="#8d9197"/>
+    </symbol>
+
+    <symbol id="sym-front" viewBox="0 0 400 480">
+      <ellipse cx="200" cy="424" rx="150" ry="16" fill="url(#floor-shadow)"/>
+      <path d="M76 108 A124 18 0 0 0 324 108 L324 394 A124 18 0 0 1 76 394 Z" fill="url(#weave)"/>
+      <path d="M76 108 A124 18 0 0 0 324 108 L324 394 A124 18 0 0 1 76 394 Z" fill="url(#shade)"/>
+      <path d="M76 78 L76 108 A124 18 0 0 0 324 108 L324 78 A124 18 0 0 1 76 78 Z" fill="url(#metal)"/>
+      <path d="M76 108 A124 18 0 0 0 324 108" fill="none" stroke="#d9b27a" stroke-width="3"/>
+      <ellipse cx="200" cy="78" rx="124" ry="18" fill="url(#metal-top)"/>
+      <ellipse cx="200" cy="78" rx="47" ry="7" fill="none" stroke="#d9b27a" stroke-width="2"/>
+      <ellipse cx="200" cy="78" rx="40" ry="6" fill="#8d9197"/>
+    </symbol>
+
+    <symbol id="sym-side" viewBox="0 0 400 480">
+      <ellipse cx="200" cy="424" rx="122" ry="15" fill="url(#floor-shadow)"/>
+      <path d="M104 110 A96 24 0 0 0 296 110 L296 392 A96 24 0 0 1 104 392 Z" fill="url(#weave)"/>
+      <path d="M104 110 A96 24 0 0 0 296 110 L296 392 A96 24 0 0 1 104 392 Z" fill="url(#shade)"/>
+      <path d="M104 80 L104 110 A96 24 0 0 0 296 110 L296 80 A96 24 0 0 1 104 80 Z" fill="url(#metal)"/>
+      <path d="M104 110 A96 24 0 0 0 296 110" fill="none" stroke="#d9b27a" stroke-width="3"/>
+      <ellipse cx="200" cy="80" rx="96" ry="24" fill="url(#metal-top)"/>
+      <ellipse cx="200" cy="80" rx="36" ry="9" fill="none" stroke="#d9b27a" stroke-width="2"/>
+      <ellipse cx="200" cy="80" rx="31" ry="7.6" fill="#8d9197"/>
+    </symbol>
+
+    <symbol id="sym-back" viewBox="0 0 400 480">
+      <ellipse cx="200" cy="424" rx="150" ry="16" fill="url(#floor-shadow)"/>
+      <path d="M76 108 A124 18 0 0 0 324 108 L324 394 A124 18 0 0 1 76 394 Z" fill="url(#weave)"/>
+      <path d="M76 108 A124 18 0 0 0 324 108 L324 394 A124 18 0 0 1 76 394 Z" fill="url(#shade)"/>
+      <rect x="170" y="339" width="60" height="22" rx="4" fill="#1d1f23"/>
+      <circle cx="184" cy="350" r="4.4" fill="#050607"/>
+      <rect x="196" y="347" width="22" height="6" rx="3" fill="#050607"/>
+      <path d="M76 78 L76 108 A124 18 0 0 0 324 108 L324 78 A124 18 0 0 1 76 78 Z" fill="url(#metal)"/>
+      <path d="M76 108 A124 18 0 0 0 324 108" fill="none" stroke="#d9b27a" stroke-width="3"/>
+      <ellipse cx="200" cy="78" rx="124" ry="18" fill="url(#metal-top)"/>
+      <ellipse cx="200" cy="78" rx="47" ry="7" fill="none" stroke="#d9b27a" stroke-width="2"/>
+      <ellipse cx="200" cy="78" rx="40" ry="6" fill="#8d9197"/>
+    </symbol>
+
+    <symbol id="sym-top" viewBox="0 0 400 480">
+      <ellipse cx="200" cy="250" rx="150" ry="120" fill="url(#floor-shadow)"/>
+      <ellipse cx="200" cy="240" rx="125" ry="97" fill="url(#metal-top)" stroke="#d9b27a" stroke-width="3"/>
+      <ellipse cx="200" cy="240" rx="116" ry="88" fill="none" stroke="#9ea2a8" stroke-width="1.5" opacity=".7"/>
+      <ellipse cx="200" cy="240" rx="47" ry="36" fill="none" stroke="#d9b27a" stroke-width="2"/>
+      <ellipse cx="200" cy="240" rx="40" ry="31" fill="#8d9197"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div id="top" class="preview-note">
+  <p>Preview with a working name and a placeholder 3D model. Specs, price and the store link are still to come.</p>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top">Model 01</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#specs">Specs</a>
+      <a href="#buy">Buy</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="look" aria-labelledby="product-name">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1 id="product-name">Model 01</h1>
+        <p class="lead">A premium wireless speaker. Turn it around and see every side before you buy.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#buy">Buy</a>
+          <a class="text-link" href="#specs">See the specs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="viewer" id="viewer">
+      <div class="stage" id="stage">
+        <svg class="on" data-still="start" viewBox="0 0 400 480" role="img" aria-label="Model 01 speaker from the front left"><use href="#sym-start"/></svg>
+        <svg data-still="front" viewBox="0 0 400 480" role="img" aria-label="Model 01 speaker from the front"><use href="#sym-front"/></svg>
+        <svg data-still="side" viewBox="0 0 400 480" role="img" aria-label="Model 01 speaker from the side"><use href="#sym-side"/></svg>
+        <svg data-still="back" viewBox="0 0 400 480" role="img" aria-label="Model 01 speaker from the back"><use href="#sym-back"/></svg>
+        <svg data-still="top" viewBox="0 0 400 480" role="img" aria-label="Model 01 speaker from above"><use href="#sym-top"/></svg>
+      </div>
+    </div>
+
+    <div class="viewer-bar">
+      <div class="container bar-inner">
+        <div class="views" role="group" aria-label="View">
+          <span class="views-label" aria-hidden="true">View</span>
+          <button type="button" data-view="front" aria-pressed="false">Front</button>
+          <button type="button" data-view="side" aria-pressed="false">Side</button>
+          <button type="button" data-view="back" aria-pressed="false">Back</button>
+          <button type="button" data-view="top" aria-pressed="false">Top</button>
+        </div>
+        <button type="button" class="btn-outline" id="reset-view">Reset view</button>
+        <button type="button" class="btn-outline" id="open-3d" hidden>Open 3D view</button>
+        <button type="button" class="btn-outline" id="retry-3d" hidden>Try again</button>
+        <p class="status" id="viewer-status" role="status"></p>
+        <p class="hint" id="viewer-hint">Use the buttons to see each side.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="specs" aria-labelledby="specs-title" data-reveal>
+    <div class="container specs-grid">
+      <figure class="specs-figure" data-reveal-item>
+        <svg class="outline" viewBox="0 0 360 460" role="img" aria-label="Outline of Model 01 from the front, with height and width marked">
+          <g fill="none" stroke="#A6ACB6" stroke-width="1.5">
+            <path d="M120 60 H280 Q290 60 290 70 V380 Q290 396 274 396 H126 Q110 396 110 380 V70 Q110 60 120 60 Z"/>
+            <path d="M110 98 H290"/>
+            <path d="M150 396 V403 H250 V396"/>
+            <path d="M70 60 V396 M62 60 H78 M62 396 H78"/>
+            <path d="M110 426 H290 M110 418 V434 M290 418 V434"/>
+          </g>
+          <path d="M110 98 H290" stroke="#DDB878" stroke-width="1.5" fill="none"/>
+          <g fill="none" stroke="#6B7280" stroke-width="1" stroke-dasharray="3 4">
+            <path d="M80 60 H104 M80 396 H104 M110 408 V416 M290 408 V416"/>
+          </g>
+          <text x="54" y="234" fill="#A6ACB6" font-family="Manrope, sans-serif" font-size="17" font-weight="600" text-anchor="end">H</text>
+          <text x="200" y="454" fill="#A6ACB6" font-family="Manrope, sans-serif" font-size="17" font-weight="600" text-anchor="middle">W</text>
+        </svg>
+        <figcaption>H height, W width. The figures appear under Size once confirmed.</figcaption>
+      </figure>
+
+      <div class="specs-body">
+        <h2 id="specs-title" data-reveal-item>Specs</h2>
+        <p class="section-intro" data-reveal-item>Exact figures for Model 01.</p>
+        <dl class="spec-list" data-reveal-item>
+          <div class="spec-row"><dt>Connection</dt><dd>To confirm</dd></div>
+          <div class="spec-row"><dt>Battery</dt><dd>To confirm</dd></div>
+          <div class="spec-row"><dt>Size (H × W × D)</dt><dd>To confirm</dd></div>
+          <div class="spec-row"><dt>Weight</dt><dd>To confirm</dd></div>
+          <div class="spec-row"><dt>Finishes</dt><dd>To confirm</dd></div>
+          <div class="spec-row"><dt>In the box</dt><dd>To confirm</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="buy" aria-labelledby="buy-title" data-reveal style="padding-top:0">
+    <div class="container">
+      <div class="buy-band">
+        <div class="buy-copy">
+          <h2 id="buy-title" tabindex="-1" data-reveal-item>Buy Model 01</h2>
+          <p class="section-intro" data-reveal-item>Buy opens the Model 01 store, where you check out.</p>
+          <dl class="buy-facts" data-reveal-item>
+            <div><dt>Price</dt><dd>To confirm</dd></div>
+            <div><dt>Delivery</dt><dd>To confirm</dd></div>
+            <div><dt>Returns</dt><dd>To confirm</dd></div>
+          </dl>
+          <div class="buy-actions" data-reveal-item>
+            <button type="button" class="btn-primary" id="buy-store">Buy Model 01</button>
+            <p class="status" id="buy-status" role="status"></p>
+          </div>
+        </div>
+        <div class="buy-figure" data-reveal-item>
+          <svg viewBox="0 0 400 480" role="img" aria-label="Model 01 speaker from the front"><use href="#sym-front"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="brand">Model 01</p>
+    <p class="muted">Contact and legal links appear here once supplied.</p>
+  </div>
+</footer>
+
+<script type="module">
+const $ = (s, r = document) => r.querySelector(s);
+const viewer = $('#viewer');
+const stage = $('#stage');
+const statusEl = $('#viewer-status');
+const hintEl = $('#viewer-hint');
+const viewBtns = [...document.querySelectorAll('[data-view]')];
+const resetBtn = $('#reset-view');
+const openBtn = $('#open-3d');
+const retryBtn = $('#retry-3d');
+const reduceMQ = matchMedia('(prefers-reduced-motion: reduce)');
+
+let api = null;
+let loading = false;
+let currentView = 'start';
+
+function setStatus(text, kind = '') {
+  statusEl.textContent = text;
+  if (kind) statusEl.dataset.kind = kind; else delete statusEl.dataset.kind;
+}
+function setPressed(view) {
+  currentView = view;
+  viewBtns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
+}
+function showStill(view) {
+  const v = view === 'free' ? 'start' : view;
+  stage.querySelectorAll('[data-still]').forEach(s => s.classList.toggle('on', s.dataset.still === v));
+}
+
+viewBtns.forEach(b => b.addEventListener('click', () => {
+  const v = b.dataset.view;
+  setPressed(v);
+  if (api) api.goTo(v); else showStill(v);
+}));
+resetBtn.addEventListener('click', () => {
+  setPressed('start');
+  if (api) api.goTo('start'); else showStill('start');
+});
+
+/* Buy: the store link is not connected in this preview */
+$('#buy-store').addEventListener('click', () => {
+  $('#buy-status').textContent = 'The store link is not connected yet.';
+});
+
+/* 3D boot: still first, 3D after load and idle */
+function hasWebGL() {
+  try {
+    const c = document.createElement('canvas');
+    return !!(window.WebGLRenderingContext && (c.getContext('webgl2') || c.getContext('webgl')));
+  } catch (e) { return false; }
+}
+function whenIdle(fn) {
+  if ('requestIdleCallback' in window) requestIdleCallback(fn, { timeout: 1500 });
+  else setTimeout(fn, 250);
+}
+const saveData = !!(navigator.connection && navigator.connection.saveData);
+
+if (!hasWebGL()) {
+  setStatus('3D view is not available in this browser. The buttons show each side.');
+} else if (reduceMQ.matches || saveData) {
+  openBtn.hidden = false;
+} else {
+  const go = () => whenIdle(() => load3D(false));
+  if (document.readyState === 'complete') go(); else addEventListener('load', go, { once: true });
+}
+
+openBtn.addEventListener('click', async () => {
+  openBtn.hidden = true;
+  await load3D(true);
+  if (api) api.canvas.focus();
+});
+retryBtn.addEventListener('click', () => load3D(true));
+
+async function load3D(requested) {
+  if (loading || api) return;
+  loading = true;
+  retryBtn.hidden = true;
+  setStatus('Loading 3D view');
+  try {
+    const [THREE, controlsMod, envMod] = await Promise.all([
+      import('three'),
+      import('three/addons/controls/OrbitControls.js'),
+      import('three/addons/environments/RoomEnvironment.js')
+    ]);
+    api = createViewer(THREE, controlsMod.OrbitControls, envMod.RoomEnvironment, requested);
+    setStatus('');
+    hintEl.textContent = 'Drag or use arrow keys to turn.';
+  } catch (err) {
+    console.warn('3D view failed', err);
+    fail();
+  }
+  loading = false;
+}
+
+function fail() {
+  if (api) { try { api.dispose(); } catch (e) {} api = null; }
+  const stray = document.getElementById('scene');
+  if (stray) stray.remove();
+  viewer.classList.remove('is-3d');
+  stage.removeAttribute('aria-hidden');
+  showStill(currentView);
+  setStatus('3D view could not load. Still views still work.', 'error');
+  hintEl.textContent = 'Use the buttons to see each side.';
+  retryBtn.hidden = false;
+}
+
+function createViewer(THREE, OrbitControls, RoomEnvironment, requested) {
+  const instant = () => reduceMQ.matches;
+  const canvas = document.createElement('canvas');
+  canvas.id = 'scene';
+  canvas.tabIndex = 0;
+  canvas.setAttribute('role', 'img');
+  canvas.setAttribute('aria-label', '3D model of the Model 01 speaker. Use the arrow keys to turn it.');
+  viewer.appendChild(canvas);
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
+  renderer.setClearColor(0x000000, 0);
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.0;
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  const maxDpr = Math.min(window.devicePixelRatio || 1, innerWidth < 768 ? 1.5 : 2);
+  renderer.setPixelRatio(maxDpr);
+
+  const scene = new THREE.Scene();
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  const envRT = pmrem.fromScene(new RoomEnvironment(), 0.04);
+  scene.environment = envRT.texture;
+  if ('environmentIntensity' in scene) scene.environmentIntensity = 0.85;
+
+  const key = new THREE.DirectionalLight(0xffffff, 1.6);
+  key.position.set(-2.5, 3.5, 3);
+  scene.add(key);
+
+  const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 50);
+  const target = new THREE.Vector3(0, 0, 0);
+  let dist = 5;
+
+  scene.add(buildSpeaker(THREE));
+  scene.add(buildShadow(THREE));
+
+  const controls = new OrbitControls(camera, canvas);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.08;
+  controls.enableZoom = false;
+  controls.enablePan = false;
+  controls.rotateSpeed = 0.8;
+  controls.minPolarAngle = 0.12;
+  controls.maxPolarAngle = 1.75;
+  controls.target.copy(target);
+  canvas.style.touchAction = 'pan-y';
+
+  const VIEWS = {
+    start: { theta: -0.55, phi: 1.32 },
+    front: { theta: 0, phi: 1.38 },
+    side: { theta: Math.PI / 2, phi: 1.38 },
+    back: { theta: Math.PI, phi: 1.38 },
+    top: { theta: 0, phi: 0.12 }
+  };
+
+  let needsRender = true;
+  const requestRender = () => { needsRender = true; };
+  function placeCamera(theta, phi) {
+    camera.position.setFromSpherical(new THREE.Spherical(dist, phi, theta)).add(target);
+    camera.lookAt(target);
+  }
+  function currentSph() {
+    return new THREE.Spherical().setFromVector3(camera.position.clone().sub(target));
+  }
+
+  let tween = null;
+  function killTween() { if (tween) { tween.kill(); tween = null; } }
+  function animateTo(theta, phi, duration, ease) {
+    const s = currentSph();
+    const t0 = s.theta, p0 = s.phi;
+    const dT = Math.atan2(Math.sin(theta - t0), Math.cos(theta - t0));
+    killTween();
+    if (instant() || !duration || !window.gsap) {
+      placeCamera(t0 + dT, phi);
+      controls.update();
+      requestRender();
+      return;
+    }
+    const o = { k: 0 };
+    tween = window.gsap.to(o, {
+      k: 1, duration, ease: ease || 'power2.inOut',
+      onUpdate() { placeCamera(t0 + dT * o.k, p0 + (phi - p0) * o.k); requestRender(); },
+      onComplete() { tween = null; }
+    });
+  }
+  function goTo(view) {
+    const v = VIEWS[view] || VIEWS.start;
+    animateTo(v.theta, v.phi, 0.7, 'power2.inOut');
+  }
+
+  controls.addEventListener('start', () => { killTween(); setPressed('free'); });
+  controls.addEventListener('change', requestRender);
+
+  canvas.addEventListener('keydown', e => {
+    const s = currentSph();
+    const step = THREE.MathUtils.degToRad(20);
+    const tilt = THREE.MathUtils.degToRad(10);
+    let th = s.theta, ph = s.phi;
+    switch (e.key) {
+      case 'ArrowLeft': th += step; break;
+      case 'ArrowRight': th -= step; break;
+      case 'ArrowUp': ph -= tilt; break;
+      case 'ArrowDown': ph += tilt; break;
+      case 'Home': e.preventDefault(); setPressed('start'); goTo('start'); return;
+      default: return;
+    }
+    e.preventDefault();
+    ph = THREE.MathUtils.clamp(ph, controls.minPolarAngle, controls.maxPolarAngle);
+    setPressed('free');
+    animateTo(th, ph, 0.25, 'power2.out');
+  });
+
+  /* Size and framing: the model centers in the still stage box */
+  function fit() {
+    const w = viewer.clientWidth, h = viewer.clientHeight;
+    if (!w || !h) return;
+    renderer.setSize(w, h, false);
+    const vr = viewer.getBoundingClientRect();
+    const sr = stage.getBoundingClientRect();
+    const cx = sr.left - vr.left + sr.width / 2;
+    const cy = sr.top - vr.top + sr.height / 2;
+    const modelPx = Math.max(120, Math.min(sr.height * 0.72, sr.width * 0.9 * (1.72 / 1.26)));
+    const visH = h * 1.72 / modelPx;
+    dist = visH / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2));
+    camera.aspect = w / h;
+    camera.setViewOffset(w, h, -(cx - w / 2), -(cy - h / 2), w, h);
+    camera.updateProjectionMatrix();
+    const s = currentSph();
+    placeCamera(s.theta, s.phi);
+    controls.update();
+    requestRender();
+  }
+
+  /* Render on demand; pause off screen and in hidden tabs */
+  let lastT = 0, slow = 0, count = 0;
+  function trackPerf() {
+    const now = performance.now();
+    if (lastT && now - lastT < 100) {
+      count++;
+      if (now - lastT > 24) slow++;
+      if (count >= 30) {
+        if (slow > 20 && renderer.getPixelRatio() > 1) { renderer.setPixelRatio(1); fit(); }
+        count = 0; slow = 0;
+      }
+    }
+    lastT = now;
+  }
+  function frame() {
+    const moved = controls.update();
+    if (moved || needsRender) {
+      renderer.render(scene, camera);
+      needsRender = false;
+      trackPerf();
+    }
+  }
+  let running = false, onScreen = true;
+  function setRunning(on) {
+    if (on === running) return;
+    running = on;
+    renderer.setAnimationLoop(on ? frame : null);
+  }
+  const io = new IntersectionObserver(([en]) => { onScreen = en.isIntersecting; setRunning(onScreen && !document.hidden); });
+  io.observe(viewer);
+  const onVis = () => setRunning(onScreen && !document.hidden);
+  document.addEventListener('visibilitychange', onVis);
+  const ro = new ResizeObserver(() => fit());
+  ro.observe(viewer);
+
+  canvas.addEventListener('webglcontextlost', e => { e.preventDefault(); fail(); });
+
+  /* First frame, then fade in and turn once into place */
+  const startView = VIEWS[currentView] && currentView !== 'start' ? VIEWS[currentView] : VIEWS.start;
+  placeCamera(startView.theta, startView.phi);
+  fit();
+  const turnIn = !instant() && !requested && currentView === 'start';
+  if (turnIn) placeCamera(VIEWS.start.theta + Math.PI / 2, VIEWS.start.phi);
+  controls.update();
+  renderer.render(scene, camera);
+  setRunning(true);
+  requestAnimationFrame(() => {
+    viewer.classList.add('is-3d');
+    stage.setAttribute('aria-hidden', 'true');
+    if (turnIn) animateTo(VIEWS.start.theta, VIEWS.start.phi, 1.6, 'power3.out');
+  });
+
+  function dispose() {
+    setRunning(false);
+    io.disconnect();
+    ro.disconnect();
+    document.removeEventListener('visibilitychange', onVis);
+    killTween();
+    controls.dispose();
+    scene.traverse(o => {
+      if (o.geometry) o.geometry.dispose();
+      if (o.material) {
+        [].concat(o.material).forEach(m => {
+          Object.values(m).forEach(v => { if (v && v.isTexture) v.dispose(); });
+          m.dispose();
+        });
+      }
+    });
+    envRT.dispose();
+    pmrem.dispose();
+    renderer.dispose();
+    canvas.remove();
+  }
+
+  return { goTo, dispose, canvas };
+}
+
+/* Placeholder speaker, built in code. Front faces +z. */
+function weaveTexture(THREE, bump) {
+  const c = document.createElement('canvas');
+  c.width = c.height = 64;
+  const g = c.getContext('2d');
+  g.fillStyle = bump ? '#808080' : '#8f8b84';
+  g.fillRect(0, 0, 64, 64);
+  for (let y = 0; y < 64; y += 8) { g.fillStyle = bump ? 'rgba(255,255,255,.6)' : 'rgba(255,255,255,.12)'; g.fillRect(0, y, 64, 4); }
+  for (let x = 0; x < 64; x += 8) { g.fillStyle = bump ? 'rgba(0,0,0,.45)' : 'rgba(0,0,0,.10)'; g.fillRect(x, 0, 4, 64); }
+  const t = new THREE.CanvasTexture(c);
+  t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  t.repeat.set(24, 10);
+  t.anisotropy = 8;
+  if (!bump) t.colorSpace = THREE.SRGBColorSpace;
+  return t;
+}
+
+function buildSpeaker(THREE) {
+  const V = (x, y) => new THREE.Vector2(x, y);
+  const arc = (cx, cy, r, a0, a1, n) => {
+    const pts = [];
+    for (let i = 1; i <= n; i++) {
+      const a = a0 + (a1 - a0) * i / n;
+      pts.push(V(cx + r * Math.cos(a), cy + r * Math.sin(a)));
+    }
+    return pts;
+  };
+  const R = 0.62;
+  const group = new THREE.Group();
+
+  const fabric = new THREE.MeshPhysicalMaterial({
+    color: 0xffffff, map: weaveTexture(THREE, false), bumpMap: weaveTexture(THREE, true), bumpScale: 1.2,
+    roughness: 0.92, metalness: 0, sheen: 0.7, sheenRoughness: 0.6, sheenColor: new THREE.Color(0xd2ccc2)
+  });
+  const alu = new THREE.MeshStandardMaterial({ color: 0xc9ccd1, metalness: 1, roughness: 0.32 });
+  const aluDark = new THREE.MeshStandardMaterial({ color: 0x8d9197, metalness: 1, roughness: 0.45 });
+  const brass = new THREE.MeshStandardMaterial({ color: 0xd9b27a, metalness: 1, roughness: 0.28 });
+  const rubber = new THREE.MeshStandardMaterial({ color: 0x16171a, roughness: 0.85 });
+  const panel = new THREE.MeshStandardMaterial({ color: 0x1d1f23, roughness: 0.6 });
+  const hole = new THREE.MeshStandardMaterial({ color: 0x050607, roughness: 0.9 });
+
+  const bodyPts = [V(0.001, -0.82), V(0.52, -0.82), ...arc(0.52, -0.72, 0.10, -Math.PI / 2, 0, 8), V(R, 0.64)];
+  group.add(new THREE.Mesh(new THREE.LatheGeometry(bodyPts, 128), fabric));
+
+  const capR = R + 0.002;
+  const capPts = [V(capR, 0.64), V(capR, 0.78), ...arc(capR - 0.05, 0.78, 0.05, 0, Math.PI / 2, 8), V(0.3, 0.83), V(0.001, 0.83)];
+  group.add(new THREE.Mesh(new THREE.LatheGeometry(capPts, 128), alu));
+
+  const seam = new THREE.Mesh(new THREE.TorusGeometry(R + 0.004, 0.009, 12, 160), brass);
+  seam.rotation.x = Math.PI / 2; seam.position.y = 0.64;
+  group.add(seam);
+
+  const disc = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.2, 0.012, 96), aluDark);
+  disc.position.y = 0.834;
+  group.add(disc);
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.235, 0.006, 8, 120), brass);
+  ring.rotation.x = Math.PI / 2; ring.position.y = 0.832;
+  group.add(ring);
+
+  const foot = new THREE.Mesh(new THREE.CylinderGeometry(0.46, 0.46, 0.035, 96), rubber);
+  foot.position.y = -0.836;
+  group.add(foot);
+
+  const rear = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.11, 0.04), panel);
+  rear.position.set(0, -0.55, -R);
+  group.add(rear);
+  const port = new THREE.Mesh(new THREE.CylinderGeometry(0.022, 0.022, 0.012, 24), hole);
+  port.rotation.x = Math.PI / 2; port.position.set(-0.08, -0.55, -R - 0.02);
+  group.add(port);
+  const slot = new THREE.Mesh(new THREE.BoxGeometry(0.11, 0.03, 0.012), hole);
+  slot.position.set(0.05, -0.55, -R - 0.02);
+  group.add(slot);
+
+  group.scale.set(1, 1, 0.77);
+  return group;
+}
+
+function buildShadow(THREE) {
+  const c = document.createElement('canvas');
+  c.width = c.height = 128;
+  const g = c.getContext('2d');
+  const grad = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+  grad.addColorStop(0, 'rgba(0,0,0,0.8)');
+  grad.addColorStop(1, 'rgba(0,0,0,0)');
+  g.fillStyle = grad;
+  g.fillRect(0, 0, 128, 128);
+  const tex = new THREE.CanvasTexture(c);
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(1.9, 1.5), new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false }));
+  m.rotation.x = -Math.PI / 2;
+  m.position.y = -0.856;
+  return m;
+}
+
+/* Page motion: section entrances and smooth scroll, only without reduced motion */
+let lenis = null;
+function scrollToTarget(el) {
+  if (lenis) lenis.scrollTo(el, { offset: -16 });
+  else el.scrollIntoView({ behavior: reduceMQ.matches ? 'auto' : 'smooth', block: 'start' });
+}
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href').slice(1);
+    const el = id && document.getElementById(id);
+    if (!el) return;
+    e.preventDefault();
+    scrollToTarget(el);
+    const focusTarget = id === 'buy' ? $('#buy-title') : id === 'specs' ? $('#specs-title') : null;
+    if (focusTarget) { focusTarget.setAttribute('tabindex', '-1'); focusTarget.focus({ preventScroll: true }); }
+    history.replaceState(null, '', '#' + id);
+  });
+});
+
+if (window.gsap) {
+  const gsap = window.gsap;
+  if (window.ScrollTrigger) gsap.registerPlugin(window.ScrollTrigger);
+  const mm = gsap.matchMedia();
+  mm.add('(prefers-reduced-motion: no-preference)', () => {
+    if (window.Lenis) {
+      lenis = new window.Lenis();
+      if (window.ScrollTrigger) lenis.on('scroll', window.ScrollTrigger.update);
+      const tick = t => lenis.raf(t * 1000);
+      gsap.ticker.add(tick);
+      gsap.ticker.lagSmoothing(0);
+      var cleanupLenis = () => { gsap.ticker.remove(tick); lenis.destroy(); lenis = null; };
+    }
+    if (window.ScrollTrigger) {
+      document.querySelectorAll('[data-reveal]').forEach(sec => {
+        gsap.from(sec.querySelectorAll('[data-reveal-item]'), {
+          y: 20, opacity: 0, duration: 0.6, ease: 'power3.out', stagger: 0.075,
+          scrollTrigger: { trigger: sec, start: 'top 82%', once: true }
+        });
+      });
+    }
+    return () => { if (cleanupLenis) cleanupLenis(); };
+  });
+}
+</script>
+</body>
+</html>

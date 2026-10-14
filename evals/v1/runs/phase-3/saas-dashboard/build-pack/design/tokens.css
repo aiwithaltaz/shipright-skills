@@ -1,0 +1,98 @@
+/* Design tokens. Status: Proposed (delegated, D-03), 13 Oct 2026.
+   Source: calm dense work-tool system. Accent is neutral until the agency's brand colors are supplied.
+   Components use semantic tokens only. Contrast values are measured; recheck after any color change. */
+
+:root {
+  /* Color: surfaces and text */
+  --color-bg: #F7F8FA;
+  --color-surface: #FFFFFF;
+  --color-sunken: #F1F2F4;
+  --color-text: #16181D;
+  --color-text-muted: #545B66;   /* 6.85:1 on surface, 6.45:1 on bg */
+  --color-text-subtle: #6B7280;  /* 4.83:1 on surface, 4.55:1 on bg */
+  --color-border: #E2E5EA;       /* separators only, not control edges */
+  --color-border-field: #848B96; /* 3.43:1 on surface */
+
+  /* Color: action */
+  --color-accent: #2E5BDB;       /* white text 5.78:1 */
+  --color-accent-hover: #2549B8;
+  --color-on-accent: #FFFFFF;
+  --color-accent-tint: #EEF2FC;  /* accent text 5.16:1 */
+  --color-row-hover: #F4F6FB;
+
+  /* Color: status. Always with a text label and an icon */
+  --color-success: #1B7A4B;
+  --color-success-bg: #E7F5EE;   /* 4.75:1 */
+  --color-warning: #9A4F00;
+  --color-warning-bg: #FDF0E1;   /* 5.36:1 */
+  --color-danger: #C1341F;
+  --color-danger-bg: #FCEBE7;    /* 4.81:1 */
+
+  /* Type */
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --text-caption: 12px;
+  --text-meta: 13px;
+  --text-body: 14px;
+  --text-section: 16px;
+  --text-page: 20px;
+  --text-figure: 24px;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --leading-text: 1.45;
+  --leading-heading: 1.25;
+
+  /* Space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Radius */
+  --radius-tag: 4px;
+  --radius-control: 6px;
+  --radius-panel: 8px;
+  --radius-dialog: 12px;
+
+  /* Elevation: borders at rest, shadow only on floating layers */
+  --shadow-float: 0 8px 24px rgba(16, 24, 40, .12);
+
+  /* Motion */
+  --duration-press: 120ms;
+  --duration-popover: 180ms;
+  --duration-dialog: 240ms;
+  --ease-enter: cubic-bezier(.23, 1, .32, 1);
+  --ease-move: ease-in-out;
+
+  /* Focus */
+  --focus-ring: 2px solid var(--color-accent);
+  --focus-offset: 2px;
+
+  /* Component tokens */
+  --control-height: 36px;
+  --control-height-touch: 44px;
+  --control-padding-x: 12px;
+  --topbar-height: 56px;
+  --row-height: 48px;            /* two-line rows: name over client */
+  --cell-padding-x: 12px;
+  --meter-height: 4px;
+  --meter-width: 72px;
+  --content-max: 1280px;
+  --gutter-desktop: 24px;
+  --gutter-phone: 16px;
+  --icon-size: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-press: 0ms;
+    --duration-popover: 0ms;
+    --duration-dialog: 0ms;
+  }
+}

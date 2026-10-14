@@ -1,0 +1,40 @@
+{
+  "A": {
+    "scores": {"1": 2, "2": 2, "3": 2, "4": 2, "5": 3, "6": 3, "7": 2, "8": 3, "9": 2, "10": 2},
+    "reasons": {
+      "1": "The hero has no Buy action. Its only call to action is the weak underlined 'See the specs' link, so the main buying action sits in the header pill and at the bottom of the page.",
+      "2": "Below the hero, the left columns are mostly empty. The Specifications heading floats over a large void, and the Buy section has tall empty padding above and below one button.",
+      "3": "The page is calm, but it holds little information. Four of five spec rows are 'To be confirmed', and wide empty bands separate the sections.",
+      "4": "The hero uses an uppercase letter-spaced eyebrow label ('WIRELESS SPEAKER'). The checker also flags 1 gradient background (the viewer vignette).",
+      "5": "",
+      "6": "",
+      "7": "On the phone, the checker counts 2 controls under 44x44px (the 'Specs' and 'See the specs' text links). The layout itself stacks cleanly at 390px.",
+      "8": "",
+      "9": "The stack table in 02 lists choices but has no reasons column; the reasoning only appears in the question text. Tokens are in DESIGN.md, but there is no separate token file. PRD, screen spec and tickets are present and consistent.",
+      "10": "T1-T5 have bounded change, preserve rules and acceptance checks. No ticket has an explicit stop point, few name the files to touch, and T6-T10 are one-line notes rather than paste-ready prompts."
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Put a filled 'Buy' primary button in the hero next to 'See the specs', and tighten the empty left columns and padding in the Specifications and Buy sections."
+  },
+  "B": {
+    "scores": {"1": 2, "2": 1, "3": 1, "4": 3, "5": 3, "6": 1, "7": 1, "8": 1, "9": 3, "10": 3},
+    "reasons": {
+      "1": "The hero is clear and has a filled Buy button. But the viewer bar packs 7 controls of equal weight into one row (Front, Side, Back, Top, Reset view, Open 3D view, Try again), which competes with Buy.",
+      "2": "The full-page screenshots show a void of about 700px between the hero and an empty bordered card. Specs and Buy have no visible content, so nothing below the hero aligns to anything.",
+      "3": "Below the hero the page shows no specs and no buy details, only blank space and an empty card. The useful information the spec promises is missing from the render.",
+      "4": "",
+      "5": "",
+      "6": "The spec defines states well. The render contradicts it: the error-state 'Try again' and the reduced-motion 'Open 3D view' buttons show while the model is loaded, and the Specs and Buy sections render blank instead of 'To confirm' placeholders.",
+      "7": "The checker reports a FAIL: the page scrolls sideways by 3px at phone width. The phone full-page shot also shows the same blank specs/buy area.",
+      "8": "Budgets and a still-image fallback are documented. But the GSAP section entrances left #specs and #buy invisible in the render, and Lenis smooth scroll adds weight without a clear user purpose.",
+      "9": "",
+      "10": ""
+    },
+    "unshippable": true,
+    "unshippable_reason": "At 390px the layout scrolls sideways (the checker measured 3px overflowX, FAIL). The Specs and Buy sections, including the 'Buy Model 01' destination, render as blank space and an empty card.",
+    "top_fix": "Make section content visible by default and only animate it when scripts run. Then fix the 3px horizontal overflow at 390px, and show 'Try again' and 'Open 3D view' only in their own states."
+  },
+  "better": "A",
+  "why": "A's home page renders complete, readable specs and buy sections at both widths. B's stronger build pack can't make up for a page whose specs and buy content is invisible and which scrolls sideways on phones."
+}

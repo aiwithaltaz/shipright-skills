@@ -1,14 +1,16 @@
 # Maintaining ShipRight
 
-**Pack version: 0.6.2**
+**Pack version: 1.0.0**
 **Context before generate. Product before pixels.**
 
-These rules govern this pack, not an end-user app. Preserve the four skill names and one canonical source tree.
+These rules govern this pack, not an end-user app. Preserve the five skill names (build-pack, product-design, ui-ux-design, ux-critique, ship-check) and one canonical source tree.
 
 ## Editing
 
 - Read current user instructions and affected files before editing. Preserve unrelated work and explicit decisions.
 - Keep general rules in skills/_shared/, specialist detail in references/, and copied project templates in docs/.
+- Keep provenance and credits in SOURCES.md. Skills cite it; they never load it.
+- Every rule must change output. Prefer short, checkable rules and worked examples over theory.
 - Preserve outcome, useful mechanism, objects/states, journey, screen jobs and evidence-based critique.
 - Build only the current phase. Convert exact feedback to acceptance checks; keep later ideas out of UI.
 - Never invent brand values, data, features, research, legal text or approval.
@@ -28,10 +30,10 @@ Do not maintain long Flow rule copies elsewhere.
 
 ## Validation
 
-Run `python3 evals/check_sources.py`, `python3 evals/check_context.py`, and unittest discovery after changes. Install the pinned dependency in evals/requirements-context.txt. Token checks are required; unavailable token counting is not Pass. Update checks when rules or protected paths change.
+Run `python3 evals/check_sources.py`, `python3 evals/check_context.py`, and unittest discovery after changes. Visual guidance changes also run `node scripts/check-ui.mjs` on a rendered example. Install the pinned dependency in evals/requirements-context.txt. Token checks are required; unavailable token counting is not Pass. Update checks when rules or protected paths change.
 For visual instruction changes, follow the screenshot guidance in tests/README.md. Architecture-only context-budget changes need source, boundary and loading evidence, not visual artifacts. Preserve older examples/before-after/ folders.
 Use `python3 evals/check_sources.py --self-test` to confirm meaningful mutations are rejected.
-Keep stable gate IDs: product-design 8, ui-ux-design 10, ux-critique 10, ship-check 20.
+Keep stable gate IDs: product-design 8, ui-ux-design 10, ux-critique 10, ship-check 20, build-pack 10.
 Source checks are not behavior tests. Preserve raw controlled-trial output and state who wrote/scored it.
 Fresh trial agents should receive only the pack, raw user task and relevant artifacts, not expected answers.
 Do not reuse old Pass claims for new code or silently repair a historical manifest to match changed bytes.

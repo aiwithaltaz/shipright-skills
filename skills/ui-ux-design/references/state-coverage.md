@@ -59,12 +59,4 @@ Use wrapping, a bounded scroll region or accessible full-value disclosure. No cl
 Record what was actually tried. A proposed test fixture is not a passing runtime result.
 Do not turn sensitive phone/email searches into URLs, analytics or logs merely to preserve state.
 
-## Sources
-
-Primary references, checked October 4, 2026:
-- [Text contrast](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)
-- [Non-text contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html)
-- [Target size](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html)
-- [Reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)
-- [Focus not obscured](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html)
-- [Modal dialog pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)
+WCAG and APG source links are in [SOURCES.md](../../../SOURCES.md).

@@ -1,0 +1,46 @@
+/* SocialGhost beta site tokens.
+   Status: Proposed (delegated). Source: ShipRight starter C (editorial marketing), accent chosen for the subject.
+   Contrast measured: text on bg 17.6:1, muted on bg 6.9:1, white on accent 6.4:1, field border on white 4.3:1.
+   Components use semantic tokens only. */
+:root {
+  /* Color roles */
+  --color-bg: #FBFBFA;
+  --color-surface: #FFFFFF;
+  --color-sunken: #F1F1EE;
+  --color-text: #141519;
+  --color-muted: #55585F;
+  --color-border: #E2E2DE;
+  --color-field-border: #767A82;
+  --color-accent: #0A6B66;
+  --color-accent-strong: #0B5A56;
+  --color-accent-tint: #E3F0EE;
+  --color-danger: #B3261E;
+
+  /* Type: one family, Instrument Sans */
+  --font-sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --text-display: clamp(30px, 5.2vw, 56px);
+  --text-h2: clamp(26px, 3.4vw, 36px);
+  --text-h3: 20px;
+  --text-body: 16px;   /* 18px from 761px up */
+  --text-small: 14px;
+
+  /* Space scale */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px;
+  --space-6: 24px; --space-8: 32px; --space-10: 40px; --space-12: 48px; --space-16: 64px;
+  --section-pad: 32px;  /* 48px from 761px up. Gap between sections is twice this. */
+  --gutter: 20px;       /* 24px from 761px up */
+  --max: 1200px;
+
+  /* Shape and size */
+  --radius-control: 8px;
+  --radius-panel: 8px;
+  --button-height: 48px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(.23, 1, .32, 1);
+  --dur-press: 120ms;
+  --dur-once: 900ms;
+}
+@media (min-width: 761px) {
+  :root { --text-body: 18px; --section-pad: 48px; --gutter: 24px; }
+}

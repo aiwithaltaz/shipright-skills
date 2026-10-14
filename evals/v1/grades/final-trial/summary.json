@@ -1,0 +1,201 @@
+{
+ "trial": "final-trial",
+ "cases": {
+  "saas-dashboard": {
+   "v1.0": {
+    "total": 29,
+    "scores": {
+     "1": 3,
+     "2": 3,
+     "3": 3,
+     "4": 3,
+     "5": 3,
+     "6": 3,
+     "7": 2,
+     "8": 3,
+     "9": 3,
+     "10": 3
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Make the phone segmented control and the other 5 flagged controls at least 44px tall so every touch target passes."
+   },
+   "baseline": {
+    "total": 24,
+    "scores": {
+     "1": 2,
+     "2": 2,
+     "3": 2,
+     "4": 3,
+     "5": 2,
+     "6": 3,
+     "7": 2,
+     "8": 3,
+     "9": 3,
+     "10": 2
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Compress each project row: put spent of budget, % used and the badge on one line beside the bar, and drop the repeated Lead/Due/Budget labels in the phone cards, so far more projects fit per screen."
+   },
+   "better": "v1.0",
+   "why": "A shows nine projects per screen in calm aligned rows with problems sorted first and ships paste-ready tickets with read-first files and stop lines, while B's tall four-line rows and blue-everywhere accent show only four projects and its tickets lack stop points."
+  },
+  "mobile-form": {
+   "v1.0": {
+    "total": 29,
+    "scores": {
+     "1": 3,
+     "2": 3,
+     "3": 3,
+     "4": 3,
+     "5": 3,
+     "6": 3,
+     "7": 3,
+     "8": 3,
+     "9": 2,
+     "10": 3
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Fix the ticket reference in 02-technical-architecture.md Risks (the overbooking test is T3, not T6). Also add a phone screenshot of the #taken or #error state so the recovery path is visible in the screens and not only in the spec."
+   },
+   "baseline": {
+    "total": 24,
+    "scores": {
+     "1": 3,
+     "2": 3,
+     "3": 2,
+     "4": 3,
+     "5": 3,
+     "6": 2,
+     "7": 2,
+     "8": 3,
+     "9": 2,
+     "10": 1
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Rewrite T5 to T12 as full paste-ready prompts (goal, files to read, build steps, do-not-add list, acceptance checks, stop). Also make the prototype show the When group and arrival choice above the fold, not just empty address fields."
+   },
+   "better": "v1.0",
+   "why": "A shows a real booking decision screen (day chips, full/selected time windows, summary, one primary) and pairs it with paste-ready tickets that each have a goal, files, rules, checks and a stop point. B's key screen is mostly empty address fields, and most of its tickets are only lists of acceptance checks."
+  },
+  "marketing-site": {
+   "baseline": {
+    "total": 22,
+    "scores": {
+     "1": 3,
+     "2": 2,
+     "3": 2,
+     "4": 2,
+     "5": 3,
+     "6": 1,
+     "7": 2,
+     "8": 3,
+     "9": 2,
+     "10": 2
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Hide the error summary and the 'not sent' alert until a submit actually fails. Right now both show on first load over an empty form."
+   },
+   "v1.0": {
+    "total": 28,
+    "scores": {
+     "1": 3,
+     "2": 2,
+     "3": 3,
+     "4": 3,
+     "5": 3,
+     "6": 3,
+     "7": 2,
+     "8": 3,
+     "9": 3,
+     "10": 3
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Make the radio options, the commitment checkbox and the footer links at least 44px tall on touch screens. Use the empty space next to the FAQ, or center the FAQ."
+   },
+   "better": "v1.0",
+   "why": "B's page has more useful content for deciding to apply (fit and not-fit lists, feedback questions, FAQ), shows a clean form, and comes with a committed stack and paste-ready tickets with files and stop lines. A shows error alerts on load and leaves its stack and storage undecided."
+  },
+  "3d-product": {
+   "baseline": {
+    "total": 23,
+    "scores": {
+     "1": 2,
+     "2": 2,
+     "3": 2,
+     "4": 2,
+     "5": 3,
+     "6": 3,
+     "7": 2,
+     "8": 3,
+     "9": 2,
+     "10": 2
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Put a filled 'Buy' primary button in the hero next to 'See the specs', and tighten the empty left columns and padding in the Specifications and Buy sections."
+   },
+   "v1.0": {
+    "total": 19,
+    "scores": {
+     "1": 2,
+     "2": 1,
+     "3": 1,
+     "4": 3,
+     "5": 3,
+     "6": 1,
+     "7": 1,
+     "8": 1,
+     "9": 3,
+     "10": 3
+    },
+    "unshippable": true,
+    "unshippable_reason": "At 390px the layout scrolls sideways (the checker measured 3px overflowX, FAIL). The Specs and Buy sections, including the 'Buy Model 01' destination, render as blank space and an empty card.",
+    "top_fix": "Make section content visible by default and only animate it when scripts run. Then fix the 3px horizontal overflow at 390px, and show 'Try again' and 'Open 3D view' only in their own states."
+   },
+   "better": "baseline",
+   "why": "A's home page renders complete, readable specs and buy sections at both widths. B's stronger build pack can't make up for a page whose specs and buy content is invisible and which scrolls sideways on phones."
+  }
+ },
+ "arms": {
+  "v1.0": {
+   "total": 105,
+   "by_criterion": {
+    "1": 11,
+    "2": 9,
+    "3": 10,
+    "4": 12,
+    "5": 12,
+    "6": 10,
+    "7": 8,
+    "8": 10,
+    "9": 11,
+    "10": 12
+   },
+   "unshippable": 1,
+   "wins": 3
+  },
+  "baseline": {
+   "total": 93,
+   "by_criterion": {
+    "1": 10,
+    "2": 9,
+    "3": 8,
+    "4": 10,
+    "5": 11,
+    "6": 9,
+    "7": 8,
+    "8": 12,
+    "9": 9,
+    "10": 7
+   },
+   "unshippable": 0,
+   "wins": 1
+  }
+ }
+}

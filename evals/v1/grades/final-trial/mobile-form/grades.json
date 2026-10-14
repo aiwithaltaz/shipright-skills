@@ -1,0 +1,40 @@
+{
+  "A": {
+    "scores": {"1": 3, "2": 3, "3": 3, "4": 3, "5": 3, "6": 3, "7": 3, "8": 3, "9": 2, "10": 3},
+    "reasons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "All parts are there: PRD, stack table with Why and Switch-when columns, tokens.ts, S1 to S8 specs and T1 to T10. One cross-reference is wrong: the architecture Risks say 'T6 tests two parallel calls', but the concurrency test is in T3.",
+      "10": ""
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Fix the ticket reference in 02-technical-architecture.md Risks (the overbooking test is T3, not T6). Also add a phone screenshot of the #taken or #error state so the recovery path is visible in the screens and not only in the spec."
+  },
+  "B": {
+    "scores": {"1": 3, "2": 3, "3": 2, "4": 3, "5": 3, "6": 2, "7": 2, "8": 3, "9": 2, "10": 1},
+    "reasons": {
+      "1": "",
+      "2": "",
+      "3": "Most of the first phone view is empty address boxes and a three-line intro. The booking choice itself (date hint, Arrival time options) is cut off under the bottom bar, so the 'key screen' shows little of what makes this a booking.",
+      "4": "",
+      "5": "",
+      "6": "The spec defines error, storage-failure and sending states, but the prototype only shows the empty form. The reply itself marks Recovery and Navigation as Fail because a sent request has no change or cancel route (D-12).",
+      "7": "The 390px view works and the checker is clean. But the mockup uses a desktop-style native mm/dd/yyyy date input, and in desktop.png the 844px phone frame pushes Continue below the fold. The form also scrolls inside a fixed frame, so phone-full.png never shows the Arrival time group.",
+      "8": "",
+      "9": "PRD, security, screen specs and tickets are there. The stack table gives sources (D-04, 'Proposed') instead of reasons. Tokens exist only as prose in DESIGN.md, with no code token file for Cursor to import.",
+      "10": "T1 to T4 have a bounded change and acceptance checks. T5 and T7 to T10 are only one 'Acceptance checks' line, with no goal, files, build steps or stop point. They rely on a separate prompt template in build-rules.md, so they cannot be pasted into Cursor as they stand."
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Rewrite T5 to T12 as full paste-ready prompts (goal, files to read, build steps, do-not-add list, acceptance checks, stop). Also make the prototype show the When group and arrival choice above the fold, not just empty address fields."
+  },
+  "better": "A",
+  "why": "A shows a real booking decision screen (day chips, full/selected time windows, summary, one primary) and pairs it with paste-ready tickets that each have a goal, files, rules, checks and a stop point. B's key screen is mostly empty address fields, and most of its tickets are only lists of acceptance checks."
+}

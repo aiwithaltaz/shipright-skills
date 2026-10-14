@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects - Project tracker (preview)</title>
+<style>
+  :root {
+    --bg: #F6F7F9;
+    --surface: #FFFFFF;
+    --text: #1B1F24;
+    --text-muted: #59636E;
+    --border: #E3E6EA;
+    --border-input: #848D97;
+    --accent: #1F5FBF;
+    --accent-hover: #194E9E;
+    --on-accent: #FFFFFF;
+    --focus: #1F5FBF;
+    --danger-text: #B42318;
+    --danger-bg: #FEF3F2;
+    --warning-text: #8A4B00;
+    --warning-bg: #FFF4E0;
+    --warning-fill: #B26B00;
+    --success-text: #1E6B3A;
+    --success-bg: #ECF7EF;
+    --track: #E3E6EA;
+    --r-control: 6px;
+    --r-panel: 8px;
+    --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-padding-top: 72px; scroll-padding-bottom: 88px; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 400 14px/20px var(--font);
+    -webkit-font-smoothing: antialiased;
+  }
+  .num { font-variant-numeric: tabular-nums; }
+  .vh { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  button { font: inherit; color: inherit; }
+
+  .skip { position: absolute; left: var(--s4); top: -48px; background: var(--surface); padding: var(--s2) var(--s3); border-radius: var(--r-control); border: 1px solid var(--border-input); z-index: 50; }
+  .skip:focus { top: var(--s2); }
+
+  /* Top bar */
+  .topbar { position: sticky; top: 0; z-index: 10; background: var(--surface); border-bottom: 1px solid var(--border); }
+  .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 var(--s5); height: 56px; display: flex; align-items: center; justify-content: space-between; gap: var(--s4); }
+  .product { font-weight: 600; font-size: 14px; color: var(--text); text-decoration: none; }
+  .account { position: relative; }
+  .account-btn { display: flex; align-items: center; gap: var(--s2); background: none; border: 1px solid transparent; border-radius: var(--r-control); padding: var(--s1) var(--s2); cursor: pointer; min-height: 40px; }
+  .account-btn:hover { border-color: var(--border); }
+  .avatar { width: 28px; height: 28px; border-radius: 999px; background: var(--track); color: var(--text); display: grid; place-items: center; font-size: 12px; font-weight: 600; }
+  .menu { position: absolute; right: 0; top: calc(100% + 4px); min-width: 220px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-panel); box-shadow: 0 8px 24px rgba(27,31,36,.16); padding: var(--s2); }
+  .menu[hidden] { display: none; }
+  .menu p { margin: 0 var(--s2) var(--s2); color: var(--text-muted); font-size: 12px; line-height: 16px; }
+  .menu p strong { display: block; color: var(--text); font-size: 14px; line-height: 20px; font-weight: 600; }
+  .menu button { width: 100%; text-align: left; background: none; border: 0; border-radius: var(--r-control); padding: var(--s2); cursor: pointer; }
+  .menu button:hover { background: var(--bg); }
+
+  main { max-width: 1200px; margin: 0 auto; padding: var(--s5) var(--s5) var(--s7); }
+
+  .notice { display: flex; gap: var(--s2); align-items: flex-start; border: 1px solid var(--border); background: var(--surface); border-radius: var(--r-panel); padding: var(--s3) var(--s4); color: var(--text-muted); margin-bottom: var(--s5); }
+  .notice svg { flex: none; margin-top: 2px; }
+
+  .page-head { display: flex; align-items: center; justify-content: space-between; gap: var(--s4); flex-wrap: wrap; }
+  h1 { font-size: 20px; line-height: 28px; font-weight: 600; margin: 0; }
+  h2 { font-size: 16px; line-height: 24px; font-weight: 600; margin: 0 0 var(--s3); }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--s2); min-height: 40px; padding: 0 var(--s4); border-radius: var(--r-control); border: 1px solid var(--border-input); background: var(--surface); color: var(--text); font-weight: 600; cursor: pointer; white-space: nowrap; }
+  .btn:hover { background: var(--bg); }
+  .btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+  .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+  .btn[aria-disabled="true"] { opacity: .75; cursor: progress; }
+  .btn-danger-text { color: var(--danger-text); }
+  .icon-btn { width: 40px; height: 40px; display: grid; place-items: center; border-radius: var(--r-control); border: 1px solid transparent; background: none; cursor: pointer; position: relative; }
+  .icon-btn:hover { border-color: var(--border); }
+
+  .tip { position: relative; }
+  .tip[data-tip]:hover::after, .tip[data-tip]:focus-visible::after { content: attr(data-tip); position: absolute; top: calc(100% + 6px); right: 0; background: var(--text); color: var(--surface); font-size: 12px; line-height: 16px; padding: var(--s1) var(--s2); border-radius: 4px; white-space: nowrap; pointer-events: none; }
+
+  .toolbar { display: flex; align-items: center; gap: var(--s4); margin: var(--s4) 0 var(--s2); flex-wrap: wrap; }
+  .segmented { display: inline-flex; padding: 2px; background: var(--track); border-radius: var(--r-control); }
+  .segmented button { border: 1px solid transparent; background: none; border-radius: 4px; min-height: 36px; padding: 0 var(--s3); cursor: pointer; color: var(--text-muted); }
+  .segmented button[aria-pressed="true"] { background: var(--surface); color: var(--text); font-weight: 600; border-color: var(--border-input); }
+
+  .status-line { min-height: 24px; margin-bottom: var(--s4); display: flex; align-items: center; gap: var(--s2); color: var(--success-text); font-weight: 600; }
+  .status-line:empty { margin-bottom: var(--s2); }
+
+  .group { margin-bottom: var(--s6); }
+  .group-note { margin: 0 0 var(--s3); color: var(--text-muted); }
+  .table-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-panel); overflow: hidden; }
+  table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  th { text-align: left; font-size: 12px; line-height: 16px; font-weight: 600; color: var(--text-muted); padding: var(--s3) var(--s4); border-bottom: 1px solid var(--border); background: var(--surface); }
+  th.right, td.right { text-align: right; }
+  td { padding: var(--s3) var(--s4); border-bottom: 1px solid var(--border); vertical-align: top; overflow-wrap: anywhere; }
+  tbody tr:last-child td { border-bottom: 0; }
+  col.c-project { width: 38%; } col.c-lead { width: 16%; } col.c-due { width: 20%; } col.c-budget { width: 26%; }
+
+  .proj-btn { background: none; border: 0; padding: 0; text-align: left; color: var(--accent); font-weight: 600; cursor: pointer; text-decoration: none; overflow-wrap: anywhere; }
+  .proj-btn:hover { text-decoration: underline; }
+  .sub { display: block; color: var(--text-muted); font-size: 12px; line-height: 16px; margin-top: 2px; }
+  .muted { color: var(--text-muted); }
+
+  .badge { display: inline-flex; align-items: center; gap: var(--s1); border-radius: 999px; padding: 0 var(--s2); font-size: 12px; line-height: 20px; font-weight: 600; white-space: nowrap; }
+  .badge-danger { background: var(--danger-bg); color: var(--danger-text); }
+  .badge-warning { background: var(--warning-bg); color: var(--warning-text); }
+  .badge-neutral { background: var(--bg); color: var(--text-muted); border: 1px solid var(--border); }
+  .health-line { display: flex; align-items: center; gap: var(--s2); flex-wrap: wrap; margin-top: var(--s1); font-size: 12px; line-height: 20px; }
+  .health-line.right { justify-content: flex-end; }
+
+  .bar { height: 6px; background: var(--track); border-radius: 999px; overflow: hidden; margin-top: var(--s2); }
+  .bar > span { display: block; height: 100%; background: var(--accent); border-radius: 999px; }
+  .bar.near > span { background: var(--warning-fill); }
+  .bar.over > span { background: var(--danger-text); }
+
+  .empty { padding: var(--s6) var(--s5); text-align: center; }
+  .empty h3 { font-size: 16px; line-height: 24px; margin: 0 0 var(--s1); }
+  .empty p { margin: 0 0 var(--s4); color: var(--text-muted); }
+
+  .alert { display: flex; gap: var(--s3); align-items: flex-start; border-radius: var(--r-panel); padding: var(--s3) var(--s4); background: var(--danger-bg); color: var(--danger-text); border: 1px solid #F3C4BF; }
+  .alert p { margin: 0; color: var(--text); }
+  .alert strong { color: var(--danger-text); }
+  .alert svg { flex: none; margin-top: 2px; }
+  .alert .actions { margin-top: var(--s3); display: flex; gap: var(--s2); flex-wrap: wrap; }
+
+  .skel { height: 14px; border-radius: 4px; background: linear-gradient(90deg, var(--track), #EEF0F3, var(--track)); background-size: 200% 100%; animation: shimmer 1.4s infinite linear; }
+  @keyframes shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+
+  .bottom-bar { display: none; }
+
+  /* Drawer */
+  .scrim { position: fixed; inset: 0; background: rgba(0,0,0,.4); z-index: 30; }
+  .drawer { position: fixed; top: 0; right: 0; bottom: 0; width: 440px; max-width: 100%; background: var(--surface); z-index: 31; display: flex; flex-direction: column; box-shadow: 0 8px 24px rgba(27,31,36,.16); border-radius: var(--r-panel) 0 0 var(--r-panel); animation: slide .2s ease-out; }
+  @keyframes slide { from { transform: translateX(24px); opacity: .6; } to { transform: none; opacity: 1; } }
+  .drawer[hidden], .scrim[hidden] { display: none; }
+  .drawer-head { display: flex; align-items: center; justify-content: space-between; padding: var(--s4) var(--s5); border-bottom: 1px solid var(--border); }
+  .drawer-head h2 { margin: 0; font-size: 16px; }
+  .drawer-body { flex: 1; overflow-y: auto; padding: var(--s5); }
+  .drawer-foot { border-top: 1px solid var(--border); padding: var(--s4) var(--s5); display: flex; flex-direction: column; gap: var(--s3); }
+  .foot-actions { display: flex; justify-content: flex-end; gap: var(--s2); }
+  .form-intro { margin: 0 0 var(--s4); color: var(--text-muted); }
+  .field { margin-bottom: var(--s4); }
+  .field label, .field legend { display: block; font-weight: 600; margin-bottom: var(--s1); padding: 0; }
+  .field input[type=text], .field input[type=date], .field select { width: 100%; min-height: 40px; padding: var(--s2) var(--s3); font: 400 16px/24px var(--font); color: var(--text); background: var(--surface); border: 1px solid var(--border-input); border-radius: var(--r-control); }
+  .field input[readonly] { background: var(--bg); }
+  .field .help { color: var(--text-muted); font-size: 12px; line-height: 16px; margin-top: var(--s1); }
+  .field .err { color: var(--danger-text); font-size: 12px; line-height: 16px; margin-top: var(--s1); display: flex; gap: var(--s1); align-items: center; font-weight: 600; }
+  .field [aria-invalid="true"] { border-color: var(--danger-text) !important; border-width: 2px !important; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); }
+  fieldset.field { border: 0; margin: 0 0 var(--s4); padding: 0; }
+  .radio { display: flex; align-items: center; gap: var(--s2); min-height: 32px; font-weight: 400 !important; }
+  .radio input { width: 18px; height: 18px; margin: 0; accent-color: var(--accent); }
+  .radios { display: flex; gap: var(--s5); }
+
+  @media (max-width: 760px) {
+    main { padding: var(--s4) var(--s4) 96px; }
+    .topbar-inner { padding: 0 var(--s4); }
+    .account-name { display: none; }
+    .page-head .btn-primary { display: none; }
+    .bottom-bar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; height: 64px; padding: var(--s3) var(--s4); background: var(--surface); border-top: 1px solid var(--border); z-index: 20; }
+    .bottom-bar .btn { width: 100%; }
+    table, thead, tbody, tr, td { display: block; }
+    thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    colgroup { display: none; }
+    tbody tr { padding: var(--s3) var(--s4); border-bottom: 1px solid var(--border); }
+    tbody tr:last-child { border-bottom: 0; }
+    td { border: 0; padding: var(--s1) 0; }
+    td.right { text-align: left; }
+    .health-line.right { justify-content: flex-start; }
+    td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; line-height: 16px; font-weight: 600; color: var(--text-muted); margin-top: var(--s2); }
+  }
+  @media (max-width: 640px) {
+    .drawer { width: 100%; border-radius: 0; }
+  }
+  @media (max-width: 400px) {
+    .pair { grid-template-columns: 1fr; gap: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .drawer { animation: none; }
+    .skel { animation: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#projects">Skip to projects</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+  </defs>
+</svg>
+
+<div id="app">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="product" href="#">Project tracker</a>
+      <div class="account">
+        <button class="account-btn" id="accountBtn" aria-expanded="false" aria-controls="accountMenu" aria-label="Account: Sam Rivera">
+          <span class="avatar" aria-hidden="true">SR</span>
+          <span class="account-name" aria-hidden="true">Sam Rivera</span>
+        </button>
+        <div class="menu" id="accountMenu" hidden>
+          <p><strong>Sam Rivera</strong>sam@example.com</p>
+          <button type="button" id="signOut">Sign out</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="notice" role="note">
+      <svg width="16" height="16" aria-hidden="true"><use href="#i-info"/></svg>
+      <span>Preview with sample data. Names and amounts are made up, and no currency is set yet. Changes stay on this page and are lost when you reload.</span>
+    </div>
+
+    <div class="page-head">
+      <h1>Projects</h1>
+      <button class="btn btn-primary" type="button" id="addBtn" data-add>
+        <svg width="16" height="16" aria-hidden="true"><use href="#i-plus"/></svg>Add project
+      </button>
+    </div>
+
+    <div class="toolbar">
+      <div class="segmented" role="group" aria-label="Show projects">
+        <button type="button" id="viewActive" aria-pressed="true">Active <span class="num" id="countActive"></span></button>
+        <button type="button" id="viewCompleted" aria-pressed="false">Completed <span class="num" id="countCompleted"></span></button>
+      </div>
+    </div>
+
+    <div class="status-line" id="statusLine" role="status" aria-live="polite"></div>
+
+    <div id="projects" tabindex="-1"></div>
+  </main>
+
+  <div class="bottom-bar">
+    <button class="btn btn-primary" type="button" data-add>
+      <svg width="16" height="16" aria-hidden="true"><use href="#i-plus"/></svg>Add project
+    </button>
+  </div>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" hidden>
+  <div class="drawer-head">
+    <h2 id="drawerTitle">Edit project</h2>
+    <button class="icon-btn tip" type="button" id="closeBtn" aria-label="Close" data-tip="Close">
+      <svg width="20" height="20" aria-hidden="true"><use href="#i-x"/></svg>
+    </button>
+  </div>
+  <form id="form" novalidate class="drawer-body">
+    <div id="formAlert"></div>
+    <p class="form-intro">All fields are required.</p>
+    <div class="field">
+      <label for="f-name">Project name</label>
+      <input type="text" id="f-name" name="name" maxlength="120" required autocomplete="off">
+    </div>
+    <div class="field">
+      <label for="f-client">Client</label>
+      <input type="text" id="f-client" name="client" list="clientList" required autocomplete="off" aria-describedby="h-client">
+      <datalist id="clientList"></datalist>
+      <div class="help" id="h-client">Pick a client or type a new name.</div>
+    </div>
+    <div class="field">
+      <label for="f-lead">Lead</label>
+      <select id="f-lead" name="lead" required></select>
+    </div>
+    <div class="field">
+      <label for="f-due">Due date</label>
+      <input type="date" id="f-due" name="due" required>
+    </div>
+    <div class="pair">
+      <div class="field">
+        <label for="f-budget">Budget</label>
+        <input type="text" id="f-budget" name="budget" inputmode="decimal" required class="num">
+      </div>
+      <div class="field">
+        <label for="f-spent">Spent so far</label>
+        <input type="text" id="f-spent" name="spent" inputmode="decimal" required class="num" aria-describedby="h-spent">
+        <div class="help" id="h-spent"></div>
+      </div>
+    </div>
+    <fieldset class="field" id="statusField">
+      <legend>Status</legend>
+      <div class="radios">
+        <label class="radio"><input type="radio" name="status" value="active"> Active</label>
+        <label class="radio"><input type="radio" name="status" value="completed"> Completed</label>
+      </div>
+    </fieldset>
+  </form>
+  <div class="drawer-foot">
+    <div id="unsaved"></div>
+    <div class="foot-actions">
+      <button class="btn" type="button" id="cancelBtn">Cancel</button>
+      <button class="btn btn-primary" type="submit" form="form" id="saveBtn">Save project</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var NEAR_LIMIT = 0.9;      // D6, Proposed
+  var DUE_SOON_DAYS = 7;     // D6, Proposed
+
+  var today = new Date(); today.setHours(0, 0, 0, 0);
+  function offset(days) { var d = new Date(today); d.setDate(d.getDate() + days); return d; }
+  function iso(d) { var m = d.getMonth() + 1, day = d.getDate(); return d.getFullYear() + "-" + (m < 10 ? "0" : "") + m + "-" + (day < 10 ? "0" : "") + day; }
+  function parseIso(s) { var p = s.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]); }
+  function fmtDate(d, withYear) { return d.toLocaleDateString("en-US", withYear === false ? { month: "short", day: "numeric" } : { month: "short", day: "numeric", year: "numeric" }); }
+  function fmtMoney(n) { return n.toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 2 }); }
+
+  // Sample data. Made up for the preview.
+  var staff = ["Sam Rivera", "Rita Kaur", "Jon Mendes", "Priya Nair"];
+  var nextId = 100;
+  var SAMPLE = [
+    { name: "Spring catalog redesign", client: "Pine Street Bakery", lead: "Rita Kaur", due: 3, budget: 12000, spent: 12900, upd: -2, status: "active" },
+    { name: "Website rebuild", client: "Alder & Co Legal", lead: "Jon Mendes", due: -2, budget: 28000, spent: 21400, upd: -6, status: "active" },
+    { name: "Brand refresh", client: "Kestrel Bikes", lead: "Sam Rivera", due: 18, budget: 9500, spent: 8900, upd: -1, status: "active" },
+    { name: "Booking landing page", client: "Brightwell Clinic", lead: "Rita Kaur", due: 6, budget: 6000, spent: 3100, upd: -9, status: "active" },
+    { name: "Email newsletter templates", client: "Kestrel Bikes", lead: "Priya Nair", due: 12, budget: 3500, spent: 700, upd: -4, status: "active" },
+    { name: "Social media templates", client: "Fernhill Studio", lead: "Jon Mendes", due: 25, budget: 4200, spent: 1500, upd: -3, status: "active" },
+    { name: "Autumn range packaging and point-of-sale display kit", client: "Larkspur Tea Company", lead: "Priya Nair", due: 30, budget: 18500, spent: 9200, upd: -12, status: "active" },
+    { name: "Annual report design", client: "Oakline Foundation", lead: "Sam Rivera", due: 41, budget: 15000, spent: 4800, upd: -5, status: "active" },
+    { name: "Logo and stationery", client: "Fernhill Studio", lead: "Sam Rivera", due: -20, budget: 5000, spent: 4700, upd: -21, status: "completed" },
+    { name: "Event microsite", client: "Alder & Co Legal", lead: "Rita Kaur", due: -45, budget: 7500, spent: 7900, upd: -44, status: "completed" }
+  ];
+  function freshProjects() {
+    return SAMPLE.map(function (s, i) {
+      return { id: i + 1, name: s.name, client: s.client, lead: s.lead, due: iso(offset(s.due)), budget: s.budget, spent: s.spent, spentUpdated: offset(s.upd), status: s.status };
+    });
+  }
+
+  var state = { mode: "ready", view: "active", projects: [], failNextSave: false };
+
+  function health(p) {
+    var ratio = p.spent / p.budget;
+    var budget = p.spent > p.budget ? "over" : (ratio >= NEAR_LIMIT ? "near" : "ok");
+    var days = Math.round((parseIso(p.due) - today) / 86400000);
+    var deadline = p.status === "completed" ? null : (days < 0 ? "overdue" : (days <= DUE_SOON_DAYS ? "soon" : "ok"));
+    var attention = p.status === "active" && (budget !== "ok" || deadline !== "ok");
+    return { used: Math.floor(ratio * 100), budget: budget, deadline: deadline, days: days, attention: attention, severe: budget === "over" || deadline === "overdue" };
+  }
+
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function icon(id, size) { size = size || 14; return '<svg width="' + size + '" height="' + size + '" aria-hidden="true"><use href="#' + id + '"/></svg>'; }
+
+  function dueCell(p, h) {
+    var d = parseIso(p.due), out = '<span class="num">' + fmtDate(d) + "</span>";
+    var line = "";
+    if (p.status === "completed") {
+      line = '<span class="badge badge-neutral">' + icon("i-check", 12) + "Completed</span>";
+    } else if (h.deadline === "overdue") {
+      var late = -h.days;
+      line = '<span class="badge badge-danger">' + icon("i-alert", 12) + 'Overdue</span><span class="muted">by ' + late + (late === 1 ? " day" : " days") + "</span>";
+    } else if (h.deadline === "soon") {
+      var rel = h.days === 0 ? "today" : (h.days === 1 ? "tomorrow" : "in " + h.days + " days");
+      line = '<span class="badge badge-warning">' + icon("i-clock", 12) + 'Due soon</span><span class="muted">' + rel + "</span>";
+    } else {
+      line = '<span class="muted">in ' + h.days + " days</span>";
+    }
+    return out + '<div class="health-line">' + line + "</div>";
+  }
+
+  function budgetCell(p, h) {
+    var width = Math.min(100, Math.round((p.spent / p.budget) * 100));
+    var badge = "";
+    if (h.budget === "over") badge = '<span class="badge badge-danger">' + icon("i-alert", 12) + "Over budget</span>";
+    else if (h.budget === "near") badge = '<span class="badge badge-warning">' + icon("i-clock", 12) + "Near limit</span>";
+    return '<span class="num"><strong>' + fmtMoney(p.spent) + '</strong> <span class="muted">of ' + fmtMoney(p.budget) + "</span></span>" +
+      '<div class="bar ' + (h.budget === "ok" ? "" : h.budget) + '" aria-hidden="true"><span style="width:' + width + '%"></span></div>' +
+      '<div class="health-line right"><span class="num">' + h.used + "% used</span>" + badge + "</div>" +
+      '<span class="sub">Spent updated ' + fmtDate(p.spentUpdated, false) + "</span>";
+  }
+
+  function rowHtml(p) {
+    var h = health(p);
+    return "<tr>" +
+      '<td><button type="button" class="proj-btn" data-edit="' + p.id + '"><span class="vh">Edit </span>' + esc(p.name) + '</button><span class="sub">' + esc(p.client) + "</span></td>" +
+      '<td data-label="Lead">' + esc(p.lead) + "</td>" +
+      '<td data-label="Due">' + dueCell(p, h) + "</td>" +
+      '<td data-label="Budget" class="right">' + budgetCell(p, h) + "</td>" +
+      "</tr>";
+  }
+
+  function tableHtml(caption, rows) {
+    return '<div class="table-wrap"><table><caption class="vh">' + esc(caption) + "</caption>" +
+      '<colgroup><col class="c-project"><col class="c-lead"><col class="c-due"><col class="c-budget"></colgroup>' +
+      '<thead><tr><th scope="col">Project</th><th scope="col">Lead</th><th scope="col">Due</th><th scope="col" class="right">Budget</th></tr></thead>' +
+      "<tbody>" + rows.map(rowHtml).join("") + "</tbody></table></div>";
+  }
+
+  function byDue(a, b) { return a.due < b.due ? -1 : a.due > b.due ? 1 : 0; }
+
+  function render() {
+    var box = document.getElementById("projects");
+    var active = state.projects.filter(function (p) { return p.status === "active"; });
+    var done = state.projects.filter(function (p) { return p.status === "completed"; });
+    var showCounts = state.mode === "ready";
+    document.getElementById("countActive").textContent = showCounts ? "(" + active.length + ")" : "";
+    document.getElementById("countCompleted").textContent = showCounts ? "(" + done.length + ")" : "";
+    var none = state.mode === "ready" && state.projects.length === 0;
+    document.querySelectorAll("[data-add]").forEach(function (b) { b.hidden = none; });
+    document.querySelector(".bottom-bar").style.display = none ? "none" : "";
+
+    if (state.mode === "loading") {
+      var sk = "";
+      for (var i = 0; i < 4; i++) sk += '<tr><td><div class="skel" style="width:70%"></div><div class="skel" style="width:40%;margin-top:6px"></div></td><td><div class="skel" style="width:60%"></div></td><td><div class="skel" style="width:70%"></div></td><td><div class="skel"></div></td></tr>';
+      box.innerHTML = '<div class="table-wrap" aria-busy="true"><table><caption class="vh">Loading projects</caption><colgroup><col class="c-project"><col class="c-lead"><col class="c-due"><col class="c-budget"></colgroup><thead><tr><th scope="col">Project</th><th scope="col">Lead</th><th scope="col">Due</th><th scope="col" class="right">Budget</th></tr></thead><tbody>' + sk + '</tbody></table></div><p class="vh" role="status">Loading projects</p>';
+      return;
+    }
+    if (state.mode === "error") {
+      box.innerHTML = '<div class="alert" role="alert">' + icon("i-alert", 16) + '<div><p><strong>Projects could not load.</strong> Check your connection, then try again.</p><div class="actions"><button class="btn" type="button" id="retryBtn">Try again</button></div></div></div>';
+      document.getElementById("retryBtn").addEventListener("click", function () { state.mode = "ready"; state.projects = freshProjects(); render(); });
+      return;
+    }
+    if (none) {
+      box.innerHTML = '<div class="table-wrap"><div class="empty"><h3>No projects yet.</h3><p>Add a project to track its budget and due date.</p><button class="btn btn-primary" type="button" id="emptyAdd">' + icon("i-plus", 16) + "Add project</button></div></div>";
+      document.getElementById("emptyAdd").addEventListener("click", function () { openDrawer(null, this); });
+      return;
+    }
+
+    if (state.view === "completed") {
+      done.sort(function (a, b) { return byDue(b, a); });
+      box.innerHTML = done.length
+        ? '<section class="group" aria-labelledby="g-done"><h2 id="g-done">Completed</h2>' + tableHtml("Completed projects", done) + "</section>"
+        : '<div class="table-wrap"><div class="empty"><h3>No completed projects yet.</h3><p>Set a project\'s status to Completed when the work is done.</p></div></div>';
+      return;
+    }
+
+    var need = active.filter(function (p) { return health(p).attention; });
+    var ok = active.filter(function (p) { return !health(p).attention; });
+    need.sort(function (a, b) { var ha = health(a).severe ? 0 : 1, hb = health(b).severe ? 0 : 1; return ha - hb || byDue(a, b); });
+    ok.sort(byDue);
+    var html = '<section class="group" aria-labelledby="g-need"><h2 id="g-need">Needs attention <span class="num">(' + need.length + ")</span></h2>" +
+      (need.length ? tableHtml("Projects that need attention", need) : '<p class="group-note">Nothing needs attention right now.</p>') + "</section>";
+    html += '<section class="group" aria-labelledby="g-ok"><h2 id="g-ok">On track <span class="num">(' + ok.length + ")</span></h2>" +
+      (ok.length ? tableHtml("Projects on track", ok) : '<p class="group-note">No projects are on track.</p>') + "</section>";
+    if (!active.length) html = '<div class="table-wrap"><div class="empty"><h3>No active projects.</h3><p>Add a project, or set a completed project back to Active.</p></div></div>';
+    box.innerHTML = html;
+  }
+
+  // View switch
+  function setView(v) {
+    state.view = v;
+    document.getElementById("viewActive").setAttribute("aria-pressed", v === "active");
+    document.getElementById("viewCompleted").setAttribute("aria-pressed", v === "completed");
+    render();
+  }
+  document.getElementById("viewActive").addEventListener("click", function () { setView("active"); });
+  document.getElementById("viewCompleted").addEventListener("click", function () { setView("completed"); });
+
+  // Account menu
+  var accountBtn = document.getElementById("accountBtn"), menu = document.getElementById("accountMenu");
+  accountBtn.addEventListener("click", function () { var open = menu.hidden; menu.hidden = !open; accountBtn.setAttribute("aria-expanded", open); if (open) document.getElementById("signOut").focus(); });
+  document.addEventListener("click", function (e) { if (!menu.hidden && !e.target.closest(".account")) { menu.hidden = true; accountBtn.setAttribute("aria-expanded", "false"); } });
+  menu.addEventListener("keydown", function (e) { if (e.key === "Escape") { menu.hidden = true; accountBtn.setAttribute("aria-expanded", "false"); accountBtn.focus(); } });
+  document.getElementById("signOut").addEventListener("click", function () { menu.hidden = true; setStatus("Sign out is not part of this preview.", true); });
+
+  // Status line
+  function setStatus(text, neutral) {
+    var s = document.getElementById("statusLine");
+    s.style.color = neutral ? "var(--text-muted)" : "";
+    s.innerHTML = text ? (neutral ? "" : icon("i-check", 16)) + "<span>" + esc(text) + "</span>" : "";
+  }
+
+  // Drawer
+  var drawer = document.getElementById("drawer"), scrim = document.getElementById("scrim"), form = document.getElementById("form");
+  var app = document.getElementById("app");
+  var editing = null, trigger = null, initial = "", saving = false;
+  var F = { name: document.getElementById("f-name"), client: document.getElementById("f-client"), lead: document.getElementById("f-lead"), due: document.getElementById("f-due"), budget: document.getElementById("f-budget"), spent: document.getElementById("f-spent") };
+
+  function snapshot() { return JSON.stringify(Array.prototype.map.call(form.elements, function (el) { return el.type === "radio" ? el.checked : el.value; })); }
+  function dirty() { return snapshot() !== initial; }
+
+  function openDrawer(project, from) {
+    editing = project; trigger = from || document.getElementById("addBtn");
+    setStatus("");
+    form.reset(); clearErrors();
+    document.getElementById("formAlert").innerHTML = ""; document.getElementById("unsaved").innerHTML = "";
+    document.getElementById("drawerTitle").textContent = project ? "Edit project" : "Add project";
+    var dl = document.getElementById("clientList"), clients = {};
+    state.projects.forEach(function (p) { clients[p.client] = 1; });
+    dl.innerHTML = Object.keys(clients).sort().map(function (c) { return '<option value="' + esc(c) + '">'; }).join("");
+    var sel = document.getElementById("f-lead");
+    sel.innerHTML = '<option value="">Choose a lead</option>' + staff.map(function (s) { return "<option>" + esc(s) + "</option>"; }).join("");
+    document.getElementById("statusField").hidden = !project;
+    var help = document.getElementById("h-spent");
+    if (project) {
+      F.name.value = project.name; F.client.value = project.client; sel.value = project.lead;
+      F.due.value = project.due; F.budget.value = project.budget; F.spent.value = project.spent;
+      form.querySelector('input[name=status][value="' + project.status + '"]').checked = true;
+      help.textContent = "Last updated " + fmtDate(project.spentUpdated) + ".";
+    } else {
+      F.spent.value = "0";
+      form.querySelector('input[name=status][value="active"]').checked = true;
+      help.textContent = "";
+    }
+    initial = snapshot();
+    app.inert = true; drawer.hidden = false; scrim.hidden = false;
+    (project ? F.spent : F.name).focus();
+  }
+
+  function closeDrawer(force) {
+    if (saving) return;
+    if (!force && dirty()) { showUnsaved(); return; }
+    drawer.hidden = true; scrim.hidden = true; app.inert = false;
+    if (trigger && document.body.contains(trigger)) trigger.focus();
+    else { var t = editing && document.querySelector('[data-edit="' + editing.id + '"]'); (t || document.getElementById("addBtn")).focus(); }
+    editing = null;
+  }
+
+  function showUnsaved() {
+    var u = document.getElementById("unsaved");
+    u.innerHTML = '<div class="alert" role="alert" style="background:var(--warning-bg);color:var(--warning-text);border-color:#F0D3A3">' + icon("i-alert", 16) +
+      '<div><p><strong style="color:var(--warning-text)">You have unsaved changes.</strong> If you close now, your changes are lost. Saved data stays as it was.</p>' +
+      '<div class="actions"><button class="btn" type="button" id="keepBtn">Keep editing</button><button class="btn btn-danger-text" type="button" id="discardBtn">Discard changes</button></div></div></div>';
+    document.getElementById("keepBtn").addEventListener("click", function () { u.innerHTML = ""; F.name.focus(); });
+    document.getElementById("discardBtn").addEventListener("click", function () { u.innerHTML = ""; closeDrawer(true); });
+    document.getElementById("keepBtn").focus();
+  }
+
+  document.getElementById("closeBtn").addEventListener("click", function () { closeDrawer(false); });
+  document.getElementById("cancelBtn").addEventListener("click", function () { closeDrawer(false); });
+  scrim.addEventListener("click", function () { closeDrawer(false); });
+  drawer.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { e.preventDefault(); closeDrawer(false); return; }
+    if (e.key !== "Tab") return;
+    var f = Array.prototype.filter.call(drawer.querySelectorAll("button, input, select, [tabindex]:not([tabindex='-1'])"), function (el) { return !el.disabled && el.offsetParent !== null; });
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+
+  document.addEventListener("click", function (e) {
+    var ed = e.target.closest("[data-edit]");
+    if (ed) { var id = +ed.getAttribute("data-edit"); openDrawer(state.projects.filter(function (p) { return p.id === id; })[0], ed); return; }
+    var add = e.target.closest("[data-add]");
+    if (add) openDrawer(null, add);
+  });
+
+  // Validation
+  function clearErrors() {
+    form.querySelectorAll(".err").forEach(function (n) { n.remove(); });
+    form.querySelectorAll("[aria-invalid]").forEach(function (n) {
+      n.removeAttribute("aria-invalid");
+      var d = (n.getAttribute("aria-describedby") || "").split(" ").filter(function (x) { return x && x.indexOf("e-") !== 0; }).join(" ");
+      if (d) n.setAttribute("aria-describedby", d); else n.removeAttribute("aria-describedby");
+    });
+  }
+  function fieldError(el, msg) {
+    el.setAttribute("aria-invalid", "true");
+    var id = "e-" + el.id, div = document.createElement("div");
+    div.className = "err"; div.id = id; div.innerHTML = icon("i-alert", 12) + "<span>" + esc(msg) + "</span>";
+    el.parentNode.appendChild(div);
+    el.setAttribute("aria-describedby", ((el.getAttribute("aria-describedby") || "") + " " + id).trim());
+  }
+  function money(v) { v = String(v).replace(/,/g, "").trim(); return /^\d+(\.\d{1,2})?$/.test(v) ? parseFloat(v) : NaN; }
+  function validate() {
+    clearErrors();
+    var bad = [];
+    if (!F.name.value.trim()) { fieldError(F.name, "Enter a project name."); bad.push(F.name); }
+    if (!F.client.value.trim()) { fieldError(F.client, "Choose a client or type a new name."); bad.push(F.client); }
+    if (!F.lead.value) { fieldError(F.lead, "Choose a lead."); bad.push(F.lead); }
+    if (!F.due.value) { fieldError(F.due, "Enter a due date."); bad.push(F.due); }
+    var b = money(F.budget.value);
+    if (!(b > 0)) { fieldError(F.budget, "Enter a budget greater than 0."); bad.push(F.budget); }
+    var s = money(F.spent.value);
+    if (!(s >= 0)) { fieldError(F.spent, "Enter 0 or more."); bad.push(F.spent); }
+    if (bad.length) bad[0].focus();
+    return bad.length ? null : { name: F.name.value.trim(), client: F.client.value.trim(), lead: F.lead.value, due: F.due.value, budget: b, spent: s, status: (form.querySelector("input[name=status]:checked") || {}).value || "active" };
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (saving) return;
+    document.getElementById("formAlert").innerHTML = ""; document.getElementById("unsaved").innerHTML = "";
+    var v = validate(); if (!v) return;
+    saving = true;
+    var btn = document.getElementById("saveBtn");
+    btn.textContent = "Saving..."; btn.setAttribute("aria-disabled", "true");
+    Array.prototype.forEach.call(form.elements, function (el) { if (el.tagName === "INPUT" && el.type !== "radio") el.readOnly = true; });
+    setTimeout(function () {
+      saving = false; btn.textContent = "Save project"; btn.removeAttribute("aria-disabled");
+      Array.prototype.forEach.call(form.elements, function (el) { el.readOnly = false; });
+      if (state.failNextSave) {
+        state.failNextSave = false;
+        document.getElementById("formAlert").innerHTML = '<div class="alert" role="alert" style="margin-bottom:16px">' + icon("i-alert", 16) + "<div><p><strong>Changes not saved.</strong> Try again.</p></div></div>";
+        return;
+      }
+      var p = editing;
+      if (!p) { p = { id: nextId++ }; state.projects.push(p); }
+      if (!editing || p.spent !== v.spent) p.spentUpdated = new Date(today);
+      p.name = v.name; p.client = v.client; p.lead = v.lead; p.due = v.due; p.budget = v.budget; p.spent = v.spent; p.status = v.status;
+      var savedName = p.name;
+      closeDrawer(true);
+      render();
+      var moved = state.view !== p.status;
+      setStatus("Project saved: " + savedName + "." + (moved ? (p.status === "completed" ? " It is now under Completed." : " It is now under Active.") : ""));
+      var t = document.querySelector('[data-edit="' + p.id + '"]');
+      (t || document.getElementById(p.status === "completed" ? "viewCompleted" : "viewActive")).focus();
+    }, 700);
+  });
+
+  // Preview states via URL hash: #loading, #error, #empty, #save-error
+  function init() {
+    var h = location.hash.replace("#", "");
+    state.mode = h === "loading" ? "loading" : h === "error" ? "error" : "ready";
+    state.projects = h === "empty" ? [] : freshProjects();
+    state.failNextSave = h === "save-error";
+    state.view = "active";
+    document.getElementById("viewActive").setAttribute("aria-pressed", "true");
+    document.getElementById("viewCompleted").setAttribute("aria-pressed", "false");
+    render();
+  }
+  window.addEventListener("hashchange", function () { if (location.hash !== "#projects") init(); });
+  init();
+})();
+</script>
+</body>
+</html>

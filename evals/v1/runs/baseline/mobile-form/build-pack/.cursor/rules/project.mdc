@@ -1,0 +1,9 @@
+---
+description: Phase 1 scope, design system and screen specs for the cleaning booking app
+alwaysApply: true
+---
+
+Before any change, read PRODUCT.md, DESIGN.md and docs/shipright/build-rules.md.
+For a screen, also read its block in docs/shipright/04-frontend-spec.md and its ticket in docs/shipright/05-feature-ticket-list.md.
+Build only Phase 1 scope. Do not add anything on the excluded list. Do not invent the app name, prices, hours or legal text.
+Use only DESIGN.md values. Report each acceptance check as Pass, Fail or Not verified with evidence.

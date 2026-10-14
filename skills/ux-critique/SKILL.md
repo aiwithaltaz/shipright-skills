@@ -5,7 +5,7 @@ description: "Use this when reviewing a plan, specification, screenshot or runni
 
 # UX critique
 
-**Pack version:** 0.6.2
+**Pack version:** 1.0.0
 **Context before generate. Product before pixels.**
 
 Review a real artifact and report evidence-backed corrections. Do not invent users, interview quotes or predicted conversion gains.
@@ -33,7 +33,7 @@ Continue supported work; do not claim a full ShipRight check without its require
 
 Use [requirements-and-feedback.md](references/requirements-and-feedback.md) for stakeholder changes or multi-step flows.
 Use [existing-app.md](references/existing-app.md) for existing products. A review is read-only; already authorized fixes need no repeated approval.
-Use [bounded-verification.md](references/bounded-verification.md) for available runtime evidence.
+Use [bounded-verification.md](references/bounded-verification.md) for available runtime evidence, including the check-ui and screenshot loop for a rendered page.
 
 ## Flow rules (must pass)
 
@@ -41,17 +41,10 @@ Read [flow-rules.md](../_shared/flow-rules.md): **F1 exit route, F2 consistency,
 Inspect affected rules even for Quick fixes. Compare system messages with what the operator needs to know.
 Selection is not focus, an error or unread work. Check icons and placement against the existing design system.
 
-## Count it
+## Count and quote
 
-Use counts only to support a relevant finding or full screen review.
-[slop-tells.md](references/slop-tells.md) helps identify competing actions, duplicate identities and unsupported widgets.
-Do not output ten empty counting rows for a label edit. Numerical quotas do not decide visual quality.
-
-## Detect
-
-When copy causes a problem, quote that line, name the issue and suggest a grounded correction.
-Use [UI copy](../ui-ux-design/references/ui-copy.md). Do not guess whether AI wrote it.
-Familiar labels such as Search and Cancel may be generic because they are clear.
+Count competing actions, duplicate identities or unsupported widgets only when the count supports a finding; [slop-tells.md](references/slop-tells.md) has prompts. No empty counting rows for a label edit.
+For a copy problem, quote the line, name the issue and give a grounded correction using [UI copy](../ui-ux-design/references/ui-copy.md). Do not guess whether AI wrote it.
 
 ## 4b. Plan review
 

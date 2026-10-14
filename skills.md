@@ -1,9 +1,10 @@
 # Skills catalog
 
-**ShipRight 0.6.2**
+**ShipRight 1.0.0**
 
 | Request | Skill | Review size |
 | --- | --- | --- |
+| Idea to build: PRD, stack, design system, screens and ticket prompts | [build-pack](skills/build-pack/SKILL.md) | 10 checks before the reply |
 | Rough idea, outcome or flow decision | [product-design](skills/product-design/SKILL.md) | 8 checks at handoff |
 | Supplied research synthesis and product decisions | product-design | Optional evidence-linked findings, risks and proposed decisions |
 | Approved product organization, navigation, findability or route maps | product-design | Optional sourced structure and decisions before screens |
@@ -14,7 +15,7 @@
 | Artifact review or plan score | [ux-critique](skills/ux-critique/SKILL.md) | 10 checks when relevant |
 | Full launch review | [ship-check](skills/ship-check/SKILL.md) | 20 items plus product-critical requirements |
 | One release item | ship-check | That item and direct dependencies |
-| Requested document set | product-design, with ui-ux-design for screens | Only requested files |
+| Requested document set | build-pack for the full set; product-design for single documents | Only requested files |
 
 Existing apps do not always need a full audit. Route an explicit correction directly to the relevant skill.
 Start with current instructions and relevant artifacts. Apply [shared intake](skills/_shared/intake.md) once, across skill boundaries.

@@ -1,58 +1,59 @@
 # Pack architecture
 
-**ShipRight 0.6.2**
+**ShipRight 1.0.0**
 
-This is a product/design instruction pack, not an application framework.
+This is a product, design and build-planning instruction pack, not an application framework.
 
 | Path | Owns |
 | --- | --- |
 | README.md | Start, setup and evidence limits |
 | skills.md | Task routing |
 | AGENTS.md | Maintenance rules for this pack only |
+| SOURCES.md | Provenance and credits. Never loaded by skills |
 | skills/_shared/operating-contract.md | Authority, phase scope, exact feedback, facts and readiness |
 | skills/_shared/intake.md | One bounded intake across skills |
 | skills/_shared/flow-rules.md | Canonical F1-F3 behavior |
 | skills/_shared/output-folder.md | Authorized project writes and export paths |
-| skills/product-design/ | Outcome, research judgment, mechanism, flows and state effects |
-| skills/ui-ux-design/ | Layout, system use, UI states and handoff |
+| skills/build-pack/ | Idea to build pack: sequence, stack choice, ticket prompts, pack contract |
+| skills/product-design/ | Framing, research and evidence, structure, journeys, flows and states |
+| skills/ui-ux-design/ | Design system, layout, components, states, motion and copy |
 | skills/ux-critique/ | Artifact findings and stage-specific verification |
 | skills/ship-check/ | Release evidence |
-| docs/ | Optional templates exported into the user's project |
+| scripts/check-ui.mjs | Measures a rendered page in real Chromium |
+| docs/ | Templates exported into the user's project |
 | personal-taste/ | Opt-in visual preferences |
-| examples/ | Teaching cases and explicitly historical artifacts |
-| evals/ | Source checks, trial inputs, evidence and limits |
+| examples/ | Teaching cases, before/after images and explicitly historical artifacts |
+| evals/ | Source checks, trials, evidence and limits |
 
 ## Loading
 
-Load the active SKILL.md, shared contract and intake once. Then load only references required by the task.
-Use existing project context instead of generating redundant documents. Do not load historical examples as current product authority.
-Keep the entire pack accessible so relative links resolve. Native discovery is a client concern, not verified by source checks.
-
-Phase 1 research remains inside product-design. Its SKILL.md directly links evidence, method,
-planning and source-register references, each loaded only for the current need.
-The shared contract still owns truthfulness, approval and gate statuses; evidence kinds are not new statuses.
-Research plans are not performed research. Optional synthesis inside product-design separates records, patterns, findings and decisions. Its three references link directly from SKILL.md and load only for supplied-record interpretation, affected product commitments or provenance. research-evidence owns Phase 1 evidence kinds; research-synthesis owns grouping/finding discipline; research-to-decisions owns evidence-linked commitments under the shared authority contract. Do not copy these detailed rules into other skills. Optional Phase 3 IA also lives in product-design: information-architecture owns objects/relationships, taxonomy/labels and structural maps; findability owns retrieval contracts; roles-and-navigation applies existing access authority to destinations; ia-research owns optional IA study detail; ia-sources owns provenance. Each reference links directly from SKILL.md with a narrow condition. Shared authority and ui-ux-design visual ownership remain. Optional Phase 4 mapping stays in product-design: mapping-types owns one-map selection, journey-mapping owns experience over time, task-and-system-flows owns user/system distinctions, service-blueprints owns delivery layers/handoffs and mapping-sources owns provenance. Each loads directly from SKILL.md only when relevant. Existing state/dependency rules and Phase 3 navigation retain ownership. Phase 5 and later knowledge are outside this change.
+Load the active SKILL.md, shared contract and intake once. Then load only the references the current step needs.
+build-pack loads in three bounded stages: frame, flows, structure and stack; design system and screens; tickets and pack check.
+Each stage reuses the canonical reference owned by another skill instead of copying it.
+Use existing project context instead of generating redundant documents. Do not load historical examples as current authority.
 
 ## One owner per rule
 
-Scope and feedback live in the shared contract. Detailed flow behavior lives in flow-rules.md.
-The short F1-F3 export block is repeated only in frontend/build templates, so exported files work without the pack.
-The checker compares these export blocks exactly. Skills and other references link to the canonical details.
-Specialist gates retain 8/10/10/20 IDs. Their criteria point to shared policy; they do not redefine readiness.
+Scope and feedback live in the shared contract. Flow behavior lives in flow-rules.md.
+The short F1-F3 export block is repeated only in frontend and build-rule templates so exported files work without the pack. The checker compares them exactly.
+product-design owns research.md (evidence kinds, methods, plans, synthesis, decisions), structure.md (objects, routes, findability, access), journeys.md (one-map selection and map rules), framing.md and flows-and-states.md.
+ui-ux-design owns design-system.md (whose system wins, foundations, references, DESIGN.md export, maintenance) and components.md (names and look-alike choices), plus layout, icons, states, copy, motion and operator guidance.
+build-pack owns stack-choices.md, ticket-prompts.md and pack-contract.md.
+Specialist gates keep stable IDs: product-design 8, ui-ux-design 10, ux-critique 10, ship-check 20, build-pack 10. They point to shared policy and do not redefine readiness.
+v1.0 merged 30 earlier references into 9, plus SOURCES.md for provenance. Every protected safety sentence kept its wording and moved with its rule; the checker maps old paths to their successors.
 
 ## Project exports
 
-Phase 5 system work stays in ui-ux-design. references-and-design-system owns inspection and reuse/extension/Establish selection; design-foundations owns coordinated foundation decisions; design-system-governance owns naming, proportionate contribution and maintenance; design-system-sources owns provenance and comparison. Each reference loads directly from SKILL.md only for the current task. Before screens or a coding handoff, an existing app is extracted and marked Observed, and a new app stays Proposed until the user agrees. Numbers for handoff come from that observed or approved system. component-vocabulary, component-choice and reference-systems load only when naming controls, choosing look-alike controls, or creating a new system. Preserve shared authority, existing layout/icon/motion owners and approved exceptions. Small corrections do not trigger a full system exercise. Token architecture and component contracts remain later phases.
-
-PRODUCT.md and DESIGN.md go at the app root. Other requested templates go under docs/shipright/.
-Exported references use app-root paths and carry required behavior. They must not depend on an absent pack-local skills/ tree.
+PRODUCT.md and DESIGN.md go at the app root. Other templates go under docs/shipright/.
+A build pack uses the compact set and word budgets in pack-contract.md. Exported files must not depend on an absent pack-local skills/ tree.
 Preserve another tool's existing format and sections; do not claim universal DESIGN.md parser compatibility.
 
 ## Evidence
 
-Static source checks cover structural integrity, selected rule contracts and known historical limitations.
-Controlled trials exercise instruction behavior on specified requests. They are not client installation or cross-model benchmarks.
-Historical test logs remain historical. Hash mismatches and known defects must be disclosed, never rewritten into old passes.
+Static source checks cover structure, selected rule contracts and known historical limitations.
+check-ui measures rendered pages; it does not prove good design or full accessibility.
+Controlled trials in evals/v1 compare frozen baseline output with the rebuild, graded blind. They are not client installation or cross-model benchmarks.
+Historical logs remain historical. Hash mismatches and known defects are disclosed, never rewritten into old passes.
 
 ## Bounded context, growing knowledge
 

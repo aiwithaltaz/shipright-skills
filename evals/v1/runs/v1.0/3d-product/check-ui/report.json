@@ -1,0 +1,105 @@
+{
+ "target": "evals/v1/runs/v1.0/3d-product/index.html",
+ "checkedAt": "2026-10-13T22:26:46.808Z",
+ "viewports": {
+  "desktop": {
+   "results": [
+    {
+     "id": "hidden-content",
+     "level": "FAIL",
+     "message": "24 text elements are laid out but invisible at load (content hidden until a script or scroll runs)"
+    }
+   ],
+   "metrics": {
+    "overflowX": 0,
+    "pageHeight": 2194,
+    "h1": 1,
+    "families": [
+     [
+      "Manrope",
+      38
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 0,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [
+     {
+      "w": 1280,
+      "h": 699,
+      "labeled": true
+     }
+    ],
+    "hiddenText": 24,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true
+   }
+  },
+  "phone": {
+   "results": [
+    {
+     "id": "overflow",
+     "level": "FAIL",
+     "message": "page scrolls sideways by 3px"
+    },
+    {
+     "id": "hidden-content",
+     "level": "FAIL",
+     "message": "24 text elements are laid out but invisible at load (content hidden until a script or scroll runs)"
+    }
+   ],
+   "metrics": {
+    "overflowX": 3,
+    "pageHeight": 2796,
+    "h1": 1,
+    "families": [
+     [
+      "Manrope",
+      38
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 0,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [
+     {
+      "w": 390,
+      "h": 400,
+      "labeled": true
+     }
+    ],
+    "hiddenText": 24,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true
+   }
+  }
+ }
+}

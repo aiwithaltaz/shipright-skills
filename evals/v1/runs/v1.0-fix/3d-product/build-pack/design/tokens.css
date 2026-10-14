@@ -1,0 +1,90 @@
+/* Model 01 design tokens. Status: Proposed (delegated), 2026-10-13.
+   Source: ShipRight starter D (immersive dark), accent adapted to a warm metal.
+   Components use these semantic tokens only. Change values here, nowhere else. */
+
+:root {
+  /* Color */
+  --color-bg: #0D0E11;
+  --color-surface: #16181D;
+  --color-raised: #1E2127;
+  --color-text: #F3F4F6;
+  --color-muted: #A6ACB6;
+  --color-border: #2A2E35;
+  --color-field-border: #6B7280;
+  --color-accent: #D9B47A;
+  --color-accent-hover: #E4C291;
+  --color-on-accent: #17130C;
+  --color-error: #FF9B8A;
+
+  /* Type */
+  --font-sans: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --text-meta: 14px;
+  --text-body: 17px;
+  --text-lead: 21px;
+  --text-h2: 40px;
+  --text-display: 84px;
+  --leading-text: 1.55;
+  --leading-heading: 1.1;
+  --leading-display: 1.02;
+  --tracking-display: -0.02em;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  /* Space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-section: 96px;
+
+  /* Layout */
+  --page-max: 1200px;
+  --page-margin: 24px;
+  --hero-copy-max: 440px;
+  --model-anchor-width: 58%;
+
+  /* Shape and elevation */
+  --radius-control: 8px;
+  --radius-panel: 12px;
+  --shadow-float: 0 8px 24px rgba(0, 0, 0, .45); /* menus and popovers only; none in release 1 */
+
+  /* Controls */
+  --control-height: 48px;
+  --control-height-small: 44px;
+  --focus-ring: 2px solid var(--color-accent);
+  --focus-offset: 2px;
+
+  /* Motion */
+  --duration-press: 120ms;
+  --duration-fade: 400ms;
+  --duration-turn: 2000ms;
+  --ease-out: cubic-bezier(.23, 1, .32, 1);
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+}
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  :root {
+    --text-display: 64px;
+    --hero-copy-max: 360px;
+    --model-anchor-width: 54%;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --text-body: 16px;
+    --text-lead: 19px;
+    --text-h2: 28px;
+    --text-display: 44px;
+    --space-section: 64px;
+    --page-margin: 20px;
+    --model-anchor-width: 100%;
+  }
+}

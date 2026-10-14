@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Booking details</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Tokens from DESIGN.md v0.1 (approved by delegation D-05) */
+  :root {
+    --background: #FFFFFF;
+    --surface: #F3F5F4;
+    --text: #15191B;
+    --text-muted: #4C565C;
+    --border-control: #7C878D;
+    --border-subtle: #DDE2E0;
+    --accent: #0D6B50;
+    --accent-pressed: #0A5A43;
+    --on-accent: #FFFFFF;
+    --accent-tint: #E6F2EE;
+    --error: #B42318;
+    --focus: #15191B;
+    --radius-control: 10px;
+    --gutter: 20px;
+    --font: -apple-system, "SF Pro Text", Roboto, "Segoe UI", system-ui, sans-serif;
+    --stage: #E7EBE9;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--stage);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 17px;
+    line-height: 24px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Stage: phone frame on wide screens, full bleed on phones */
+  .stage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px 16px;
+  }
+  .device {
+    width: 390px;
+    height: 844px;
+    background: var(--background);
+    border-radius: 44px;
+    box-shadow: 0 0 0 10px #15191B;
+    overflow: hidden;
+    position: relative;
+  }
+  .caption {
+    max-width: 390px;
+    margin: 12px 0 0;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--text-muted);
+    text-align: center;
+  }
+  @media (max-width: 480px) {
+    .stage { padding: 0; gap: 0; justify-content: flex-start; }
+    .device { width: 100%; height: 100vh; height: 100dvh; border-radius: 0; box-shadow: none; }
+    .caption { padding: 16px var(--gutter) 24px; margin: 0; background: var(--stage); max-width: none; width: 100%; }
+  }
+
+  /* Screen */
+  .screen { height: 100%; display: flex; flex-direction: column; }
+  .appbar {
+    flex: none;
+    height: 56px;
+    margin-top: 12px;
+    padding: 0 12px 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0 12px 0 6px;
+    border: 0;
+    border-radius: var(--radius-control);
+    background: transparent;
+    color: var(--accent);
+    font: 600 17px/22px var(--font);
+    cursor: pointer;
+  }
+  .back svg { width: 20px; height: 20px; flex: none; }
+  .step { font-size: 13px; line-height: 18px; color: var(--text-muted); padding-right: 8px; }
+
+  .content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 4px var(--gutter) 32px;
+    scroll-padding-bottom: 24px;
+  }
+  h1 { margin: 0; font-size: 28px; line-height: 34px; font-weight: 700; letter-spacing: -0.2px; }
+  .intro { margin: 8px 0 0; color: var(--text-muted); }
+  h2 { margin: 0 0 16px; font-size: 20px; line-height: 26px; font-weight: 600; }
+  .group { margin-top: 32px; }
+
+  .field { margin-top: 20px; }
+  .group h2 + .field { margin-top: 0; }
+  label, legend {
+    display: block;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .optional { font-weight: 400; color: var(--text-muted); }
+  input[type="text"], input[type="date"] {
+    display: block;
+    width: 100%;
+    height: 52px;
+    padding: 0 14px;
+    border: 1px solid var(--border-control);
+    border-radius: var(--radius-control);
+    background: var(--background);
+    color: var(--text);
+    font: 400 17px/24px var(--font);
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  input[type="date"] { min-width: 0; }
+  input::-webkit-date-and-time-value { text-align: left; }
+  input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .hint { margin: 8px 0 0; font-size: 15px; line-height: 20px; color: var(--text-muted); }
+  .error {
+    display: none;
+    margin: 8px 0 0;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    color: var(--error);
+    gap: 6px;
+    align-items: flex-start;
+  }
+  .error svg { width: 16px; height: 16px; flex: none; margin-top: 2px; }
+  .invalid .error { display: flex; }
+  .invalid input[type="text"], .invalid input[type="date"] { border: 2px solid var(--error); padding: 0 13px; }
+
+  .pair { display: flex; gap: 12px; margin-top: 20px; }
+  .pair .field { margin-top: 0; min-width: 0; }
+  .pair .city { flex: 1.5; }
+  .pair .postal { flex: 1; }
+
+  fieldset { border: 0; margin: 20px 0 0; padding: 0; min-width: 0; }
+  legend { padding: 0; }
+  fieldset .hint { margin: 0 0 12px; }
+  .options { display: flex; flex-direction: column; gap: 8px; }
+  .option {
+    position: relative;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 14px;
+    border: 1px solid var(--border-control);
+    border-radius: var(--radius-control);
+    background: var(--background);
+    cursor: pointer;
+  }
+  .option input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .dot {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    border: 2px solid var(--border-control);
+    display: grid;
+    place-items: center;
+    background: var(--background);
+  }
+  .dot::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: var(--accent);
+    transform: scale(0);
+  }
+  .option-label { font-size: 17px; line-height: 22px; }
+  .option:has(input:checked) {
+    border: 2px solid var(--accent);
+    padding: 0 13px;
+    background: var(--accent-tint);
+  }
+  .option:has(input:checked) .dot { border-color: var(--accent); }
+  .option:has(input:checked) .dot::after { transform: scale(1); }
+  .option:has(input:checked) .option-label { font-weight: 600; }
+  .option:has(input:focus-visible) { outline: 2px solid var(--focus); outline-offset: 2px; }
+  fieldset.invalid .option:not(:has(input:checked)) { border-color: var(--error); }
+  @media (max-width: 359px) {
+    .pair { flex-direction: column; gap: 20px; }
+  }
+
+  /* Bottom action bar */
+  .bar {
+    flex: none;
+    background: var(--surface);
+    border-top: 1px solid var(--border-subtle);
+    padding: 12px var(--gutter) 28px;
+  }
+  .status {
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+    min-height: 20px;
+    margin: 0 0 12px;
+    font-size: 15px;
+    line-height: 20px;
+    color: var(--text-muted);
+  }
+  .status svg { width: 16px; height: 16px; flex: none; margin-top: 2px; display: none; }
+  .status.is-error { color: var(--error); font-weight: 500; }
+  .status.is-error svg { display: block; }
+  .primary {
+    display: block;
+    width: 100%;
+    height: 52px;
+    border: 0;
+    border-radius: var(--radius-control);
+    background: var(--accent);
+    color: var(--on-accent);
+    font: 600 17px/22px var(--font);
+    cursor: pointer;
+  }
+  .primary:active { background: var(--accent-pressed); }
+  .primary:focus-visible, .back:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .dot::after { transition: transform 120ms ease-out; }
+  }
+</style>
+</head>
+<body>
+<main class="stage">
+  <div class="device">
+    <div class="screen">
+      <header class="appbar">
+        <button type="button" class="back" id="back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          Back
+        </button>
+        <span class="step">Step 1 of 3</span>
+      </header>
+
+      <form class="content" id="form" novalidate>
+        <h1>Book a home cleaning</h1>
+        <p class="intro">Tell us where and when. You create your account next, and nothing is sent until you review it.</p>
+
+        <section class="group" aria-labelledby="where">
+          <h2 id="where">Where</h2>
+
+          <div class="field" data-field="street">
+            <label for="street">Street address</label>
+            <input type="text" id="street" name="street" autocomplete="address-line1" aria-describedby="street-error" required>
+            <p class="error" id="street-error"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>Enter your street address.</span></p>
+          </div>
+
+          <div class="field" data-field="unit">
+            <label for="unit">Apartment, unit or floor <span class="optional">(optional)</span></label>
+            <input type="text" id="unit" name="unit" autocomplete="address-line2">
+          </div>
+
+          <div class="pair">
+            <div class="field city" data-field="city">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city" autocomplete="address-level2" aria-describedby="city-error" required>
+              <p class="error" id="city-error"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>Enter your city.</span></p>
+            </div>
+            <div class="field postal" data-field="postal">
+              <label for="postal">Postal code</label>
+              <input type="text" id="postal" name="postal" autocomplete="postal-code" aria-describedby="postal-error" required>
+              <p class="error" id="postal-error"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>Enter your postal code.</span></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="group" aria-labelledby="when">
+          <h2 id="when">When</h2>
+
+          <div class="field" data-field="date">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" aria-describedby="date-hint date-error" required>
+            <p class="hint" id="date-hint">Your preferred day. We confirm it after you send your request.</p>
+            <p class="error" id="date-error"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span id="date-error-text">Choose a date.</span></p>
+          </div>
+
+          <fieldset id="arrival" data-field="arrival" aria-describedby="arrival-hint arrival-error">
+            <legend>Arrival time</legend>
+            <p class="hint" id="arrival-hint">We confirm the exact time with your booking.</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="arrival" value="morning"><span class="dot" aria-hidden="true"></span><span class="option-label">Morning</span></label>
+              <label class="option"><input type="radio" name="arrival" value="afternoon"><span class="dot" aria-hidden="true"></span><span class="option-label">Afternoon</span></label>
+              <label class="option"><input type="radio" name="arrival" value="any"><span class="dot" aria-hidden="true"></span><span class="option-label">Any time</span></label>
+            </div>
+            <p class="error" id="arrival-error"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span>Choose an arrival time.</span></p>
+          </fieldset>
+        </section>
+      </form>
+
+      <div class="bar">
+        <p class="status" id="status" role="status" aria-live="polite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg><span id="status-text">Not sent. Your details stay on this phone.</span></p>
+        <button type="submit" form="form" class="primary" id="continue">Continue</button>
+      </div>
+    </div>
+  </div>
+  <p class="caption">Prototype of S2 Booking details at 390 by 844. Nothing is sent. Morning and Afternoon have no hours until you supply them (D-14). App name not shown until supplied.</p>
+</main>
+
+<script>
+(function () {
+  var KEY = 'booking_draft_v1';
+  var form = document.getElementById('form');
+  var statusEl = document.getElementById('status');
+  var statusText = document.getElementById('status-text');
+  var dateInput = document.getElementById('date');
+  var DEFAULT_STATUS = 'Not sent. Your details stay on this phone.';
+  var storageOk = true;
+
+  // Earliest date is tomorrow (D-18)
+  function iso(d) {
+    var m = String(d.getMonth() + 1).padStart(2, '0');
+    var day = String(d.getDate()).padStart(2, '0');
+    return d.getFullYear() + '-' + m + '-' + day;
+  }
+  var tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  var minDate = iso(tomorrow);
+  dateInput.min = minDate;
+
+  function setStatus(text, isError) {
+    statusText.textContent = text;
+    statusEl.classList.toggle('is-error', !!isError);
+  }
+
+  function readForm() {
+    var checked = form.querySelector('input[name="arrival"]:checked');
+    return {
+      street: form.street.value,
+      unit: form.unit.value,
+      city: form.city.value,
+      postal: form.postal.value,
+      date: form.date.value,
+      arrival: checked ? checked.value : ''
+    };
+  }
+
+  function save() {
+    try {
+      localStorage.setItem(KEY, JSON.stringify(readForm()));
+      storageOk = true;
+    } catch (e) {
+      storageOk = false;
+      setStatus('Your details could not be kept on this phone. You can still continue.', false);
+    }
+  }
+
+  function restore() {
+    var raw = null;
+    try { raw = localStorage.getItem(KEY); } catch (e) { storageOk = false; }
+    if (!raw) return;
+    var d;
+    try { d = JSON.parse(raw); } catch (e) { return; }
+    ['street', 'unit', 'city', 'postal', 'date'].forEach(function (k) {
+      if (typeof d[k] === 'string') form[k].value = d[k];
+    });
+    if (d.arrival) {
+      var r = form.querySelector('input[name="arrival"][value="' + d.arrival + '"]');
+      if (r) r.checked = true;
+    }
+  }
+
+  function setInvalid(name, invalid) {
+    var box = form.querySelector('[data-field="' + name + '"]');
+    box.classList.toggle('invalid', invalid);
+    if (name === 'arrival') {
+      box.querySelectorAll('input').forEach(function (i) { i.setAttribute('aria-invalid', invalid ? 'true' : 'false'); });
+    } else {
+      form[name].setAttribute('aria-invalid', invalid ? 'true' : 'false');
+    }
+  }
+
+  function validate() {
+    var v = readForm();
+    var bad = [];
+    if (!v.street.trim()) bad.push('street');
+    if (!v.city.trim()) bad.push('city');
+    if (!v.postal.trim()) bad.push('postal');
+    var dateText = document.getElementById('date-error-text');
+    if (!v.date) { bad.push('date'); dateText.textContent = 'Choose a date.'; }
+    else if (v.date < minDate) { bad.push('date'); dateText.textContent = 'Choose a date from tomorrow.'; }
+    if (!v.arrival) bad.push('arrival');
+    ['street', 'city', 'postal', 'date', 'arrival'].forEach(function (n) { setInvalid(n, bad.indexOf(n) !== -1); });
+    return bad;
+  }
+
+  form.addEventListener('input', function (e) {
+    var t = e.target;
+    var name = t.name;
+    var box = name && form.querySelector('[data-field="' + name + '"]');
+    if (box && box.classList.contains('invalid')) setInvalid(name, false);
+    save();
+    if (storageOk && statusEl.classList.contains('is-error') && !form.querySelector('.invalid')) setStatus(DEFAULT_STATUS, false);
+  });
+  form.addEventListener('change', save);
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var bad = validate();
+    if (bad.length) {
+      setStatus(bad.length === 1 ? 'Check the 1 field with an error.' : 'Check the ' + bad.length + ' fields with errors.', true);
+      var first = bad[0] === 'arrival'
+        ? (form.querySelector('input[name="arrival"]:checked') || form.querySelector('input[name="arrival"]'))
+        : form[bad[0]];
+      first.focus({ preventScroll: true });
+      first.scrollIntoView({ block: 'center', behavior: 'auto' });
+      return;
+    }
+    save();
+    setStatus(storageOk
+      ? 'Details kept on this phone. Next: Create account. That screen is not in this prototype.'
+      : 'Next: Create account. That screen is not in this prototype.', false);
+  });
+
+  document.getElementById('back').addEventListener('click', function () {
+    save();
+    setStatus('Back goes to Welcome. Your details stay on this phone. Welcome is not in this prototype.', false);
+  });
+
+  restore();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "A": {
+    "scores": {"1": 3, "2": 3, "3": 3, "4": 3, "5": 3, "6": 3, "7": 2, "8": 3, "9": 3, "10": 3},
+    "reasons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "Works at 390 with no sideways scroll and a 44px bottom New project bar, but the checker reports 6 controls under 44x44 on phone (the Active/Completed/All segments look about 40px tall).",
+      "8": "",
+      "9": "",
+      "10": ""
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Make the phone segmented control and the other 5 flagged controls at least 44px tall so every touch target passes."
+  },
+  "B": {
+    "scores": {"1": 2, "2": 2, "3": 2, "4": 3, "5": 2, "6": 3, "7": 2, "8": 3, "9": 3, "10": 2},
+    "reasons": {
+      "1": "Needs attention grouping is clear, but the one blue accent is also used on every project name link and every normal budget bar, so the Add project button does not stand out as the only action.",
+      "2": "Large empty gap between the Active/Completed control and the Needs attention heading; the Budget column is right-aligned with four stacked lines while the other columns are top-left, so row content does not share edges.",
+      "3": "Rows are about 100px tall, so only 4 projects fit the first desktop screen; on phone each row repeats Lead/Due/Budget labels and the list runs to about 3,000px.",
+      "4": "",
+      "5": "Single system font with clear steps, but blue means link, normal budget fill and primary action at once, so the accent is not reserved for meaning.",
+      "6": "",
+      "7": "No sideways scroll at 390 and the Add project bottom bar is reachable, but the checker reports 14 controls under 44x44 on phone.",
+      "8": "",
+      "9": "",
+      "10": "Tickets have bounded change, exclusions and acceptance checks but no file list and no stop line, and the table marks T4 to T8 'To do' while they depend on T1 to T3 that are Blocked."
+    },
+    "unshippable": false,
+    "unshippable_reason": "",
+    "top_fix": "Compress each project row: put spent of budget, % used and the badge on one line beside the bar, and drop the repeated Lead/Due/Budget labels in the phone cards, so far more projects fit per screen."
+  },
+  "better": "A",
+  "why": "A shows nine projects per screen in calm aligned rows with problems sorted first and ships paste-ready tickets with read-first files and stop lines, while B's tall four-line rows and blue-everywhere accent show only four projects and its tickets lack stop points."
+}
