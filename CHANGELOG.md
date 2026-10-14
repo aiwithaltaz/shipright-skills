@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.2.0 - Unreleased, 2026-10-14
+## 1.2.0 - 2026-10-14
 
 - Added guided website research, real product heroes and six-act story architecture.
 - Added three distinct story options, ten individually loaded technique recipes and longer website prompts. App paths and ticket caps remain.
@@ -11,9 +11,9 @@
 - Saved [ShipRight after screenshot](examples/before-after/1.2/shipright/evidence/check-ui/desktop.png), [recorder after screenshot](examples/before-after/1.2/field-recorder/evidence/check-ui-polish/desktop.png), [ShipRight scroll video](examples/before-after/1.2/shipright/evidence/desktop-scroll.webm) and [recorder scroll video](examples/before-after/1.2/field-recorder/evidence/scroll.webm).
 - Independent review found and retested product overlap, font glyph, reading-size and per-view label defects. [Final verdict](examples/before-after/1.2/review/final-review.md): ready for local proof review. Original captures and first findings remain.
 - 55 regression tests passed. Source and pinned token checks passed. Both builds and premium checks pass with disclosed compact-text warnings. CI now installs Chromium/Playwright and smoke-checks browser availability before regression discovery.
-- Updated version metadata and local distribution artifacts to 1.2.0. This is an unreleased branch, not a published release.
-- Limits: one fresh builder per proof, software WebGL, unverified physical-device performance/full assistive technology, absent external reference image pack, unverified browser reference trust and a Brand Studio CAPTCHA challenge. GitHub API recovered and PR 19 is ready for review.
-- No merge, tag, release or deploy.
+- Updated version metadata and distribution artifacts to 1.2.0.
+- Limits: one fresh builder per proof, software WebGL, unverified physical-device performance/full assistive technology, absent external reference image pack, unverified browser reference trust and a Brand Studio CAPTCHA challenge.
+- Merged in PR 19 and released as v1.2.0. Backup tag: backup-2026-10-14-pre-1.2.
 
 ## 1.1.0 - 2026-10-14
 
