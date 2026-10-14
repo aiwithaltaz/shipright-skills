@@ -30,11 +30,6 @@ def required_steps(skill_text, prompt):
     """Steps a new-project prompt must still run, from the written rule."""
     if not re.search(r'Just build it.*skip the plan.*build in one go do not skip a step', skill_text):
         return []
-    low = prompt.lower()
-    names_step = [step for step in STEPS if re.search(rf'\b{re.escape(step)}\b', low)]
-    accepts_risk = 'accept' in low and 'risk' in low
-    if len(names_step) == 1 and accepts_risk and 'do not skip' not in low:
-        return [step for step in STEPS if step not in names_step]
     return list(STEPS)
 
 
@@ -45,8 +40,8 @@ class FullFlowTests(unittest.TestCase):
         self.assertIn('A new project always runs every step below, in order.', body)
         self.assertIn('2-3 distinct visual directions (type, color, spacing, motion)', body)
         self.assertIn('Stop for the user to choose or approve.', body)
-        self.assertIn('names that step and accepts the stated risk', body)
-        self.assertIn('Say which step is skipped and why it matters.', body)
+        self.assertIn('No step is skipped for a new project, even on request.', body)
+        self.assertIn('three different stories and technique sets, not color swaps', body)
         self.assertIn('Proposed, awaiting owner approval', body)
         self.assertIn('scripts/check-ui.mjs', body)
         self.assertIn('ux-critique', body)
