@@ -6,4 +6,4 @@ One product scene is reused across acts; geometry matches the first-HTML stand-i
 
 Budget: generated model geometry under 3 MB compressed; textures under 2 MB; cap DPR at 2 desktop and 1.5 phone. One animation driver, pause hidden tabs/off-screen rendering, dispose geometries/materials/listeners/timeline and Lenis on cleanup. Measure actual assets and frame timings without claiming device performance from software rendering. Test 1280 and 390 widths, keyboard, reverse scrolling, reduced motion and no WebGL. Final source and screenshots/video remain local.
 
-Act list in 01-prd.md is the architecture. User story choice determines exact composition and technique recipes; no build starts before D5 is resolved.
+Act list in 01-prd.md is the architecture. D5 is now Approved: Instrument, inspected. Exact compositions and selected recipes are in 05-feature-ticket-list.md. Initial preview remains preserved in initial-response.md.

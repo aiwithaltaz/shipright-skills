@@ -1,0 +1,1 @@
+Owner clarification relayed 2026-10-14: Three.js or React Three Fiber, GSAP ScrollTrigger and Lenis are explicit stack constraints. Implementation uses Three.js, GSAP ScrollTrigger and Lenis, preserving prior selected-story evidence.

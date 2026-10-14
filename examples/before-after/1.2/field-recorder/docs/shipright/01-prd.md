@@ -1,6 +1,6 @@
 # Field Recorder One: product brief
 
-Phase: interactive story preview. Build is waiting for the user's explicit choice of one of three stories. Intake choices are Proposed (delegated) by the user's instruction. No deployment is authorized.
+Phase: local implementation and verification. Owner selected option 1: Instrument, inspected. Intake choices are Proposed (delegated) by the user's instruction. No deployment is authorized.
 
 ## Visitor and job
 Proposed visitor: a person learning this sample portable stereo recorder. The one job is inspect physical controls and understand capture, monitoring, storage and transfer. Success: the visitor can locate two top microphones, record button, headphone jack, removable SD card and USB-C transfer, and can revisit the workflow without motion.
@@ -28,4 +28,4 @@ One clearly labeled procedural stand-in depicts the actual described recorder: b
 | Learn workflow | Scroll acts → read ordered capture/monitor/store/transfer facts | Footer/top or detail | Reduced motion keeps acts in normal flow |
 
 ## Decisions
-D1 visitor: Proposed (delegated); D2 hero: Proposed (delegated); D3 six-act teaching scope: Proposed (delegated); D4 no supplied assets, labeled procedural stand-in: authorized by user; D5 final story: Unresolved, owner user. All sourced from current task. No facts require guessing. Unknown product specifications and legal destinations are omitted rather than blockers for this educational sample.
+D1 visitor: Proposed (delegated); D2 hero: Proposed (delegated); D3 six-act teaching scope: Proposed (delegated); D4 no supplied assets, labeled procedural stand-in: authorized by user; D5 final story: Approved, Instrument, inspected; see owner-approval.md. All sourced from current task. No facts require guessing. Unknown product specifications and legal destinations are omitted rather than blockers for this educational sample.
