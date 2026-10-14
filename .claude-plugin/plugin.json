@@ -11,11 +11,5 @@
   "repository": "https://github.com/aiwithaltaz/shipright-skills",
   "license": "MIT",
   "keywords": ["design", "ux", "ui", "product"],
-  "skills": ["./skills/shipright"],
-  "commands": {
-    "shipright": {
-      "source": "./commands/shipright.md",
-      "description": "Design or review a website, app, screen, or launch check"
-    }
-  }
+  "skills": ["./skills/shipright"]
 }

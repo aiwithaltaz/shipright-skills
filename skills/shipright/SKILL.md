@@ -26,6 +26,20 @@ Use the first matching row.
 A vague idea with no artifact starts at build-pack. An explicit correction, review, or launch check stays in that mode.
 If the user names a mode, use that mode.
 
+## Full flow for a new project
+
+A new project always runs every step below, in order. "Just build it", "skip the plan", and a prompt that says to build in one go do not skip a step. Naming a mode does not skip a step.
+
+1. **Build pack.** PRD, architecture, DESIGN.md, frontend spec, and tickets.
+2. **Design preview.** Show 2-3 distinct visual directions (type, color, spacing, motion). Stop for the user to choose or approve.
+3. **Build.**
+4. **Critique.** Run ux-critique on the rendered result and `scripts/check-ui.mjs`. Fix what it finds. Loop until clean.
+5. **Ship-check.**
+
+Skip a step only when the user names that step and accepts the stated risk. Say which step is skipped and why it matters. Risk if skipped: no scope (build pack), an unapproved look (design preview), nothing to review (build), defects left in (critique), launch evidence unknown (ship-check).
+
+When no human is available, still write the 2-3 directions, pick one with a written reason, and mark it "Proposed, awaiting owner approval". Then still run the critique, the fix loop, and ship-check. Shared intake still runs first. An explicit correction, review, or launch check on existing work is not a new project.
+
 ## Shared rules
 
 The chosen mode reads [shared intake](modes/_shared/intake.md) and [the operating contract](modes/_shared/operating-contract.md) once.

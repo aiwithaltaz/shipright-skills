@@ -18,6 +18,8 @@ SKILLS = {'product-design', 'ui-ux-design', 'ux-critique', 'ship-check', 'build-
 SKILL_ROOT = 'skills/shipright'
 MODE_ROOT = f'{SKILL_ROOT}/modes'
 ROUTER = f'{SKILL_ROOT}/SKILL.md'
+# Pre-1.1 path. Frozen example links still use it. The file is a redirect, not guidance.
+REDIRECT_STUBS = {'skills/ui-ux-design/references/operator-workspaces.md'}
 LIMITS = {'skill_tokens': 4500, 'shared_file_tokens': 2000, 'reference_tokens': 4000,
           'normal_path_tokens': 12000, 'always_shared_tokens': 3000, 'shared_total_tokens': 5000}
 ALWAYS = {f'{MODE_ROOT}/_shared/operating-contract.md', f'{MODE_ROOT}/_shared/intake.md'}
@@ -57,10 +59,11 @@ def check_structure(root):
         references = {p.relative_to(root).as_posix() for p in (root / 'skills').rglob('references/*.md')}
         # Catch deeper files too, so moving guidance cannot evade limits/inventory.
         references |= {p.relative_to(root).as_posix() for p in (root / 'skills').rglob('*.md') if 'references' in p.parts}
+        references -= REDIRECT_STUBS
         shared = {p.relative_to(root).as_posix() for p in (root / MODE_ROOT / '_shared').rglob('*.md')}
         mode_entries = {f'{MODE_ROOT}/{s}/MODE.md' for s in SKILLS}
         classified = references | shared | mode_entries | {ROUTER}
-        all_md = {p.relative_to(root).as_posix() for p in (root / 'skills').rglob('*.md')}
+        all_md = {p.relative_to(root).as_posix() for p in (root / 'skills').rglob('*.md')} - REDIRECT_STUBS
         if all_md != classified:
             errors.append(f'context-policy: unclassified skill Markdown: {sorted(all_md - classified)}')
         for ref in references:
@@ -133,6 +136,8 @@ def check_tokens(root, policy, count):
     errors, warnings, sizes, paths = [], [], {}, {}
     for p in sorted((root / 'skills').rglob('*.md')):
         rel = p.relative_to(root).as_posix()
+        if rel in REDIRECT_STUBS:
+            continue
         sizes[rel] = count(p.read_text(encoding='utf-8'))
         kind = ('skill_tokens' if p.name in {'SKILL.md', 'MODE.md'} else
                 'shared_file_tokens' if '_shared' in p.parts else 'reference_tokens')

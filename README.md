@@ -9,7 +9,7 @@ It does not guarantee a perfect product or replace testing with real users.
 
 ## Install
 
-One command installs the skill. Then type `/shipright`, or ask for a website, an app, a screen, a UX review, or a launch check. The tool can load the skill from its description.
+One command installs the skill. Then type `/shipright`, or ask for a website, an app, a screen, a UX review, or a launch check. The tool can load the skill from its description. A marketplace install also lists `/shipright:shipright` for the same skill. There is no separate command file.
 Build-pack is the default for a new idea. The other modes are product-design, ui-ux-design, ux-critique, and ship-check. They live inside this one skill.
 
 | Tool | Command |

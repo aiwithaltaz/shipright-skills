@@ -448,6 +448,18 @@ def validate(root):
         for phrase in phrases:
             need(rel, phrase)
 
+    import importlib.util
+    module_spec = importlib.util.spec_from_file_location('context_structure', root / 'evals/check_context.py')
+    context_mod = importlib.util.module_from_spec(module_spec)
+    module_spec.loader.exec_module(context_mod)
+
+    def own_text(path):
+        """Read a redirect stub as itself. Other paths use the canonical file."""
+        rel_posix = path.relative_to(root).as_posix()
+        if rel_posix in context_mod.REDIRECT_STUBS:
+            return path.read_text(encoding='utf-8')
+        return read(rel_posix)
+
     # Every Markdown file, including root, docs, examples and evals, is checked.
     for path in sorted(root.rglob('*.md')):
         if '.git' in path.relative_to(root).parts:
@@ -457,7 +469,7 @@ def validate(root):
             continue  # raw trial output links point into the user's future project, not this pack
         if rel.as_posix().startswith('dist/'):
             continue  # flat ChatGPT export; its file links are section names, not pack paths
-        text = read(rel)
+        text = own_text(path)
         prose = strip_fences(text)
         targets = re.findall(r'!?\[[^\]]*\]\(([^\s)]+)(?:\s+"[^"]*")?\)', prose)
         if rel.parts[0] == 'skills':
@@ -521,12 +533,12 @@ def validate(root):
         need('docs/DESIGN.md', head)
     general = list((root / 'skills').rglob('*.md')) + list((root / 'docs').glob('*.md'))
     for p in general:
-        text = read(p.relative_to(root))
+        text = own_text(p)
         for leak in IVC_LEAKS:
             if leak.lower() in text.lower():
                 errors.append(f'{p.relative_to(root)}: project-specific IVC wording in general guidance: {leak}')
     for p in general + [root / 'personal-taste/altaz.md']:
-        text = read(p.relative_to(root))
+        text = own_text(p)
         for pattern, label in FORBIDDEN:
             if re.search(pattern, text):
                 errors.append(f'{p.relative_to(root)}: contradicts a restored rule ({label})')
@@ -535,14 +547,9 @@ def validate(root):
     if statuses != ['Pass', 'Fail', 'Not verified', 'Not applicable']:
         errors.append('operating-contract.md: four-status table changed')
 
-    words = sum(len(read(p.relative_to(root)).split()) for p in (root / 'skills').rglob('*.md'))
+    words = sum(len(own_text(p).split()) for p in (root / 'skills').rglob('*.md'))
     # Stored knowledge has no global cap. Required token checks run separately.
-    import importlib.util
-    module_spec = importlib.util.spec_from_file_location('context_structure', root / 'evals/check_context.py')
-    module = importlib.util.module_from_spec(module_spec)
-    module_spec.loader.exec_module(module)
-    check_structure = module.check_structure
-    context_errors, _, _ = check_structure(root)
+    context_errors, _, _ = context_mod.check_structure(root)
     errors.extend(context_errors)
     for p in sorted(root.rglob('*')):
         if not p.is_file() or '.git' in p.relative_to(root).parts or p.suffix in {'.png', '.zip', '.pyc'}:
