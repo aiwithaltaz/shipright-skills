@@ -2,101 +2,36 @@
 import { skillsCommand, pluginSteps, tools, files, globalNote } from '../data/install.js'
 
 const pluginCopy = pluginSteps.join('\n')
-const { variant } = Astro.props
 ---
-{variant === 'press' ? (
-  <table class="sheet">
-    <thead>
-      <tr>
-        <th>Path</th>
-        <th>Command</th>
-        <th>Copy</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="unit">
-        <td>Any tool</td>
-        <td>
-          <pre><code>{skillsCommand}</code></pre>
-          <p class="detail">{globalNote}</p>
-          <p class="status" data-status role="status"></p>
-        </td>
-        <td><button type="button" class="copy" data-copy={skillsCommand}>Copy</button></td>
-      </tr>
-      <tr class="unit">
-        <td>Claude Code</td>
-        <td>
-          <pre><code>{pluginCopy}</code></pre>
-          <p class="detail">Run both lines in Claude Code.</p>
-          <p class="status" data-status role="status"></p>
-        </td>
-        <td><button type="button" class="copy" data-copy={pluginCopy}>Copy</button></td>
-      </tr>
-      {tools.map((tool) => (
-        <tr class="unit">
-          <td>{tool.tool}</td>
-          <td>
-            <pre><code>{tool.command}</code></pre>
-            {tool.note && <p class="detail">{tool.note}</p>}
-            <p class="status" data-status role="status"></p>
-          </td>
-          <td><button type="button" class="copy" data-copy={tool.command}>Copy</button></td>
-        </tr>
-      ))}
-      {files.map((file) => (
-        <tr class="unit">
-          <td>{file.tool}</td>
-          <td>
-            <a class="file-link" href={file.href}>{file.label}</a>
-            <p class="detail">{file.detail}</p>
-            <p class="status" data-status role="status"></p>
-          </td>
-          <td><button type="button" class="copy" data-copy={file.href}>Copy link</button></td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
-) : (
-  <div class={variant === 'night' ? 'stack' : undefined}>
-    <div class="unit">
-      <p class="name">Any tool</p>
-      <div>
-        <pre class={variant === 'night' ? 'primary-line' : undefined}><code>{skillsCommand}</code></pre>
-        <p class="detail">{globalNote}</p>
-        <p class="status" data-status role="status"></p>
-      </div>
-      <button type="button" class="copy" data-copy={skillsCommand}>Copy</button>
-    </div>
-    <div class="unit">
-      <p class="name">Claude Code</p>
-      <div>
-        <pre><code>{pluginCopy}</code></pre>
-        <p class="detail">Run both lines in Claude Code.</p>
-        <p class="status" data-status role="status"></p>
-      </div>
-      <button type="button" class="copy" data-copy={pluginCopy}>Copy</button>
-    </div>
-    {tools.map((tool) => (
-      <div class="unit">
-        <p class="name">{tool.tool}</p>
-        <div>
-          <pre><code>{tool.command}</code></pre>
-          {tool.note && <p class="detail">{tool.note}</p>}
-          <p class="status" data-status role="status"></p>
-        </div>
-        <button type="button" class="copy" data-copy={tool.command}>Copy</button>
-      </div>
-    ))}
-    {files.map((file) => (
-      <div class="unit">
-        <p class="name">{file.tool}</p>
-        <div>
-          <a class="file-link" href={file.href}>{file.label}</a>
-          <p class="detail">{file.detail}</p>
-          <p class="status" data-status role="status"></p>
-        </div>
-        <button type="button" class="copy" data-copy={file.href}>Copy link</button>
-      </div>
-    ))}
+<div class="unit">
+  <p class="name">Any tool</p>
+  <pre><code>{skillsCommand}</code></pre>
+  <p class="detail">{globalNote}</p>
+  <button type="button" class="copy" data-copy={skillsCommand}>Copy</button>
+  <p class="status" data-status role="status"></p>
+</div>
+<div class="unit">
+  <p class="name">Claude Code</p>
+  <pre><code>{pluginCopy}</code></pre>
+  <p class="detail">Run both lines in Claude Code.</p>
+  <button type="button" class="copy" data-copy={pluginCopy}>Copy</button>
+  <p class="status" data-status role="status"></p>
+</div>
+{tools.map((tool) => (
+  <div class="unit">
+    <p class="name">{tool.tool}</p>
+    <pre><code>{tool.command}</code></pre>
+    {tool.note && <p class="detail">{tool.note}</p>}
+    <button type="button" class="copy" data-copy={tool.command}>Copy</button>
+    <p class="status" data-status role="status"></p>
   </div>
-)}
+))}
+{files.map((file) => (
+  <div class="unit">
+    <p class="name">{file.tool}</p>
+    <a class="file-link" href={file.href}>{file.label}</a>
+    <p class="detail">{file.detail}</p>
+    <button type="button" class="copy" data-copy={file.href}>Copy link</button>
+    <p class="status" data-status role="status"></p>
+  </div>
+))}

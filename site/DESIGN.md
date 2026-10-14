@@ -1,7 +1,7 @@
 ---
 version: "1.1.0"
 name: "ShipRight site preview"
-description: "Three proposed directions. None is approved. YAML stays empty until a direction is approved."
+description: "Shared scale plus three proposed themes. None is approved. YAML stays empty until a theme is approved."
 colors: {}
 typography: {}
 rounded: {}
@@ -11,64 +11,47 @@ components: {}
 
 # Design system
 
-**Status: Proposed. 14 October 2026.** No Figma file and no brand color were supplied. Altaz's taste was selected for this pass: careful spacing, dense but calm, no fluff. It does not approve a direction.
+**Status: Proposed. 14 October 2026.** No Figma file and no brand color were supplied. The owner rejected Split, Night, and Press as congested. This pass asks for sleek, modern, and minimal, with room around the real content. Altaz's 4px spacing habit is the base. Section gaps are larger because this brief asks for air.
 
-The first single system (IBM Plex Sans, starter blue) is superseded. It is not one of these three.
+References are pattern ideas only. Credits are in SOURCES.md. No code or words were copied.
 
-Borrow structure only: one accent, measured contrast, section rhythm from the editorial starter, and the dark field idea from the immersive starter. Do not borrow another product's identity.
+## Scale
 
-## Shared rules
+One scale for every theme. Inside a group: 4, 8, or 12. Between groups: 24 or 32. Between sections: 160 desktop, 96 phone. Page column 1040. Hero column 1160. Gutters 40 desktop, 20 phone.
 
-- One filled action per view: the Install link in the hero. Copy controls are text buttons.
-- Square corners. No shadow. Borders or a full-bleed image, not cards.
-- 8-point space: 4, 8, 12, 16, 24, 32, 48, then 64 or 80 between sections.
-- Below 760px, columns stack. Tracks use `minmax(0, 1fr)`.
-- Focus: 2px outline, 2px offset, in `--color-focus`.
-- Commands use `ui-monospace` inside `code`.
-- Scores use tabular figures.
-- Text starts visible. Motion is transform only, inside `gsap.matchMedia` for `prefers-reduced-motion: no-preference`.
-
-## Split
-
-Files: `design/tokens-split.css`, `src/styles/split.css`, `/preview/split`.
-
-| Role | Value |
+| Token | px |
 | --- | --- |
-| Type | Instrument Serif for the headline. Instrument Sans for the rest. Display 44/34, title 20, body 17/16, meta 14 |
-| Color | bg #F3F5F7, text #12161C, muted #4A5160, border #D5DAE1, accent #0E3A6B, on accent #FFFFFF |
-| Space | Section 64 desktop, 48 phone. The comparison sits in the right column and meets the right edge |
-| Motion | A hairline draws down the middle of the hero image (explanation, 700ms). Gallery rows rise 16px once. Reduced motion: the line is already there, rows do not rise |
+| space 1 to 4 | 4, 8, 12, 16 |
+| space 5 to 8 | 24, 32, 48, 64 |
+| space 9 to 12 | 96, 128, 160, 192 |
 
-## Night
+Type roles: display, title 32, body 18, meta 15. Display size is set by the theme. Line height 1.02 on display, 1.5 on body.
 
-Files: `design/tokens-night.css`, `src/styles/night.css`, `/preview/night`.
+Radius: controls 12, floating nav 999, Air stage 28. Depth and Grid stages are square. Focus is a 2px outline, 2px offset.
 
-| Role | Value |
-| --- | --- |
-| Type | Manrope only. Display 64/40, title 20, body 17/16, meta 15. Tracking -0.035em on the headline |
-| Color | bg #111214, surface #191B1F, text #F3F4F6, muted #B7BDC8, border #32363E, accent #E6E1D4, on accent #16140F |
-| Space | Section 80 desktop, 48 phone. Headline column max 880. The hero image is full width |
-| Motion | The hero image scales from 1.04 to 1 as it scrolls (continuity). Reduced motion: scale stays 1 |
+Motion: 160ms for hover, 240ms for a small move, ease-out `cubic-bezier(.23, 1, .32, 1)`. One GSAP scrub per page. Lenis smooths wheel scroll and keeps `respectReducedMotion` on. Reduced motion: no Lenis, no scrub, one still 3D frame. Text opacity stays 1.
 
-## Press
+Nav: fixed pill, top center, solid surface, 1px border, gray float shadow. Links: ShipRight, Gallery, Install, GitHub. One filled Install control, in the hero, not in the pill.
 
-Files: `design/tokens-press.css`, `src/styles/press.css`, `/preview/press`.
+## 3D
 
-| Role | Value |
-| --- | --- |
-| Type | Source Serif 4 for headlines. IBM Plex Sans for text. Display 64/36, title 22, body 16, meta 14 |
-| Color | bg #FFFFFF, text #111111, muted #3E3E3E, rules #D4D4D4, accent #111111, on accent #FFFFFF |
-| Space | Section 48 desktop, 32 phone. Page max 1040. Desktop and phone comparisons sit under the nameplate |
-| Motion | A 2px reading rule tracks scroll position (orientation). Reduced motion: the rule is full width and still |
+One mesh. Pixel ratio capped at 2, and at 1.5 below 760. Pause off screen and when the tab is hidden. The canvas is `aria-hidden`. If WebGL fails, the headline remains.
 
-## Placement
+## Air
 
-- Back control: "All directions", top left, on every direction page.
-- Primary action: left of the text column on Split and Night. End of the nameplate on Press.
-- Copy: end of the row on Split, under the command on Night and on a phone, last column on Press.
+Syne. Display 60, weight 700, tracking -0.045em. White #FFFFFF, text #141414, muted #4D5158, border #E4E4E4, accent #141414 with white text. Stage #F3F3F1, radius 28. The headline is two lines across the hero. A pale knot sits in a soft stage to the right of the install line and drifts up 40px on scroll.
+
+## Depth
+
+Familjen Grotesk. Display 72, weight 600, uppercase, tracking -0.03em. Navy #071018, text #F3F6F8, muted #B7C2CE, border #243244, accent #F4F7FB with navy text. A cool solid sits under the headline. Scroll turns it. A slow spin on Z keeps it live.
+
+## Grid
+
+Newsreader for display and titles. Figtree for text. Display 76, weight 400. Field #F5F6F8, text #1A1A1A, muted #4A4E55, hairline #D5D6D8, accent #1A1A1A. Square controls. The serif headline sits on the left of a 96px hairline grid. A wire sphere sits on the right. A rule under the gallery grows across the scroll.
 
 ## Do not
 
-- Do not add a gradient, a glow, an eyebrow label, a card around a section, or a second filled button.
-- Do not invent a logo, a price, a quote, or a customer count.
+- Do not bring back Split, Night, or Press.
+- Do not add a glow, gradient text, eyebrow label, or a card around every block.
+- Do not invent a logo, price, quote, or customer count.
 - Do not hide text until a scroll animation runs.

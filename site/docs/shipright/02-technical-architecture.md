@@ -4,23 +4,29 @@
 
 | Choice | Decision | Why | Switch when |
 | --- | --- | --- | --- |
-| Site | Astro, static | A few public pages. Little JavaScript. | It needs sign-in: use Next.js. |
-| CSS | One token file per direction, plus a page stylesheet | The three looks must not share one skin. | After a direction is approved: delete the other two token files. |
-| Type | Self-hosted latin files from Fontsource | No runtime call to a font host. | A supplied brand font replaces the pair. |
-| Motion | GSAP with ScrollTrigger | The brief asked for a scroll move on each direction. | The chosen direction drops scroll motion: remove the dependency. |
-| Host | Vercel, root `site`, later | Static `dist`. The free tier is enough. Do not deploy in this pass. | A required region: another host. |
+| Site | Astro, static | A few public pages. | It needs sign-in: use Next.js. |
+| 3D | Three.js in one module | The page is not a React app. R3F would add a second UI runtime. | A direction needs many React-controlled scenes: move that page to R3F. |
+| Motion | GSAP ScrollTrigger, one scrub per direction | The brief asked for one scroll move. | The chosen direction drops scroll motion: remove GSAP. |
+| Scroll | Lenis, GSAP ticker, `respectReducedMotion` left on | Marketing page only. | Reduced-motion bugs remain: drop Lenis and keep native scroll. |
+| CSS | `design/tokens.css` plus `src/styles/preview.css` | One spacing scale. Color and type change by theme. | After a pick: delete the other two themes. |
+| Type | Self-hosted latin files | No runtime font host. | A supplied brand font replaces the pair. |
+| Host | Vercel, root `site`, later | Static `dist`. Do not deploy in this pass. | A required region: another host. |
 | Data | None | Copy and images only. | A saved install needs a new decision. |
 
-GSAP is not MIT. It uses GSAP's standard license. The site installs the npm package for the preview. It is not part of the MIT pack.
+GSAP uses the GSAP standard license, not MIT. Three.js and Lenis are MIT. The site installs them for the preview. They are not part of the MIT pack.
+
+## 3D limits
+
+One mesh. Pixel ratio capped at 2, and at 1.5 below 760px. The loop pauses off screen and when the tab is hidden. Reduced motion renders one still frame and does not spin. The canvas is decorative. Hero text stays in the DOM if WebGL fails.
 
 ## Routes
 
 | Route | Page |
 | --- | --- |
-| `/` | Direction list. Nothing here is the approved site |
-| `/preview/split` | Split |
-| `/preview/night` | Night |
-| `/preview/press` | Press |
+| `/` | Direction list |
+| `/preview/air` | Air |
+| `/preview/depth` | Depth |
+| `/preview/grid` | Grid |
 | `/design` | Redirects to `/` |
 | `/gallery/*` | Trial images, copied at build, not committed |
 
@@ -30,19 +36,11 @@ Public read. No sign-in. No secrets. No analytics.
 
 ## Performance
 
-LCP under 2.5 s, INP under 200 ms, CLS under 0.1 on the chosen page, measured later. Hero and gallery images have width and height. They load with the page so the preview screenshots show them.
+LCP under 2.5 s, INP under 200 ms, CLS under 0.1 on the chosen page, measured later. Hero text is the stable content. Comparison images have width and height.
 
 ## Install facts
 
-Commands in `src/data/install.js` match the 1.1 README and release `v1.1.0`.
-
-- Any tool: `npx skills add aiwithaltaz/shipright-skills`
-- Claude Code: `/plugin marketplace add aiwithaltaz/shipright-skills` then `/plugin install shipright@shipright`
-- Cursor, Codex, VS Code (`github-copilot`), Antigravity, and Gemini CLI use the same command with `-a` and `-y`
-- Claude.ai: `shipright.zip` from release v1.1.0
-- ChatGPT: `shipright-chatgpt.md` from release v1.1.0
-
-The site does not run these commands.
+Commands in `src/data/install.js` match the 1.1 README and release `v1.1.0`: the bare `npx skills add` line, the Claude Code plugin pair, per-tool lines with `-a` and `-y`, `shipright.zip`, and `shipright-chatgpt.md`.
 
 ## Risks
 

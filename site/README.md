@@ -1,6 +1,6 @@
 # ShipRight site
 
-Static preview for ShipRight 1.1.0. Three proposed directions. None is approved. It does not deploy itself.
+Static preview for ShipRight 1.1.0. Three proposed directions: Air, Depth, and Grid. None is approved. It does not deploy itself.
 
 ## Develop
 
@@ -12,7 +12,7 @@ npm run dev
 
 `npm run dev` and `npm run build` copy the gallery images from `examples/before-after/` into `public/gallery/`. That folder is gitignored.
 
-Open `/` and choose Split, Night, or Press.
+Open `/` and choose Air, Depth, or Grid.
 
 ## Deploy on Vercel
 
@@ -32,9 +32,9 @@ From the repository root, after `npm run build` inside `site/`:
 
 ```bash
 node scripts/check-ui.mjs site/dist/index.html --root site/dist
-node scripts/check-ui.mjs site/dist/preview/split/index.html --root site/dist
-node scripts/check-ui.mjs site/dist/preview/night/index.html --root site/dist
-node scripts/check-ui.mjs site/dist/preview/press/index.html --root site/dist
+node scripts/check-ui.mjs site/dist/preview/air/index.html --root site/dist
+node scripts/check-ui.mjs site/dist/preview/depth/index.html --root site/dist
+node scripts/check-ui.mjs site/dist/preview/grid/index.html --root site/dist
 ```
 
 Open the screenshots. Fix every failure.

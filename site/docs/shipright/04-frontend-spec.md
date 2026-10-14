@@ -7,9 +7,9 @@
 | ID | Job | Route |
 | --- | --- | --- |
 | S0 | Let the owner choose a direction | `/` |
-| S1 | Show Split: hero, gallery, install | `/preview/split` |
-| S2 | Show Night: hero, gallery, install | `/preview/night` |
-| S3 | Show Press: hero, gallery, install | `/preview/press` |
+| S1 | Show Air | `/preview/air` |
+| S2 | Show Depth | `/preview/depth` |
+| S3 | Show Grid | `/preview/grid` |
 
 ## Flow rules (must pass)
 
@@ -21,23 +21,21 @@
 
 ## S0 List
 
-**Job:** Name the three directions without pretending one is chosen.
-**Order:** Title. One sentence. Three links: Split, Night, Press. Footer.
+**Job:** Name Air, Depth, and Grid without pretending one is chosen.
+**Order:** Title. One sentence. Three links. Footer.
 **Exit:** Each link opens that direction. Footer links leave the site.
-**Copy:** "Three directions. None is approved."
 
-## S1 Split, S2 Night, S3 Press
+## S1, S2, S3
 
-**Job:** Show a before and after immediately, then the four cases, then the install lines.
-**Order:** All directions. Direction name and "proposed". Headline on two lines. One sentence. Install. The hero image. Gallery with the trial note. Install rows.
-**Hero images:** Split uses the SaaS desktop comparison. Night uses the 3D re-run. Press uses the marketing grid desktop and phone comparisons.
-**States:** Copy default, Copied, and Copy failed. Select the line if copy fails. A broken image keeps its alt text. Other cases stay.
-**Responsive:** One column below 760. Press drops the table head and stacks each path. Commands wrap. No sideways page scroll at 390 or 1280.
-**Motion:** See DESIGN.md. Text opacity stays 1.
+**Job:** Give the direction room, show a live 3D hero, then the proof and the install lines.
+**Order:** Floating nav. Headline, one sentence, Install, 3D stage. Four slop lines. Four comparisons, one image each. Two empty IVC labels. Install rows. Footer.
+**States:** Copy default, Copied, and Copy failed. A broken image keeps its alt text. No WebGL: the canvas goes away and the headline stays.
+**Responsive:** One column below 760. The nav stays one row if it fits. Commands wrap. No sideways page scroll at 390 or 1280.
+**Motion:** See DESIGN.md.
 **Copy:** Trial lines from `src/data/gallery.js`. Install lines from `src/data/install.js`.
 
 ## Acceptance
 
-- check-ui reports 0 failures at 390 and 1280 for `/`, `/preview/split`, `/preview/night`, and `/preview/press`.
-- One h1 per page. One filled Install control on the first screen of S1, S2, and S3.
-- The owner has not picked a direction, so none of these pages is the public home.
+- check-ui reports 0 failures at 390 and 1280 for `/`, `/preview/air`, `/preview/depth`, and `/preview/grid`.
+- One h1 per page. One filled Install control on the first screen.
+- The owner has not picked a direction.

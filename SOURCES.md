@@ -23,6 +23,8 @@ Registers below are kept from earlier phases with their original access dates. N
 | Laws of UX by Jon Yablonski | CC BY-NC-ND 4.0 | Ideas only; cite the original research names. |
 | WCAG 2.2, WAI-ARIA APG, DTCG format 2025.10, web.dev Core Web Vitals | W3C and Google documentation terms | Accessibility criteria, token layers, LCP 2.5s, INP 200ms, CLS 0.1. |
 
+Site preview, accessed 2026-10-14. Air, Depth, and Grid borrow only these pattern ideas: open space and a floating nav, a quiet 3D hero, scroll-linked motion, and a hairline grid. No code, layout, or words were copied from Skiper UI, Animmaster Lib, ThreeUI, Vengeance UI (vengenceui.com), or Component Gallery. Vengeance UI's GitHub repository did not show a LICENSE file on this date. The older MIT note in the table above is historical. Do not copy that repository's code unless its license is checked again. Component Gallery credit stays in the later section of this file.
+
 ## Phase 1 research sources
 
 Former file: `skills/product-design/references/research-sources.md`.

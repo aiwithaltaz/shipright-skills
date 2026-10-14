@@ -1,0 +1,34 @@
+/* Shared scale for the site preview. Proposed. Themes set color and type. */
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --space-11: 160px;
+  --space-12: 192px;
+  --radius-control: 12px;
+  --radius-pill: 999px;
+  --radius-stage: 28px;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --motion-fast: 160ms;
+  --motion-base: 240ms;
+  --page: 1040px;
+  --hero: 1160px;
+  --gutter: 40px;
+  --gutter-phone: 20px;
+  --section: 160px;
+  --section-phone: 96px;
+  --text-display: 64px;
+  --text-display-phone: 40px;
+  --text-title: 32px;
+  --text-body: 18px;
+  --text-meta: 15px;
+  --nav-offset: 96px;
+  --shadow-nav: 0 8px 24px rgba(16, 24, 40, 0.12);
+}

@@ -3,9 +3,9 @@ import { links } from '../data/install.js'
 
 const { theme, motion } = Astro.props
 const themeColor = {
-  split: '#F3F5F7',
-  night: '#111214',
-  press: '#FFFFFF',
+  air: '#FFFFFF',
+  depth: '#071018',
+  grid: '#F5F6F8',
   chooser: '#FFFFFF',
 }[theme]
 ---
@@ -23,7 +23,7 @@ const themeColor = {
     <meta property="og:image" content="/og.png" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
-  <body class={theme} data-motion={motion}>
+  <body class={theme} data-theme={theme} data-motion={motion}>
     <a class="skip" href="#content">Skip to content</a>
     <slot />
     <footer class="foot">
