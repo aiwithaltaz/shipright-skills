@@ -5,7 +5,7 @@ description: "Use this when designing or refining a screen, layout, component, s
 
 # UI/UX design
 
-**Pack version:** 1.0.0
+**Pack version:** 1.1.0
 **Context before generate. Product before pixels.**
 
 Turn a clear screen job into a useful layout. Unclear product job or structure: route to product-design. Whole idea to build: build-pack. Critique: ux-critique.
@@ -34,7 +34,7 @@ Continue supported work; do not claim a full ShipRight check without its require
 8. Deliver the requested specification or handoff. Tie implementation claims to observed evidence.
 
 Dense but calm is the default for product screens: real information, clear hierarchy, nothing shouting. Use numbers only from the observed or approved system.
-Use a [personal-taste profile](../../personal-taste/README.md) only when selected by the user or project.
+Use a [personal-taste profile](../../../../personal-taste/README.md) only when selected by the user or project.
 
 ## Design system first
 

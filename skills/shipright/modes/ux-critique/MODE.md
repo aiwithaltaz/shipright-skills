@@ -5,7 +5,7 @@ description: "Use this when reviewing a plan, specification, screenshot or runni
 
 # UX critique
 
-**Pack version:** 1.0.0
+**Pack version:** 1.1.0
 **Context before generate. Product before pixels.**
 
 Review a real artifact and report evidence-backed corrections. Do not invent users, interview quotes or predicted conversion gains.
@@ -80,5 +80,5 @@ Use at handoff or when readiness is requested. Use four statuses, evidence and n
 | 9 | Accessibility | Evidence covers relevant criteria for this stage, with runtime limits stated. |
 | 10 | Correction | Exact feedback is covered; fixes and retest conditions are concrete. |
 
-Use the shared readiness rule. For launch readiness, use [ship-check](../ship-check/SKILL.md).
+Use the shared readiness rule. For launch readiness, use [ship-check](../ship-check/MODE.md).
 Do not launch a full release audit for a focused spacing or copy request.

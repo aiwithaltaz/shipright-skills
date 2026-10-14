@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('v1_source_checks', ROOT / 'evals/check_sources.py')
 checks = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(checks)
-CONTRACT = 'skills/_shared/operating-contract.md'
+CONTRACT = 'skills/shipright/modes/_shared/operating-contract.md'
 
 # (rule family, file, safe phrase, unsafe replacement)
 SAFETY = [
@@ -29,8 +29,8 @@ SAFETY = [
     ('exact feedback becomes checks', CONTRACT, 'acceptance check', 'nice-to-have'),
     ('silence is not approval', CONTRACT, 'silence is not approval', 'silence counts as approval'),
     ('nothing ships without approval', CONTRACT, 'Readiness does not authorize deployment, publication, payment', 'Readiness authorizes deployment, publication, payment'),
-    ('bounded questions', 'skills/_shared/intake.md', '0-5 questions total before starting', 'as many questions as needed'),
-    ('launch check needs an artifact', 'skills/ship-check/SKILL.md', 'ask one question for that artifact and stop', 'fill the table from the idea'),
+    ('bounded questions', 'skills/shipright/modes/_shared/intake.md', '0-5 questions total before starting', 'as many questions as needed'),
+    ('launch check needs an artifact', 'skills/shipright/modes/ship-check/MODE.md', 'ask one question for that artifact and stop', 'fill the table from the idea'),
 ]
 
 

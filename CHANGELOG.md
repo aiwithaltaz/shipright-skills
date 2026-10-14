@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.1.0 - 2026-10-14
+
+One skill, one install. ShipRight is now `shipright`, the same shape as a Remotion or HyperFrames skill.
+
+### Added
+
+- **One router** at `skills/shipright/SKILL.md`. It picks one mode: build-pack (the default for a new idea), product-design, ui-ux-design, ux-critique, or ship-check. The old skill files moved to `skills/shipright/modes/<mode>/MODE.md` and still load their references one step at a time.
+- **Claude Code plugin and marketplace** in `.claude-plugin/`. Install with `/plugin marketplace add aiwithaltaz/shipright-skills`, then `/plugin install shipright@shipright`. The command is `/shipright`.
+- **`npx skills add aiwithaltaz/shipright-skills`** for Cursor, Codex, VS Code Copilot, Antigravity, and Gemini CLI. The same command works for Claude Code.
+- **`scripts/release_skill.py`** writes `dist/shipright.zip` for a Claude.ai skill upload and `dist/shipright-chatgpt.md` for ChatGPT project instructions or a Custom GPT.
+
+### Changed
+
+- The five mode names, safety rules, gates, and token budgets stay. Checkers follow the new paths. Historical eval outputs are unchanged.
+
 ## 1.0.0 - 2026-10-13
 
 Idea in, build pack out. ShipRight now works like a small agency team and hands your coding tool small, exact prompts. See [release notes](RELEASE-NOTES.md).

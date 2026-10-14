@@ -33,4 +33,4 @@ Clear controls must distinguish hiding a card, abandoning a draft and deleting d
 - When the user offers alternatives ("A or B"), either one satisfies the request.
 
 Do not silently remove unrelated approved actions. If an item's phase is unclear, flag it.
-Worked case: [IVC round-1 corrections](../../../examples/ivc-2026-registration/feedback/round1-corrections.md). It is project-specific, not a default for other apps.
+Worked case: [IVC round-1 corrections](../../../../../examples/ivc-2026-registration/feedback/round1-corrections.md). It is project-specific, not a default for other apps.

@@ -1,14 +1,14 @@
 # Maintaining ShipRight
 
-**Pack version: 1.0.0**
+**Pack version: 1.1.0**
 **Context before generate. Product before pixels.**
 
-These rules govern this pack, not an end-user app. Preserve the five skill names (build-pack, product-design, ui-ux-design, ux-critique, ship-check) and one canonical source tree.
+These rules govern this pack, not an end-user app. The installable skill is `skills/shipright/SKILL.md`. Preserve the five mode names (build-pack, product-design, ui-ux-design, ux-critique, ship-check) under `skills/shipright/modes/` and one canonical source tree. Do not publish those modes as separate skills.
 
 ## Editing
 
 - Read current user instructions and affected files before editing. Preserve unrelated work and explicit decisions.
-- Keep general rules in skills/_shared/, specialist detail in references/, and copied project templates in docs/.
+- Keep general rules in skills/shipright/modes/_shared/, specialist detail in each mode's references/, and copied project templates in docs/.
 - Keep provenance and credits in SOURCES.md. Skills cite it; they never load it.
 - Every rule must change output. Prefer short, checkable rules and worked examples over theory.
 - Preserve outcome, useful mechanism, objects/states, journey, screen jobs and evidence-based critique.
@@ -24,7 +24,7 @@ These rules govern this pack, not an end-user app. Preserve the five skill names
 
 The operating contract owns authority, phase scope, exact feedback, evidence and readiness.
 Shared intake owns 0-5 total questions before starting. Do not restart intake at each skill boundary.
-Flow rules (must pass) live in skills/_shared/flow-rules.md: F1 exit, F2 consistency and F3 useful status.
+Flow rules (must pass) live in skills/shipright/modes/_shared/flow-rules.md: F1 exit, F2 consistency and F3 useful status.
 Keep the marked compact export blocks identical in docs/04-frontend-spec.md and docs/build-rules.md.
 Do not maintain long Flow rule copies elsewhere.
 
@@ -42,4 +42,4 @@ Preserve historical failures with clear notices. A new release needs new evidenc
 ## Context budgets
 
 Follow evals/context-policy.json. Entries: at most 4,500 tokens and the retained 1,300-word secondary check. Shared files: 2,000 tokens each; contract/intake together: 3,000; all shared rules: 5,000. References: 4,000 each. Declared normal loading paths: 12,000, counting the entry and required shared rules once. No global stored-word cap.
-Link every consumed reference directly from SKILL.md with a task-specific condition. Keep reference files directly under their owner skill's references/ folder. Add/update loading paths for new task families. Preserve required safeguards; divide large tasks into bounded stages rather than dropping essential rules. Detailed rules have one canonical owner; reuse links instead of copied passages. Keep compact fallback and synchronized F1-F3 exports. No automated semantic duplicate detector is required.
+Link every consumed reference directly from its mode MODE.md with a task-specific condition. Keep reference files directly under that mode's references/ folder. The router SKILL.md only links the mode it selects. Add/update loading paths for new task families. Preserve required safeguards; divide large tasks into bounded stages rather than dropping essential rules. Detailed rules have one canonical owner; reuse links instead of copied passages. Keep compact fallback and synchronized F1-F3 exports. No automated semantic duplicate detector is required.

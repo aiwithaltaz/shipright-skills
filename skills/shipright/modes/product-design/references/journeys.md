@@ -41,4 +41,4 @@ Missing teams, departments, systems, policies, dependencies, timing and SLA stay
 Service artifacts are not research evidence or proof of successful delivery. Transferred is not accepted or completed.
 Frontstage/backstage depends on visibility, not job title.
 
-Sources: [SOURCES.md](../../../SOURCES.md); they are not this product's findings or business processes.
+Sources: [SOURCES.md](../../../../../SOURCES.md); they are not this product's findings or business processes.

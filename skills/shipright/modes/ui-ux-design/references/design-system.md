@@ -41,12 +41,12 @@ A reuse decision is not an accessibility Pass. Preserve isolated accessibility i
 Use at most two or three. For each, name the property to borrow, why it fits this job and what must not carry over.
 Never borrow identity, color, type or icons as a skin. A liked search form can supply spacing without approving its filter.
 Useful property sources: Carbon, Atlassian, Primer and Polaris for dense tables and forms; Geist, shadcn/ui and Radix for restrained product UI; GOV.UK and USWDS for plain forms.
-Component Gallery is a comparison/reference index, not an installable component library or usability proof. Credit in [SOURCES.md](../../../SOURCES.md).
+Component Gallery is a comparison/reference index, not an installable component library or usability proof. Credit in [SOURCES.md](../../../../../SOURCES.md).
 External style tools produce proposals; check them against scope, accessibility and approved identity.
 
 ## DESIGN.md export
 
-Template: [docs/DESIGN.md](../../../docs/DESIGN.md). Preserve an existing format and its unknown sections for compatibility.
+Template: [docs/DESIGN.md](../../../../../docs/DESIGN.md). Preserve an existing format and its unknown sections for compatibility.
 Only sourced **Approved** or **Observed** values enter the YAML token map. **Proposed** values stay in labeled Markdown. **Unknown** values are listed as gaps.
 Never insert placeholder hex codes, font names or sizes. Keep Icons and Placement in Markdown.
 

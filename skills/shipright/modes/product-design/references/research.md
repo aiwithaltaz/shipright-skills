@@ -67,4 +67,4 @@ Recommend the smallest justified commitment and state what would challenge the r
 Keep evidence confidence separate from approval and gate statuses. No finding-to-UI shortcut: new screens still need scope authority.
 Show the user the recommendation, key findings and material risks. Keep the evidence trail available on request.
 
-Original sources: see [SOURCES.md](../../../SOURCES.md). Original guidance: cited there, not copied.
+Original sources: see [SOURCES.md](../../../../../SOURCES.md). Original guidance: cited there, not copied.

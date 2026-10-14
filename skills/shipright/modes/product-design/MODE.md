@@ -5,7 +5,7 @@ description: "Use this when framing a product idea, judging research evidence or
 
 # Product design
 
-**Pack version:** 1.0.0
+**Pack version:** 1.1.0
 **Context before generate. Product before pixels.**
 
 Connect outcome, mechanism, objects, journey and screen jobs.
@@ -32,7 +32,7 @@ Continue without claiming a full check.
 | Organize product | Sourced objects, labels, destinations and access boundaries |
 | Map experience/service | One sourced map and decisions |
 | Shape flow and states | Entry, steps, cancel, failure, recovery and state effects |
-| Build pack | Use [build-pack](../build-pack/SKILL.md) for the full PRD-to-tickets set |
+| Build pack | Use [build-pack](../build-pack/MODE.md) for the full PRD-to-tickets set |
 
 Do not invent market evidence or differentiation. Load only needed references.
 

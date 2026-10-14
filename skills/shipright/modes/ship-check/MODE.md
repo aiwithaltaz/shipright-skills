@@ -5,7 +5,7 @@ description: "Use this when checking launch readiness or specific release items 
 
 # Ship check
 
-**Pack version:** 1.0.0
+**Pack version:** 1.1.0
 **Context before generate. Product before pixels.**
 
 Report what launch evidence establishes. This is not a security audit, legal review or deployment step.
@@ -80,5 +80,5 @@ Use Needs decision (IDs) for owner-only critical gaps; otherwise unresolved crit
 Ready for launch review requires all critical requirements satisfied and explicit disposition of other gaps.
 Readiness never authorizes deploy, publish or payment.
 
-Write [the report template](../../docs/ship-check.md) only when requested, following [output-folder.md](../_shared/output-folder.md).
+Write [the report template](../../../../docs/ship-check.md) only when requested, following [output-folder.md](../_shared/output-folder.md).
 If fixes are authorized, hand them to the coding tool and recheck affected items. Keep old dated evidence separate.

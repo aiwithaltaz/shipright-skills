@@ -70,7 +70,7 @@ class ContextPolicyTests(unittest.TestCase):
         self.assertEqual([], self.tokens())
 
     def test_skill_boundary(self):
-        rel = 'skills/product-design/SKILL.md'
+        rel = 'skills/shipright/modes/product-design/MODE.md'
         self.write(rel, self.exact_text(4500))
         self.assertEqual([], self.tokens())
         self.write(rel, self.exact_text(4501))
@@ -78,21 +78,21 @@ class ContextPolicyTests(unittest.TestCase):
 
     def shared_boundary_headroom(self):
         # Isolate a shared-rule threshold from unrelated path-total thresholds.
-        for rel in ('skills/ui-ux-design/references/layout-and-hierarchy.md', 'skills/ui-ux-design/references/icons-and-placement.md',
-                    'skills/build-pack/references/stack-choices.md', 'skills/build-pack/references/pack-contract.md',
-                    'skills/product-design/references/structure.md'):
+        for rel in ('skills/shipright/modes/ui-ux-design/references/layout-and-hierarchy.md', 'skills/shipright/modes/ui-ux-design/references/icons-and-placement.md',
+                    'skills/shipright/modes/build-pack/references/stack-choices.md', 'skills/shipright/modes/build-pack/references/pack-contract.md',
+                    'skills/shipright/modes/product-design/references/structure.md'):
             self.write(rel, self.exact_text(100))
 
     def test_shared_file_boundary(self):
         self.shared_boundary_headroom()
-        rel = 'skills/_shared/output-folder.md'
+        rel = 'skills/shipright/modes/_shared/output-folder.md'
         self.write(rel, self.exact_text(2000))
         self.assertEqual([], self.tokens())
         self.write(rel, self.exact_text(2001))
         self.assert_error(self.tokens(), rel)
 
     def test_reference_boundary(self):
-        rel = 'skills/product-design/references/framing.md'
+        rel = 'skills/shipright/modes/product-design/references/framing.md'
         self.write(rel, self.exact_text(4000))
         self.assertEqual([], self.tokens())
         self.write(rel, self.exact_text(4001))
@@ -120,44 +120,44 @@ class ContextPolicyTests(unittest.TestCase):
         for p in checks.ALWAYS:
             self.write(p, self.exact_text(1500))
         self.assertEqual([], self.tokens())
-        self.write('skills/_shared/intake.md', self.exact_text(1501))
+        self.write('skills/shipright/modes/_shared/intake.md', self.exact_text(1501))
         self.assert_error(self.tokens(), 'always-loaded shared')
 
     def test_shared_folder_boundary(self):
         self.shared_boundary_headroom()
         for p in checks.ALWAYS:
             self.write(p, self.exact_text(1000))
-        self.write('skills/_shared/flow-rules.md', self.exact_text(1500))
-        self.write('skills/_shared/output-folder.md', self.exact_text(1500))
+        self.write('skills/shipright/modes/_shared/flow-rules.md', self.exact_text(1500))
+        self.write('skills/shipright/modes/_shared/output-folder.md', self.exact_text(1500))
         self.assertEqual([], self.tokens())
-        self.write('skills/_shared/output-folder.md', self.exact_text(1501))
+        self.write('skills/shipright/modes/_shared/output-folder.md', self.exact_text(1501))
         self.assert_error(self.tokens(), 'shared folder')
 
     def test_broken_link(self):
-        self.mutate('skills/ui-ux-design/SKILL.md', '(references/motion.md)', '(references/absent.md)')
+        self.mutate('skills/shipright/modes/ui-ux-design/MODE.md', '(references/motion.md)', '(references/absent.md)')
         self.assert_error(self.structure(), 'broken')
 
     def test_orphan_reference(self):
-        self.write('skills/product-design/references/orphan.md', '# Orphan\n')
+        self.write('skills/shipright/modes/product-design/references/orphan.md', '# Orphan\n')
         self.assert_error(self.structure(), 'orphan references')
 
     def test_nested_reference(self):
-        self.write('skills/product-design/references/deep/nested.md', '# Nested\n')
+        self.write('skills/shipright/modes/product-design/references/deep/nested.md', '# Nested\n')
         self.assert_error(self.structure(), 'directly in its canonical')
 
     def test_hidden_markdown(self):
-        self.write('skills/product-design/hidden.md', '# Hidden guidance\n')
+        self.write('skills/shipright/modes/product-design/hidden.md', '# Hidden guidance\n')
         self.assert_error(self.structure(), 'unclassified')
 
     def test_indirect_only_reference(self):
-        self.mutate('skills/ui-ux-design/SKILL.md',
+        self.mutate('skills/shipright/modes/ui-ux-design/MODE.md',
                     '| Available implementation evidence | [bounded-verification.md](../ux-critique/references/bounded-verification.md) |', '')
-        del self.policy['skills']['ui-ux-design']['conditional_references']['skills/ux-critique/references/bounded-verification.md']
+        del self.policy['skills']['ui-ux-design']['conditional_references']['skills/shipright/modes/ux-critique/references/bounded-verification.md']
         self.policy_write()
         self.assert_error(self.structure(), 'chained-only')
 
     def test_missing_condition(self):
-        self.policy['skills']['product-design']['conditional_references']['skills/product-design/references/research.md']['when'] = ''
+        self.policy['skills']['product-design']['conditional_references']['skills/shipright/modes/product-design/references/research.md']['when'] = ''
         self.policy_write()
         self.assert_error(self.structure(), 'loading condition')
 
@@ -207,11 +207,11 @@ class ContextPolicyTests(unittest.TestCase):
         self.assertGreater(self.count(text), self.count('# Heading'))
 
     def test_larger_collection_has_no_global_cap(self):
-        entry = 'skills/product-design/SKILL.md'
+        entry = 'skills/shipright/modes/product-design/MODE.md'
         text = (self.copy / entry).read_text()
         refs = self.policy['skills']['product-design']['conditional_references']
         for i in range(8):
-            rel = f'skills/product-design/references/growth-{i}.md'
+            rel = f'skills/shipright/modes/product-design/references/growth-{i}.md'
             self.write(rel, self.exact_text(3000))
             line = f'For growth topic {i} only, read [growth-{i}.md](references/growth-{i}.md).'
             refs[rel] = {'when': line}
@@ -225,7 +225,7 @@ class ContextPolicyTests(unittest.TestCase):
 
     def test_shared_rules_count_once_per_path(self):
         path = self.policy['skills']['product-design']['normal_paths'][0]
-        path['references'].append('skills/_shared/intake.md')
+        path['references'].append('skills/shipright/modes/_shared/intake.md')
         errors, _, report = checks.check_tokens(self.copy, self.policy, self.count)
         loaded = report['normal_paths']['product-design'][path['task']]
         self.assertEqual([], errors)
@@ -234,12 +234,12 @@ class ContextPolicyTests(unittest.TestCase):
     def test_linked_dependencies_are_counted(self):
         _, _, report = checks.check_tokens(self.copy, self.policy, self.count)
         loaded = report['normal_paths']['ui-ux-design']['Screen handoff']['files']
-        self.assertIn('skills/ux-critique/references/slop-tells.md', loaded)
-        self.assertIn('skills/ux-critique/references/bounded-verification.md', loaded)
-        self.assertIn('skills/build-pack/references/ticket-prompts.md', loaded)
+        self.assertIn('skills/shipright/modes/ux-critique/references/slop-tells.md', loaded)
+        self.assertIn('skills/shipright/modes/ux-critique/references/bounded-verification.md', loaded)
+        self.assertIn('skills/shipright/modes/build-pack/references/ticket-prompts.md', loaded)
 
     def test_linked_dependency_can_exceed_path_budget(self):
-        rel = 'skills/ux-critique/references/slop-tells.md'
+        rel = 'skills/shipright/modes/ux-critique/references/slop-tells.md'
         text = (self.copy / rel).read_text()
         self.write(rel, text + self.exact_text(2000))
         self.assert_error(self.tokens(), 'ui-ux-design/Screen handoff')

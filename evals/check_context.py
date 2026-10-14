@@ -14,9 +14,13 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = {'product-design', 'ui-ux-design', 'ux-critique', 'ship-check', 'build-pack'}
+# One installable skill. The five names stay as modes and keep their own entry budgets.
+SKILL_ROOT = 'skills/shipright'
+MODE_ROOT = f'{SKILL_ROOT}/modes'
+ROUTER = f'{SKILL_ROOT}/SKILL.md'
 LIMITS = {'skill_tokens': 4500, 'shared_file_tokens': 2000, 'reference_tokens': 4000,
           'normal_path_tokens': 12000, 'always_shared_tokens': 3000, 'shared_total_tokens': 5000}
-ALWAYS = {'skills/_shared/operating-contract.md', 'skills/_shared/intake.md'}
+ALWAYS = {f'{MODE_ROOT}/_shared/operating-contract.md', f'{MODE_ROOT}/_shared/intake.md'}
 TOKENIZER = {'package': 'tiktoken', 'version': '0.12.0', 'encoding': 'cl100k_base'}
 
 
@@ -53,25 +57,28 @@ def check_structure(root):
         references = {p.relative_to(root).as_posix() for p in (root / 'skills').rglob('references/*.md')}
         # Catch deeper files too, so moving guidance cannot evade limits/inventory.
         references |= {p.relative_to(root).as_posix() for p in (root / 'skills').rglob('*.md') if 'references' in p.parts}
-        shared = {p.relative_to(root).as_posix() for p in (root / 'skills/_shared').rglob('*.md')}
-        classified = references | shared | {f'skills/{s}/SKILL.md' for s in SKILLS}
+        shared = {p.relative_to(root).as_posix() for p in (root / MODE_ROOT / '_shared').rglob('*.md')}
+        mode_entries = {f'{MODE_ROOT}/{s}/MODE.md' for s in SKILLS}
+        classified = references | shared | mode_entries | {ROUTER}
         all_md = {p.relative_to(root).as_posix() for p in (root / 'skills').rglob('*.md')}
         if all_md != classified:
             errors.append(f'context-policy: unclassified skill Markdown: {sorted(all_md - classified)}')
         for ref in references:
             parts = Path(ref).parts
-            if len(parts) != 4 or parts[1] not in SKILLS or parts[2] != 'references':
+            # skills/shipright/modes/<mode>/references/<file>.md
+            if not (len(parts) == 6 and parts[1] == 'shipright' and parts[2] == 'modes'
+                    and parts[3] in SKILLS and parts[4] == 'references'):
                 errors.append(f'{ref}: reference must live directly in its canonical skill/references folder')
         consumed = set()
         for name, config in policy['skills'].items():
-            entry = f'skills/{name}/SKILL.md'
+            entry = f'{MODE_ROOT}/{name}/MODE.md'
             if config['entry'] != entry:
                 errors.append(f'{name}: invalid entry path')
             entry_text = (root / entry).read_text()
             direct = links(root, root / entry)
             inventory[name] = sorted(direct)
             required = config['required_shared']
-            expected_shared = ALWAYS | (set() if name == 'ship-check' else {'skills/_shared/flow-rules.md'})
+            expected_shared = ALWAYS | (set() if name == 'ship-check' else {f'{MODE_ROOT}/_shared/flow-rules.md'})
             if set(required) != expected_shared or len(required) != len(set(required)):
                 errors.append(f'{name}: required shared rules changed or duplicated')
             if not set(required) <= direct:
@@ -127,12 +134,12 @@ def check_tokens(root, policy, count):
     for p in sorted((root / 'skills').rglob('*.md')):
         rel = p.relative_to(root).as_posix()
         sizes[rel] = count(p.read_text(encoding='utf-8'))
-        kind = ('skill_tokens' if p.name == 'SKILL.md' else
+        kind = ('skill_tokens' if p.name in {'SKILL.md', 'MODE.md'} else
                 'shared_file_tokens' if '_shared' in p.parts else 'reference_tokens')
         if sizes[rel] > LIMITS[kind]:
             errors.append(f'{rel}: {sizes[rel]} tokens exceeds {LIMITS[kind]}')
     always = sum(sizes[p] for p in policy['always_loaded_shared'])
-    total_shared = sum(n for p, n in sizes.items() if p.startswith('skills/_shared/'))
+    total_shared = sum(n for p, n in sizes.items() if p.startswith(f'{MODE_ROOT}/_shared/'))
     for label, actual, limit in [('always-loaded shared', always, LIMITS['always_shared_tokens']),
                                  ('shared folder', total_shared, LIMITS['shared_total_tokens'])]:
         if actual > limit:
