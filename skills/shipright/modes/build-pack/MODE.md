@@ -26,6 +26,8 @@ For public websites the preview is exactly three different stories and technique
 
 When no human is available, still write the 2-3 directions, pick one with a written reason, and mark it "Proposed, awaiting owner approval". Then still run the critique, the fix loop, and ship-check. Shared intake still runs first. An explicit correction, review, or launch check on existing work is not a new project.
 
+## Premium routing
+
 For a public website, launch page or immersive page, read [product-brief.md](../product-design/references/product-brief.md) instead of the three app intake cards and app flows.
 
 For public website options and scenes, read [premium-web.md](../ui-ux-design/references/premium-web.md) instead of the app work sequence and document marketing references.

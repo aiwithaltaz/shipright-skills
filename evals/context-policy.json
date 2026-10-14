@@ -408,6 +408,9 @@
         },
         "skills/shipright/modes/ux-critique/references/severity-rubric.md": {
           "when": "Use [severity-rubric.md](references/severity-rubric.md): Blocker for critical failure, Major for substantial noncritical friction, Polish for small craft issues."
+        },
+        "skills/shipright/modes/ux-critique/references/taste-check.md": {
+          "when": "For a public website or immersive page, read [taste-check.md](references/taste-check.md) and compare the rendered product and six-act story."
         }
       },
       "normal_paths": [
@@ -427,6 +430,14 @@
           "references": [
             "skills/shipright/modes/ux-critique/references/plan-review.md",
             "skills/shipright/modes/ux-critique/references/severity-rubric.md"
+          ]
+        },
+        {
+          "task": "Premium taste critique",
+          "references": [
+            "skills/shipright/modes/ux-critique/references/taste-check.md",
+            "skills/shipright/modes/ux-critique/references/severity-rubric.md",
+            "skills/shipright/modes/ux-critique/references/bounded-verification.md"
           ]
         }
       ]

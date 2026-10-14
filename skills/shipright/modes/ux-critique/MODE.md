@@ -11,6 +11,8 @@ description: "Use this when reviewing a plan, specification, screenshot or runni
 Review a real artifact and report evidence-backed corrections. Do not invent users, interview quotes or predicted conversion gains.
 With no artifact, ask for the smallest relevant input. A specification is reviewable without a running app.
 
+For a public website or immersive page, read [taste-check.md](references/taste-check.md) and compare the rendered product and six-act story.
+
 ## INTAKE
 
 Read [shared intake](../_shared/intake.md) and [the operating contract](../_shared/operating-contract.md) once per task.
