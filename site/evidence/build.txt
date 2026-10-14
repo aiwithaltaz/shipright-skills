@@ -12,7 +12,7 @@ computing gzip size...
 ../../../tmp/shipright-website-dist/assets/index-CNvKysHq.js         136.52 kB │ gzip:  51.45 kB
 ../../../tmp/shipright-website-dist/assets/three.module-C8enonVg.js  736.44 kB │ gzip: 186.85 kB
 
-[plugin builtin:vite-reporter] 
+[plugin builtin:vite-reporter]
 (!) Some chunks are larger than 500 kB after minification. Consider:
 - Using dynamic import() to code-split the application
 - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
