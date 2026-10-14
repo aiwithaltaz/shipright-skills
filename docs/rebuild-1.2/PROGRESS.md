@@ -1,6 +1,6 @@
 # ShipRight 1.2: progress
 
-**Next step:** Fresh proof builders are preparing options. Await owner choice before building. All five decisions approved in the owner request on 14 October 2026.
+**Next step:** Build proof sites, independent visual critique, final documentation and packaging. All five decisions approved in the owner request on 14 October 2026.
 
 Branch: `cursor/shipright-1-2-plan-e2d8`. Base: `main` at `443fbf1`. Draft PR: https://github.com/aiwithaltaz/shipright-skills/pull/19
 
@@ -40,3 +40,7 @@ Branch: `cursor/shipright-1-2-plan-e2d8`. Base: `main` at `443fbf1`. Draft PR: h
 
 - Reusable environment install_script and start_skill saved and exercised. Local pinned tokenizer cache matches the official checksum; system Chromium and checker work. Added encoding and GitHub API domains to the draft. Draft saving does not activate network changes or publish.
 - GitHub API remains Forbidden, so marking PR 19 ready for review remains externally blocked. Native Git push works.
+
+- Owner selected ShipRight A: Product Manuscript and recorder 1: Instrument, inspected. Both are Approved and builders resumed.
+- Final discovery: 55 tests passed, zero skipped. Source and real token checks passed; 153 existing and four new premium mutations rejected.
+- Live reference capture is blocked by proxy policy, and the earlier screenshot upload is absent. Saved targeted reference host additions in the draft; no synthetic reference screenshots will be substituted.
