@@ -2,7 +2,7 @@
 
 **Next step:** Stop. Wait for Altaz to approve or edit `PLAN.md`. Do not edit `skills/` until that approval.
 
-Branch: `cursor/shipright-1-2-plan-e2d8`. Base: `main` at `443fbf1`. Draft PR title: ShipRight 1.2 plan.
+Branch: `cursor/shipright-1-2-plan-e2d8`. Base: `main` at `443fbf1`. Draft PR: https://github.com/aiwithaltaz/shipright-skills/pull/19
 
 | Phase | Status | Commit | Notes |
 | --- | --- | --- | --- |
