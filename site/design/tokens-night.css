@@ -1,0 +1,40 @@
+/* Proposed direction: Night. Not approved. */
+:root {
+  --color-bg: #111214;
+  --color-surface: #191b1f;
+  --color-text: #f3f4f6;
+  --color-muted: #b7bdc8;
+  --color-border: #32363e;
+  --color-accent: #e6e1d4;
+  --color-accent-hover: #f4f0e6;
+  --color-on-accent: #16140f;
+  --color-focus: #e6e1d4;
+  --font-display: Manrope, sans-serif;
+  --font-text: Manrope, sans-serif;
+  --text-display: 64px;
+  --text-display-phone: 40px;
+  --text-title: 20px;
+  --text-body: 17px;
+  --text-body-phone: 16px;
+  --text-meta: 15px;
+  --leading-display: 1.02;
+  --leading-text: 1.45;
+  --track-display: -0.035em;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 80px;
+  --section: 80px;
+  --section-phone: 48px;
+  --page: 880px;
+  --gutter: 32px;
+  --gutter-phone: 20px;
+  --radius: 0px;
+  --shadow: none;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --motion-settle: 1;
+}

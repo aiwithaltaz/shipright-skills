@@ -12,7 +12,11 @@ export const trial = {
   max: 120,
   phase3Baseline: 94,
   phase3Current: 107,
+  date: '13 Oct 2026',
 }
+
+export const trialNote =
+  'Blind trial, 13 Oct 2026. Pack 0.6.2 scored 93 of 120. Pack 1.0 scored 112 of 120. One run per case, same model family, synthetic prompts. Not user research.'
 
 export const cases = [
   {

@@ -1,57 +1,45 @@
 # Tickets
 
-Build in order. Each ticket stops when its checks pass.
+Current phase: preview only. Do not start T2 until the owner names Split, Night, or Press.
 
-## T1. Foundation
+## T1. Direction preview
 
-**After:** none.
+**After:** none. **Size:** one sitting.
 
-Read DESIGN.md and `design/tokens.css`. Set up the Astro app in `site/`. Add the font, the header, the footer and `/design` with type, color, spacing, buttons and fields. No home sections yet.
+Read `docs/shipright/build-rules.md`, DESIGN.md, and `04-frontend-spec.md`.
+Build `/`, `/preview/split`, `/preview/night`, and `/preview/press`.
+Use the token file named for that direction. Hero, gallery, and install only.
+Install text comes from `src/data/install.js`. Images come from `scripts/copy-gallery.mjs`.
+GSAP runs only inside `gsap.matchMedia` for `(prefers-reduced-motion: no-preference)`.
 
-**Done when:** `/design` renders at 390 and 1280 with no sideways scroll, visible focus, and labels on both fields.
+**Done when:** Each direction shows a real comparison on the first screen, all four cases, and the 1.1 commands. check-ui reports 0 failures at 390 and 1280.
+**Stop.** Do not apply one direction to a final home page.
+
+## T2. Build the chosen direction
+
+**After:** the owner names one direction. **Size:** one sitting.
+
+Read the same files. Keep the chosen token file. Remove the other two directions from the public routes.
+Build the single home page from the chosen hero, gallery, and install. Keep the copy, the trial limits, and the install file.
+Do not add IVC frames, a blog, or a second visual system.
+
+**Done when:** `/` is only the chosen direction. The first screen still shows a before and after. One filled Install control.
 **Stop.**
 
-## T2. Home argument
+## T3. Critique and check
 
-**After:** T1.
+**After:** T2. **Size:** one sitting.
 
-Read `04-frontend-spec.md` (S1). Build the headline, the pack table, the five modes, safety and the slop lines. One filled Install button.
+Run ux-critique on the built home page and `node scripts/check-ui.mjs` at 390 and 1280. Fix what it finds. Loop until 0 failures. Look at both screenshots.
 
-**Done when:** The first screen names the product and the audience. There is one h1.
-**Stop.**
-
-## T3. Gallery
-
-**After:** T2.
-
-Copy the eight named images in `scripts/copy-gallery.mjs`. Show scores 93 and 112 of 120 and the limits from the PRD. Leave two empty IVC slots.
-
-**Done when:** Each image has alt text. The slots do not use a broken image.
-**Stop.**
-
-## T4. Install
-
-**After:** T3.
-
-Render `src/data/install.js`. Copy buttons report Copied or a visible failure. Claude.ai and ChatGPT use the zip link.
-
-**Done when:** Keyboard reaches every Copy button. The command wraps at 390.
-**Stop.**
-
-## T5. Motion
-
-**After:** T4.
-
-Draw the headline rule once. Rise later sections by 16 px, transform only. Reduced motion keeps both still.
-
-**Done when:** Text is visible with motion off. The page source contains a reduced-motion rule.
-**Stop.**
-
-## T6. Check
-
-**After:** T5.
-
-Run `node scripts/check-ui.mjs` on `dist/index.html` and `dist/design/index.html` at the widths it already opens. Fix every failure. Look at both screenshots.
-
-**Done when:** 0 failures on both routes.
+**Done when:** The critique's must-fix items are fixed or written down with evidence, and check-ui reports 0 failures.
 **Stop.** Do not deploy.
+
+## T4. Ship-check handoff
+
+**After:** T3, and only if a launch is requested. **Size:** one sitting.
+
+Hand the built page to ship-check. Do not publish, deploy, or buy a domain in this ticket.
+
+**Done when:** ship-check has a dated note, or the owner has said not to launch.
+**Stop.**

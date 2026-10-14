@@ -1,0 +1,62 @@
+---
+import '@fontsource/manrope/latin-400.css'
+import '@fontsource/manrope/latin-500.css'
+import '@fontsource/manrope/latin-600.css'
+import '../../styles/base.css'
+import '../../styles/night.css'
+import Frame from '../../layouts/Frame.astro'
+import Gallery from '../../components/Gallery.astro'
+import Install from '../../components/Install.astro'
+import { cases, trialNote } from '../../data/gallery.js'
+
+const product = cases.find((item) => item.id === '3d')
+const hero = product.images.find((image) => !image.phone)
+---
+<Frame
+  title="Night, a proposed ShipRight direction"
+  description="Proposed look: a full-width before and after under a large headline. Not the approved site."
+  theme="night"
+  motion="night"
+>
+  <header class="top">
+    <a class="back" href="/">All directions</a>
+    <p class="mark">Night, proposed</p>
+  </header>
+  <main id="content">
+    <section>
+      <div class="hero-copy">
+        <h1>Context before generate.<br />Product before pixels.</h1>
+        <p class="deck">One skill for a website, an app, or a screen.</p>
+        <a class="btn" href="#install">Install</a>
+      </div>
+      <figure class="bleed">
+        <img
+          src={hero.src}
+          width={hero.width}
+          height={hero.height}
+          alt={hero.alt}
+        />
+        <figcaption>
+          3D product site, re-run. 0.6.2 on the left. 1.0 on the right. The first 1.0 run scored 19 and is not this image.
+        </figcaption>
+      </figure>
+    </section>
+    <section>
+      <div class="band">
+        <h2>Before and after</h2>
+        <p class="note">{trialNote}</p>
+      </div>
+      <Gallery variant="night" />
+    </section>
+    <section id="install">
+      <div class="inner">
+        <h2>Install</h2>
+        <p class="lead">ShipRight 1.1.0. The command is the block.</p>
+        <Install variant="night" />
+      </div>
+    </section>
+  </main>
+</Frame>
+<script>
+  import '../../scripts/motion.js'
+</script>

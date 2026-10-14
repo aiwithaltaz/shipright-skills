@@ -1,0 +1,58 @@
+---
+import '@fontsource/instrument-sans/latin-400.css'
+import '@fontsource/instrument-sans/latin-500.css'
+import '@fontsource/instrument-sans/latin-600.css'
+import '@fontsource/instrument-serif/latin-400.css'
+import '../../styles/base.css'
+import '../../styles/split.css'
+import Frame from '../../layouts/Frame.astro'
+import Gallery from '../../components/Gallery.astro'
+import Install from '../../components/Install.astro'
+import { cases, trialNote } from '../../data/gallery.js'
+
+const saas = cases.find((item) => item.id === 'saas')
+const hero = saas.images.find((image) => !image.phone)
+---
+<Frame
+  title="Split, a proposed ShipRight direction"
+  description="Proposed look: the before and after sits beside the headline. Not the approved site."
+  theme="split"
+  motion="split"
+>
+  <header class="top">
+    <a class="back" href="/">All directions</a>
+    <p class="mark">Split, proposed</p>
+  </header>
+  <main id="content">
+    <section class="hero">
+      <div>
+        <h1>Context before generate.<br />Product before pixels.</h1>
+        <p class="deck">One skill for a website, an app, or a screen.</p>
+        <a class="btn" href="#install">Install</a>
+      </div>
+      <figure class="hero-shot">
+        <img
+          src={hero.src}
+          width={hero.width}
+          height={hero.height}
+          alt={hero.alt}
+        />
+        <span class="hair" aria-hidden="true"></span>
+        <figcaption>SaaS dashboard. 0.6.2 on the left. 1.0 on the right. Blind scores 24 and 29.</figcaption>
+      </figure>
+    </section>
+    <section class="band wrap">
+      <h2>Before and after</h2>
+      <p class="note">{trialNote}</p>
+      <Gallery variant="split" />
+    </section>
+    <section class="band wrap" id="install">
+      <h2>Install</h2>
+      <p class="lead">ShipRight 1.1.0. Copy the line for your tool.</p>
+      <Install variant="split" />
+    </section>
+  </main>
+</Frame>
+<script>
+  import '../../scripts/motion.js'
+</script>

@@ -1,17 +1,15 @@
 # Frontend specification
 
-**Version:** 1.0.0 site. **Phase:** Public site.
+**Version:** 1.1.0 site preview. **Phase:** Design preview only.
 
 ## Screens
 
 | ID | Job | Route |
 | --- | --- | --- |
-| S1 | Explain ShipRight and offer install | `/` |
-| S2 | Show the proposed system before treating it as settled | `/design` |
-
-## Navigation
-
-Wordmark to `/`. Pack, Gallery, Install, Design. Design is current on S2. Footer: GitHub, Changelog, Releases, Credits, MIT license.
+| S0 | Let the owner choose a direction | `/` |
+| S1 | Show Split: hero, gallery, install | `/preview/split` |
+| S2 | Show Night: hero, gallery, install | `/preview/night` |
+| S3 | Show Press: hero, gallery, install | `/preview/press` |
 
 ## Flow rules (must pass)
 
@@ -21,24 +19,25 @@ Wordmark to `/`. Pack, Gallery, Install, Design. Design is current on S2. Footer
 - **F3. System status:** show task-relevant progress, results and actionable failures in the user's words. Hide routine system plumbing. Never fake progress or claim work is saved, cancelled or complete without evidence.
 <!-- FLOW-EXPORT-END -->
 
-## S1 Home
+## S0 List
 
-**Job:** Say what it is, show the proof, let the visitor copy an install line.
-**Order:** Headline and sentence. Install, then See the gallery. Pack table. Modes. Safety. Slop lines. Scores and gallery. IVC slots. Install rows. Closing line.
-**States:** Copy default, Copied, and Copy failed. Select the line. IVC slots say the image is not added yet. A broken image keeps its alt text.
-**Responsive:** One column below 760. Commands wrap. Phone shots cap at 640. No sideways page scroll at 390 or 1280.
-**Copy:** Real lines from the pack and the trial. No invented quotes or counts.
+**Job:** Name the three directions without pretending one is chosen.
+**Order:** Title. One sentence. Three links: Split, Night, Press. Footer.
+**Exit:** Each link opens that direction. Footer links leave the site.
+**Copy:** "Three directions. None is approved."
 
-## S2 Design
+## S1 Split, S2 Night, S3 Press
 
-**Job:** Show type, color, space, controls, fields and motion.
-**Order:** Status sentence. Type. Color table. Spacing. Controls. Default field, then a labeled error field. Motion note.
-**States:** Primary, secondary, disabled, focus ring, valid field, error field. Sample values are labeled as samples.
-**Exit:** Wordmark returns to S1.
-**Do not add:** a second brand, dark mode, or icons.
+**Job:** Show a before and after immediately, then the four cases, then the install lines.
+**Order:** All directions. Direction name and "proposed". Headline on two lines. One sentence. Install. The hero image. Gallery with the trial note. Install rows.
+**Hero images:** Split uses the SaaS desktop comparison. Night uses the 3D re-run. Press uses the marketing grid desktop and phone comparisons.
+**States:** Copy default, Copied, and Copy failed. Select the line if copy fails. A broken image keeps its alt text. Other cases stay.
+**Responsive:** One column below 760. Press drops the table head and stacks each path. Commands wrap. No sideways page scroll at 390 or 1280.
+**Motion:** See DESIGN.md. Text opacity stays 1.
+**Copy:** Trial lines from `src/data/gallery.js`. Install lines from `src/data/install.js`.
 
 ## Acceptance
 
-- check-ui reports 0 failures at 390 and 1280 for both routes.
-- One h1 per page. One filled button in the first screen of S1.
-- Install text matches `src/data/install.js`.
+- check-ui reports 0 failures at 390 and 1280 for `/`, `/preview/split`, `/preview/night`, and `/preview/press`.
+- One h1 per page. One filled Install control on the first screen of S1, S2, and S3.
+- The owner has not picked a direction, so none of these pages is the public home.

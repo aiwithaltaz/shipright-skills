@@ -1,0 +1,43 @@
+---
+import { links } from '../data/install.js'
+
+const { theme, motion } = Astro.props
+const themeColor = {
+  split: '#F3F5F7',
+  night: '#111214',
+  press: '#FFFFFF',
+  chooser: '#FFFFFF',
+}[theme]
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{Astro.props.title}</title>
+    <meta name="description" content={Astro.props.description} />
+    <meta name="theme-color" content={themeColor} />
+    <meta property="og:title" content={Astro.props.title} />
+    <meta property="og:description" content={Astro.props.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og.png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body class={theme} data-motion={motion}>
+    <a class="skip" href="#content">Skip to content</a>
+    <slot />
+    <footer class="foot">
+      <p>by Altaz Lavji / <a href={links.author}>AI With Altaz</a></p>
+      <nav aria-label="Site">
+        <a href={links.github}>GitHub</a>
+        <a href={links.changelog}>Changelog</a>
+        <a href={links.releases}>Releases</a>
+        <a href={links.credits}>Credits</a>
+        <a href={links.license}>License</a>
+      </nav>
+    </footer>
+    <script>
+      import '../scripts/copy.js'
+    </script>
+  </body>
+</html>

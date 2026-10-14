@@ -1,0 +1,39 @@
+/* Proposed direction: Split. Not approved. */
+:root {
+  --color-bg: #f3f5f7;
+  --color-text: #12161c;
+  --color-muted: #4a5160;
+  --color-border: #d5dae1;
+  --color-accent: #0e3a6b;
+  --color-accent-hover: #0a2c52;
+  --color-on-accent: #ffffff;
+  --color-focus: #0e3a6b;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-text: "Instrument Sans", sans-serif;
+  --text-display: 44px;
+  --text-display-phone: 34px;
+  --text-title: 20px;
+  --text-body: 17px;
+  --text-body-phone: 16px;
+  --text-meta: 14px;
+  --leading-display: 1.05;
+  --leading-text: 1.45;
+  --track-display: -0.02em;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --section: 64px;
+  --section-phone: 48px;
+  --page: 1120px;
+  --gutter: 32px;
+  --gutter-phone: 20px;
+  --radius: 0px;
+  --shadow: none;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --motion-rule: 700ms;
+}

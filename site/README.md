@@ -1,6 +1,6 @@
 # ShipRight site
 
-Static site for ShipRight 1.0.0. It does not deploy itself.
+Static preview for ShipRight 1.1.0. Three proposed directions. None is approved. It does not deploy itself.
 
 ## Develop
 
@@ -12,9 +12,11 @@ npm run dev
 
 `npm run dev` and `npm run build` copy the gallery images from `examples/before-after/` into `public/gallery/`. That folder is gitignored.
 
+Open `/` and choose Split, Night, or Press.
+
 ## Deploy on Vercel
 
-Do not deploy until you approve the look and the install lines.
+Do not deploy until a direction is approved.
 
 1. Import `aiwithaltaz/shipright-skills`.
 2. Set the root directory to `site`.
@@ -30,11 +32,13 @@ From the repository root, after `npm run build` inside `site/`:
 
 ```bash
 node scripts/check-ui.mjs site/dist/index.html --root site/dist
-node scripts/check-ui.mjs site/dist/design/index.html --root site/dist
+node scripts/check-ui.mjs site/dist/preview/split/index.html --root site/dist
+node scripts/check-ui.mjs site/dist/preview/night/index.html --root site/dist
+node scripts/check-ui.mjs site/dist/preview/press/index.html --root site/dist
 ```
 
-Open both screenshots. Fix every failure.
+Open the screenshots. Fix every failure.
 
 ## Docs
 
-The build pack for this site is in [docs/shipright/](docs/shipright/01-prd.md) and [DESIGN.md](DESIGN.md). Tokens: [design/tokens.css](design/tokens.css).
+The build pack for this site is in [docs/shipright/](docs/shipright/01-prd.md) and [DESIGN.md](DESIGN.md).

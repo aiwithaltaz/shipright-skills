@@ -145,7 +145,7 @@ Historical evaluations stay unchanged under `evals/`. The [IVC example](examples
 
 ## Website
 
-The public site lives in [site/](site/README.md). It is a static Astro app. Deploy it on Vercel with the root directory set to `site`. This repository does not deploy or publish it on its own.
+The public site in [site/](site/README.md) is a design preview: three proposed directions, not an approved page. It is a static Astro app. Do not deploy it until a direction is chosen. When you do, set the Vercel root directory to `site`.
 
 ## License
 
