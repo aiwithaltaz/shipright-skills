@@ -1,0 +1,15 @@
+{
+  "method": "Single local Chromium desktop run, no throttling, software WebGL. Not field or physical phone performance.",
+  "metrics": {
+    "lcp": 220,
+    "cls": 0,
+    "domContentLoaded": 236.19999999925494
+  },
+  "externalRequests": [],
+  "keyboard": "Gallery selection, mode disclosure and install action activated with Enter; focus outline is solid 3px.",
+  "focus": {
+    "outline": "solid",
+    "width": "3px"
+  },
+  "touchScrollY": 335
+}

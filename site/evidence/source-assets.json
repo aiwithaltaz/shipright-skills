@@ -1,0 +1,30 @@
+{
+  "site/public/gallery/ivc-before.png": {
+    "source": "examples/ivc-2026-registration/figma-redesign/before-person-details.png",
+    "sha256": "858af80a728b09fcec4804f54c2fe7c24ada3b9a0306b82742c83f6d325b9149"
+  },
+  "site/public/gallery/ivc-after.png": {
+    "source": "examples/ivc-2026-registration/figma-redesign/after-person-details.png",
+    "sha256": "f4de08b7fa6b33f92a2ec9aaed091106b460b0647a79a8eb62781979b28a17a7"
+  },
+  "site/public/gallery/dashboard-before.png": {
+    "source": "examples/before-after/v1.0/saas-dashboard/before-desktop.png",
+    "sha256": "42cdeadecad827301444d6985e7d2d2adc3377b1246aabecb7c50c54d30b6f96"
+  },
+  "site/public/gallery/dashboard-after.png": {
+    "source": "examples/before-after/v1.0/saas-dashboard/after-desktop.png",
+    "sha256": "52bf8f8fbadb0e8a0c77258897cfe9535b66e3c644daee1c7f0e37ee4ecc89f1"
+  },
+  "site/public/gallery/product-before.png": {
+    "source": "examples/before-after/v1.0/3d-product-fixed/before-desktop.png",
+    "sha256": "ba41b27877d8c4205daa0333ea673889c54009ed23a98fb1d83e7caf1cf423e1"
+  },
+  "site/public/gallery/product-after.png": {
+    "source": "examples/before-after/v1.0/3d-product-fixed/after-desktop.png",
+    "sha256": "d5245de0b469f1fbadd1799e472cd0b28729b71965b99ab985052e31236a4767"
+  },
+  "site/public/downloads/shipright.zip": {
+    "source": "dist/shipright.zip",
+    "sha256": "35c76d6a1e8bfa870c97bb7ce414499f0107d661f6fdfe233a4c2ad439a620d4"
+  }
+}

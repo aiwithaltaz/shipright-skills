@@ -1,0 +1,117 @@
+{
+ "target": "http://127.0.0.1:4181",
+ "profile": "premium",
+ "checkedAt": "2026-10-14T22:00:21.481Z",
+ "viewports": {
+  "desktop": {
+   "results": [],
+   "metrics": {
+    "heroVisible": true,
+    "unsupportedProof": 0,
+    "undeclaredProof": 0,
+    "visibleWords": "Skip to content shipright ONE SKILL. FIVE MODES. See the work Install ShipRight A BETTER PLACE TO BEGIN Context before generate. Product before pixels. An AI skill for planning, designing and checking your next product. See what goes into it SHIPRIGHT / BUILD-PACK 01–05 A clear brief. A considered build. BUILD-PACK OUTPUT STRUCTURE 01 01-prd.md The job, the scope, the decisions. 02 02-technical-architecture.md The structure behind the product. 03 DESIGN.md A system, before a screen. 04 04-frontend-spec.md Every screen, state and interaction. 05 05-feature-ticket-list.md Exact prompts for the builder. CONTEXT / PRODUCT / BUILD S/R The actual output. Not another blank canvas. CONTEXT BEFORE GENERATE. PRODUCT BEFORE PIXELS. SCROLL TO READ 01 / 06 02 / SEE THE DIFFERENCE From a screen to a clearer job. Real examples from the repository. No invented results. IVC registration SaaS dashboard Product website Before After Owner Figma redesign, reconstructed desk frames. Illustration sizes, not measured tokens. View source 03 / CHOOSE YOUR WAY IN One skill. Five ways in. You don't need a different skill for every step. Start where the work is. 01 build-pack From idea to build + 02 product-design Frame the product + 03 ui-ux-design Specify the experience + 04 ux-critique Review the work + 05 ship-check Check before launch + 04 / WHAT YOU TAKE WITH YOU The work behind the work. SHIPRIGHT THE BUILD PACK Product. Structure. System. Then pixels. 01-prd.md 02-technical-architecture.md DESIGN.md 04-frontend-spec.md 05-feature-ticket-list.md Actual artifact names from the build-pack contract. A sequence that makes room for judgment. 01 Research Understand the visitor, the product, the story and the available assets. 02 Plan Set the scope, product brief and six-act story before the visuals. 03 3 options Compare different stories and techniques. Choose before building. 04 Build Implement the chosen direction with exact prompts. 05 Critique Review the rendered result and fix the findings. 06 Ship check Verify the evidence before calling the work ready. Source: the ShipRight skill 05 / YOUR NEXT BUILD STARTS HERE Put context to work. Install one skill. Start with the right question. Any skills-compatible tool npx skills add aiwithaltaz/shipright-skills Copy command Claude Code /plugin marketplace add aiwithaltaz/shipright-skills /plugin install shipright@shipright Copy commands Claude.ai Download shipright.zip. Open Customize, then Skills, and upload the zip. Copy steps Download zip ChatGPT Download shipright-chatgpt.md. Attach it as project instructions or Custom GPT instructions. Copy steps Download file Read the skill on GitHub shipright Context before generate. Product before pixels. Back to top ONE SKILL. FIVE MODES. GITHUB 06 / 06",
+    "overflowX": 0,
+    "pageHeight": 5771,
+    "h1": 1,
+    "families": [
+     [
+      "Liberation Sans",
+      84
+     ],
+     [
+      "Liberation Serif",
+      27
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 0,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [
+     {
+      "w": 510,
+      "h": 802,
+      "labeled": true
+     }
+    ],
+    "hiddenText": 0,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true,
+    "reduced": {
+     "hiddenText": 0,
+     "heroVisible": true,
+     "overflowX": 0,
+     "contentChanged": false
+    }
+   }
+  },
+  "phone": {
+   "results": [],
+   "metrics": {
+    "heroVisible": true,
+    "unsupportedProof": 0,
+    "undeclaredProof": 0,
+    "visibleWords": "Skip to content shipright Install ShipRight A BETTER PLACE TO BEGIN Context before generate. Product before pixels. An AI skill for planning, designing and checking your next product. See what goes into it SHIPRIGHT / BUILD-PACK 01–05 A clear brief. A considered build. BUILD-PACK OUTPUT STRUCTURE 01 01-prd.md The job, the scope, the decisions. 02 02-technical-architecture.md The structure behind the product. 03 DESIGN.md A system, before a screen. 04 04-frontend-spec.md Every screen, state and interaction. 05 05-feature-ticket-list.md Exact prompts for the builder. CONTEXT / PRODUCT / BUILD S/R The actual output.Not another blank canvas. SCROLL TO READ 01 / 06 02 / SEE THE DIFFERENCE From a screen to a clearer job. Real examples from the repository. No invented results. IVC registration SaaS dashboard Product website Before After Owner Figma redesign, reconstructed desk frames. Illustration sizes, not measured tokens. View source 03 / CHOOSE YOUR WAY IN One skill. Five ways in. You don't need a different skill for every step. Start where the work is. 01 build-pack + 02 product-design + 03 ui-ux-design + 04 ux-critique + 05 ship-check + 04 / WHAT YOU TAKE WITH YOU The work behind the work. SHIPRIGHT THE BUILD PACK Product. Structure. System. Then pixels. 01-prd.md 02-technical-architecture.md DESIGN.md 04-frontend-spec.md 05-feature-ticket-list.md Actual artifact names from the build-pack contract. A sequence that makes room for judgment. 01 Research Understand the visitor, the product, the story and the available assets. 02 Plan Set the scope, product brief and six-act story before the visuals. 03 3 options Compare different stories and techniques. Choose before building. 04 Build Implement the chosen direction with exact prompts. 05 Critique Review the rendered result and fix the findings. 06 Ship check Verify the evidence before calling the work ready. Source: the ShipRight skill 05 / YOUR NEXT BUILD STARTS HERE Put context to work. Install one skill. Start with the right question. Any skills-compatible tool npx skills add aiwithaltaz/shipright-skills Copy command Claude Code /plugin marketplace add aiwithaltaz/shipright-skills /plugin install shipright@shipright Copy commands Claude.ai Download shipright.zip. Open Customize, then Skills, and upload the zip. Copy steps Download zip ChatGPT Download shipright-chatgpt.md. Attach it as project instructions or Custom GPT instructions. Copy steps Download file Read the skill on GitHub shipright Context before generate. Product before pixels. Back to top ONE SKILL. FIVE MODES. GITHUB 06 / 06",
+    "overflowX": 0,
+    "pageHeight": 6774,
+    "h1": 1,
+    "families": [
+     [
+      "Liberation Sans",
+      76
+     ],
+     [
+      "Liberation Serif",
+      27
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 0,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [
+     {
+      "w": 343,
+      "h": 707,
+      "labeled": true
+     }
+    ],
+    "hiddenText": 0,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true,
+    "reduced": {
+     "hiddenText": 0,
+     "heroVisible": true,
+     "overflowX": 0,
+     "contentChanged": false
+    }
+   }
+  }
+ }
+}

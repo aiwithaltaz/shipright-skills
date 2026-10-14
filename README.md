@@ -1,6 +1,6 @@
 # ShipRight
 
-**Version 1.2.0, unreleased branch**
+**Version 1.2.0**
 **Context before generate. Product before pixels.**
 
 ShipRight is one skill, named `shipright`, for Claude Code, Cursor, Codex, VS Code, Antigravity, Gemini CLI, Claude.ai, and ChatGPT.
@@ -23,6 +23,10 @@ Two fresh builders used the updated pack, supplied facts and owner-selected stor
 | Field Recorder One, SAMPLE | [Depth reference](examples/before-after/1.2/depth/desktop.png) | [Desktop](examples/before-after/1.2/field-recorder/evidence/check-ui-polish/desktop.png), [phone](examples/before-after/1.2/field-recorder/evidence/check-ui-polish/phone.png) | [Different product proof](examples/before-after/1.2/field-recorder/compare.png) | [WebM](examples/before-after/1.2/field-recorder/evidence/scroll.webm) |
 
 The comparisons use actual 1280x800 browser captures. Recorder is a separate synthetic product, not a former Depth product. The generated prompts are 1,019 and 1,076 words. Both builds pass; both premium checks have zero failures. Compact-label warnings remain disclosed. Reduced-motion and no-WebGL evidence is retained alongside the screenshots. Software WebGL and one fresh builder per proof do not establish physical-phone performance or universal model behavior. External reference screenshot fidelity is not verified because the earlier upload is absent and verified browser reference navigation still fails on environment trust; Brand Studio presents a CAPTCHA challenge.
+
+## Website
+
+The owner-approved Product Manuscript now has a standalone website in [site/](site/README.md), with real examples, IVC comparisons and installs for each supported format. See the [desktop](site/evidence/desktop.png), [phone](site/evidence/phone.png), [scroll video](site/evidence/scroll.webm), [critique](site/evidence/ux-critique.md) and [ship check](site/evidence/ship-check.md). Vercel configuration is included; the site has not been deployed.
 
 ## Install
 
