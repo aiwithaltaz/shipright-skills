@@ -12,3 +12,5 @@ Captured on 2026-10-14 from the production build, using Chromium 154 and Playwri
 - [UX critique](ux-critique.md), [ship check](ship-check.md).
 
 The static build was served locally with a handler returning the supplied 404.html with status 404 for missing routes. Production Vercel behavior is not verified because the site was not deployed. No TLS verification was bypassed. There is no hosted preview.
+
+[Final verification and repository test logs](verification.md). Copy feedback is also captured in [success](phone-copy.png) and [denied access](phone-copy-denied.png).

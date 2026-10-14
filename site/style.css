@@ -19,3 +19,5 @@
 .skip-link{min-height:44px;display:inline-flex;align-items:center}
 /* Keep the named product visible on shorter phone screens. */
 @media(max-width:700px){.masthead{min-height:76px;flex-wrap:nowrap}.masthead nav>a:first-child{display:none}.hero-copy h1{font-size:clamp(36px,10.25vw,40px)}.hero-layout{padding-top:20px;gap:12px}.context{margin-bottom:12px}.hero-copy p{margin-top:16px}.hero-copy .text-link{margin-top:12px}}
+
+.install-status{min-height:52px;font-size:16px;line-height:1.6;margin-top:16px;color:var(--ink)}.close #copy-status{margin-top:16px}

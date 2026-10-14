@@ -1,0 +1,8 @@
+PASS: bounded context and direct conditional references
+{'package': 'tiktoken', 'version': '0.12.0', 'encoding': 'cl100k_base'}: 53 files; always shared 1699; all shared 3031; no global knowledge cap.
+product-design: largest declared normal path 6174/12000 tokens
+ship-check: largest declared normal path 6006/12000 tokens
+ui-ux-design: largest declared normal path 11008/12000 tokens
+ux-critique: largest declared normal path 6677/12000 tokens
+build-pack: largest declared normal path 9354/12000 tokens
+Static declarations do not guarantee client loading or universal provider token counts.

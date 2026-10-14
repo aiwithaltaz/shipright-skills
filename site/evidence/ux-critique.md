@@ -11,6 +11,7 @@ Artifact: website v1 on feat/shipright-website-v1, 2026-10-14. Local production 
 | Cut-off PRODUCT type behind the paper | Unreadable decoration, Major | Removed the background word | Opening screenshots; no background type |
 | Risk of paper covering headline | Essential promise could become unreadable, Major | Separate grid columns; stack below 950; no manuscript rotation | 320, 390, 768, 950, 1280, 1600: no intersection |
 | Compact labels and filenames | Reading friction, Major | Larger labels and descriptions; two font families | Premium checker: 0 failures, 0 warnings, no compact-text warning |
+| Copy status below the install grid | Sighted visitors could miss confirmation, Major | Added local live status beside every copy control | Each copy result and denied-access recovery is visible in its own install article |
 | Skip link shorter than 44px | Small phone target, Polish | Minimum 44px height | Final checker: no touch-target warning |
 
 ## Taste
