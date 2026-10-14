@@ -519,6 +519,9 @@
         },
         "skills/shipright/modes/ui-ux-design/references/page-transition.md": {
           "when": "For chosen page transition, read [page-transition.md](../ui-ux-design/references/page-transition.md)."
+        },
+        "skills/shipright/modes/build-pack/references/act-prompts.md": {
+          "when": "For a chosen premium page, read [act-prompts.md](references/act-prompts.md) instead of app ticket prompts and golden examples."
         }
       },
       "normal_paths": [
@@ -663,6 +666,14 @@
             "skills/shipright/modes/ui-ux-design/references/object-in-front-of-text.md",
             "skills/shipright/modes/ui-ux-design/references/block-wipe.md",
             "skills/shipright/modes/ui-ux-design/references/text-scramble.md"
+          ]
+        },
+        {
+          "task": "Premium C: six-act prompt",
+          "references": [
+            "skills/shipright/modes/build-pack/references/act-prompts.md",
+            "skills/shipright/modes/build-pack/references/pack-contract.md",
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md"
           ]
         }
       ]

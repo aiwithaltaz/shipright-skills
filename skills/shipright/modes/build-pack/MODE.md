@@ -8,8 +8,8 @@ description: "Use this when someone brings an idea for a website, SaaS app, mobi
 **Pack version:** 1.1.0
 **Context before generate. Product before pixels.**
 
-Idea in, build pack out. Give the builder exact prompts.
-For a single screen or a correction, use ui-ux-design. For a review, use ux-critique. For launch evidence, use ship-check.
+Give the builder exact prompts.
+Screens: ui-ux-design. Reviews: ux-critique. Launch: ship-check.
 
 ## Full flow for a new project
 
@@ -51,6 +51,8 @@ For chosen cursor-reactive 3d, read [cursor-reactive-3d.md](../ui-ux-design/refe
 For chosen sound toggle, read [sound-toggle.md](../ui-ux-design/references/sound-toggle.md).
 
 For chosen page transition, read [page-transition.md](../ui-ux-design/references/page-transition.md).
+
+For a chosen premium page, read [act-prompts.md](references/act-prompts.md) instead of app ticket prompts and golden examples.
 
 ## INTAKE
 

@@ -1,6 +1,6 @@
 # ShipRight 1.2: progress
 
-**Next step:** Phase 3, act prompts. All five decisions approved in the owner request on 14 October 2026.
+**Next step:** Phase 4, taste critique and premium checker. All five decisions approved in the owner request on 14 October 2026.
 
 Branch: `cursor/shipright-1-2-plan-e2d8`. Base: `main` at `443fbf1`. Draft PR: https://github.com/aiwithaltaz/shipright-skills/pull/19
 
@@ -25,3 +25,5 @@ Branch: `cursor/shipright-1-2-plan-e2d8`. Base: `main` at `443fbf1`. Draft PR: h
 - Phase 1: research cards and six-act product plan added. Existing app intake retained. Baseline inspection recorded.
 
 - Phase 2: premium path, exactly three story options and ten individually loaded technique recipes. New projects cannot skip steps.
+
+- Phase 3: six-act prompt recipe, sample chair example and premium ticket budget exception. App cap unchanged.
