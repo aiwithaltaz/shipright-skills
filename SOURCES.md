@@ -4,6 +4,31 @@ Provenance for ShipRight guidance. Skills never load this file; they cite it.
 Sources are guidance, not this product's findings, brand authority or approval. Ideas are borrowed; text is not copied.
 Registers below are kept from earlier phases with their original access dates. New v1.0 sources are listed first.
 
+## 1.2 premium web sources
+
+Reference provenance: the owner's 16-site screenshot study, recorded 14 October 2026 in docs/rebuild-1.2/CONTEXT.md. The upload is not available in this checkout. These are pattern inspirations from that record, not claims that this implementation visited or copied every live site. Ideas only: no copied site code, prompt wording, layouts, screenshots, models or other assets. Site licenses are not assumed to grant reuse.
+
+| Reference | Idea credited |
+| --- | --- |
+| https://jeskojets.com | Real product between split type, camera through a window, product flight |
+| https://itomdev.com | Immersive scene and scroll-led staging |
+| https://why.zero.university | Optional entry gesture and scene warm-up; never mandatory access |
+| https://brand-studio.co | FAQ row hover inversion and in-place expansion |
+| https://benjamincreative.me | Stepped editorial block wipe and one-shot text scramble |
+| https://other-matter-ten.vercel.app | Material inspection, object interaction and annotations |
+| https://jesperlandberg.com | Scroll-responsive project presentation |
+| https://felixrieseberg.com | Product objects as meaningful navigation |
+| https://ednaho.com | Product-focused staging and restrained type hierarchy |
+| https://haoqi.design | Portfolio scene and editorial pacing |
+| https://carterogunsola.com | Interactive presentation and transitions |
+| https://experience2026.funtech.inc | Immersive scene choreography |
+| https://aardvarkbookclub.com | Real books as the hero subject |
+| https://the-small-square-monolith.vercel.app | Single object on a stage |
+| https://vividsites.app/templates | Six-act prompt architecture and 550 to 1,700 word range, independently rewritten |
+| https://threeui.com | Procedural hero pattern ideas only; no Community code copied |
+
+Three.js, React Three Fiber and Lenis are MIT projects. GSAP is **not MIT** and remains installed by each project under its own terms. No GSAP code is added to the skill. Individual technique recipes are original instructions. Existing historical vendor evidence remains unchanged.
+
 ## v1.0 sources (accessed 2026-10-13)
 
 | Source | License | What ShipRight borrows |

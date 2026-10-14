@@ -31,3 +31,5 @@ Branch: `cursor/shipright-1-2-plan-e2d8`. Base: `main` at `443fbf1`. Draft PR: h
 - Phase 4 in progress: premium checker and taste gate added. Tests follow before proof.
 
 - Phase 4: premium checker and taste gate complete. 55 tests ran; 53 passed initially. Fixed the shared full-flow section boundary and refreshed local distribution artifacts, then both affected suites passed (7 tests). No release was published.
+
+- Credits: all 16 requested reference sites recorded as idea sources, with explicit limits on available reference evidence and no copied assets or code.
