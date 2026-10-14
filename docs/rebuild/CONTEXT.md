@@ -75,6 +75,8 @@ The frozen baseline (0.6.2 + 5.1) is stronger than the plan assumed. Do not buil
 | D18 | Golden examples use different subjects from the four trial cases (invoices, dentist, note app, desk lamp). | Avoid teaching to the test. | Made, Phase 3 |
 | D19 | check-ui tiny-target rule follows WCAG 2.5.8: a checkbox or radio counts its label as target area, and an undersized target passes when a 24px circle on its center touches no other target. Both arms are re-measured with the fixed checker; raw outputs stay unchanged. | The first version flagged spaced table-row links and labeled radios that WCAG allows. Found while checking Phase 3 runs. | Made, Phase 3 trial |
 | D20 | Final trial uses one new v1.0 run per case against the frozen baseline, not two runs per arm. | Altaz asked to save time and credits (D11); one run keeps the same comparison design. Stated as a limit. | Made, Phase 6 |
+| D21 | Pack link checks skip raw trial outputs (evals/v1/runs, evals/v1/grades), like the em dash rule. | Raw outputs stay unchanged; their links point into the user's future project. | Made, pre-merge |
+| D22 | Multi-column grids collapse to one column below 760px; tracks use minmax(0, 1fr); text flex children get min-width: 0. | The marketing re-run scrolled 158px sideways from a 12-column grid with 48px gaps on a phone. | Made, pre-merge; not re-run |
 | D7 | Provenance and theory move to a SOURCES.md that skills never load. | Credit stays; tokens drop. | Made |
 
 ## Sources reviewed

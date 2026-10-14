@@ -1,6 +1,6 @@
 # ShipRight v1.0 rebuild: progress
 
-**Next step:** Done. PR https://github.com/aiwithaltaz/shipright-skills/pull/16 is open for Altaz's review. Do not merge. Possible follow-ups: re-run the marketing case after the hidden-content fix; let trial runs use check-ui (would need a new frozen protocol).
+**Next step:** Done. PR https://github.com/aiwithaltaz/shipright-skills/pull/16 is open for Altaz's review. Do not merge. Pre-merge requests done (2026-10-14): marketing re-run passes hidden-content but fails overflow (158px, grid rule added, not re-run); CHANGELOG image links; GSAP license notes. Possible follow-up: let trial runs use check-ui (needs a new frozen protocol).
 
 Branch: `claude/nifty-brahmagupta-ds6xrg`. One PR at the end. No merge, no publish.
 

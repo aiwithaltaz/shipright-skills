@@ -34,5 +34,40 @@
    "questions.md": "c2c78f2b968ff313b2d8bb2b5cd71e79311cec761ef77d4452a4c02b8f1e1fbf",
    "reply.md": "53d82cf7af22fdf884239959873797910562d925b6a4b44c558b3bd8004a261a"
   }
+ },
+ "marketing-site": {
+  "reply_words": 300,
+  "questions_words": 363,
+  "build_pack_words": 6936,
+  "build_pack_files": [
+   "build-pack/.cursor/rules/shipright.mdc",
+   "build-pack/DESIGN.md",
+   "build-pack/design/tokens.css",
+   "build-pack/docs/shipright/01-prd.md",
+   "build-pack/docs/shipright/02-technical-architecture.md",
+   "build-pack/docs/shipright/04-frontend-spec.md",
+   "build-pack/docs/shipright/05-feature-ticket-list.md",
+   "build-pack/docs/shipright/build-rules.md"
+  ],
+  "html_bytes": 33381,
+  "check_ui_fail": 1,
+  "check_ui_warn": 1,
+  "check_ui_findings": [
+   "FAIL overflow",
+   "WARN touch-targets"
+  ],
+  "sha256": {
+   "build-pack/.cursor/rules/shipright.mdc": "897af58050d83c0f2aafc8c9b26bcfbf3d3b1a88804f2ed5b79c161a82017f7c",
+   "build-pack/DESIGN.md": "cd8242a6127c8f570bc91113009a5eaa3d36beb259442eb79e18c7e266bf12ae",
+   "build-pack/design/tokens.css": "9af56fec270dff20520d92137e7ffd918dcbd034d90b6347211af3c16e93aac1",
+   "build-pack/docs/shipright/01-prd.md": "3cc032fc461356212f67947f45f65fa2fe14820646fd3a0da9f516ab6b61ddbe",
+   "build-pack/docs/shipright/02-technical-architecture.md": "3f791b1093fe2cb53e85f9071768de8510951c37965d7fdb02c23af1fce6064a",
+   "build-pack/docs/shipright/04-frontend-spec.md": "139d152101045a52f8a55979bfc288b36865d8cb35416825dd7a395da58a8044",
+   "build-pack/docs/shipright/05-feature-ticket-list.md": "4bea4828bac59c195afb1f04fd8bcd4d21c0f96b43a6c162946f431ddb1260bb",
+   "build-pack/docs/shipright/build-rules.md": "e5d92f2d84e918538a36427e369e6d8f817cfd215ec3d24cba455d00129292ab",
+   "index.html": "1fc40789852e264f05a8f8ac59d0f49b590571c87447b77d32120e5cf40d9f2d",
+   "questions.md": "45c60b182d33a1d2e5ef47f68065ac3f92da33773c64225db4ceff6463d51272",
+   "reply.md": "87119acd1718606b33798a169be61ab4d14f0df698bc419d15da2b331976ff75"
+  }
  }
 }

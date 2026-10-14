@@ -50,7 +50,18 @@ One fresh 3D run with the fixed pack (462d445), graded blind by a new grader aga
 
 The grader preferred the fixed run: Buy in the hero, a fuller page and paste-ready tickets. Its top fix: mark the feature copy as sample until the owner confirms it.
 With this re-check in place of the failed 3D run, the four cases total **112 / 120 for v1.0 against 93 / 120 for baseline**, four of four better, no unshippable runs.
-The marketing run also failed the new hidden-content rule but was graded 28 and was not re-run; the same fix applies to it, unverified by a trial.
+## Marketing re-run after the fix
+
+Requested by Altaz before merge. One fresh marketing run with the same fixed pack (462d445). Checked with check-ui only; not graded. Raw: [runs/v1.0-fix/marketing-site](runs/v1.0-fix/marketing-site/).
+
+| Check | Final trial run | Re-run after fix |
+| --- | --- | --- |
+| hidden-content | FAIL (2) | **Pass** (0 at 1280 and 390) |
+| overflow at 390px | Pass | **FAIL**, 158px |
+| touch targets under 44px | WARN | WARN (7) |
+
+The motion fix worked: no content is hidden at load. The re-run has a new, separate defect: its "How the beta works" section keeps a 12-column grid with 48px gaps on a phone, which needs 528px. After this, layout-and-hierarchy.md and the editorial starter system require multi-column grids to collapse to one column below 760px, with `minmax(0, 1fr)` tracks and `min-width: 0` on text flex children. That new rule has not been re-run.
+The look-and-fix loop (run check-ui, fix every FAIL) would catch this overflow in normal use; the trial prompt forbids it (D16).
 
 ## Measured (current checker, both arms)
 

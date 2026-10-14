@@ -18,7 +18,8 @@ import tempfile
 ROOT = Path(__file__).resolve().parents[1]
 # Verbatim user-supplied source documents. Kept byte-for-byte, so pack style rules do not apply.
 VERBATIM_SOURCES = {'docs/rebuild/BLUEPRINT.md'}
-# Raw trial outputs and grades are evidence. They stay unchanged; style misses are measured, not edited.
+# Raw trial outputs and grades are evidence. They stay unchanged; style misses are measured, not edited,
+# and links inside them point into the user's future project, so pack link checks skip them.
 RAW_EVIDENCE_DIRS = ('evals/v1/runs/', 'evals/v1/grades/')
 ICONS = 'skills/ui-ux-design/references/icons-and-placement.md'
 HEAVY_ACCENT = 'without a heavy accent bar unless the design system says so'
@@ -413,7 +414,10 @@ def validate(root):
     for path in sorted(root.rglob('*.md')):
         if '.git' in path.relative_to(root).parts:
             continue
-        rel = path.relative_to(root); text = read(rel)
+        rel = path.relative_to(root)
+        if rel.as_posix().startswith(RAW_EVIDENCE_DIRS):
+            continue  # raw trial output links point into the user's future project, not this pack
+        text = read(rel)
         prose = strip_fences(text)
         targets = re.findall(r'!?\[[^\]]*\]\(([^\s)]+)(?:\s+"[^"]*")?\)', prose)
         if rel.parts[0] == 'skills':

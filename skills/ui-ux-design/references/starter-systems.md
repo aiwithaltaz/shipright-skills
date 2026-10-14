@@ -40,7 +40,7 @@ Every pair below was measured: text 4.5:1 or better, field borders 3:1 or better
 | --- | --- |
 | Type | One family, or one display face plus one text face. Text 17 to 18 on desktop, 16 on phone, line length 60 to 72 characters. Display 48 to 72 desktop, 34 to 40 phone, tracking -0.02em, line height 1.05. Five sizes on a page at most. |
 | Color | bg #FBFBFA, surface #FFFFFF, sunken #F1F1EE, text #141519, muted #55585F, border #E2E2DE, accent #1F4FD8, field tint #E9EEFB. One accent, used on the action and at most one other thing. |
-| Layout | 12-column grid, max 1200, margins 24 desktop and 20 phone. Section spacing 80 to 112 desktop, 56 to 72 phone. Not more: empty bands read as unfinished. |
+| Layout | 12-column grid on desktop, one column below 760px, max 1200, margins 24 desktop and 20 phone. Section spacing 80 to 112 desktop, 56 to 72 phone. Not more: empty bands read as unfinished. |
 | Buttons | One filled primary per view, plus a text link. Height 44 to 48, radius 8 or fully square, decided once. |
 
 ## D. Immersive dark: 3D product and showcase sites

@@ -58,6 +58,7 @@ Keep selection distinct from keyboard focus and validation.
 - A preview opens in the normal, populated state. Loading, empty and error states appear behind a labeled state switcher or in a separate states section, never as failure text on first view.
 - Values that compare across rows (meters, amounts, dates) get fixed-width slots so they line up.
 - Below about 760px, side-by-side text columns stack full width; nothing keeps a narrow desktop column.
+- Every multi-column grid collapses to one column below about 760px, or shrinks its gap to fit. A 12-column grid with 48px gaps needs 528px of gaps alone, wider than a phone. Grid tracks use `minmax(0, 1fr)`; flex children that hold text get `min-width: 0`.
 - Controls stay inside the page container at every width.
 
 ## Look before handoff

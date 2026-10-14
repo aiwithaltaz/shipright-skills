@@ -31,6 +31,21 @@ Idea in, build pack out. ShipRight now works like a small agency team and hands 
 
 Final blind trial: 112/120 for v1.0 against 93/120 for 0.6.2 with the fixed 3D re-check (105/120 as first run, when the 3D page hid content behind a scroll animation and was unshippable). Phase 3 trial: 107 against 94. Details and limits: [evals/v1/results-final.md](evals/v1/results-final.md).
 
+### Before and after
+
+Actual generated outputs from the same frozen prompts: 0.6.2 on the left, 1.0 on the right.
+
+- SaaS dashboard: [desktop](examples/before-after/v1.0/saas-dashboard/compare-desktop.png), [phone](examples/before-after/v1.0/saas-dashboard/compare-phone.png).
+- Mobile form flow: [phone](examples/before-after/v1.0/mobile-form/compare-phone.png), [desktop](examples/before-after/v1.0/mobile-form/compare-desktop.png).
+- Marketing site, final trial run: [desktop](examples/before-after/v1.0/marketing-site/compare-desktop.png), [phone](examples/before-after/v1.0/marketing-site/compare-phone.png). This run hid some content until scroll.
+- Marketing site, re-run after the motion fix: [desktop](examples/before-after/v1.0/marketing-site-fixed/compare-desktop.png), [phone](examples/before-after/v1.0/marketing-site-fixed/compare-phone.png). Hidden content now passes; this run scrolls 158px sideways on a phone, see results-final.md.
+- 3D product site, re-run after the motion fix: [desktop](examples/before-after/v1.0/3d-product-fixed/compare-desktop.png), [phone](examples/before-after/v1.0/3d-product-fixed/compare-phone.png).
+- 3D product site, first final run (unshippable, kept for the record): [desktop](examples/before-after/v1.0/3d-product/compare-desktop.png).
+
+![SaaS dashboard, 0.6.2 and 1.0](examples/before-after/v1.0/saas-dashboard/compare-desktop.png)
+
+![3D product site after the fix, 0.6.2 and 1.0](examples/before-after/v1.0/3d-product-fixed/compare-desktop.png)
+
 ## 0.6.2 - 2026-10-08
 
 A vague idea was still turning into a full product and a generic screen before anyone answered. This version stops that, and keeps a picture of the difference.
