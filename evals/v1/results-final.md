@@ -60,8 +60,22 @@ Requested by Altaz before merge. One fresh marketing run with the same fixed pac
 | overflow at 390px | Pass | **FAIL**, 158px |
 | touch targets under 44px | WARN | WARN (7) |
 
-The motion fix worked: no content is hidden at load. The re-run has a new, separate defect: its "How the beta works" section keeps a 12-column grid with 48px gaps on a phone, which needs 528px. After this, layout-and-hierarchy.md and the editorial starter system require multi-column grids to collapse to one column below 760px, with `minmax(0, 1fr)` tracks and `min-width: 0` on text flex children. That new rule has not been re-run.
-The look-and-fix loop (run check-ui, fix every FAIL) would catch this overflow in normal use; the trial prompt forbids it (D16).
+The motion fix worked: no content is hidden at load. The re-run has a new, separate defect: its "How the beta works" section keeps a 12-column grid with 48px gaps on a phone, which needs 528px. After this, layout-and-hierarchy.md and the editorial starter system require multi-column grids to collapse to one column below 760px, with `minmax(0, 1fr)` tracks and `min-width: 0` on text flex children. The look-and-fix loop (run check-ui, fix every FAIL) would catch this overflow in normal use; the trial prompt forbids it (D16).
+
+## Marketing re-run with the grid rule
+
+Requested by Altaz after the previous re-run. One fresh marketing run from a pack copy of commit 3fa2470, which includes the grid-collapse rule. Same frozen prompt and harness. Checked with check-ui and by opening the full-page phone screenshot; not graded. Raw: [runs/v1.0-grid/marketing-site](runs/v1.0-grid/marketing-site/).
+
+| Check | Final trial run | Re-run after motion fix | Re-run with grid rule |
+| --- | --- | --- | --- |
+| hidden-content, 1280 and 390 | FAIL (2) | Pass | **Pass** (0 and 0) |
+| overflow, 1280 and 390 | Pass | FAIL at 390, 158px | **Pass** (0px and 0px) |
+| page errors | 0 | 0 | 0 |
+| touch targets under 44px | WARN | WARN (7) | WARN (1) |
+| check-ui totals | 2 FAIL, 1 WARN | 1 FAIL, 1 WARN | **0 FAIL, 1 WARN** |
+
+In the phone screenshot the four steps stack in one column and every section is visible. The one remaining warning is a single control under 44px.
+This is one run. It shows the grid rule fixed this overflow in this case; it is not a score, and the run was not blind-graded. Its pack is 8,711 words; two documents run over their word budgets (the frontend spec by about double), so word-budget compliance is not yet reliable.
 
 ## Measured (current checker, both arms)
 

@@ -39,6 +39,7 @@ Actual generated outputs from the same frozen prompts: 0.6.2 on the left, 1.0 on
 - Mobile form flow: [phone](examples/before-after/v1.0/mobile-form/compare-phone.png), [desktop](examples/before-after/v1.0/mobile-form/compare-desktop.png).
 - Marketing site, final trial run: [desktop](examples/before-after/v1.0/marketing-site/compare-desktop.png), [phone](examples/before-after/v1.0/marketing-site/compare-phone.png). This run hid some content until scroll.
 - Marketing site, re-run after the motion fix: [desktop](examples/before-after/v1.0/marketing-site-fixed/compare-desktop.png), [phone](examples/before-after/v1.0/marketing-site-fixed/compare-phone.png). Hidden content now passes; this run scrolls 158px sideways on a phone, see results-final.md.
+- Marketing site, re-run with the grid rule: [desktop](examples/before-after/v1.0/marketing-site-grid/compare-desktop.png), [phone](examples/before-after/v1.0/marketing-site-grid/compare-phone.png). Hidden content and phone overflow both pass at 1280 and 390 (0 FAIL, 1 WARN). Checked, not graded.
 - 3D product site, re-run after the motion fix: [desktop](examples/before-after/v1.0/3d-product-fixed/compare-desktop.png), [phone](examples/before-after/v1.0/3d-product-fixed/compare-phone.png).
 - 3D product site, first final run (unshippable, kept for the record): [desktop](examples/before-after/v1.0/3d-product/compare-desktop.png).
 

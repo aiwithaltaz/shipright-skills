@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SocialGhost beta: free access for useful feedback</title>
+<meta name="description" content="SocialGhost is a live AI tool that makes faceless YouTube videos. Apply for the limited beta. Testers get free access if they send useful feedback within 2 to 3 days.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Tokens: Proposed (ShipRight starter C, accent chosen for the subject). Source: DESIGN.md */
+:root {
+  --color-bg: #FBFBFA;
+  --color-surface: #FFFFFF;
+  --color-sunken: #F1F1EE;
+  --color-text: #141519;
+  --color-muted: #55585F;
+  --color-border: #E2E2DE;
+  --color-field-border: #767A82;
+  --color-accent: #0A6B66;
+  --color-accent-strong: #0B5A56;
+  --color-accent-tint: #E3F0EE;
+  --color-danger: #B3261E;
+
+  --font-sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --text-display: clamp(30px, 5.2vw, 56px);
+  --text-h2: clamp(26px, 3.4vw, 36px);
+  --text-h3: 20px;
+  --text-body: 16px;
+  --text-small: 14px;
+
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px;
+  --space-6: 24px; --space-8: 32px; --space-10: 40px; --space-12: 48px; --space-16: 64px;
+  --section-pad: 32px;
+  --gutter: 20px;
+  --max: 1200px;
+
+  --radius-control: 8px;
+  --radius-panel: 8px;
+  --button-height: 48px;
+
+  --ease-out: cubic-bezier(.23, 1, .32, 1);
+  --dur-press: 120ms;
+  --dur-once: 900ms;
+}
+@media (min-width: 761px) {
+  :root { --text-body: 18px; --section-pad: 48px; --gutter: 24px; }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 16px; }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+.skip {
+  position: absolute; left: var(--space-4); top: -64px; z-index: 10;
+  background: var(--color-surface); color: var(--color-text);
+  padding: var(--space-3) var(--space-4); border: 1px solid var(--color-text); border-radius: var(--radius-control);
+}
+.skip:focus { top: var(--space-3); }
+
+.wrap { width: 100%; max-width: calc(var(--max) + 2 * var(--gutter)); margin-inline: auto; padding-inline: var(--gutter); }
+.grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-8); }
+@media (min-width: 761px) {
+  .grid { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--space-6); row-gap: var(--space-8); }
+}
+
+h1 { font-size: var(--text-display); line-height: 1.05; letter-spacing: -0.02em; font-weight: 700; text-wrap: balance; }
+h2 { font-size: var(--text-h2); line-height: 1.12; letter-spacing: -0.015em; font-weight: 700; text-wrap: balance; }
+h3 { font-size: var(--text-h3); line-height: 1.3; font-weight: 600; }
+.small { font-size: var(--text-small); }
+.muted { color: var(--color-muted); }
+.measure { max-width: 62ch; }
+
+/* Header */
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); min-height: 64px; }
+.wordmark { font-weight: 700; font-size: 20px; letter-spacing: -0.01em; text-decoration: none; padding-block: var(--space-2); }
+.nav { display: flex; align-items: center; gap: var(--space-2); }
+.nav a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: var(--space-3); text-decoration: none; font-weight: 500; border-radius: var(--radius-control); }
+.nav .nav-extra { display: none; }
+.nav .nav-apply { font-weight: 600; color: var(--color-accent); text-decoration: underline; text-underline-offset: 4px; }
+@media (min-width: 761px) { .nav .nav-extra { display: inline-flex; } }
+@media (hover: hover) and (pointer: fine) { .nav a:hover { background: var(--color-sunken); } }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: var(--button-height); padding: 0 var(--space-6);
+  background: var(--color-accent); color: #fff;
+  border: 0; border-radius: var(--radius-control);
+  font: inherit; font-weight: 600; text-decoration: none; cursor: pointer;
+  transition: background-color var(--dur-press) var(--ease-out), transform var(--dur-press) var(--ease-out);
+}
+.btn:active { transform: scale(.98); }
+.btn[disabled] { background: var(--color-muted); cursor: not-allowed; }
+@media (hover: hover) and (pointer: fine) { .btn:hover:not([disabled]) { background: var(--color-accent-strong); } }
+.link { font-weight: 600; text-underline-offset: 4px; display: inline-flex; align-items: center; min-height: 44px; }
+
+section { padding-block: var(--section-pad); }
+.rule { border-top: 1px solid var(--color-border); }
+
+/* Hero */
+.hero { padding-top: var(--space-8); }
+.hero-copy { grid-column: 1 / -1; }
+.hero-copy .lede { margin-top: var(--space-5); max-width: 44ch; }
+.hero-actions { margin-top: var(--space-8); display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4) var(--space-6); }
+.hero-note { margin-top: var(--space-3); }
+.terms { grid-column: 1 / -1; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-panel); padding: var(--space-6); align-self: start; }
+@media (min-width: 761px) {
+  .hero { padding-top: var(--space-12); }
+  .hero-copy { grid-column: 1 / span 7; }
+  .terms { grid-column: 8 / span 5; padding: var(--space-8); }
+}
+.terms h2 { font-size: var(--text-h3); letter-spacing: 0; font-weight: 600; }
+.terms dl { margin-top: var(--space-4); }
+.terms .row { display: grid; grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr); gap: var(--space-4); padding-block: var(--space-3); border-top: 1px solid var(--color-border); }
+.terms dt { color: var(--color-muted); font-size: var(--text-small); padding-top: 3px; }
+.terms dd { font-weight: 600; }
+
+.track { margin-top: var(--space-5); }
+.track-bar { display: grid; grid-template-columns: 2fr 1fr; height: 40px; border-radius: var(--radius-control); overflow: hidden; border: 1px solid var(--color-field-border); background: var(--color-sunken); }
+.track-use { display: flex; align-items: center; padding-inline: var(--space-3); font-size: var(--text-small); font-weight: 500; }
+.track-fb { position: relative; display: flex; align-items: center; justify-content: center; font-size: var(--text-small); font-weight: 600; color: #fff; text-align: center; }
+.track-fb::before { content: ""; position: absolute; inset: 0; background: var(--color-accent); transform-origin: left center; transform: scaleX(.3); animation: fill var(--dur-once) var(--ease-out) .3s forwards; }
+.track-fb span { position: relative; }
+.track-days { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: var(--space-2); font-size: var(--text-small); color: var(--color-muted); }
+.track-days span { text-align: right; }
+@keyframes fill { to { transform: scaleX(1); } }
+
+/* What */
+.what-copy { grid-column: 1 / -1; }
+.what-copy p { margin-top: var(--space-4); }
+.what-fig { grid-column: 1 / -1; }
+@media (min-width: 761px) {
+  .what-copy { grid-column: 1 / span 5; }
+  .what-fig { grid-column: 6 / span 7; }
+}
+.what-fig svg { display: block; width: 100%; height: auto; border-radius: var(--radius-panel); }
+.what-fig figcaption { margin-top: var(--space-3); }
+.svg-text { font-family: var(--font-sans); }
+
+/* How */
+.how-head { grid-column: 1 / -1; }
+.steps { grid-column: 1 / -1; counter-reset: step; }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: var(--space-4); padding-block: var(--space-5); border-top: 1px solid var(--color-border); }
+.steps li:last-child { border-bottom: 1px solid var(--color-border); }
+.steps li::before { content: counter(step); font-weight: 700; font-size: var(--text-h3); color: var(--color-accent); font-variant-numeric: tabular-nums; line-height: 1.3; }
+.steps h3 { margin-bottom: var(--space-1); }
+.feedback { grid-column: 1 / -1; background: var(--color-accent-tint); border-radius: var(--radius-panel); padding: var(--space-6); align-self: start; }
+.feedback ul { margin-top: var(--space-4); }
+.feedback li { padding-block: var(--space-2); padding-left: var(--space-5); position: relative; }
+.feedback li::before { content: ""; position: absolute; left: 0; top: 1.05em; width: 8px; height: 2px; background: var(--color-accent); }
+@media (min-width: 761px) {
+  .how-head { grid-column: 1 / span 7; }
+  .steps { grid-column: 1 / span 7; }
+  .feedback { grid-column: 9 / span 4; padding: var(--space-8); }
+}
+
+/* Who */
+.who-head { grid-column: 1 / -1; }
+.who-col { grid-column: 1 / -1; border-top: 2px solid var(--color-text); padding-top: var(--space-4); }
+.who-col.skip-col { border-top-color: var(--color-field-border); }
+.who-col ul { margin-top: var(--space-3); }
+.who-col li { padding-block: var(--space-3); border-top: 1px solid var(--color-border); }
+.who-col li:first-child { border-top: 0; }
+@media (min-width: 761px) {
+  .who-head { grid-column: 1 / span 8; }
+  .who-col { grid-column: span 6; }
+}
+
+/* FAQ */
+.faq-head { grid-column: 1 / -1; }
+.faq-list { grid-column: 1 / -1; }
+@media (min-width: 761px) {
+  .faq-head { grid-column: 1 / span 4; }
+  .faq-list { grid-column: 6 / span 7; }
+}
+details { border-top: 1px solid var(--color-border); }
+details:last-child { border-bottom: 1px solid var(--color-border); }
+summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); min-height: 56px; padding-block: var(--space-3); font-weight: 600; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font-size: 24px; font-weight: 500; line-height: 1; color: var(--color-accent); flex: none; width: 24px; text-align: center; }
+details[open] summary::after { content: "\2212"; }
+details p { padding: 0 var(--space-8) var(--space-5) 0; color: var(--color-text); }
+
+/* Apply */
+.apply { background: var(--color-sunken); padding-block: var(--space-12); }
+@media (min-width: 761px) { .apply { padding-block: 80px; } }
+.apply-copy { grid-column: 1 / -1; }
+.apply-copy p { margin-top: var(--space-4); max-width: 34ch; }
+.form-panel { grid-column: 1 / -1; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-panel); padding: var(--space-6); }
+@media (min-width: 761px) {
+  .apply-copy { grid-column: 1 / span 5; }
+  .form-panel { grid-column: 7 / span 6; padding: var(--space-8); }
+}
+.field { margin-bottom: var(--space-5); }
+.field label, .legend { display: block; font-weight: 600; margin-bottom: var(--space-1); }
+.hint { display: block; color: var(--color-muted); font-size: var(--text-small); margin-bottom: var(--space-2); }
+.field input[type="email"], .field input[type="text"], .field textarea {
+  display: block; width: 100%; min-height: 48px; padding: var(--space-3) var(--space-3);
+  font: inherit; font-size: 16px; color: var(--color-text);
+  background: var(--color-surface); border: 1px solid var(--color-field-border); border-radius: var(--radius-control);
+}
+.field textarea { min-height: 112px; resize: vertical; }
+.field [aria-invalid="true"] { border-color: var(--color-danger); border-width: 2px; padding: calc(var(--space-3) - 1px); }
+.error { display: none; margin-top: var(--space-2); color: var(--color-danger); font-size: var(--text-small); font-weight: 500; }
+.error.show { display: block; }
+.check { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: var(--space-3); align-items: start; }
+.check input { width: 24px; height: 24px; margin: 2px 0 0; accent-color: var(--color-accent); }
+.check label { margin: 0; font-weight: 500; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form-actions { margin-top: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3); }
+@media (min-width: 761px) { .form-actions { flex-direction: row; align-items: center; gap: var(--space-5); } }
+.status { min-height: 1.5em; font-size: var(--text-small); font-weight: 500; }
+.status.err { color: var(--color-danger); }
+.status.busy { color: var(--color-muted); }
+.done { display: none; }
+.done h3 { font-size: var(--text-h2); line-height: 1.15; letter-spacing: -0.015em; font-weight: 700; }
+.done p { margin-top: var(--space-3); }
+.done .link { margin-top: var(--space-4); }
+.is-done form { display: none; }
+.is-done .done { display: block; }
+
+/* Footer */
+.site-footer { padding-block: var(--space-8); }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-3) var(--space-6); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .track-fb::before { animation: none; transform: scaleX(1); }
+  .btn { transition: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="#top" aria-label="SocialGhost, back to top">SocialGhost</a>
+    <nav class="nav" aria-label="Page">
+      <a class="nav-extra" href="#how">How the beta works</a>
+      <a class="nav-extra" href="#faq">FAQ</a>
+      <a class="nav-apply" href="#apply">Apply</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top" aria-labelledby="h1">
+    <div class="wrap grid">
+      <div class="hero-copy">
+        <h1 id="h1">Make faceless YouTube videos. Free in beta.</h1>
+        <p class="lede">SocialGhost is a live AI tool in limited beta, and testers get free access for useful feedback within 2 to 3 days.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#apply">Apply for the beta</a>
+          <a class="link" href="#how">See how the beta works</a>
+        </div>
+        <p class="hero-note small muted">Four short questions. No account needed to apply.</p>
+      </div>
+
+      <aside class="terms" aria-labelledby="terms-h">
+        <h2 id="terms-h">Beta terms</h2>
+        <dl>
+          <div class="row"><dt>Cost to you</dt><dd>Free access</dd></div>
+          <div class="row"><dt>What we ask</dt><dd>Useful feedback within 2 to 3 days</dd></div>
+          <div class="row"><dt>Who</dt><dd>Serious testers. Spots are limited.</dd></div>
+          <div class="row"><dt>Status</dt><dd>SocialGhost is live now</dd></div>
+        </dl>
+        <div class="track" role="img" aria-label="Timeline of three days. Days 1 to 2: use SocialGhost. Days 2 to 3: feedback is due.">
+          <div class="track-bar" aria-hidden="true">
+            <div class="track-use">Use SocialGhost</div>
+            <div class="track-fb"><span>Feedback due</span></div>
+          </div>
+          <div class="track-days" aria-hidden="true"><span>Day 1</span><span>Day 2</span><span>Day 3</span></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="rule" id="what" aria-labelledby="what-h">
+    <div class="wrap grid">
+      <div class="what-copy">
+        <h2 id="what-h">A live tool that makes faceless YouTube videos</h2>
+        <p class="measure">SocialGhost is not a mockup. It is live now, and a limited group of beta testers gets in first.</p>
+        <p class="measure">Testers use it to make faceless videos for YouTube. Then they tell us what worked, what failed and what was missing.</p>
+      </div>
+      <figure class="what-fig">
+        <svg viewBox="0 0 640 360" role="img" aria-label="Drawing of a faceless video: a night skyline with a moon and a caption bar. It is an illustration, not a screenshot of SocialGhost.">
+          <rect width="640" height="360" rx="8" fill="#141519"/>
+          <rect x="0" y="0" width="640" height="300" fill="#0B5A56"/>
+          <circle cx="500" cy="92" r="38" fill="#E3F0EE"/>
+          <rect x="40" y="150" width="70" height="150" fill="#141519"/>
+          <rect x="120" y="110" width="56" height="190" fill="#141519"/>
+          <rect x="186" y="170" width="90" height="130" fill="#141519"/>
+          <rect x="286" y="90" width="64" height="210" fill="#141519"/>
+          <rect x="360" y="150" width="84" height="150" fill="#141519"/>
+          <rect x="454" y="190" width="70" height="110" fill="#141519"/>
+          <rect x="534" y="130" width="66" height="170" fill="#141519"/>
+          <rect x="110" y="236" width="420" height="46" rx="6" fill="#141519" fill-opacity=".88"/>
+          <text class="svg-text" x="320" y="266" text-anchor="middle" font-size="22" font-weight="600" fill="#FFFFFF">Sample caption text</text>
+          <path d="M26 322 L26 346 L44 334 Z" fill="#FFFFFF"/>
+          <rect x="64" y="332" width="548" height="4" rx="2" fill="#3A3D44"/>
+          <rect x="64" y="332" width="210" height="4" rx="2" fill="#E3F0EE"/>
+        </svg>
+        <figcaption class="small muted">Illustration of a faceless video. Not a screenshot of SocialGhost.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="rule" id="how" aria-labelledby="how-h">
+    <div class="wrap grid">
+      <div class="how-head">
+        <h2 id="how-h">How the beta works</h2>
+        <p class="measure" style="margin-top:16px">Four steps. The last one decides whether access stays free.</p>
+      </div>
+      <ol class="steps">
+        <li><div><h3>Apply</h3><p class="muted">Answer four short questions below. Tell us about your channel and what you want to make.</p></div></li>
+        <li><div><h3>We pick testers</h3><p class="muted">The beta is limited, so not every applicant gets in. We email the people we choose.</p></div></li>
+        <li><div><h3>Make videos</h3><p class="muted">Use SocialGhost to make faceless YouTube videos the way you would for your own channel.</p></div></li>
+        <li><div><h3>Send feedback</h3><p class="muted">Within 2 to 3 days, send useful feedback. Free access depends on it.</p></div></li>
+      </ol>
+      <aside class="feedback" aria-labelledby="fb-h">
+        <h3 id="fb-h">What useful feedback includes</h3>
+        <ul>
+          <li>What you tried to make</li>
+          <li>What you expected to happen</li>
+          <li>What actually happened</li>
+          <li>Where you got stuck or gave up</li>
+          <li>What you would change first</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="rule" id="who" aria-labelledby="who-h">
+    <div class="wrap grid">
+      <div class="who-head">
+        <h2 id="who-h">Apply if you will use it and report back</h2>
+      </div>
+      <div class="who-col">
+        <h3>Apply if</h3>
+        <ul>
+          <li>You make faceless YouTube videos, or plan to start a faceless channel.</li>
+          <li>You can try SocialGhost and write feedback within 2 to 3 days.</li>
+          <li>You will tell us what did not work, not only what did.</li>
+        </ul>
+      </div>
+      <div class="who-col skip-col">
+        <h3>Skip this beta if</h3>
+        <ul>
+          <li>You only want to look around.</li>
+          <li>You cannot send feedback within 2 to 3 days.</li>
+          <li>You expect a finished product with no rough edges.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="rule" id="faq" aria-labelledby="faq-h">
+    <div class="wrap grid">
+      <div class="faq-head">
+        <h2 id="faq-h">Questions before you apply</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>Is SocialGhost really live?</summary>
+          <p>Yes. It is a live tool. The beta is limited, so access is by application.</p>
+        </details>
+        <details>
+          <summary>What does free access cost?</summary>
+          <p>Nothing for beta testers who send useful feedback within 2 to 3 days.</p>
+        </details>
+        <details>
+          <summary>What if I cannot send feedback in time?</summary>
+          <p>Free access depends on useful feedback in that window. If you cannot do it, please do not apply.</p>
+        </details>
+        <details>
+          <summary>What happens after the beta?</summary>
+          <p>Pricing after the beta is not published on this page.</p>
+        </details>
+        <details>
+          <summary>How many testers will you accept?</summary>
+          <p>The beta is limited. The number of spots is not listed.</p>
+        </details>
+        <details>
+          <summary>What does the form ask?</summary>
+          <p>Your email, your YouTube channel or the kind of channel you want to start, what you want to make, and a yes to the feedback window.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="apply" id="apply" aria-labelledby="apply-h">
+    <div class="wrap grid">
+      <div class="apply-copy">
+        <h2 id="apply-h">Apply for the beta</h2>
+        <p>Free access if you send useful feedback within 2 to 3 days.</p>
+      </div>
+
+      <div class="form-panel" id="form-panel">
+        <form id="apply-form" novalidate data-endpoint="">
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-err">
+            <p class="error" id="email-err">Enter an email address, like name@example.com.</p>
+          </div>
+
+          <div class="field">
+            <label for="channel">Your YouTube channel, or the channel you want to start</label>
+            <span class="hint" id="channel-hint">Paste a link, or describe the topic in a few words.</span>
+            <input id="channel" name="channel" type="text" required aria-describedby="channel-hint channel-err">
+            <p class="error" id="channel-err">Tell us your channel link or the topic you have in mind.</p>
+          </div>
+
+          <div class="field">
+            <label for="make">What do you want to make with SocialGhost?</label>
+            <span class="hint" id="make-hint">Two or three sentences is enough.</span>
+            <textarea id="make" name="make" maxlength="600" required aria-describedby="make-hint make-err"></textarea>
+            <p class="error" id="make-err">Tell us what you want to make.</p>
+          </div>
+
+          <div class="field">
+            <div class="check">
+              <input id="window" name="window" type="checkbox" required aria-describedby="window-err">
+              <label for="window">I can try SocialGhost and send useful feedback within 2 to 3 days.</label>
+            </div>
+            <p class="error" id="window-err">Check this box to apply. Free access depends on feedback in that window.</p>
+          </div>
+
+          <div class="hp" aria-hidden="true">
+            <label for="company">Leave this field empty</label>
+            <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-actions">
+            <button class="btn" type="submit" id="submit">Apply for the beta</button>
+            <p class="status" id="status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+
+        <div class="done" id="done" tabindex="-1">
+          <h3>Application received</h3>
+          <p>If we pick you for the beta, we will email you at <strong id="done-email"></strong>.</p>
+          <a class="link" href="#top">Back to the top</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap small">
+    <span><strong>SocialGhost</strong> &middot; trysocialghost.com</span>
+    <span class="muted">Limited beta</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var form = document.getElementById('apply-form');
+  var panel = document.getElementById('form-panel');
+  var statusEl = document.getElementById('status');
+  var submitBtn = document.getElementById('submit');
+  var done = document.getElementById('done');
+  var touched = false;
+
+  var rules = {
+    email: function (el) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()); },
+    channel: function (el) { return el.value.trim().length > 1; },
+    make: function (el) { return el.value.trim().length > 1; },
+    window: function (el) { return el.checked; }
+  };
+
+  function check(name) {
+    var el = form.elements[name];
+    var ok = rules[name](el);
+    var err = document.getElementById(name + '-err');
+    if (ok) { el.removeAttribute('aria-invalid'); err.classList.remove('show'); }
+    else { el.setAttribute('aria-invalid', 'true'); err.classList.add('show'); }
+    return ok;
+  }
+
+  Object.keys(rules).forEach(function (name) {
+    var el = form.elements[name];
+    el.addEventListener('blur', function () { if (touched || el.value || el.checked) { touched = true; check(name); } });
+    el.addEventListener('input', function () { if (el.getAttribute('aria-invalid') === 'true') check(name); });
+    el.addEventListener('change', function () { if (el.getAttribute('aria-invalid') === 'true') check(name); });
+  });
+
+  function setStatus(text, cls) { statusEl.textContent = text; statusEl.className = 'status' + (cls ? ' ' + cls : ''); }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (submitBtn.disabled) return;
+    touched = true;
+    var firstBad = null;
+    Object.keys(rules).forEach(function (name) { if (!check(name) && !firstBad) firstBad = form.elements[name]; });
+    if (firstBad) { setStatus('Fix the highlighted answers and try again.', 'err'); firstBad.focus(); return; }
+    if (form.elements.company.value) { return; }
+
+    var endpoint = form.getAttribute('data-endpoint');
+    if (!endpoint) {
+      setStatus('This preview is not connected to a form service, so nothing was sent. Your answers are still here.', 'err');
+      return;
+    }
+
+    submitBtn.disabled = true; submitBtn.setAttribute('aria-busy', 'true');
+    setStatus('Sending your application...', 'busy');
+    fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: form.elements.email.value.trim(),
+        channel: form.elements.channel.value.trim(),
+        make: form.elements.make.value.trim(),
+        feedback_window_ok: true
+      })
+    }).then(function (res) {
+      if (!res.ok) throw new Error('bad status');
+      document.getElementById('done-email').textContent = form.elements.email.value.trim();
+      panel.classList.add('is-done');
+      done.focus();
+    }).catch(function () {
+      setStatus('Your application was not sent. Your answers are still here. Try again.', 'err');
+    }).then(function () {
+      submitBtn.disabled = false; submitBtn.removeAttribute('aria-busy');
+    });
+  });
+})();
+</script>
+</body>
+</html>
