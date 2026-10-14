@@ -60,3 +60,5 @@ Branch: `cursor/shipright-1-2-plan-e2d8`. Base: `main` at `443fbf1`. Draft PR: h
 - Complete workspace inspection found one actual checkout. The platform/workspace .git directory is verified empty, not an unborn repository. Existing source remains at shipright-skills; no worktree or additional checkout was created.
 
 - GitHub API subsequently became usable. PR 19 was marked ready for review successfully. The earlier Forbidden observations remain historical; no credential was requested. CLI title/body edit hit deprecated Projects fields, so REST is used to finish the metadata update.
+
+- Final reference attempt: verified HTTP requests became possible, but Chromium still fails TLS trust for Jesko/Benjamin; Brand Studio returns a CAPTCHA challenge. The invalid unverified-TLS retry was quarantined outside the repo and never used. Original failure records and separate addendum are preserved. No proof output depended on that retry. Verified reference fidelity remains Not verified.
