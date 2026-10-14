@@ -33,3 +33,7 @@ Branch: `cursor/shipright-1-2-plan-e2d8`. Base: `main` at `443fbf1`. Draft PR: h
 - Phase 4: premium checker and taste gate complete. 55 tests ran; 53 passed initially. Fixed the shared full-flow section boundary and refreshed local distribution artifacts, then both affected suites passed (7 tests). No release was published.
 
 - Credits: all 16 requested reference sites recorded as idea sources, with explicit limits on available reference evidence and no copied assets or code.
+
+- Fresh intake trial: four cards only despite "just build it"; raw response and loading list preserved. Parent assessment is disclosed.
+- PR 18 Depth built unchanged at commit 81d3975 and captured at 390 and 1280. Standard checker remains clean.
+- Proof builders completed briefs and three options each, then stopped for the owner. Story choices are pending. No proof build has begun.
