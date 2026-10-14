@@ -1,6 +1,6 @@
 # ShipRight 1.2: progress
 
-**Next step:** Build proof sites, independent visual critique, final documentation and packaging. All five decisions approved in the owner request on 14 October 2026.
+**Next step:** Complete final checks and save exact checkout/startup configuration. GitHub API access is needed to mark PR 19 ready for review. No merge, tag or release. All five decisions approved in the owner request on 14 October 2026.
 
 Branch: `cursor/shipright-1-2-plan-e2d8`. Base: `main` at `443fbf1`. Draft PR: https://github.com/aiwithaltaz/shipright-skills/pull/19
 
@@ -44,3 +44,17 @@ Branch: `cursor/shipright-1-2-plan-e2d8`. Base: `main` at `443fbf1`. Draft PR: h
 - Owner selected ShipRight A: Product Manuscript and recorder 1: Instrument, inspected. Both are Approved and builders resumed.
 - Final discovery: 55 tests passed, zero skipped. Source and real token checks passed; 153 existing and four new premium mutations rejected.
 - Live reference capture is blocked by proxy policy, and the earlier screenshot upload is absent. Saved targeted reference host additions in the draft; no synthetic reference screenshots will be substituted.
+
+## Completed proof and packaging
+
+- ShipRight A implemented by fresh agent proof_shipright; 1,019-word six-act prompt. Actual DOM product output plus Three.js paper scene, GSAP pin/wipe and Lenis. Build and runtime checks pass; premium checker zero failures, four disclosed warnings.
+- Recorder option 1 implemented by fresh agent proof_product; 1,076-word prompt. Labeled procedural product, camera inspection and real supplied controls. Build passes; 18 behavioral and 18 view scenarios pass. Premium checker zero failures, two compact-label warnings.
+- Independent agent proof_review authored first findings and separate retests. All identified Major/Polish defects corrected. Verdict: ready for local proof review, not production certification.
+- Source authors did not score their own pictures. Parent assembled comparisons from unmodified 1280x800 captures and checked rendering integrity, not taste. Old Depth source and historical evidence are unchanged.
+- Explicit stack constraint was clarified after ShipRight's initial no-WebGL decision. That decision and clarification remain in the proof log. No expected visual answers or rebuild plan were supplied to builders.
+- README and CHANGELOG link real before/after screenshots and scroll videos. Metadata/local distribution updated to 1.2.0; no release published.
+- External reference images, full assistive technology and physical-phone FPS remain Not verified. GitHub API remains blocked, so PR-ready flag is not confirmed.
+
+- Final1.2 packaging:55 tests pass, zero skipped. Source, token and distribution checks pass. Frozen installs repeated and both builds pass. Fresh-process representative functional requests pass for both sites; test processes stopped.
+- Proof sources, screenshots, videos, comparisons and independent first/retest/final reviews committed and pushed separately.
+- Complete workspace inspection found one actual checkout. The platform/workspace .git directory is verified empty, not an unborn repository. Existing source remains at shipright-skills; no worktree or additional checkout was created.

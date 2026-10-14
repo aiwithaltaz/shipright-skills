@@ -5,7 +5,7 @@ description: "Use this when someone brings an idea for a website, SaaS app, mobi
 
 # Build pack
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
 Give the builder exact prompts.

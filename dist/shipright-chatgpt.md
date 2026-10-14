@@ -17,7 +17,7 @@ description: "Use this when someone wants to design, review, or build a website,
 
 # ShipRight
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
 This is the only ShipRight skill. Type `/shipright`, or start here when the request is a product, a screen, a website, or a launch check.
@@ -359,7 +359,7 @@ description: "Use this when someone brings an idea for a website, SaaS app, mobi
 
 # Build pack
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
 Give the builder exact prompts.
@@ -747,7 +747,7 @@ description: "Use this when framing a product idea, judging research evidence or
 
 # Product design
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
 Connect outcome, mechanism, objects, journey and screen jobs.
@@ -1181,7 +1181,7 @@ description: "Use this when checking launch readiness or specific release items 
 
 # Ship check
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
 Report what launch evidence establishes. This is not a security audit, legal review or deployment step.
@@ -1309,7 +1309,7 @@ description: "Use this when designing or refining a screen, layout, component, s
 
 # UI/UX design
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
 Turn a clear screen job into a useful layout. Unclear product job or structure: route to product-design. Whole idea to build: build-pack. Critique: ux-critique.
@@ -2414,7 +2414,7 @@ description: "Use this when reviewing a plan, specification, screenshot or runni
 
 # UX critique
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
 Review a real artifact and report evidence-backed corrections. Do not invent users, interview quotes or predicted conversion gains.

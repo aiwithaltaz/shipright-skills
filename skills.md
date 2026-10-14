@@ -1,12 +1,13 @@
 # Skills catalog
 
-**ShipRight 1.1.0**
+**ShipRight 1.2.0**
 
 Install one skill: [shipright](skills/shipright/SKILL.md). The rows below are its modes. A new idea starts in build-pack.
 
 | Request | Skill | Review size |
 | --- | --- | --- |
 | Idea to build: PRD, stack, design system, screens and ticket prompts | [build-pack](skills/shipright/modes/build-pack/MODE.md) | 10 checks before the reply |
+| Public website or immersive page | build-pack within the same five modes | Product brief, six acts, three story options, longer prompt, taste critique |
 | Rough idea, outcome or flow decision | [product-design](skills/shipright/modes/product-design/MODE.md) | 8 checks at handoff |
 | Supplied research synthesis and product decisions | product-design | Optional evidence-linked findings, risks and proposed decisions |
 | Approved product organization, navigation, findability or route maps | product-design | Optional sourced structure and decisions before screens |

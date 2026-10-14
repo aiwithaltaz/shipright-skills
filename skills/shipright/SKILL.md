@@ -5,7 +5,7 @@ description: "Use this when someone wants to design, review, or build a website,
 
 # ShipRight
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
 This is the only ShipRight skill. Type `/shipright`, or start here when the request is a product, a screen, a website, or a launch check.

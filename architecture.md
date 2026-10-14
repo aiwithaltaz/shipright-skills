@@ -1,6 +1,6 @@
 # Pack architecture
 
-**ShipRight 1.1.0**
+**ShipRight 1.2.0**
 
 This is a product, design and build-planning instruction pack, not an application framework.
 
@@ -30,7 +30,7 @@ This is a product, design and build-planning instruction pack, not an applicatio
 
 Load skills/shipright/SKILL.md, then one mode MODE.md, then the shared contract and intake once. Then load only the references the current step needs.
 build-pack loads in three bounded stages: frame, flows, structure and stack; design system and screens; tickets and pack check.
-Each stage reuses the canonical reference owned by another skill instead of copying it.
+For premium public web, stages are research and six-act story; three options with only selected technique recipes; the six-act prompt and pack check. These replace document marketing references. Each stage reuses the canonical reference owned by another skill instead of copying it.
 Use existing project context instead of generating redundant documents. Do not load historical examples as current authority.
 
 ## One owner per rule

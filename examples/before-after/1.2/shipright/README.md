@@ -6,11 +6,11 @@ Owner approved direction A. Source is one Vite page with Three.js, GSAP ScrollTr
 Run from the repository root:
 
 ```sh
-npm install --prefix /tmp/shipright-manuscript-tools --cache /workspace/.shipright-tools/npm-cache vite@8.3.4 gsap@3.15.0 lenis@1.3.26 three@0.186.1
+bash examples/before-after/1.2/shipright/tooling/install.sh
 /tmp/shipright-manuscript-tools/node_modules/.bin/vite --config examples/before-after/1.2/shipright/vite.config.mjs examples/before-after/1.2/shipright
 ```
 
-The internal development server listens on 127.0.0.1 port 4176. The Vite filesystem allowlist and module imports intentionally address that external dependency directory. `package.json` records resolved dependency versions; no node_modules belongs in proof source.
+The internal development server listens on 127.0.0.1 port 4176. The Vite filesystem allowlist and module imports intentionally address that external dependency directory. The tooling manifest and lockfile reproduce the exact installed dependencies with npm ci; `package.json` records direct versions; no node_modules belongs in proof source.
 
 Check with Node and supplied Playwright:
 

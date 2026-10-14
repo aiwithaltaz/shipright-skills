@@ -5,7 +5,7 @@ description: "Use this when designing or refining a screen, layout, component, s
 
 # UI/UX design
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
 Turn a clear screen job into a useful layout. Unclear product job or structure: route to product-design. Whole idea to build: build-pack. Critique: ux-critique.
