@@ -143,6 +143,10 @@ Historical evaluations stay unchanged under `evals/`. The [IVC example](examples
 [skills.md](skills.md) routes tasks. [architecture.md](architecture.md) explains file ownership and loading. [SOURCES.md](SOURCES.md) credits every source. [CHANGELOG.md](CHANGELOG.md) and [release notes](RELEASE-NOTES.md) record changes.
 [Altaz's profile](personal-taste/altaz.md) is opt-in and cannot change scope or override an approved identity.
 
+## Website
+
+The public site lives in [site/](site/README.md). It is a static Astro app. Deploy it on Vercel with the root directory set to `site`. This repository does not deploy or publish it on its own.
+
 ## License
 
 MIT license for the pack. Example brand assets keep their existing ownership notices.

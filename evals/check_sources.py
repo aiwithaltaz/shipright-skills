@@ -9,6 +9,7 @@ Run: python3 evals/check_sources.py [--self-test]
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import shutil
@@ -16,6 +17,9 @@ import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
+# The public site builds into site/dist and installs packages under node_modules.
+# Those trees are generated. They are not pack sources, and dependency text is full of em dashes.
+GENERATED_DIRS = {'node_modules', '.astro', '__pycache__', '.git'}
 # Verbatim user-supplied source documents. Kept byte-for-byte, so pack style rules do not apply.
 VERBATIM_SOURCES = {'docs/rebuild/BLUEPRINT.md'}
 # Raw trial outputs and grades are evidence. They stay unchanged; style misses are measured, not edited,
@@ -365,6 +369,19 @@ def strip_fences(text):
     return re.sub(r'```.*?```', '', text, flags=re.S)
 
 
+def source_files(root):
+    """Yield tracked-style files, skipping installs and the static site build."""
+    root = root.resolve()
+    for dirpath, dirnames, filenames in os.walk(root):
+        rel = Path(dirpath).resolve().relative_to(root).as_posix()
+        if rel == 'site/dist' or rel.startswith('site/dist/'):
+            dirnames[:] = []
+            continue
+        dirnames[:] = [name for name in dirnames if name not in GENERATED_DIRS and not (rel == 'site' and name == 'dist')]
+        for name in filenames:
+            yield Path(dirpath) / name
+
+
 def heading_ids(text):
     result, seen = set(), {}
     for h in re.findall(r'^#{1,6}\s+(.+?)\s*#*$', strip_fences(text), re.M):
@@ -461,7 +478,8 @@ def validate(root):
         return read(rel_posix)
 
     # Every Markdown file, including root, docs, examples and evals, is checked.
-    for path in sorted(root.rglob('*.md')):
+    # Generated site output and installed packages are not pack sources.
+    for path in sorted(p for p in source_files(root) if p.suffix == '.md'):
         if '.git' in path.relative_to(root).parts:
             continue
         rel = path.relative_to(root)
@@ -551,8 +569,8 @@ def validate(root):
     # Stored knowledge has no global cap. Required token checks run separately.
     context_errors, _, _ = context_mod.check_structure(root)
     errors.extend(context_errors)
-    for p in sorted(root.rglob('*')):
-        if not p.is_file() or '.git' in p.relative_to(root).parts or p.suffix in {'.png', '.zip', '.pyc'}:
+    for p in source_files(root):
+        if p.suffix in {'.png', '.zip', '.pyc'}:
             continue
         try:
             text = p.read_text(encoding='utf-8')
@@ -770,7 +788,13 @@ def self_test(root):
     mutations.extend(PHASE51_MUTATIONS)
     with tempfile.TemporaryDirectory(prefix='shipright-check-') as tmp:
         copy = Path(tmp) / 'pack'
-        shutil.copytree(root, copy, ignore=shutil.ignore_patterns('.git', '__pycache__'))
+        def ignore_generated(directory, names):
+            skip = {'.git', '__pycache__', 'node_modules', '.astro'}
+            if Path(directory).name == 'site':
+                skip.add('dist')
+            return {name for name in names if name in skip}
+
+        shutil.copytree(root, copy, ignore=ignore_generated)
         for label, rel, old, new in mutations:
             rel = canonical(rel)
             p = copy / rel; original = p.read_bytes()

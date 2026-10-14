@@ -1,0 +1,226 @@
+---
+import Base from '../layouts/Base.astro'
+import { cases, trial } from '../data/gallery.js'
+import { chatgpt, claudeAi, plugin, tools, zip } from '../data/install.js'
+
+const files = [
+  ['docs/shipright/01-prd.md', 'Who, the job, this release, what stays out'],
+  ['docs/shipright/02-technical-architecture.md', 'Stack, data, routes, access and budgets'],
+  ['DESIGN.md', 'Tokens. Your own system or Figma wins'],
+  ['docs/shipright/04-frontend-spec.md', 'Each screen: layout, states and real copy'],
+  ['docs/shipright/05-feature-ticket-list.md', 'Paste-ready prompts with a stop line'],
+  ['docs/shipright/build-rules.md', 'Rules the coding tool reads first'],
+]
+
+const modes = [
+  ['Build pack', 'PRD, stack, design system, screen specs and paste-ready tickets.'],
+  ['Product design', 'Who it serves, the job, the flow and what stays out.'],
+  ['UI/UX design', 'Layout, components, states and exact visual changes.'],
+  ['UX critique', 'A review of a screen or a plan, tied to evidence.'],
+  ['Ship check', 'Launch evidence, item by item, including what was not verified.'],
+]
+
+const safety = [
+  ['No invented facts.', 'Unknown stays unknown. Metrics, quotes, logos, prices and research are not filled in.'],
+  ['Your design system wins.', 'A Figma file or an existing system beats a starter. A new product shows its system before screens.'],
+  ['Approval before ship.', 'Silence is not approval. Nothing ships, publishes or charges money without your OK.'],
+]
+
+const slop = [
+  'No gradient text, glow or glass.',
+  'No eyebrow label on every section.',
+  'No rows of icon cards.',
+  'No cards inside cards.',
+  'No fake stats, quotes or customer logos.',
+  'Text is visible before any motion runs.',
+]
+
+const title = 'ShipRight'
+const description = 'Context before generate. Product before pixels. A skill pack that turns an idea into a PRD, a stack, a design system, screen specs and paste-ready tickets.'
+---
+<Base title={title} description={description}>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Context before generate.<br />Product before pixels.</h1>
+      <div class="hero-rule" aria-hidden="true"></div>
+      <p class="lede measure">A skill pack for people who use Claude Code, Cursor, Codex or another AI coding tool and want a build pack before any screen is built.</p>
+      <div class="actions">
+        <a class="button" href="#install">Install ShipRight</a>
+        <a class="text-action" href="#gallery">See the gallery</a>
+      </div>
+      <h2 class="block-title">What you get</h2>
+      <table class="sheet">
+        <thead>
+          <tr>
+            <th scope="col">File</th>
+            <th scope="col">What it holds</th>
+          </tr>
+        </thead>
+        <tbody>
+          {files.map(([file, holds]) => (
+            <tr>
+              <td><code>{file}</code></td>
+              <td>{holds}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" id="pack" data-rise>
+    <div class="wrap">
+      <h2>What it does</h2>
+      <p class="intro measure">Five modes. The build pack is the front door. The others go deep on one job.</p>
+      <table class="sheet">
+        <thead>
+          <tr>
+            <th scope="col">Mode</th>
+            <th scope="col">What you use it for</th>
+          </tr>
+        </thead>
+        <tbody>
+          {modes.map(([mode, use]) => (
+            <tr>
+              <td>{mode}</td>
+              <td>{use}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" data-rise>
+    <div class="wrap">
+      <h2>Safety</h2>
+      <div class="safety-list">
+        {safety.map(([heading, text]) => (
+          <div>
+            <h3>{heading}</h3>
+            <p>{text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-rise>
+    <div class="wrap">
+      <h2>How it fixes AI slop</h2>
+      <ul class="slop">
+        {slop.map((line) => <li>{line}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="gallery" data-rise>
+    <div class="wrap">
+      <h2>Before and after</h2>
+      <p class="intro measure">Same frozen prompts, fresh agents, graded blind on 13 October 2026. In every image, 0.6.2 is on the left and 1.0 is on the right. These are generated outputs, not illustrations.</p>
+      <div class="scores">
+        <div>
+          <p class="meta">{trial.baselineVersion}</p>
+          <p class="num">{trial.baseline}</p>
+          <p class="meta">of {trial.max}</p>
+        </div>
+        <div>
+          <p class="meta">{trial.currentVersion}</p>
+          <p class="num">{trial.current}</p>
+          <p class="meta">of {trial.max}</p>
+        </div>
+      </div>
+      <p class="limits measure">One run per case. Builders and graders were the same model family. The prompts are synthetic, not user research. The 112 uses the 3D re-check in place of a first run that scored 19 and hid its content. Kept as that first run, the total is {trial.firstRun}. An earlier Phase 3 trial scored {trial.phase3Current} against {trial.phase3Baseline}.</p>
+      {cases.map((item) => (
+        <article class="case" id={item.id}>
+          <h3>{item.title}</h3>
+          <p class="text measure">{item.text}</p>
+          {item.images.map((image) => (
+            <>
+              <p class="shot-label meta">{image.label}</p>
+              <img
+                class:list={['shot', image.phone && 'shot-phone']}
+                src={image.src}
+                width={image.width}
+                height={image.height}
+                alt={image.alt}
+                loading="lazy"
+                decoding="async"
+              />
+            </>
+          ))}
+          <p class="source">Comparison files are in the <a href={item.source}>GitHub folder</a>.</p>
+        </article>
+      ))}
+
+      <div class="ivc">
+        <h3>IVC 2026</h3>
+        <p class="measure">A historical field example, not a trial score. Before and after images for Registration search results and Reports will be added here.</p>
+        <div class="slots">
+          <div class="slot">
+            <h4>Registration search results</h4>
+            <div class="slot-frame">
+              <p>Before and after image not added yet.</p>
+            </div>
+          </div>
+          <div class="slot">
+            <h4>Reports</h4>
+            <div class="slot-frame">
+              <p>Before and after image not added yet.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="install" data-rise>
+    <div class="wrap">
+      <h2>Install</h2>
+      <p class="intro measure">One line per tool. ShipRight 1.1 is packaging these installs. For 1.0, keeping the pack where your tool can read it is the verified route.</p>
+      <div class="install-list">
+        {tools.map((tool) => (
+          <div class="install-row">
+            <h3>{tool.tool}</h3>
+            <div class="cmd">
+              <code>{tool.command}</code>
+              {tool.note && <p class="meta">{tool.note}</p>}
+            </div>
+            <div class="copy">
+              <button class="button-secondary" type="button" data-copy={tool.command} aria-label={`Copy the ${tool.tool} command`}>Copy</button>
+              <p class="status meta" role="status" data-copy-status></p>
+            </div>
+          </div>
+        ))}
+        <div class="install-row">
+          <h3>{plugin.tool}</h3>
+          <div class="cmd">
+            <code>{plugin.command}</code>
+            <p class="meta">{plugin.note}</p>
+          </div>
+          <div class="copy">
+            <button class="button-secondary" type="button" data-copy={plugin.command} aria-label={`Copy the ${plugin.tool} command`}>Copy</button>
+            <p class="status meta" role="status" data-copy-status></p>
+          </div>
+        </div>
+      </div>
+      <div class="manual">
+        <div>
+          <h3>Claude.ai</h3>
+          <p class="measure"><a href={zip.href}>{zip.label}</a>. {claudeAi}</p>
+        </div>
+        <div>
+          <h3>ChatGPT</h3>
+          <p class="measure"><a href={zip.href}>{zip.label}</a>. {chatgpt}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" data-rise>
+    <div class="wrap">
+      <h2>Your design system wins. Nothing ships without your OK.</h2>
+      <a class="button" href="#install">Install ShipRight</a>
+    </div>
+  </section>
+</Base>

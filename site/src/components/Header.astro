@@ -1,0 +1,20 @@
+---
+const path = Astro.url.pathname
+const onDesign = path === '/design' || path === '/design/'
+const links = [
+  { href: '/#pack', label: 'Pack' },
+  { href: '/#gallery', label: 'Gallery' },
+  { href: '/#install', label: 'Install' },
+  { href: '/design', label: 'Design', current: onDesign },
+]
+---
+<header class="header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="/">ShipRight</a>
+    <nav class="nav" aria-label="Page">
+      {links.map((link) => (
+        <a href={link.href} aria-current={link.current ? 'page' : undefined}>{link.label}</a>
+      ))}
+    </nav>
+  </div>
+</header>

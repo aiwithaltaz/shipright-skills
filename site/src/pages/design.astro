@@ -1,0 +1,120 @@
+---
+import Base from '../layouts/Base.astro'
+
+const colors = [
+  ['Background', '--color-bg', '#FBFBFA', 'Page'],
+  ['Surface', '--color-surface', '#FFFFFF', 'Fields and images'],
+  ['Sunken', '--color-sunken', '#F1F1EE', 'Empty slots and the closing band'],
+  ['Text', '--color-text', '#141519', 'Body, 17.6:1 on background'],
+  ['Muted', '--color-muted', '#55585F', 'Notes, 6.9:1 on background'],
+  ['Border', '--color-border', '#E2E2DE', 'Rules between rows'],
+  ['Field border', '--color-field-border', '#848B96', 'Inputs, 3.3:1 on background'],
+  ['Accent', '--color-accent', '#1F4FD8', 'The one action, white text 6.6:1'],
+  ['Accent hover', '--color-accent-hover', '#183FA8', 'Fine pointer hover, white text 9.1:1'],
+  ['Danger', '--color-danger', '#C1341F', 'Errors, 5.4:1 on background'],
+  ['Danger background', '--color-danger-bg', '#FCEBE7', 'Error field fill'],
+]
+
+const spaces = [4, 8, 12, 16, 20, 24, 32, 40, 48, 64]
+const title = 'Design system. ShipRight'
+const description = 'Proposed type, color, spacing, buttons and fields for the ShipRight site. Editorial marketing starter, IBM Plex Sans, one blue action.'
+---
+<Base title={title} description={description}>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Design system</h1>
+      <p class="lede measure">Proposed, from the editorial marketing starter. No brand color was supplied, so the starter blue stays. Type is IBM Plex Sans. Altaz's spacing taste is opt-in here: 4, 8, 12, 16, 24, 32 and 48, plus the starter's 20, 40 and 64.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>Type</h2>
+      <p class="intro measure">Four sizes. One family. Sample line, not product data.</p>
+      <div class="type-row">
+        <p style="font-size: var(--text-display); line-height: var(--leading-display); letter-spacing: var(--tracking-display); font-weight: 500;">Context before generate.</p>
+        <p class="meta">Display 56 / 34</p>
+      </div>
+      <div class="type-row">
+        <p style="font-size: var(--text-title); line-height: var(--leading-title); font-weight: 500;">Section title</p>
+        <p class="meta">Title 24</p>
+      </div>
+      <div class="type-row">
+        <p>A skill pack that turns an idea into a build pack before any screen is built.</p>
+        <p class="meta">Body 17 / 16</p>
+      </div>
+      <div class="type-row">
+        <p class="meta">Notes, file names and captions.</p>
+        <p class="meta">Meta 14</p>
+      </div>
+
+      <div class="sys-block">
+        <h2>Color</h2>
+        <table class="sheet">
+          <thead>
+            <tr>
+              <th scope="col">Role</th>
+              <th scope="col">Token</th>
+              <th scope="col">Value</th>
+              <th scope="col">Use</th>
+            </tr>
+          </thead>
+          <tbody>
+            {colors.map(([role, token, value, use]) => (
+              <tr>
+                <td>{role}</td>
+                <td><code>{token}</code></td>
+                <td><span class="swatch" style={`background: var(${token})`} aria-hidden="true"></span> <code>{value}</code></td>
+                <td>{use}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sys-block">
+        <h2>Spacing</h2>
+        <p class="intro measure">Inside a group, 4 to 12. Between groups, 16 to 32. Marketing sections use 80 on desktop and 56 on a phone.</p>
+        {spaces.map((size) => (
+          <div class="space-row">
+            <p class="meta num" style="font-size: var(--text-meta);">{size}</p>
+            <span class="space-bar" style={`width: ${size}px`}></span>
+          </div>
+        ))}
+      </div>
+
+      <div class="sys-block">
+        <h2>Controls</h2>
+        <div class="control-row">
+          <button class="button" type="button">Primary</button>
+          <button class="button-secondary" type="button">Secondary</button>
+          <button class="button" type="button" disabled>Disabled</button>
+          <span class="button-secondary specimen-focus">Focus ring</span>
+        </div>
+        <p class="meta" style="margin-top: var(--space-4);">One filled button per view. Disabled is a different fill, not faded ink. The focus ring is 2px accent with a 2px offset.</p>
+      </div>
+
+      <div class="sys-block" id="fields">
+        <h2>Fields</h2>
+        <p class="intro measure">Sample values show the control. They are not product data.</p>
+        <div class="field">
+          <label for="project-name">Project name</label>
+          <input id="project-name" name="project-name" type="text" value="Northwind" autocomplete="off" />
+        </div>
+        <h3 style="margin-top: var(--space-7);">Error state</h3>
+        <div class="field">
+          <label for="contact-email">Email</label>
+          <input id="contact-email" name="contact-email" type="email" value="not-an-email" autocomplete="off" aria-invalid="true" aria-describedby="contact-email-error" />
+          <p class="field-error" id="contact-email-error">Enter a valid email.</p>
+        </div>
+      </div>
+
+      <div class="sys-block">
+        <h2>Motion</h2>
+        <p class="measure">Press 120 ms. Menus 180 ms. Sheets 240 ms. Ease-out. The home page draws one rule under the headline, once. Sections below it may rise 16 px. Nothing starts invisible.</p>
+        <div class="hero-rule" aria-hidden="true"></div>
+        <p class="meta" style="margin-top: var(--space-3);">Reduced motion keeps the rule still and skips the rise.</p>
+      </div>
+    </div>
+  </section>
+</Base>
