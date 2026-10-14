@@ -20,9 +20,11 @@ function loadPlaywright() {
 }
 
 const args = process.argv.slice(2);
-const target = args.find((a, i) => !a.startsWith('--') && !['--out', '--allow', '--root'].includes(args[i - 1]));
+const target = args.find((a, i) => !a.startsWith('--') && !['--out', '--allow', '--root', '--profile', '--browser'].includes(args[i - 1]));
 if (!target) { console.error('usage: node scripts/check-ui.mjs <page.html|url> [--out dir] [--json] [--allow rule,rule]'); process.exit(2); }
 const flag = name => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : undefined; };
+const profile = flag('--profile') || 'standard';
+if (!['standard', 'premium'].includes(profile)) { console.error('unknown profile'); process.exit(2); }
 const allow = new Set((flag('--allow') || '').split(',').filter(Boolean));
 const remote = /^https?:/.test(target);
 const root = resolve(flag('--root') || '.');
@@ -45,7 +47,7 @@ export const VIEWPORTS = [
 ];
 
 // Runs inside the page. Returns raw measurements; rules are judged in Node.
-function measure(vp) {
+function measure({ vp, premium }) {
   const vis = el => {
     const r = el.getBoundingClientRect(); const s = getComputedStyle(el);
     return r.width > 0 && r.height > 0 && s.visibility !== 'hidden' && s.display !== 'none' && +s.opacity > 0.05;
@@ -79,7 +81,7 @@ function measure(vp) {
       if (rt < need) contrast.push({ text: el.textContent.trim().slice(0, 40), ratio: +rt.toFixed(2), need });
     }
     if (size < 12 && !el.closest('sup,sub,small')) smallText++;
-    if (s.textTransform === 'uppercase' && parseFloat(s.letterSpacing) / size > 0.04 && size <= 14) eyebrows++;
+    if (s.textTransform === 'uppercase' && parseFloat(s.letterSpacing) / size > 0.04 && size <= 14 && !(premium && el.closest('[data-product-fact]'))) eyebrows++;
   }
   // Text that is laid out but faded to nothing, usually a scroll reveal that has not run.
   const effOpacity = el => { let o = 1; for (let n = el; n && n !== document.documentElement; n = n.parentElement) o *= +getComputedStyle(n).opacity; return o; };
@@ -134,7 +136,20 @@ function measure(vp) {
   let css = '';
   for (const sheet of document.styleSheets) { try { css += [...sheet.cssRules].map(r => r.cssText).join('\n'); } catch {} }
   const scripts = [...document.scripts].map(s => s.textContent).join('\n');
+  const heroVisible = [...document.querySelectorAll('[data-product-hero]')].some(el => {
+    const b = el.getBoundingClientRect();
+    const described = el.getAttribute('alt') || el.getAttribute('aria-label') || el.textContent.trim();
+    const mediaReady = el.tagName !== 'IMG' || (el.complete && el.naturalWidth > 0);
+    return vis(el) && effOpacity(el) > 0.1 && described && mediaReady && b.top < vp.height && b.bottom > 0 && b.left < vp.width && b.right > 0 && b.width >= 100 && b.height >= 100;
+  });
+  // Source declarations are review hooks, never proof of factual correctness.
+  const proofClaims = [...document.querySelectorAll('[data-proof-claim]')];
+  const unsupportedProof = proofClaims.filter(el => !el.getAttribute('data-proof-source')?.trim()).length;
+  const suspiciousClaims = text.match(/(?:trusted by|rated \d|\d[\d,.]*\+? (?:customers|users|teams)|\d+(?:\.\d+)?% (?:faster|increase|improvement))/gi) || [];
+  const undeclaredProof = suspiciousClaims.filter(claim => !proofClaims.some(el => el.textContent.includes(claim))).length;
   return {
+    heroVisible, unsupportedProof, undeclaredProof,
+    visibleWords: text.replace(/\s+/g, ' ').trim(),
     overflowX: Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - vp.width,
     pageHeight: document.documentElement.scrollHeight,
     h1: document.querySelectorAll('h1').length,
@@ -187,8 +202,8 @@ async function run() {
     server = await serve();
     url = `http://127.0.0.1:${server.address().port}/${rel.split(sep).map(encodeURIComponent).join('/')}`;
   }
-  const browser = await chromium.launch({ args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
-  const report = { target, checkedAt: new Date().toISOString(), viewports: {} };
+  const browser = await chromium.launch({ ...((flag('--browser') || process.env.SHIPRIGHT_BROWSER) ? { executablePath: resolve(flag('--browser') || process.env.SHIPRIGHT_BROWSER) } : {}), args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
+  const report = { target, profile, checkedAt: new Date().toISOString(), viewports: {} };
   for (const vp of VIEWPORTS) {
     const ctx = await browser.newContext({ viewport: { width: vp.width, height: vp.height }, deviceScaleFactor: 1, hasTouch: vp.touch, isMobile: vp.touch });
     const page = await ctx.newPage();
@@ -199,7 +214,7 @@ async function run() {
     await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {});
     await page.evaluate(() => document.fonts.ready);
     await page.waitForTimeout(1200);
-    const m = await page.evaluate(measure, vp);
+    const m = await page.evaluate(measure, { vp, premium: profile === 'premium' });
     m.errors = errors;
     // A family is missing when text set in it measures the same as the generic fallbacks.
     m.fontsMissing = await page.evaluate(fams => {
@@ -217,10 +232,29 @@ async function run() {
       const focused = look(); const outline = getComputedStyle(el).outlineStyle !== 'none' && parseFloat(getComputedStyle(el).outlineWidth) > 0;
       el.blur(); return outline || focused !== look();
     });
+    if (profile === 'premium') {
+      const normalWords = await page.evaluate(() => [...document.querySelectorAll('[data-act]')].map(el => el.textContent.replace(/\s+/g, ' ').trim()));
+      await page.emulateMedia({ reducedMotion: 'reduce' });
+      await page.reload({ waitUntil: 'networkidle' });
+      await page.evaluate(() => document.fonts.ready);
+      await page.waitForTimeout(300);
+      const reduced = await page.evaluate(measure, { vp, premium: true });
+      const reducedWords = await page.evaluate(() => [...document.querySelectorAll('[data-act]')].map(el => el.textContent.replace(/\s+/g, ' ').trim()));
+      m.reduced = { hiddenText: reduced.hiddenText, heroVisible: reduced.heroVisible, overflowX: reduced.overflowX,
+        contentChanged: JSON.stringify(normalWords) !== JSON.stringify(reducedWords) };
+      await page.screenshot({ path: join(outDir, `${vp.name}-reduced.png`) });
+    }
     const results = [];
     for (const [id, level, test, say] of RULES) {
       if (allow.has(id)) continue;
+      if (profile === 'premium' && id === 'hidden-content') continue;
       if (test(m, vp)) results.push({ id, level, message: say(m) });
+    }
+    if (profile === 'premium') {
+      if (!m.heroVisible) results.push({ id: 'product-first-screen', level: 'FAIL', message: 'no visible described product representation on first screen; verify identity in taste critique' });
+      if (m.unsupportedProof || m.undeclaredProof) results.push({ id: 'unsupported-proof', level: 'FAIL', message: 'proof claim lacks a source declaration; review truth against supplied facts' });
+      if (!m.reduced.heroVisible || m.reduced.hiddenText || m.reduced.contentChanged || m.reduced.overflowX > 1)
+        results.push({ id: 'premium-reduced-content', level: 'FAIL', message: 'reduced motion loses product or words, hides content, or overflows' });
     }
     report.viewports[vp.name] = { results, metrics: m };
     await ctx.close();

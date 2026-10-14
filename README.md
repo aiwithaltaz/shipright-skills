@@ -1,11 +1,28 @@
 # ShipRight
 
-**Version 1.1.0**
+**Version 1.2.0, unreleased branch**
 **Context before generate. Product before pixels.**
 
 ShipRight is one skill, named `shipright`, for Claude Code, Cursor, Codex, VS Code, Antigravity, Gemini CLI, Claude.ai, and ChatGPT.
 Bring an idea for a website, a SaaS app, a mobile app or a 3D site. You get a build pack: a PRD, a stack with reasons, a design system with tokens, screen specs, and small ordered tickets written as prompts you paste into your coding tool.
 It does not guarantee a perfect product or replace testing with real users.
+
+## Premium website flow
+
+A public website now starts with a real product brief and six-act story. Its act list is the architecture. Three options change the story and technique set, then stop for your choice. The selected website prompt can use 550 to 1,700 words. App tickets stay short. New projects always run the full flow, even for "just build it".
+
+Ten technique recipes load separately, only when selected. The premium checker allows purposeful labels and reveals while checking product visibility, declared proof sources and reduced-motion content. Taste critique asks whether the product is on stage, scroll teaches something and each act has a job. Missing real product on the first screen is a Blocker.
+
+Two fresh builders used the updated pack, supplied facts and owner-selected stories. [ShipRight](examples/before-after/1.2/shipright/compare.png) and the [sample recorder](examples/before-after/1.2/field-recorder/compare.png) now have real screenshots and short scroll videos. A separate reviewer found issues, the builders fixed them, and [independent retests](examples/before-after/1.2/review/final-review.md) passed for local proof review. Initial findings and captures remain. No merge, tag or release has occurred. The standard install commands below still target the published main branch until this work is merged separately.
+
+## 1.2 proof images and videos
+
+| Proof | Before | After | Comparison | Scroll video |
+| --- | --- | --- | --- | --- |
+| ShipRight Product Manuscript | [Depth, PR 18](examples/before-after/1.2/depth/desktop.png) | [Desktop](examples/before-after/1.2/shipright/evidence/check-ui/desktop.png), [phone](examples/before-after/1.2/shipright/evidence/check-ui/phone.png) | [Before / after](examples/before-after/1.2/shipright/compare.png) | [WebM](examples/before-after/1.2/shipright/evidence/desktop-scroll.webm) |
+| Field Recorder One, SAMPLE | [Depth reference](examples/before-after/1.2/depth/desktop.png) | [Desktop](examples/before-after/1.2/field-recorder/evidence/check-ui-polish/desktop.png), [phone](examples/before-after/1.2/field-recorder/evidence/check-ui-polish/phone.png) | [Different product proof](examples/before-after/1.2/field-recorder/compare.png) | [WebM](examples/before-after/1.2/field-recorder/evidence/scroll.webm) |
+
+The comparisons use actual 1280x800 browser captures. Recorder is a separate synthetic product, not a former Depth product. The generated prompts are 1,019 and 1,076 words. Both builds pass; both premium checks have zero failures. Compact-label warnings remain disclosed. Reduced-motion and no-WebGL evidence is retained alongside the screenshots. Software WebGL and one fresh builder per proof do not establish physical-phone performance or universal model behavior. External reference screenshot fidelity is not verified because the earlier upload is absent and verified browser reference navigation still fails on environment trust; Brand Studio presents a CAPTCHA challenge.
 
 ## Install
 
@@ -41,7 +58,7 @@ Codex also reads `~/.agents/skills/`. Copilot also reads `.github/skills/` and `
 ## Start
 
 1. Install the skill, or keep this repository readable and start at [skills/shipright/SKILL.md](skills/shipright/SKILL.md).
-2. Answer up to three quick questions, or say "you decide". Then you get the whole pack in one pass.
+2. Answer up to five decision cards, or delegate with "you decide". "Let me decide" reserves a choice. Apps usually need three cards. Public websites cover visitor, product hero, scroll story and assets. Clear briefs need no repeated questions.
 
 | Task | Mode |
 | --- | --- |
@@ -84,6 +101,8 @@ node scripts/check-ui.mjs path/to/index.html --root path/to/site
 It needs Node 18+ and Playwright with Chromium. It measures rules; it does not prove good design or full accessibility.
 
 ## How it improved
+
+The 1.2 proofs replace the old ornament with the actual product: [Depth before](examples/before-after/1.2/depth/desktop.png), [ShipRight after](examples/before-after/1.2/shipright/evidence/check-ui/desktop.png), [before / after](examples/before-after/1.2/shipright/compare.png), and [sample product proof](examples/before-after/1.2/field-recorder/compare.png). See the proof table above for phone images and scroll videos.
 
 Same four requests, run by fresh agents with the old pack (0.6.2) and the new pack, then graded blind by separate agents who did not know which was which.
 

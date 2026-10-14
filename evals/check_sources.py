@@ -23,7 +23,7 @@ VERBATIM_SOURCES = {'docs/rebuild/BLUEPRINT.md'}
 RAW_EVIDENCE_DIRS = ('evals/v1/runs/', 'evals/v1/grades/')
 ICONS = 'skills/ui-ux-design/references/icons-and-placement.md'
 HEAVY_ACCENT = 'without a heavy accent bar unless the design system says so'
-VERSION = '1.1.0'
+VERSION = '1.2.0'
 SKILLS = {'product-design': 8, 'ui-ux-design': 10, 'ux-critique': 10, 'ship-check': 20, 'build-pack': 10}
 TEMPLATES = ['01-prd.md', '02-technical-architecture.md', '03-security-and-access.md',
              '04-frontend-spec.md', '05-feature-ticket-list.md', '06-pitch-one-pager.md',
@@ -387,6 +387,17 @@ def validate(root):
     def need(rel, phrase):
         if phrase.lower() not in read(rel).lower():
             errors.append(f'{rel}: missing rule contract: {phrase}')
+
+    for rel, phrase in [
+        ('skills/shipright/modes/product-design/references/product-brief.md', '0-5 question cap'),
+        ('skills/shipright/modes/product-design/references/product-brief.md', 'Let me decide reserves the card'),
+        ('skills/shipright/modes/ui-ux-design/references/premium-web.md', 'exactly three options, not three palette swaps'),
+        ('skills/shipright/modes/ui-ux-design/references/premium-web.md', "Stop for the user's choice"),
+        ('skills/shipright/modes/build-pack/references/act-prompts.md', '550 to 1,700 word ticket'),
+        ('skills/shipright/modes/ux-critique/references/taste-check.md', 'first screen is a **Blocker**'),
+        ('skills/shipright/SKILL.md', 'No step is skipped for a new project, even on request.'),
+    ]:
+        need(rel, phrase)
 
     installable = sorted(p.relative_to(root).as_posix() for p in (root / 'skills').rglob('SKILL.md'))
     if installable != ['skills/shipright/SKILL.md']:
@@ -766,6 +777,12 @@ def self_test(root):
         ('taste item', 'personal-taste/altaz.md', '4, 8, 12, 16, 24, 32 and 48', 'any spacing'),
         ('button side', ICONS, 'Primary action side and button order are set once for the app.', 'Consistency means repeatable patterns, not one side for every action in every context.'),
     ]
+    mutations.extend([
+        ('premium options', 'skills/shipright/modes/ui-ux-design/references/premium-web.md', 'exactly three options, not three palette swaps', 'three color swaps'),
+        ('premium choice', 'skills/shipright/modes/ui-ux-design/references/premium-web.md', "Stop for the user's choice", 'Build before the choice'),
+        ('premium product blocker', 'skills/shipright/modes/ux-critique/references/taste-check.md', 'first screen is a **Blocker**', 'first screen is optional'),
+        ('new project cannot skip', 'skills/shipright/SKILL.md', 'No step is skipped for a new project, even on request.', 'Skip the plan on request.'),
+    ])
     mutations.extend(PHASE5_MUTATIONS)
     mutations.extend(PHASE51_MUTATIONS)
     with tempfile.TemporaryDirectory(prefix='shipright-check-') as tmp:

@@ -1,0 +1,1 @@
+I’m using ShipRight’s build-pack flow. I’ll frame the real product, save the brief and six-act plan, then offer exactly three story directions. I’ll wait for the user’s selection before generating the build prompt or implementing the site.

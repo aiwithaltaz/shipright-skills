@@ -5,11 +5,13 @@ description: "Use this when reviewing a plan, specification, screenshot or runni
 
 # UX critique
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
 Review a real artifact and report evidence-backed corrections. Do not invent users, interview quotes or predicted conversion gains.
 With no artifact, ask for the smallest relevant input. A specification is reviewable without a running app.
+
+For a public website or immersive page, read [taste-check.md](references/taste-check.md) and compare the rendered product and six-act story.
 
 ## INTAKE
 

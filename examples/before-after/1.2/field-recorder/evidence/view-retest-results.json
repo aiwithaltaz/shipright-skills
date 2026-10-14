@@ -1,0 +1,128 @@
+[
+  {
+    "width": 1280,
+    "mode": "normal",
+    "view": "Front",
+    "selected": true,
+    "appropriateExternalAnnotations": true
+  },
+  {
+    "width": 1280,
+    "mode": "normal",
+    "view": "Side",
+    "selected": true,
+    "appropriateExternalAnnotations": true
+  },
+  {
+    "width": 1280,
+    "mode": "normal",
+    "view": "Back",
+    "selected": true,
+    "appropriateExternalAnnotations": true
+  },
+  {
+    "width": 1280,
+    "mode": "reduced",
+    "view": "Front",
+    "selected": true,
+    "appropriateExternalAnnotations": true
+  },
+  {
+    "width": 1280,
+    "mode": "reduced",
+    "view": "Side",
+    "selected": true,
+    "appropriateExternalAnnotations": true
+  },
+  {
+    "width": 1280,
+    "mode": "reduced",
+    "view": "Back",
+    "selected": true,
+    "appropriateExternalAnnotations": true
+  },
+  {
+    "width": 1280,
+    "mode": "fallback",
+    "view": "Front",
+    "selected": true,
+    "appropriateExternalAnnotations": true
+  },
+  {
+    "width": 1280,
+    "mode": "fallback",
+    "view": "Side",
+    "selected": true,
+    "appropriateExternalAnnotations": true
+  },
+  {
+    "width": 1280,
+    "mode": "fallback",
+    "view": "Back",
+    "selected": true,
+    "appropriateExternalAnnotations": true
+  },
+  {
+    "width": 390,
+    "mode": "normal",
+    "view": "Front",
+    "selected": true,
+    "appropriateExternalAnnotations": true
+  },
+  {
+    "width": 390,
+    "mode": "normal",
+    "view": "Side",
+    "selected": true,
+    "appropriateExternalAnnotations": true
+  },
+  {
+    "width": 390,
+    "mode": "normal",
+    "view": "Back",
+    "selected": true,
+    "appropriateExternalAnnotations": true
+  },
+  {
+    "width": 390,
+    "mode": "reduced",
+    "view": "Front",
+    "selected": true,
+    "appropriateExternalAnnotations": true
+  },
+  {
+    "width": 390,
+    "mode": "reduced",
+    "view": "Side",
+    "selected": true,
+    "appropriateExternalAnnotations": true
+  },
+  {
+    "width": 390,
+    "mode": "reduced",
+    "view": "Back",
+    "selected": true,
+    "appropriateExternalAnnotations": true
+  },
+  {
+    "width": 390,
+    "mode": "fallback",
+    "view": "Front",
+    "selected": true,
+    "appropriateExternalAnnotations": true
+  },
+  {
+    "width": 390,
+    "mode": "fallback",
+    "view": "Side",
+    "selected": true,
+    "appropriateExternalAnnotations": true
+  },
+  {
+    "width": 390,
+    "mode": "fallback",
+    "view": "Back",
+    "selected": true,
+    "appropriateExternalAnnotations": true
+  }
+]

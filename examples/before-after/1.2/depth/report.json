@@ -1,0 +1,97 @@
+{
+ "target": "/workspace/.shipright-tools/depth/site/dist/index.html",
+ "profile": "standard",
+ "checkedAt": "2026-10-14T19:16:08.285Z",
+ "viewports": {
+  "desktop": {
+   "results": [],
+   "metrics": {
+    "heroVisible": false,
+    "unsupportedProof": 0,
+    "undeclaredProof": 0,
+    "visibleWords": "Skip to content ShipRight Gallery Install GitHub CONTEXT BEFORE GENERATE. PRODUCT BEFORE PIXELS. One skill for a website, an app, or a screen. Install Drag or use arrow keys to turn. Reset view It writes the pack before anyone builds the look. No invented metrics, quotes, logos, or prices. No gradient text, glow, or rows of icon cards. Your design system wins. The look waits for your OK. Before and after Blind trial, 13 Oct 2026. Pack 0.6.2 scored 93 of 120. Pack 1.0 scored 112 of 120. One run per case, same model family, synthetic prompts. Not user research. SaaS dashboard Blind scores 24 for 0.6.2 and 29 for 1.0. More projects are visible, each with its next deadline and budget, in one table. Source Desktop Phone Drag to compare. Left is 0.6.2. Right is 1.0. Mobile form Blind scores 24 for 0.6.2 and 29 for 1.0. The phone comparison is the primary image for this case. Source Desktop Phone Drag to compare. Left is 0.6.2. Right is 1.0. Marketing site, grid re-run Checked, not graded. Hidden content and sideways scroll both pass at 1280 and 390 (0 failures, 1 warning). The graded marketing run was a different build: 22 for 0.6.2 and 28 for 1.0. Source Desktop Phone Drag to compare. Left is 0.6.2. Right is 1.0. 3D product site, re-run Blind score 26 against 23, after the motion fix. Buy is in the hero, view buttons sit under the model, and the page uses a working name. The first 1.0 run scored 19, hid its content until scroll, and is not this image. Source Desktop Phone Drag to compare. Left is 0.6.2. Right is 1.0. IVC 2026 Historical example. The images are not added yet. Registration search results Not added yet. Reports Not added yet. Install ShipRight 1.1.0. Copy the line for your tool. Any tool Claude Code Cursor Codex VS Code Antigravity Gemini CLI Claude.ai ChatGPT npx skills add aiwithaltaz/shipright-skills Add -g to install the skills command for every project. Copy /plugin marketplace add aiwithaltaz/shipright-skills /plugin install shipright@shipright Run both lines in Claude Code. Copy npx skills add aiwithaltaz/shipright-skills -a cursor -y Copy npx skills add aiwithaltaz/shipright-skills -a codex -y Copy npx skills add aiwithaltaz/shipright-skills -a github-copilot -y The skills CLI names this agent github-copilot. Copy npx skills add aiwithaltaz/shipright-skills -a antigravity -y Copy npx skills add aiwithaltaz/shipright-skills -a gemini-cli -y Copy shipright.zip Download shipright.zip from release v1.1.0 and upload it under Customize, Skills. Copy shipright-chatgpt.md Attach shipright-chatgpt.md from release v1.1.0 as project instructions or Custom GPT instructions. Copy by Altaz Lavji / AI With Altaz GitHub Changelog Releases Credits License",
+    "overflowX": 0,
+    "pageHeight": 8326,
+    "h1": 1,
+    "families": [
+     [
+      "Familjen Grotesk",
+      81
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 0,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [
+     {
+      "w": 760,
+      "h": 360,
+      "labeled": true
+     }
+    ],
+    "hiddenText": 0,
+    "emDashes": 0,
+    "animated": false,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true
+   }
+  },
+  "phone": {
+   "results": [],
+   "metrics": {
+    "heroVisible": false,
+    "unsupportedProof": 0,
+    "undeclaredProof": 0,
+    "visibleWords": "Skip to content ShipRight Gallery Install GitHub CONTEXT BEFORE GENERATE. PRODUCT BEFORE PIXELS. One skill for a website, an app, or a screen. Install Drag or use arrow keys to turn. Reset view It writes the pack before anyone builds the look. No invented metrics, quotes, logos, or prices. No gradient text, glow, or rows of icon cards. Your design system wins. The look waits for your OK. Before and after Blind trial, 13 Oct 2026. Pack 0.6.2 scored 93 of 120. Pack 1.0 scored 112 of 120. One run per case, same model family, synthetic prompts. Not user research. SaaS dashboard Blind scores 24 for 0.6.2 and 29 for 1.0. More projects are visible, each with its next deadline and budget, in one table. Source Desktop Phone Drag to compare. Left is 0.6.2. Right is 1.0. Mobile form Blind scores 24 for 0.6.2 and 29 for 1.0. The phone comparison is the primary image for this case. Source Desktop Phone Drag to compare. Left is 0.6.2. Right is 1.0. Marketing site, grid re-run Checked, not graded. Hidden content and sideways scroll both pass at 1280 and 390 (0 failures, 1 warning). The graded marketing run was a different build: 22 for 0.6.2 and 28 for 1.0. Source Desktop Phone Drag to compare. Left is 0.6.2. Right is 1.0. 3D product site, re-run Blind score 26 against 23, after the motion fix. Buy is in the hero, view buttons sit under the model, and the page uses a working name. The first 1.0 run scored 19, hid its content until scroll, and is not this image. Source Desktop Phone Drag to compare. Left is 0.6.2. Right is 1.0. IVC 2026 Historical example. The images are not added yet. Registration search results Not added yet. Reports Not added yet. Install ShipRight 1.1.0. Copy the line for your tool. Any tool Claude Code Cursor Codex VS Code Antigravity Gemini CLI Claude.ai ChatGPT npx skills add aiwithaltaz/shipright-skills Add -g to install the skills command for every project. Copy /plugin marketplace add aiwithaltaz/shipright-skills /plugin install shipright@shipright Run both lines in Claude Code. Copy npx skills add aiwithaltaz/shipright-skills -a cursor -y Copy npx skills add aiwithaltaz/shipright-skills -a codex -y Copy npx skills add aiwithaltaz/shipright-skills -a github-copilot -y The skills CLI names this agent github-copilot. Copy npx skills add aiwithaltaz/shipright-skills -a antigravity -y Copy npx skills add aiwithaltaz/shipright-skills -a gemini-cli -y Copy shipright.zip Download shipright.zip from release v1.1.0 and upload it under Customize, Skills. Copy shipright-chatgpt.md Attach shipright-chatgpt.md from release v1.1.0 as project instructions or Custom GPT instructions. Copy by Altaz Lavji / AI With Altaz GitHub Changelog Releases Credits License",
+    "overflowX": 0,
+    "pageHeight": 7312,
+    "h1": 1,
+    "families": [
+     [
+      "Familjen Grotesk",
+      81
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 0,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [
+     {
+      "w": 350,
+      "h": 260,
+      "labeled": true
+     }
+    ],
+    "hiddenText": 0,
+    "emDashes": 0,
+    "animated": false,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true
+   }
+  }
+ }
+}

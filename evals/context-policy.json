@@ -56,6 +56,9 @@
         },
         "skills/shipright/modes/build-pack/references/pack-contract.md": {
           "when": "For requested documents, follow [pack-contract.md](../build-pack/references/pack-contract.md) and [output-folder.md](../_shared/output-folder.md)."
+        },
+        "skills/shipright/modes/product-design/references/product-brief.md": {
+          "when": "For a public website, launch page or immersive page, read [product-brief.md](references/product-brief.md) instead of app framing intake."
         }
       },
       "normal_paths": [
@@ -90,6 +93,12 @@
             "skills/shipright/modes/build-pack/references/pack-contract.md",
             "skills/shipright/modes/product-design/references/flows-and-states.md",
             "skills/shipright/modes/product-design/references/framing.md"
+          ]
+        },
+        {
+          "task": "Premium website research and story",
+          "references": [
+            "skills/shipright/modes/product-design/references/product-brief.md"
           ]
         }
       ]
@@ -180,6 +189,42 @@
         },
         "skills/shipright/modes/build-pack/references/ticket-prompts.md": {
           "when": "| Builder instructions and ticket prompts | [ticket-prompts.md](../build-pack/references/ticket-prompts.md) |"
+        },
+        "skills/shipright/modes/ui-ux-design/references/premium-web.md": {
+          "when": "For public website options and scenes, read [premium-web.md](references/premium-web.md) instead of the app work sequence and document marketing references."
+        },
+        "skills/shipright/modes/ui-ux-design/references/techniques.md": {
+          "when": "For a premium story, read [techniques.md](references/techniques.md) as an index, then only the chosen recipes below."
+        },
+        "skills/shipright/modes/ui-ux-design/references/pinned-scroll-scene.md": {
+          "when": "For chosen pinned scroll scene, read [pinned-scroll-scene.md](references/pinned-scroll-scene.md)."
+        },
+        "skills/shipright/modes/ui-ux-design/references/camera-flight.md": {
+          "when": "For chosen camera flight, read [camera-flight.md](references/camera-flight.md)."
+        },
+        "skills/shipright/modes/ui-ux-design/references/object-in-front-of-text.md": {
+          "when": "For chosen object in front of text, read [object-in-front-of-text.md](references/object-in-front-of-text.md)."
+        },
+        "skills/shipright/modes/ui-ux-design/references/block-wipe.md": {
+          "when": "For chosen block wipe, read [block-wipe.md](references/block-wipe.md)."
+        },
+        "skills/shipright/modes/ui-ux-design/references/text-scramble.md": {
+          "when": "For chosen text scramble, read [text-scramble.md](references/text-scramble.md)."
+        },
+        "skills/shipright/modes/ui-ux-design/references/hover-invert.md": {
+          "when": "For chosen hover invert, read [hover-invert.md](references/hover-invert.md)."
+        },
+        "skills/shipright/modes/ui-ux-design/references/entry-gate.md": {
+          "when": "For chosen entry gate, read [entry-gate.md](references/entry-gate.md)."
+        },
+        "skills/shipright/modes/ui-ux-design/references/cursor-reactive-3d.md": {
+          "when": "For chosen cursor-reactive 3d, read [cursor-reactive-3d.md](references/cursor-reactive-3d.md)."
+        },
+        "skills/shipright/modes/ui-ux-design/references/sound-toggle.md": {
+          "when": "For chosen sound toggle, read [sound-toggle.md](references/sound-toggle.md)."
+        },
+        "skills/shipright/modes/ui-ux-design/references/page-transition.md": {
+          "when": "For chosen page transition, read [page-transition.md](references/page-transition.md)."
         }
       },
       "normal_paths": [
@@ -240,6 +285,98 @@
             "skills/shipright/modes/ui-ux-design/references/anti-slop-rules.md",
             "skills/shipright/modes/ui-ux-design/references/motion.md"
           ]
+        },
+        {
+          "task": "Premium technique: pinned-scroll-scene",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/pinned-scroll-scene.md"
+          ]
+        },
+        {
+          "task": "Premium technique: camera-flight",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/camera-flight.md"
+          ]
+        },
+        {
+          "task": "Premium technique: object-in-front-of-text",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/object-in-front-of-text.md"
+          ]
+        },
+        {
+          "task": "Premium technique: block-wipe",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/block-wipe.md"
+          ]
+        },
+        {
+          "task": "Premium technique: text-scramble",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/text-scramble.md"
+          ]
+        },
+        {
+          "task": "Premium technique: hover-invert",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/hover-invert.md"
+          ]
+        },
+        {
+          "task": "Premium technique: entry-gate",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/entry-gate.md"
+          ]
+        },
+        {
+          "task": "Premium technique: cursor-reactive-3d",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/cursor-reactive-3d.md"
+          ]
+        },
+        {
+          "task": "Premium technique: sound-toggle",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/sound-toggle.md"
+          ]
+        },
+        {
+          "task": "Premium technique: page-transition",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/page-transition.md"
+          ]
+        },
+        {
+          "task": "Premium B: three options with five techniques",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/pinned-scroll-scene.md",
+            "skills/shipright/modes/ui-ux-design/references/camera-flight.md",
+            "skills/shipright/modes/ui-ux-design/references/object-in-front-of-text.md",
+            "skills/shipright/modes/ui-ux-design/references/block-wipe.md",
+            "skills/shipright/modes/ui-ux-design/references/text-scramble.md"
+          ]
         }
       ]
     },
@@ -271,6 +408,9 @@
         },
         "skills/shipright/modes/ux-critique/references/severity-rubric.md": {
           "when": "Use [severity-rubric.md](references/severity-rubric.md): Blocker for critical failure, Major for substantial noncritical friction, Polish for small craft issues."
+        },
+        "skills/shipright/modes/ux-critique/references/taste-check.md": {
+          "when": "For a public website or immersive page, read [taste-check.md](references/taste-check.md) and compare the rendered product and six-act story."
         }
       },
       "normal_paths": [
@@ -290,6 +430,14 @@
           "references": [
             "skills/shipright/modes/ux-critique/references/plan-review.md",
             "skills/shipright/modes/ux-critique/references/severity-rubric.md"
+          ]
+        },
+        {
+          "task": "Premium taste critique",
+          "references": [
+            "skills/shipright/modes/ux-critique/references/taste-check.md",
+            "skills/shipright/modes/ux-critique/references/severity-rubric.md",
+            "skills/shipright/modes/ux-critique/references/bounded-verification.md"
           ]
         }
       ]
@@ -343,6 +491,48 @@
         },
         "skills/shipright/modes/ux-critique/references/bounded-verification.md": {
           "when": "When the user returns with built work, check it with [bounded-verification.md](../ux-critique/references/bounded-verification.md)."
+        },
+        "skills/shipright/modes/product-design/references/product-brief.md": {
+          "when": "For a public website, launch page or immersive page, read [product-brief.md](../product-design/references/product-brief.md) instead of the three app intake cards and app flows."
+        },
+        "skills/shipright/modes/ui-ux-design/references/premium-web.md": {
+          "when": "For public website options and scenes, read [premium-web.md](../ui-ux-design/references/premium-web.md) instead of the app work sequence and document marketing references."
+        },
+        "skills/shipright/modes/ui-ux-design/references/techniques.md": {
+          "when": "For a premium story, read [techniques.md](../ui-ux-design/references/techniques.md) as an index, then only the chosen recipes below."
+        },
+        "skills/shipright/modes/ui-ux-design/references/pinned-scroll-scene.md": {
+          "when": "For chosen pinned scroll scene, read [pinned-scroll-scene.md](../ui-ux-design/references/pinned-scroll-scene.md)."
+        },
+        "skills/shipright/modes/ui-ux-design/references/camera-flight.md": {
+          "when": "For chosen camera flight, read [camera-flight.md](../ui-ux-design/references/camera-flight.md)."
+        },
+        "skills/shipright/modes/ui-ux-design/references/object-in-front-of-text.md": {
+          "when": "For chosen object in front of text, read [object-in-front-of-text.md](../ui-ux-design/references/object-in-front-of-text.md)."
+        },
+        "skills/shipright/modes/ui-ux-design/references/block-wipe.md": {
+          "when": "For chosen block wipe, read [block-wipe.md](../ui-ux-design/references/block-wipe.md)."
+        },
+        "skills/shipright/modes/ui-ux-design/references/text-scramble.md": {
+          "when": "For chosen text scramble, read [text-scramble.md](../ui-ux-design/references/text-scramble.md)."
+        },
+        "skills/shipright/modes/ui-ux-design/references/hover-invert.md": {
+          "when": "For chosen hover invert, read [hover-invert.md](../ui-ux-design/references/hover-invert.md)."
+        },
+        "skills/shipright/modes/ui-ux-design/references/entry-gate.md": {
+          "when": "For chosen entry gate, read [entry-gate.md](../ui-ux-design/references/entry-gate.md)."
+        },
+        "skills/shipright/modes/ui-ux-design/references/cursor-reactive-3d.md": {
+          "when": "For chosen cursor-reactive 3d, read [cursor-reactive-3d.md](../ui-ux-design/references/cursor-reactive-3d.md)."
+        },
+        "skills/shipright/modes/ui-ux-design/references/sound-toggle.md": {
+          "when": "For chosen sound toggle, read [sound-toggle.md](../ui-ux-design/references/sound-toggle.md)."
+        },
+        "skills/shipright/modes/ui-ux-design/references/page-transition.md": {
+          "when": "For chosen page transition, read [page-transition.md](../ui-ux-design/references/page-transition.md)."
+        },
+        "skills/shipright/modes/build-pack/references/act-prompts.md": {
+          "when": "For a chosen premium page, read [act-prompts.md](references/act-prompts.md) instead of app ticket prompts and golden examples."
         }
       },
       "normal_paths": [
@@ -387,6 +577,114 @@
             "skills/shipright/modes/ui-ux-design/references/starter-systems.md",
             "skills/shipright/modes/ui-ux-design/references/marketing-pages.md",
             "skills/shipright/modes/ui-ux-design/references/motion.md"
+          ]
+        },
+        {
+          "task": "Premium A: research and story",
+          "references": [
+            "skills/shipright/modes/product-design/references/product-brief.md",
+            "skills/shipright/modes/product-design/references/framing.md",
+            "skills/shipright/modes/build-pack/references/stack-choices.md"
+          ]
+        },
+        {
+          "task": "Premium technique: pinned-scroll-scene",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/pinned-scroll-scene.md"
+          ]
+        },
+        {
+          "task": "Premium technique: camera-flight",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/camera-flight.md"
+          ]
+        },
+        {
+          "task": "Premium technique: object-in-front-of-text",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/object-in-front-of-text.md"
+          ]
+        },
+        {
+          "task": "Premium technique: block-wipe",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/block-wipe.md"
+          ]
+        },
+        {
+          "task": "Premium technique: text-scramble",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/text-scramble.md"
+          ]
+        },
+        {
+          "task": "Premium technique: hover-invert",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/hover-invert.md"
+          ]
+        },
+        {
+          "task": "Premium technique: entry-gate",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/entry-gate.md"
+          ]
+        },
+        {
+          "task": "Premium technique: cursor-reactive-3d",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/cursor-reactive-3d.md"
+          ]
+        },
+        {
+          "task": "Premium technique: sound-toggle",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/sound-toggle.md"
+          ]
+        },
+        {
+          "task": "Premium technique: page-transition",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/page-transition.md"
+          ]
+        },
+        {
+          "task": "Premium B: three options with five techniques",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md",
+            "skills/shipright/modes/ui-ux-design/references/techniques.md",
+            "skills/shipright/modes/ui-ux-design/references/pinned-scroll-scene.md",
+            "skills/shipright/modes/ui-ux-design/references/camera-flight.md",
+            "skills/shipright/modes/ui-ux-design/references/object-in-front-of-text.md",
+            "skills/shipright/modes/ui-ux-design/references/block-wipe.md",
+            "skills/shipright/modes/ui-ux-design/references/text-scramble.md"
+          ]
+        },
+        {
+          "task": "Premium C: six-act prompt",
+          "references": [
+            "skills/shipright/modes/build-pack/references/act-prompts.md",
+            "skills/shipright/modes/build-pack/references/pack-contract.md",
+            "skills/shipright/modes/ui-ux-design/references/premium-web.md"
           ]
         }
       ]

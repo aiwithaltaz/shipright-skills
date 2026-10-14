@@ -1,0 +1,147 @@
+{
+ "target": "http://127.0.0.1:4176",
+ "profile": "premium",
+ "checkedAt": "2026-10-14T19:30:24.407Z",
+ "viewports": {
+  "desktop": {
+   "results": [
+    {
+     "id": "font-families",
+     "level": "WARN",
+     "message": "3 text families: Liberation Sans, monospace, Liberation Serif"
+    },
+    {
+     "id": "small-text",
+     "level": "WARN",
+     "message": "20 text runs under 12px"
+    }
+   ],
+   "metrics": {
+    "heroVisible": true,
+    "unsupportedProof": 0,
+    "undeclaredProof": 0,
+    "visibleWords": "shipright ONE SKILL. FIVE MODES. Explore the skill Install ShipRight A BETTER PLACE TO BEGIN Context before generate. Product before pixels. One skill for the thinking, designing and checking that a good build needs. See what goes into it PRODUCT SHIPRIGHT / BUILD-PACK 01–05 A clear brief. A considered build. BUILD-PACK OUTPUT STRUCTURE 01 01-prd.md The job, the scope, the decisions. 02 02-technical-architecture.md The structure behind the product. 03 DESIGN.md A system, before a screen. 04 04-frontend-spec.md Every screen, state and interaction. 05 05-feature-ticket-list.md Exact prompts for the builder. CONTEXT / PRODUCT / BUILD S/R The actual output. Not another blank canvas. Procedural paper depth · real output structure CONTEXT BEFORE GENERATE. PRODUCT BEFORE PIXELS. SCROLL TO READ 01 / 06 02 / THE STARTING POINT Start with what matters. Before a screen, a shared understanding. Before a build, a decision worth building on. A clear brief comes before the build. THE PRODUCT BRIEF 01 Who is it for? The visitor and the job they need to finish. 02 What are we making? A specific release, with a clear scope. 03 What stays out? Boundaries before more features. 04 What is decided? Proposed, approved or still unresolved. 03 / CHOOSE YOUR WAY IN One skill. Five ways in. You don't need a different skill for every step. Start where the work is. 01 build-pack From idea to build + 02 product-design Frame the product + 03 ui-ux-design Specify the experience + 04 ux-critique Review the work + 05 ship-check Check before launch + 04 / WHAT YOU TAKE WITH YOU The work behind the work. SHIPRIGHT THE BUILD PACK Product. Structure. System. Then pixels. 01-prd.md 02-technical-architecture.md DESIGN.md 04-frontend-spec.md 05-feature-ticket-list.md Actual artifact names from the build-pack contract. A sequence that makes room for judgment. 01 Build pack Frame the product. Give the builder exact prompts. 02 Design preview Explore distinct directions. Stop for a choice. 03 Build Implement the selected direction. 04 Critique Review the rendered result. Fix what it finds. 05 Ship-check Check evidence before calling it ready. Source: the ShipRight skill 05 / YOUR NEXT BUILD STARTS HERE Put context to work. Install one skill. Start with the right question. npx skills add aiwithaltaz/shipright-skills Copy command Read the skill on GitHub shipright Context before generate. Product before pixels. Back to top ONE SKILL. FIVE MODES. GITHUB 06 / 06",
+    "overflowX": 0,
+    "pageHeight": 5211,
+    "h1": 1,
+    "families": [
+     [
+      "Liberation Sans",
+      40
+     ],
+     [
+      "monospace",
+      38
+     ],
+     [
+      "Liberation Serif",
+      28
+     ]
+    ],
+    "contrast": [],
+    "smallText": 20,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 0,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [
+     {
+      "w": 526,
+      "h": 718,
+      "labeled": true
+     }
+    ],
+    "hiddenText": 0,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true,
+    "reduced": {
+     "hiddenText": 0,
+     "heroVisible": true,
+     "overflowX": 0,
+     "contentChanged": false
+    }
+   }
+  },
+  "phone": {
+   "results": [
+    {
+     "id": "font-families",
+     "level": "WARN",
+     "message": "3 text families: monospace, Liberation Sans, Liberation Serif"
+    },
+    {
+     "id": "small-text",
+     "level": "WARN",
+     "message": "34 text runs under 12px"
+    }
+   ],
+   "metrics": {
+    "heroVisible": true,
+    "unsupportedProof": 0,
+    "undeclaredProof": 0,
+    "visibleWords": "shipright Explore the skill Install ShipRight A BETTER PLACE TO BEGIN Context before generate. Product before pixels. One skill for the thinking, designing and checking that a good build needs. See what goes into it SHIPRIGHT / BUILD-PACK 01–05 A clear brief. A considered build. BUILD-PACK OUTPUT STRUCTURE 01 01-prd.md The job, the scope, the decisions. 02 02-technical-architecture.md The structure behind the product. 03 DESIGN.md A system, before a screen. 04 04-frontend-spec.md Every screen, state and interaction. 05 05-feature-ticket-list.md Exact prompts for the builder. CONTEXT / PRODUCT / BUILD S/R The actual output. Not another blank canvas. Procedural paper depth · real output structure SCROLL TO READ 01 / 06 02 / THE STARTING POINT Start with what matters. Before a screen, a shared understanding. Before a build, a decision worth building on. A clear brief comes before the build. THE PRODUCT BRIEF 01 Who is it for? The visitor and the job they need to finish. 02 What are we making? A specific release, with a clear scope. 03 What stays out? Boundaries before more features. 04 What is decided? Proposed, approved or still unresolved. 03 / CHOOSE YOUR WAY IN One skill. Five ways in. You don't need a different skill for every step. Start where the work is. 01 build-pack + 02 product-design + 03 ui-ux-design + 04 ux-critique + 05 ship-check + 04 / WHAT YOU TAKE WITH YOU The work behind the work. SHIPRIGHT THE BUILD PACK Product. Structure. System. Then pixels. 01-prd.md 02-technical-architecture.md DESIGN.md 04-frontend-spec.md 05-feature-ticket-list.md Actual artifact names from the build-pack contract. A sequence that makes room for judgment. 01 Build pack Frame the product. Give the builder exact prompts. 02 Design preview Explore distinct directions. Stop for a choice. 03 Build Implement the selected direction. 04 Critique Review the rendered result. Fix what it finds. 05 Ship-check Check evidence before calling it ready. Source: the ShipRight skill 05 / YOUR NEXT BUILD STARTS HERE Put context to work. Install one skill. Start with the right question. npx skills add aiwithaltaz/shipright-skills Copy command Read the skill on GitHub shipright Context before generate. Product before pixels. Back to top ONE SKILL. FIVE MODES. GITHUB 06 / 06",
+    "overflowX": 0,
+    "pageHeight": 5741,
+    "h1": 1,
+    "families": [
+     [
+      "monospace",
+      36
+     ],
+     [
+      "Liberation Sans",
+      35
+     ],
+     [
+      "Liberation Serif",
+      28
+     ]
+    ],
+    "contrast": [],
+    "smallText": 34,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 0,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [
+     {
+      "w": 343,
+      "h": 774,
+      "labeled": true
+     }
+    ],
+    "hiddenText": 0,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true,
+    "reduced": {
+     "hiddenText": 0,
+     "heroVisible": true,
+     "overflowX": 0,
+     "contentChanged": false
+    }
+   }
+  }
+ }
+}

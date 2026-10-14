@@ -7,11 +7,20 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      NODE_PATH: /tmp/shipright-ui-tools/node_modules
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install --prefix /tmp/shipright-ui-tools playwright@1.58.2
+      - run: node /tmp/shipright-ui-tools/node_modules/playwright/cli.js install --with-deps chromium
+      - run: node scripts/check-ui.mjs evals/v1/checker-fixtures/good.html --root . --out /tmp/shipright-ui-smoke
       - run: python -m pip install -r evals/requirements-context.txt
       - run: python evals/check_sources.py --self-test
       - run: python evals/check_context.py

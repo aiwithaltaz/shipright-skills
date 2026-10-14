@@ -19,6 +19,8 @@ Add a one-line pointer for the user's tool, such as `.cursor/rules/shipright.mdc
 Write these only when asked or clearly needed: `PRODUCT.md` (one-screen summary), `03-security-and-access.md` (several roles or sensitive data), `06-pitch-one-pager.md`, `ship-check.md`.
 A typical 4 to 6 screen product stays near 5,000 words in total. A one-page site needs far less.
 
+For premium web only, one six-act build prompt in the ticket file may use 550 to 1,700 words. App tickets retain the 220-word cap. The act list is single-page architecture; no filler sitemap.
+
 ## Write each fact once
 
 State a rule in one file and link to it elsewhere. Build rules hold standing rules; tickets link to them instead of repeating them.

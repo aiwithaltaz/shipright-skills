@@ -1,0 +1,75 @@
+[
+  {
+    "check": "desktop no horizontal overflow",
+    "pass": true
+  },
+  {
+    "check": "desktop inspect anchor",
+    "pass": true
+  },
+  {
+    "check": "desktop side selected",
+    "pass": true
+  },
+  {
+    "check": "desktop store disclosure",
+    "pass": true
+  },
+  {
+    "check": "desktop keyboard disclosure exclusive",
+    "pass": true
+  },
+  {
+    "check": "desktop third act reached",
+    "pass": true
+  },
+  {
+    "check": "desktop reverse restores microphones",
+    "pass": true
+  },
+  {
+    "check": "phone no horizontal overflow",
+    "pass": true
+  },
+  {
+    "check": "phone inspect anchor",
+    "pass": true
+  },
+  {
+    "check": "phone side selected",
+    "pass": true
+  },
+  {
+    "check": "phone store disclosure",
+    "pass": true
+  },
+  {
+    "check": "phone keyboard disclosure exclusive",
+    "pass": true
+  },
+  {
+    "check": "phone third act reached",
+    "pass": true
+  },
+  {
+    "check": "phone reverse restores microphones",
+    "pass": true
+  },
+  {
+    "check": "reduced motion normal flow",
+    "pass": true
+  },
+  {
+    "check": "no WebGL preserves controls and words",
+    "pass": true
+  },
+  {
+    "check": "actual WebGL failure shows still and normal acts",
+    "pass": true
+  },
+  {
+    "check": "no runtime page errors",
+    "pass": true,
+    "errors": []
+  }
+]

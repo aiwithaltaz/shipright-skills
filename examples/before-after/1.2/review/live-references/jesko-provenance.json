@@ -1,0 +1,17 @@
+{
+  "label": "Live pattern reference; not the absent owner upload",
+  "url": "https://jeskojets.com",
+  "capturedAt": "2026-10-14T20:09:16.928Z",
+  "ignoreHTTPSErrors": false,
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "error": "page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://jeskojets.com/",
+  "assetFailures": [
+    {
+      "hostname": "jeskojets.com",
+      "failure": "net::ERR_CERT_AUTHORITY_INVALID"
+    }
+  ]
+}

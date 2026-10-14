@@ -5,11 +5,11 @@ description: "Use this when someone brings an idea for a website, SaaS app, mobi
 
 # Build pack
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
-Idea in, build pack out. Work like a small senior agency: product, design and engineering decide together, then hand the builder small, exact prompts.
-For a single screen or a correction, use ui-ux-design. For a review, use ux-critique. For launch evidence, use ship-check.
+Give the builder exact prompts.
+Screens: ui-ux-design. Reviews: ux-critique. Launch: ship-check.
 
 ## Full flow for a new project
 
@@ -21,14 +21,45 @@ A new project always runs every step below, in order. "Just build it", "skip the
 4. **Critique.** Run ux-critique on the rendered result and `scripts/check-ui.mjs`. Fix what it finds. Loop until clean.
 5. **Ship-check.**
 
-Skip a step only when the user names that step and accepts the stated risk. Say which step is skipped and why it matters. Risk if skipped: no scope (build pack), an unapproved look (design preview), nothing to review (build), defects left in (critique), launch evidence unknown (ship-check).
+No step is skipped for a new project, even on request. Explain the required sequence and continue it. Existing-work corrections run only the affected steps.
+For public websites the preview is exactly three different stories and technique sets, not color swaps. Stop for the user to choose or approve.
 
 When no human is available, still write the 2-3 directions, pick one with a written reason, and mark it "Proposed, awaiting owner approval". Then still run the critique, the fix loop, and ship-check. Shared intake still runs first. An explicit correction, review, or launch check on existing work is not a new project.
+
+## Premium routing
+
+For a public website, launch page or immersive page, read [product-brief.md](../product-design/references/product-brief.md) instead of the three app intake cards and app flows.
+
+For public website options and scenes, read [premium-web.md](../ui-ux-design/references/premium-web.md) instead of the app work sequence and document marketing references.
+
+For a premium story, read [techniques.md](../ui-ux-design/references/techniques.md) as an index, then only the chosen recipes below.
+
+For chosen pinned scroll scene, read [pinned-scroll-scene.md](../ui-ux-design/references/pinned-scroll-scene.md).
+
+For chosen camera flight, read [camera-flight.md](../ui-ux-design/references/camera-flight.md).
+
+For chosen object in front of text, read [object-in-front-of-text.md](../ui-ux-design/references/object-in-front-of-text.md).
+
+For chosen block wipe, read [block-wipe.md](../ui-ux-design/references/block-wipe.md).
+
+For chosen text scramble, read [text-scramble.md](../ui-ux-design/references/text-scramble.md).
+
+For chosen hover invert, read [hover-invert.md](../ui-ux-design/references/hover-invert.md).
+
+For chosen entry gate, read [entry-gate.md](../ui-ux-design/references/entry-gate.md).
+
+For chosen cursor-reactive 3d, read [cursor-reactive-3d.md](../ui-ux-design/references/cursor-reactive-3d.md).
+
+For chosen sound toggle, read [sound-toggle.md](../ui-ux-design/references/sound-toggle.md).
+
+For chosen page transition, read [page-transition.md](../ui-ux-design/references/page-transition.md).
+
+For a chosen premium page, read [act-prompts.md](references/act-prompts.md) instead of app ticket prompts and golden examples.
 
 ## INTAKE
 
 Read [shared intake](../_shared/intake.md) and [the operating contract](../_shared/operating-contract.md) once.
-Use 0-5 questions total before starting. For a vague idea, the first reply is decision cards only, usually three:
+Use 0-5 questions total before starting. For a vague app idea, the first reply is decision cards only, usually three:
 
 1. Who it serves and the one job this release finishes.
 2. What stays out of this release.
@@ -45,6 +76,7 @@ A ticket cannot turn Fail into Pass. Nothing ships, publishes or charges money w
 ## Sequence
 
 Do the steps in order. Load each reference only when you reach its step.
+For premium public web, replace steps 1-7 with research and story, three options, then an act prompt. Preserve the pack check and files. App steps below stay for apps and explicitly calm documents.
 
 1. **Frame.** Read [framing.md](../product-design/references/framing.md). Who, job, what they do today, this release, what stays out, one observable success check per job.
 2. **Flows and states.** For each core job, read [flows-and-states.md](../product-design/references/flows-and-states.md). Entry, steps, exits, failure and return. Check [Flow rules (must pass)](../_shared/flow-rules.md).
@@ -60,14 +92,14 @@ Work behind the scenes. Do not narrate each step.
 
 ## The reply
 
-Keep the chat reply under 300 words. The documents carry the detail.
+Reply under 300 words.
 
 1. What the pack contains, as a file list.
 2. Decisions made for the user, one line each, marked Proposed.
 3. What only the user can confirm: real blockers such as prices, legal pages, access policy, brand assets.
 4. The next step is the design preview: 2-3 directions, then stop. Do not start the product build until the user chooses or approves one.
 
-No restated PRD, no long reasoning, no list of everything left out.
+Do not restate the documents.
 
 ## Pack check: 10 checks
 

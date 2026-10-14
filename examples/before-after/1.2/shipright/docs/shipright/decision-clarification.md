@@ -1,0 +1,4 @@
+# Decision clarification
+Initial D2 technical proposal omitted WebGL because the skill output is a readable document. Preserved here as Superseded, not silently removed. Parent relayed explicit owner stack clarification on 2026-10-14: Three.js or React Three Fiber, GSAP ScrollTrigger and Lenis are required. Approved implementation uses one decorative Three.js canvas depicting procedural depth behind the real output manuscript. DOM manuscript is the actual product representation; canvas is labeled procedural paper depth. It is not a fake software interface. No model or texture assets, no sound. No-WebGL retains full content.
+
+Runtime correction: supplied Georgia was unavailable; use installed Liberation Serif and Liberation Sans for reproducible rendering. Vermilion adjusted from #d8492c to #bd361b after checker found 4.06:1 small-text contrast. Story and geometry preserved.

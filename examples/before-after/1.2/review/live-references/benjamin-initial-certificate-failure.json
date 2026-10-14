@@ -1,0 +1,16 @@
+{
+  "label": "Live pattern reference; not the absent owner upload",
+  "url": "https://benjamincreative.me",
+  "capturedAt": "2026-10-14T20:03:22.622Z",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "error": "page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://benjamincreative.me/",
+  "assetFailures": [
+    {
+      "hostname": "benjamincreative.me",
+      "failure": "net::ERR_CERT_AUTHORITY_INVALID"
+    }
+  ]
+}

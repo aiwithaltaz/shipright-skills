@@ -5,7 +5,7 @@ description: "Use this when someone wants to design, review, or build a website,
 
 # ShipRight
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
 This is the only ShipRight skill. Type `/shipright`, or start here when the request is a product, a screen, a website, or a launch check.
@@ -36,7 +36,8 @@ A new project always runs every step below, in order. "Just build it", "skip the
 4. **Critique.** Run ux-critique on the rendered result and `scripts/check-ui.mjs`. Fix what it finds. Loop until clean.
 5. **Ship-check.**
 
-Skip a step only when the user names that step and accepts the stated risk. Say which step is skipped and why it matters. Risk if skipped: no scope (build pack), an unapproved look (design preview), nothing to review (build), defects left in (critique), launch evidence unknown (ship-check).
+No step is skipped for a new project, even on request. Explain the required sequence and continue it. Existing-work corrections run only the affected steps.
+For public websites the preview is exactly three different stories and technique sets, not color swaps. Stop for the user to choose or approve.
 
 When no human is available, still write the 2-3 directions, pick one with a written reason, and mark it "Proposed, awaiting owner approval". Then still run the critique, the fix loop, and ship-check. Shared intake still runs first. An explicit correction, review, or launch check on existing work is not a new project.
 

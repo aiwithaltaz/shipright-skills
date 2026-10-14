@@ -5,11 +5,13 @@ description: "Use this when framing a product idea, judging research evidence or
 
 # Product design
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
 Connect outcome, mechanism, objects, journey and screen jobs.
 Use ui-ux-design for visuals; ux-critique for reviews.
+
+For a public website, launch page or immersive page, read [product-brief.md](references/product-brief.md) instead of app framing intake.
 
 ## INTAKE
 

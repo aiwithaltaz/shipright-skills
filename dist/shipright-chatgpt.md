@@ -17,7 +17,7 @@ description: "Use this when someone wants to design, review, or build a website,
 
 # ShipRight
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
 This is the only ShipRight skill. Type `/shipright`, or start here when the request is a product, a screen, a website, or a launch check.
@@ -48,7 +48,8 @@ A new project always runs every step below, in order. "Just build it", "skip the
 4. **Critique.** Run ux-critique on the rendered result and `scripts/check-ui.mjs`. Fix what it finds. Loop until clean.
 5. **Ship-check.**
 
-Skip a step only when the user names that step and accepts the stated risk. Say which step is skipped and why it matters. Risk if skipped: no scope (build pack), an unapproved look (design preview), nothing to review (build), defects left in (critique), launch evidence unknown (ship-check).
+No step is skipped for a new project, even on request. Explain the required sequence and continue it. Existing-work corrections run only the affected steps.
+For public websites the preview is exactly three different stories and technique sets, not color swaps. Stop for the user to choose or approve.
 
 When no human is available, still write the 2-3 directions, pick one with a written reason, and mark it "Proposed, awaiting owner approval". Then still run the critique, the fix loop, and ship-check. Shared intake still runs first. An explicit correction, review, or launch check on existing work is not a new project.
 
@@ -358,11 +359,11 @@ description: "Use this when someone brings an idea for a website, SaaS app, mobi
 
 # Build pack
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
-Idea in, build pack out. Work like a small senior agency: product, design and engineering decide together, then hand the builder small, exact prompts.
-For a single screen or a correction, use ui-ux-design. For a review, use ux-critique. For launch evidence, use ship-check.
+Give the builder exact prompts.
+Screens: ui-ux-design. Reviews: ux-critique. Launch: ship-check.
 
 ## Full flow for a new project
 
@@ -374,14 +375,45 @@ A new project always runs every step below, in order. "Just build it", "skip the
 4. **Critique.** Run ux-critique on the rendered result and `scripts/check-ui.mjs`. Fix what it finds. Loop until clean.
 5. **Ship-check.**
 
-Skip a step only when the user names that step and accepts the stated risk. Say which step is skipped and why it matters. Risk if skipped: no scope (build pack), an unapproved look (design preview), nothing to review (build), defects left in (critique), launch evidence unknown (ship-check).
+No step is skipped for a new project, even on request. Explain the required sequence and continue it. Existing-work corrections run only the affected steps.
+For public websites the preview is exactly three different stories and technique sets, not color swaps. Stop for the user to choose or approve.
 
 When no human is available, still write the 2-3 directions, pick one with a written reason, and mark it "Proposed, awaiting owner approval". Then still run the critique, the fix loop, and ship-check. Shared intake still runs first. An explicit correction, review, or launch check on existing work is not a new project.
+
+## Premium routing
+
+For a public website, launch page or immersive page, read [product-brief.md](../product-design/references/product-brief.md) instead of the three app intake cards and app flows.
+
+For public website options and scenes, read [premium-web.md](../ui-ux-design/references/premium-web.md) instead of the app work sequence and document marketing references.
+
+For a premium story, read [techniques.md](../ui-ux-design/references/techniques.md) as an index, then only the chosen recipes below.
+
+For chosen pinned scroll scene, read [pinned-scroll-scene.md](../ui-ux-design/references/pinned-scroll-scene.md).
+
+For chosen camera flight, read [camera-flight.md](../ui-ux-design/references/camera-flight.md).
+
+For chosen object in front of text, read [object-in-front-of-text.md](../ui-ux-design/references/object-in-front-of-text.md).
+
+For chosen block wipe, read [block-wipe.md](../ui-ux-design/references/block-wipe.md).
+
+For chosen text scramble, read [text-scramble.md](../ui-ux-design/references/text-scramble.md).
+
+For chosen hover invert, read [hover-invert.md](../ui-ux-design/references/hover-invert.md).
+
+For chosen entry gate, read [entry-gate.md](../ui-ux-design/references/entry-gate.md).
+
+For chosen cursor-reactive 3d, read [cursor-reactive-3d.md](../ui-ux-design/references/cursor-reactive-3d.md).
+
+For chosen sound toggle, read [sound-toggle.md](../ui-ux-design/references/sound-toggle.md).
+
+For chosen page transition, read [page-transition.md](../ui-ux-design/references/page-transition.md).
+
+For a chosen premium page, read [act-prompts.md](references/act-prompts.md) instead of app ticket prompts and golden examples.
 
 ## INTAKE
 
 Read [shared intake](../_shared/intake.md) and [the operating contract](../_shared/operating-contract.md) once.
-Use 0-5 questions total before starting. For a vague idea, the first reply is decision cards only, usually three:
+Use 0-5 questions total before starting. For a vague app idea, the first reply is decision cards only, usually three:
 
 1. Who it serves and the one job this release finishes.
 2. What stays out of this release.
@@ -398,6 +430,7 @@ A ticket cannot turn Fail into Pass. Nothing ships, publishes or charges money w
 ## Sequence
 
 Do the steps in order. Load each reference only when you reach its step.
+For premium public web, replace steps 1-7 with research and story, three options, then an act prompt. Preserve the pack check and files. App steps below stay for apps and explicitly calm documents.
 
 1. **Frame.** Read [framing.md](../product-design/references/framing.md). Who, job, what they do today, this release, what stays out, one observable success check per job.
 2. **Flows and states.** For each core job, read [flows-and-states.md](../product-design/references/flows-and-states.md). Entry, steps, exits, failure and return. Check [Flow rules (must pass)](../_shared/flow-rules.md).
@@ -413,14 +446,14 @@ Work behind the scenes. Do not narrate each step.
 
 ## The reply
 
-Keep the chat reply under 300 words. The documents carry the detail.
+Reply under 300 words.
 
 1. What the pack contains, as a file list.
 2. Decisions made for the user, one line each, marked Proposed.
 3. What only the user can confirm: real blockers such as prices, legal pages, access policy, brand assets.
 4. The next step is the design preview: 2-3 directions, then stop. Do not start the product build until the user chooses or approves one.
 
-No restated PRD, no long reasoning, no list of everything left out.
+Do not restate the documents.
 
 ## Pack check: 10 checks
 
@@ -440,6 +473,59 @@ Run before replying. Fix any Fail you can; list the rest under the reply's step 
 | 10 | Approval | Proposed choices and real blockers are listed. Nothing ships, publishes or charges money without the user's OK. |
 
 Use the shared readiness rule. A complete pack is ready for building, not proof the product works.
+
+---
+
+# Source: modes/build-pack/references/act-prompts.md
+
+# Six-act build prompts
+
+For the chosen premium website only. Keep app tickets at 220 words. A website build prompt is one 550 to 1,700 word ticket, not six small app tickets. Count its words before delivery. The generated prompt carries detail; this reference stays short. Write it in the ticket file with a stop line. Do not use it before the research brief, act plan and three-option choice.
+
+## Recipe
+
+1. Name existing project or one page, stack, font and palette from the chosen option. Use React Three Fiber or Three.js, GSAP ScrollTrigger and Lenis, respecting project constraints.
+2. Name one real product hero, supplied assets and unknown facts the builder cannot fill. Procedural stand-ins must be labeled and depict that product.
+3. Write six headings: Opening, Second act, Third act, Detail, Close, Footer. For each, describe screen composition, what the visitor learns, what moves, what stays still, exact sourced copy, chosen technique and forbidden filler. State timeline positions and responsive composition when relevant.
+4. Include performance, accessibility and reduced-motion acceptance checks from [premium-web.md](../../ui-ux-design/references/premium-web.md). Load only the selected recipes, not the entire library.
+5. Done when all acts are reachable, product is on first screen, approved story is visible, real facts remain intact, reduced motion and no WebGL preserve content, and check-ui --profile premium plus taste critique are clean at 390 and 1280. Record unverified device claims.
+6. Stop after the specified build and checks. No merge, deploy, analytics, accounts or new routes without scope and authorization.
+
+## Worked example, sample chair only
+
+All facts and copy below are a labeled synthetic example. This chair is not a proof build or a real customer product. The example assumes a supplied chair.glb and chair-still.webp; do not fabricate the files. The three-option choice was delegated to product inspection. In a live task stop for that choice first.
+
+### Stack and subject
+
+Build one Vite page using React, React Three Fiber, GSAP ScrollTrigger and Lenis. Use a locally available named font, such as supplied Inter, with system-ui as fallback. Use a warm white background #f5f3ee, near-black text #171714 and one rust accent #a33d22. There are two type scales: a large headline and compact supporting labels. Do not add gradient text, neon boxes, invented ratings or logo strips. The subject is the supplied sample chair, not a generic sculpture. The sample facts are a curved back, removable seat and three supplied views. There is no supplied price, customer review or purchase flow. Treat those as Unknown and omit them. Keep the sample label visible.
+
+### Opening
+
+Show the real chair still in the first HTML with reserved dimensions and alt text describing the curved back and seat. Use the headline "A seat, seen from every side" as labeled sample copy. Place the chair center stage, partly in front of a split DOM headline using object in front of text. Keep the words readable on phone by moving the still beside the type rather than overlapping it. Include a quiet native link to Detail and one action to inspect. Fade in one canvas after readiness; the still stays on failure. The visitor must be able to name the chair from this screen. No sphere or loading gate replaces it.
+
+### Second act
+
+Use one pinned scroll scene with a 400vh track, not a separate canvas for each beat. From progress 0 to 0.35, move from front three-quarter view to a side view. Keep the camera horizon stable and the whole chair recognizable. Put the real label "Curved back" alongside the back, with a leader line that does not obscure the product. The visitor learns which part supports the silhouette. The caption stays still while the camera moves. A keyboard link reaches the next act. Reverse scroll must restore the prior view without duplicate timelines or jumping.
+
+### Third act
+
+From progress 0.35 to 0.7, turn to the supplied back view, using a different composition with the object on the right and readable copy on the left. Show the sample sentence "Look behind the curve". Keep the chair present, not cropped into an unrecognizable abstract surface. Do not invent ergonomic research, manufacturing claims or material specifications. This act teaches the shape of the back. On phone, stack caption and object so vertical swipes scroll the page. Reduced motion shows the back still and final caption in normal flow.
+
+### Detail
+
+End the pin before this act. Reveal "See the parts" with one block wipe consisting of two accent rectangles. The heading and labels exist in the DOM before the wipe. Show the supplied seat detail with the sample label "Removable seat". Use an annotated view, not three identical benefit cards. Offer native Front, Side and Back controls tied to supplied views, with a visible hint and accessible current-view status. Unknown material and size remain absent. The visitor can inspect the facts without motion or WebGL. Reduced motion makes the heading visible immediately and swaps still views instantly.
+
+### Close
+
+Use the sample action "View the sample files" linking to an existing supplied directory, not a fabricated checkout. The reassuring sentence is "This is a sample chair study". It states the actual limit instead of inventing a warranty. Keep one primary action with supporting context. A quiet return-to-top link provides an exit from the story. Do not add price, payment, email capture, analytics or a purchase button. If the sample directory is unavailable, render a truthful unavailable status and record the missing destination rather than a broken success action.
+
+### Footer
+
+Show the sample project name, the existing source link if supplied and the sample label. Omit unsupplied contact and legal destinations. Keep links large enough for touch and focus visibly outlined. Footer returns to the opening and does not start another story. It is reachable with native scrolling and keyboard navigation, including when every animation is disabled.
+
+### Acceptance and stop
+
+Cap pixel ratio at 2 desktop and 1.5 phone. Keep model under 3 MB compressed and textures under 2 MB; report actual sizes. Pause off-screen rendering and hidden tabs, clean up triggers and dispose scene resources. Reduced motion disables Lenis, scrub and wipe while preserving every word and still view. No WebGL retains the same product and facts. Interactive canvas uses a real description, focus and arrow-key orbit if implemented; decorative canvas is hidden from assistive technology. No sound. Check scroll, reverse scroll, keyboard, 390 and 1280 widths, fallback and reduced motion. Run the premium checker, inspect screenshots and taste critique. Stop after saving the page, check evidence and unresolved limits. Do not deploy.
 
 ---
 
@@ -513,6 +599,8 @@ Write the whole set in one pass. Stop only for a true blocker: prices, legal tex
 Add a one-line pointer for the user's tool, such as `.cursor/rules/shipright.mdc`, `AGENTS.md` or `CLAUDE.md`: "Read docs/shipright/build-rules.md before any change."
 Write these only when asked or clearly needed: `PRODUCT.md` (one-screen summary), `03-security-and-access.md` (several roles or sensitive data), `06-pitch-one-pager.md`, `ship-check.md`.
 A typical 4 to 6 screen product stays near 5,000 words in total. A one-page site needs far less.
+
+For premium web only, one six-act build prompt in the ticket file may use 550 to 1,700 words. App tickets retain the 220-word cap. The act list is single-page architecture; no filler sitemap.
 
 ## Write each fact once
 
@@ -659,11 +747,13 @@ description: "Use this when framing a product idea, judging research evidence or
 
 # Product design
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
 Connect outcome, mechanism, objects, journey and screen jobs.
 Use ui-ux-design for visuals; ux-critique for reviews.
+
+For a public website, launch page or immersive page, read [product-brief.md](references/product-brief.md) instead of app framing intake.
 
 ## INTAKE
 
@@ -911,6 +1001,51 @@ Sources: [SOURCES.md](../../../../../SOURCES.md); they are not this product's fi
 
 ---
 
+# Source: modes/product-design/references/product-brief.md
+
+# Product brief: premium public web
+
+Use for a public website, launch page or immersive page. The default is premium web. An explicitly requested calm document uses the document path; signed-in apps keep the app path. References are taste inspiration, never user research. Ideas are credited in SOURCES.md; do not load it.
+
+## Guided research intake
+
+Read the shared intake once. Its 0-5 question cap includes these cards, across all modes. Do not repeat answered questions. A clear brief naming visitor, hero, story and assets asks zero. On a vague website, the first reply contains decision cards only, usually four. Ask the fifth only when references block a decision. Do not generate the plan or options alongside unanswered cards.
+
+Each card contains: why it matters; two or three concrete options with an example; Something else; My pick; You decide; Let me decide. You decide delegates that card and records the pick as Proposed (delegated). Let me decide reserves the card for the user. Continue independent work, but do not settle the reserved choice or start options depending on it. Silence is not approval. Prices, legal text, access and payments are never delegated.
+
+| Card | Decision and example | Suggested choices |
+| --- | --- | --- |
+| Visitor | Who arrives, what they need to finish, what stays out. Example: a founder comparing tools leaves with an install line; no accounts or pricing. | Comparing tools; learning one product; Something else; You decide; Let me decide |
+| Product hero | One real object or interface. Example: a jet, supplied book covers, or the actual software before/after. | Supplied product model; real interface fragment; Something else; You decide; Let me decide |
+| Scroll story | What scroll teaches. Example: meet the jet, move through its window, inspect range, request a flight. | Inspect the product; follow its use; Something else; You decide; Let me decide |
+| Assets | Existing model, images, logo, type and sound. Example: one glTF, or none so use the real interface. | Supplied files; none, labeled procedural product stand-in; Something else; You decide; Let me decide |
+| References, only if blocked | Techniques to study and avoid. Example: a product camera flight, no draw-to-enter gate. | Product inspection; editorial cuts; Something else; You decide; Let me decide |
+
+If delegated, propose the narrowest visitor and exclusions. Choose the real product in the brief. If none is described, name the missing fact and propose a still stand-in only when it depicts a known product. No decorative sphere pretending to be software. Use supplied assets or a clearly labeled procedural stand-in of the real object. Never invent a film, a feature or evidence. Proposed beats from uncertain premises are Hypotheses.
+
+After answers, supplied facts or delegation, write a one-page brief: visitor, job, exclusions, hero, six beats, asset inventory, unknowns with owners and decision status. Research means gathering these inputs. A real user study still uses the research reference only when needed. Do not manufacture interview findings.
+
+## Product and story plan
+
+Name one hero and why it is the product. State lighting, scale and placement: center stage, in front of type, or in the visitor's hands. Software uses a real interface fragment or actual comparison. Show this product on the first screen. A first screen with no real product is a Blocker.
+
+The six-act list is the single-page information architecture. Each act states what the visitor learns, what moves and what stays still:
+
+1. **Opening:** understand the job and meet the hero.
+2. **Second act:** hero or camera moves; one product idea lands.
+3. **Third act:** another product idea in a different composition.
+4. **Detail:** annotated real specs, steps or interface evidence, not filler cards.
+5. **Close:** one action and the sourced fact that removes the last doubt.
+6. **Footer:** supplied name, contact and real links. Unknown legal links are omitted and recorded.
+
+Each act must have a job and a product fact. Cut filler beats and revise the six-act plan rather than adding an empty stage. Missing proof remains Unknown. No quotes, logos or metrics are invented to fill Detail. Routes, roles and a separate sitemap are needed only for multiple destinations or roles.
+
+Record the stack as Proposed: Vite or the existing Next.js app, React Three Fiber with drei or Three.js, GSAP ScrollTrigger and Lenis on the marketing page. One canvas, one scroll timeline. Switch to Astro without WebGL for an explicitly calm document or a product without a useful object; explain the switch. Signed-in apps retain their app stack. Respect installed project constraints.
+
+Hand off the brief and act list before three options. The options and prompt stages load their own bounded references; do not load all premium guidance here.
+
+---
+
 # Source: modes/product-design/references/research.md
 
 # Research, evidence and synthesis
@@ -1046,7 +1181,7 @@ description: "Use this when checking launch readiness or specific release items 
 
 # Ship check
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
 Report what launch evidence establishes. This is not a security audit, legal review or deployment step.
@@ -1174,11 +1309,35 @@ description: "Use this when designing or refining a screen, layout, component, s
 
 # UI/UX design
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
 Turn a clear screen job into a useful layout. Unclear product job or structure: route to product-design. Whole idea to build: build-pack. Critique: ux-critique.
 Do not start a full audit before an explicit small correction.
+
+For public website options and scenes, read [premium-web.md](references/premium-web.md) instead of the app work sequence and document marketing references.
+
+For a premium story, read [techniques.md](references/techniques.md) as an index, then only the chosen recipes below.
+
+For chosen pinned scroll scene, read [pinned-scroll-scene.md](references/pinned-scroll-scene.md).
+
+For chosen camera flight, read [camera-flight.md](references/camera-flight.md).
+
+For chosen object in front of text, read [object-in-front-of-text.md](references/object-in-front-of-text.md).
+
+For chosen block wipe, read [block-wipe.md](references/block-wipe.md).
+
+For chosen text scramble, read [text-scramble.md](references/text-scramble.md).
+
+For chosen hover invert, read [hover-invert.md](references/hover-invert.md).
+
+For chosen entry gate, read [entry-gate.md](references/entry-gate.md).
+
+For chosen cursor-reactive 3d, read [cursor-reactive-3d.md](references/cursor-reactive-3d.md).
+
+For chosen sound toggle, read [sound-toggle.md](references/sound-toggle.md).
+
+For chosen page transition, read [page-transition.md](references/page-transition.md).
 
 ## INTAKE
 
@@ -1337,6 +1496,58 @@ Separate Proposed scope from approved builder instructions. Do not fill blank ar
 
 ---
 
+# Source: modes/ui-ux-design/references/block-wipe.md
+
+# Block wipe
+
+## When to use
+
+One editorial cut introduces a new product idea.
+
+## When NOT to use
+
+Every act repeats the same mask.
+
+## Step-by-step prompt recipe
+
+1. Put the heading and content in DOM first.
+2. Cover briefly with an accent block.
+3. Step two rectangles away to reveal the heading.
+4. Name the scroll point or entry trigger; run once.
+
+## Performance, accessibility and reduced motion
+
+Reduced motion shows content immediately. Animate transforms, not layout. The block is aria-hidden, never a focus trap.
+Apply the shared contract in [premium-web.md](premium-web.md).
+
+---
+
+# Source: modes/ui-ux-design/references/camera-flight.md
+
+# Camera flight
+
+## When to use
+
+A camera path explains the actual object or space.
+
+## When NOT to use
+
+Movement only decorates a claim.
+
+## Step-by-step prompt recipe
+
+1. Describe the path in words.
+2. Specify three camera poses: position, target and product fact at each.
+3. Keep the hero recognizable while interpolating along scroll.
+4. Test reverse scroll and the transition to Detail.
+
+## Performance, accessibility and reduced motion
+
+No scroll hijack. Reduced motion uses the still and annotated poses; no autoplay. Keep a stable horizon; lower resolution when frames drop.
+Apply the shared contract in [premium-web.md](premium-web.md).
+
+---
+
 # Source: modes/ui-ux-design/references/components.md
 
 # Components: names and choices
@@ -1375,6 +1586,32 @@ Do not invent a Quote or Rating. Name which Stepper you mean: a quantity control
 
 Use Select for one value from a short fixed list. Use Combobox when the person must type to filter a long list.
 Critical information is never only in a tooltip or popover.
+
+---
+
+# Source: modes/ui-ux-design/references/cursor-reactive-3d.md
+
+# Cursor-reactive 3D
+
+## When to use
+
+A small turn or highlight helps acknowledge the real object.
+
+## When NOT to use
+
+Touch dominates or motion hides product details.
+
+## Step-by-step prompt recipe
+
+1. Enable only for a fine pointer.
+2. Map normalized pointer coordinates to small capped rotation.
+3. Dampen toward the target using the existing render loop.
+4. Return to rest when pointer leaves.
+
+## Performance, accessibility and reduced motion
+
+Reduced motion rests. Touch continues scrolling. Keep equivalent still and any actual view controls; pause hidden or off screen, no extra loop.
+Apply the shared contract in [premium-web.md](premium-web.md).
 
 ---
 
@@ -1439,6 +1676,58 @@ Fit governance to project size; do not invent a committee or require new tools. 
 Reuse before contributing a new component; a new one needs a reason existing options fail.
 Name a maintainer only when supplied; missing ownership stays Unknown. Unknown aliases, redirects, adapters or rollback support stay Unknown.
 Updating documentation does not migrate or verify an implementation.
+
+---
+
+# Source: modes/ui-ux-design/references/entry-gate.md
+
+# Entry gate
+
+## When to use
+
+A scene needs brief warm-up or a deliberate first gesture.
+
+## When NOT to use
+
+Visitors came to finish a task or content would be blocked.
+
+## Step-by-step prompt recipe
+
+1. Keep real page content in HTML behind an optional gate.
+2. Use a short counter or one named gesture, under a few seconds.
+3. Include visible Enter and Skip with working keyboard paths.
+4. On failure, dismiss to the still fallback.
+
+## Performance, accessibility and reduced motion
+
+Reduced motion bypasses the gate. No compulsory drawing, sound or pointer gesture. Restore focus to heading; warm-up cannot block reading.
+Apply the shared contract in [premium-web.md](premium-web.md).
+
+---
+
+# Source: modes/ui-ux-design/references/hover-invert.md
+
+# Hover invert
+
+## When to use
+
+An index or FAQ row reveals a real answer.
+
+## When NOT to use
+
+There is no content or action to reveal.
+
+## Step-by-step prompt recipe
+
+1. Build a native button row with its supplied answer.
+2. Hover and focus invert background and text.
+3. Click expands in place; only one open at a time.
+4. Plus becomes a close mark; update aria-expanded and aria-controls.
+
+## Performance, accessibility and reduced motion
+
+Touch works by tap, keyboard by Enter or Space. Keep visible focus and contrast. Reduced motion changes state instantly. No hover-only content.
+Apply the shared contract in [premium-web.md](premium-web.md).
 
 ---
 
@@ -1718,6 +2007,32 @@ A written motion note is not proof of smooth implementation. Check frame rate an
 
 ---
 
+# Source: modes/ui-ux-design/references/object-in-front-of-text.md
+
+# Object in front of text
+
+## When to use
+
+The real hero should be the subject inside a split headline.
+
+## When NOT to use
+
+Overlap would obscure essential copy.
+
+## Step-by-step prompt recipe
+
+1. Put the full headline in the DOM.
+2. Reserve a calm band behind its words.
+3. Place the canvas above the type, with pointer-events none except actual controls.
+4. Check overlap at 390 and 1280 and while moving.
+
+## Performance, accessibility and reduced motion
+
+Reduced motion places the still beside type. Text remains selectable and readable; meaningful still in HTML. Do not add another canvas.
+Apply the shared contract in [premium-web.md](premium-web.md).
+
+---
+
 # Source: modes/ui-ux-design/references/operator-workspaces.md
 
 # Operator workspaces
@@ -1756,6 +2071,123 @@ Clear controls must distinguish hiding a card, abandoning a draft and deleting d
 
 Do not silently remove unrelated approved actions. If an item's phase is unclear, flag it.
 Worked case: [IVC round-1 corrections](../../../../../examples/ivc-2026-registration/feedback/round1-corrections.md). It is project-specific, not a default for other apps.
+
+---
+
+# Source: modes/ui-ux-design/references/page-transition.md
+
+# Page transition
+
+## When to use
+
+Two real routes need continuity.
+
+## When NOT to use
+
+This is one page or navigation would be delayed.
+
+## Step-by-step prompt recipe
+
+1. Name the two actual destinations.
+2. Keep native links and the next heading in HTML.
+3. Use a cut, shared hero or opacity transition under 400 ms.
+4. Restore focus and test Back, reload and direct entry.
+
+## Performance, accessibility and reduced motion
+
+Reduced motion navigates instantly. No intercept of modifier-click or external links. Cleanup transition listeners; never retain an inaccessible overlay.
+Apply the shared contract in [premium-web.md](premium-web.md).
+
+---
+
+# Source: modes/ui-ux-design/references/pinned-scroll-scene.md
+
+# Pinned scroll scene
+
+## When to use
+
+Several product beats share one stage.
+
+## When NOT to use
+
+A form, long article or static reading task.
+
+## Step-by-step prompt recipe
+
+1. Name each beat and its product fact.
+2. Set one sticky viewport inside a stated track, for example 400vh.
+3. Scrub one GSAP ScrollTrigger timeline with named start and end positions.
+4. Verify every beat by forward and reverse scroll.
+
+## Performance, accessibility and reduced motion
+
+Unpin and stack beats in normal flow for reduced motion. Preserve keyboard destinations; never trap scroll. Pause off screen.
+Apply the shared contract in [premium-web.md](premium-web.md).
+
+---
+
+# Source: modes/ui-ux-design/references/premium-web.md
+
+# Premium web: options and shared runtime rules
+
+Default for a public website, launch page or immersive page. Apps retain dense, calm guidance. An explicitly requested calm document uses marketing-pages and motion instead. This path replaces design-system, starter-systems, marketing-pages, motion and anti-slop reference loading for the page. Load state-coverage only for an actual form. Keep the universal truth and F1-F3 rules.
+
+## Three different stories
+
+Start from the product brief and six-act plan. Show exactly three options, not three palette swaps. Each names the same real product facts and hero, six acts with distinct jobs, three to five named techniques, typography, palette values and what it refuses. Change the story device and technique set: for example inspect the object, follow its use, or reveal its assembly. Color alone never differentiates an option. Name inspiration as a pattern, never copy a layout, asset or prompt.
+
+Stop for the user's choice. A reserved choice, unanswered card or silence is not approval. If no human is available in an explicitly unattended run, record one pick and reason as "Proposed, awaiting owner approval" and continue the documented full flow. Do not treat a slow reply in an interactive conversation as no human. Existing owner constraints still win.
+
+The approved act list is the architecture. Keep two type scales and one accent. Corner labels may carry a real spec, step or time. A floating nav, glass scrim, open stage and object crossing DOM text are allowed when they serve the story and pass access checks. Gradient text and fake proof still fail. Ordinary glowing boxes still warrant review. A bright 3D object is allowed.
+
+## Stack and assets
+
+Use the existing compatible project or Vite, React Three Fiber/drei or Three.js, GSAP ScrollTrigger and Lenis. One canvas and one scroll timeline. Keep app routes free of marketing inertia. Projects install these dependencies themselves. GSAP is not vendored or relicensed as part of this pack. No copied code or assets from references. Credit ideas in SOURCES.md, never load that file.
+
+Show a still image of the actual hero in the first HTML. It is the LCP candidate, has meaningful alt text, explicit dimensions and reserved space. For software, server-render a real interface or comparison. Label any procedural product stand-in. Fade in the canvas only after readiness; retain the still on failure. A decorative blob cannot meet the product requirement.
+
+## Performance and accessibility contract
+
+- Model under 3 MB compressed, textures under 2 MB. Record actual asset sizes. Pixel ratio at most 2 desktop and 1.5 phone. Target 60 fps desktop and 30 fps mid-range phone. Measure before claiming it; software WebGL is not phone evidence. Lower ratio when measured frames drop.
+- Pause rendering and scrub work when off screen or the tab is hidden. Dispose geometries, textures, listeners, Lenis, timelines and triggers on unmount. Keep only one animation driver.
+- Reduced motion and no WebGL preserve the same words and hero. Put acts in normal flow. Disable autoplay camera, scramble, inertia and gates. Offer Front, Side and Back buttons when those product views exist.
+- Interactive canvas is focusable, role="img", with one-sentence description and visible control hint. Arrow keys orbit only when orbit exists. Decorative canvas is aria-hidden; the equivalent still carries the description. Do not create a fake keyboard control.
+- Touch keeps vertical page scrolling. Wheel zoom is enabled only when an interactive canvas is focused. Keyboard can reach each act and every action. Native controls, visible focus, real headings and sufficient contrast remain required.
+- Content exists in DOM before any reveal. Animation may temporarily hide words only when reduced motion exposes them and scroll reliably reveals them. Never hide indispensable content behind WebGL. An entry gate has visible Skip; reduced motion bypasses it. A failed load has plain status and retry or the still fallback.
+- Sound off by default, starts only with a labeled click toggle and a supplied asset. Sound is never required to understand the story.
+- F1: nav, footer and gate Skip expose exits. F2: names and product facts match the brief. F3: copy, loading and WebGL failure say what actually happened. Do not claim success before it occurs.
+
+## Validate
+
+Run check-ui with --profile premium at 390 and 1280. Declare the semantic product representation with data-product-hero and a truthful accessible description. This hook makes geometry measurable; it cannot certify that an ornament is the product. Mark authored proof claims data-proof-claim and cite their source in data-proof-source. Fake proof is forbidden regardless of markup.
+
+Also perform taste critique on first screen and each act, scroll the whole page, exercise keyboard, touch scrolling, no-WebGL and reduced motion. A clean checker does not prove taste, product identity, truthful claims or performance. Record unverified device and assistive-technology checks honestly.
+
+---
+
+# Source: modes/ui-ux-design/references/sound-toggle.md
+
+# Sound toggle
+
+## When to use
+
+A supplied designed sound reinforces this scene.
+
+## When NOT to use
+
+There is no sound asset or audio adds no product meaning.
+
+## Step-by-step prompt recipe
+
+1. Identify the supplied asset and credit.
+2. Start muted with a text-labeled Sound off toggle.
+3. Start playback only on explicit click; handle rejected playback truthfully.
+4. Remember choice for this visit and update label and aria-pressed.
+
+## Performance, accessibility and reduced motion
+
+Never autoplay or rely on sound. Pause when hidden and release audio on unmount. Reduced motion does not imply consent to audio.
+Apply the shared contract in [premium-web.md](premium-web.md).
 
 ---
 
@@ -1890,6 +2322,53 @@ WCAG and APG source links are in [SOURCES.md](../../../../../SOURCES.md).
 
 ---
 
+# Source: modes/ui-ux-design/references/techniques.md
+
+# Technique index
+
+Use three to five techniques for a selected story, never all ten. Load each individual file only when selecting or implementing that technique. The index contains no recipes. Shared runtime rules live in [premium-web.md](premium-web.md). Ideas only; credits in SOURCES.md, which is not loaded.
+
+| Technique | Recipe |
+| --- | --- |
+| Pinned scroll scene | [pinned-scroll-scene.md](pinned-scroll-scene.md) |
+| Camera flight | [camera-flight.md](camera-flight.md) |
+| Object in front of text | [object-in-front-of-text.md](object-in-front-of-text.md) |
+| Block wipe | [block-wipe.md](block-wipe.md) |
+| Text scramble | [text-scramble.md](text-scramble.md) |
+| Hover invert | [hover-invert.md](hover-invert.md) |
+| Entry gate | [entry-gate.md](entry-gate.md) |
+| Cursor-reactive 3D | [cursor-reactive-3d.md](cursor-reactive-3d.md) |
+| Sound toggle | [sound-toggle.md](sound-toggle.md) |
+| Page transition | [page-transition.md](page-transition.md) |
+
+---
+
+# Source: modes/ui-ux-design/references/text-scramble.md
+
+# Text scramble
+
+## When to use
+
+A sourced index, year or spec settles into a real value.
+
+## When NOT to use
+
+A price, important instruction or fabricated number.
+
+## Step-by-step prompt recipe
+
+1. Write the final value in semantic DOM.
+2. Animate an aria-hidden glyph overlay for less than 600 ms.
+3. Settle to that exact value once.
+4. Remove the overlay without altering the accessible value.
+
+## Performance, accessibility and reduced motion
+
+Reduced motion starts at final value. No repeated screen-reader announcements. Stop timers off screen; no invented counter.
+Apply the shared contract in [premium-web.md](premium-web.md).
+
+---
+
 # Source: modes/ui-ux-design/references/ui-copy.md
 
 # UI copy
@@ -1935,11 +2414,13 @@ description: "Use this when reviewing a plan, specification, screenshot or runni
 
 # UX critique
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
 Review a real artifact and report evidence-backed corrections. Do not invent users, interview quotes or predicted conversion gains.
 With no artifact, ask for the smallest relevant input. A specification is reviewable without a running app.
+
+For a public website or immersive page, read [taste-check.md](references/taste-check.md) and compare the rendered product and six-act story.
 
 ## INTAKE
 
@@ -2246,3 +2727,29 @@ Do not fabricate specificity, data or capabilities in the replacement.
 
 Keep approved colors, gradients, familiar patterns and emoji when they serve the product.
 Use the severity rubric, not aesthetic dislike, to determine severity.
+
+---
+
+# Source: modes/ux-critique/references/taste-check.md
+
+# Premium taste check
+
+Use for a public website or immersive page. This adds evidence to the ten critique gates; it does not add an eleventh gate or replace accessibility, truth and F1-F3. Compare the actual render against the product brief, chosen story and selected techniques. Pattern references inspire mechanisms, not copied layouts. No artifact means Not verified, not Pass.
+
+## Questions that change the verdict
+
+| Question | Fail | Pass evidence |
+| --- | --- | --- |
+| Is the product on stage? | Headline with an ornament, interchangeable sphere, or no actual product on the first screen | First screenshot shows the named product large enough to identify. Software shows a real interface or comparison |
+| Does the scroll teach something? | Repeated layout and fades reveal no new facts | Opening, Second act, Third act, Detail, Close and Footer reveal the brief's sourced beats in order |
+| Does each act have a job? | An empty stage, filler card row or unsourced proof | Each act teaches its stated fact, has purposeful movement and a distinct composition |
+| Do techniques serve the story? | Color swaps, fades everywhere or all ten effects | Three to five chosen techniques have observable jobs and correspond to the selected option |
+| Does craft match the option? | Mid-size everything, invented palette, unreadable overlap | Two scales, one accent, readable product and type at phone and desktop widths |
+| Is proof real? | Invented metrics, quotes, customer logos, price or legal claims | Supplied facts and links; missing proof stays absent and Unknown |
+| Can everyone reach the content? | Canvas-only words, forced gate, autoplay sound, lost touch scroll | Same words and product without WebGL and with reduced motion; keyboard, skip and real audio controls work |
+
+Missing real product on the first screen is a **Blocker**. Decorative stand-in with no product identity is also a Blocker on that screen. A missing act, act without a job or absent selected technique is Major. Rough easing is Polish. A color preference alone is not a finding. "The first screen does not show the product" is.
+
+For each finding record location, evidence, impact, severity, correction and retest. Capture first screen and all acts at 390 and 1280. Scroll forward and back, test reduced motion and no WebGL, exercise actual controls and observe failures. Mark performance and assistive-technology evidence limits. No invented user or conversion claims.
+
+Run check-ui --profile premium as well. A profile Fail is a defect; taste Fail remains a defect even with zero checker failures. A data-product-hero hook and a proof-source attribute support measurement, not verification of identity or truth. Inspect their content and source. Fix and repeat affected checks before claiming readiness. Ship-check still requires its own evidence and never authorizes deployment.

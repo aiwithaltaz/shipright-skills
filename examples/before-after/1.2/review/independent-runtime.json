@@ -1,0 +1,52 @@
+[
+  {
+    "site": "shipright",
+    "width": 1280,
+    "reducedMotion": "no-preference",
+    "overflow": false,
+    "expanded": "true",
+    "copyFailure": "Copy did not work. Select the command above and copy it manually."
+  },
+  {
+    "site": "shipright",
+    "width": 1280,
+    "reducedMotion": "reduce",
+    "overflow": false,
+    "expanded": "true",
+    "copyFailure": "Copy did not work. Select the command above and copy it manually."
+  },
+  {
+    "site": "shipright",
+    "width": 390,
+    "reducedMotion": "no-preference",
+    "overflow": false,
+    "expanded": "true",
+    "copyFailure": "Copy did not work. Select the command above and copy it manually."
+  },
+  {
+    "site": "shipright",
+    "width": 390,
+    "reducedMotion": "reduce",
+    "overflow": false,
+    "expanded": "true",
+    "copyFailure": "Copy did not work. Select the command above and copy it manually."
+  },
+  {
+    "site": "recorder",
+    "view": "Front",
+    "pressed": "true",
+    "status": "Front illustrative view · not an exact product drawing"
+  },
+  {
+    "site": "recorder",
+    "view": "Side",
+    "pressed": "true",
+    "status": "Side illustrative view · not an exact product drawing"
+  },
+  {
+    "site": "recorder",
+    "view": "Back",
+    "pressed": "true",
+    "status": "Back illustrative view · not an exact product drawing"
+  }
+]

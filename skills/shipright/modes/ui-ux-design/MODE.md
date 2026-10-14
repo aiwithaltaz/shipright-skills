@@ -5,11 +5,35 @@ description: "Use this when designing or refining a screen, layout, component, s
 
 # UI/UX design
 
-**Pack version:** 1.1.0
+**Pack version:** 1.2.0
 **Context before generate. Product before pixels.**
 
 Turn a clear screen job into a useful layout. Unclear product job or structure: route to product-design. Whole idea to build: build-pack. Critique: ux-critique.
 Do not start a full audit before an explicit small correction.
+
+For public website options and scenes, read [premium-web.md](references/premium-web.md) instead of the app work sequence and document marketing references.
+
+For a premium story, read [techniques.md](references/techniques.md) as an index, then only the chosen recipes below.
+
+For chosen pinned scroll scene, read [pinned-scroll-scene.md](references/pinned-scroll-scene.md).
+
+For chosen camera flight, read [camera-flight.md](references/camera-flight.md).
+
+For chosen object in front of text, read [object-in-front-of-text.md](references/object-in-front-of-text.md).
+
+For chosen block wipe, read [block-wipe.md](references/block-wipe.md).
+
+For chosen text scramble, read [text-scramble.md](references/text-scramble.md).
+
+For chosen hover invert, read [hover-invert.md](references/hover-invert.md).
+
+For chosen entry gate, read [entry-gate.md](references/entry-gate.md).
+
+For chosen cursor-reactive 3d, read [cursor-reactive-3d.md](references/cursor-reactive-3d.md).
+
+For chosen sound toggle, read [sound-toggle.md](references/sound-toggle.md).
+
+For chosen page transition, read [page-transition.md](references/page-transition.md).
 
 ## INTAKE
 

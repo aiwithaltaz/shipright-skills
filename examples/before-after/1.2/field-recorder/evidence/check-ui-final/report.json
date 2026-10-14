@@ -1,0 +1,129 @@
+{
+ "target": "http://localhost:5174",
+ "profile": "premium",
+ "checkedAt": "2026-10-14T19:32:11.230Z",
+ "viewports": {
+  "desktop": {
+   "results": [
+    {
+     "id": "small-text",
+     "level": "WARN",
+     "message": "7 text runs under 12px"
+    }
+   ],
+   "metrics": {
+    "heroVisible": true,
+    "unsupportedProof": 0,
+    "undeclaredProof": 0,
+    "visibleWords": "FR ONE / FIELD RECORDER The instrument Controls SAMPLE A PRODUCT STUDY / 001 Field Recorder One Portable stereo field recorder. The controls. The connections. A closer look at how it works. Inspect controls ↗ SAMPLE · Procedural recorder illustration Shape and port placement are illustrative. SCROLL TO INSPECT ↓ CAPTURE / RECORD / TRANSFER 01 / CAPTURE Two microphones. Up top. Two top-mounted microphones capture stereo sound. Next: the record button ↓ 02 / RECORD One physical record button. Start with the control on the recorder. Inspect the connections ↓ SAMPLE / ILLUSTRATIVE VIEWS 03 / THE CONNECTIONS Every step, a physical connection. FIELD RECORDER ONE ILLUSTRATIVE PLATE 01 / HEADPHONE JACK 02 / REMOVABLE SD CARD 03 / USB-C Front Side Back Front illustrative view · not an exact product drawing Follow the recording workflow, one connection at a time. 01 Monitor Headphone jack + 02 Store Removable SD card + 03 Transfer USB-C + Only the supplied sample facts are shown. No audio is recorded or transferred by this page. 04 / FROM MOMENT TO FILE A simple sequence. See how it connects. 01 Capture Two top microphones 02 Record Physical record button 03 Monitor Headphone jack 04 Store Removable SD card 05 Transfer USB-C A sample product study. Explore the controls and recording workflow. Inspect controls ↗ Field Recorder One SAMPLE · PROCEDURAL PRODUCT STUDY Back to top ↑",
+    "overflowX": 0,
+    "pageHeight": 5255,
+    "h1": 1,
+    "families": [
+     [
+      "Arial",
+      48
+     ],
+     [
+      "Field Serif",
+      18
+     ]
+    ],
+    "contrast": [],
+    "smallText": 7,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 0,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [
+     {
+      "w": 588,
+      "h": 722,
+      "labeled": true
+     }
+    ],
+    "hiddenText": 5,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true,
+    "reduced": {
+     "hiddenText": 0,
+     "heroVisible": true,
+     "overflowX": 0,
+     "contentChanged": false
+    }
+   }
+  },
+  "phone": {
+   "results": [
+    {
+     "id": "small-text",
+     "level": "WARN",
+     "message": "22 text runs under 12px"
+    }
+   ],
+   "metrics": {
+    "heroVisible": true,
+    "unsupportedProof": 0,
+    "undeclaredProof": 0,
+    "visibleWords": "FR ONE / FIELD RECORDER SAMPLE A PRODUCT STUDY / 001 Field Recorder One Portable stereo field recorder. The controls. The connections. A closer look at how it works. Inspect controls ↗ SAMPLE · Procedural recorder illustration Shape and port placement are illustrative. SCROLL TO INSPECT ↓ CAPTURE / RECORD / TRANSFER 01 / CAPTURE Two microphones. Up top. Two top-mounted microphones capture stereo sound. Next: the record button ↓ 02 / RECORD One physical record button. Start with the control on the recorder. Inspect the connections ↓ SAMPLE / ILLUSTRATIVE VIEWS 03 / THE CONNECTIONS Every step, a physical connection. FIELD RECORDER ONE ILLUSTRATIVE PLATE 01 / HEADPHONE JACK 02 / REMOVABLE SD CARD 03 / USB-C Front Side Back Front illustrative view · not an exact product drawing Follow the recording workflow, one connection at a time. 01 Monitor Headphone jack + 02 Store Removable SD card + 03 Transfer USB-C + Only the supplied sample facts are shown. No audio is recorded or transferred by this page. 04 / FROM MOMENT TO FILE A simple sequence. See how it connects. 01 Capture Two top microphones 02 Record Physical record button 03 Monitor Headphone jack 04 Store Removable SD card 05 Transfer USB-C A sample product study. Explore the controls and recording workflow. Inspect controls ↗ Field Recorder One SAMPLE · PROCEDURAL PRODUCT STUDY Back to top ↑",
+    "overflowX": 0,
+    "pageHeight": 5223,
+    "h1": 1,
+    "families": [
+     [
+      "Arial",
+      46
+     ],
+     [
+      "Field Serif",
+      18
+     ]
+    ],
+    "contrast": [],
+    "smallText": 22,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 0,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [
+     {
+      "w": 366,
+      "h": 460,
+      "labeled": true
+     }
+    ],
+    "hiddenText": 5,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true,
+    "reduced": {
+     "hiddenText": 0,
+     "heroVisible": true,
+     "overflowX": 0,
+     "contentChanged": false
+    }
+   }
+  }
+ }
+}
