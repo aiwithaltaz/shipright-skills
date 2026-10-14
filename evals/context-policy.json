@@ -56,6 +56,9 @@
         },
         "skills/shipright/modes/build-pack/references/pack-contract.md": {
           "when": "For requested documents, follow [pack-contract.md](../build-pack/references/pack-contract.md) and [output-folder.md](../_shared/output-folder.md)."
+        },
+        "skills/shipright/modes/product-design/references/product-brief.md": {
+          "when": "For a public website, launch page or immersive page, read [product-brief.md](references/product-brief.md) instead of app framing intake."
         }
       },
       "normal_paths": [
@@ -90,6 +93,12 @@
             "skills/shipright/modes/build-pack/references/pack-contract.md",
             "skills/shipright/modes/product-design/references/flows-and-states.md",
             "skills/shipright/modes/product-design/references/framing.md"
+          ]
+        },
+        {
+          "task": "Premium website research and story",
+          "references": [
+            "skills/shipright/modes/product-design/references/product-brief.md"
           ]
         }
       ]
@@ -343,6 +352,9 @@
         },
         "skills/shipright/modes/ux-critique/references/bounded-verification.md": {
           "when": "When the user returns with built work, check it with [bounded-verification.md](../ux-critique/references/bounded-verification.md)."
+        },
+        "skills/shipright/modes/product-design/references/product-brief.md": {
+          "when": "For a public website, launch page or immersive page, read [product-brief.md](../product-design/references/product-brief.md) instead of the three app intake cards and app flows."
         }
       },
       "normal_paths": [
@@ -387,6 +399,14 @@
             "skills/shipright/modes/ui-ux-design/references/starter-systems.md",
             "skills/shipright/modes/ui-ux-design/references/marketing-pages.md",
             "skills/shipright/modes/ui-ux-design/references/motion.md"
+          ]
+        },
+        {
+          "task": "Premium A: research and story",
+          "references": [
+            "skills/shipright/modes/product-design/references/product-brief.md",
+            "skills/shipright/modes/product-design/references/framing.md",
+            "skills/shipright/modes/build-pack/references/stack-choices.md"
           ]
         }
       ]

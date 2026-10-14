@@ -25,10 +25,12 @@ Skip a step only when the user names that step and accepts the stated risk. Say 
 
 When no human is available, still write the 2-3 directions, pick one with a written reason, and mark it "Proposed, awaiting owner approval". Then still run the critique, the fix loop, and ship-check. Shared intake still runs first. An explicit correction, review, or launch check on existing work is not a new project.
 
+For a public website, launch page or immersive page, read [product-brief.md](../product-design/references/product-brief.md) instead of the three app intake cards and app flows.
+
 ## INTAKE
 
 Read [shared intake](../_shared/intake.md) and [the operating contract](../_shared/operating-contract.md) once.
-Use 0-5 questions total before starting. For a vague idea, the first reply is decision cards only, usually three:
+Use 0-5 questions total before starting. For a vague app idea, the first reply is decision cards only, usually three:
 
 1. Who it serves and the one job this release finishes.
 2. What stays out of this release.

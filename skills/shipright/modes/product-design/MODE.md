@@ -11,6 +11,8 @@ description: "Use this when framing a product idea, judging research evidence or
 Connect outcome, mechanism, objects, journey and screen jobs.
 Use ui-ux-design for visuals; ux-critique for reviews.
 
+For a public website, launch page or immersive page, read [product-brief.md](references/product-brief.md) instead of app framing intake.
+
 ## INTAKE
 
 Read [shared intake](../_shared/intake.md) and [the operating contract](../_shared/operating-contract.md) once.

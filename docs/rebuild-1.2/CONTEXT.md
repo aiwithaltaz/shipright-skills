@@ -110,3 +110,7 @@ Critique reported check-ui at 0 failures and 0 warnings. The owner still rejecte
 ## Decisions proposed here
 
 These are proposals. Status stays Proposed until Altaz answers. See the decision list in `PLAN.md`. Nothing in `skills/` changes in this run.
+
+## Owner approval, 14 October 2026
+
+All five decisions are Approved in the implementation request. Work continues on this branch. The owner requests one file per technique, commits and pushes after each step, two proof builds after the text, and no merge, tag or release.
