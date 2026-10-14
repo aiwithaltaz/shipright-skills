@@ -32,7 +32,7 @@ Data the user is reading or acting on never moves for style. Numbers do not anim
 - **Scroll motion:** GSAP ScrollTrigger inside `gsap.matchMedia()` so reduced-motion users get the static version. At most one or two pinned sections per page. Never hijack scroll direction or speed for core content.
 - **Smooth scroll:** Lenis only on marketing pages, driven from the GSAP ticker, with its reduced-motion handling left on. Never on app screens or long forms.
 - Loops (marquee, ambient video) need pause on hover and focus, stop under reduced motion, and a pause control if they run longer than 5 seconds.
-- Pattern ideas worth borrowing, not copying: line-by-line text reveal, clip-path image reveal, a dock or spotlight navigation highlight, a short reveal loader under 1 second. Credit in [SOURCES.md](../../../SOURCES.md).
+- Pattern ideas worth borrowing, not copying: line-by-line text reveal, clip-path image reveal, a dock or spotlight navigation highlight, a short reveal loader under 1 second. Credit in [SOURCES.md](../../../../../SOURCES.md).
 
 ## 3D and immersive pages
 

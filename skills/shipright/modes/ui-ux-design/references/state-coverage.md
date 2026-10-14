@@ -59,4 +59,4 @@ Use wrapping, a bounded scroll region or accessible full-value disclosure. No cl
 Record what was actually tried. A proposed test fixture is not a passing runtime result.
 Do not turn sensitive phone/email searches into URLs, analytics or logs merely to preserve state.
 
-WCAG and APG source links are in [SOURCES.md](../../../SOURCES.md).
+WCAG and APG source links are in [SOURCES.md](../../../../../SOURCES.md).

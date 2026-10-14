@@ -19,42 +19,42 @@
     "asset_bytes": 10000000
   },
   "always_loaded_shared": [
-    "skills/_shared/operating-contract.md",
-    "skills/_shared/intake.md"
+    "skills/shipright/modes/_shared/operating-contract.md",
+    "skills/shipright/modes/_shared/intake.md"
   ],
   "ownership": {
     "shared": "Each shared file owns its universal rules; operating-contract owns authority/evidence, intake owns questions, flow-rules owns F1-F3, output-folder owns exports.",
     "references": "The skill directory containing a reference is its canonical owner. Other skills link to that file; do not copy its detailed rules.",
     "exceptions": [
-      "Short incomplete-pack fallback safeguards in SKILL.md",
+      "Short incomplete-pack fallback safeguards in the router and each mode MODE.md",
       "Synchronized marked F1-F3 export blocks in project templates"
     ]
   },
   "skills": {
     "product-design": {
-      "entry": "skills/product-design/SKILL.md",
+      "entry": "skills/shipright/modes/product-design/MODE.md",
       "required_shared": [
-        "skills/_shared/operating-contract.md",
-        "skills/_shared/intake.md",
-        "skills/_shared/flow-rules.md"
+        "skills/shipright/modes/_shared/operating-contract.md",
+        "skills/shipright/modes/_shared/intake.md",
+        "skills/shipright/modes/_shared/flow-rules.md"
       ],
       "conditional_references": {
-        "skills/product-design/references/framing.md": {
+        "skills/shipright/modes/product-design/references/framing.md": {
           "when": "Read [framing.md](references/framing.md)."
         },
-        "skills/product-design/references/research.md": {
+        "skills/shipright/modes/product-design/references/research.md": {
           "when": "When evidence, a method, a study plan or supplied records change a decision, read [research.md](references/research.md)."
         },
-        "skills/product-design/references/structure.md": {
+        "skills/shipright/modes/product-design/references/structure.md": {
           "when": "For authorized objects, labels, routes, search, filters or role-based destinations, read [structure.md](references/structure.md)."
         },
-        "skills/product-design/references/journeys.md": {
+        "skills/shipright/modes/product-design/references/journeys.md": {
           "when": "When a journey, task flow, system process or service blueprint would resolve a decision, read [journeys.md](references/journeys.md)."
         },
-        "skills/product-design/references/flows-and-states.md": {
+        "skills/shipright/modes/product-design/references/flows-and-states.md": {
           "when": "3. For states, effects, consequences and related records, read [flows-and-states.md](references/flows-and-states.md)."
         },
-        "skills/build-pack/references/pack-contract.md": {
+        "skills/shipright/modes/build-pack/references/pack-contract.md": {
           "when": "For requested documents, follow [pack-contract.md](../build-pack/references/pack-contract.md) and [output-folder.md](../_shared/output-folder.md)."
         }
       },
@@ -62,52 +62,52 @@
         {
           "task": "Frame product",
           "references": [
-            "skills/product-design/references/framing.md"
+            "skills/shipright/modes/product-design/references/framing.md"
           ]
         },
         {
           "task": "Research and synthesis",
           "references": [
-            "skills/product-design/references/research.md"
+            "skills/shipright/modes/product-design/references/research.md"
           ]
         },
         {
           "task": "Structure and maps",
           "references": [
-            "skills/product-design/references/structure.md",
-            "skills/product-design/references/journeys.md"
+            "skills/shipright/modes/product-design/references/structure.md",
+            "skills/shipright/modes/product-design/references/journeys.md"
           ]
         },
         {
           "task": "Flow and states",
           "references": [
-            "skills/product-design/references/flows-and-states.md"
+            "skills/shipright/modes/product-design/references/flows-and-states.md"
           ]
         },
         {
           "task": "Requested documents",
           "references": [
-            "skills/build-pack/references/pack-contract.md",
-            "skills/product-design/references/flows-and-states.md",
-            "skills/product-design/references/framing.md"
+            "skills/shipright/modes/build-pack/references/pack-contract.md",
+            "skills/shipright/modes/product-design/references/flows-and-states.md",
+            "skills/shipright/modes/product-design/references/framing.md"
           ]
         }
       ]
     },
     "ship-check": {
-      "entry": "skills/ship-check/SKILL.md",
+      "entry": "skills/shipright/modes/ship-check/MODE.md",
       "required_shared": [
-        "skills/_shared/operating-contract.md",
-        "skills/_shared/intake.md"
+        "skills/shipright/modes/_shared/operating-contract.md",
+        "skills/shipright/modes/_shared/intake.md"
       ],
       "conditional_references": {
-        "skills/ship-check/references/launch-items.md": {
+        "skills/shipright/modes/ship-check/references/launch-items.md": {
           "when": "Read [launch-items.md](references/launch-items.md) for evidence requirements."
         },
-        "skills/ui-ux-design/references/state-coverage.md": {
+        "skills/shipright/modes/ui-ux-design/references/state-coverage.md": {
           "when": "For accessibility, responsive access or form checks, read [state-coverage.md](../ui-ux-design/references/state-coverage.md)."
         },
-        "skills/ux-critique/references/bounded-verification.md": {
+        "skills/shipright/modes/ux-critique/references/bounded-verification.md": {
           "when": "Use [bounded verification](../ux-critique/references/bounded-verification.md) when relevant."
         }
       },
@@ -115,70 +115,70 @@
         {
           "task": "Full launch review",
           "references": [
-            "skills/ship-check/references/launch-items.md",
-            "skills/ui-ux-design/references/state-coverage.md",
-            "skills/ux-critique/references/bounded-verification.md"
+            "skills/shipright/modes/ship-check/references/launch-items.md",
+            "skills/shipright/modes/ui-ux-design/references/state-coverage.md",
+            "skills/shipright/modes/ux-critique/references/bounded-verification.md"
           ]
         },
         {
           "task": "Focused release item",
           "references": [
-            "skills/ship-check/references/launch-items.md"
+            "skills/shipright/modes/ship-check/references/launch-items.md"
           ]
         }
       ]
     },
     "ui-ux-design": {
-      "entry": "skills/ui-ux-design/SKILL.md",
+      "entry": "skills/shipright/modes/ui-ux-design/MODE.md",
       "required_shared": [
-        "skills/_shared/operating-contract.md",
-        "skills/_shared/intake.md",
-        "skills/_shared/flow-rules.md"
+        "skills/shipright/modes/_shared/operating-contract.md",
+        "skills/shipright/modes/_shared/intake.md",
+        "skills/shipright/modes/_shared/flow-rules.md"
       ],
       "conditional_references": {
-        "skills/ui-ux-design/references/starter-systems.md": {
+        "skills/shipright/modes/ui-ux-design/references/starter-systems.md": {
           "when": "2. Design system first, before any screen or coding handoff. Record a small system: type scale, spacing scale, color roles, radius, elevation, motion, and a short component list. The user's own system or Figma file always wins. Existing app: extract the current system, mark it Observed, and reuse it. Do not replace it. New app: start from the matching starter in [starter-systems.md](references/starter-systems.md), adapt the accent and type to the subject, propose a small system, mark it Proposed, and get the user's OK before screens. Numbers are required for handoff, but they must come from the observed or approved system, never invented. A starter shown to the user and accepted, or delegated with \"you decide\", counts as approved."
         },
-        "skills/ui-ux-design/references/anti-slop-rules.md": {
+        "skills/shipright/modes/ui-ux-design/references/anti-slop-rules.md": {
           "when": "4. Trace every visible element to the current phase. Read \"Default screens to leave out\" in [anti-slop-rules.md](references/anti-slop-rules.md) before adding a region. Put later ideas in notes, not UI."
         },
-        "skills/ui-ux-design/references/mobile.md": {
+        "skills/shipright/modes/ui-ux-design/references/mobile.md": {
           "when": "5. State the design direction in one useful sentence. Do not invent brand personality. For a phone screen read [mobile.md](references/mobile.md); for a marketing or launch page read [marketing-pages.md](references/marketing-pages.md)."
         },
-        "skills/ui-ux-design/references/marketing-pages.md": {
+        "skills/shipright/modes/ui-ux-design/references/marketing-pages.md": {
           "when": "5. State the design direction in one useful sentence. Do not invent brand personality. For a phone screen read [mobile.md](references/mobile.md); for a marketing or launch page read [marketing-pages.md](references/marketing-pages.md)."
         },
-        "skills/ui-ux-design/references/layout-and-hierarchy.md": {
+        "skills/shipright/modes/ui-ux-design/references/layout-and-hierarchy.md": {
           "when": "7. Check F1-F3, accessibility and exact feedback. Remove unsupported additions. If you render HTML, run the look-and-fix loop in [layout-and-hierarchy.md](references/layout-and-hierarchy.md): check-ui, then look at both screenshots, up to three rounds."
         },
-        "skills/ui-ux-design/references/design-system.md": {
+        "skills/shipright/modes/ui-ux-design/references/design-system.md": {
           "when": "For a system choice, foundations, tokens, a supplied reference or naming and maintenance, read [design-system.md](references/design-system.md)."
         },
-        "skills/ui-ux-design/references/icons-and-placement.md": {
+        "skills/shipright/modes/ui-ux-design/references/icons-and-placement.md": {
           "when": "| Icons, profile home, selected rows, nav and action placement | [icons-and-placement.md](references/icons-and-placement.md) |"
         },
-        "skills/ui-ux-design/references/operator-workspaces.md": {
+        "skills/shipright/modes/ui-ux-design/references/operator-workspaces.md": {
           "when": "| Operator desk, pending work and task-focused status | [operator-workspaces.md](references/operator-workspaces.md) |"
         },
-        "skills/ui-ux-design/references/state-coverage.md": {
+        "skills/shipright/modes/ui-ux-design/references/state-coverage.md": {
           "when": "| Empty, loading, errors, pending work and difficult content | [state-coverage.md](references/state-coverage.md) |"
         },
-        "skills/ui-ux-design/references/components.md": {
+        "skills/shipright/modes/ui-ux-design/references/components.md": {
           "when": "| Naming controls or choosing between look-alike controls | [components.md](references/components.md) |"
         },
-        "skills/ux-critique/references/slop-tells.md": {
+        "skills/shipright/modes/ux-critique/references/slop-tells.md": {
           "when": "| Concrete review prompts for competing actions or unsupported widgets | [slop-tells.md](../ux-critique/references/slop-tells.md) |"
         },
-        "skills/ux-critique/references/bounded-verification.md": {
+        "skills/shipright/modes/ux-critique/references/bounded-verification.md": {
           "when": "| Available implementation evidence | [bounded-verification.md](../ux-critique/references/bounded-verification.md) |"
         },
-        "skills/ui-ux-design/references/motion.md": {
+        "skills/shipright/modes/ui-ux-design/references/motion.md": {
           "when": "| Existing or requested animation | [motion.md](references/motion.md) |"
         },
-        "skills/ui-ux-design/references/ui-copy.md": {
+        "skills/shipright/modes/ui-ux-design/references/ui-copy.md": {
           "when": "| Labels, errors and operator language | [ui-copy.md](references/ui-copy.md) |"
         },
-        "skills/build-pack/references/ticket-prompts.md": {
+        "skills/shipright/modes/build-pack/references/ticket-prompts.md": {
           "when": "| Builder instructions and ticket prompts | [ticket-prompts.md](../build-pack/references/ticket-prompts.md) |"
         }
       },
@@ -186,90 +186,90 @@
         {
           "task": "Screen handoff",
           "references": [
-            "skills/ui-ux-design/references/layout-and-hierarchy.md",
-            "skills/ui-ux-design/references/icons-and-placement.md",
-            "skills/ui-ux-design/references/state-coverage.md",
-            "skills/ui-ux-design/references/components.md",
-            "skills/ui-ux-design/references/anti-slop-rules.md",
-            "skills/build-pack/references/ticket-prompts.md"
+            "skills/shipright/modes/ui-ux-design/references/layout-and-hierarchy.md",
+            "skills/shipright/modes/ui-ux-design/references/icons-and-placement.md",
+            "skills/shipright/modes/ui-ux-design/references/state-coverage.md",
+            "skills/shipright/modes/ui-ux-design/references/components.md",
+            "skills/shipright/modes/ui-ux-design/references/anti-slop-rules.md",
+            "skills/shipright/modes/build-pack/references/ticket-prompts.md"
           ]
         },
         {
           "task": "Exact correction",
           "references": [
-            "skills/ui-ux-design/references/layout-and-hierarchy.md",
-            "skills/ui-ux-design/references/state-coverage.md"
+            "skills/shipright/modes/ui-ux-design/references/layout-and-hierarchy.md",
+            "skills/shipright/modes/ui-ux-design/references/state-coverage.md"
           ]
         },
         {
           "task": "Operator desk",
           "references": [
-            "skills/ui-ux-design/references/operator-workspaces.md",
-            "skills/ui-ux-design/references/state-coverage.md",
-            "skills/ui-ux-design/references/icons-and-placement.md"
+            "skills/shipright/modes/ui-ux-design/references/operator-workspaces.md",
+            "skills/shipright/modes/ui-ux-design/references/state-coverage.md",
+            "skills/shipright/modes/ui-ux-design/references/icons-and-placement.md"
           ]
         },
         {
           "task": "Motion",
           "references": [
-            "skills/ui-ux-design/references/motion.md"
+            "skills/shipright/modes/ui-ux-design/references/motion.md"
           ]
         },
         {
           "task": "New design system",
           "references": [
-            "skills/ui-ux-design/references/design-system.md",
-            "skills/ui-ux-design/references/starter-systems.md",
-            "skills/ui-ux-design/references/components.md"
+            "skills/shipright/modes/ui-ux-design/references/design-system.md",
+            "skills/shipright/modes/ui-ux-design/references/starter-systems.md",
+            "skills/shipright/modes/ui-ux-design/references/components.md"
           ]
         },
         {
           "task": "Phone screen",
           "references": [
-            "skills/ui-ux-design/references/mobile.md",
-            "skills/ui-ux-design/references/layout-and-hierarchy.md",
-            "skills/ui-ux-design/references/state-coverage.md",
-            "skills/ui-ux-design/references/components.md"
+            "skills/shipright/modes/ui-ux-design/references/mobile.md",
+            "skills/shipright/modes/ui-ux-design/references/layout-and-hierarchy.md",
+            "skills/shipright/modes/ui-ux-design/references/state-coverage.md",
+            "skills/shipright/modes/ui-ux-design/references/components.md"
           ]
         },
         {
           "task": "Marketing page",
           "references": [
-            "skills/ui-ux-design/references/marketing-pages.md",
-            "skills/ui-ux-design/references/layout-and-hierarchy.md",
-            "skills/ui-ux-design/references/anti-slop-rules.md",
-            "skills/ui-ux-design/references/motion.md"
+            "skills/shipright/modes/ui-ux-design/references/marketing-pages.md",
+            "skills/shipright/modes/ui-ux-design/references/layout-and-hierarchy.md",
+            "skills/shipright/modes/ui-ux-design/references/anti-slop-rules.md",
+            "skills/shipright/modes/ui-ux-design/references/motion.md"
           ]
         }
       ]
     },
     "ux-critique": {
-      "entry": "skills/ux-critique/SKILL.md",
+      "entry": "skills/shipright/modes/ux-critique/MODE.md",
       "required_shared": [
-        "skills/_shared/operating-contract.md",
-        "skills/_shared/intake.md",
-        "skills/_shared/flow-rules.md"
+        "skills/shipright/modes/_shared/operating-contract.md",
+        "skills/shipright/modes/_shared/intake.md",
+        "skills/shipright/modes/_shared/flow-rules.md"
       ],
       "conditional_references": {
-        "skills/ux-critique/references/requirements-and-feedback.md": {
+        "skills/shipright/modes/ux-critique/references/requirements-and-feedback.md": {
           "when": "Use [requirements-and-feedback.md](references/requirements-and-feedback.md) for stakeholder changes or multi-step flows."
         },
-        "skills/ux-critique/references/existing-app.md": {
+        "skills/shipright/modes/ux-critique/references/existing-app.md": {
           "when": "Use [existing-app.md](references/existing-app.md) for existing products. A review is read-only; already authorized fixes need no repeated approval."
         },
-        "skills/ux-critique/references/bounded-verification.md": {
+        "skills/shipright/modes/ux-critique/references/bounded-verification.md": {
           "when": "Use [bounded-verification.md](references/bounded-verification.md) for available runtime evidence, including the check-ui and screenshot loop for a rendered page."
         },
-        "skills/ux-critique/references/slop-tells.md": {
+        "skills/shipright/modes/ux-critique/references/slop-tells.md": {
           "when": "Count competing actions, duplicate identities or unsupported widgets only when the count supports a finding; [slop-tells.md](references/slop-tells.md) has prompts. No empty counting rows for a label edit."
         },
-        "skills/ui-ux-design/references/ui-copy.md": {
+        "skills/shipright/modes/ui-ux-design/references/ui-copy.md": {
           "when": "For a copy problem, quote the line, name the issue and give a grounded correction using [UI copy](../ui-ux-design/references/ui-copy.md). Do not guess whether AI wrote it."
         },
-        "skills/ux-critique/references/plan-review.md": {
+        "skills/shipright/modes/ux-critique/references/plan-review.md": {
           "when": "Only when requested, use [plan-review.md](references/plan-review.md) to score Product, Design and Build."
         },
-        "skills/ux-critique/references/severity-rubric.md": {
+        "skills/shipright/modes/ux-critique/references/severity-rubric.md": {
           "when": "Use [severity-rubric.md](references/severity-rubric.md): Blocker for critical failure, Major for substantial noncritical friction, Polish for small craft issues."
         }
       },
@@ -277,71 +277,71 @@
         {
           "task": "Existing app review",
           "references": [
-            "skills/ux-critique/references/existing-app.md",
-            "skills/ux-critique/references/requirements-and-feedback.md",
-            "skills/ux-critique/references/severity-rubric.md",
-            "skills/ux-critique/references/slop-tells.md",
-            "skills/ux-critique/references/bounded-verification.md",
-            "skills/ui-ux-design/references/ui-copy.md"
+            "skills/shipright/modes/ux-critique/references/existing-app.md",
+            "skills/shipright/modes/ux-critique/references/requirements-and-feedback.md",
+            "skills/shipright/modes/ux-critique/references/severity-rubric.md",
+            "skills/shipright/modes/ux-critique/references/slop-tells.md",
+            "skills/shipright/modes/ux-critique/references/bounded-verification.md",
+            "skills/shipright/modes/ui-ux-design/references/ui-copy.md"
           ]
         },
         {
           "task": "Requested plan review",
           "references": [
-            "skills/ux-critique/references/plan-review.md",
-            "skills/ux-critique/references/severity-rubric.md"
+            "skills/shipright/modes/ux-critique/references/plan-review.md",
+            "skills/shipright/modes/ux-critique/references/severity-rubric.md"
           ]
         }
       ]
     },
     "build-pack": {
-      "entry": "skills/build-pack/SKILL.md",
+      "entry": "skills/shipright/modes/build-pack/MODE.md",
       "required_shared": [
-        "skills/_shared/operating-contract.md",
-        "skills/_shared/intake.md",
-        "skills/_shared/flow-rules.md"
+        "skills/shipright/modes/_shared/operating-contract.md",
+        "skills/shipright/modes/_shared/intake.md",
+        "skills/shipright/modes/_shared/flow-rules.md"
       ],
       "conditional_references": {
-        "skills/product-design/references/framing.md": {
+        "skills/shipright/modes/product-design/references/framing.md": {
           "when": "1. **Frame.** Read [framing.md](../product-design/references/framing.md). Who, job, what they do today, this release, what stays out, one observable success check per job."
         },
-        "skills/product-design/references/flows-and-states.md": {
+        "skills/shipright/modes/product-design/references/flows-and-states.md": {
           "when": "2. **Flows and states.** For each core job, read [flows-and-states.md](../product-design/references/flows-and-states.md). Entry, steps, exits, failure and return. Check [Flow rules (must pass)](../_shared/flow-rules.md)."
         },
-        "skills/product-design/references/structure.md": {
+        "skills/shipright/modes/product-design/references/structure.md": {
           "when": "3. **Structure, only when needed.** With several roles, record types or navigation areas, read [structure.md](../product-design/references/structure.md). Hidden navigation is never access control."
         },
-        "skills/build-pack/references/stack-choices.md": {
+        "skills/shipright/modes/build-pack/references/stack-choices.md": {
           "when": "4. **Stack.** Read [stack-choices.md](references/stack-choices.md). Fit the user's coding tool. Give a reason and a switch point for each choice."
         },
-        "skills/ui-ux-design/references/design-system.md": {
+        "skills/shipright/modes/ui-ux-design/references/design-system.md": {
           "when": "5. **Design system.** Read [design-system.md](../ui-ux-design/references/design-system.md). The user's system or Figma wins. A new app starts from the matching starter in [starter-systems.md](../ui-ux-design/references/starter-systems.md), adapted to the subject, marked Proposed and shown first for a quick OK; ticket T1 builds it as a preview page before any screen."
         },
-        "skills/ui-ux-design/references/starter-systems.md": {
+        "skills/shipright/modes/ui-ux-design/references/starter-systems.md": {
           "when": "5. **Design system.** Read [design-system.md](../ui-ux-design/references/design-system.md). The user's system or Figma wins. A new app starts from the matching starter in [starter-systems.md](../ui-ux-design/references/starter-systems.md), adapted to the subject, marked Proposed and shown first for a quick OK; ticket T1 builds it as a preview page before any screen."
         },
-        "skills/ui-ux-design/references/state-coverage.md": {
-          "when": "6. **Screens.** Follow the [ui-ux-design](../ui-ux-design/SKILL.md) work sequence for each screen: job, top-to-bottom layout, components, states, responsive behavior, accessibility, real copy. For accessibility and state criteria, read [state-coverage.md](../ui-ux-design/references/state-coverage.md). For phone screens, read [mobile.md](../ui-ux-design/references/mobile.md). For marketing pages, read [marketing-pages.md](../ui-ux-design/references/marketing-pages.md). For motion or 3D, read [motion.md](../ui-ux-design/references/motion.md)."
+        "skills/shipright/modes/ui-ux-design/references/state-coverage.md": {
+          "when": "6. **Screens.** Follow the [ui-ux-design](../ui-ux-design/MODE.md) work sequence for each screen: job, top-to-bottom layout, components, states, responsive behavior, accessibility, real copy. For accessibility and state criteria, read [state-coverage.md](../ui-ux-design/references/state-coverage.md). For phone screens, read [mobile.md](../ui-ux-design/references/mobile.md). For marketing pages, read [marketing-pages.md](../ui-ux-design/references/marketing-pages.md). For motion or 3D, read [motion.md](../ui-ux-design/references/motion.md)."
         },
-        "skills/ui-ux-design/references/mobile.md": {
-          "when": "6. **Screens.** Follow the [ui-ux-design](../ui-ux-design/SKILL.md) work sequence for each screen: job, top-to-bottom layout, components, states, responsive behavior, accessibility, real copy. For accessibility and state criteria, read [state-coverage.md](../ui-ux-design/references/state-coverage.md). For phone screens, read [mobile.md](../ui-ux-design/references/mobile.md). For marketing pages, read [marketing-pages.md](../ui-ux-design/references/marketing-pages.md). For motion or 3D, read [motion.md](../ui-ux-design/references/motion.md)."
+        "skills/shipright/modes/ui-ux-design/references/mobile.md": {
+          "when": "6. **Screens.** Follow the [ui-ux-design](../ui-ux-design/MODE.md) work sequence for each screen: job, top-to-bottom layout, components, states, responsive behavior, accessibility, real copy. For accessibility and state criteria, read [state-coverage.md](../ui-ux-design/references/state-coverage.md). For phone screens, read [mobile.md](../ui-ux-design/references/mobile.md). For marketing pages, read [marketing-pages.md](../ui-ux-design/references/marketing-pages.md). For motion or 3D, read [motion.md](../ui-ux-design/references/motion.md)."
         },
-        "skills/ui-ux-design/references/marketing-pages.md": {
-          "when": "6. **Screens.** Follow the [ui-ux-design](../ui-ux-design/SKILL.md) work sequence for each screen: job, top-to-bottom layout, components, states, responsive behavior, accessibility, real copy. For accessibility and state criteria, read [state-coverage.md](../ui-ux-design/references/state-coverage.md). For phone screens, read [mobile.md](../ui-ux-design/references/mobile.md). For marketing pages, read [marketing-pages.md](../ui-ux-design/references/marketing-pages.md). For motion or 3D, read [motion.md](../ui-ux-design/references/motion.md)."
+        "skills/shipright/modes/ui-ux-design/references/marketing-pages.md": {
+          "when": "6. **Screens.** Follow the [ui-ux-design](../ui-ux-design/MODE.md) work sequence for each screen: job, top-to-bottom layout, components, states, responsive behavior, accessibility, real copy. For accessibility and state criteria, read [state-coverage.md](../ui-ux-design/references/state-coverage.md). For phone screens, read [mobile.md](../ui-ux-design/references/mobile.md). For marketing pages, read [marketing-pages.md](../ui-ux-design/references/marketing-pages.md). For motion or 3D, read [motion.md](../ui-ux-design/references/motion.md)."
         },
-        "skills/ui-ux-design/references/motion.md": {
-          "when": "6. **Screens.** Follow the [ui-ux-design](../ui-ux-design/SKILL.md) work sequence for each screen: job, top-to-bottom layout, components, states, responsive behavior, accessibility, real copy. For accessibility and state criteria, read [state-coverage.md](../ui-ux-design/references/state-coverage.md). For phone screens, read [mobile.md](../ui-ux-design/references/mobile.md). For marketing pages, read [marketing-pages.md](../ui-ux-design/references/marketing-pages.md). For motion or 3D, read [motion.md](../ui-ux-design/references/motion.md)."
+        "skills/shipright/modes/ui-ux-design/references/motion.md": {
+          "when": "6. **Screens.** Follow the [ui-ux-design](../ui-ux-design/MODE.md) work sequence for each screen: job, top-to-bottom layout, components, states, responsive behavior, accessibility, real copy. For accessibility and state criteria, read [state-coverage.md](../ui-ux-design/references/state-coverage.md). For phone screens, read [mobile.md](../ui-ux-design/references/mobile.md). For marketing pages, read [marketing-pages.md](../ui-ux-design/references/marketing-pages.md). For motion or 3D, read [motion.md](../ui-ux-design/references/motion.md)."
         },
-        "skills/build-pack/references/ticket-prompts.md": {
+        "skills/shipright/modes/build-pack/references/ticket-prompts.md": {
           "when": "7. **Tickets.** Read [ticket-prompts.md](references/ticket-prompts.md). For the expected level of detail, read the matching example in [golden-examples.md](references/golden-examples.md). Small, ordered, paste-ready prompts. Open choices get a Proposed default and a named place to change it, not a Blocked label."
         },
-        "skills/build-pack/references/golden-examples.md": {
+        "skills/shipright/modes/build-pack/references/golden-examples.md": {
           "when": "7. **Tickets.** Read [ticket-prompts.md](references/ticket-prompts.md). For the expected level of detail, read the matching example in [golden-examples.md](references/golden-examples.md). Small, ordered, paste-ready prompts. Open choices get a Proposed default and a named place to change it, not a Blocked label."
         },
-        "skills/build-pack/references/pack-contract.md": {
+        "skills/shipright/modes/build-pack/references/pack-contract.md": {
           "when": "8. **Check.** Read [pack-contract.md](references/pack-contract.md) for files, budgets and reconciliation. Run the Pack check below. If you produced an HTML preview and can run Node, run `node <pack>/scripts/check-ui.mjs <page> --root <site folder>`, fix every FAIL, and look at both screenshots before you reply."
         },
-        "skills/ux-critique/references/bounded-verification.md": {
+        "skills/shipright/modes/ux-critique/references/bounded-verification.md": {
           "when": "When the user returns with built work, check it with [bounded-verification.md](../ux-critique/references/bounded-verification.md)."
         }
       },
@@ -349,44 +349,44 @@
         {
           "task": "Stage 1: frame, flows, structure and stack",
           "references": [
-            "skills/product-design/references/framing.md",
-            "skills/product-design/references/flows-and-states.md",
-            "skills/product-design/references/structure.md",
-            "skills/build-pack/references/stack-choices.md"
+            "skills/shipright/modes/product-design/references/framing.md",
+            "skills/shipright/modes/product-design/references/flows-and-states.md",
+            "skills/shipright/modes/product-design/references/structure.md",
+            "skills/shipright/modes/build-pack/references/stack-choices.md"
           ]
         },
         {
           "task": "Stage 2: design system and screens",
           "references": [
-            "skills/ui-ux-design/references/design-system.md",
-            "skills/ui-ux-design/references/starter-systems.md",
-            "skills/ui-ux-design/references/state-coverage.md"
+            "skills/shipright/modes/ui-ux-design/references/design-system.md",
+            "skills/shipright/modes/ui-ux-design/references/starter-systems.md",
+            "skills/shipright/modes/ui-ux-design/references/state-coverage.md"
           ]
         },
         {
           "task": "Stage 3: tickets and pack check",
           "references": [
-            "skills/build-pack/references/ticket-prompts.md",
-            "skills/build-pack/references/pack-contract.md",
-            "skills/build-pack/references/golden-examples.md"
+            "skills/shipright/modes/build-pack/references/ticket-prompts.md",
+            "skills/shipright/modes/build-pack/references/pack-contract.md",
+            "skills/shipright/modes/build-pack/references/golden-examples.md"
           ]
         },
         {
           "task": "Stage 2 for a phone app",
           "references": [
-            "skills/ui-ux-design/references/design-system.md",
-            "skills/ui-ux-design/references/starter-systems.md",
-            "skills/ui-ux-design/references/mobile.md",
-            "skills/ui-ux-design/references/state-coverage.md"
+            "skills/shipright/modes/ui-ux-design/references/design-system.md",
+            "skills/shipright/modes/ui-ux-design/references/starter-systems.md",
+            "skills/shipright/modes/ui-ux-design/references/mobile.md",
+            "skills/shipright/modes/ui-ux-design/references/state-coverage.md"
           ]
         },
         {
           "task": "Stage 2 for a marketing or 3D site",
           "references": [
-            "skills/ui-ux-design/references/design-system.md",
-            "skills/ui-ux-design/references/starter-systems.md",
-            "skills/ui-ux-design/references/marketing-pages.md",
-            "skills/ui-ux-design/references/motion.md"
+            "skills/shipright/modes/ui-ux-design/references/design-system.md",
+            "skills/shipright/modes/ui-ux-design/references/starter-systems.md",
+            "skills/shipright/modes/ui-ux-design/references/marketing-pages.md",
+            "skills/shipright/modes/ui-ux-design/references/motion.md"
           ]
         }
       ]

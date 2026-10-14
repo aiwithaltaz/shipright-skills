@@ -1,0 +1,15 @@
+{
+  "name": "shipright",
+  "displayName": "ShipRight",
+  "version": "1.1.0",
+  "description": "One skill for product, UX, UI, and launch checks. Command: /shipright.",
+  "author": {
+    "name": "Altaz",
+    "url": "https://github.com/aiwithaltaz"
+  },
+  "homepage": "https://github.com/aiwithaltaz/shipright-skills",
+  "repository": "https://github.com/aiwithaltaz/shipright-skills",
+  "license": "MIT",
+  "keywords": ["design", "ux", "ui", "product"],
+  "skills": ["./skills/shipright"]
+}

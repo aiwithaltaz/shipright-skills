@@ -23,7 +23,7 @@ VERBATIM_SOURCES = {'docs/rebuild/BLUEPRINT.md'}
 RAW_EVIDENCE_DIRS = ('evals/v1/runs/', 'evals/v1/grades/')
 ICONS = 'skills/ui-ux-design/references/icons-and-placement.md'
 HEAVY_ACCENT = 'without a heavy accent bar unless the design system says so'
-VERSION = '1.0.0'
+VERSION = '1.1.0'
 SKILLS = {'product-design': 8, 'ui-ux-design': 10, 'ux-critique': 10, 'ship-check': 20, 'build-pack': 10}
 TEMPLATES = ['01-prd.md', '02-technical-architecture.md', '03-security-and-access.md',
              '04-frontend-spec.md', '05-feature-ticket-list.md', '06-pitch-one-pager.md',
@@ -346,6 +346,21 @@ OLD_HASH = '63a7ac219600a5a6272c968c46dfc1eb4e36646dc4dd0dc0adc606920aa7e44d'
 PACKAGED_HASH = 'bab6df757fd224fbad1d1f2b9b678df877a24032dc7d06069b75027ae9c56c3e'
 
 
+def canonical(rel):
+    """Map a pre-1.1 skill path onto the single shipright tree.
+
+    Historical evidence keeps its recorded paths. Callers use this to find the
+    current file. Mode entries are MODE.md so the tree has one SKILL.md.
+    """
+    rel = str(rel).replace('\\', '/')
+    rel = MERGED.get(rel, rel)
+    if rel.startswith('skills/') and not rel.startswith('skills/shipright/'):
+        rel = 'skills/shipright/modes/' + rel[len('skills/'):]
+    if rel.startswith('skills/shipright/modes/') and rel.endswith('/SKILL.md') and '/references/' not in rel:
+        rel = rel[:-len('SKILL.md')] + 'MODE.md'
+    return rel
+
+
 def strip_fences(text):
     return re.sub(r'```.*?```', '', text, flags=re.S)
 
@@ -363,6 +378,7 @@ def heading_ids(text):
 def validate(root):
     errors, warnings, refs = [], [], set()
     def read(rel):
+        rel = canonical(rel)
         try:
             return (root / rel).read_text(encoding='utf-8')
         except (OSError, UnicodeError) as exc:
@@ -372,9 +388,31 @@ def validate(root):
         if phrase.lower() not in read(rel).lower():
             errors.append(f'{rel}: missing rule contract: {phrase}')
 
-    actual = {p.parent.name for p in (root / 'skills').glob('*/SKILL.md')}
-    if actual != set(SKILLS):
-        errors.append(f'skill names changed: {sorted(actual)}')
+    installable = sorted(p.relative_to(root).as_posix() for p in (root / 'skills').rglob('SKILL.md'))
+    if installable != ['skills/shipright/SKILL.md']:
+        errors.append(f'installable skill must be only skills/shipright/SKILL.md, found {installable}')
+    modes = {p.parent.name for p in (root / 'skills/shipright/modes').glob('*/MODE.md')}
+    if modes != set(SKILLS):
+        errors.append(f'mode names changed: {sorted(modes)}')
+    router_rel = 'skills/shipright/SKILL.md'
+    router = read(router_rel)
+    router_match = re.match(r'\A---\nname: ([a-z0-9-]+)\ndescription: ("[^\n]*")\n---\n', router)
+    if not router_match or router_match[1] != 'shipright':
+        errors.append(f'{router_rel}: invalid restricted frontmatter or mismatched name')
+    else:
+        try:
+            desc = json.loads(router_match[2])
+            triggers = ('website', 'UX', 'UI', 'app', 'build-pack')
+            if (not isinstance(desc, str) or not desc.startswith('Use this when') or not 1 <= len(desc) <= 1024
+                    or any(word not in desc for word in triggers)):
+                raise ValueError('description length/trigger')
+        except (ValueError, TypeError):
+            errors.append(f'{router_rel}: invalid description')
+    need(router_rel, '**Pack version:** ' + VERSION)
+    for mode in SKILLS:
+        need(router_rel, f'modes/{mode}/MODE.md')
+    if len(router.split()) > 1300:
+        errors.append(f'{router_rel}: exceeds 1300-word entry budget')
     for name, count in SKILLS.items():
         rel = f'skills/{name}/SKILL.md'; text = read(rel)
         # Exact supported YAML subset: two unique keys; description is JSON-quoted YAML.
@@ -410,6 +448,18 @@ def validate(root):
         for phrase in phrases:
             need(rel, phrase)
 
+    import importlib.util
+    module_spec = importlib.util.spec_from_file_location('context_structure', root / 'evals/check_context.py')
+    context_mod = importlib.util.module_from_spec(module_spec)
+    module_spec.loader.exec_module(context_mod)
+
+    def own_text(path):
+        """Read a redirect stub as itself. Other paths use the canonical file."""
+        rel_posix = path.relative_to(root).as_posix()
+        if rel_posix in context_mod.REDIRECT_STUBS:
+            return path.read_text(encoding='utf-8')
+        return read(rel_posix)
+
     # Every Markdown file, including root, docs, examples and evals, is checked.
     for path in sorted(root.rglob('*.md')):
         if '.git' in path.relative_to(root).parts:
@@ -417,7 +467,9 @@ def validate(root):
         rel = path.relative_to(root)
         if rel.as_posix().startswith(RAW_EVIDENCE_DIRS):
             continue  # raw trial output links point into the user's future project, not this pack
-        text = read(rel)
+        if rel.as_posix().startswith('dist/'):
+            continue  # flat ChatGPT export; its file links are section names, not pack paths
+        text = own_text(path)
         prose = strip_fences(text)
         targets = re.findall(r'!?\[[^\]]*\]\(([^\s)]+)(?:\s+"[^"]*")?\)', prose)
         if rel.parts[0] == 'skills':
@@ -427,6 +479,15 @@ def validate(root):
                 continue
             base, _, anchor = target.partition('#')
             resolved = (path.parent / base).resolve() if base else path.resolve()
+            if not resolved.exists():
+                try:
+                    repo_rel = resolved.relative_to(root.resolve()).as_posix()
+                except ValueError:
+                    repo_rel = ''
+                if repo_rel:
+                    alt = (root / canonical(repo_rel)).resolve()
+                    if alt.exists():
+                        resolved = alt
             refs.add((str(rel), target))
             if not resolved.is_relative_to(root.resolve()) or not resolved.exists():
                 errors.append(f'{rel}: broken local reference {target}')
@@ -472,12 +533,12 @@ def validate(root):
         need('docs/DESIGN.md', head)
     general = list((root / 'skills').rglob('*.md')) + list((root / 'docs').glob('*.md'))
     for p in general:
-        text = read(p.relative_to(root))
+        text = own_text(p)
         for leak in IVC_LEAKS:
             if leak.lower() in text.lower():
                 errors.append(f'{p.relative_to(root)}: project-specific IVC wording in general guidance: {leak}')
     for p in general + [root / 'personal-taste/altaz.md']:
-        text = read(p.relative_to(root))
+        text = own_text(p)
         for pattern, label in FORBIDDEN:
             if re.search(pattern, text):
                 errors.append(f'{p.relative_to(root)}: contradicts a restored rule ({label})')
@@ -486,14 +547,9 @@ def validate(root):
     if statuses != ['Pass', 'Fail', 'Not verified', 'Not applicable']:
         errors.append('operating-contract.md: four-status table changed')
 
-    words = sum(len(read(p.relative_to(root)).split()) for p in (root / 'skills').rglob('*.md'))
+    words = sum(len(own_text(p).split()) for p in (root / 'skills').rglob('*.md'))
     # Stored knowledge has no global cap. Required token checks run separately.
-    import importlib.util
-    module_spec = importlib.util.spec_from_file_location('context_structure', root / 'evals/check_context.py')
-    module = importlib.util.module_from_spec(module_spec)
-    module_spec.loader.exec_module(module)
-    check_structure = module.check_structure
-    context_errors, _, _ = check_structure(root)
+    context_errors, _, _ = context_mod.check_structure(root)
     errors.extend(context_errors)
     for p in sorted(root.rglob('*')):
         if not p.is_file() or '.git' in p.relative_to(root).parts or p.suffix in {'.png', '.zip', '.pyc'}:
@@ -523,14 +579,15 @@ def validate(root):
         if len(inventory) != 110:
             errors.append('baseline read inventory must include all 110 supplied files')
         for entry in inventory:
-            p = root / entry['path']
+            recorded = entry['path']
+            # v1.0 merges and the 1.1 single-skill move retire a guidance path only into an existing successor.
+            # Prototype and evidence bytes stay at their recorded paths and must match.
+            p = root / canonical(recorded)
             if not p.is_file():
-                # v1.0 merges (Altaz approved 2026-10-13) may retire a guidance path only into an existing successor.
-                if not (entry['path'] in MERGED and (root / MERGED[entry['path']]).is_file()):
-                    errors.append(f'{entry["path"]}: original path removed')
-            elif '/prototype/' in entry['path'] or '/evidence/' in entry['path']:
+                errors.append(f'{recorded}: original path removed')
+            elif '/prototype/' in recorded or '/evidence/' in recorded:
                 if hashlib.sha256(p.read_bytes()).hexdigest() != entry['sha256']:
-                    errors.append(f'{entry["path"]}: historical bytes changed')
+                    errors.append(f'{recorded}: historical bytes changed')
         base = root / 'examples/ivc-2026-registration'
         manifest = json.loads((base / 'evidence/source-manifest.json').read_text())
         for name, recorded in manifest['files'].items():
@@ -643,7 +700,7 @@ def self_test(root):
 
         ('skill name', 'skills/ui-ux-design/SKILL.md', 'name: ui-ux-design', 'name: renamed'),
         ('gate ID', 'skills/product-design/SKILL.md', '| 8 | Decisions', '| 9 | Decisions'),
-        ('root link', 'README.md', '(skills/product-design/SKILL.md)', '(missing.md)'),
+        ('root link', 'README.md', '(skills/shipright/modes/product-design/MODE.md)', '(missing.md)'),
         ('reference file', 'skills/ui-ux-design/references/motion.md', None, None),
         ('em dash', 'README.md', '# ShipRight', '# ShipRight ' + chr(0x2014)),
         ('phase rule', 'skills/_shared/operating-contract.md', 'Save later-phase ideas as notes, not UI', 'Render every later idea now'),
@@ -715,7 +772,7 @@ def self_test(root):
         copy = Path(tmp) / 'pack'
         shutil.copytree(root, copy, ignore=shutil.ignore_patterns('.git', '__pycache__'))
         for label, rel, old, new in mutations:
-            rel = MERGED.get(rel, rel)
+            rel = canonical(rel)
             p = copy / rel; original = p.read_bytes()
             if old is None:
                 p.unlink()
@@ -738,7 +795,7 @@ def main():
     errors, warnings, links, words = validate(ROOT)
     if errors:
         print('FAIL\n' + '\n'.join(errors)); return 1
-    print(f'PASS: 5 restricted metadata records; stable 8/10/10/20 gates plus build-pack 10; {links} local references; '
+    print(f'PASS: 1 installable skill and 5 modes; stable 8/10/10/20 gates plus build-pack 10; {links} local references; '
           f'phase/feedback/intake contracts; synchronized F1-F3 exports; project paths; versions; '
           f'{words} skill words (informational; run check_context.py for token budgets); original paths and historical bytes retained.')
     for warning in warnings:

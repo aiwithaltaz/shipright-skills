@@ -43,4 +43,4 @@ Card sorting suggests groupings; tree testing checks labels and paths. Plans sta
 Use real in-scope items. Write realistic finding tasks without revealing the target label/path; expert or AI sorting is not participant research.
 Text-only tree tests omit interface cues, search and interactive accessibility.
 
-Sources: [SOURCES.md](../../../SOURCES.md). Use the sources as guidance, never this product's user findings or permission policy.
+Sources: [SOURCES.md](../../../../../SOURCES.md). Use the sources as guidance, never this product's user findings or permission policy.

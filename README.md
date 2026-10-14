@@ -1,29 +1,59 @@
 # ShipRight
 
-**Version 1.0.0**
+**Version 1.1.0**
 **Context before generate. Product before pixels.**
 
-ShipRight is a skill pack for Claude Code, Cursor, Codex and other AI coding tools.
+ShipRight is one skill, named `shipright`, for Claude Code, Cursor, Codex, VS Code, Antigravity, Gemini CLI, Claude.ai, and ChatGPT.
 Bring an idea for a website, a SaaS app, a mobile app or a 3D site. You get a build pack: a PRD, a stack with reasons, a design system with tokens, screen specs, and small ordered tickets written as prompts you paste into your coding tool.
 It does not guarantee a perfect product or replace testing with real users.
 
+## Install
+
+One command installs the skill. Then type `/shipright`, or ask for a website, an app, a screen, a UX review, or a launch check. The tool can load the skill from its description. A marketplace install also lists `/shipright:shipright` for the same skill. There is no separate command file.
+Build-pack is the default for a new idea. The other modes are product-design, ui-ux-design, ux-critique, and ship-check. They live inside this one skill.
+
+| Tool | Command |
+| --- | --- |
+| Claude Code | `/plugin marketplace add aiwithaltaz/shipright-skills` then `/plugin install shipright@shipright` |
+| Cursor | `npx skills add aiwithaltaz/shipright-skills -a cursor -y` |
+| Codex | `npx skills add aiwithaltaz/shipright-skills -a codex -y` |
+| VS Code | `npx skills add aiwithaltaz/shipright-skills -a github-copilot -y` |
+| Antigravity | `npx skills add aiwithaltaz/shipright-skills -a antigravity -y` |
+| Gemini CLI | `npx skills add aiwithaltaz/shipright-skills -a gemini-cli -y` |
+| Claude.ai | Download [shipright.zip](dist/shipright.zip) and upload it under Customize, Skills |
+| ChatGPT | Attach [shipright-chatgpt.md](dist/shipright-chatgpt.md) as project instructions or Custom GPT instructions |
+
+`npx skills add aiwithaltaz/shipright-skills` also works. Add `-g` to install for every project. Rebuild the zip and the ChatGPT file with `python3 scripts/release_skill.py`.
+
+Where the files land:
+
+| Tool | Project path | Global path |
+| --- | --- | --- |
+| Claude Code | `.claude/skills/shipright/` | `~/.claude/skills/shipright/` |
+| Cursor | `.agents/skills/shipright/` | `~/.cursor/skills/shipright/` |
+| Codex | `.agents/skills/shipright/` | `~/.codex/skills/shipright/` |
+| VS Code Copilot | `.agents/skills/shipright/` | `~/.copilot/skills/shipright/` |
+| Antigravity | `.agents/skills/shipright/` | `~/.gemini/antigravity/skills/shipright/` |
+| Gemini CLI | `.agents/skills/shipright/` | `~/.gemini/skills/shipright/` |
+
+Codex also reads `~/.agents/skills/`. Copilot also reads `.github/skills/` and `.claude/skills/`. Cursor also reads `.cursor/skills/`. Antigravity also reads `~/.gemini/config/skills/`. For the Antigravity CLI, use `-a antigravity-cli`.
+
 ## Start
 
-1. Keep the whole `shipright-skills/` folder together and readable by your tool.
-2. Start with the entry file for your task.
-3. Answer up to three quick questions, or say "you decide". Then you get the whole pack in one pass.
+1. Install the skill, or keep this repository readable and start at [skills/shipright/SKILL.md](skills/shipright/SKILL.md).
+2. Answer up to three quick questions, or say "you decide". Then you get the whole pack in one pass.
 
-| Task | Entry file |
+| Task | Mode |
 | --- | --- |
-| Turn an idea into a build pack: PRD, stack, design system, screens and ticket prompts | [build-pack](skills/build-pack/SKILL.md) |
-| Frame an idea or define a flow | [product-design](skills/product-design/SKILL.md) |
-| Design a screen or apply exact visual feedback | [ui-ux-design](skills/ui-ux-design/SKILL.md) |
-| Review an existing artifact | [ux-critique](skills/ux-critique/SKILL.md) |
-| Check a launch or a specific release item | [ship-check](skills/ship-check/SKILL.md) |
+| Turn an idea into a build pack: PRD, stack, design system, screens and ticket prompts | [build-pack](skills/shipright/modes/build-pack/MODE.md) |
+| Frame an idea or define a flow | [product-design](skills/shipright/modes/product-design/MODE.md) |
+| Design a screen or apply exact visual feedback | [ui-ux-design](skills/shipright/modes/ui-ux-design/MODE.md) |
+| Review an existing artifact | [ux-critique](skills/shipright/modes/ux-critique/MODE.md) |
+| Check a launch or a specific release item | [ship-check](skills/shipright/modes/ship-check/MODE.md) |
 
 Example:
 
-> Read shipright-skills/skills/build-pack/SKILL.md. I want a booking app for my salon. Give me everything Cursor needs to build it.
+> /shipright I want a booking app for my salon. Give me everything the coding tool needs to build it.
 
 Then paste ticket T1 into your coding tool. It sets up the project and a `/design` preview page. Check the look, then continue with T2.
 
@@ -89,9 +119,8 @@ Earlier phases keep their own folders under `examples/before-after/`, for exampl
 
 ## Tool setup
 
-Claude Code, Cursor, Codex and ChatGPT can read the pack when it is in their workspace or attached.
-For automatic discovery, register the canonical skill folders with your client's supported method. Avoid edited copies per client.
-Native installs and Claude Design ingestion are not verified for this release. Manual file-based use is the portable route.
+Install from the table above. The skill folder is [skills/shipright/](skills/shipright/SKILL.md). Do not copy the five modes out as separate skills.
+A tool with no skill support can use the ChatGPT file, or read `skills/shipright/SKILL.md` from this repository.
 Do not copy this pack's AGENTS.md into your app. It is for maintaining ShipRight itself.
 
 ## Evidence and limits

@@ -3,7 +3,7 @@
 Load when a spec names controls or must choose between look-alike controls. Skip it for a one-label correction.
 Every control maps to a canonical name or an existing app component. If a control cannot be named, justify it or remove it.
 Handoff gives the canonical name plus the library name, for example Modal = shadcn Dialog.
-Names follow common usage indexed by Component Gallery (Iain Bean). Purposes are ShipRight's own. Credit in [SOURCES.md](../../../SOURCES.md).
+Names follow common usage indexed by Component Gallery (Iain Bean). Purposes are ShipRight's own. Credit in [SOURCES.md](../../../../../SOURCES.md).
 
 ## Vocabulary (aliases in brackets)
 
