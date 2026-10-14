@@ -24,7 +24,7 @@ No supplied visual, sound or model assets. Product facts: user request and local
 ## Decisions
 D1 visitor/job: Proposed (delegated), source user delegated intake, 2026-10-14.
 D2 hero: Proposed (delegated), real skill output rather than fictional UI.
-D3 story: Unresolved, owner chooses one of docs/shipright/directions.md.
+D3 story: Approved, owner selected A: Product Manuscript, 2026-10-14; source explicit parent relay of owner selection.
 D4 assets: Proposed (delegated), DOM/type/document illustration, no sound or stock imagery.
 D5 deployment: outside scope. No publication.
 Unknown legal copy/contact: owner, omitted and not blocking this page.
@@ -36,4 +36,4 @@ Unknown legal copy/contact: owner, omitted and not blocking this page.
 | Install | Close/header | Copy exact command | Copied only on clipboard success; selectable command and honest error otherwise | Keep reading/repository |
 | Source | Header/close/footer | Open real GitHub URL | Browser navigation | Browser Back |
 
-Runtime checks are Not verified before implementation. Specification readiness: Needs decision D3.
+Runtime checks are Not verified before implementation. Specification readiness: Ready for implementation after six-act ticket generation.

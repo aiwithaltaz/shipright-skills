@@ -1,0 +1,29 @@
+[
+  {
+    "name": "desktop",
+    "errors": [],
+    "expanded": true,
+    "exclusive": true,
+    "copy": "Command copied. Paste it into your terminal.",
+    "failure": "Copy did not work. Select the command above and copy it manually.",
+    "overflow": false
+  },
+  {
+    "name": "phone",
+    "errors": [],
+    "expanded": true,
+    "exclusive": true,
+    "copy": "Command copied. Paste it into your terminal.",
+    "failure": "Copy did not work. Select the command above and copy it manually.",
+    "overflow": false
+  },
+  {
+    "name": "reduced-motion",
+    "errors": [],
+    "expanded": true,
+    "exclusive": true,
+    "copy": "Command copied. Paste it into your terminal.",
+    "failure": "Copy did not work. Select the command above and copy it manually.",
+    "overflow": false
+  }
+]
