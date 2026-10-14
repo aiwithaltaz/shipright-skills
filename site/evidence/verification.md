@@ -4,7 +4,7 @@
 
 | Check | Result | Evidence |
 | --- | --- | --- |
-| Production build | Pass | Vite 8.3.4; HTML 3.71KB gzip, CSS 4.38KB gzip, initial JS 51.47KB gzip; optional Three chunk 186.85KB gzip |
+| Production build | Pass | [Build log](build.txt); Vite 8.3.4; HTML 3.73KB gzip, CSS 4.37KB gzip, initial JS 51.45KB gzip; optional Three chunk 186.85KB gzip |
 | Premium checker | Pass | [Report](check-ui/report.json): 0 failures, 0 warnings at 1280 and 390 |
 | Portable browser suite | Pass | Controls, per-tool local copy status, recovery, byte-identical downloads, all six widths, text resizing and motion fallbacks |
 | Extra runtime checks | Pass | [Keyboard, touch and lab record](extra-checks.json); no external requests |

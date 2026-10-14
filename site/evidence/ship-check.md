@@ -23,7 +23,7 @@ Artifact: ShipRight website v1, 2026-10-14. Built with Vite 8.3.4 and served loc
 | 15 | Forms | Not applicable | No forms in scope. Clipboard success and denied-access recovery tested separately. |
 | 16 | Links | Pass | Internal anchors, images and both downloads exercised; repository responds 200. Source folder destinations checked against current tree. External links can change. |
 | 17 | Images | Pass | Explicit dimensions, lazy gallery loading, 6 source PNGs under 350KB each. No remote font or image service. |
-| 18 | Performance | Not verified | Static build and local lab evidence only. Initial JS 51.43KB gzip, optional Three chunk 186.85KB gzip. Reduced motion skips that chunk. No models or textures. Physical phone FPS and field LCP/INP/CLS not measured. Optional Three chunk exceeds Vite's 500KB uncompressed warning. |
+| 18 | Performance | Not verified | Static build and local lab evidence only. Initial JS 51.45KB gzip, optional Three chunk 186.85KB gzip. Reduced motion skips that chunk. No models or textures. Physical phone FPS and field LCP/INP/CLS not measured. Optional Three chunk exceeds Vite's 500KB uncompressed warning. |
 | 19 | Analytics | Not applicable | No analytics requested or installed. |
 | 20 | Primary task | Pass | Clear learn-and-install path, actual commands, copy steps and genuine downloads. |
 
