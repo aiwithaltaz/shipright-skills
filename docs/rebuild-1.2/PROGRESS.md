@@ -37,3 +37,6 @@ Branch: `cursor/shipright-1-2-plan-e2d8`. Base: `main` at `443fbf1`. Draft PR: h
 - Fresh intake trial: four cards only despite "just build it"; raw response and loading list preserved. Parent assessment is disclosed.
 - PR 18 Depth built unchanged at commit 81d3975 and captured at 390 and 1280. Standard checker remains clean.
 - Proof builders completed briefs and three options each, then stopped for the owner. Story choices are pending. No proof build has begun.
+
+- Reusable environment install_script and start_skill saved and exercised. Local pinned tokenizer cache matches the official checksum; system Chromium and checker work. Added encoding and GitHub API domains to the draft. Draft saving does not activate network changes or publish.
+- GitHub API remains Forbidden, so marking PR 19 ready for review remains externally blocked. Native Git push works.

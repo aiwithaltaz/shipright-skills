@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased: 1.2 rebuild
+
+- Added guided website research, real product heroes and six-act story architecture.
+- Added three distinct story options, ten individually loaded technique recipes and longer website prompts. App paths and ticket caps remain.
+- Added the premium UI profile, first-screen product Blocker, reduced-motion checks and new regression tests.
+- Credited all 16 requested pattern sources without copying site code or assets.
+- Preserved a fresh intake response and the [actual PR 18 Depth baseline](examples/before-after/1.2/depth/desktop.png). Two proof builds await owner story selection; no after images or videos exist yet.
+- No merge, tag, release or deploy.
+
 ## 1.1.0 - 2026-10-14
 
 One skill, one install. ShipRight is now `shipright`, the same shape as a Remotion or HyperFrames skill.

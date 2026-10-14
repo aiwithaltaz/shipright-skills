@@ -7,6 +7,14 @@ ShipRight is one skill, named `shipright`, for Claude Code, Cursor, Codex, VS Co
 Bring an idea for a website, a SaaS app, a mobile app or a 3D site. You get a build pack: a PRD, a stack with reasons, a design system with tokens, screen specs, and small ordered tickets written as prompts you paste into your coding tool.
 It does not guarantee a perfect product or replace testing with real users.
 
+## 1.2 rebuild on this branch
+
+A public website now starts with a real product brief and six-act story. Its act list is the architecture. Three options change the story and technique set, then stop for your choice. The selected website prompt can use 550 to 1,700 words. App tickets stay short. New projects always run the full flow, even for "just build it".
+
+Ten technique recipes load separately, only when selected. The premium checker allows purposeful labels and reveals while checking product visibility, declared proof sources and reduced-motion content. Taste critique asks whether the product is on stage, scroll teaches something and each act has a job. Missing real product on the first screen is a Blocker.
+
+Proof work is in progress. Fresh builders have saved [ShipRight directions](examples/before-after/1.2/shipright/docs/shipright/directions.md) and [sample recorder directions](examples/before-after/1.2/field-recorder/docs/shipright/04-frontend-spec.md). Both await owner choice. The [real Depth baseline](examples/before-after/1.2/depth/desktop.png) comes from PR 18. After images and scroll videos will be linked only after the builds exist. No merge, tag or release has occurred.
+
 ## Install
 
 One command installs the skill. Then type `/shipright`, or ask for a website, an app, a screen, a UX review, or a launch check. The tool can load the skill from its description. A marketplace install also lists `/shipright:shipright` for the same skill. There is no separate command file.
@@ -41,7 +49,7 @@ Codex also reads `~/.agents/skills/`. Copilot also reads `.github/skills/` and `
 ## Start
 
 1. Install the skill, or keep this repository readable and start at [skills/shipright/SKILL.md](skills/shipright/SKILL.md).
-2. Answer up to three quick questions, or say "you decide". Then you get the whole pack in one pass.
+2. Answer up to five decision cards, or delegate with "you decide". "Let me decide" reserves a choice. Apps usually need three cards. Public websites cover visitor, product hero, scroll story and assets. Clear briefs need no repeated questions.
 
 | Task | Mode |
 | --- | --- |
