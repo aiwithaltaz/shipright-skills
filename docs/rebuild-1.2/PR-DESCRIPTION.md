@@ -1,6 +1,6 @@
 # Proposed PR title
 
-ShipRight1.2: premium website stories, techniques and verified proof builds
+ShipRight 1.2: premium website stories, techniques and verified proof builds
 
 # PR description
 
@@ -16,6 +16,6 @@ Two fresh builders followed the new pack after text implementation; the owner se
 - [Recorder scroll video](https://github.com/aiwithaltaz/shipright-skills/blob/cursor/shipright-1-2-plan-e2d8/examples/before-after/1.2/field-recorder/evidence/scroll.webm)
 - [Independent review and limits](https://github.com/aiwithaltaz/shipright-skills/blob/cursor/shipright-1-2-plan-e2d8/examples/before-after/1.2/review/final-review.md)
 
-Validation:55 local tests pass without skips; source and pinned token checks pass;153 existing mutations and four new premium mutations rejected; both frozen installs, builds and fresh-process representative interactions pass. Both premium checks have zero failures and disclosed compact-text warnings. CI now installs browser tooling and smoke-checks it before test discovery.
+Validation: 55 local tests pass without skips; source and pinned token checks pass;153 existing mutations and four new premium mutations rejected; both frozen installs, builds and fresh-process representative interactions pass. Both premium checks have zero failures and disclosed compact-text warnings. CI now installs browser tooling and smoke-checks it before test discovery.
 
-Limits: one fresh builder per proof with corrections, software WebGL, unverified physical-phone performance/full assistive technology, absent external reference image pack and blocked live reference access. Local distribution metadata is1.2.0; no merge, tag, release or deployment.
+Limits: one fresh builder per proof with corrections, software WebGL, unverified physical-phone performance/full assistive technology, absent external reference image pack and blocked live reference access. Local distribution metadata is 1.2.0; no merge, tag, release or deployment.

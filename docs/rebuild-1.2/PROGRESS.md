@@ -1,6 +1,6 @@
 # ShipRight 1.2: progress
 
-**Next step:** Complete final checks and save exact checkout/startup configuration. GitHub API access is needed to mark PR 19 ready for review. No merge, tag or release. All five decisions approved in the owner request on 14 October 2026.
+**Next step:** Review PR 19. Implementation and proof are complete. No merge, tag or release. All five decisions approved in the owner request on 14 October 2026.
 
 Branch: `cursor/shipright-1-2-plan-e2d8`. Base: `main` at `443fbf1`. Draft PR: https://github.com/aiwithaltaz/shipright-skills/pull/19
 
@@ -55,6 +55,8 @@ Branch: `cursor/shipright-1-2-plan-e2d8`. Base: `main` at `443fbf1`. Draft PR: h
 - README and CHANGELOG link real before/after screenshots and scroll videos. Metadata/local distribution updated to 1.2.0; no release published.
 - External reference images, full assistive technology and physical-phone FPS remain Not verified. GitHub API remains blocked, so PR-ready flag is not confirmed.
 
-- Final1.2 packaging:55 tests pass, zero skipped. Source, token and distribution checks pass. Frozen installs repeated and both builds pass. Fresh-process representative functional requests pass for both sites; test processes stopped.
+- Final 1.2 packaging: 55 tests pass, zero skipped. Source, token and distribution checks pass. Frozen installs repeated and both builds pass. Fresh-process representative functional requests pass for both sites; test processes stopped.
 - Proof sources, screenshots, videos, comparisons and independent first/retest/final reviews committed and pushed separately.
 - Complete workspace inspection found one actual checkout. The platform/workspace .git directory is verified empty, not an unborn repository. Existing source remains at shipright-skills; no worktree or additional checkout was created.
+
+- GitHub API subsequently became usable. PR 19 was marked ready for review successfully. The earlier Forbidden observations remain historical; no credential was requested. CLI title/body edit hit deprecated Projects fields, so REST is used to finish the metadata update.
