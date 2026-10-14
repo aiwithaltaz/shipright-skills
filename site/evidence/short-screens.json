@@ -1,0 +1,30 @@
+[
+  {
+    "width": 320,
+    "height": 568,
+    "visibleProductHeight": 137.9375,
+    "overflow": 0,
+    "top": 430.0625
+  },
+  {
+    "width": 390,
+    "height": 667,
+    "visibleProductHeight": 220.75,
+    "overflow": 0,
+    "top": 446.25
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "visibleProductHeight": 397.75,
+    "overflow": 0,
+    "top": 446.25
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "visibleProductHeight": 535,
+    "overflow": 0,
+    "top": 185
+  }
+]

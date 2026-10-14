@@ -1,0 +1,51 @@
+{
+  "gallery": "3 examples selected, before and after images loaded",
+  "modes": "5 accordions open and close",
+  "copy": "All four clipboard values match their displayed command or steps",
+  "copyFailure": "Honest failure and manual selection recovery",
+  "downloads": "Both released files match byte for byte",
+  "notFound": "Local static build: HTTP 404 and home exit",
+  "keyboard": "Skip link works; native gallery, accordion, copy and download controls are keyboard reachable",
+  "reducedMotion": "Same DOM content, no decorative WebGL or scroll inertia",
+  "noWebGL": "Actual DOM manuscript and all text preserved",
+  "responsive": [
+    {
+      "width": 320,
+      "overflow": 0,
+      "overlap": false,
+      "productTop": 446.0625
+    },
+    {
+      "width": 390,
+      "overflow": 0,
+      "overlap": false,
+      "productTop": 462.25
+    },
+    {
+      "width": 768,
+      "overflow": 0,
+      "overlap": false,
+      "productTop": 666.75
+    },
+    {
+      "width": 950,
+      "overflow": 0,
+      "overlap": false,
+      "productTop": 552.65625
+    },
+    {
+      "width": 1280,
+      "overflow": 0,
+      "overlap": false,
+      "productTop": 201
+    },
+    {
+      "width": 1600,
+      "overflow": 0,
+      "overlap": false,
+      "productTop": 201
+    }
+  ],
+  "textResize": "200% reading/control text: zero horizontal overflow",
+  "pageErrors": []
+}
