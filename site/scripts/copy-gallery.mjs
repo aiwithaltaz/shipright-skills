@@ -7,14 +7,22 @@ const repoRoot = resolve(siteRoot, '..')
 const outDir = resolve(siteRoot, 'public/gallery')
 
 const files = {
-  'saas-desktop.png': 'examples/before-after/v1.0/saas-dashboard/compare-desktop.png',
-  'saas-phone.png': 'examples/before-after/v1.0/saas-dashboard/compare-phone.png',
-  'mobile-phone.png': 'examples/before-after/v1.0/mobile-form/compare-phone.png',
-  'mobile-desktop.png': 'examples/before-after/v1.0/mobile-form/compare-desktop.png',
-  'marketing-desktop.png': 'examples/before-after/v1.0/marketing-site-grid/compare-desktop.png',
-  'marketing-phone.png': 'examples/before-after/v1.0/marketing-site-grid/compare-phone.png',
-  '3d-desktop.png': 'examples/before-after/v1.0/3d-product-fixed/compare-desktop.png',
-  '3d-phone.png': 'examples/before-after/v1.0/3d-product-fixed/compare-phone.png',
+  'saas-before-desktop.png': 'examples/before-after/v1.0/saas-dashboard/before-desktop.png',
+  'saas-after-desktop.png': 'examples/before-after/v1.0/saas-dashboard/after-desktop.png',
+  'saas-before-phone.png': 'examples/before-after/v1.0/saas-dashboard/before-phone.png',
+  'saas-after-phone.png': 'examples/before-after/v1.0/saas-dashboard/after-phone.png',
+  'mobile-before-desktop.png': 'examples/before-after/v1.0/mobile-form/before-desktop.png',
+  'mobile-after-desktop.png': 'examples/before-after/v1.0/mobile-form/after-desktop.png',
+  'mobile-before-phone.png': 'examples/before-after/v1.0/mobile-form/before-phone.png',
+  'mobile-after-phone.png': 'examples/before-after/v1.0/mobile-form/after-phone.png',
+  'marketing-before-desktop.png': 'examples/before-after/v1.0/marketing-site-grid/before-desktop.png',
+  'marketing-after-desktop.png': 'examples/before-after/v1.0/marketing-site-grid/after-desktop.png',
+  'marketing-before-phone.png': 'examples/before-after/v1.0/marketing-site-grid/before-phone.png',
+  'marketing-after-phone.png': 'examples/before-after/v1.0/marketing-site-grid/after-phone.png',
+  '3d-before-desktop.png': 'examples/before-after/v1.0/3d-product-fixed/before-desktop.png',
+  '3d-after-desktop.png': 'examples/before-after/v1.0/3d-product-fixed/after-desktop.png',
+  '3d-before-phone.png': 'examples/before-after/v1.0/3d-product-fixed/before-phone.png',
+  '3d-after-phone.png': 'examples/before-after/v1.0/3d-product-fixed/after-phone.png',
 }
 
 mkdirSync(outDir, { recursive: true })

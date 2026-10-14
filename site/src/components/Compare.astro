@@ -1,0 +1,52 @@
+---
+const { item } = Astro.props
+const sizes = ['desktop', 'phone']
+---
+<article class="case" data-case>
+  <h3>{item.title}</h3>
+  <p>{item.text} <a href={item.source}>Source</a></p>
+  <div class="size-pick" role="group" aria-label={`${item.title} size`}>
+    {sizes.map((size) => (
+      <button type="button" data-size-pick={size} aria-pressed={size === item.primary ? 'true' : 'false'}>
+        {size === 'phone' ? 'Phone' : 'Desktop'}
+      </button>
+    ))}
+  </div>
+  {sizes.map((size) => {
+    const shot = item[size]
+    return (
+      <div
+        class="compare"
+        data-compare
+        data-size={size}
+        hidden={size !== item.primary}
+        style={`--ratio: ${shot.width} / ${shot.height}; --pos: 50%;`}
+      >
+        <img
+          class="after"
+          src={shot.after.src}
+          width={shot.width}
+          height={shot.height}
+          alt={shot.after.alt}
+          loading="lazy"
+        />
+        <img
+          class="before"
+          src={shot.before.src}
+          width={shot.width}
+          height={shot.height}
+          alt={shot.before.alt}
+          loading="lazy"
+        />
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value="50"
+          aria-label={`Compare ${item.title}. Left is 0.6.2. Right is 1.0.`}
+        />
+      </div>
+    )
+  })}
+  <p class="caption">Drag to compare. Left is 0.6.2. Right is 1.0.</p>
+</article>

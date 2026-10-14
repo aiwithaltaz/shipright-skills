@@ -1,36 +1,93 @@
 ---
+import '@fontsource/familjen-grotesk/latin-400.css'
+import '@fontsource/familjen-grotesk/latin-600.css'
 import '../styles/base.css'
-import '../styles/chooser.css'
+import '../styles/home.css'
 import Frame from '../layouts/Frame.astro'
+import Compare from '../components/Compare.astro'
+import Install from '../components/Install.astro'
+import { cases, trialNote } from '../data/gallery.js'
 import { links } from '../data/install.js'
 ---
 <Frame
-  title="ShipRight directions"
-  description="Three proposed looks for the ShipRight site. None is approved."
-  theme="chooser"
+  title="ShipRight"
+  description="Context before generate. Product before pixels. One skill for a website, an app, or a screen."
+  theme="depth"
+  motion="depth"
 >
-  <header class="top">
-    <p class="mark">ShipRight 1.1.0</p>
+  <header class="nav">
+    <a class="brand" href="/">ShipRight</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#install">Install</a>
     <a href={links.github}>GitHub</a>
   </header>
   <main id="content">
-    <div class="intro">
-      <h1>Three directions</h1>
-      <p>None is approved. Each one is open: a floating nav, a 3D hero, the real comparisons, and the 1.1 install lines.</p>
-    </div>
-    <nav class="picks" aria-label="Directions">
-      <a class="pick" href="/preview/air">
-        <strong>Air</strong>
-        <span class="why">White field. Syne, two wide lines. A pale knot turns in a soft stage.</span>
-      </a>
-      <a class="pick" href="/preview/depth">
-        <strong>Depth</strong>
-        <span class="why">Navy field. Familjen Grotesk in caps. A cool solid turns as you scroll. The install lines stay quiet.</span>
-      </a>
-      <a class="pick" href="/preview/grid">
-        <strong>Grid</strong>
-        <span class="why">Cool gray field. Newsreader beside a wire sphere, on a hairline grid.</span>
-      </a>
-    </nav>
+    <section class="hero" id="hero">
+      <h1>Context before generate.<br />Product before pixels.</h1>
+      <p class="deck">One skill for a website, an app, or a screen.</p>
+      <a class="btn" href="#install">Install</a>
+      <div
+        class="stage"
+        data-stage
+        tabindex="0"
+        role="img"
+        aria-label="A smooth metal form. Drag or use arrow keys to turn."
+      >
+        <img src="/hero-still.png" width="1280" height="720" alt="" fetchpriority="high" />
+        <canvas aria-hidden="true"></canvas>
+      </div>
+      <div class="hero-tools">
+        <p class="turn-hint">Drag or use arrow keys to turn.</p>
+        <button type="button" class="reset" data-shot="reset">Reset view</button>
+      </div>
+      <p class="fail" data-webgl-fail hidden>3D view is unavailable. The headline still stands.</p>
+      <div class="views" role="group" aria-label="Still views">
+        <button type="button" data-shot="front">Front</button>
+        <button type="button" data-shot="side">Side</button>
+        <button type="button" data-shot="back">Back</button>
+      </div>
+    </section>
+
+    <section class="section about">
+      <p class="lede">It writes the pack before anyone builds the look.</p>
+      <ul class="slop">
+        <li>No invented metrics, quotes, logos, or prices.</li>
+        <li>No gradient text, glow, or rows of icon cards.</li>
+        <li>Your design system wins.</li>
+        <li>The look waits for your OK.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="gallery">
+      <h2>Before and after</h2>
+      <p class="note">{trialNote}</p>
+      {cases.map((item) => <Compare item={item} />)}
+    </section>
+
+    <section class="section" id="ivc">
+      <h2>IVC 2026</h2>
+      <p class="note">Historical example. The images are not added yet.</p>
+      <div class="slots">
+        <div class="slot">
+          <h3>Registration search results</h3>
+          <p>Not added yet.</p>
+        </div>
+        <div class="slot">
+          <h3>Reports</h3>
+          <p>Not added yet.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="install">
+      <h2>Install</h2>
+      <p class="note">ShipRight 1.1.0. Copy the line for your tool.</p>
+      <Install />
+    </section>
   </main>
 </Frame>
+<script>
+  import '../scripts/live.js'
+  import '../scripts/compare.js'
+  import '../scripts/tabs.js'
+</script>

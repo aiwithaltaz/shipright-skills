@@ -1,4 +1,4 @@
-/* Shared scale for the site preview. Proposed. Themes set color and type. */
+/* Approved Depth scale. 14 October 2026. */
 :root {
   --space-1: 4px;
   --space-2: 8px;
@@ -14,7 +14,7 @@
   --space-12: 192px;
   --radius-control: 12px;
   --radius-pill: 999px;
-  --radius-stage: 28px;
+  --radius-stage: 0px;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --motion-fast: 160ms;
   --motion-base: 240ms;
@@ -24,11 +24,23 @@
   --gutter-phone: 20px;
   --section: 160px;
   --section-phone: 96px;
-  --text-display: 64px;
-  --text-display-phone: 40px;
+  --text-display: 72px;
+  --text-display-phone: 28px;
   --text-title: 32px;
   --text-body: 18px;
   --text-meta: 15px;
   --nav-offset: 96px;
-  --shadow-nav: 0 8px 24px rgba(16, 24, 40, 0.12);
+  --shadow-nav: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --color-bg: #071018;
+  --color-nav: #0d1824;
+  --color-text: #f3f6f8;
+  --color-muted: #b7c2ce;
+  --color-border: #243244;
+  --color-accent: #f4f7fb;
+  --color-accent-hover: #ffffff;
+  --color-on-accent: #071018;
+  --color-focus: #f4f7fb;
+  --color-stage: transparent;
+  --font-display: "Familjen Grotesk", sans-serif;
+  --font-text: "Familjen Grotesk", sans-serif;
 }

@@ -1,26 +1,22 @@
 # Tickets
 
-Current phase: preview only. Do not start T2 until the owner names Air, Depth, or Grid.
+Current phase: the approved Depth home page. Do not open Air or Grid.
 
 ## T1. Direction preview
 
-**After:** none. **Size:** one sitting.
+**After:** none. **Size:** done.
 
-Read `docs/shipright/build-rules.md`, DESIGN.md, and `04-frontend-spec.md`.
-Build `/`, `/preview/air`, `/preview/depth`, and `/preview/grid` from `design/tokens.css`.
-Each page: floating nav, open hero, one Three.js mesh, Lenis, one GSAP scrub, gallery, empty IVC labels, install copy.
-Do not reuse Split, Night, or Press.
+The owner rejected Split, Night, and Press, then rejected Air and Grid by picking Depth.
 
-**Done when:** check-ui reports 0 failures at 390 and 1280. Text is visible with motion off.
-**Stop.** Do not build the final home page.
+**Stop.**
 
-## T2. Build the chosen direction
+## T2. Build Depth
 
-**After:** the owner names one direction. **Size:** one sitting.
+**After:** the owner picked Depth. **Size:** one sitting.
 
-Keep the chosen theme. Remove the other two public routes. Build `/` from that theme only. Keep the trial limits and `src/data/install.js`.
+`/` is the Depth home page. Air and Grid routes are gone. Keep the trial limits and `src/data/install.js`.
 
-**Done when:** `/` is only the chosen direction. One filled Install control. The 3D hero still has a still frame when motion is reduced.
+**Done when:** `/` is Depth only. One filled Install control. The 3D hero has a still frame when motion is reduced.
 **Stop.**
 
 ## T3. Critique and check
@@ -30,13 +26,15 @@ Keep the chosen theme. Remove the other two public routes. Build `/` from that t
 Run ux-critique and `node scripts/check-ui.mjs` at 390 and 1280. Fix what it finds.
 
 **Done when:** Must-fix items are fixed or written down with evidence, and check-ui reports 0 failures.
+**Ran:** 14 October 2026. check-ui on `/` was 0 failures and 0 warnings. The narrow headline wrap and the old open-graph image were fixed.
 **Stop.** Do not deploy.
 
-## T4. Ship-check handoff
+## T4. Ship-check
 
-**After:** T3, and only if a launch is requested. **Size:** one sitting.
+**After:** T3. **Size:** one sitting.
 
 Hand the built page to ship-check. Do not publish, deploy, or buy a domain.
 
-**Done when:** ship-check has a dated note, or the owner has said not to launch.
+**Done when:** ship-check has a dated note.
+**Ran:** 14 October 2026. See `06-ship-check.md`. Verdict: Not established. Do not deploy.
 **Stop.**

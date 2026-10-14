@@ -2,36 +2,62 @@
 import { skillsCommand, pluginSteps, tools, files, globalNote } from '../data/install.js'
 
 const pluginCopy = pluginSteps.join('\n')
+
+const panels = [
+  { id: 'any', label: 'Any tool', command: skillsCommand, note: globalNote },
+  {
+    id: 'claude-code',
+    label: 'Claude Code',
+    command: pluginCopy,
+    note: 'Run both lines in Claude Code.',
+  },
+  ...tools.map((tool) => ({
+    id: tool.id,
+    label: tool.tool,
+    command: tool.command,
+    note: tool.note || '',
+  })),
+  ...files.map((file) => ({
+    id: file.id,
+    label: file.tool,
+    href: file.href,
+    fileLabel: file.label,
+    note: file.detail,
+  })),
+]
 ---
-<div class="unit">
-  <p class="name">Any tool</p>
-  <pre><code>{skillsCommand}</code></pre>
-  <p class="detail">{globalNote}</p>
-  <button type="button" class="copy" data-copy={skillsCommand}>Copy</button>
-  <p class="status" data-status role="status"></p>
-</div>
-<div class="unit">
-  <p class="name">Claude Code</p>
-  <pre><code>{pluginCopy}</code></pre>
-  <p class="detail">Run both lines in Claude Code.</p>
-  <button type="button" class="copy" data-copy={pluginCopy}>Copy</button>
-  <p class="status" data-status role="status"></p>
-</div>
-{tools.map((tool) => (
-  <div class="unit">
-    <p class="name">{tool.tool}</p>
-    <pre><code>{tool.command}</code></pre>
-    {tool.note && <p class="detail">{tool.note}</p>}
-    <button type="button" class="copy" data-copy={tool.command}>Copy</button>
-    <p class="status" data-status role="status"></p>
+<div class="installer">
+  <div class="tablist" role="tablist" aria-label="Install by tool">
+    {panels.map((panel, index) => (
+      <button
+        type="button"
+        class="tab"
+        role="tab"
+        id={`tab-${panel.id}`}
+        aria-controls={`panel-${panel.id}`}
+        aria-selected={index === 0 ? 'true' : 'false'}
+        tabindex={index === 0 ? 0 : -1}
+      >
+        {panel.label}
+      </button>
+    ))}
   </div>
-))}
-{files.map((file) => (
-  <div class="unit">
-    <p class="name">{file.tool}</p>
-    <a class="file-link" href={file.href}>{file.label}</a>
-    <p class="detail">{file.detail}</p>
-    <button type="button" class="copy" data-copy={file.href}>Copy link</button>
-    <p class="status" data-status role="status"></p>
-  </div>
-))}
+  {panels.map((panel, index) => (
+    <div
+      class="unit"
+      role="tabpanel"
+      id={`panel-${panel.id}`}
+      aria-labelledby={`tab-${panel.id}`}
+      hidden={index !== 0}
+    >
+      {panel.command ? (
+        <pre><code>{panel.command}</code></pre>
+      ) : (
+        <a class="file-link" href={panel.href}>{panel.fileLabel}</a>
+      )}
+      {panel.note && <p class="detail">{panel.note}</p>}
+      <button type="button" class="copy" data-copy={panel.command || panel.href}>Copy</button>
+      <p class="status" data-status role="status"></p>
+    </div>
+  ))}
+</div>

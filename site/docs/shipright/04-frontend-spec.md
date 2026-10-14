@@ -1,15 +1,13 @@
 # Frontend specification
 
-**Version:** 1.1.0 site preview. **Phase:** Design preview only.
+**Version:** 1.1.0 site. **Phase:** Approved Depth home page.
 
 ## Screens
 
 | ID | Job | Route |
 | --- | --- | --- |
-| S0 | Let the owner choose a direction | `/` |
-| S1 | Show Air | `/preview/air` |
-| S2 | Show Depth | `/preview/depth` |
-| S3 | Show Grid | `/preview/grid` |
+| S1 | Show what ShipRight is, the proof, and how to install | `/` |
+| S2 | Recover from an unknown address | `/404` |
 
 ## Flow rules (must pass)
 
@@ -19,23 +17,23 @@
 - **F3. System status:** show task-relevant progress, results and actionable failures in the user's words. Hide routine system plumbing. Never fake progress or claim work is saved, cancelled or complete without evidence.
 <!-- FLOW-EXPORT-END -->
 
-## S0 List
+## S1 Home
 
-**Job:** Name Air, Depth, and Grid without pretending one is chosen.
-**Order:** Title. One sentence. Three links. Footer.
-**Exit:** Each link opens that direction. Footer links leave the site.
-
-## S1, S2, S3
-
-**Job:** Give the direction room, show a live 3D hero, then the proof and the install lines.
-**Order:** Floating nav. Headline, one sentence, Install, 3D stage. Four slop lines. Four comparisons, one image each. Two empty IVC labels. Install rows. Footer.
-**States:** Copy default, Copied, and Copy failed. A broken image keeps its alt text. No WebGL: the canvas goes away and the headline stays.
-**Responsive:** One column below 760. The nav stays one row if it fits. Commands wrap. No sideways page scroll at 390 or 1280.
-**Motion:** See DESIGN.md.
+**Job:** Say what ShipRight is, show the real before and after, and copy an install line.
+**Order:** Floating nav. Two-line headline, one sentence, Install, metal form. Four slop lines. Four compare sliders. Two empty IVC labels. Install tabs. Footer.
+**States:** Copy default, Copied, and Copy failed. A missing image keeps its alt text. No WebGL: the still image stays and a sentence says the 3D view is unavailable. Reduced motion: one still frame, plus Front, Side, and Back.
+**Responsive:** One column below 760. Headline stays two lines. Commands wrap. Tabs scroll inside their row. No sideways page scroll at 390 or 1280.
+**Motion:** See DESIGN.md. Drag, arrow keys, and scroll turn the form. Reset view clears the drag.
 **Copy:** Trial lines from `src/data/gallery.js`. Install lines from `src/data/install.js`.
+
+## S2 Missing page
+
+**Job:** Say the address is wrong and offer a way back.
+**Order:** One heading, one sentence, Back to ShipRight. Footer.
+**Exit:** The button and the footer links leave the missing page.
 
 ## Acceptance
 
-- check-ui reports 0 failures at 390 and 1280 for `/`, `/preview/air`, `/preview/depth`, and `/preview/grid`.
-- One h1 per page. One filled Install control on the first screen.
-- The owner has not picked a direction.
+- check-ui reports 0 failures at 390 and 1280 for `/`.
+- One h1. One filled Install control on the first screen.
+- Air, Grid, Split, Night, and Press are not routes.

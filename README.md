@@ -145,7 +145,7 @@ Historical evaluations stay unchanged under `evals/`. The [IVC example](examples
 
 ## Website
 
-The public site in [site/](site/README.md) is a design preview: Air, Depth, and Grid. None is approved. It is a static Astro app. Do not deploy it until a direction is chosen. When you do, set the Vercel root directory to `site`.
+The public site in [site/](site/README.md) is the approved Depth page. It is a static Astro app. Do not deploy it in this pass. When you do, set the Vercel root directory to `site`.
 
 ## License
 

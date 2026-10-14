@@ -25,6 +25,8 @@ Registers below are kept from earlier phases with their original access dates. N
 
 Site preview, accessed 2026-10-14. Air, Depth, and Grid borrow only these pattern ideas: open space and a floating nav, a quiet 3D hero, scroll-linked motion, and a hairline grid. No code, layout, or words were copied from Skiper UI, Animmaster Lib, ThreeUI, Vengeance UI (vengenceui.com), or Component Gallery. Vengeance UI's GitHub repository did not show a LICENSE file on this date. The older MIT note in the table above is historical. Do not copy that repository's code unless its license is checked again. Component Gallery credit stays in the later section of this file.
 
+Approved Depth page, 14 October 2026. The hero scene is original. It uses three.js (MIT), including RoomEnvironment from that package, plus GSAP under its own license and Lenis (MIT). No ThreeUI code or text was copied.
+
 ## Phase 1 research sources
 
 Former file: `skills/product-design/references/research-sources.md`.

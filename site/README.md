@@ -1,6 +1,6 @@
 # ShipRight site
 
-Static preview for ShipRight 1.1.0. Three proposed directions: Air, Depth, and Grid. None is approved. It does not deploy itself.
+Static home page for ShipRight 1.1.0. The approved look is Depth. It does not deploy itself.
 
 ## Develop
 
@@ -12,19 +12,11 @@ npm run dev
 
 `npm run dev` and `npm run build` copy the gallery images from `examples/before-after/` into `public/gallery/`. That folder is gitignored.
 
-Open `/` and choose Air, Depth, or Grid.
+Open `/`.
 
 ## Deploy on Vercel
 
-Do not deploy until a direction is approved.
-
-1. Import `aiwithaltaz/shipright-skills`.
-2. Set the root directory to `site`.
-3. Framework preset: Astro. Build command: `npm run build`. Output directory: `dist`.
-4. Leave the production domain unset until you have one.
-5. When the domain is known, set `site` in `astro.config.mjs` so the canonical URL and Open Graph image are absolute.
-
-No environment variables. No database. The install commands live in [src/data/install.js](src/data/install.js).
+Do not deploy until the owner asks. Then import the repo, set the root directory to `site`, use the Astro preset, and leave environment variables empty. The build command is `npm run build`. The output is `dist`.
 
 ## Check
 
@@ -32,13 +24,6 @@ From the repository root, after `npm run build` inside `site/`:
 
 ```bash
 node scripts/check-ui.mjs site/dist/index.html --root site/dist
-node scripts/check-ui.mjs site/dist/preview/air/index.html --root site/dist
-node scripts/check-ui.mjs site/dist/preview/depth/index.html --root site/dist
-node scripts/check-ui.mjs site/dist/preview/grid/index.html --root site/dist
 ```
 
 Open the screenshots. Fix every failure.
-
-## Docs
-
-The build pack for this site is in [docs/shipright/](docs/shipright/01-prd.md) and [DESIGN.md](DESIGN.md).
