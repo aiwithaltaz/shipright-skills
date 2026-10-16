@@ -1,0 +1,44 @@
+{
+  "frozen": "2026-10-15",
+  "note": "Fixed user messages and scripted replies. Never show graders or run agents anything else.",
+  "deliverables": "Every case asks for a reply, planning documents and a rendered page or screen (index.html), so all arms are judged on the same kinds of output.",
+  "cases": [
+    {
+      "id": "c1-linkedin",
+      "message": "I want to build a LinkedIn automation app",
+      "scripted_reply": "You decide everything. Go ahead and make the full plan, then build the main screen of the app as index.html so I can see it.",
+      "kind": "app"
+    },
+    {
+      "id": "c2-agents-dashboard",
+      "message": "I want to build a dashboard for a company with many AI agents",
+      "scripted_reply": "You decide everything. Make the full plan, then build the main dashboard screen as index.html.",
+      "kind": "app"
+    },
+    {
+      "id": "c3-saas",
+      "message": "I want to build a SaaS software",
+      "scripted_reply": "It's for small landscaping companies (3 to 20 workers) to schedule crews and send invoices. You decide the rest. Make the full plan and build the main screen as index.html.",
+      "kind": "app"
+    },
+    {
+      "id": "c4-website",
+      "message": "I want to build a website",
+      "scripted_reply": "It's for my bakery, Crumb & Co, in Austin. We make sourdough, pastries and custom cakes. Open Tuesday to Sunday, 7am to 3pm, at 1204 E 6th St. Custom cake orders need 72 hours notice. You decide the rest. Build the full site as index.html.",
+      "kind": "website"
+    },
+    {
+      "id": "c5-3d-product",
+      "message": "I want a premium 3D website for my product. It's Keel One: a 75% layout aluminum mechanical keyboard. Facts: $189, hot-swap switches, 4,000 mAh battery, wireless and USB-C, ships December 2026. I have no 3D model or photos yet.",
+      "scripted_reply": "You decide. Pick the option you think is best and build the full page now as index.html.",
+      "kind": "website"
+    },
+    {
+      "id": "c6-feedback-round",
+      "message": "This is my registration desk screen for our event (registration-full.png). The crops crop-1 to crop-6 are parts I like. Changes: remove the dot on the selected nav item. Keep Escalations and Desk help like they are (crop 2) and keep Record donation (crop 3). Remove 'Filter: All Attendees' (crop 4). In progress needs a 'View all' option or a way to clear it (crop 5). Selected row should have a clean border all around, not the thick left bar, and remove 'Query: Test' (crop 6). Remove 'Synced to event sheet'. Profile only at bottom left, remove the box at the top right. Remove the Checked In and In Queue counters for now, and the Name / Phone, Scan QR, Family ID tabs. Remove the printer and badge stock panel. We are only doing registration now, check-in comes later. Rebuild the screen with these changes as index.html.",
+      "scripted_reply": "You decide anything I did not say. Build it now.",
+      "attachments": ["registration-full.png", "crop-1.png", "crop-2.png", "crop-3.png", "crop-4.png", "crop-5.png", "crop-6.png"],
+      "kind": "feedback"
+    }
+  ]
+}
