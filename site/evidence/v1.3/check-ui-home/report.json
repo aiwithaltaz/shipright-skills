@@ -1,0 +1,117 @@
+{
+ "target": "site/dist/index.html",
+ "profile": "premium",
+ "checkedAt": "2026-10-18T08:22:23.945Z",
+ "viewports": {
+  "desktop": {
+   "results": [],
+   "metrics": {
+    "heroVisible": true,
+    "unsupportedProof": 0,
+    "undeclaredProof": 0,
+    "visibleWords": "Skip to content ShipRight Work Process Proof Install Case study Turn an idea into a tested product your AI builds right. Context before generate. Product before pixels. Install ShipRight Watch a real run Sample replay I want to build a booking app for my salon. The prompt is on the table. Nothing is invented yet. Four decisions, asked once. Who is it for? The owner, or you decide What is the job? Book a chair What stays out? Payments, until asked Whose look? A starter, marked Sample You decide. You decide Chosen for this replay The owner can still say no. Proposed is not Approved. The stages tick by. Research Options Build Test Record Same order every time. A rush phrase does not skip one. Screens land. Opus plain. Baseline 1.2. Not graded. Sonnet with ShipRight. Baseline 1.2. Not graded. The brief on one side. The build on the other. Case c6, baseline 1.2. Drag the bar. These pictures are not a grade. Remove the dot on the selected nav item. Keep Escalations and Desk help as they are. Give the selected row a clean border, not a thick left bar. Those three lines are the owner's requests from the case, not a claim that the picture did each one. 1.3 results coming. One step is black. The rest wait. Research Options Build Test Record Research Three real alternatives. Every fact is Verified or Assumed. The file is research-brief.md. A product on a stage, not a rocking box. Keel One is the c5 sample. Supplied facts: 189 dollars, hot-swap, wireless and USB-C, ships December 2026. No photo was supplied. This model is original and marked Demo data. Drag to turn it. Scroll lifts the cap. If WebGL is off, the still stays. Turn the model Opus alone, next to Sonnet with ShipRight. Three baseline 1.2 pairs that exist on disk. They are not grades. 1.3 results coming. LinkedIn automation Opus plain. Not graded. Sonnet with ShipRight. Not graded. Agent dashboard Opus plain. Not graded. Sonnet with ShipRight. Not graded. Landscaping SaaS Opus plain. Not graded. Sonnet with ShipRight. Not graded. Release scores Results coming. The 1.3 runs are prepared and not started. This page will not invent a winner. Install from the repo. One skill. Pick the tool. There is no 1.3 zip. The draft is this repository. Claude Code Cursor Codex VS Code Antigravity Gemini CLI Claude.ai ChatGPT /plugin marketplace add aiwithaltaz/shipright-skills /plugin install shipright@shipright Copy command Draft 1.3. Not released. Not a grade. Read the c7 case study GitHub",
+    "overflowX": 0,
+    "pageHeight": 9340,
+    "h1": 1,
+    "families": [
+     [
+      "Inter",
+      60
+     ],
+     [
+      "Fraunces",
+      22
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 0,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [
+     {
+      "w": 718,
+      "h": 460,
+      "labeled": true
+     }
+    ],
+    "hiddenText": 0,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true,
+    "reduced": {
+     "hiddenText": 0,
+     "heroVisible": true,
+     "overflowX": 0,
+     "contentChanged": false
+    }
+   }
+  },
+  "phone": {
+   "results": [],
+   "metrics": {
+    "heroVisible": true,
+    "unsupportedProof": 0,
+    "undeclaredProof": 0,
+    "visibleWords": "Skip to content ShipRight Work Process Proof Install Case study Turn an idea into a tested product your AI builds right. Context before generate. Product before pixels. Install ShipRight Watch a real run Sample replay I want to build a booking app for my salon. The prompt is on the table. Nothing is invented yet. Four decisions, asked once. Who is it for? The owner, or you decide What is the job? Book a chair What stays out? Payments, until asked Whose look? A starter, marked Sample You decide. You decide Chosen for this replay The owner can still say no. Proposed is not Approved. The stages tick by. Research Options Build Test Record Same order every time. A rush phrase does not skip one. Screens land. Opus plain. Baseline 1.2. Not graded. Sonnet with ShipRight. Baseline 1.2. Not graded. The brief on one side. The build on the other. Case c6, baseline 1.2. Drag the bar. These pictures are not a grade. Remove the dot on the selected nav item. Keep Escalations and Desk help as they are. Give the selected row a clean border, not a thick left bar. Those three lines are the owner's requests from the case, not a claim that the picture did each one. 1.3 results coming. One step is black. The rest wait. Research Options Build Test Record Research Three real alternatives. Every fact is Verified or Assumed. The file is research-brief.md. A product on a stage, not a rocking box. Keel One is the c5 sample. Supplied facts: 189 dollars, hot-swap, wireless and USB-C, ships December 2026. No photo was supplied. This model is original and marked Demo data. Drag to turn it. Scroll lifts the cap. If WebGL is off, the still stays. Turn the model Opus alone, next to Sonnet with ShipRight. Three baseline 1.2 pairs that exist on disk. They are not grades. 1.3 results coming. LinkedIn automation Opus plain. Not graded. Sonnet with ShipRight. Not graded. Agent dashboard Opus plain. Not graded. Sonnet with ShipRight. Not graded. Landscaping SaaS Opus plain. Not graded. Sonnet with ShipRight. Not graded. Release scores Results coming. The 1.3 runs are prepared and not started. This page will not invent a winner. Install from the repo. One skill. Pick the tool. There is no 1.3 zip. The draft is this repository. Claude Code Cursor Codex VS Code Antigravity Gemini CLI Claude.ai ChatGPT /plugin marketplace add aiwithaltaz/shipright-skills /plugin install shipright@shipright Copy command Draft 1.3. Not released. Not a grade. Read the c7 case study GitHub",
+    "overflowX": 0,
+    "pageHeight": 10533,
+    "h1": 1,
+    "families": [
+     [
+      "Inter",
+      60
+     ],
+     [
+      "Fraunces",
+      22
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 0,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [
+     {
+      "w": 356,
+      "h": 320,
+      "labeled": true
+     }
+    ],
+    "hiddenText": 0,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true,
+    "reduced": {
+     "hiddenText": 0,
+     "heroVisible": true,
+     "overflowX": 0,
+     "contentChanged": false
+    }
+   }
+  }
+ }
+}

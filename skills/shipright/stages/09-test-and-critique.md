@@ -23,6 +23,10 @@ The builder does not give itself a Pass on taste. If a fresh reviewer is availab
 
 Up to 3 rounds: test, fix, retest. Record each round. Update CHANGELOG.md.
 
+## Case study
+
+When the record, the pain map, the test report, and the screenshots exist, fill `templates/case-study.md` and `templates/case-study.html` from those files only. Do not add a number that is not already written there. A pitch deck is opt-in: fill `templates/pitch-deck.md` only when the owner asks for a pitch, a deck, or investor material. Then run `check-record.mjs` on the record folder.
+
 ## Gate
 
 Scripted checks pass at 390 and 1280, or the gap is Not verified with a reason. Record updated. Run `node <skill>/scripts/check-record.mjs` on the record folder when you can.

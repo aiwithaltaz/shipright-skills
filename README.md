@@ -3,6 +3,8 @@
 **Version 1.2.0**
 **Context before generate. Product before pixels.**
 
+**1.3.0 is a draft on this branch.** It is not tagged, not merged, and not released. The promise for the draft: turn an idea into a tested product your AI builds right. There is no 1.3 zip. Use this repository.
+
 ShipRight is one skill, named `shipright`, for Claude Code, Cursor, Codex, VS Code, Antigravity, Gemini CLI, Claude.ai, and ChatGPT.
 Bring an idea for a website, a SaaS app, a mobile app or a 3D site. You get a build pack: a PRD, a stack with reasons, a design system with tokens, screen specs, and small ordered tickets written as prompts you paste into your coding tool.
 It does not guarantee a perfect product or replace testing with real users.
@@ -103,6 +105,43 @@ node scripts/check-ui.mjs path/to/index.html --root path/to/site
 ```
 
 It needs Node 18+ and Playwright with Chromium. It measures rules; it does not prove good design or full accessibility.
+
+## How it works
+
+A new idea runs stages 0 to 10. An existing app starts at discover. Nothing in that list is skipped because someone said to just build it.
+
+| Stage | What it writes |
+| --- | --- |
+| 0 Discover | Screens, tasks, pains with evidence |
+| 1 Research | Alternatives, each fact Verified or Assumed |
+| 2 Brainstorm | Three concepts that differ in mechanism |
+| 3 Problem solving | Every risk has a decision and a test |
+| 4 Scope | The core loop and the page list |
+| 5 Architecture | Stack, data, access, secrets, cost |
+| 6 Design system | Tokens, one status table, one label table |
+| 7 Options | Three layouts, one Proposed pick |
+| 8 Build | The screen, sample data labeled |
+| 9 Test | Checks at 390 and 1280, then a case study from the record |
+| 10 Ship check | 20 items. A verdict is not permission to publish |
+
+## 1.3 proof strip
+
+These are real baseline 1.2 screenshots. They are not grades. 1.3 results coming.
+
+![Opus plain, LinkedIn case, baseline 1.2, not graded](evals/v2/runs/baseline-1.2/c1-linkedin/opus-plain/shots/desktop-1.png)
+![Sonnet with ShipRight, LinkedIn case, baseline 1.2, not graded](evals/v2/runs/baseline-1.2/c1-linkedin/sonnet-sr/shots/desktop-1.png)
+![Opus plain, agent dashboard, baseline 1.2, not graded](evals/v2/runs/baseline-1.2/c2-agents-dashboard/opus-plain/shots/desktop-1.png)
+
+### Score table
+
+| Case | Opus plain | Sonnet + ShipRight 1.2 | Sonnet + ShipRight 1.3 |
+| --- | --- | --- | --- |
+| c1 to c3, c6 | runs exist, not graded | runs exist, not graded | results coming |
+| c4 | run exists, not graded | not started | results coming |
+| c5, c7, c8 | not started | not started | results coming |
+| h1 groomer, h2 ceramic | not started | not started | results coming |
+
+Limits: one run varies, a gap under 0.5 is a tie, and no 1.3 arm has been launched. Do not read a blank cell as a win. Haiku is report only and is also not started. Prompts: [evals/v2/runs/release-1.3/RUN-GUIDE.md](evals/v2/runs/release-1.3/RUN-GUIDE.md).
 
 ## How it improved
 

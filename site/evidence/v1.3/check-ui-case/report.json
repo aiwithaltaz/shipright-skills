@@ -1,0 +1,105 @@
+{
+ "target": "site/dist/case-study.html",
+ "profile": "premium",
+ "checkedAt": "2026-10-18T08:22:32.365Z",
+ "viewports": {
+  "desktop": {
+   "results": [],
+   "metrics": {
+    "heroVisible": true,
+    "unsupportedProof": 0,
+    "undeclaredProof": 0,
+    "visibleWords": "Skip to content ShipRight Install Home Case study. Baseline evidence only. No client name. The desk screen makes registration harder than the job. Desk volunteers register people and their families on event day. Supplied by the case message. Wide frame one. Before only. What the owner already found Verified from the owner review of 25 September 2026 and 4 October 2026. The review lists 20 pains and 3 keeps. F01. Branding is too big for a work screen. F02. Reference facts repeat and always take space. F03. The before-you-begin panel adds little. F05. Lookup is by phone only. Keeps: F04 regional context, F23 the registrations list, F26 reports. No quotes were invented. Nothing here is marked Assumed. Before only There is no after shot from a rebuild. These are the other baseline frames. Wide frame two. Phone frame one. Idea, decisions, results No concept round was run. There is no chosen idea and no pair of rejected ideas in the baseline. D1. Publish the baseline, not a made-up after screen. Proposed. D2. Do not print a score. Proposed. Results: not measured. No test of a rebuild. No step count. No load time. No score. Next: run the case again with this draft, recall the 20 pains and the 3 keeps, and ask the owner before naming anyone. Back to ShipRight",
+    "overflowX": 0,
+    "pageHeight": 4605,
+    "h1": 1,
+    "families": [
+     [
+      "Inter",
+      22
+     ],
+     [
+      "Fraunces",
+      5
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 0,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [],
+    "hiddenText": 0,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true,
+    "reduced": {
+     "hiddenText": 0,
+     "heroVisible": true,
+     "overflowX": 0,
+     "contentChanged": false
+    }
+   }
+  },
+  "phone": {
+   "results": [],
+   "metrics": {
+    "heroVisible": true,
+    "unsupportedProof": 0,
+    "undeclaredProof": 0,
+    "visibleWords": "Skip to content ShipRight Install Home Case study. Baseline evidence only. No client name. The desk screen makes registration harder than the job. Desk volunteers register people and their families on event day. Supplied by the case message. Wide frame one. Before only. What the owner already found Verified from the owner review of 25 September 2026 and 4 October 2026. The review lists 20 pains and 3 keeps. F01. Branding is too big for a work screen. F02. Reference facts repeat and always take space. F03. The before-you-begin panel adds little. F05. Lookup is by phone only. Keeps: F04 regional context, F23 the registrations list, F26 reports. No quotes were invented. Nothing here is marked Assumed. Before only There is no after shot from a rebuild. These are the other baseline frames. Wide frame two. Phone frame one. Idea, decisions, results No concept round was run. There is no chosen idea and no pair of rejected ideas in the baseline. D1. Publish the baseline, not a made-up after screen. Proposed. D2. Do not print a score. Proposed. Results: not measured. No test of a rebuild. No step count. No load time. No score. Next: run the case again with this draft, recall the 20 pains and the 3 keeps, and ask the owner before naming anyone. Back to ShipRight",
+    "overflowX": 0,
+    "pageHeight": 2918,
+    "h1": 1,
+    "families": [
+     [
+      "Inter",
+      22
+     ],
+     [
+      "Fraunces",
+      5
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 0,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [],
+    "hiddenText": 0,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "errors": [],
+    "fontsMissing": [],
+    "focusVisible": true,
+    "reduced": {
+     "hiddenText": 0,
+     "heroVisible": true,
+     "overflowX": 0,
+     "contentChanged": false
+    }
+   }
+  }
+ }
+}

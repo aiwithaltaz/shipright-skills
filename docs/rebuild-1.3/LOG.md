@@ -302,4 +302,71 @@ python3 -m unittest tests.test_phase2 tests.test_v13_foundation.FoundationTests.
 
 Smoke eval on c2, c5, and c8 is still not run. No scores. Phase 3 has not started.
 
+# Phase 3 log
+
+Draft 1.3, not released. No merge, tag, release, or deploy. No pull request was opened.
+
+Phase 2 is approved. The limits on this pass: do not launch Claude, do not invent a score, do not deploy, do not open the PR.
+
+## Plan
+
+1. P3.1 to P3.3. Prepare run folders and prompts for 8 cases times Sonnet, Opus, and Haiku, plus 2 hidden cases. Write a one-page run guide. Leave grading, the fix loop, and the variance check pending.
+2. P3.3b. Case study and pitch deck templates. Guardrails in check-record.mjs. A sample case study from the c7 baseline only.
+3. P3.4. Rebuild site/ on the 1.3 draft. Stage 9 tests. Screenshots at 390 and 1280.
+4. P3.5. README, changelog, release notes. No 1.3 zip. People use the repo.
+5. P3.6. PR title and body in docs/rebuild-1.3/PR.md. Altaz opens the PR.
+
+## What changed
+
+### Evals
+
+`evals/v2/runs/release-1.3/` has 30 prompt files (10 cases, 3 arms) and a STATUS file in each run folder. Hidden cases are `h1-groomer` and `h2-ceramic` in `evals/v2/hidden-cases.json`. They are not in the frozen cases.json.
+
+`evals/v2/results/release-1.3.md` says not graded. No score is written anywhere in that file.
+
+`evals/v2/tools/prepare_release.py` builds the work folders Altaz's Claude Code sessions expect.
+
+### Case study and pitch
+
+Templates: `templates/case-study.md`, `templates/case-study.html`, `templates/pitch-deck.md`. Stage 9 names them in backticks so they do not enter the stage word path.
+
+`check-record.mjs` now requires a date and a decider on every Approved row, a pain or decision id on every changelog row, real screenshot files, no new number in the case study, and no market or traction number without Verified, Assumed, or `[Add your real numbers]`.
+
+The sample is `site/case-study.html` plus `site/record/`. It uses the owner review dates, the pain count 20, the keep count 3, and the before shots. It says the rebuild was not measured. No client name.
+
+### Site
+
+`site/` is a new page on the same Vite project. Self-hosted Inter and Fraunces. The hero is a pinned run (prompt, cards, You decide, stages, then two real baseline shots). The slider is the c6 owner screen against the baseline Sonnet shot, with the three owner requests as notes. The process list pins. The Keel model is the product-3d block. The case study link wipes, which is the page-transition block. Lenis runs on a fine pointer. GSAP ScrollTrigger does the pins.
+
+Proof copy says "results coming". No 1.3 score is shown.
+
+Stage 9 on the built pages: premium check-ui 0 fails and 0 warns on home and the case study, at 390 and 1280. run-tests 18 of 18. consistency pass. check-record pass. Shots are in `site/evidence/v1.3/`. vercel.json was not edited. Nothing was deployed.
+
+Taste is Not verified.
+
+## Commands
+
+python3 evals/check_context.py
+
+Recorded in the gate report after this log was written.
+
+node skills/shipright/scripts/check-ui.mjs, run-tests.mjs, consistency.mjs, check-record.mjs
+
+Results above. Not a grade of the skill.
+
+## Pending
+
+- Phase 2 smoke eval on c2, c5, and c8 is still not run. No scores.
+- P3.1 grading. 3 blind graders. Not started. No scores.
+- P3.2 fix loop. Not started. No grader sentences.
+- P3.3 variance. Not started. The two closest cases are not known yet.
+- Haiku scores. Not started. The prompts exist.
+- Pain recall on c7. Not started. No 1.3 run.
+- The win check. Not passed. Do not claim it.
+
+## Phase 3 gate
+
+Stopped here, as asked. The PR file is `docs/rebuild-1.3/PR.md`. Altaz opens it. The title that says the draft beats Opus is blocked until a real grade exists.
+
+
 

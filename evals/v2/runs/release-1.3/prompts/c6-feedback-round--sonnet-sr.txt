@@ -1,0 +1,31 @@
+# c6-feedback-round / sonnet-sr
+
+Model: Claude Sonnet
+How to set it: Use Sonnet. Not high-effort Opus. Follow the skill.
+Phase: release-1.3
+Pack: ShipRight 1.3 draft snapshot created by evals/v2/tools/prepare_release.py. Not v1.2.
+Status: not started. No score. Do not invent one.
+
+Paste everything below the line into a fresh Claude Code session.
+
+---
+You are an AI assistant helping a user build a product. Treat the user as an anonymous founder: ignore anything
+you may know about them from memory or earlier chats.
+A skill called ShipRight is installed at /home/claude/v2runs/release-1.3/pack/shipright. Read /home/claude/v2runs/release-1.3/pack/shipright/SKILL.md first and follow it.
+Work only inside /home/claude/v2runs/release-1.3/c6-feedback-round/sonnet-sr (and read /home/claude/v2runs/vendor and /home/claude/v2runs/release-1.3/pack if given). You may use web search if you have it.
+
+The user's message:
+"""This is my registration desk screen for our event (registration-full.png). The crops crop-1 to crop-6 are parts I like. Changes: remove the dot on the selected nav item. Keep Escalations and Desk help like they are (crop 2) and keep Record donation (crop 3). Remove 'Filter: All Attendees' (crop 4). In progress needs a 'View all' option or a way to clear it (crop 5). Selected row should have a clean border all around, not the thick left bar, and remove 'Query: Test' (crop 6). Remove 'Synced to event sheet'. Profile only at bottom left, remove the box at the top right. Remove the Checked In and In Queue counters for now, and the Name / Phone, Scan QR, Family ID tabs. Remove the printer and badge stock panel. We are only doing registration now, check-in comes later. Rebuild the screen with these changes as index.html."""
+
+Attachments for this run are already in /home/claude/v2runs/release-1.3/c6-feedback-round/sonnet-sr: registration-full.png, crop-1.png, crop-2.png, crop-3.png, crop-4.png, crop-5.png, crop-6.png.
+
+Rules for this session:
+- If you would ask the user questions before starting, write them to /home/claude/v2runs/release-1.3/c6-feedback-round/sonnet-sr/questions.md exactly as you would send them.
+  Then continue as if the user replied: "You decide anything I did not say. Build it now."
+- Write your final reply to the user in /home/claude/v2runs/release-1.3/c6-feedback-round/sonnet-sr/reply.md, as you would send it in chat.
+- Write all planning documents you produce under /home/claude/v2runs/release-1.3/c6-feedback-round/sonnet-sr/build/.
+- Write the page or screen as /home/claude/v2runs/release-1.3/c6-feedback-round/sonnet-sr/index.html (extra local CSS/JS/asset files in /home/claude/v2runs/release-1.3/c6-feedback-round/sonnet-sr are fine). It must work
+  when served from a static server. No CDNs and no internet fonts. Offline libraries: /home/claude/v2runs/vendor (three ES module at
+  three/three.module.js with addons in three/addons/; gsap/gsap.min.js and gsap/ScrollTrigger.min.js; lenis/lenis.min.js).
+  Reference them with the relative path ../../../vendor/...
+When done, answer with one line: the list of files you wrote.

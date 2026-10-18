@@ -1,0 +1,17 @@
+{
+  "note": "Hidden cases for the 1.3 release round. They are not in the frozen cases.json. Grade them the same way. Do not show them to the agents that run the original eight.",
+  "cases": [
+    {
+      "id": "h1-groomer",
+      "message": "I want to build a booking app for a dog groomer",
+      "scripted_reply": "It is one shop with two groomers, dogs only. You decide the rest. Make the full plan and build the main screen as index.html.",
+      "kind": "app"
+    },
+    {
+      "id": "h2-ceramic",
+      "message": "I want a portfolio site for a ceramic artist",
+      "scripted_reply": "She sells bowls and cups from a small studio. No 3D model and no photos yet. You decide the rest. Build the full site as index.html.",
+      "kind": "website"
+    }
+  ]
+}
