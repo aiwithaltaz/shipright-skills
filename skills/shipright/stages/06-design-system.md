@@ -1,7 +1,8 @@
 # Stage 6: Design system
 
-One system, measured, then used. Open [DESIGN.md](../templates/DESIGN.md) and [tokens.css](../templates/tokens.css).
+One system, measured, then used. Open [DESIGN.md](../templates/DESIGN.md), [components.md](../templates/components.md), [tokens.css](../templates/tokens.css), and [motion.md](../patterns/motion.md) when anything moves.
 Required headings in DESIGN.md: Choice, Tokens, Components, Status table, Label table.
+Required headings in components.md: Variants, States, Screens.
 
 ## Choice
 
@@ -11,7 +12,8 @@ Map their names to token roles (bg, surface, text, muted, border, accent, succes
 ## Tokens
 
 Type scale with size and line-height. Spacing scale 4, 8, 16, 24, 32, 40, 48, 64. No 2, 6, 10, or 12 gaps. Radii and motion durations as numbers.
-Run `node <skill>/scripts/check-tokens.mjs tokens.css` when that script exists (Phase 2). Until then, measure contrast yourself: 4.5:1 for body text, 3:1 for large text and UI borders. Write the ratios in DESIGN.md.
+Run `node <skill>/scripts/check-tokens.mjs <tokens.css>`. Body text at least 4.5:1. Large text and UI borders at least 3:1. Off-scale spacing fails. Then build a `/design` page that shows every token and state, and screenshot it.
+Fonts: use the two SIL OFL families in `blocks/fonts/` (Inter for UI, Fraunces for headlines) with the `@font-face` file there. Do not depend on a font that exists only on one operating system.
 
 ## Components
 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-interaction="click" data-expect="turned">
+<!--
+Block: product-stage
+Job: One product object center stage. Drag or press Turn to rotate it. A contact shadow stays on the floor.
+Use when: a public product hero and you have no glTF yet
+Do not use when: the page has no physical product
+Attributes: data-accent, data-label
+Size: 3 KB
+-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keel on stage</title>
+<style>
+
+  :root { --ink:#1c1916; --paper:#f7f6f3; --card:#fff; --line:#6f6a62; --accent:#145c3a; --muted:#4e4943; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; max-width: 100%; }
+  body { font: 16px/1.5 system-ui, sans-serif; color: var(--ink); background: var(--paper); }
+  main { max-width: 960px; margin: 0 auto; padding: 16px; }
+  h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.4px; }
+  p { margin: 8px 0 0; }
+  button, [role="option"] { font: inherit; color: inherit; }
+  button { min-height: 44px; min-width: 44px; padding: 8px 16px; border-radius: 12px; border: 1px solid var(--ink); background: var(--card); cursor: pointer; }
+  button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+  .out { margin-top: 8px; color: var(--muted); }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+
+    .stage { height: 280px; display: grid; place-items: center; position: relative; margin-top: 16px; }
+    .shadow { position: absolute; bottom: 24px; width: 140px; height: 16px; background: #1c1916; opacity: .2; border-radius: 999px; filter: blur(2px); }
+    .obj { width: min(160px, 60vw); height: min(100px, 40vw); background: var(--accent); border-radius: 16px; transform: rotateX(60deg) rotateZ(var(--z, -20deg)); transition: transform 200ms cubic-bezier(.22,1,.36,1); }
+    .still { display: none; }
+    @media (prefers-reduced-motion: reduce) { .obj { transform: none; } .still { display: block; } }
+    
+</style>
+</head>
+<body>
+<main>
+<p data-keep-text>The product stays visible with or without motion.</p>
+<h1>Keel on stage</h1>
+<div class="stage" data-accent="#145c3a">
+      <div class="shadow"></div>
+      <div class="obj" id="obj" data-label="stand-in"></div>
+    </div>
+    <p class="still">Still product. Motion is off.</p>
+    <button type="button" data-test="run" id="turn">Turn</button>
+<p class="out" data-test="out">idle</p>
+</main>
+<script>
+
+    const obj = document.getElementById('obj');
+    let z = -20;
+    function setTurn(next) { z = next; obj.style.setProperty('--z', z + 'deg'); document.querySelector('[data-test=out]').textContent = 'turned'; }
+    document.getElementById('turn').addEventListener('click', () => setTurn(z + 30));
+    obj.addEventListener('pointerdown', e => { obj.setPointerCapture(e.pointerId); obj.dataset.x = e.clientX; });
+    obj.addEventListener('pointermove', e => { if (e.buttons !== 1) return; setTurn(z + (e.clientX - Number(obj.dataset.x || e.clientX))); obj.dataset.x = e.clientX; });
+    document.addEventListener('visibilitychange', () => { if (document.hidden) obj.style.transition = 'none'; });
+    
+</script>
+</body>
+</html>

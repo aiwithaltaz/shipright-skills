@@ -6,8 +6,8 @@ Required headings in critique.md: Removal, Patterns, Taste, Severity.
 
 ## Test
 
-Run `node <skill>/scripts/check-ui.mjs` on the page. When `run-tests.mjs` exists, run the test plan too. Until then, check by hand and write the result: Pass or Fail per step, at 390 and 1280.
-Always look for: console errors, sideways scroll, contrast, 44px targets on a phone, keyboard focus, reduced motion (text still visible), a visible Sample or Illustrative label, and no dev controls.
+Run `node <skill>/scripts/check-ui.mjs` on the page and `node <skill>/scripts/run-tests.mjs <test-plan.json>`. The plan lists, per screen: url or file, widths 390 and 1280, actions, and expected text. Also run `node <skill>/scripts/consistency.mjs` on the page.
+Always check: console errors, no sideways scroll at 320, 390, 768, and 1280, contrast, 44px targets on a phone, keyboard focus, reduced motion with text still visible, a visible Sample or Demo label, no dev controls, and no text that moves when it should stay still.
 For an existing app: every Now pain has a passing test, plus before and after shots.
 The builder does not give itself a Pass on taste. If a fresh reviewer is available, they fill critique.md. If not, taste stays **Not verified**.
 

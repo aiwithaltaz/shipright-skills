@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" data-interaction="click" data-expect="open">
+<!--
+Block: hover-invert-faq
+Job: Rows invert on hover. One open at a time. Plus becomes a cross. Tap and keyboard work.
+Use when: a short question list
+Do not use when: you need a data table
+Attributes: data-single
+Size: 3 KB
+-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questions</title>
+<style>
+
+  :root { --ink:#1c1916; --paper:#f7f6f3; --card:#fff; --line:#6f6a62; --accent:#145c3a; --muted:#4e4943; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; max-width: 100%; }
+  body { font: 16px/1.5 system-ui, sans-serif; color: var(--ink); background: var(--paper); }
+  main { max-width: 960px; margin: 0 auto; padding: 16px; }
+  h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.4px; }
+  p { margin: 8px 0 0; }
+  button, [role="option"] { font: inherit; color: inherit; }
+  button { min-height: 44px; min-width: 44px; padding: 8px 16px; border-radius: 12px; border: 1px solid var(--ink); background: var(--card); cursor: pointer; }
+  button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+  .out { margin-top: 8px; color: var(--muted); }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+
+    .row { width: 100%; text-align: left; display: flex; justify-content: space-between; gap: 16px; border-radius: 0; border-left: 0; border-right: 0; background: transparent; }
+    .row[aria-expanded="true"], .row:hover { background: var(--ink); color: var(--paper); }
+    .panel { display: none; padding: 8px 16px 16px; }
+    .panel.on { display: block; }
+    
+</style>
+</head>
+<body>
+<main>
+<p data-keep-text>Every question is text, not only a hover color.</p>
+<h1>Questions</h1>
+<div id="faq" data-single="true">
+      <button type="button" class="row" data-test="run" aria-expanded="false" id="q1">Shipping <span class="mark">+</span></button>
+      <div class="panel" id="a1">Orders placed today leave the next open morning.</div>
+      <button type="button" class="row" aria-expanded="false" id="q2">Care <span class="mark">+</span></button>
+      <div class="panel" id="a2">Wipe with a dry cloth. Do not soak the case.</div>
+    </div>
+<p class="out" data-test="out">idle</p>
+</main>
+<script>
+
+    function shut(except) {
+      document.querySelectorAll('.row').forEach(btn => {
+        const on = btn === except;
+        btn.setAttribute('aria-expanded', on ? 'true' : 'false');
+        btn.querySelector('.mark').textContent = on ? '×' : '+';
+        btn.nextElementSibling.classList.toggle('on', on);
+      });
+    }
+    document.querySelectorAll('.row').forEach(btn => {
+      btn.addEventListener('click', () => { shut(btn); document.querySelector('[data-test=out]').textContent = 'open'; });
+    });
+    
+</script>
+</body>
+</html>

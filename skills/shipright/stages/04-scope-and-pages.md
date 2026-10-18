@@ -1,7 +1,7 @@
 # Stage 4: Scope and pages
 
-Keep the core value. Cut the rest. List every page. Open [scope.md](../templates/scope.md).
-Required headings: Core loop, Value floor, Flows, Page inventory.
+Keep the core value. Cut the rest. List every page. Open [scope.md](../templates/scope.md) and [system-pages.md](../patterns/system-pages.md).
+Required headings in scope.md: Core loop, Value floor, Flows, Page inventory.
 
 ## Steps
 

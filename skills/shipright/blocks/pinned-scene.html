@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-interaction="click" data-expect="beat-2">
+<!--
+Block: pinned-scene
+Job: A sticky stage over a short track. Named beats. Safe to reverse.
+Use when: one scene should change as the page moves
+Do not use when: the page is a form or an app tool
+Attributes: data-beats
+Size: 3 KB
+-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Three beats</title>
+<style>
+
+  :root { --ink:#1c1916; --paper:#f7f6f3; --card:#fff; --line:#6f6a62; --accent:#145c3a; --muted:#4e4943; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; max-width: 100%; }
+  body { font: 16px/1.5 system-ui, sans-serif; color: var(--ink); background: var(--paper); }
+  main { max-width: 960px; margin: 0 auto; padding: 16px; }
+  h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.4px; }
+  p { margin: 8px 0 0; }
+  button, [role="option"] { font: inherit; color: inherit; }
+  button { min-height: 44px; min-width: 44px; padding: 8px 16px; border-radius: 12px; border: 1px solid var(--ink); background: var(--card); cursor: pointer; }
+  button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+  .out { margin-top: 8px; color: var(--muted); }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+
+    .track { margin-top: 16px; }
+    .stage { position: sticky; top: 0; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
+    .beat { display: none; }
+    .beat.on { display: block; }
+    @media (prefers-reduced-motion: reduce) {
+      .stage { position: static; }
+      .beat { display: block; margin-top: 8px; }
+    }
+    
+</style>
+</head>
+<body>
+<main>
+<p data-keep-text>All three beats stay readable when motion is reduced.</p>
+<h1>Three beats</h1>
+<div class="track" data-beats="3">
+      <div class="stage" id="stage">
+        <p class="beat on" data-beat="1">Beat 1. The object arrives.</p>
+        <p class="beat" data-beat="2">Beat 2. The case opens.</p>
+        <p class="beat" data-beat="3">Beat 3. The detail locks in.</p>
+      </div>
+    </div>
+    <button type="button" data-test="run" id="scrub">Scrub</button>
+<p class="out" data-test="out">idle</p>
+</main>
+<script>
+
+    const beats = [...document.querySelectorAll('.beat')];
+    let i = 0;
+    document.getElementById('scrub').addEventListener('click', () => {
+      i = (i + 1) % beats.length;
+      beats.forEach((b, n) => b.classList.toggle('on', n === i));
+      document.querySelector('[data-test=out]').textContent = 'beat-' + (i + 1);
+    });
+    
+</script>
+</body>
+</html>

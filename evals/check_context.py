@@ -24,6 +24,7 @@ EXTRA_PREFIXES = (
     f'{SKILL_ROOT}/templates/',
     f'{SKILL_ROOT}/patterns/',
     f'{SKILL_ROOT}/blocks/',
+    f'{SKILL_ROOT}/taste/',
 )
 WORD_BUDGETS = {
     'router_words': 1600,
@@ -31,6 +32,7 @@ WORD_BUDGETS = {
     'template_words': 600,
     'pattern_words': 1500,
     'block_doc_words': 400,
+    'taste_words': 1200,
     'stage_path_words': 5000,
 }
 # Pre-1.1 path. Frozen example links still use it. The file is a redirect, not guidance.
@@ -166,6 +168,8 @@ def check_word_budgets(root, extra):
             return 'pattern_words'
         if '/blocks/' in rel:
             return 'block_doc_words'
+        if '/taste/' in rel:
+            return 'taste_words'
         return None
 
     for rel in sorted(extra):

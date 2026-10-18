@@ -19,6 +19,7 @@
     "template_words": 600,
     "pattern_words": 1500,
     "block_doc_words": 400,
+    "taste_words": 1200,
     "stage_path_words": 5000
   },
   "review_thresholds": {

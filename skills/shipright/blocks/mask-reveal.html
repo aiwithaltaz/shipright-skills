@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" data-interaction="click" data-expect="revealed">
+<!--
+Block: mask-reveal
+Job: Line-by-line title reveal with room for descenders.
+Use when: a headline should arrive in lines
+Do not use when: the user is in a task and needs the words immediately
+Attributes: data-lines
+Size: 3 KB
+-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A line at a time</title>
+<style>
+
+  :root { --ink:#1c1916; --paper:#f7f6f3; --card:#fff; --line:#6f6a62; --accent:#145c3a; --muted:#4e4943; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; max-width: 100%; }
+  body { font: 16px/1.5 system-ui, sans-serif; color: var(--ink); background: var(--paper); }
+  main { max-width: 960px; margin: 0 auto; padding: 16px; }
+  h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.4px; }
+  p { margin: 8px 0 0; }
+  button, [role="option"] { font: inherit; color: inherit; }
+  button { min-height: 44px; min-width: 44px; padding: 8px 16px; border-radius: 12px; border: 1px solid var(--ink); background: var(--card); cursor: pointer; }
+  button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+  .out { margin-top: 8px; color: var(--muted); }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+
+    .lines { margin: 16px 0; }
+    .lines span { display: block; padding-bottom: 4px; clip-path: inset(0 0 0 0); }
+    .play span { animation: rise 600ms cubic-bezier(.22,1,.36,1) both; }
+    .play span:nth-child(2) { animation-delay: 70ms; }
+    @keyframes rise { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+    @media (prefers-reduced-motion: reduce) { .play span { animation: none; clip-path: none; } }
+    
+</style>
+</head>
+<body>
+<main>
+<p data-keep-text>The headline is on the page before any script runs.</p>
+<h1>A line at a time</h1>
+<div class="lines" id="lines" data-lines="2"><span>Built to be opened.</span><span>Not just pictured.</span></div>
+    <button type="button" data-test="run" id="replay">Replay</button>
+<p class="out" data-test="out">idle</p>
+</main>
+<script>
+document.getElementById('replay').addEventListener('click', () => { const el = document.getElementById('lines'); el.classList.remove('play'); void el.offsetWidth; el.classList.add('play'); document.querySelector('[data-test=out]').textContent = 'revealed'; });
+</script>
+</body>
+</html>

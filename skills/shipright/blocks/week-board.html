@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-interaction="click" data-expect="moved">
+<!--
+Block: week-board
+Job: Days as columns, a capacity bar, and a button to move work.
+Use when: planning work across a week
+Do not use when: there is only one date
+Attributes: data-days
+Size: 3 KB
+-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week of October 19</title>
+<style>
+
+  :root { --ink:#1c1916; --paper:#f7f6f3; --card:#fff; --line:#6f6a62; --accent:#145c3a; --muted:#4e4943; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; max-width: 100%; }
+  body { font: 16px/1.5 system-ui, sans-serif; color: var(--ink); background: var(--paper); }
+  main { max-width: 960px; margin: 0 auto; padding: 16px; }
+  h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.4px; }
+  p { margin: 8px 0 0; }
+  button, [role="option"] { font: inherit; color: inherit; }
+  button { min-height: 44px; min-width: 44px; padding: 8px 16px; border-radius: 12px; border: 1px solid var(--ink); background: var(--card); cursor: pointer; }
+  button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+  .out { margin-top: 8px; color: var(--muted); }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+
+    .board { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 16px; }
+    .day { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 8px; min-width: 0; }
+    .bar { height: 8px; background: var(--paper); border-radius: 12px; margin: 8px 0; }
+    .bar span { display: block; height: 8px; width: 70%; background: var(--accent); border-radius: 12px; }
+    .chip { margin-top: 8px; }
+    
+</style>
+</head>
+<body>
+<main>
+<p data-keep-text>Each day name remains visible on a phone.</p>
+<h1>Week of October 19</h1>
+<div class="board" data-days="3">
+      <section class="day" id="mon"><h2>Mon</h2><div class="bar"><span></span></div><p class="chip" id="chip">9 visits</p></section>
+      <section class="day" id="tue"><h2>Tue</h2><div class="bar"><span></span></div><p>Open</p></section>
+      <section class="day"><h2>Wed</h2><p>Rain</p></section>
+    </div>
+    <button type="button" data-test="run" id="move">Move to Tuesday</button>
+<p class="out" data-test="out">idle</p>
+</main>
+<script>
+document.getElementById('move').addEventListener('click', () => { document.getElementById('tue').appendChild(document.getElementById('chip')); document.querySelector('[data-test=out]').textContent = 'moved'; });
+</script>
+</body>
+</html>

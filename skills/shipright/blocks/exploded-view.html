@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-interaction="click" data-expect="separated">
+<!--
+Block: exploded-view
+Job: Parts separate along one axis with numbered labels.
+Use when: you need to show what is inside a product
+Do not use when: the object is a single solid with no parts
+Attributes: data-gap
+Size: 3 KB
+-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inside the case</title>
+<style>
+
+  :root { --ink:#1c1916; --paper:#f7f6f3; --card:#fff; --line:#6f6a62; --accent:#145c3a; --muted:#4e4943; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; max-width: 100%; }
+  body { font: 16px/1.5 system-ui, sans-serif; color: var(--ink); background: var(--paper); }
+  main { max-width: 960px; margin: 0 auto; padding: 16px; }
+  h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.4px; }
+  p { margin: 8px 0 0; }
+  button, [role="option"] { font: inherit; color: inherit; }
+  button { min-height: 44px; min-width: 44px; padding: 8px 16px; border-radius: 12px; border: 1px solid var(--ink); background: var(--card); cursor: pointer; }
+  button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+  .out { margin-top: 8px; color: var(--muted); }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+
+    .stack { display: grid; gap: 8px; margin-top: 16px; }
+    .part { display: flex; gap: 8px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 8px 16px; transition: transform 200ms cubic-bezier(.22,1,.36,1); }
+    .part b { width: 24px; }
+    .stack.apart .part:nth-child(1) { transform: translateY(-8px); }
+    .stack.apart .part:nth-child(3) { transform: translateY(8px); }
+    @media (prefers-reduced-motion: reduce) { .part { transform: none !important; } }
+    
+</style>
+</head>
+<body>
+<main>
+<p data-keep-text>Each part keeps its name when motion is off.</p>
+<h1>Inside the case</h1>
+<div class="stack" id="stack" data-gap="8">
+      <div class="part"><b>1</b> Top case</div>
+      <div class="part"><b>2</b> Plate</div>
+      <div class="part"><b>3</b> Battery</div>
+    </div>
+    <button type="button" data-test="run" id="sep">Separate</button>
+<p class="out" data-test="out">idle</p>
+</main>
+<script>
+document.getElementById('sep').addEventListener('click', () => { document.getElementById('stack').classList.add('apart'); document.querySelector('[data-test=out]').textContent = 'separated'; });
+</script>
+</body>
+</html>

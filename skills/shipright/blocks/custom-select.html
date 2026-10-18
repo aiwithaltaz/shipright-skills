@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-interaction="key" data-expect="weekly">
+<!--
+Block: custom-select
+Job: Keyboard dropdown: arrows, Home, End, type-ahead, Enter, Escape. Flips near the bottom.
+Use when: one value from a short fixed list in a polished app
+Do not use when: the list is long enough that the person must type to filter. Use a combobox then.
+Attributes: data-label
+Size: 4 KB
+-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Billing period</title>
+<style>
+
+  :root { --ink:#1c1916; --paper:#f7f6f3; --card:#fff; --line:#6f6a62; --accent:#145c3a; --muted:#4e4943; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; max-width: 100%; }
+  body { font: 16px/1.5 system-ui, sans-serif; color: var(--ink); background: var(--paper); }
+  main { max-width: 960px; margin: 0 auto; padding: 16px; }
+  h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.4px; }
+  p { margin: 8px 0 0; }
+  button, [role="option"] { font: inherit; color: inherit; }
+  button { min-height: 44px; min-width: 44px; padding: 8px 16px; border-radius: 12px; border: 1px solid var(--ink); background: var(--card); cursor: pointer; }
+  button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+  .out { margin-top: 8px; color: var(--muted); }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+
+    .field { position: relative; margin-top: 16px; max-width: 280px; }
+    .list { position: absolute; left: 0; right: 0; top: 100%; background: var(--card); border: 1px solid var(--ink); border-radius: 12px; padding: 4px; margin: 4px 0 0; }
+    .list[hidden] { display: none; }
+    .list.flip { top: auto; bottom: 100%; }
+    [role="option"][aria-selected="true"] { background: var(--paper); }
+    
+</style>
+</head>
+<body>
+<main>
+<p data-keep-text>The current value is text, not only a color.</p>
+<h1>Billing period</h1>
+<div class="field" data-label="Billing period">
+      <button type="button" data-test="run" id="combo" aria-haspopup="listbox" aria-expanded="false">Monthly</button>
+      <div role="listbox" id="list" class="list" hidden>
+        <div role="option" data-value="weekly" aria-selected="false">Weekly</div>
+        <div role="option" data-value="monthly" aria-selected="true">Monthly</div>
+        <div role="option" data-value="yearly" aria-selected="false">Yearly</div>
+      </div>
+    </div>
+<p class="out" data-test="out">idle</p>
+</main>
+<script>
+
+    const combo = document.getElementById('combo');
+    const list = document.getElementById('list');
+    const options = [...list.querySelectorAll('[role=option]')];
+    let index = -1;
+    function paint() { options.forEach((o, i) => o.setAttribute('aria-selected', i === index ? 'true' : 'false')); }
+    function place() {
+      const r = combo.getBoundingClientRect();
+      list.classList.toggle('flip', r.bottom > window.innerHeight - 160);
+    }
+    function open() { list.hidden = false; combo.setAttribute('aria-expanded', 'true'); place(); }
+    combo.addEventListener('keydown', e => {
+      if (e.key === 'ArrowDown') { e.preventDefault(); open(); index = Math.min(options.length - 1, index + 1); paint(); }
+      if (e.key === 'ArrowUp') { e.preventDefault(); open(); index = Math.max(0, index - 1); paint(); }
+      if (e.key === 'Home') { e.preventDefault(); open(); index = 0; paint(); }
+      if (e.key === 'End') { e.preventDefault(); open(); index = options.length - 1; paint(); }
+      if (e.key === 'Escape') { list.hidden = true; combo.setAttribute('aria-expanded', 'false'); }
+      if (e.key === 'Enter' && index >= 0) {
+        e.preventDefault();
+        combo.textContent = options[index].textContent;
+        document.querySelector('[data-test=out]').textContent = options[index].dataset.value;
+        list.hidden = true;
+      }
+      if (e.key.length === 1) {
+        const hit = options.findIndex(o => o.textContent.toLowerCase().startsWith(e.key.toLowerCase()));
+        if (hit >= 0) { open(); index = hit; paint(); }
+      }
+    });
+    
+</script>
+</body>
+</html>

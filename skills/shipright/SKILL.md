@@ -102,5 +102,10 @@ Copy [reply.md](templates/reply.md). Lead with the result, then why, then the ne
 - `node <skill>/scripts/check-ui.mjs <page.html>`
 - `node <skill>/scripts/crawl.mjs <index.html>`
 - `node <skill>/scripts/check-record.mjs <record-folder>`
+- `node <skill>/scripts/check-tokens.mjs <tokens.css>`
+- `node <skill>/scripts/run-tests.mjs <test-plan.json>`
+- `node <skill>/scripts/consistency.mjs <page.html>`
+
+Taste is opt-in. Read `taste/altaz.md` only when the owner asks for that profile. Do not load it on every task.
 
 If Playwright is missing, the checker prints one install command and exits 2. Install with: `npm i -D playwright && npx playwright install chromium`

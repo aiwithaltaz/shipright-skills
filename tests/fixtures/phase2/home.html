@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #1c1916; }
+  button:focus, button:focus-visible { outline: 1px solid #145c3a; outline-offset: 2px; }
+  button { min-height: 44px; min-width: 44px; }
+</style>
+</head>
+<body>
+<p data-keep-text>This screen says what to do next.</p>
+<p data-sample>Demo data. Replace with your own.</p>
+<button id="go" type="button">Show</button>
+<p id="msg"></p>
+<script>
+document.getElementById('go').addEventListener('click', () => {
+  document.getElementById('msg').textContent = 'Ready';
+});
+</script>
+</body>
+</html>

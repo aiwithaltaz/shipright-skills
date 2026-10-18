@@ -1,6 +1,6 @@
 # Stage 7: Layout and options
 
-Structure every screen, then show exactly three directions. Open [layout-spec.md](../templates/layout-spec.md) and [options.md](../templates/options.md).
+Structure every screen, then show exactly three directions. Open [layout-moves.md](../patterns/layout-moves.md), [layout-spec.md](../templates/layout-spec.md), and [options.md](../templates/options.md).
 Required headings in layout-spec.md: Job, Zones, Hero, Changes.
 Required headings in options.md: Options, Pick.
 

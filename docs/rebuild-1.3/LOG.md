@@ -131,3 +131,122 @@ Not a release. The spine, the facts ladder, stages 0 to 3, the templates, and th
 2. Keep the old mode gate-ID tables until Phase 2? The checker still requires them. Recommended: yes.
 3. Keep the operator-workspaces redirect stub? Frozen links and a test need that path. Recommended: yes. Do not delete it.
 4. Keep the ChatGPT file to the spine (stages 0 to 3, feedback, and the core templates, 3,722 words), with stages 4 to 10 only in the zip? Recommended: yes.
+
+# Phase 2 log
+
+Draft 1.3, not released. No merge, tag, release, or deploy.
+
+Phase 1 answers, applied and left in place: keep the spine, keep the old gate-ID tables, keep the operator-workspaces redirect stub, keep the ChatGPT file to the spine. Claude runs stay pending.
+
+## Plan
+
+Do P2.1 through P2.13 from docs/rebuild-1.3/PLAN.md, then stop.
+
+1. P2.1 Scope and pages. Core loop, value floor, named flows, page inventory groups.
+2. P2.2 Architecture. Stage 5 already names stack, data, access, secrets, costs, and phases. Do not add a second website stack.
+3. P2.3 Design system. Tokens with a measured scale, check-tokens.mjs, component states, two SIL OFL fonts.
+4. P2.4 Patterns. A1 to A7 and W1 to W4, each with why, good, bad, and a check.
+5. P2.5 Three options that differ by device, not color.
+6. P2.6 Seventeen blocks, own code, each with a Playwright test and shots at 390 and 1280.
+7. P2.7 Build stage. Removal test, no dev controls, labeled sample data, pain IDs.
+8. P2.8 Test stage. run-tests.mjs writes test-report.md. Taste stays Not verified if no fresh reviewer.
+9. P2.9 Feedback round. The ten steps were already in the Phase 1 file. Left as written.
+10. P2.10 Taste file, opt-in. 12px is a kicker, not a gap.
+11. P2.11 Seven layout moves, plus the removal test.
+12. P2.12 components.md and consistency.mjs.
+13. P2.13 Motion tokens, a job for every animation, app-motion-kit, and a tool table with sizes and licenses dated 2026-10-18.
+
+Pack version stays 1.2.0. Token LIMITS stay frozen.
+
+## What changed
+
+### Rules
+
+patterns/app-screens.md holds A1 to A7. Each has why, a good line, a bad line, and a check. It also forbids dev controls, an empty side panel, and unlabeled sample data.
+
+patterns/web-pages.md holds W1 to W4 the same way, plus the six-act note and a block catalog.
+
+patterns/layout-moves.md holds the seven layout moves the same way, plus the removal test.
+
+patterns/copy.md, system-pages.md, and motion.md are the other pattern files. A stage links at most one of them. The others are named in backticks so they do not enter the word budget.
+
+### Templates and stages
+
+scope.md has the page groups: Public, Auth, Onboarding, App core, Account, System (404 and 500), Legal (needs legal review), Email, Meta.
+
+Stage 6 requires a status table and a label table in DESIGN.md. components.md lists the states. check-tokens.mjs is a real command.
+
+tokens.css uses the spacing scale 0, 4, 8, 16, 24, 32, 40, 48, 64. Body pairs are at least 4.5:1. UI pairs are at least 3:1.
+
+Stage 4's required-headings line now names scope.md. The heading test was reading system-pages.md, the last link on that line, and failing. That was a test miss, not a missing template.
+
+### Blocks
+
+17 HTML files in skills/shipright/blocks/. No GSAP, Three, or Lenis inside a block, so the installed skill still runs if those files are not on the path. The motion pattern records when a project should add them.
+
+product-stage is a code stand-in you can turn. It does not load a glTF. pinned-scene steps named beats. It does not scrub a GSAP timeline.
+
+app-motion-kit includes selection, a stepper, list add and remove, a toast, a skeleton, a dialog, a count, move-up reorder, a success line, and one error shake. The Playwright test drives Add visit and expects the word "added".
+
+Each block has a header comment, data attributes, a reduced-motion still, and a shot at desktop and phone under blocks/shots/.
+
+Fonts: blocks/fonts/inter-latin-400.woff2 and fraunces-latin-400.woff2, SIL OFL, with fonts.css. Blocks themselves use system-ui so a test does not request a missing file.
+
+### Scripts
+
+check-tokens.mjs fails bad contrast and off-scale spacing. The starter tokens.css passes.
+
+consistency.mjs flags the same visible label on two backgrounds, a data-action word that misses the label table, a badge color that is not a token, and off-scale margin or gap inside data-measure. A missing page fails. It does not pass an empty document. The first URL joined a leading slash onto a host that already ended in a slash, so the checker was reading a 404 and calling it a pass. That is fixed.
+
+run-tests.mjs writes test-report.md with Steps, Rounds, and Limits. The fixture home screen passes.
+
+### Taste
+
+skills/shipright/taste/altaz.md is opt-in. SKILL.md says to open it only when the owner asks. It is not a markdown link, so it is not loaded into every stage path.
+
+personal-taste/altaz.md still contains the exact line the self-test mutates: `4, 8, 12, 16, 24, 32 and 48`. A new sentence says 12px is a kicker, not a gap.
+
+### Left as approved
+
+Spine, gate-ID tables, redirect stub, ChatGPT file list. dist/shipright-chatgpt.md is 3,754 words (it was 3,722). Stages 4 to 10, patterns, and blocks are in the zip only.
+
+## Commands
+
+python3 evals/check_context.py
+
+PASS. tiktoken 0.12.0, cl100k_base. 101 files. Always shared 1,915. All shared 3,247. Largest normal paths stay under 12,000. ui-ux-design is 11,132. build-pack is 9,359.
+
+python3 evals/check_sources.py
+
+FAIL, same missing historical images as the attached zip. Diff against that baseline: 0 new errors. 6 old README errors stay gone.
+
+python3 -m unittest discover -s tests
+
+67 tests. 2 failures, 55 errors, before the stage 4 heading fix.
+
+One failure was test_stage_required_headings_exist (stage 4 pointed at the wrong file). After the one-line fix, that test passed. The other failure is test_current_sources_pass. The 55 errors are test_historical_evidence_unchanged. Both are the image files left out of the zip. Those checks were not deleted. On the real repo, Phase 1 was 52 tests, OK.
+
+After the heading fix and the motion-kit edit: tests.test_phase2 is 6 tests, OK, including blocks: pass 17. tests.test_release_skill matched a fresh dist build before the last motion-kit edit, then dist was rebuilt again.
+
+python3 scripts/release_skill.py
+
+dist/shipright.zip and dist/shipright-chatgpt.md rewritten. ChatGPT file: 3,754 words.
+
+The 157-mutation self-test was not re-run. check_sources.py returns on the missing-image FAIL before --self-test. The personal-taste fixture string is still in the file.
+
+## Pending for Altaz in Claude Code
+
+- Smoke eval: Sonnet plus this 1.3 draft on c2 (dashboard), c5 (3D site), and c8 (improve an existing app). Three graders. Not run. No scores.
+- Before and after shots of the same case, v1.2 against this draft. Not run. They wait on that smoke eval.
+- Phase 1 baseline arms and the c1, c3, c7 smoke still pending from the Phase 1 gate.
+
+## Phase 2 gate
+
+Not a release. Stages 4 to 9, the patterns, the 17 blocks, and the three checkers are in the tree. Block tests pass. Smoke scores do not exist.
+
+## Questions
+
+1. Keep these 17 blocks as plain HTML, and load GSAP, ScrollTrigger, Lenis, or Three only when a project needs a scroll story or a real 3D object? Recommended: yes. product-stage is a stand-in, not a glTF loader.
+2. Keep taste opt-in, keep the historical spacing sentence in personal-taste/altaz.md, and use 4, 8, 16, 24, 32, 40, 48, 64 for new gaps, with 12px only as a kicker? Recommended: yes.
+3. Leave the ChatGPT file on the spine at 3,754 words, with stages 4 to 10 and the blocks only in the zip? Recommended: yes. This matches the Phase 1 answer. The file grew by 32 words because SKILL.md grew.
+
