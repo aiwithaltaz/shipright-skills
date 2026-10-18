@@ -1,6 +1,6 @@
-# ShipRight 1.3.0 draft
+# ShipRight 1.3.0
 
-**Date:** 2026-10-18. **Status:** draft. Not tagged, not merged, not released. No zip. Install from this repository.
+**Date:** 2026-10-18. **Status:** released. No zip. Install from this repository. Eval scores pending.
 
 ## In one line
 
@@ -24,7 +24,7 @@ Screenshots of each section are in `site/evidence/v1.3/`.
 
 ## What is not true yet
 
-Sonnet plus this draft has not been shown to beat Opus. Do not say that it does. The win check, the fix loop, the variance reruns, and the Haiku report are waiting on Claude runs. See `evals/v2/runs/release-1.3/RUN-GUIDE.md`.
+Sonnet plus 1.3 has not yet been shown to beat Opus. Do not say that it does. The win check, the fix loop, the variance reruns, and the Haiku report are waiting on Claude runs. See `evals/v2/runs/release-1.3/RUN-GUIDE.md`.
 
 ## Limits
 

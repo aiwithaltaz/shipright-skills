@@ -1,6 +1,6 @@
 # Smoke tests still pending
 
-**Pack version:** 1.2.0
+**Pack version:** 1.3.0
 **Draft:** 1.3, not released.
 
 Altaz runs these in Claude Code. This session did not call Claude, Sonnet, Opus, or Haiku.
