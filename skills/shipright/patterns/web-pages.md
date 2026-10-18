@@ -18,7 +18,7 @@ The first screen shows the real product, and a person can touch it.
 Why: a headline about the product is not the product.
 Good: press a key and the matching key on the object moves. A still image remains when WebGL is off.
 Bad: a gradient hero and the product three screens down.
-Check: the first screen contains the product or a labeled Illustrative render. One control above the fold works on tap, not only hover.
+Check: the first screen contains the product or a labeled Illustrative render. One control above the fold works on tap, not only hover. Stage 9 fails when that media is missing from the first viewport.
 
 ## W3. Accent from the product
 
@@ -26,7 +26,7 @@ The accent color comes from the product or its world.
 Why: a generic purple does not belong to this thing.
 Good: keycap yellow, crust brown, field green.
 Bad: the same purple gradient on every site.
-Check: the palette line names the object or material the accent came from.
+Check: the palette line names the object or material the accent came from. Stage 9 fails when `--accent` matches the text color or has no source.
 
 ## W4. Each act is a new composition
 
@@ -34,7 +34,7 @@ Scroll changes the layout, not only the words.
 Why: six acts that look like one long column teach nothing.
 Good: hero, top-down layout, parts lifting, case opening, a detail sliding in.
 Bad: the same centered heading and paragraph, six times.
-Check: neighboring acts differ in composition. Name the block used for each act.
+Check: neighboring acts differ in composition. Name the block used for each act. Stage 9 fails when two acts share a measured signature.
 
 ## Block catalog
 

@@ -56,9 +56,10 @@ class PremiumTextTests(unittest.TestCase):
         self.assertIn('first screen is a **Blocker**', taste)
 
 
-BASE = '''<!doctype html><html lang="en"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sample product</title><style>body{margin:24px;background:#fff;color:#171717;font-family:system-ui}a{display:inline-block;padding:14px}a:focus-visible{outline:3px solid #111}h1{font-size:44px}.hero{width:220px;height:160px;border:2px solid #111} .label{text-transform:uppercase;font-size:13px;letter-spacing:2px} .reveal{opacity:0}@media(prefers-reduced-motion:reduce){.reveal{opacity:1}}</style>
-<a href="#detail">Detail</a><h1>Sample interface</h1><div class="hero" data-product-hero aria-label="Sample real interface">Actual interface fragment</div>
+BASE = '''<!doctype html><html lang="en" data-accent-source="sample sealing wax"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sample product</title><style>:root{--accent:#9d3419}body{margin:24px;background:#fff;color:#171717;font-family:system-ui}a{display:inline-block;padding:14px}a:focus-visible{outline:3px solid #111}h1{font-size:44px}.hero{width:220px;height:160px;border:2px solid #111}.label{text-transform:uppercase;font-size:13px;letter-spacing:2px}.reveal{opacity:0}.seal{display:inline-block;background:var(--accent);color:#fff;padding:8px 12px}section[data-act="detail"]{background:#111;color:#fff}@media(prefers-reduced-motion:reduce){.reveal{opacity:1}}</style>
+<a href="#detail">Detail</a><h1>Sample interface</h1><div class="hero" data-product-hero aria-label="Sample real interface"><svg width="220" height="160" role="img" aria-label="Sample product surface"><rect width="220" height="160" fill="#ddd"/></svg>Actual interface fragment</div>
+<p class="seal">Mark</p>
 <section data-act="opening"><p class="label" data-product-fact>Step one</p><p class="label" data-product-fact>Step two</p><p class="label" data-product-fact>Step three</p></section><section id="detail" data-act="detail"><p class="reveal">Same fact after reveal</p></section></html>'''
 
 

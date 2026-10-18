@@ -1,13 +1,11 @@
-# Website refinement
+# Site design, 1.3.1
 
-Scope: existing-work ui-ux-design, not a new project. Owner selected Product Manuscript. Keep warm paper, dark ink, one vermilion accent, real build-pack manuscript and the five modes. No new direction choice is needed.
+The page is paper and ink, with one accent: sealing wax `#9d3419` (`data-accent-source` is "sealing wax on the record"). Type is Fraunces for titles and Inter for text. Both are self-hosted.
 
-Change: remove the oversized PRODUCT word; separate headline and paper at every width; enlarge compact labels; add sourced gallery and real per-tool installs. No proof example edits.
+The first screen is the product: an illustrative stack of the five files a run writes (Research, Options, Build, Test, Record). It is not the Keel demo. Drag turns the stack. Scroll lifts the sheets. A still stands in when WebGL is off or motion is reduced.
 
-Six acts: opening identifies the skill and output; second act compares real examples; third act explains five modes; detail teaches research, plan, three options, build, critique and ship check; close provides installs; footer gives repository and return routes.
+Acts do not repeat one layout. The run is a dark screen with the object. Compare is a full-width photograph slider. Process is centered type on dark, one step at a time. Proof is dark photograph pairs. Install is a light centered command. The footer is one line.
 
-Techniques: decorative paper depth supports the DOM manuscript; one scroll timeline moves the gallery heading; one block wipe introduces the process; hover invert marks the selected mode. Reduced motion removes inertia and movement. No WebGL preserves every word and the product representation.
+Motion is GSAP ScrollTrigger and Lenis (fine pointer only). Headings use a line mask. The run pin travels about three viewports. The process pin travels about 2.4 viewports. Reduced motion shows every line and the still, and does not override `[hidden]`.
 
-Acceptance: first viewport contains the real product; no headline/card overlap; 0 horizontal overflow at 320, 390, 768 and 1280; truthful copy success/failure; reachable gallery and mode controls; genuine downloads; no compact-text warnings; no Blockers or Majors in critique; ship-check records production gaps honestly.
-
-Phone variation: the compact header keeps Install ShipRight; the gallery remains reachable through the scroll link and page flow. Smaller display type keeps the named product on shorter first screens, including 320x568. Body and controls retain readable sizes.
+Honest limits: 1.3.0 is released, 1.3.1 is this patch, eval scores are pending, and taste is Not verified.

@@ -11,6 +11,26 @@ Always check: console errors, no sideways scroll at 320, 390, 768, and 1280, con
 For an existing app: every Now pain has a passing test, plus before and after shots.
 The builder does not give itself a Pass on taste. If a fresh reviewer is available, they fill critique.md. If not, taste stays **Not verified**.
 
+## Premium craft rubric
+
+Run `check-ui.mjs --profile premium` on a public page. A miss here is a Fail.
+
+1. First screen shows the product. A headline is not the product. `[data-product-hero]` holds a visible image, canvas, svg, or video inside the first viewport. Web move W2.
+2. Each act is a new composition. `[data-act]` blocks must not share a measured signature of tone, media, alignment, and scale. Web move W4.
+3. The accent comes from the product. Set `--accent` and `data-accent-source` to the object or material. Use the accent. It must not match the body text color. Web move W3.
+4. No empty cards. A rounded panel taller than 240px must not leave more than 140px empty under its content.
+
+## Measured bug classes
+
+These fail on the standard profile too. Look at every pinned frame, not only the first screen.
+
+- `[hidden]` loses to `display`. Starter tokens and every block set `[hidden] { display: none !important; }`. The checker fails a hidden element that is still visible.
+- The fallback poster stays up under a live canvas. Fail when `[data-poster]` is visible and the canvas is showing.
+- Pinned scenes. The checker scrolls each pin and fails if visible content is clipped out of the viewport.
+- Before and after sliders. The two pictures share one box, or both use `object-fit`, and the frame has no empty band.
+- Phone nav. At 390, in-flow nav links stay on one line.
+- Stale claims. The page sets `meta[name=pack-version]` and `meta[name=release-state]` (`released` or `draft`). A run may also pass `--release-state` and `--pack-version`. When the state is released, the visible text and the description must not say draft, not released, the draft is, or not started.
+
 ## Taste questions
 
 1. Does the first screen say what this is and what to do in 5 seconds?

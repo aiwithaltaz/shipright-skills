@@ -22,6 +22,7 @@ Libraries: three@0.169.0 from jsDelivr. Model: models/keel.glb, CC0, see models/
 }
 </script>
 <style>
+[hidden] { display: none !important; }
 @import url("fonts/fonts.css");
 :root { --ink:#1c1916; --paper:#f7f6f3; --card:#fff; --line:#6f6a62; --accent:#145c3a; --muted:#4e4943; }
 * { box-sizing: border-box; }
@@ -53,7 +54,7 @@ button:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   canvas, .track { display: none !important; }
-  [data-poster] { display: grid !important; }
+  [data-poster]:not([hidden]) { display: grid !important; }
 }
 </style>
 </head>

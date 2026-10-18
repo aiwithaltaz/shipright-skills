@@ -43,3 +43,8 @@
   --type-display-lh: 1.2;
   --kicker-size: 12px;
 }
+
+/* The hidden attribute always wins. A class that sets display must not show a hidden element. */
+[hidden] {
+  display: none !important;
+}

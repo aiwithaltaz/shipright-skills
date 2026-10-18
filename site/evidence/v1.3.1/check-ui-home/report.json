@@ -1,0 +1,153 @@
+{
+ "target": "site/dist/index.html",
+ "profile": "premium",
+ "checkedAt": "2026-10-18T17:50:33.073Z",
+ "viewports": {
+  "desktop": {
+   "results": [],
+   "metrics": {
+    "heroVisible": true,
+    "unsupportedProof": 0,
+    "undeclaredProof": 0,
+    "visibleWords": "Skip to content ShipRight Work Process Proof Install Case study Turn an idea into a tested product your AI builds right. Context before generate. Product before pixels. Install ShipRight Turn the files Sample replay I want to build a booking app for my salon. The prompt is on the table. Nothing is invented yet. The brief on one side. The build on the other. Case c6, baseline 1.2. Drag the bar. These pictures are not a grade. Remove the dot on the selected nav item. Keep Escalations and Desk help as they are. Give the selected row a clean border, not a thick left bar. Those three lines are the owner's requests from the case, not a claim that the picture did each one. Eval scores are pending. One step holds the page. Research Options Build Test Record Three real alternatives. Every fact is Verified or Assumed. The file is research-brief.md. Opus alone, next to Sonnet with ShipRight. Three baseline 1.2 pairs that exist on disk. They are not grades. 1.3.0 is released. Eval scores are pending. LinkedIn automation Opus plain. Not graded. Sonnet with ShipRight. Not graded. Agent dashboard Opus plain. Not graded. Sonnet with ShipRight. Not graded. Landscaping SaaS Opus plain. Not graded. Sonnet with ShipRight. Not graded. This page will not invent a winner. Install from the repo. 1.3.1. One skill. Pick the tool. There is no zip. Claude Code Cursor Codex VS Code Antigravity Gemini CLI Claude.ai ChatGPT /plugin marketplace add aiwithaltaz/shipright-skills /plugin install shipright@shipright Copy command 1.3.1. Eval scores pending. Not a grade. Read the c7 case study GitHub",
+    "overflowX": 0,
+    "pageHeight": 9197,
+    "h1": 1,
+    "families": [
+     [
+      "Inter",
+      38
+     ],
+     [
+      "Fraunces",
+      18
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 0,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [
+     {
+      "w": 1216,
+      "h": 308,
+      "labeled": true
+     }
+    ],
+    "hiddenText": 0,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "hiddenIgnored": 0,
+    "posterLeak": 0,
+    "navWrapped": false,
+    "sliderIssues": [],
+    "staleClaims": [],
+    "actSignatures": [
+     "dark|canvas|left|screen",
+     "light|photo|left|screen",
+     "dark|type|center|screen",
+     "dark|photo|left|screen",
+     "light|type|center|band",
+     "light|type|left|bar"
+    ],
+    "craftDupes": [],
+    "craftProduct": true,
+    "craftAccent": "",
+    "craftEmpty": 0,
+    "errors": [],
+    "pinClipped": [],
+    "fontsMissing": [],
+    "focusVisible": true,
+    "reduced": {
+     "hiddenText": 0,
+     "heroVisible": true,
+     "overflowX": 0,
+     "contentChanged": false
+    }
+   }
+  },
+  "phone": {
+   "results": [],
+   "metrics": {
+    "heroVisible": true,
+    "unsupportedProof": 0,
+    "undeclaredProof": 0,
+    "visibleWords": "Skip to content ShipRight Menu Turn an idea into a tested product your AI builds right. Context before generate. Product before pixels. Install ShipRight Turn the files Sample replay I want to build a booking app for my salon. The prompt is on the table. Nothing is invented yet. The brief on one side. The build on the other. Case c6, baseline 1.2. Drag the bar. These pictures are not a grade. Remove the dot on the selected nav item. Keep Escalations and Desk help as they are. Give the selected row a clean border, not a thick left bar. Those three lines are the owner's requests from the case, not a claim that the picture did each one. Eval scores are pending. One step holds the page. Research Options Build Test Record Three real alternatives. Every fact is Verified or Assumed. The file is research-brief.md. Opus alone, next to Sonnet with ShipRight. Three baseline 1.2 pairs that exist on disk. They are not grades. 1.3.0 is released. Eval scores are pending. LinkedIn automation Opus plain. Not graded. Sonnet with ShipRight. Not graded. Agent dashboard Opus plain. Not graded. Sonnet with ShipRight. Not graded. Landscaping SaaS Opus plain. Not graded. Sonnet with ShipRight. Not graded. This page will not invent a winner. Install from the repo. 1.3.1. One skill. Pick the tool. There is no zip. Claude Code Cursor Codex VS Code Antigravity Gemini CLI Claude.ai ChatGPT /plugin marketplace add aiwithaltaz/shipright-skills /plugin install shipright@shipright Copy command 1.3.1. Eval scores pending. Not a grade. Read the c7 case study GitHub",
+    "overflowX": 0,
+    "pageHeight": 10218,
+    "h1": 1,
+    "families": [
+     [
+      "Inter",
+      34
+     ],
+     [
+      "Fraunces",
+      18
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 0,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 0,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [
+     {
+      "w": 358,
+      "h": 366,
+      "labeled": true
+     }
+    ],
+    "hiddenText": 0,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "hiddenIgnored": 0,
+    "posterLeak": 0,
+    "navWrapped": false,
+    "sliderIssues": [],
+    "staleClaims": [],
+    "actSignatures": [
+     "dark|canvas|left|screen",
+     "light|photo|left|screen",
+     "dark|type|center|screen",
+     "dark|photo|left|screen",
+     "light|type|center|band",
+     "light|type|left|bar"
+    ],
+    "craftDupes": [],
+    "craftProduct": true,
+    "craftAccent": "",
+    "craftEmpty": 0,
+    "errors": [],
+    "pinClipped": [],
+    "fontsMissing": [],
+    "focusVisible": true,
+    "reduced": {
+     "hiddenText": 0,
+     "heroVisible": true,
+     "overflowX": 0,
+     "contentChanged": false
+    }
+   }
+  }
+ }
+}

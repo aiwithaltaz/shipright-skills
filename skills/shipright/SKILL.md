@@ -5,8 +5,8 @@ description: "Use this when someone has an idea, an app, a SaaS, a website, a la
 
 # ShipRight
 
-**Pack version:** 1.3.0
-**Draft:** 1.3, not released. Context before generate. Product before pixels.
+**Pack version:** 1.3.1
+**Status:** released. Eval scores for 1.3 are pending. Context before generate. Product before pixels.
 
 ShipRight takes an idea to a tested product, or a clunky app to a clearer one. Every design choice traces to a real pain or a real fact, and ends in a test.
 
