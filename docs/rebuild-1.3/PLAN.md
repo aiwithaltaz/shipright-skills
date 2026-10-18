@@ -3,6 +3,7 @@
 **Owner:** Altaz Lavji · **Written:** October 17, 2026 · **Branch:** `feat/v1.3-beat-opus` · **Repo:** `aiwithaltaz/shipright-skills`
 **Status of this plan:** Approved direction from Altaz (October 16). Every individual skill change stays **Proposed** until Altaz approves it at the end of each phase.
 **Updated October 18:** added Stage 0 (Discover and improve an existing app), the pain-to-fix map, the layout pass, the component system, the motion system, and two "improve my existing app" eval cases (c7 with a real answer key, c8). This is where ShipRight wins: it improves products the way Altaz improved IVC.
+**Updated October 18 (later):** added the living project record (context, architecture, decisions, challenges, changelog, handoff), an auto case study, and an opt-in investor pitch deck built only from facts.
 
 > **Grok, read this whole file before you change anything.** It is your brief, your rules and your definition of done. It also contains the evidence of what "Opus quality" looks like, so you can copy the moves, not guess them.
 
@@ -223,7 +224,7 @@ Before/after images every round, a test for every interaction, a feedback log ro
 "From idea to tested product, or from a clunky app to a great one, like a top product team you would hire. Every design decision traces to a real pain point and ends in a test."
 
 ### 4.2 The stages (0 to 10)
-A new project runs stages 1 to 10 in order. An existing app runs stage 0, then 1 (light: domain, rules, alternatives), then 4 to 10 for the approved fixes. A feedback round runs only what it needs (section 4.5).
+Every stage gate also includes "project record updated" (P1.10). A new project runs stages 1 to 10 in order. An existing app runs stage 0, then 1 (light: domain, rules, alternatives), then 4 to 10 for the approved fixes. A feedback round runs only what it needs (section 4.5).
 
 | # | Stage | Job | Main output (template) | Gate (yes/no, all must be yes) |
 |---|---|---|---|---|
@@ -275,6 +276,9 @@ skills/shipright/
     09-test-and-critique.md  10-ship-check.md  feedback-round.md
   templates/                   fill-in files the model copies and completes
     discovery.md  pain-map.md  user-test-script.md  layout-spec.md  components.md
+    record/CONTEXT.md  record/ARCHITECTURE.md  record/DECISIONS.md  record/CHALLENGES.md
+    record/CHANGELOG.md  record/HANDOFF.md
+    case-study.md  case-study.html  pitch-deck.md
     research-brief.md  concepts.md  risks.md  scope.md  architecture.md
     DESIGN.md  tokens.css  options.md  screen-spec.md  act-plan.md
     build-prompt.md  test-plan.json  test-report.md  critique.md  ship-check.md
@@ -295,6 +299,7 @@ skills/shipright/
     shoot.mjs                  screenshots at 390 and 1280, scroll frames
     crawl.mjs                  visits every reachable screen of an existing app, captures it, lists its parts
     consistency.mjs            finds the same job done with different labels, buttons, colors or status meanings
+    check-record.mjs           checks the project record and case study match what was built
   taste/
     altaz.md                   opt-in profile (section 3)
   reference/                   old long references, trimmed; only for deep work
@@ -330,7 +335,7 @@ Update `evals/context-policy.json` and `evals/check_context.py` to this layout.
 
 ---
 
-## 5. Phase 1: Foundation (days 1 to 5)
+## 5. Phase 1: Foundation (days 1 to 6)
 
 **Goal:** a short, clear spine that every model can follow, the checker inside the skill, the facts ladder, research and brainstorm stages that produce Opus-level thinking, and a graded baseline.
 
@@ -351,7 +356,7 @@ Update `evals/context-policy.json` and `evals/check_context.py` to this layout.
   1. What ShipRight does in 2 lines.
   2. Routing table (4.5).
   3. The stages table (4.2) with the file to open for each.
-  4. Core rules, max 12 lines: facts ladder (4.3), removal test (3.3), no dev controls visible, Proposed vs Approved, silence is not approval, nothing ships without the owner, test before you claim, simple English.
+  4. Core rules, max 12 lines: facts ladder (4.3), removal test (3.3), no dev controls visible, Proposed vs Approved, silence is not approval, nothing ships without the owner, test before you claim, update the project record before a stage is done (P1.10), simple English.
   5. Questions before work (4.7).
   6. The reply format (template `reply.md`).
   7. How to find `<skill>` and run scripts.
@@ -431,6 +436,27 @@ Worked row (from IVC, F06): "A 17-year-old learns about the parent signature too
 **Script:** `crawl.mjs` with a test that crawls `evals/v2/cases/c7-ivc-app/app` and finds the sign-in screen, the desk, the registrations list and reports.
 **Done when:** on c7, pain recall (answer key) is 60% or more in the smoke eval, and 70% or more at release.
 
+### P1.10 The living project record (`templates/record/` + rule in SKILL.md)
+Every project gets one folder that stays true for the whole life of the product, so the owner, a new chat, or another tool can pick up at any time. Path in the user's project: `docs/shipright/record/` (or the project's existing docs folder).
+
+| File | Holds | Updated by |
+|---|---|---|
+| `CONTEXT.md` | One page: what it is, who it is for, the decision in one line, current phase, locks (what must not change), links to the other files | Stages 0, 1, 2, 4 and every feedback round |
+| `ARCHITECTURE.md` | Stack with reasons, data model, access rules, integrations, secrets by name, budgets, costs | Stage 5, and any build change that touches them |
+| `DECISIONS.md` | One row per decision: ID, date, decision, options considered, why, status (Proposed, Approved, Superseded), who decided, pain ID if any | Every stage and every feedback round |
+| `CHALLENGES.md` | Hard problems met while building: what happened, cause, options tried, the fix, the lesson. Bugs included ("that was my bug"). | Stages 3, 8 and 9 |
+| `CHANGELOG.md` | Dated entries: what changed, why (pain or decision ID), test result, screenshots | Stages 8 and 9 and every feedback round |
+| `HANDOFF.md` | Continuation brief: where we are, what is done, what is next, open decisions, how to run and test, the files to read first | End of every session or stage |
+
+Rules:
+- A stage is not done until its record files are updated. Stage gates (4.2) include "record updated".
+- Write facts once. Other files link to them.
+- Use the facts ladder: Proposed is never written as Approved; Assumed is never written as Verified.
+- Keep each file short and current. Replace stale lines; history lives in `CHANGELOG.md` and `DECISIONS.md` only.
+- For an existing project, read the record first if it exists. If it does not, create it from what stage 0 found.
+
+**Done when:** a fresh model given only the `record/` folder of a smoke-eval run can say what the product is, what was decided and why, and what to do next (test it once with Haiku or Grok and save the answer in `tests/reports/smoke/`).
+
 ### Phase 1 gate (stop and report to Altaz)
 - Baseline graded, with the score table.
 - New SKILL.md, stages 1 to 3 and their templates, tools inside the skill.
@@ -439,7 +465,7 @@ Worked row (from IVC, F06): "A 17-year-old learns about the parent signature too
 
 ---
 
-## 6. Phase 2: Design and build engine (days 6 to 12)
+## 6. Phase 2: Design and build engine (days 7 to 13)
 
 **Goal:** screens and sites that look and work like Opus or better, built on tested code, with a design system that is measured, not described.
 
@@ -559,6 +585,7 @@ This is the biggest lever for premium quality on mid-size models. Write **your o
 - Labels: Sample and Illustrative content has its visible label.
 - Key text does not move when it should not (scoped animation check, from the IVC `.note` bug).
 - `consistency.mjs` passes (P2.12).
+- `check-record.mjs` passes: the project record matches what was built (P1.10, P3.3b).
 - For an existing app: every Now pain in `pain-map.md` has a passing test, and before/after screenshots exist for every changed screen.
 
 **Critique:** use `templates/critique.md`: the removal test per screen, the patterns check list, the taste questions (below), and severity (Blocker, Major, Polish). **The builder cannot give itself a Pass on taste.** If the tool can start a fresh agent with no build history, that agent critiques. If not, taste stays **Not verified** in the reply.
@@ -640,7 +667,7 @@ Structure before skin. For every screen, before any styling:
 
 ---
 
-## 7. Phase 3: Prove it, polish it, open the PR (days 13 to 16)
+## 7. Phase 3: Prove it, polish it, open the PR (days 14 to 17)
 
 ### P3.1 Full eval round
 - All 8 cases × Sonnet + 1.3 and Haiku + 1.3 (Haiku is report only). Pain recall on c7 for every arm. Opus (high) alone comes from the baseline, so do not rerun it unless the rubric changes.
@@ -661,6 +688,20 @@ If after 3 rounds a case still loses, stop and report to Altaz with the cause an
 ### P3.3 Variance check
 Single runs vary. For the final claim, run Sonnet + 1.3 twice more on the 2 closest cases. Report the mean and range.
 
+### P3.3b Case study and pitch deck (`templates/case-study.md`, `templates/case-study.html`, `templates/pitch-deck.md` + `scripts/check-record.mjs`)
+**Case study (made at the end of stage 9 for every project, or when asked):**
+- Built only from the project record, the pain map, the test report and the screenshots. Nothing new is invented.
+- Sections: the problem in one line; who it is for; what research found (Verified and Assumed marked); the idea and the 2 ideas not chosen; the 3 to 5 key decisions with their tradeoffs; for existing apps, the top pains with before and after screenshots; the design system in one image; process (stages, rounds, what changed after feedback); results (only measured: tests passed, steps saved per task, load time, accessibility checks; never invented business results); what is next.
+- Two outputs: `case-study.md`, and `case-study.html` (a clean single page using the project's own design system, with the screenshots). The owner can publish it on a portfolio.
+- Ask the owner before naming real people, clients or private data. Default is no names.
+
+**Investor pitch deck (opt-in only: made when the owner asks for a pitch, a deck or investor material):**
+- 10 slides as `pitch-deck.md` (one section per slide, with speaker notes), ready to paste into any slides tool: 1 Title and one line; 2 Problem; 3 Who has it (with research facts); 4 Solution (product screenshots); 5 How it works (core loop); 6 Why now and why us; 7 Market (Verified with source, or Assumed and labeled); 8 Business model and pricing; 9 Competition and the gap; 10 Traction, team and the ask.
+- **Guardrail:** traction, revenue, users, team and the ask are written only if the owner supplied them. Otherwise the slide shows a clear blank: "[Add your real numbers]". Never invent market size, growth, users or quotes.
+- The deck and the case study are not part of the 9.3 score.
+
+**`check-record.mjs`:** checks that every record file exists and is not a template; every Approved decision has a date and a decider; every CHANGELOG entry links a pain or decision ID; every screenshot path in the case study exists; the case study has no number that is not in the record or the test report; the pitch deck has no market or traction number without a source or an "Assumed" or blank marker.
+
 ### P3.4 Rebuild the ShipRight website (`site/`)
 Use ShipRight 1.3 itself on its own site (stages 1 to 10), with Altaz's references (why.zero.university best, itomdev the dream, jeskojets, other-matter, jesperlandberg, brand-studio FAQ, benjamincreative "Selected Works").
 Fixed requirements from the audit:
@@ -674,6 +715,7 @@ Fixed requirements from the audit:
 8. Install commands in monospace with an inline copy button; tabs per tool.
 9. A real "Opus vs Sonnet + ShipRight" proof section using the release scores and screenshots, with the limits stated.
 10. Labels 12px minimum. No eyebrow label above the hero.
+11. A sample case study page made by ShipRight itself (from the c7 IVC run), to show users what they get for free.
 Run stage 9 tests on it. Do not deploy. Vercel config stays.
 
 ### P3.5 README, changelog, release notes
@@ -719,18 +761,19 @@ Sections P1.1, P3.1. Costly. Run them only at gates.
 | 2 | P1.3 SKILL.md; P1.4 rules file |
 | 3 | P1.5 research; P1.6 brainstorm |
 | 4 | P1.7 problem solving; P1.8 bloat |
-| 5 | P1.9 Discover stage + crawl script; smoke eval; **Phase 1 gate** |
-| 6 | P2.1 scope and pages; P2.2 architecture |
-| 7 | P2.3 design system, fonts, check-tokens; P2.11 layout pass |
-| 8 | P2.4 patterns; P2.5 options; P2.12 components and consistency |
-| 9 to 10 | P2.6 blocks (17) with tests; P2.13 motion system |
-| 11 to 12 | P2.7 build; P2.8 test kit; P2.9 feedback round; P2.10 taste; smoke eval; **Phase 2 gate** |
-| 13 | P3.1 full eval |
-| 14 | P3.2 fix loop |
-| 15 | P3.3 variance; P3.4 site |
-| 16 | P3.5 docs; P3.6 PR; **Phase 3 gate** |
+| 5 | P1.9 Discover stage + crawl script; P1.10 project record |
+| 6 | Smoke eval; **Phase 1 gate** |
+| 7 | P2.1 scope and pages; P2.2 architecture |
+| 8 | P2.3 design system, fonts, check-tokens; P2.11 layout pass |
+| 9 | P2.4 patterns; P2.5 options; P2.12 components and consistency |
+| 10 to 11 | P2.6 blocks (17) with tests; P2.13 motion system |
+| 12 to 13 | P2.7 build; P2.8 test kit; P2.9 feedback round; P2.10 taste; smoke eval; **Phase 2 gate** |
+| 14 | P3.1 full eval |
+| 15 | P3.2 fix loop |
+| 16 | P3.3 variance; P3.3b case study and pitch deck; P3.4 site |
+| 17 | P3.5 docs; P3.6 PR; **Phase 3 gate** |
 
-Time box: about 16 working days. If a phase runs over by more than 2 days, stop and report.
+Time box: about 17 working days. If a phase runs over by more than 2 days, stop and report.
 
 ---
 
@@ -745,6 +788,8 @@ Time box: about 16 working days. If a phase runs over by more than 2 days, stop 
 | Blocks become a template look | 3 options must differ in device; blocks expose attributes; the critique asks "would a reference site do better" every time. |
 | Honesty loses to Opus's invented richness | Sample and Illustrative labels allow the same richness with truth. |
 | Discovery invents user pains | Pains are tagged Found (walk-through) or Reported (owner or users). No invented quotes. The user test script collects real ones. |
+| The pitch deck invents traction or market size | Opt-in only; blanks for anything not supplied; `check-record.mjs` blocks unsourced numbers. |
+| Record files go stale | A stage is not done until its record files are updated; `check-record.mjs` in stage 9. |
 | Grok cannot run Claude arms | Altaz launches Claude runs from prepared prompt files, or provides an API key. |
 
 ---
@@ -756,7 +801,7 @@ Time box: about 16 working days. If a phase runs over by more than 2 days, stop 
 You are rebuilding ShipRight on branch feat/v1.3-beat-opus in aiwithaltaz/shipright-skills.
 Read docs/rebuild-1.3/PLAN.md fully, then docs/rebuild-1.3/IVC-HANDOFF.md, evals/v2/README.md, evals/v2/rubric.md, and the baseline runs in
 evals/v2/runs/baseline-1.2/ (open the screenshots in shots/ and read reply.md and build/*.md for both arms).
-Write docs/rebuild-1.3/LOG.md with your plan for Phase 1 (tasks P1.1 to P1.9), then do them in order.
+Write docs/rebuild-1.3/LOG.md with your plan for Phase 1 (tasks P1.1 to P1.10), then do them in order.
 Follow section 0 for how to work and report. Stop at the Phase 1 gate and send me the report.
 Do not merge, tag, release or deploy.
 ```
@@ -772,7 +817,7 @@ Write your own block code. Each block needs its Playwright test. Stop at the Pha
 ### 11.3 Start of Phase 3
 ```text
 Phase 2 is approved with these answers: <paste my answers>.
-Continue with Phase 3 (P3.1 to P3.6). Prepare the eval run folders and prompt files; I will launch the Claude
+Continue with Phase 3 (P3.1 to P3.6, including P3.3b case study and pitch deck). Prepare the eval run folders and prompt files; I will launch the Claude
 runs. Grade with 3 blind graders from different model families. Run the fix loop. Then rebuild site/ with
 ShipRight 1.3, update README and changelog, and open the pull request. Do not merge.
 ```
@@ -789,6 +834,8 @@ Use `evals/v2/grader-prompt.md` exactly. Do not edit it after seeing results.
 - [ ] Sonnet + ShipRight 1.3 release score ≥ 9.3.
 - [ ] 2 hidden cases scored, no drop over 0.5 vs the 8 known cases.
 - [ ] Haiku + ShipRight 1.3 scores reported.
+- [ ] Every release-eval run has a complete project record; `check-record.mjs` passes on all of them.
+- [ ] A case study is produced for c7 and c8 with no invented numbers; the pitch deck template passes its guardrail check on one test run.
 - [ ] Installed skill folder contains scripts, templates, patterns, blocks and fonts; `shipright.zip` verified.
 - [ ] All unit, source, context and block tests pass.
 - [ ] Every stage file and template within budget.
