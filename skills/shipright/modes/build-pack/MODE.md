@@ -11,20 +11,13 @@ description: "Use this when someone brings an idea for a website, SaaS app, mobi
 Give the builder exact prompts.
 Screens: ui-ux-design. Reviews: ux-critique. Launch: ship-check.
 
-## Full flow for a new project
+## New project
 
-A new project always runs every step below, in order. "Just build it", "skip the plan", and a prompt that says to build in one go do not skip a step. Naming a mode does not skip a step.
-
-1. **Build pack.** PRD, architecture, DESIGN.md, frontend spec, and tickets.
-2. **Design preview.** Show 2-3 distinct visual directions (type, color, spacing, motion). Stop for the user to choose or approve.
-3. **Build.**
-4. **Critique.** Run ux-critique on the rendered result and `scripts/check-ui.mjs`. Fix what it finds. Loop until clean.
-5. **Ship-check.**
-
-No step is skipped for a new project, even on request. Explain the required sequence and continue it. Existing-work corrections run only the affected steps.
-For public websites the preview is exactly three different stories and technique sets, not color swaps. Stop for the user to choose or approve.
-
-When no human is available, still write the 2-3 directions, pick one with a written reason, and mark it "Proposed, awaiting owner approval". Then still run the critique, the fix loop, and ship-check. Shared intake still runs first. An explicit correction, review, or launch check on existing work is not a new project.
+A new project runs stages 1 to 10 from [SKILL.md](../../SKILL.md). Do not copy that flow into this file.
+"Just build it", "skip the plan", and "build in one go" do not skip a stage. No step is skipped for a new project, even on request.
+Show exactly three options that differ in story or layout, not in color. Stop for the user to choose or approve.
+When no human is available, pick one with a written reason and mark it "Proposed, awaiting owner approval". Then still run the critique, the fix loop, and ship-check.
+Existing-work corrections run only the affected stages.
 
 ## Premium routing
 
@@ -65,13 +58,10 @@ Use 0-5 questions total before starting. For a vague app idea, the first reply i
 2. What stays out of this release.
 3. The look: the user's own design system or Figma file (it always wins), or a starter direction you recommend.
 
-Do not ask about the stack unless the user named a constraint; recommend it. After answers or "you decide", build the whole pack in one pass. That pass is the build pack only. A new project then follows Full flow and stops at the design preview before the product build.
+Do not ask about the stack unless the user named a constraint; recommend it. After answers or "you decide", build the whole pack in one pass. That pass is the build pack only. A new project then follows the stages in SKILL.md and stops at the three options before the product build.
 Delegated picks are recorded as Proposed (delegated). Prices, legal text, access policy and payments are never delegated.
 
-**Core rules if `../_shared` is unreachable:** say the pack is incomplete. Honor exact feedback and current-phase scope.
-Never invent facts, brand values, data or features. You decide delegates the named choice; Let me decide reserves it.
-Silence is not approval. Use Pass, Fail, Not verified or justified Not applicable with evidence.
-A ticket cannot turn Fail into Pass. Nothing ships, publishes or charges money without the user's OK.
+Shared rules live in the operating contract. Do not copy them into this mode.
 
 ## Sequence
 
@@ -97,7 +87,7 @@ Reply under 300 words.
 1. What the pack contains, as a file list.
 2. Decisions made for the user, one line each, marked Proposed.
 3. What only the user can confirm: real blockers such as prices, legal pages, access policy, brand assets.
-4. The next step is the design preview: 2-3 directions, then stop. Do not start the product build until the user chooses or approves one.
+4. The next step is exactly three options that differ in story or layout, not in color, then stop. Do not start the product build until the user chooses or approves one.
 
 Do not restate the documents.
 

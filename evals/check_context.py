@@ -18,6 +18,21 @@ SKILLS = {'product-design', 'ui-ux-design', 'ux-critique', 'ship-check', 'build-
 SKILL_ROOT = 'skills/shipright'
 MODE_ROOT = f'{SKILL_ROOT}/modes'
 ROUTER = f'{SKILL_ROOT}/SKILL.md'
+# Spine added in 1.3. These files are guidance, not mode references, so they keep their own word budgets.
+EXTRA_PREFIXES = (
+    f'{SKILL_ROOT}/stages/',
+    f'{SKILL_ROOT}/templates/',
+    f'{SKILL_ROOT}/patterns/',
+    f'{SKILL_ROOT}/blocks/',
+)
+WORD_BUDGETS = {
+    'router_words': 1600,
+    'stage_words': 1200,
+    'template_words': 600,
+    'pattern_words': 1500,
+    'block_doc_words': 400,
+    'stage_path_words': 5000,
+}
 # Pre-1.1 path. Frozen example links still use it. The file is a redirect, not guidance.
 REDIRECT_STUBS = {'skills/ui-ux-design/references/operator-workspaces.md'}
 LIMITS = {'skill_tokens': 4500, 'shared_file_tokens': 2000, 'reference_tokens': 4000,
@@ -49,6 +64,8 @@ def check_structure(root):
         policy = json.loads((root / 'evals/context-policy.json').read_text())
         if policy['schema_version'] != 1 or policy['limits'] != LIMITS or policy['tokenizer'] != TOKENIZER:
             errors.append('context-policy: changed schema, approved limits or pinned tokenizer')
+        if policy.get('v13_layout') != WORD_BUDGETS:
+            errors.append('context-policy: 1.3 word budgets changed or missing')
         if set(policy['skills']) != SKILLS:
             errors.append('context-policy: skill inventory must match the five protected skills')
         if set(policy['always_loaded_shared']) != ALWAYS or len(policy['always_loaded_shared']) != len(ALWAYS):
@@ -60,10 +77,12 @@ def check_structure(root):
         # Catch deeper files too, so moving guidance cannot evade limits/inventory.
         references |= {p.relative_to(root).as_posix() for p in (root / 'skills').rglob('*.md') if 'references' in p.parts}
         references -= REDIRECT_STUBS
+        references = {ref for ref in references if not ref.startswith(EXTRA_PREFIXES)}
         shared = {p.relative_to(root).as_posix() for p in (root / MODE_ROOT / '_shared').rglob('*.md')}
         mode_entries = {f'{MODE_ROOT}/{s}/MODE.md' for s in SKILLS}
-        classified = references | shared | mode_entries | {ROUTER}
         all_md = {p.relative_to(root).as_posix() for p in (root / 'skills').rglob('*.md')} - REDIRECT_STUBS
+        extra = {p for p in all_md if p.startswith(EXTRA_PREFIXES)}
+        classified = references | shared | mode_entries | {ROUTER} | extra
         if all_md != classified:
             errors.append(f'context-policy: unclassified skill Markdown: {sorted(all_md - classified)}')
         for ref in references:
@@ -114,10 +133,65 @@ def check_structure(root):
                     errors.append(f'{name}/{path["task"]}: path files must be direct conditional/shared links')
         if references - consumed:
             errors.append(f'context-policy: orphan references: {sorted(references - consumed)}')
+        errors.extend(check_word_budgets(root, extra))
     except (OSError, UnicodeError, ValueError, KeyError, TypeError, AttributeError) as exc:
         errors.append(f'context-policy: cannot validate ({type(exc).__name__}: {exc})')
         return errors, {}, inventory
     return errors, policy, inventory
+
+
+def word_count(text):
+    return len(text.split())
+
+
+def check_word_budgets(root, extra):
+    """1.3 word budgets. These sit beside the frozen token LIMITS. They do not raise them.
+
+    A stage path is SKILL.md plus that stage plus the Markdown templates and patterns it links.
+    More than two small templates is allowed. The path still has to stay under stage_path_words.
+    At most one pattern. Record files count when the stage links them.
+    """
+    errors = []
+    router_text = (root / ROUTER).read_text(encoding='utf-8')
+    router_words = word_count(router_text)
+    if router_words > WORD_BUDGETS['router_words']:
+        errors.append(f'{ROUTER}: {router_words} words exceeds {WORD_BUDGETS["router_words"]}')
+
+    def cap_key(rel):
+        if '/stages/' in rel:
+            return 'stage_words'
+        if '/templates/' in rel:
+            return 'template_words'
+        if '/patterns/' in rel:
+            return 'pattern_words'
+        if '/blocks/' in rel:
+            return 'block_doc_words'
+        return None
+
+    for rel in sorted(extra):
+        key = cap_key(rel)
+        if key is None:
+            continue
+        count = word_count((root / rel).read_text(encoding='utf-8'))
+        if count > WORD_BUDGETS[key]:
+            errors.append(f'{rel}: {count} words exceeds {WORD_BUDGETS[key]}')
+
+    for rel in sorted(p for p in extra if '/stages/' in p):
+        stage_path = root / rel
+        linked = links(root, stage_path)
+        templates = [t for t in sorted(linked) if '/templates/' in t and t.endswith('.md')]
+        patterns = [t for t in sorted(linked) if '/patterns/' in t and t.endswith('.md')]
+        if len(patterns) > 1:
+            errors.append(f'{rel}: at most one pattern on a stage path, linked {patterns}')
+        total = router_words + word_count(stage_path.read_text(encoding='utf-8'))
+        for item in templates + patterns:
+            total += word_count((root / item).read_text(encoding='utf-8'))
+        if total > WORD_BUDGETS['stage_path_words']:
+            errors.append(
+                f'{rel}: stage path is {total} words, over {WORD_BUDGETS["stage_path_words"]} '
+                f'(SKILL + stage + {len(templates)} templates + {len(patterns)} patterns)'
+            )
+    return errors
 
 
 def token_counter():

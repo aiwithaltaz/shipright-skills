@@ -18,11 +18,7 @@ For a public website or immersive page, read [taste-check.md](references/taste-c
 Read [shared intake](../_shared/intake.md) and [the operating contract](../_shared/operating-contract.md) once per task.
 Use 0-5 questions total before starting. Current instructions and the current phase control scope.
 
-**Core rules if `../_shared` is unreachable:** say the pack is incomplete. Honor exact feedback and current-phase scope.
-Never invent facts, brand values, data or features. You decide delegates the named choice; Let me decide reserves it.
-Silence is not approval. Use Pass, Fail, Not verified or justified Not applicable with evidence.
-A ticket cannot turn Fail into Pass. A critical failure blocks readiness. Screenshots cannot prove runtime behavior.
-Continue supported work; do not claim a full ShipRight check without its required references.
+Shared rules live in the operating contract. Do not copy them into this mode.
 
 ## Review sequence
 

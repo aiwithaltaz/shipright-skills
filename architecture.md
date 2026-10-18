@@ -10,7 +10,12 @@ This is a product, design and build-planning instruction pack, not an applicatio
 | skills.md | Task routing |
 | AGENTS.md | Maintenance rules for this pack only |
 | SOURCES.md | Provenance and credits. Never loaded by skills |
-| skills/shipright/SKILL.md | The only installable skill. Routes to one mode |
+| skills/shipright/SKILL.md | The only installable skill. Routes to one stage, and still names the five modes |
+| skills/shipright/stages/ | Draft 1.3 spine, stages 0 to 10 plus a feedback round. Not a released version |
+| skills/shipright/templates/ | Fill-in files for a stage, including templates/record/ |
+| skills/shipright/patterns/ | Phase 2 pattern files. The README is a placeholder |
+| skills/shipright/blocks/ | Phase 2 tested blocks. Not loaded as prompt context |
+| skills/shipright/scripts/ | check-ui.mjs, crawl.mjs, and check-record.mjs. scripts/check-ui.mjs is a wrapper |
 | skills/shipright/modes/_shared/operating-contract.md | Authority, phase scope, exact feedback, facts and readiness |
 | skills/shipright/modes/_shared/intake.md | One bounded intake across modes |
 | skills/shipright/modes/_shared/flow-rules.md | Canonical F1-F3 behavior |
@@ -40,7 +45,8 @@ The short F1-F3 export block is repeated only in frontend and build-rule templat
 product-design owns research.md (evidence kinds, methods, plans, synthesis, decisions), structure.md (objects, routes, findability, access), journeys.md (one-map selection and map rules), framing.md and flows-and-states.md.
 ui-ux-design owns design-system.md (whose system wins, foundations, references, DESIGN.md export, maintenance) and components.md (names and look-alike choices), plus layout, icons, states, copy, motion and operator guidance.
 build-pack owns stack-choices.md, ticket-prompts.md and pack-contract.md.
-Specialist gates keep stable IDs: product-design 8, ui-ux-design 10, ux-critique 10, ship-check 20, build-pack 10. They point to shared policy and do not redefine readiness.
+Specialist gates keep stable IDs: product-design 8, ui-ux-design 10, ux-critique 10, ship-check 20, build-pack 10. They stay until Altaz approves retiring them. Stage files add a yes or no gate and do not replace those IDs yet.
+The only website stack rule is in skills/shipright/stages/05-architecture.md. A premium public site with a product on stage uses Vite, plus Three.js or React Three Fiber, plus GSAP and Lenis. A calm content site, or a site with no product object, uses Astro. stack-choices.md points there. It does not keep a second default.
 v1.0 merged 30 earlier references into 9, plus SOURCES.md for provenance. Every protected safety sentence kept its wording and moved with its rule; the checker maps old paths to their successors.
 
 ## Project exports

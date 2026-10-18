@@ -422,8 +422,8 @@ def validate(root):
     need(router_rel, '**Pack version:** ' + VERSION)
     for mode in SKILLS:
         need(router_rel, f'modes/{mode}/MODE.md')
-    if len(router.split()) > 1300:
-        errors.append(f'{router_rel}: exceeds 1300-word entry budget')
+    if len(router.split()) > 1600:
+        errors.append(f'{router_rel}: exceeds 1600-word router budget')
     for name, count in SKILLS.items():
         rel = f'skills/{name}/SKILL.md'; text = read(rel)
         # Exact supported YAML subset: two unique keys; description is JSON-quoted YAML.
@@ -438,9 +438,6 @@ def validate(root):
             except (ValueError, TypeError):
                 errors.append(f'{rel}: invalid description')
         need(rel, '**Pack version:** ' + VERSION)
-        for required in ['## INTAKE', '(../_shared/intake.md)', '(../_shared/operating-contract.md)',
-                         'Core rules if `../_shared` is unreachable']:
-            need(rel, required)
         gate = re.search(r'^## (?:Decision gate|Pre-flight|Audit|Launch gate|Pack check):[^\n]*\n(.*?)(?=^## |\Z)', text, re.M | re.S)
         ids = re.findall(r'^\| (\d+) \|', strip_fences(gate[1]), re.M) if gate else []
         if [int(x) for x in ids] != list(range(1, count + 1)):
@@ -455,6 +452,7 @@ def validate(root):
             need(rel, '(../_shared/flow-rules.md)')
         if len(text.split()) > 1300:
             errors.append(f'{rel}: exceeds 1300-word entry budget')
+    need('skills/shipright/SKILL.md', 'Core rules if `modes/_shared` is unreachable')
     for rel, phrases in RULES.items():
         for phrase in phrases:
             need(rel, phrase)

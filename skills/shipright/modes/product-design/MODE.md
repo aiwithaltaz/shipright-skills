@@ -18,12 +18,7 @@ For a public website, launch page or immersive page, read [product-brief.md](ref
 Read [shared intake](../_shared/intake.md) and [the operating contract](../_shared/operating-contract.md) once.
 Use 0-5 questions total before starting; honor scope.
 
-**Core rules if `../_shared` is unreachable:** disclose the incomplete pack.
-Honor feedback/scope; never invent facts, features or brand values.
-You decide delegates the named choice; Let me decide reserves it. Silence is not approval.
-Use Pass, Fail, Not verified or justified Not applicable with evidence.
-Tickets cannot resolve Fail; critical failures block readiness. Screenshots cannot prove runtime.
-Continue without claiming a full check.
+Shared rules live in the operating contract. Do not copy them into this mode.
 
 ## Choose the smallest mode
 

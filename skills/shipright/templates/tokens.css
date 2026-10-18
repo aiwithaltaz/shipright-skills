@@ -1,0 +1,27 @@
+/* ShipRight starter tokens. Replace values from the product. Status: template. */
+:root {
+  --bg: #f7f6f3;
+  --surface: #ffffff;
+  --text: #1c1916;
+  --muted: #5c564e;
+  --border: #e4e0d8;
+  --accent: #1c6a45;
+  --accent-contrast: #ffffff;
+  --success: #1c6a45;
+  --warning: #8a5a12;
+  --danger: #9f2d2d;
+  --focus: #1c6a45;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 40px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --radius-field: 12px;
+  --radius-card: 24px;
+  --font-sans: system-ui, sans-serif;
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --dur-fast: 120ms;
+}

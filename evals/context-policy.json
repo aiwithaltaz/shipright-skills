@@ -13,6 +13,14 @@
     "always_shared_tokens": 3000,
     "shared_total_tokens": 5000
   },
+  "v13_layout": {
+    "router_words": 1600,
+    "stage_words": 1200,
+    "template_words": 600,
+    "pattern_words": 1500,
+    "block_doc_words": 400,
+    "stage_path_words": 5000
+  },
   "review_thresholds": {
     "skill_reference_tokens": 50000,
     "repository_bytes": 100000000,
@@ -26,7 +34,7 @@
     "shared": "Each shared file owns its universal rules; operating-contract owns authority/evidence, intake owns questions, flow-rules owns F1-F3, output-folder owns exports.",
     "references": "The skill directory containing a reference is its canonical owner. Other skills link to that file; do not copy its detailed rules.",
     "exceptions": [
-      "Short incomplete-pack fallback safeguards in the router and each mode MODE.md",
+      "Short incomplete-pack fallback in skills/shipright/SKILL.md. Modes point at the operating contract and do not copy it.",
       "Synchronized marked F1-F3 export blocks in project templates"
     ]
   },

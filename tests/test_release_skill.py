@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The release zip is one skill, and the ChatGPT file contains every mode."""
+"""The release zip is one skill. The ChatGPT file is the short spine, not every mode."""
 import importlib.util
 import tempfile
 import unittest
@@ -13,7 +13,7 @@ spec.loader.exec_module(release)
 
 
 class ReleaseSkillTests(unittest.TestCase):
-    def test_zip_has_one_skill_and_five_modes(self):
+    def test_zip_has_one_skill_tools_and_templates(self):
         with tempfile.TemporaryDirectory() as tmp:
             archive, bundle = release.build(Path(tmp))
             with zipfile.ZipFile(archive) as zipped:
@@ -24,9 +24,24 @@ class ReleaseSkillTests(unittest.TestCase):
         self.assertEqual(['shipright/SKILL.md'], skills)
         for mode in ('build-pack', 'product-design', 'ui-ux-design', 'ux-critique', 'ship-check'):
             self.assertIn(f'shipright/modes/{mode}/MODE.md', names)
-            self.assertIn(f'# Source: modes/{mode}/MODE.md', text)
+        for rel in (
+            'shipright/scripts/check-ui.mjs',
+            'shipright/scripts/crawl.mjs',
+            'shipright/scripts/check-record.mjs',
+            'shipright/templates/research-brief.md',
+            'shipright/templates/concepts.md',
+            'shipright/templates/risks.md',
+            'shipright/patterns/README.md',
+            'shipright/blocks/README.md',
+            'shipright/stages/01-research.md',
+        ):
+            self.assertIn(rel, names)
         self.assertIn('# Source: SKILL.md', text)
         self.assertIn('Never invent facts, brand values, data, or features.', text)
+        self.assertNotIn('# Source: modes/build-pack/MODE.md', text)
+        words = len(text.split())
+        self.assertGreaterEqual(words, 3000, words)
+        self.assertLessEqual(words, 4000, words)
 
     def test_committed_dist_matches_the_script(self):
         with tempfile.TemporaryDirectory() as tmp:

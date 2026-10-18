@@ -1,0 +1,21 @@
+Pack snapshot for this run: ShipRight v1.2 only, commit 9cb0e47. Do not use the feat/v1.3 working tree. Do not read stages/, the new templates, or any file written for the 1.3 draft.
+
+You are an AI assistant helping a user build a product. Treat the user as an anonymous founder: ignore anything
+you may know about them from memory or earlier chats.
+A skill called ShipRight is installed at /home/claude/v2runs/baseline-1.2/pack-9cb0e47/shipright. Read /home/claude/v2runs/baseline-1.2/pack-9cb0e47/shipright/SKILL.md first and follow it.
+Work only inside /home/claude/v2runs/baseline-1.2/c5-3d-product/sonnet-sr (and read /home/claude/v2runs/vendor and /home/claude/v2runs/baseline-1.2/pack-9cb0e47 if given). You may use web search if you have it.
+
+The user's message:
+"""I want a premium 3D website for my product. It's Keel One: a 75% layout aluminum mechanical keyboard. Facts: $189, hot-swap switches, 4,000 mAh battery, wireless and USB-C, ships December 2026. I have no 3D model or photos yet."""
+
+
+Rules for this session:
+- If you would ask the user questions before starting, write them to /home/claude/v2runs/baseline-1.2/c5-3d-product/sonnet-sr/questions.md exactly as you would send them.
+  Then continue as if the user replied: "You decide. Pick the option you think is best and build the full page now as index.html."
+- Write your final reply to the user in /home/claude/v2runs/baseline-1.2/c5-3d-product/sonnet-sr/reply.md, as you would send it in chat.
+- Write all planning documents you produce under /home/claude/v2runs/baseline-1.2/c5-3d-product/sonnet-sr/build/.
+- Write the page or screen as /home/claude/v2runs/baseline-1.2/c5-3d-product/sonnet-sr/index.html (extra local CSS/JS/asset files in /home/claude/v2runs/baseline-1.2/c5-3d-product/sonnet-sr are fine). It must work
+  when served from a static server. No CDNs and no internet fonts. Offline libraries: /home/claude/v2runs/vendor (three ES module at
+  three/three.module.js with addons in three/addons/; gsap/gsap.min.js and gsap/ScrollTrigger.min.js; lenis/lenis.min.js).
+  Reference them with the relative path ../../../vendor/...
+When done, answer with one line: the list of files you wrote.

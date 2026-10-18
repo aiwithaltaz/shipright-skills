@@ -1,0 +1,39 @@
+{
+  "phase": "baseline-1.2",
+  "status": "not graded",
+  "scores": null,
+  "reason": "Claude run arms were not run in this session. Altaz runs them in Claude Code. No scores were invented.",
+  "pack_for_missing_arms": "v1.2.0 at commit 9cb0e47",
+  "recorded_pack_commit_for_existing_runs": "c38f1d692770e1296642abb369a54ef872a649cb",
+  "existing_runs": [
+    "c1-linkedin/opus-plain",
+    "c1-linkedin/sonnet-sr",
+    "c2-agents-dashboard/opus-plain",
+    "c2-agents-dashboard/sonnet-sr",
+    "c3-saas/opus-plain",
+    "c3-saas/sonnet-sr",
+    "c4-website/opus-plain",
+    "c6-feedback-round/opus-plain",
+    "c6-feedback-round/sonnet-sr"
+  ],
+  "missing_runs": [
+    "c4-website/sonnet-sr",
+    "c5-3d-product/opus-plain",
+    "c5-3d-product/sonnet-sr",
+    "c7-ivc-app/opus-plain",
+    "c7-ivc-app/sonnet-sr",
+    "c8-crew-app/opus-plain",
+    "c8-crew-app/sonnet-sr"
+  ],
+  "prompts": [
+    "evals/v2/runs/baseline-1.2/prompts/c4-website--sonnet-sr.txt",
+    "evals/v2/runs/baseline-1.2/prompts/c5-3d-product--opus-plain.txt",
+    "evals/v2/runs/baseline-1.2/prompts/c5-3d-product--sonnet-sr.txt",
+    "evals/v2/runs/baseline-1.2/prompts/c7-ivc-app--opus-plain.txt",
+    "evals/v2/runs/baseline-1.2/prompts/c7-ivc-app--sonnet-sr.txt",
+    "evals/v2/runs/baseline-1.2/prompts/c8-crew-app--opus-plain.txt",
+    "evals/v2/runs/baseline-1.2/prompts/c8-crew-app--sonnet-sr.txt"
+  ],
+  "pain_recall": "pending, both c7 arms",
+  "graders": "pending"
+}
