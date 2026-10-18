@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 VERBATIM_SOURCES = {'docs/rebuild/BLUEPRINT.md'}
 # Raw trial outputs and grades are evidence. They stay unchanged; style misses are measured, not edited,
 # and links inside them point into the user's future project, so pack link checks skip them.
-RAW_EVIDENCE_DIRS = ('evals/v1/runs/', 'evals/v1/grades/')
+RAW_EVIDENCE_DIRS = ('evals/v1/runs/', 'evals/v1/grades/', 'evals/v2/runs/')
 ICONS = 'skills/ui-ux-design/references/icons-and-placement.md'
 HEAVY_ACCENT = 'without a heavy accent bar unless the design system says so'
 VERSION = '1.2.0'

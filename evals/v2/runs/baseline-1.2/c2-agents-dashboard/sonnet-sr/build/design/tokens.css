@@ -1,0 +1,105 @@
+/* Agent Desk tokens. Status: Proposed (delegated), awaiting owner approval. Source: ShipRight starter A, accent changed to teal.
+   Contrast measured: text pairs 4.5:1 or better, field borders 3:1 or better. Recheck after any color change. */
+:root {
+  /* Primitive color */
+  --p-grey-50: #F7F8FA;
+  --p-grey-100: #F1F2F4;
+  --p-grey-200: #E2E5EA;
+  --p-grey-500: #6B7280;
+  --p-grey-600: #545B66;
+  --p-grey-field: #848B96;
+  --p-grey-900: #16181D;
+  --p-white: #FFFFFF;
+  --p-teal-600: #0B6B6F;
+  --p-teal-700: #0A6468;
+  --p-teal-50: #E3F1F1;
+  --p-green-700: #1B7A4B;
+  --p-green-50: #E7F5EE;
+  --p-amber-700: #9A4F00;
+  --p-amber-50: #FDF0E1;
+  --p-red-600: #C1341F;
+  --p-red-700: #B02E1B;
+  --p-red-50: #FCEBE7;
+
+  /* Semantic color */
+  --color-bg: var(--p-grey-50);
+  --color-surface: var(--p-white);
+  --color-sunken: var(--p-grey-100);
+  --color-text: var(--p-grey-900);
+  --color-muted: var(--p-grey-600);
+  --color-subtle: var(--p-grey-500);
+  --color-border: var(--p-grey-200);
+  --color-field-border: var(--p-grey-field);
+  --color-accent: var(--p-teal-600);
+  --color-accent-hover: var(--p-teal-700);
+  --color-accent-text: var(--p-white);
+  --color-accent-tint: var(--p-teal-50);
+  --color-row-hover: #F1F5F5;
+  --color-scrim: rgba(22, 24, 29, 0.45);
+  --color-success: var(--p-green-700);
+  --color-success-bg: var(--p-green-50);
+  --color-warning: var(--p-amber-700);
+  --color-warning-bg: var(--p-amber-50);
+  --color-danger: var(--p-red-600);
+  --color-danger-hover: var(--p-red-700);
+  --color-danger-bg: var(--p-red-50);
+
+  /* Type */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --text-caption: 12px;
+  --text-meta: 13px;
+  --text-body: 14px;
+  --text-section: 16px;
+  --text-title: 20px;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --leading-text: 1.45;
+  --leading-heading: 1.25;
+
+  /* Space (4 px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Layout */
+  --content-max: 1280px;
+  --gutter: 24px;
+  --topbar-height: 48px;
+  --drawer-width: 440px;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-control: 6px;
+  --radius-panel: 8px;
+  --radius-dialog: 12px;
+
+  /* Elevation: shadows only on what floats */
+  --shadow-float: 0 8px 24px rgba(16, 24, 40, 0.12);
+
+  /* Component tokens */
+  --control-height: 36px;
+  --control-height-compact: 32px;
+  --control-height-touch: 44px;
+  --row-height: 40px;
+  --focus-ring: 2px solid var(--color-accent);
+  --focus-offset: 2px;
+
+  /* Motion */
+  --motion-press: 120ms;
+  --motion-menu: 180ms;
+  --motion-sheet: 240ms;
+  --ease-enter: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-move: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@media (max-width: 759px) {
+  :root { --gutter: 16px; --control-height: 44px; --control-height-compact: 44px; }
+}

@@ -1,0 +1,1341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crumb &amp; Co — Sourdough, Pastries &amp; Custom Cakes in Austin</title>
+<meta name="description" content="Crumb & Co is a neighborhood bakery on East 6th Street in Austin. Naturally leavened sourdough, buttery pastries and custom cakes. Open Tuesday to Sunday, 7am to 3pm.">
+<meta name="theme-color" content="#F5EEE3">
+<meta property="og:title" content="Crumb & Co — Austin bakery">
+<meta property="og:description" content="Sourdough, pastries and custom cakes on East 6th. Open Tue–Sun, 7am–3pm.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M6 40c0-15 12-26 26-26s26 11 26 26c0 6-8 9-26 9S6 46 6 40z' fill='%23A8572B'/%3E%3Cpath d='M20 26c6 2 10 7 12 13M30 22c6 3 10 8 11 15' stroke='%23F5D9B0' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "name": "Crumb & Co",
+  "description": "Neighborhood bakery making naturally leavened sourdough, pastries and custom cakes.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1204 E 6th St",
+    "addressLocality": "Austin",
+    "addressRegion": "TX",
+    "postalCode": "78702",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "07:00",
+    "closes": "15:00"
+  }],
+  "servesCuisine": ["Sourdough bread", "Pastries", "Custom cakes"],
+  "priceRange": "$"
+}
+</script>
+
+<style>
+  :root {
+    --paper: #F5EEE3;
+    --paper-2: #EDE2D0;
+    --paper-3: #E4D5BE;
+    --card: #FBF7F0;
+    --ink: #2E1D12;
+    --ink-soft: #5E4838;
+    --ink-faint: #8A7362;
+    --crust: #A8572B;
+    --crust-dark: #7A3A1A;
+    --crust-light: #D9955E;
+    --flour: #FFF9F0;
+    --open: #2F7A45;
+    --closed: #A23B2A;
+    --soon: #B07A12;
+    --line: rgba(46, 29, 18, .14);
+    --line-strong: rgba(46, 29, 18, .28);
+    --radius: 18px;
+    --radius-sm: 10px;
+    --shadow: 0 1px 0 rgba(46,29,18,.06), 0 12px 30px -14px rgba(46,29,18,.28);
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --gutter: clamp(16px, 4vw, 40px);
+    --max: 1180px;
+    color-scheme: light;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* faint paper grain */
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: .5;
+    background-image:
+      radial-gradient(rgba(122,58,26,.07) 1px, transparent 1.2px),
+      radial-gradient(rgba(122,58,26,.05) 1px, transparent 1.2px);
+    background-size: 23px 23px, 37px 37px;
+    background-position: 0 0, 11px 17px;
+  }
+  main, header, footer { position: relative; z-index: 1; }
+
+  img, svg { display: block; max-width: 100%; }
+  a { color: inherit; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.08; margin: 0; letter-spacing: -.01em; }
+  p { margin: 0; }
+  .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 13px; font-weight: 600;
+    letter-spacing: .14em; text-transform: uppercase;
+    color: var(--crust);
+  }
+  .skip {
+    position: absolute; left: 12px; top: -60px;
+    background: var(--ink); color: var(--flour);
+    padding: 10px 14px; border-radius: 8px; z-index: 100;
+    text-decoration: none; font-weight: 600;
+  }
+  .skip:focus { top: 12px; }
+  :focus-visible { outline: 3px solid var(--crust); outline-offset: 3px; border-radius: 6px; }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5em;
+    min-height: 48px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font: 600 16px/1.2 var(--sans);
+    text-decoration: none;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: transform .18s ease, background-color .18s ease, color .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:active { transform: translateY(0); }
+  .btn-primary { background: var(--ink); color: var(--flour); box-shadow: 0 8px 18px -10px rgba(46,29,18,.6); }
+  .btn-primary:hover { background: var(--crust-dark); }
+  .btn-ghost { border-color: var(--line-strong); color: var(--ink); background: transparent; }
+  .btn-ghost:hover { background: var(--paper-2); }
+  .btn svg { width: 18px; height: 18px; }
+
+  /* ---------- Status pill ---------- */
+  .status {
+    display: inline-flex; align-items: center; gap: 8px;
+    font: 600 14px/1 var(--sans);
+    padding: 8px 12px 8px 10px;
+    border-radius: 999px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    white-space: nowrap;
+  }
+  .status .dot {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--ink-faint);
+    box-shadow: 0 0 0 0 currentColor;
+  }
+  .status[data-state="open"] .dot { background: var(--open); color: rgba(47,122,69,.45); animation: pulse 2.4s ease-out infinite; }
+  .status[data-state="soon"] .dot { background: var(--soon); }
+  .status[data-state="closed"] .dot { background: var(--closed); }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 currentColor; }
+    70% { box-shadow: 0 0 0 8px rgba(0,0,0,0); }
+    100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
+  }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(245, 238, 227, .88);
+    backdrop-filter: saturate(1.2) blur(10px);
+    -webkit-backdrop-filter: saturate(1.2) blur(10px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s ease;
+  }
+  .site-header.scrolled { border-bottom-color: var(--line); }
+  .nav {
+    display: flex; align-items: center; gap: 20px;
+    min-height: 72px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none;
+    font-family: var(--serif);
+    font-size: 24px; font-weight: 700; letter-spacing: -.01em;
+  }
+  .brand svg { width: 34px; height: 34px; }
+  .brand { white-space: nowrap; flex: none; }
+  .status-short { display: none; }
+  .brand .amp { font-style: italic; color: var(--crust); font-weight: 500; }
+  .nav-links {
+    display: flex; gap: 4px; margin: 0 0 0 auto; padding: 0; list-style: none;
+  }
+  .nav-links a {
+    display: block; padding: 10px 14px; border-radius: 999px;
+    text-decoration: none; font-weight: 500; color: var(--ink-soft);
+  }
+  .nav-links a:hover { background: var(--paper-2); color: var(--ink); }
+  .nav .status { margin-left: 8px; }
+  .nav .btn { min-height: 44px; padding: 10px 18px; font-size: 15px; }
+  .menu-toggle {
+    display: none;
+    margin-left: auto;
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    border: 1px solid var(--line-strong);
+    background: transparent; color: var(--ink);
+    cursor: pointer;
+    align-items: center; justify-content: center;
+  }
+  .menu-toggle svg { width: 22px; height: 22px; }
+  .mobile-panel { display: none; }
+
+  @media (max-width: 900px) {
+    .nav-links, .nav > .btn { display: none; }
+    .nav .status { margin-left: auto; }
+    .menu-toggle { display: inline-flex; margin-left: 0; }
+    .mobile-panel {
+      display: block;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .3s ease;
+      border-top: 1px solid transparent;
+    }
+    .mobile-panel.open { max-height: 420px; border-top-color: var(--line); }
+    .mobile-panel ul { list-style: none; margin: 0; padding: 8px 0 18px; display: grid; gap: 2px; }
+    .mobile-panel a:not(.btn) {
+      display: block; padding: 12px 4px; text-decoration: none;
+      font-family: var(--serif); font-size: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+    .mobile-panel .btn { margin-top: 12px; width: 100%; }
+  }
+  @media (max-width: 420px) {
+    .brand { font-size: 21px; }
+    .brand svg { width: 28px; height: 28px; }
+    .nav { gap: 10px; }
+    .nav .status { font-size: 13px; padding: 7px 10px 7px 9px; }
+  }
+  @media (max-width: 480px) {
+    .nav .status .status-text { display: none; }
+    .nav .status .status-short { display: inline; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: clamp(36px, 7vw, 88px) 0 clamp(40px, 6vw, 72px); }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: clamp(24px, 5vw, 64px);
+    align-items: center;
+  }
+  .hero h1 {
+    font-size: clamp(46px, 8.4vw, 104px);
+    font-weight: 600;
+    letter-spacing: -.025em;
+    line-height: .98;
+    margin: 18px 0 22px;
+  }
+  .hero h1 em { font-style: italic; font-weight: 500; color: var(--crust); }
+  .hero .lede { font-size: clamp(18px, 2.1vw, 21px); color: var(--ink-soft); max-width: 34ch; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .hero-facts {
+    display: flex; flex-wrap: wrap; gap: 10px 22px;
+    margin-top: 34px; padding-top: 22px;
+    border-top: 1px dashed var(--line-strong);
+    font-size: 15px; color: var(--ink-soft);
+  }
+  .hero-facts span { display: inline-flex; align-items: center; gap: 8px; }
+  .hero-facts svg { width: 18px; height: 18px; color: var(--crust); flex: none; }
+  .hero-art { position: relative; }
+  .hero-art .plate {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 50% 45%, var(--flour) 0 52%, transparent 53%),
+      radial-gradient(circle at 50% 50%, var(--paper-3) 0 70%, transparent 71%);
+    display: grid; place-items: center;
+    position: relative;
+  }
+  .hero-art .loaf { width: 92%; margin-top: 6%; }
+  .hero-art .tag {
+    position: absolute; right: 2%; bottom: 8%;
+    background: var(--ink); color: var(--flour);
+    font-family: var(--serif); font-style: italic;
+    font-size: 17px; line-height: 1.2;
+    padding: 12px 16px; border-radius: 14px;
+    transform: rotate(-5deg);
+    box-shadow: var(--shadow);
+    max-width: 180px;
+  }
+  .hero-art .tag b { display: block; font-style: normal; font-size: 26px; color: var(--crust-light); }
+  .steam path { fill: none; stroke: var(--ink-faint); stroke-width: 3; stroke-linecap: round; opacity: .55; }
+  @media (max-width: 820px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-art { max-width: 420px; width: 100%; margin: 4px auto 0; order: -1; }
+    .hero-art .plate { width: 78%; margin: 0 auto; }
+    .hero-art .tag { right: 0; font-size: 15px; }
+    .hero-art .tag b { font-size: 22px; }
+  }
+
+  /* ---------- Marquee ---------- */
+  .marquee {
+    border-block: 1.5px solid var(--ink);
+    background: var(--crust);
+    color: var(--flour);
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-track {
+    display: inline-flex;
+    animation: marquee 38s linear infinite;
+    padding: 14px 0;
+  }
+  .marquee-track span {
+    font-family: var(--serif); font-style: italic;
+    font-size: clamp(20px, 2.6vw, 28px);
+    padding: 0 22px;
+    display: inline-flex; align-items: center; gap: 44px;
+  }
+  .marquee-track span::after { content: "✺"; font-style: normal; font-size: .7em; opacity: .75; }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+  /* ---------- Sections ---------- */
+  section { scroll-margin-top: 84px; }
+  .section { padding: clamp(64px, 10vw, 120px) 0; }
+  .section-head { max-width: 680px; margin-bottom: clamp(32px, 5vw, 56px); }
+  .section-head h2 { font-size: clamp(36px, 5.4vw, 60px); margin: 14px 0 16px; }
+  .section-head p { color: var(--ink-soft); font-size: 18px; }
+
+  /* ---------- Menu ---------- */
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .menu-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px 26px 30px;
+    box-shadow: var(--shadow);
+  }
+  .menu-card header { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+  .menu-card header svg { width: 46px; height: 46px; color: var(--crust); flex: none; }
+  .menu-card h3 { font-size: 30px; }
+  .menu-card .note { font-size: 14px; color: var(--ink-faint); margin-top: 2px; font-family: var(--sans); font-weight: 400; }
+  .menu-list { list-style: none; margin: 0; padding: 0; }
+  .menu-list li { padding: 14px 0; border-top: 1px dashed var(--line-strong); }
+  .menu-list li:first-child { border-top: 0; padding-top: 4px; }
+  .item-row { display: flex; align-items: baseline; gap: 10px; }
+  .item-name { font-family: var(--serif); font-size: 20px; font-weight: 600; }
+  .item-row .leader { flex: 1; border-bottom: 1.5px dotted var(--line-strong); transform: translateY(-5px); min-width: 16px; }
+  .item-price { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--crust-dark); }
+  .item-desc { font-size: 15px; color: var(--ink-soft); margin-top: 3px; line-height: 1.5; }
+  .badge {
+    display: inline-block; font: 600 11px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase;
+    padding: 4px 7px; border-radius: 6px; background: var(--paper-2); color: var(--crust-dark);
+    vertical-align: 3px; margin-left: 6px;
+  }
+  .menu-card.cta-card {
+    background: var(--ink); color: var(--flour); border-color: var(--ink);
+    display: flex; flex-direction: column;
+  }
+  .cta-card header svg { color: var(--crust-light); }
+  .cta-card p { color: rgba(255,249,240,.78); }
+  .cta-card .big {
+    font-family: var(--serif); font-size: clamp(64px, 8vw, 92px); line-height: .9;
+    color: var(--crust-light); margin: 10px 0 2px; letter-spacing: -.03em;
+  }
+  .cta-card .big small { font-size: .32em; letter-spacing: 0; color: var(--flour); margin-left: 6px; }
+  .cta-card .btn { margin-top: auto; background: var(--flour); color: var(--ink); align-self: flex-start; }
+  .cta-card .btn:hover { background: var(--crust-light); }
+  .cta-card .spacer { height: 26px; }
+  .menu-foot {
+    margin-top: 26px; display: flex; flex-wrap: wrap; gap: 8px 24px;
+    color: var(--ink-faint); font-size: 15px;
+  }
+  @media (max-width: 980px) { .menu-grid { grid-template-columns: 1fr 1fr; } .cta-card { grid-column: 1 / -1; } }
+  @media (max-width: 640px) { .menu-grid { grid-template-columns: 1fr; } .menu-card { padding: 24px 20px 26px; } }
+
+  /* ---------- Cakes ---------- */
+  .cakes { background: var(--paper-2); border-block: 1px solid var(--line); }
+  .cakes-top {
+    display: grid; grid-template-columns: 1fr 360px; gap: clamp(24px, 5vw, 64px); align-items: end;
+    margin-bottom: clamp(32px, 5vw, 56px);
+  }
+  .cakes-top .section-head { margin-bottom: 0; }
+  .cake-art { width: 100%; max-width: 340px; justify-self: end; }
+  .steps {
+    list-style: none; margin: 0 0 clamp(40px, 6vw, 64px); padding: 0;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    counter-reset: step;
+  }
+  .steps li {
+    position: relative;
+    padding: 24px 22px 24px 22px;
+    border-radius: var(--radius);
+    background: var(--card);
+    border: 1px solid var(--line);
+    counter-increment: step;
+  }
+  .steps li::before {
+    content: counter(step);
+    font-family: var(--serif); font-style: italic;
+    font-size: 44px; line-height: 1; color: var(--crust);
+    display: block; margin-bottom: 10px;
+  }
+  .steps h3 { font-size: 22px; margin-bottom: 6px; }
+  .steps p { color: var(--ink-soft); font-size: 15.5px; }
+  .steps .hl { background: linear-gradient(transparent 58%, rgba(217,149,94,.45) 58%); font-weight: 600; color: var(--ink); }
+
+  .cake-layout { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(24px, 4vw, 48px); align-items: start; }
+  .cake-info h3 { font-size: 26px; margin-bottom: 14px; }
+  .sizes { width: 100%; border-collapse: collapse; margin-bottom: 34px; font-size: 16px; }
+  .sizes th, .sizes td { text-align: left; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .sizes th { font-family: var(--serif); font-size: 18px; font-weight: 600; }
+  .sizes td { color: var(--ink-soft); }
+  .sizes td:last-child { text-align: right; font-weight: 600; color: var(--crust-dark); font-variant-numeric: tabular-nums; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; padding: 0; list-style: none; }
+  .chips li {
+    padding: 7px 13px; border-radius: 999px; background: var(--card);
+    border: 1px solid var(--line); font-size: 15px;
+  }
+  .fine { font-size: 14.5px; color: var(--ink-faint); }
+
+  /* Form */
+  .order-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: clamp(22px, 3.5vw, 36px);
+    box-shadow: var(--shadow);
+  }
+  .order-card > h3 { font-size: 30px; }
+  .order-card > p { color: var(--ink-soft); margin: 6px 0 22px; font-size: 15.5px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 16px; }
+  .field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .field.full { grid-column: 1 / -1; }
+  .field label { font-weight: 600; font-size: 14.5px; }
+  .field label .opt { font-weight: 400; color: var(--ink-faint); }
+  .field input, .field select, .field textarea {
+    font: 16px/1.4 var(--sans);
+    color: var(--ink);
+    background: var(--flour);
+    border: 1.5px solid var(--line-strong);
+    border-radius: var(--radius-sm);
+    padding: 12px 13px;
+    min-height: 48px;
+    width: 100%;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  .field textarea { min-height: 96px; resize: vertical; }
+  .field select {
+    appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 7l5 6 5-6' fill='none' stroke='%235E4838' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; background-size: 18px;
+    padding-right: 38px;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    outline: none; border-color: var(--crust); box-shadow: 0 0 0 4px rgba(168,87,43,.18);
+  }
+  .field .hint { font-size: 13.5px; color: var(--ink-faint); }
+  .field .err { font-size: 13.5px; color: var(--closed); font-weight: 600; min-height: 0; }
+  .field.invalid input, .field.invalid select { border-color: var(--closed); }
+  .notice {
+    display: flex; gap: 10px; align-items: flex-start;
+    background: rgba(217,149,94,.16);
+    border: 1px solid rgba(168,87,43,.3);
+    border-radius: 12px; padding: 12px 14px;
+    font-size: 14.5px; color: var(--ink-soft);
+    grid-column: 1 / -1;
+  }
+  .notice svg { width: 20px; height: 20px; color: var(--crust); flex: none; margin-top: 2px; }
+  .form-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; margin-top: 6px; }
+  .form-actions .fine { flex: 1 1 220px; }
+  .sent { display: none; }
+  .sent.show { display: block; }
+  .sent h3 { font-size: 28px; margin-bottom: 8px; }
+  .sent p { color: var(--ink-soft); margin-bottom: 14px; }
+  .sent textarea {
+    width: 100%; min-height: 220px; font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background: var(--flour); border: 1.5px solid var(--line-strong); border-radius: var(--radius-sm);
+    padding: 12px; color: var(--ink); resize: vertical;
+  }
+  .sent .row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+  @media (max-width: 980px) {
+    .cakes-top { grid-template-columns: 1fr; }
+    .cake-art { justify-self: start; max-width: 260px; }
+    .cake-layout { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    .steps { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .form-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- About ---------- */
+  .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(28px, 6vw, 80px); align-items: center; }
+  .about-quote {
+    font-family: var(--serif); font-style: italic;
+    font-size: clamp(30px, 4.2vw, 48px); line-height: 1.12; letter-spacing: -.01em;
+  }
+  .about-quote em { color: var(--crust); }
+  .about-body p { color: var(--ink-soft); margin-bottom: 16px; font-size: 18px; }
+  .values { list-style: none; padding: 0; margin: 26px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .values li { border-top: 2px solid var(--ink); padding-top: 12px; }
+  .values b { display: block; font-family: var(--serif); font-size: 30px; line-height: 1; color: var(--crust); }
+  .values span { font-size: 14.5px; color: var(--ink-soft); }
+  @media (max-width: 820px) { .about-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 460px) { .values { grid-template-columns: 1fr; } }
+
+  /* ---------- Visit ---------- */
+  .visit { background: var(--ink); color: var(--flour); }
+  .visit .eyebrow { color: var(--crust-light); }
+  .visit .section-head p { color: rgba(255,249,240,.75); }
+  .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .visit-card {
+    border: 1px solid rgba(255,249,240,.16);
+    border-radius: var(--radius);
+    padding: clamp(22px, 3.5vw, 34px);
+    background: rgba(255,249,240,.04);
+  }
+  .visit-card h3 { font-size: 28px; margin-bottom: 18px; }
+  .hours { width: 100%; border-collapse: collapse; font-size: 17px; }
+  .hours th, .hours td { padding: 11px 10px; text-align: left; border-bottom: 1px solid rgba(255,249,240,.12); }
+  .hours th { font-weight: 500; }
+  .hours td { text-align: right; font-variant-numeric: tabular-nums; color: rgba(255,249,240,.85); }
+  .hours tr.closed td { color: rgba(255,249,240,.5); font-style: italic; }
+  .hours tr.today { background: rgba(217,149,94,.16); }
+  .hours tr.today th { font-weight: 700; }
+  .hours tr.today th::after {
+    content: "Today"; margin-left: 10px;
+    font: 700 11px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase;
+    background: var(--crust-light); color: var(--ink); padding: 3px 7px; border-radius: 5px; vertical-align: 2px;
+  }
+  .visit .status { background: rgba(255,249,240,.08); border-color: rgba(255,249,240,.2); color: var(--flour); margin-bottom: 18px; }
+  .address { font-family: var(--serif); font-size: clamp(28px, 3.6vw, 40px); line-height: 1.1; margin-bottom: 10px; }
+  .address small { display: block; font-size: .5em; color: rgba(255,249,240,.7); margin-top: 6px; font-family: var(--sans); }
+  .visit .btn-primary { background: var(--flour); color: var(--ink); }
+  .visit .btn-primary:hover { background: var(--crust-light); }
+  .visit .btn-ghost { color: var(--flour); border-color: rgba(255,249,240,.35); }
+  .visit .btn-ghost:hover { background: rgba(255,249,240,.08); }
+  .visit-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 26px; }
+  .contact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; font-size: 16px; }
+  .contact-list li { display: flex; gap: 12px; align-items: center; }
+  .contact-list svg { width: 20px; height: 20px; color: var(--crust-light); flex: none; }
+  .contact-list a { text-decoration-color: rgba(255,249,240,.35); text-underline-offset: 3px; }
+  .map-sketch { margin-top: 24px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,249,240,.14); }
+  @media (max-width: 820px) { .visit-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- Footer ---------- */
+  .site-footer { background: var(--ink); color: rgba(255,249,240,.7); border-top: 1px solid rgba(255,249,240,.12); padding: 40px 0 48px; font-size: 15px; }
+  .foot { display: flex; flex-wrap: wrap; gap: 18px 40px; align-items: center; justify-content: space-between; }
+  .site-footer .brand { color: var(--flour); font-size: 22px; }
+  .site-footer .brand .amp { color: var(--crust-light); }
+  .site-footer a { color: var(--flour); }
+  .foot-links { display: flex; flex-wrap: wrap; gap: 8px 22px; list-style: none; margin: 0; padding: 0; }
+
+  /* ---------- Reveal fallback ---------- */
+  .reveal { will-change: transform, opacity; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ======================= HEADER ======================= -->
+<header class="site-header" id="top">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="#top" aria-label="Crumb and Co, home">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M6 40c0-15 12-26 26-26s26 11 26 26c0 6-8 9-26 9S6 46 6 40z" fill="#A8572B"/>
+          <path d="M20 26c6 2 10 7 12 13M30 22c6 3 10 8 11 15" stroke="#F5D9B0" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span>Crumb <span class="amp">&amp;</span> Co</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#menu">Daily bake</a></li>
+        <li><a href="#cakes">Custom cakes</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+      <span class="status" data-status data-state="neutral" role="status" aria-live="polite"><span class="dot" aria-hidden="true"></span><span class="status-text">Tue–Sun · 7am–3pm</span><span class="status-short">7am–3pm</span></span>
+      <a class="btn btn-primary" href="#order">Order a cake</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-panel" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="l1" d="M4 7h16"/><path class="l2" d="M4 12h16"/><path class="l3" d="M4 17h16"/></svg>
+      </button>
+    </nav>
+    <div class="mobile-panel" id="mobile-panel">
+      <ul>
+        <li><a href="#menu">Daily bake</a></li>
+        <li><a href="#cakes">Custom cakes</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#visit">Visit &amp; hours</a></li>
+        <li><a class="btn btn-primary" href="#order">Order a cake</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ======================= HERO ======================= -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow reveal">Neighborhood bakery · East 6th, Austin</p>
+      <h1 id="hero-title" class="reveal">Bread worth getting <em>up</em> for.</h1>
+      <p class="lede reveal">Long-fermented sourdough, butter-layered pastries and cakes made to order. Baked every morning, Tuesday through Sunday.</p>
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary" href="#menu">See today's bake</a>
+        <a class="btn btn-ghost" href="#order">Order a custom cake
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="hero-facts reveal">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span data-today-hours>Tue–Sun, 7am–3pm</span>
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          1204 E 6th St
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V10l8-6 8 6v11"/><path d="M9 21v-6h6v6"/></svg>
+          Walk-in · no reservations
+        </span>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <div class="plate">
+        <svg class="loaf" viewBox="0 0 400 320">
+          <defs>
+            <radialGradient id="crust" cx="45%" cy="35%" r="75%">
+              <stop offset="0" stop-color="#D9955E"/>
+              <stop offset=".55" stop-color="#A8572B"/>
+              <stop offset="1" stop-color="#6E3214"/>
+            </radialGradient>
+            <linearGradient id="ear" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#F3D3A6"/>
+              <stop offset="1" stop-color="#E2AE72"/>
+            </linearGradient>
+          </defs>
+          <g class="steam">
+            <path d="M150 70c-12-14 12-24 0-40"/>
+            <path d="M200 58c-12-14 12-24 0-40"/>
+            <path d="M250 70c-12-14 12-24 0-40"/>
+          </g>
+          <ellipse cx="200" cy="272" rx="160" ry="16" fill="#2E1D12" opacity=".12"/>
+          <g class="loaf-body">
+            <path d="M42 222C40 150 112 96 200 96s162 54 158 126c-2 30-60 46-158 46S44 252 42 222z" fill="url(#crust)"/>
+            <!-- scoring: one big ear -->
+            <path d="M118 176c40-44 108-62 168-40" fill="none" stroke="#5A260E" stroke-width="10" stroke-linecap="round" opacity=".55"/>
+            <path d="M122 168c40-40 104-56 160-36 -40 2-98 18-156 52z" fill="url(#ear)"/>
+            <!-- wheat stalk score -->
+            <path d="M150 218c30-8 70-10 104-2" fill="none" stroke="#F3D3A6" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+            <path d="M166 214l-10-12M186 211l-8-13M206 210l-6-13M226 211l-4-13M244 214l-2-12" stroke="#F3D3A6" stroke-width="3" stroke-linecap="round" opacity=".6"/>
+            <!-- flour dusting -->
+            <g fill="#FFF9F0" opacity=".75">
+              <circle cx="98" cy="190" r="2.5"/><circle cx="110" cy="210" r="1.8"/><circle cx="300" cy="200" r="2.2"/>
+              <circle cx="320" cy="180" r="1.6"/><circle cx="270" cy="230" r="2"/><circle cx="140" cy="236" r="1.6"/>
+              <circle cx="88" cy="226" r="1.4"/><circle cx="312" cy="226" r="1.7"/><circle cx="246" cy="120" r="1.6"/>
+              <circle cx="168" cy="122" r="1.4"/><circle cx="210" cy="244" r="1.8"/>
+            </g>
+          </g>
+          <!-- little croissant beside -->
+          <g transform="translate(296 222) rotate(-12)">
+            <path d="M-46 18C-40-6-14-20 0-20S40-6 46 18c-10-4-18-4-24 2-6-10-14-12-22-12s-16 2-22 12c-6-6-14-6-24-2z" fill="#C9783E" stroke="#6E3214" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M-12-16c2 10 2 20 0 28M12-16c-2 10-2 20 0 28" stroke="#6E3214" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+      <p class="tag"><b>36 hrs</b>slow-fermented, every loaf</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= MARQUEE ======================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Country sourdough</span><span>Butter croissants</span><span>Custom cakes</span><span>Morning buns</span><span>Seeded rye</span><span>Kouign-amann</span>
+    <span>Country sourdough</span><span>Butter croissants</span><span>Custom cakes</span><span>Morning buns</span><span>Seeded rye</span><span>Kouign-amann</span>
+  </div>
+</div>
+
+<!-- ======================= MENU ======================= -->
+<section class="section" id="menu" aria-labelledby="menu-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">The daily bake</p>
+      <h2 id="menu-title">Out of the oven by 7.</h2>
+      <p>We bake in small batches and stop when it's gone. Favorites usually sell out before noon, so come early for the full case.</p>
+    </div>
+
+    <div class="menu-grid">
+      <article class="menu-card reveal" aria-labelledby="m-bread">
+        <header>
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 30c0-10 8.5-17 19-17s19 7 19 17c0 4-6 6-19 6S5 34 5 30z"/>
+            <path d="M15 22c5 1 8 4 9 9M23 19c5 2 8 5 9 10"/>
+          </svg>
+          <div><h3 id="m-bread">Sourdough</h3><p class="note">Whole loaves · ready from 7am</p></div>
+        </header>
+        <ul class="menu-list">
+          <li><div class="item-row"><span class="item-name">Country loaf</span><span class="leader"></span><span class="item-price">$10</span></div>
+            <p class="item-desc">Our house loaf. Crackly crust, open crumb, mild tang.</p></li>
+          <li><div class="item-row"><span class="item-name">Seeded rye</span><span class="leader"></span><span class="item-price">$11</span></div>
+            <p class="item-desc">Rye, sunflower, flax and sesame. Dense, nutty, keeps for days.</p></li>
+          <li><div class="item-row"><span class="item-name">Olive &amp; rosemary</span><span class="leader"></span><span class="item-price">$12</span></div>
+            <p class="item-desc">Kalamata olives, fresh rosemary, a little lemon zest.</p></li>
+          <li><div class="item-row"><span class="item-name">Sandwich pan loaf</span><span class="leader"></span><span class="item-price">$9</span></div>
+            <p class="item-desc">Soft sourdough sandwich bread. Slices like a dream.</p></li>
+          <li><div class="item-row"><span class="item-name">Cinnamon raisin <span class="badge">Sat–Sun</span></span><span class="leader"></span><span class="item-price">$12</span></div>
+            <p class="item-desc">Weekend-only swirl loaf. Makes the best French toast.</p></li>
+        </ul>
+      </article>
+
+      <article class="menu-card reveal" aria-labelledby="m-pastry">
+        <header>
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 32C8 20 16 13 24 13s16 7 20 19c-4-2-8-2-10 1-3-5-6-7-10-7s-7 2-10 7c-2-3-6-3-10-1z"/>
+            <path d="M18 15c1 5 1 10 0 14M30 15c-1 5-1 10 0 14"/>
+          </svg>
+          <div><h3 id="m-pastry">Pastries</h3><p class="note">Laminated with real butter, daily</p></div>
+        </header>
+        <ul class="menu-list">
+          <li><div class="item-row"><span class="item-name">Butter croissant</span><span class="leader"></span><span class="item-price">$4.50</span></div>
+            <p class="item-desc">Three days from dough to case. Shatters properly.</p></li>
+          <li><div class="item-row"><span class="item-name">Pain au chocolat</span><span class="leader"></span><span class="item-price">$5</span></div>
+            <p class="item-desc">Two batons of dark chocolate.</p></li>
+          <li><div class="item-row"><span class="item-name">Morning bun</span><span class="leader"></span><span class="item-price">$5</span></div>
+            <p class="item-desc">Croissant dough, orange zest, cardamom sugar.</p></li>
+          <li><div class="item-row"><span class="item-name">Kouign-amann</span><span class="leader"></span><span class="item-price">$5.50</span></div>
+            <p class="item-desc">Caramelized, salty-sweet, a little dangerous.</p></li>
+          <li><div class="item-row"><span class="item-name">Seasonal danish</span><span class="leader"></span><span class="item-price">$5.50</span></div>
+            <p class="item-desc">Whatever fruit is best this week, on vanilla custard.</p></li>
+          <li><div class="item-row"><span class="item-name">Sourdough choc chip cookie</span><span class="leader"></span><span class="item-price">$3.50</span></div>
+            <p class="item-desc">Brown butter, flaky salt, chewy middle.</p></li>
+        </ul>
+      </article>
+
+      <article class="menu-card cta-card reveal" aria-labelledby="m-cake">
+        <header>
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M8 40V26h32v14M6 40h36"/><path d="M8 30c4 3 8 3 11 0 3 3 7 3 10 0 3 3 7 3 11 0"/>
+            <path d="M24 26v-7"/><path d="M24 12c-2 2-2 4 0 5 2-1 2-3 0-5z"/>
+          </svg>
+          <div><h3 id="m-cake">Custom cakes</h3></div>
+        </header>
+        <p>Birthdays, weddings, Tuesdays. Pick a size, flavor and message and we'll make it from scratch.</p>
+        <p class="big">72<small>hours notice</small></p>
+        <p>Pick up Tuesday to Sunday, 7am to 3pm.</p>
+        <div class="spacer"></div>
+        <a class="btn" href="#order">Start a cake order</a>
+      </article>
+    </div>
+
+    <p class="menu-foot">
+      <span>Menu changes with the seasons.</span>
+      <span>Allergies? Ask at the counter; everything is made in a kitchen with wheat, dairy, eggs and nuts.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ======================= CAKES ======================= -->
+<section class="section cakes" id="cakes" aria-labelledby="cakes-title">
+  <div class="wrap">
+    <div class="cakes-top">
+      <div class="section-head reveal">
+        <p class="eyebrow">Custom cakes</p>
+        <h2 id="cakes-title">Your cake, made from scratch.</h2>
+        <p>Layer cakes baked to order with real butter, seasonal fruit and no shortcuts. Tell us the occasion and we'll handle the rest.</p>
+      </div>
+      <svg class="cake-art reveal" viewBox="0 0 340 280" aria-hidden="true">
+        <ellipse cx="170" cy="262" rx="140" ry="12" fill="#2E1D12" opacity=".1"/>
+        <!-- stand -->
+        <path d="M60 244h220" stroke="#2E1D12" stroke-width="5" stroke-linecap="round"/>
+        <path d="M150 244l-8 18h56l-8-18" fill="#E4D5BE" stroke="#2E1D12" stroke-width="4" stroke-linejoin="round"/>
+        <!-- bottom tier -->
+        <rect x="70" y="160" width="200" height="84" rx="10" fill="#FBF7F0" stroke="#2E1D12" stroke-width="4"/>
+        <path d="M70 176c12 0 12 16 24 16s12-12 24-12 12 18 24 18 12-14 24-14 12 16 24 16 12-12 24-12 12 14 24 14 12-10 12-10v-16H70z" fill="#D9955E" stroke="#2E1D12" stroke-width="4" stroke-linejoin="round"/>
+        <!-- top tier -->
+        <rect x="108" y="96" width="124" height="66" rx="9" fill="#FBF7F0" stroke="#2E1D12" stroke-width="4"/>
+        <path d="M108 110c10 0 10 14 20 14s10-10 20-10 10 16 20 16 10-12 20-12 10 12 20 12 10-10 14-10v-12H108z" fill="#A8572B" stroke="#2E1D12" stroke-width="4" stroke-linejoin="round"/>
+        <!-- berries -->
+        <circle cx="140" cy="92" r="9" fill="#A23B2A" stroke="#2E1D12" stroke-width="3"/>
+        <circle cx="200" cy="92" r="9" fill="#A23B2A" stroke="#2E1D12" stroke-width="3"/>
+        <!-- candle -->
+        <rect x="164" y="56" width="12" height="40" rx="3" fill="#F5D9B0" stroke="#2E1D12" stroke-width="3"/>
+        <path d="M170 30c-8 9-8 16 0 20 8-4 8-11 0-20z" fill="#E2AE72" stroke="#2E1D12" stroke-width="3" stroke-linejoin="round" class="flame"/>
+        <!-- sprinkles -->
+        <g stroke="#2E1D12" stroke-width="3" stroke-linecap="round">
+          <path d="M100 218l8-4M140 226l6 5M190 214l8 2M230 224l6-5M126 140l6 4M196 144l7-3"/>
+        </g>
+      </svg>
+    </div>
+
+    <ol class="steps">
+      <li class="reveal">
+        <h3>Send a request</h3>
+        <p>Fill out the form below at least <span class="hl">72 hours before pickup</span>. That's how long a proper cake takes.</p>
+      </li>
+      <li class="reveal">
+        <h3>We confirm</h3>
+        <p>We'll reply by email within one business day to confirm the details, final price and payment.</p>
+      </li>
+      <li class="reveal">
+        <h3>Pick it up</h3>
+        <p>Collect from the bakery, Tuesday to Sunday between 7am and 3pm. Boxed and ready to travel.</p>
+      </li>
+    </ol>
+
+    <div class="cake-layout">
+      <div class="cake-info reveal">
+        <h3>Sizes</h3>
+        <table class="sizes">
+          <caption class="fine" style="caption-side:bottom;text-align:left;padding-top:10px">Starting prices. Decorations, fresh flowers and specialty finishes may add to the total.</caption>
+          <thead class="visually-hidden" style="position:absolute;left:-9999px"><tr><th>Size</th><th>Serves</th><th>From</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">6" round</th><td>8–10 people</td><td>$55</td></tr>
+            <tr><th scope="row">8" round</th><td>12–16 people</td><td>$75</td></tr>
+            <tr><th scope="row">10" round</th><td>20–25 people</td><td>$110</td></tr>
+            <tr><th scope="row">Two-tier</th><td>35–45 people</td><td>$195</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Cake flavors</h3>
+        <ul class="chips">
+          <li>Vanilla bean</li><li>Dark chocolate</li><li>Lemon olive oil</li><li>Carrot &amp; brown butter</li><li>Earl Grey</li><li>Funfetti</li>
+        </ul>
+        <h3>Frostings &amp; fillings</h3>
+        <ul class="chips">
+          <li>Vanilla buttercream</li><li>Chocolate ganache</li><li>Cream cheese</li><li>Lemon curd</li><li>Seasonal berry jam</li><li>Salted caramel</li>
+        </ul>
+        <p class="fine">Short on time? Our pastry case always has something worth putting a candle in.</p>
+      </div>
+
+      <div class="order-card reveal" id="order">
+        <form id="cake-form" action="mailto:cakes@crumbandco.com" method="post" enctype="text/plain" novalidate>
+          <h3>Request a cake</h3>
+          <p>Takes about two minutes. Nothing is charged until we confirm with you.</p>
+          <div class="form-grid">
+            <div class="field">
+              <label for="f-name">Your name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required>
+              <span class="err" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="f-phone">Phone <span class="opt">(optional)</span></label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
+              <span class="err" aria-live="polite"></span>
+            </div>
+            <div class="field full">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required>
+              <span class="err" aria-live="polite"></span>
+            </div>
+
+            <div class="notice" id="notice">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <span id="earliest-text">Cakes need at least 72 hours notice. We're closed Mondays, so pickups are Tuesday to Sunday, 7am–3pm.</span>
+            </div>
+
+            <div class="field">
+              <label for="f-date">Pickup date</label>
+              <input id="f-date" name="pickup_date" type="date" required aria-describedby="earliest-text">
+              <span class="err" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="f-time">Pickup time</label>
+              <select id="f-time" name="pickup_time" required>
+                <option value="">Choose a time</option>
+              </select>
+              <span class="err" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="f-size">Size</label>
+              <select id="f-size" name="size" required>
+                <option value="">Choose a size</option>
+                <option>6" round (serves 8–10), from $55</option>
+                <option>8" round (serves 12–16), from $75</option>
+                <option>10" round (serves 20–25), from $110</option>
+                <option>Two-tier (serves 35–45), from $195</option>
+              </select>
+              <span class="err" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="f-flavor">Cake flavor</label>
+              <select id="f-flavor" name="flavor" required>
+                <option value="">Choose a flavor</option>
+                <option>Vanilla bean</option><option>Dark chocolate</option><option>Lemon olive oil</option>
+                <option>Carrot &amp; brown butter</option><option>Earl Grey</option><option>Funfetti</option>
+                <option>Not sure yet, help me pick</option>
+              </select>
+              <span class="err" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="f-frosting">Frosting / filling</label>
+              <select id="f-frosting" name="frosting" required>
+                <option value="">Choose one</option>
+                <option>Vanilla buttercream</option><option>Chocolate ganache</option><option>Cream cheese</option>
+                <option>Lemon curd</option><option>Seasonal berry jam</option><option>Salted caramel</option>
+                <option>Not sure yet, help me pick</option>
+              </select>
+              <span class="err" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="f-message">Writing on the cake <span class="opt">(optional)</span></label>
+              <input id="f-message" name="message_on_cake" type="text" maxlength="40" placeholder="Happy 30th, Sam!">
+              <span class="hint">Up to 40 characters.</span>
+            </div>
+            <div class="field full">
+              <label for="f-notes">Anything else? <span class="opt">(optional)</span></label>
+              <textarea id="f-notes" name="notes" placeholder="Occasion, colors, allergies, a photo you love (you can attach it to the email)…"></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Send cake request</button>
+              <p class="fine">Opens your email app with your order filled in. Just hit send.</p>
+            </div>
+          </div>
+        </form>
+
+        <div class="sent" id="sent" tabindex="-1">
+          <h3>Almost there!</h3>
+          <p>Your email app should have opened with your request filled in. <strong>Hit send</strong> and we'll reply within one business day to confirm.</p>
+          <p class="fine">Email didn't open? Copy your request below and send it to <a href="mailto:cakes@crumbandco.com">cakes@crumbandco.com</a>.</p>
+          <label class="fine" for="order-copy" style="display:block;margin-bottom:6px">Your request</label>
+          <textarea id="order-copy" readonly></textarea>
+          <div class="row">
+            <button class="btn btn-primary" type="button" id="copy-btn">Copy request</button>
+            <button class="btn btn-ghost" type="button" id="edit-btn">Edit request</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= ABOUT ======================= -->
+<section class="section" id="about" aria-labelledby="about-title">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <p class="eyebrow">About us</p>
+      <h2 id="about-title" class="about-quote" style="margin-top:14px">Flour, water, salt, and <em>a lot of patience.</em></h2>
+    </div>
+    <div class="about-body reveal">
+      <p>Crumb &amp; Co is a small bakery on East 6th Street. Every loaf starts with our own sourdough starter and rests for a day and a half before it meets the oven. Our pastries take three days. It's slow on purpose: time is what gives good bread its flavor.</p>
+      <p>We bake early, sell out often, and like knowing our regulars by their usual order. Come say hi.</p>
+      <ul class="values">
+        <li><b>36h</b><span>Slow ferment on every loaf</span></li>
+        <li><b>3 days</b><span>From dough to croissant</span></li>
+        <li><b>0</b><span>Shortcuts, mixes or preservatives</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= VISIT ======================= -->
+<section class="section visit" id="visit" aria-labelledby="visit-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Visit</p>
+      <h2 id="visit-title">Come by while it's warm.</h2>
+      <p>Walk in any time we're open. No reservations, no online ordering for the daily bake. Just show up hungry.</p>
+    </div>
+
+    <div class="visit-grid">
+      <div class="visit-card reveal">
+        <h3>Hours</h3>
+        <span class="status" data-status data-state="neutral" role="status"><span class="dot" aria-hidden="true"></span><span class="status-text">Tue–Sun · 7am–3pm</span></span>
+        <table class="hours" aria-label="Opening hours">
+          <tbody>
+            <tr data-day="2"><th scope="row">Tuesday</th><td>7:00am – 3:00pm</td></tr>
+            <tr data-day="3"><th scope="row">Wednesday</th><td>7:00am – 3:00pm</td></tr>
+            <tr data-day="4"><th scope="row">Thursday</th><td>7:00am – 3:00pm</td></tr>
+            <tr data-day="5"><th scope="row">Friday</th><td>7:00am – 3:00pm</td></tr>
+            <tr data-day="6"><th scope="row">Saturday</th><td>7:00am – 3:00pm</td></tr>
+            <tr data-day="0"><th scope="row">Sunday</th><td>7:00am – 3:00pm</td></tr>
+            <tr data-day="1" class="closed"><th scope="row">Monday</th><td>Closed</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="visit-card reveal">
+        <h3>Find us</h3>
+        <p class="address">1204 E 6th St<small>Austin, TX 78702 · East Austin</small></p>
+        <div class="visit-actions">
+          <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=1204+E+6th+St+Austin+TX+78702" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>
+            Get directions
+          </a>
+          <a class="btn btn-ghost" href="tel:+15125550142">Call the bakery</a>
+        </div>
+        <ul class="contact-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            <a href="tel:+15125550142">(512) 555-0142</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <a href="mailto:hello@crumbandco.com">hello@crumbandco.com</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener">@crumbandco.atx</a>
+          </li>
+        </ul>
+        <div class="map-sketch" aria-hidden="true">
+          <svg viewBox="0 0 400 150">
+            <rect width="400" height="150" fill="#3A2719"/>
+            <g stroke="#5E4838" stroke-width="10">
+              <path d="M-10 80H410"/><path d="M90 -10V160"/><path d="M210 -10V160"/><path d="M330 -10V160"/>
+            </g>
+            <path d="M-10 80H410" stroke="#7A5A44" stroke-width="16"/>
+            <text x="24" y="70" fill="#C9B49E" font-family="system-ui, sans-serif" font-size="12" letter-spacing="1.5">E 6TH ST</text>
+            <text x="98" y="24" fill="#8A7362" font-family="system-ui, sans-serif" font-size="10">Waller St</text>
+            <text x="218" y="140" fill="#8A7362" font-family="system-ui, sans-serif" font-size="10">Medina St</text>
+            <g transform="translate(262 62)">
+              <circle r="22" fill="#D9955E" opacity=".25"/>
+              <path d="M0 10s-12-10-12-20a12 12 0 0 1 24 0C12 0 0 10 0 10z" transform="translate(0 -6)" fill="#D9955E" stroke="#FFF9F0" stroke-width="2"/>
+              <circle cy="-16" r="4" fill="#2E1D12"/>
+            </g>
+            <text x="290" y="58" fill="#FFF9F0" font-family="Georgia, serif" font-style="italic" font-size="14">Crumb &amp; Co</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <a class="brand" href="#top" aria-label="Crumb and Co, back to top">
+      <span>Crumb <span class="amp">&amp;</span> Co</span>
+    </a>
+    <p>1204 E 6th St, Austin · Tue–Sun 7am–3pm · Closed Mondays</p>
+    <ul class="foot-links">
+      <li><a href="#menu">Daily bake</a></li>
+      <li><a href="#order">Order a cake</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <p style="flex-basis:100%;font-size:13.5px">© <span id="year">2026</span> Crumb &amp; Co. Baked in Austin, Texas.</p>
+  </div>
+</footer>
+
+<script src="../../../vendor/gsap/gsap.min.js"></script>
+<script src="../../../vendor/gsap/ScrollTrigger.min.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var TZ = "America/Chicago";
+  var OPEN_H = 7, CLOSE_H = 15;          // 7am – 3pm
+  var CLOSED_DAY = 1;                     // Monday
+  var NOTICE_HOURS = 72;
+  var SLOT_FIRST = 7 * 60, SLOT_LAST = 14 * 60 + 30, SLOT_STEP = 30; // pickup slots, minutes
+  var CAKE_EMAIL = "cakes@crumbandco.com";
+  var DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  var WD = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+
+  /* ---- Austin wall-clock time, independent of the visitor's timezone ----
+     We represent a wall-clock moment as a UTC timestamp with the same
+     Y/M/D h:m digits, so plain arithmetic and getUTC* work on it. */
+  function austinNow() {
+    try {
+      var parts = new Intl.DateTimeFormat("en-US", {
+        timeZone: TZ, year: "numeric", month: "2-digit", day: "2-digit",
+        hour: "2-digit", minute: "2-digit", hourCycle: "h23", weekday: "short"
+      }).formatToParts(new Date());
+      var p = {};
+      parts.forEach(function (x) { p[x.type] = x.value; });
+      var h = parseInt(p.hour, 10) % 24;
+      var ms = Date.UTC(+p.year, +p.month - 1, +p.day, h, +p.minute);
+      return { ms: ms, dow: WD[p.weekday], h: h, m: +p.minute };
+    } catch (e) {
+      var d = new Date();
+      return { ms: Date.UTC(d.getFullYear(), d.getMonth(), d.getDate(), d.getHours(), d.getMinutes()), dow: d.getDay(), h: d.getHours(), m: d.getMinutes() };
+    }
+  }
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function isoDate(ms) { var d = new Date(ms); return d.getUTCFullYear() + "-" + pad(d.getUTCMonth() + 1) + "-" + pad(d.getUTCDate()); }
+  function fmtMinutes(min) {
+    var h = Math.floor(min / 60), m = min % 60, ap = h >= 12 ? "pm" : "am", hh = h % 12 || 12;
+    return hh + (m ? ":" + pad(m) : "") + ap;
+  }
+  function prettyDate(ms) {
+    var d = new Date(ms);
+    return DAY_NAMES[d.getUTCDay()] + ", " + d.toLocaleDateString("en-US", { month: "long", day: "numeric", timeZone: "UTC" });
+  }
+
+  /* ---- Open / closed status ---- */
+  function nextOpenLabel(dow) {
+    // next opening day after `dow`
+    var n = (dow + 1) % 7;
+    if (n === CLOSED_DAY) n = (n + 1) % 7;
+    return (n === (dow + 1) % 7 ? "tomorrow" : DAY_NAMES[n]) + " at 7am";
+  }
+  function computeStatus(now) {
+    var mins = now.h * 60 + now.m;
+    if (now.dow === CLOSED_DAY) return { state: "closed", text: "Closed today · opens Tue 7am", short: "Closed", today: "Closed Mondays · back Tuesday 7am" };
+    if (mins < OPEN_H * 60) return { state: "soon", text: "Opens today at 7am", short: "Opens 7am", today: "Today: 7am – 3pm" };
+    if (mins < CLOSE_H * 60) {
+      var left = CLOSE_H * 60 - mins;
+      if (left <= 45) return { state: "soon", text: "Open · closing at 3pm", short: "Closing soon", today: "Open now until 3pm" };
+      return { state: "open", text: "Open now · until 3pm", short: "Open now", today: "Open now until 3pm" };
+    }
+    return { state: "closed", text: "Closed · opens " + nextOpenLabel(now.dow), short: "Closed", today: "Closed for today · opens " + nextOpenLabel(now.dow) };
+  }
+  function paintStatus() {
+    var now = austinNow(), s = computeStatus(now);
+    document.querySelectorAll("[data-status]").forEach(function (el) {
+      el.setAttribute("data-state", s.state);
+      el.querySelector(".status-text").textContent = s.text;
+      var sh = el.querySelector(".status-short");
+      if (sh) { sh.textContent = s.short; el.setAttribute("title", s.text); }
+    });
+    var th = document.querySelector("[data-today-hours]");
+    if (th) th.textContent = s.today;
+    document.querySelectorAll(".hours tr").forEach(function (tr) {
+      tr.classList.toggle("today", +tr.getAttribute("data-day") === now.dow);
+    });
+  }
+  paintStatus();
+  setInterval(paintStatus, 60 * 1000);
+
+  /* ---- Header: scrolled border + mobile menu ---- */
+  var header = document.querySelector(".site-header");
+  function onScroll() { header.classList.toggle("scrolled", window.scrollY > 8); }
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  var toggle = document.querySelector(".menu-toggle");
+  var panel = document.getElementById("mobile-panel");
+  function setMenu(open) {
+    panel.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  }
+  toggle.addEventListener("click", function () { setMenu(!panel.classList.contains("open")); });
+  panel.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
+
+  /* ---- Cake order form ---- */
+  var form = document.getElementById("cake-form");
+  var dateIn = document.getElementById("f-date");
+  var timeIn = document.getElementById("f-time");
+  var earliestText = document.getElementById("earliest-text");
+  var DAY_MS = 864e5;
+
+  // Earliest valid pickup: now + 72h, rounded up to the next slot, inside opening hours, not Monday.
+  function earliestPickup() {
+    var now = austinNow();
+    var t = now.ms + NOTICE_HOURS * 36e5;
+    var d = new Date(t);
+    var day = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
+    var mins = d.getUTCHours() * 60 + d.getUTCMinutes();
+    mins = Math.ceil(mins / SLOT_STEP) * SLOT_STEP;
+    if (mins < SLOT_FIRST) mins = SLOT_FIRST;
+    if (mins > SLOT_LAST) { day += DAY_MS; mins = SLOT_FIRST; }
+    while (new Date(day).getUTCDay() === CLOSED_DAY) { day += DAY_MS; mins = SLOT_FIRST; }
+    return { day: day, mins: mins, ms: day + mins * 6e4, noticeMs: t };
+  }
+
+  function parseDateInput(v) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || "");
+    return m ? Date.UTC(+m[1], +m[2] - 1, +m[3]) : null;
+  }
+
+  function buildSlots() {
+    var e = earliestPickup();
+    var day = parseDateInput(dateIn.value);
+    var keep = timeIn.value;
+    timeIn.innerHTML = "";
+    var ph = document.createElement("option");
+    ph.value = ""; ph.textContent = day === null ? "Pick a date first" : "Choose a time";
+    timeIn.appendChild(ph);
+    for (var m = SLOT_FIRST; m <= SLOT_LAST; m += SLOT_STEP) {
+      var o = document.createElement("option");
+      o.value = pad(Math.floor(m / 60)) + ":" + pad(m % 60);
+      o.textContent = fmtMinutes(m);
+      if (day !== null && day + m * 6e4 < e.noticeMs) { o.disabled = true; o.textContent += " (too soon)"; }
+      timeIn.appendChild(o);
+    }
+    if (keep) {
+      var opt = timeIn.querySelector('option[value="' + keep + '"]');
+      if (opt && !opt.disabled) timeIn.value = keep;
+    }
+  }
+
+  function setupDate() {
+    var e = earliestPickup();
+    dateIn.min = isoDate(e.day);
+    dateIn.max = isoDate(e.day + 365 * DAY_MS);
+    earliestText.innerHTML = "Cakes need at least 72 hours notice. The earliest pickup right now is <strong>" +
+      prettyDate(e.day) + " at " + fmtMinutes(e.mins) + "</strong>. We're closed Mondays.";
+  }
+  setupDate();
+  buildSlots();
+
+  function fieldOf(el) { return el.closest(".field"); }
+  function setErr(el, msg) {
+    var f = fieldOf(el); if (!f) return;
+    f.classList.toggle("invalid", !!msg);
+    var e = f.querySelector(".err"); if (e) e.textContent = msg || "";
+    el.setAttribute("aria-invalid", msg ? "true" : "false");
+  }
+
+  function checkDate() {
+    var day = parseDateInput(dateIn.value);
+    if (day === null) return "Choose a pickup date.";
+    if (new Date(day).getUTCDay() === CLOSED_DAY) return "We're closed Mondays. Try Tuesday instead?";
+    var e = earliestPickup();
+    if (day < e.day) return "That's less than 72 hours away. Earliest is " + prettyDate(e.day) + ".";
+    return "";
+  }
+  function checkTime() {
+    if (!timeIn.value) return "Choose a pickup time.";
+    var day = parseDateInput(dateIn.value);
+    if (day !== null) {
+      var p = timeIn.value.split(":");
+      var ms = day + (+p[0] * 60 + +p[1]) * 6e4;
+      if (ms < earliestPickup().noticeMs) return "Needs to be at least 72 hours from now.";
+    }
+    return "";
+  }
+  function validate() {
+    var ok = true, first = null;
+    function run(el, msg) { setErr(el, msg); if (msg) { ok = false; if (!first) first = el; } }
+    var name = document.getElementById("f-name"), email = document.getElementById("f-email");
+    run(name, name.value.trim() ? "" : "Tell us your name.");
+    run(email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()) ? "" : "We need an email to confirm your order.");
+    run(dateIn, checkDate());
+    run(timeIn, checkTime());
+    ["f-size", "f-flavor", "f-frosting"].forEach(function (id) {
+      var el = document.getElementById(id);
+      run(el, el.value ? "" : "Please choose one.");
+    });
+    if (first) first.focus();
+    return ok;
+  }
+
+  dateIn.addEventListener("change", function () {
+    setupDate();
+    setErr(dateIn, checkDate());
+    buildSlots();
+  });
+  timeIn.addEventListener("change", function () { setErr(timeIn, checkTime()); });
+  form.addEventListener("input", function (e) {
+    var f = fieldOf(e.target);
+    if (f && f.classList.contains("invalid") && e.target !== dateIn && e.target !== timeIn) setErr(e.target, "");
+  });
+  dateIn.addEventListener("focus", function () { setupDate(); buildSlots(); });
+
+  var sent = document.getElementById("sent");
+  var copyArea = document.getElementById("order-copy");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    setupDate();
+    if (!validate()) return;
+    var v = function (id) { return document.getElementById(id).value.trim(); };
+    var day = parseDateInput(dateIn.value);
+    var p = timeIn.value.split(":");
+    var when = prettyDate(day) + " at " + fmtMinutes(+p[0] * 60 + +p[1]);
+    var lines = [
+      "Hi Crumb & Co, I'd like to order a custom cake.",
+      "",
+      "Name: " + v("f-name"),
+      "Email: " + v("f-email"),
+      "Phone: " + (v("f-phone") || "-"),
+      "",
+      "Pickup: " + when,
+      "Size: " + v("f-size"),
+      "Cake flavor: " + v("f-flavor"),
+      "Frosting / filling: " + v("f-frosting"),
+      "Writing on cake: " + (v("f-message") || "-"),
+      "",
+      "Notes: " + (v("f-notes") || "-"),
+      "",
+      "Thanks!"
+    ];
+    var body = lines.join("\n");
+    var subject = "Cake request: " + v("f-name") + ", pickup " + when;
+    copyArea.value = body;
+    window.location.href = "mailto:" + CAKE_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    form.style.display = "none";
+    sent.classList.add("show");
+    sent.focus();
+  });
+
+  document.getElementById("edit-btn").addEventListener("click", function () {
+    sent.classList.remove("show");
+    form.style.display = "";
+    document.getElementById("f-name").focus();
+  });
+  document.getElementById("copy-btn").addEventListener("click", function () {
+    var btn = this;
+    function done() { btn.textContent = "Copied!"; setTimeout(function () { btn.textContent = "Copy request"; }, 2000); }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(copyArea.value).then(done, function () { copyArea.select(); document.execCommand("copy"); done(); });
+    } else { copyArea.select(); document.execCommand("copy"); done(); }
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* ---- Motion (optional, only if GSAP loaded and user hasn't asked for less motion) ---- */
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduce && window.gsap) {
+    var gsap = window.gsap;
+    if (window.ScrollTrigger) gsap.registerPlugin(window.ScrollTrigger);
+
+    // hero entrance
+    var heroEls = document.querySelectorAll(".hero .reveal");
+    gsap.from(heroEls, { y: 26, opacity: 0, duration: .9, ease: "power3.out", stagger: .09, clearProps: "transform,opacity" });
+    gsap.from(".hero-art .plate", { scale: .92, opacity: 0, duration: 1.1, ease: "power3.out", delay: .15 });
+    gsap.from(".hero-art .tag", { y: 20, rotate: 4, opacity: 0, duration: .8, ease: "back.out(1.7)", delay: .7 });
+    gsap.fromTo(".steam path", { y: 8, opacity: 0 }, { y: -10, opacity: .55, duration: 2.2, ease: "sine.inOut", stagger: { each: .5, repeat: -1, yoyo: true } });
+    gsap.to(".flame", { scaleY: 1.12, scaleX: .92, transformOrigin: "50% 100%", duration: .5, yoyo: true, repeat: -1, ease: "sine.inOut" });
+
+    // scroll reveals for everything outside the hero
+    if (window.ScrollTrigger) {
+      var els = Array.prototype.filter.call(document.querySelectorAll(".reveal"), function (el) { return !el.closest(".hero"); });
+      window.ScrollTrigger.batch(els, {
+        start: "top 88%",
+        once: true,
+        onEnter: function (batch) {
+          gsap.fromTo(batch, { y: 28, opacity: 0 }, { y: 0, opacity: 1, duration: .8, ease: "power3.out", stagger: .08, overwrite: true, clearProps: "transform" });
+        }
+      });
+      // hide those not yet in view only after ScrollTrigger is ready (so no-JS / no-GSAP visitors always see content)
+      els.forEach(function (el) {
+        if (el.getBoundingClientRect().top > window.innerHeight * .88) gsap.set(el, { opacity: 0, y: 28 });
+      });
+      // gentle parallax on the loaf
+      gsap.to(".hero-art .loaf", { yPercent: -8, rotate: -3, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
+    }
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Queue - Postdesk</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Plan, approve and schedule your own LinkedIn posts. Posting goes through LinkedIn's official API and every post needs your approval.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230B6B5E'/%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='white' stroke-width='1.8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="build/design/tokens.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to the queue</a>
+
+<div class="proto" role="region" aria-label="Preview controls">
+  <div class="proto-in">
+    <label for="viewState">Preview state</label>
+    <select id="viewState">
+      <option value="populated">Populated</option>
+      <option value="empty">Empty queue</option>
+      <option value="loading">Loading</option>
+      <option value="failed">A post failed to publish</option>
+      <option value="expired">LinkedIn connection expired</option>
+    </select>
+    <span class="proto-note">Prototype with sample data. Nothing is sent to LinkedIn.</span>
+  </div>
+</div>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <span class="brand">Postdesk <span class="brand-note">working name</span></span>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html" aria-current="page">Queue</a></li>
+        <li><button type="button" class="navlink" data-action="settings">Settings</button></li>
+      </ul>
+    </nav>
+    <button type="button" class="conn" id="connChip" data-action="settings"></button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div id="notice" class="alert alert-info" role="status" hidden></div>
+  <div id="banner"></div>
+
+  <div class="page-head">
+    <div>
+      <h1>Queue</h1>
+      <p class="sub" id="subline"></p>
+    </div>
+    <button type="button" class="btn btn-primary head-new" id="newPost">New post</button>
+  </div>
+
+  <div class="work">
+    <section class="listcol" aria-labelledby="listTitle">
+      <h2 id="listTitle" class="sr-only">Posts</h2>
+      <div class="seg" role="group" aria-label="Show posts">
+        <button type="button" data-filter="upcoming" aria-pressed="true">Upcoming <span class="n" id="nUp"></span></button>
+        <button type="button" data-filter="published" aria-pressed="false">Published <span class="n" id="nPub"></span></button>
+      </div>
+      <div id="list" class="list" aria-live="off"></div>
+    </section>
+
+    <aside class="editor" id="editor" aria-labelledby="edTitle">
+      <div class="ed-empty" id="edEmpty">
+        <h2 id="edTitleEmpty">No post open</h2>
+        <p>Pick a post from the list to read or edit it, or start a new one.</p>
+      </div>
+      <form class="ed-form" id="edForm" novalidate hidden>
+        <div class="ed-head">
+          <div>
+            <h2 id="edTitle" tabindex="-1">Edit post</h2>
+            <span id="edBadge"></span>
+          </div>
+          <button type="button" class="btn btn-text" id="edClose"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg><span id="edCloseLabel">Close</span></button>
+        </div>
+
+        <div id="edAlert"></div>
+
+        <div class="field">
+          <label for="body">Post text</label>
+          <textarea id="body" rows="11" aria-describedby="count bodyHelp"></textarea>
+          <div class="field-meta">
+            <span id="bodyHelp" class="help">Text only in this release.</span>
+            <span id="count" class="count"></span>
+          </div>
+        </div>
+
+        <div class="when">
+          <div class="field">
+            <label for="date">Date</label>
+            <input type="date" id="date" aria-describedby="whenHelp">
+          </div>
+          <div class="field">
+            <label for="time">Time</label>
+            <input type="time" id="time" aria-describedby="whenHelp">
+          </div>
+        </div>
+        <p class="help" id="whenHelp"><span id="tzLine"></span> <span id="whenErr" class="err" hidden></span></p>
+
+        <div class="ed-foot">
+          <button type="button" class="btn btn-danger-text" id="delBtn">Delete draft</button>
+          <div class="ed-actions">
+            <button type="button" class="btn btn-secondary" id="secBtn"></button>
+            <button type="button" class="btn btn-primary" id="priBtn"></button>
+          </div>
+          <p class="why" id="why"></p>
+          <p class="saved" id="savedLine"></p>
+        </div>
+      </form>
+    </aside>
+  </div>
+
+  <p class="foot">Sample data. Posts publish only after you approve them, and only through LinkedIn's official sign-in and posting access.</p>
+</main>
+
+<div class="bottombar" id="bottomBar">
+  <button type="button" class="btn btn-primary btn-block" id="newPostPhone">New post</button>
+</div>
+
+<dialog id="delDialog" aria-labelledby="delTitle">
+  <form method="dialog">
+    <h2 id="delTitle">Delete this draft?</h2>
+    <p id="delText">The draft will be removed from your queue. This cannot be undone.</p>
+    <div class="dlg-actions">
+      <button type="button" class="btn btn-secondary" id="delCancel">Cancel</button>
+      <button type="button" class="btn btn-danger" id="delConfirm">Delete draft</button>
+    </div>
+  </form>
+</dialog>
+
+<div class="sr-only" id="live" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
