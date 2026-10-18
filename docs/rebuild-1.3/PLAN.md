@@ -2,6 +2,7 @@
 
 **Owner:** Altaz Lavji · **Written:** October 17, 2026 · **Branch:** `feat/v1.3-beat-opus` · **Repo:** `aiwithaltaz/shipright-skills`
 **Status of this plan:** Approved direction from Altaz (October 16). Every individual skill change stays **Proposed** until Altaz approves it at the end of each phase.
+**Updated October 18:** added Stage 0 (Discover and improve an existing app), the pain-to-fix map, the layout pass, the component system, the motion system, and two "improve my existing app" eval cases (c7 with a real answer key, c8). This is where ShipRight wins: it improves products the way Altaz improved IVC.
 
 > **Grok, read this whole file before you change anything.** It is your brief, your rules and your definition of done. It also contains the evidence of what "Opus quality" looks like, so you can copy the moves, not guess them.
 
@@ -60,7 +61,7 @@ Score: **5.3 / 10.** Ranked gaps:
 10. Slow: four gates with 38 rows cost a small model time and focus.
 
 ### 1.3 The scoreboard (already committed on this branch)
-`evals/v2/` holds the frozen protocol: `cases.json` (6 cases), `rubric.md` (10 areas, 1 to 10 each, hard caps), `grader-prompt.md`, and tools (`prepare.py`, `render.mjs`, `anonymize.py`, `aggregate.py`).
+`evals/v2/` holds the frozen protocol: `cases.json` (8 cases; c7 and c8 added October 18 before any grading), `rubric.md` (10 areas, 1 to 10 each, hard caps), `grader-prompt.md`, and tools (`prepare.py`, `render.mjs`, `anonymize.py`, `aggregate.py`).
 
 **Win rules (owner decision, October 16):**
 - Sonnet + ShipRight scores higher than **Opus (high effort) alone** on **every** case. A gap under 0.5 is a tie, not a win.
@@ -135,6 +136,26 @@ Opus wrote these sections. ShipRight's PRD template has none of the starred ones
 
 **The strategy in one line:** copy Opus's thinking moves into templates, keep ShipRight's honesty, and add the testing Opus skips.
 
+### 2.5 The human bar: how IVC was designed (this is the real target)
+Opus is the bar for a new idea. **Altaz's IVC process is the bar for improving a product.** Read `docs/rebuild-1.3/IVC-HANDOFF.md` (the full master handoff) and `examples/ivc-2026-registration/feedback/shipright-learning.md` (27 real review items, F01 to F27, on the v1 prototype).
+
+What Altaz did, in order, and what ShipRight must do the same way:
+
+| Step | What Altaz did on IVC | Real example |
+|---|---|---|
+| 1. Use it for real | Walked the v1 desk as a volunteer would, task by task | Found that lookup works only by phone (F05) |
+| 2. Say what works | Named what to keep before changing anything | "Keep the clean list, View dialog and ticket preview" (F23) |
+| 3. Find the pains | Listed each pain with where it shows | "A 17-year-old learns about the parent signature too late" (F06) |
+| 4. Find the cause | Separated the symptom from the cause | Cause: prerequisites are checked at the end, not at lookup |
+| 5. Pick a fix that teaches a pattern | Each fix became a reusable rule | P1: put the next action on the search result |
+| 6. Structure the layout | Reordered, grouped, moved controls to the work, aligned, enlarged the key thing | Registrations table rebuilt: Attendee / T-shirt / Desk / Status / Payment / Donation / next step + ⋮ |
+| 7. One system | One design system for desk and public site, same labels and status meanings | Status badges on the name row; same buttons everywhere |
+| 8. Components | Custom dropdown, chips, stepper, full-border selection, field formats | No native selects; "Next: Waivers →" |
+| 9. Motion with a job | Animation only where it helps; scoped; off under reduced motion | Scoped class fix after the `.note` loop bug |
+| 10. Test and log | Before/after images, a test per interaction, a log row per item | 131 home checks, 54 map/game checks |
+
+**The win in one line:** every design decision traces back to a pain point, with evidence, and forward to a test. Agencies do this. AI tools do not.
+
 ---
 
 ## 3. How Altaz thinks (the owner model ShipRight must simulate)
@@ -180,6 +201,17 @@ For every element, ask in order. One bad answer means it goes:
 - Errors on blur or submit, never while typing. An error never pushes its neighbour.
 - Motion: line mask reveals on titles, 24px fade-up with 70ms stagger, easing cubic-bezier(.22,1,.36,1). Everything visible with no JS. Everything off under reduced motion. Scope every animation class.
 
+### 3.4b His 7 layout moves (Universal, used in the layout pass, P2.11)
+| Move | Rule | IVC example |
+|---|---|---|
+| Reorder by priority | Order sections by what the user needs first. Re-check when importance changes. | Perform page: title + deadline + form first, FAQ below |
+| Group related things | Group by meaning. Secondary facts sit beside their main fact. | Emergency contact and Other details as sections; status badges on the name row |
+| Move controls to the work | The fix lives where the problem shows. | Next action on the search result card |
+| Align to the grid | Edges line up across columns. | Review card starts level with the form card |
+| Make the key thing bigger | One hero element per screen gets size and contrast. Demote the rest. | "The map is the highlight": bigger, dark stage |
+| Simplify the interaction | Fewer steps. Show the target. Make the basic action automatic. | Tick-to-select replaced add-to-visit → visit card → start visit |
+| Make state obvious | State is visible and looks like what it is. | Finished step = green check; disabled value = disabled control |
+
 ### 3.5 His process (Universal for the build and feedback stages)
 Before/after images every round, a test for every interaction, a feedback log row per item (feedback → decision → status → why), push only on "push it", verify the live site after deploy.
 
@@ -188,21 +220,22 @@ Before/after images every round, a test for every interaction, a feedback log ro
 ## 4. The target design of ShipRight 1.3
 
 ### 4.1 The promise (new README headline)
-"From idea to tested product, like a top product team you would hire. Research, ideas, plan, design system, designs, build, and real tests, in one skill."
+"From idea to tested product, or from a clunky app to a great one, like a top product team you would hire. Every design decision traces to a real pain point and ends in a test."
 
-### 4.2 The 10 stages
-A new project runs all of them in order. An existing app or a feedback round runs only the stages it needs (section 4.5).
+### 4.2 The stages (0 to 10)
+A new project runs stages 1 to 10 in order. An existing app runs stage 0, then 1 (light: domain, rules, alternatives), then 4 to 10 for the approved fixes. A feedback round runs only what it needs (section 4.5).
 
 | # | Stage | Job | Main output (template) | Gate (yes/no, all must be yes) |
 |---|---|---|---|---|
+| 0 | **Discover** (existing app only) | Use the app like a real user. Say what works, what hurts and what is missing, with evidence. Turn pains into a ranked fix map. | `discovery.md` + `pain-map.md` | Every screen visited and captured. Core tasks walked and timed. Each pain has evidence and a cause. Keeps listed. Fix map ranked. Owner asked for real complaints. |
 | 1 | **Research** | Know the users, alternatives, rules and money facts before ideas. | `research-brief.md` | 3+ real alternatives named. Platform, legal and data rules checked. Every fact tagged Verified (with source) or Assumed. |
 | 2 | **Brainstorm** | Find the one sharp idea. | `concepts.md` (3 concept cards, scored, one picked) | 3 concepts differ in **mechanism**, not features. "The decision in one line" written. |
 | 3 | **Problem solving** | Find the hard problems and answer each. | `risks.md` (risk register) | Every risk has a concrete design or tech decision. Platform rules get a feature-by-feature verdict. |
 | 4 | **Scope and pages** | Keep the core value, cut the rest, list every page. | `scope.md` (core loop, MVP, value floor, page inventory, flows named after real moments) | Value floor kept. Every page marked Needed / Not needed / Later with a reason. |
 | 5 | **Architecture** | Make it buildable. | `architecture.md` | Stack with reasons and switch points. Data model tables with fields. Access rules. Secrets by name only. Budgets. Costs per month. |
-| 6 | **Design system** | Real tokens and components with states. | `DESIGN.md` + `tokens.css` + `/design` preview page | Contrast measured by script. Spacing on the scale. Every component has its states. |
-| 7 | **Design options** | Show 3 truly different directions, pick one. | `options.md` (+ 3 small previews) | Options differ in story or layout device, not color. One chosen with a reason, marked Proposed. |
-| 8 | **Build** | Build with tested blocks and the screen patterns. | The app or site | Uses blocks where they fit. Labeled sample data. No dev controls visible. |
+| 6 | **Design system** | The system the owner wants, real tokens, components with states. | `DESIGN.md` + `tokens.css` + `components.md` + `/design` preview page | System choice recorded. Contrast measured by script. Spacing on the scale. Every component has its states. One status table and one label table. |
+| 7 | **Layout and options** | Structure every screen with the layout pass, then show 3 truly different directions and pick one. | `layout-spec.md` + `options.md` (+ grey wireframes and 3 small previews) | Each screen has a job, one primary action, ordered zones and a hero element. Options differ in story or layout device, not color. One chosen with a reason, marked Proposed. |
+| 8 | **Build** | Build from the layout spec with tested blocks, the components and purposeful motion. | The app or site | Matches the layout spec. Uses only listed components. Blocks where they fit. Motion has a job and a reduced-motion version. Labeled sample data. No dev controls visible. Each change names its pain ID (existing apps). |
 | 9 | **Test and critique** | Prove it works and looks right. | `test-report.md` + screenshots | All scripted tests pass at 390 and 1280. Fresh-eyes critique done or marked Not verified. Fix loop up to 3 rounds. |
 | 10 | **Ship check** | Launch readiness. | `ship-check.md` | 20 items with Pass / Fail / Not verified / Not applicable and evidence. |
 
@@ -215,6 +248,7 @@ The five old mode names stay as **entry points** so installs do not break:
 | ui-ux-design | 6 to 8 (plus 9 for checks) |
 | ux-critique | 9 only |
 | ship-check | 10 only |
+| improve (new: "review my app", "make it better", "what's wrong with it") | 0, then 1 (light), then 4 to 10 for the approved fixes |
 | feedback round (new, for exact owner feedback on existing work) | feedback protocol, then 8 and 9 for the changed parts |
 
 ### 4.3 The facts ladder (replaces the over-strict truth rule)
@@ -233,12 +267,14 @@ Every piece of content is one of five kinds. This is the most important rule cha
 ### 4.4 The installed skill folder (everything a user needs travels with it)
 ```
 skills/shipright/
-  SKILL.md                     router + the 10 stages + core rules (<= 1,600 words)
+  SKILL.md                     router + the stages (0 to 10) + core rules (<= 1,600 words)
   stages/
+    00-discover.md
     01-research.md  02-brainstorm.md  03-problem-solving.md  04-scope-and-pages.md
     05-architecture.md  06-design-system.md  07-design-options.md  08-build.md
     09-test-and-critique.md  10-ship-check.md  feedback-round.md
   templates/                   fill-in files the model copies and completes
+    discovery.md  pain-map.md  user-test-script.md  layout-spec.md  components.md
     research-brief.md  concepts.md  risks.md  scope.md  architecture.md
     DESIGN.md  tokens.css  options.md  screen-spec.md  act-plan.md
     build-prompt.md  test-plan.json  test-report.md  critique.md  ship-check.md
@@ -248,6 +284,8 @@ skills/shipright/
     web-pages.md               the six-act story, W1 to W4, product on stage
     system-pages.md            404, 500, empty, error, auth, legal templates
     copy.md                    UI writing rules and examples
+    layout-moves.md            the 7 layout moves and the layout pass procedure
+    motion.md                  motion tokens, app micro-interactions, tool decision table
   blocks/                      tested, self-contained code (section 6.3)
     web/  app/  fonts/  README.md (block catalog: when to use, attributes, size)
   scripts/
@@ -255,6 +293,8 @@ skills/shipright/
     run-tests.mjs              runs templates/test-plan.json with Playwright
     check-tokens.mjs           contrast pairs and spacing scale from tokens.css
     shoot.mjs                  screenshots at 390 and 1280, scroll frames
+    crawl.mjs                  visits every reachable screen of an existing app, captures it, lists its parts
+    consistency.mjs            finds the same job done with different labels, buttons, colors or status meanings
   taste/
     altaz.md                   opt-in profile (section 3)
   reference/                   old long references, trimmed; only for deep work
@@ -265,7 +305,8 @@ skills/shipright/
 | The user brings | Do |
 |---|---|
 | A new idea (any words, including "just build it") | Stage 1. Decision cards first only if the idea is too vague to research (see 4.7). |
-| An existing app or screen plus "review" | Stage 9 only. |
+| An existing app plus "review it", "make it better", "what's wrong", "improve" | Stage 0 Discover, then the improve path (4.2). |
+| A finished build plus "check it" or "critique this" | Stage 9 only. |
 | Exact feedback with screenshots or crops | `feedback-round.md`, then 8 and 9 for the changed parts. |
 | "Is it ready to launch?" | Stage 10. |
 | A single design question | Answer it. Load only the pattern file it needs. |
@@ -289,16 +330,16 @@ Update `evals/context-policy.json` and `evals/check_context.py` to this layout.
 
 ---
 
-## 5. Phase 1: Foundation (days 1 to 4)
+## 5. Phase 1: Foundation (days 1 to 5)
 
 **Goal:** a short, clear spine that every model can follow, the checker inside the skill, the facts ladder, research and brainstorm stages that produce Opus-level thinking, and a graded baseline.
 
 ### P1.1 Finish and grade the baseline
-- **Do:** run the missing baseline runs with the exact prompt in `evals/v2/README.md`: c4 Sonnet + v1.2, c5 Opus (high) alone, c5 Sonnet + v1.2. Pack snapshot = `skills/shipright` at `9cb0e47` (v1.2). Use `python3 -I evals/v2/tools/prepare.py`.
+- **Do:** run the missing baseline runs with the exact prompt in `evals/v2/README.md`: c4 Sonnet + v1.2, c5 Opus (high) alone, c5 Sonnet + v1.2, and c7 and c8 for both arms (new cases). Run pain recall on both c7 runs. Pack snapshot = `skills/shipright` at `9cb0e47` (v1.2). Use `python3 -I evals/v2/tools/prepare.py`.
 - **Who runs it:** the run agents must be Claude Sonnet and Claude Opus (high effort). Grok cannot be a run arm. Altaz launches them in Claude Code, or you call the Anthropic API if he gives you a key. Prepare the folders and the 3 prompts as files so he can paste them.
 - **Grade:** 3 blind graders per case with `grader-prompt.md`. Use **different model families** to cut bias: grader 1 = Claude Opus, grader 2 = Grok 4.7, grader 3 = GPT or Gemini if available, otherwise a second Claude Opus. Shuffle labels per grader (`anonymize.py` does this). Aggregate with `aggregate.py`.
 - **Save:** `evals/v2/results/baseline-1.2.md` and `.json`. Commit the run folders under `evals/v2/runs/baseline-1.2/`.
-- **Done when:** 6 cases × 2 arms are graded, and the log lists the top 3 grader fixes per arm.
+- **Done when:** 8 cases × 2 arms are graded, and the log lists the top 3 grader fixes per arm.
 
 ### P1.2 Move the tools inside the skill
 - **Do:** move `scripts/check-ui.mjs` to `skills/shipright/scripts/check-ui.mjs` (keep a thin wrapper at the old path that imports the new one). Create `skills/shipright/templates/` from the useful parts of `docs/` templates. Update `scripts/release_skill.py` so `shipright.zip` contains `scripts/`, `templates/`, `patterns/`, `blocks/`.
@@ -309,7 +350,7 @@ Update `evals/context-policy.json` and `evals/check_context.py` to this layout.
 - **Do:** replace `skills/shipright/SKILL.md`. Contents, in this order:
   1. What ShipRight does in 2 lines.
   2. Routing table (4.5).
-  3. The 10 stages table (4.2) with the file to open for each.
+  3. The stages table (4.2) with the file to open for each.
   4. Core rules, max 12 lines: facts ladder (4.3), removal test (3.3), no dev controls visible, Proposed vs Approved, silence is not approval, nothing ships without the owner, test before you claim, simple English.
   5. Questions before work (4.7).
   6. The reply format (template `reply.md`).
@@ -361,17 +402,44 @@ Update `evals/context-policy.json` and `evals/check_context.py` to this layout.
 - Delete the stray `skills/ui-ux-design/references/operator-workspaces.md`.
 - Move eval history out of README into `docs/HISTORY.md`.
 - Merge the four gates (Pack check, Pre-flight, Audit, Decision gate) into the stage gates in 4.2. Keep old IDs only where tests depend on them, and update the tests.
+- Update `AGENTS.md` (maintainer rules) to the new layout: stages, templates, patterns, blocks, scripts. Its old rule "keep references under each mode's references/" and the gate IDs change with Altaz's approval at the Phase 1 gate.
 - Fix contradictions: "exactly three options" everywhere; website stack lives only in `stages/05-architecture.md` (premium public site = Vite + Three.js or React Three Fiber + GSAP + Lenis; calm content site or no product object = Astro).
+
+### P1.9 Stage 0: Discover and improve (`stages/00-discover.md` + templates `discovery.md`, `pain-map.md`, `user-test-script.md` + `scripts/crawl.mjs`)
+This is the stage that makes ShipRight different. Build it with the same care as research.
+
+**What the stage tells the model to do:**
+1. **Inventory.** Run `node <skill>/scripts/crawl.mjs <url-or-index.html>`. It follows every link, button that changes the view, and hash route it can reach, signs in with demo accounts when offered, and saves for each screen: screenshots at 390 and 1280, the H1, the visible actions, form fields, and console errors. Without the script, visit screens by hand and record the same. Output: a screen table (screen, job, primary action, number of actions, states seen).
+2. **Walk the core tasks.** Pick the 3 to 5 tasks the app exists for (from its own labels, docs and data). Walk each one as a first-time user. Record every step: clicks, typing, waits, scrolls, dead ends, unclear words, places where you had to remember something. Count the steps and screens per task.
+3. **Say what works first.** List what works and why (clear patterns, good copy, useful data). These become **Keeps**: locked unless the owner says otherwise. A review that only criticizes is not trusted.
+4. **List the pains.** Each pain has: ID, what happens, where (screen + screenshot), who it hurts, how often (Found by walk-through, or Reported by the owner or users), severity (Blocker, Major, Polish), and **cause** (one of: layout, flow, copy, missing feature, data model, rules or prerequisites, performance, trust, access).
+5. **Run the lenses** on every screen: the removal test (3.3), the 7 layout moves (3.4b), F1 to F3 (exit, consistency, status), the app patterns A1 to A7, accessibility basics, and `node <skill>/scripts/consistency.mjs` (same job, different label or style).
+6. **Find what is missing.** Use stage 1 light research (domain, rules, alternatives) and the page inventory (P2.1) to list missing jobs and pages. Ask "what starting points exist?" (IVC: lookup by phone only missed name lookup, child-first entry and returning visitors).
+7. **Ask for the real pains.** Show the owner the top findings and ask: "What do your users complain about most?" Give `user-test-script.md`: a 10-minute script for 3 real users (3 tasks, think aloud, what to note, no leading questions). Owner and user pains are tagged **Reported**; walk-through pains are tagged **Found**. Never invent user quotes.
+8. **Build the pain-to-fix map** (`pain-map.md`), one row per pain:
+
+| ID | Pain | Evidence | Cause | Fix options (2) | Chosen fix | Pattern or rule it uses | Screen and component | Test that proves it | Impact 1-5 | Confidence 1-5 | Effort 1-5 | Now / Next / Later |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+
+Worked row (from IVC, F06): "A 17-year-old learns about the parent signature too late" · walk-through step 6 of 9, screenshot · cause: prerequisites checked at the end · options: (a) warn at review, (b) show needs at lookup · chosen (b) · pattern P1 "next action on the search result" · Search result card + status badges · test: searching a 17-year-old shows "Parent signature needed" before any form · 5 / 5 / 2 · Now.
+
+9. **Rank** by (Impact × Confidence) ÷ Effort. "Now" holds what fits one release. Group Now items into **3 to 5 themes** (for example "find people faster", "never surprise the volunteer"), because owners approve themes faster than 30 rows.
+10. **Propose.** Reply with: what works (Keeps), the top pains with screenshots, the themes, the Now list, and up to 4 decision cards for real choices. In "you decide" mode, continue with the Now list as Proposed (delegated).
+11. Then run stages 4 to 10 for the Now items only. Every built change names its pain ID in the build log and in the test plan. **Traceability check:** no built change without a pain ID; no Now pain without a test.
+
+**Templates:** `discovery.md` (screen table, task walk tables, keeps, pains, missing jobs), `pain-map.md` (the table above plus themes), `user-test-script.md`.
+**Script:** `crawl.mjs` with a test that crawls `evals/v2/cases/c7-ivc-app/app` and finds the sign-in screen, the desk, the registrations list and reports.
+**Done when:** on c7, pain recall (answer key) is 60% or more in the smoke eval, and 70% or more at release.
 
 ### Phase 1 gate (stop and report to Altaz)
 - Baseline graded, with the score table.
 - New SKILL.md, stages 1 to 3 and their templates, tools inside the skill.
-- **Smoke eval:** Sonnet + 1.3-draft on c1 and c3 only, 3 graders. Target: area 1 (research) and area 2 (concept) at 8 or higher, and higher than Opus on those two areas.
+- **Smoke eval:** Sonnet + 1.3-draft on c1, c3 and c7, 3 graders, plus pain recall on c7. Target: area 1 (research) and area 2 (concept) at 8 or higher and higher than Opus; c7 pain recall 60% or more.
 - Questions for Altaz (max 4, recommended first).
 
 ---
 
-## 6. Phase 2: Design and build engine (days 5 to 10)
+## 6. Phase 2: Design and build engine (days 6 to 12)
 
 **Goal:** screens and sites that look and work like Opus or better, built on tested code, with a design system that is measured, not described.
 
@@ -401,8 +469,9 @@ Sections: stack table (choice, reason, switch point); data model (every table, f
 Keep the current `stack-choices.md` table (it is good) and the "fit the user's tool" table.
 
 ### P2.3 Stage 6: Design system (`stages/06-design-system.md` + `templates/DESIGN.md` + `templates/tokens.css`)
-1. If the owner has a system or Figma: extract it, mark Observed, reuse it. Done.
-2. Otherwise start from one of the 4 starter systems (keep `starter-systems.md`, trimmed), then **adapt from the product** (move W3): the accent comes from the product or its world (keycap yellow, crust brown, field green).
+1. **Ask which system the owner wants** (one decision card): (a) their own system, code tokens or a Figma file; (b) a known system (shadcn/ui, Radix Themes, Material 3, Apple HIG, IBM Carbon, Tailwind defaults); (c) a ShipRight starter adapted to the product. For an existing app the default is (a): extract what the app already uses, mark it Observed.
+   - For (a) and (b), map the system into ShipRight's token roles with a short **token adapter** table (their name → our role), so the components, blocks and checks all work on top of it. Never redesign an owner's system without approval.
+2. For (c), start from one of the 4 starter systems (keep `starter-systems.md`, trimmed), then **adapt from the product** (move W3): the accent comes from the product or its world (keycap yellow, crust brown, field green).
 3. Tokens with numbers: type scale (size/line-height pairs), spacing scale (3.4), color roles (bg, surface, text, muted, border, accent, success, warning, danger, focus), radii, shadows, motion durations and easing.
 4. Run `node <skill>/scripts/check-tokens.mjs tokens.css`: prints every text/background pair with its contrast ratio, fails under 4.5:1 for body text and 3:1 for large text and UI borders, and fails off-scale spacing values.
 5. Components with all states: button (default, hover, active, focus, disabled, loading), field (empty, filled, focus, error, disabled), select (custom, keyboard), table row (default, hover, selected, focus), badge, toast, dialog, empty state, error state, skeleton.
@@ -451,7 +520,7 @@ This is the biggest lever for premium quality on mid-size models. Write **your o
 | `scroll-rail` | Vertical scroll drives a horizontal track of cards. | ednaho |
 | `counter-preloader` | 0 to 100 counter that hides warm-up, with Skip, bypassed under reduced motion. | Monolith, Zero |
 
-**App blocks (8):**
+**App blocks (9):**
 | Block | Job |
 |---|---|
 | `app-shell` | Left sidebar (logo, nav with icons and count pills, profile bottom-left), slim top bar, phone drawer. No dot on active item. |
@@ -462,10 +531,11 @@ This is the biggest lever for premium quality on mid-size models. Write **your o
 | `custom-select` | Full keyboard dropdown (arrows, Home/End, type-ahead, Enter, Escape), flips near bottom. |
 | `form-kit` | Field masks (phone), blur validation, errors that do not shift neighbours, Back ← / Next →. |
 | `states-kit` | Empty, loading skeleton, error with retry, success toast, offline banner, 404 and 500 pages. |
+| `app-motion-kit` | The micro-interactions in P2.13 as small functions with CSS: selection, stepper, FLIP list, toast, count-up, success check. |
 
 `blocks/README.md`: one line per block (name, job, size, attributes). This is the only block text a model reads before choosing.
 
-**Done when:** all 16 blocks pass their tests; each block screenshot is in `blocks/shots/`.
+**Done when:** all 17 blocks pass their tests; each block screenshot is in `blocks/shots/`.
 
 ### P2.7 Stage 8: Build (`stages/08-build.md` + `templates/build-prompt.md`)
 1. Build the design system preview first (`/design`), screenshot it.
@@ -488,6 +558,8 @@ This is the biggest lever for premium quality on mid-size models. Write **your o
 - No WebGL (when a canvas exists): the same words and a still product image.
 - Labels: Sample and Illustrative content has its visible label.
 - Key text does not move when it should not (scoped animation check, from the IVC `.note` bug).
+- `consistency.mjs` passes (P2.12).
+- For an existing app: every Now pain in `pain-map.md` has a passing test, and before/after screenshots exist for every changed screen.
 
 **Critique:** use `templates/critique.md`: the removal test per screen, the patterns check list, the taste questions (below), and severity (Blocker, Major, Polish). **The builder cannot give itself a Pass on taste.** If the tool can start a fresh agent with no build history, that agent critiques. If not, taste stays **Not verified** in the reply.
 
@@ -516,17 +588,62 @@ From the IVC handoff section 2.2, as steps:
 ### P2.10 Taste profile (`taste/altaz.md`)
 Rewrite from section 3 with numbers. Fix the 12px conflict (Altaz's scale has no 12 gap). Opt-in only: used when the owner is Altaz or a project selects it.
 
+### P2.11 Layout pass (`patterns/layout-moves.md` + `templates/layout-spec.md`)
+Structure before skin. For every screen, before any styling:
+1. Write the screen job and its one primary action.
+2. List every content block the screen needs (from scope and the pain map).
+3. Order them by what the user needs first (move 1).
+4. Group by meaning; secondary facts beside their main fact (move 2).
+5. Place each control where its work happens (move 3).
+6. Choose the grid: columns, gutters, max widths. Edges line up (move 4).
+7. Pick the one hero element and size it up; demote the rest (move 5).
+8. Cut steps: show the target, make the basic action automatic (move 6).
+9. Make every state visible and looking like what it is (move 7).
+10. Run the removal test (3.3). Remove what fails.
+11. Write the result in `layout-spec.md`: zones (top to bottom, left to right), block order, grid numbers, widths at 390 and 1280, the hero element, and for an existing app a **before → after** list with the pain ID for each change.
+12. Draw a quick wireframe (boxes and labels in HTML, grey only) and screenshot it before styling.
+`patterns/layout-moves.md` holds the 7 moves with rule, why, good, bad and a check each, plus the IVC examples from 3.4b.
+
+### P2.12 Component system and consistency (`templates/components.md` + `scripts/consistency.mjs`)
+1. After the layout specs, list every UI element used on every screen.
+2. Merge look-alikes into one component (one button family, not five). Decide variants and sizes.
+3. For each component: variants, all states (P2.3 list), tokens used, accessibility notes, and which screens use it.
+4. Write a **status table**: every status the product has (Draft, Waiting on parent, Paid...), its one label, one color role and one icon. The same meaning never gets two looks; two meanings never share one.
+5. Write a **label table** for repeated actions (Save, Continue, Cancel, Remove) so the same job has the same word everywhere.
+6. Build from blocks and these components only.
+7. `consistency.mjs` scans the rendered pages: button texts and styles, badge texts and colors, heading sizes, spacing values. It flags the same label with different styles, different labels for the same action (from the label table), off-token colors and off-scale spacing. It runs in stage 9.
+
+### P2.13 Motion system (`patterns/motion.md` + app block `app-motion-kit`)
+1. **Motion tokens:** durations 120ms (small state), 200ms (enter and exit), 320ms (panels and dialogs), 600ms+ (scroll and story only); easing `cubic-bezier(.22,1,.36,1)` for enter, `cubic-bezier(.4,0,1,1)` for exit; stagger 70ms.
+2. **Every animation has a job:** feedback (it worked), orientation (where it went), continuity (same thing, new place), or one-time delight. No job, no animation.
+3. **App micro-interactions catalog** (in `app-motion-kit`, tested): selection (border and check), stepper progress, list add and remove (FLIP), toast in and out, skeleton to content, dialog open and close, number count-up, drag to reorder, success check, error shake (small, once).
+4. **Tool decision table** (Grok: confirm each license and current size from the official docs and GitHub before writing it; record the date):
+
+| Need | Use | Fallback | Reduced motion |
+|---|---|---|---|
+| State changes, hovers, small enters | CSS transitions and keyframes | none needed | instant change |
+| List reorder, shared element, small JS motion | Web Animations API (or Motion One) | CSS | instant |
+| Scroll timelines, pinned scenes, staged reveals | GSAP + ScrollTrigger | CSS scroll-driven animation where supported | content in normal flow, no scrub |
+| Smooth inertial scroll on marketing pages | Lenis, desktop and fine pointer only | native scroll | off |
+| A real 3D product or scene | Three.js, or React Three Fiber in React apps | still image | still image |
+| Interactive vector characters, toggles with states | Rive | SVG + CSS | first frame |
+| Designer-made playback animations | Lottie | SVG still | first frame |
+| Games, particles, custom drawing | Canvas 2D | still image | still |
+| Video for marketing or social | Remotion (not for in-app UI) | n/a | n/a |
+
+5. Rules from IVC: scope every animation class; never animate what was not asked for; everything readable with no JS; off under reduced motion; 3D tilted elements lie flat when zoomed; bump the cache version on changed scripts.
+
 ### Phase 2 gate (stop and report)
-- All stages 4 to 9 written, patterns, 16 blocks with passing tests, scripts.
-- **Smoke eval:** Sonnet + 1.3-draft on c2 (dashboard) and c5 (3D site), 3 graders. Target: 8.5+ on both, above Opus on both.
+- All stages 4 to 9 written, patterns, 17 blocks with passing tests, scripts.
+- **Smoke eval:** Sonnet + 1.3-draft on c2 (dashboard), c5 (3D site) and c8 (improve an existing app), 3 graders. Target: 8.5+ on all three, above Opus on all three.
 - Before/after screenshots of the same case (v1.2 vs 1.3-draft).
 
 ---
 
-## 7. Phase 3: Prove it, polish it, open the PR (days 11 to 14)
+## 7. Phase 3: Prove it, polish it, open the PR (days 13 to 16)
 
 ### P3.1 Full eval round
-- All 6 cases × Sonnet + 1.3 and Haiku + 1.3 (Haiku is report only). Opus (high) alone comes from the baseline, so do not rerun it unless the rubric changes.
+- All 8 cases × Sonnet + 1.3 and Haiku + 1.3 (Haiku is report only). Pain recall on c7 for every arm. Opus (high) alone comes from the baseline, so do not rerun it unless the rubric changes.
 - 3 blind graders per case, mixed model families (P1.1).
 - Aggregate to `evals/v2/results/release-1.3.md`.
 - **Win check:** Sonnet + 1.3 beats Opus on every case by 0.5 or more, and the release score is 9.3 or more.
@@ -560,7 +677,7 @@ Fixed requirements from the audit:
 Run stage 9 tests on it. Do not deploy. Vercel config stays.
 
 ### P3.5 README, changelog, release notes
-- README: new promise (4.1), install table, a 3-image proof strip (Opus alone vs Sonnet + ShipRight on 3 cases), the score table with limits, "how it works" (10 stages in one table). History moves to `docs/HISTORY.md`.
+- README: new promise (4.1), install table, a 3-image proof strip (Opus alone vs Sonnet + ShipRight on 3 cases), the score table with limits, "how it works" (the stages in one table). History moves to `docs/HISTORY.md`.
 - `CHANGELOG.md`: 1.3.0 entry. `RELEASE-NOTES.md`: what changed and the evidence. Do not tag.
 
 ### P3.6 Pull request
@@ -580,6 +697,9 @@ Win check passed, PR open, Altaz has the screenshots and the 4 questions he need
 - `python3 evals/check_sources.py` and `--self-test`.
 - `python3 evals/check_context.py` with the new policy.
 
+### 8.1b Script tests
+`crawl.mjs` on the c7 app finds sign-in, desk, registrations and reports. `consistency.mjs` flags a seeded page with two labels for one action and two colors for one status. `check-tokens.mjs` fails a seeded low-contrast pair.
+
 ### 8.2 Block tests (every block change)
 `node tests/blocks/run.mjs` renders each block at 390 and 1280, reduced motion, no WebGL, and its interaction.
 
@@ -598,18 +718,19 @@ Sections P1.1, P3.1. Costly. Run them only at gates.
 | 1 | P1.1 prepare and hand off baseline prompts; P1.2 tools into the skill |
 | 2 | P1.3 SKILL.md; P1.4 rules file |
 | 3 | P1.5 research; P1.6 brainstorm |
-| 4 | P1.7 problem solving; P1.8 bloat; smoke eval; **Phase 1 gate** |
-| 5 | P2.1 scope and pages; P2.2 architecture |
-| 6 | P2.3 design system, fonts, check-tokens |
-| 7 | P2.4 patterns; P2.5 options |
-| 8 to 9 | P2.6 blocks (16) with tests |
-| 10 | P2.7 build; P2.8 test kit; P2.9 feedback round; P2.10 taste; smoke eval; **Phase 2 gate** |
-| 11 | P3.1 full eval |
-| 12 | P3.2 fix loop |
-| 13 | P3.3 variance; P3.4 site |
-| 14 | P3.5 docs; P3.6 PR; **Phase 3 gate** |
+| 4 | P1.7 problem solving; P1.8 bloat |
+| 5 | P1.9 Discover stage + crawl script; smoke eval; **Phase 1 gate** |
+| 6 | P2.1 scope and pages; P2.2 architecture |
+| 7 | P2.3 design system, fonts, check-tokens; P2.11 layout pass |
+| 8 | P2.4 patterns; P2.5 options; P2.12 components and consistency |
+| 9 to 10 | P2.6 blocks (17) with tests; P2.13 motion system |
+| 11 to 12 | P2.7 build; P2.8 test kit; P2.9 feedback round; P2.10 taste; smoke eval; **Phase 2 gate** |
+| 13 | P3.1 full eval |
+| 14 | P3.2 fix loop |
+| 15 | P3.3 variance; P3.4 site |
+| 16 | P3.5 docs; P3.6 PR; **Phase 3 gate** |
 
-Time box: 2 weeks. If a phase runs over by more than 2 days, stop and report.
+Time box: about 16 working days. If a phase runs over by more than 2 days, stop and report.
 
 ---
 
@@ -618,11 +739,12 @@ Time box: 2 weeks. If a phase runs over by more than 2 days, stop and report.
 | Risk | Decision |
 |---|---|
 | More text makes small models worse | Budgets in 4.6; templates and blocks carry the detail, not prose. |
-| Tuning to the 6 cases (overfitting) | Rules must make sense for any product; P3.2 forbids case wording; add 2 fresh hidden cases at P3.1 (for example "a booking app for a dog groomer" and "a portfolio site for a ceramic artist") graded the same way. |
+| Tuning to the 8 cases (overfitting) | Rules must make sense for any product; P3.2 forbids case wording; add 2 fresh hidden cases at P3.1 (for example "a booking app for a dog groomer" and "a portfolio site for a ceramic artist") graded the same way. |
 | Graders favor their own model | Mixed model families (P1.1); median of 3. |
 | Run cost and usage limits | Smoke evals on 2 cases between gates; full rounds only at gates. |
 | Blocks become a template look | 3 options must differ in device; blocks expose attributes; the critique asks "would a reference site do better" every time. |
 | Honesty loses to Opus's invented richness | Sample and Illustrative labels allow the same richness with truth. |
+| Discovery invents user pains | Pains are tagged Found (walk-through) or Reported (owner or users). No invented quotes. The user test script collects real ones. |
 | Grok cannot run Claude arms | Altaz launches Claude runs from prepared prompt files, or provides an API key. |
 
 ---
@@ -632,9 +754,9 @@ Time box: 2 weeks. If a phase runs over by more than 2 days, stop and report.
 ### 11.1 Start of Phase 1
 ```text
 You are rebuilding ShipRight on branch feat/v1.3-beat-opus in aiwithaltaz/shipright-skills.
-Read docs/rebuild-1.3/PLAN.md fully, then evals/v2/README.md, evals/v2/rubric.md, and the baseline runs in
+Read docs/rebuild-1.3/PLAN.md fully, then docs/rebuild-1.3/IVC-HANDOFF.md, evals/v2/README.md, evals/v2/rubric.md, and the baseline runs in
 evals/v2/runs/baseline-1.2/ (open the screenshots in shots/ and read reply.md and build/*.md for both arms).
-Write docs/rebuild-1.3/LOG.md with your plan for Phase 1 (tasks P1.1 to P1.8), then do them in order.
+Write docs/rebuild-1.3/LOG.md with your plan for Phase 1 (tasks P1.1 to P1.9), then do them in order.
 Follow section 0 for how to work and report. Stop at the Phase 1 gate and send me the report.
 Do not merge, tag, release or deploy.
 ```
@@ -642,8 +764,8 @@ Do not merge, tag, release or deploy.
 ### 11.2 Start of Phase 2
 ```text
 Phase 1 is approved with these answers: <paste my answers>.
-Continue with Phase 2 (P2.1 to P2.10) from docs/rebuild-1.3/PLAN.md. Section 2 is the quality bar: every Opus move
-A1 to A7 and W1 to W4 must become a rule with good/bad examples and a check, a template field, or a block.
+Continue with Phase 2 (P2.1 to P2.13) from docs/rebuild-1.3/PLAN.md. Sections 2 and 3 are the quality bar: every Opus move
+A1 to A7 and W1 to W4, and every layout move in 3.4b, must become a rule with good/bad examples and a check, a template field, or a block.
 Write your own block code. Each block needs its Playwright test. Stop at the Phase 2 gate and report.
 ```
 
@@ -661,9 +783,11 @@ Use `evals/v2/grader-prompt.md` exactly. Do not edit it after seeing results.
 ---
 
 ## 12. Definition of done (all must be true)
-- [ ] Sonnet + ShipRight 1.3 beats Opus (high) alone on all 6 cases by 0.5+ (median of 3 blind graders).
+- [ ] Sonnet + ShipRight 1.3 beats Opus (high) alone on all 8 cases by 0.5+ (median of 3 blind graders).
+- [ ] c7 pain recall 70% or more, keep recall 2 of 3 or more, no false keeps.
+- [ ] Every built change in c7 and c8 traces to a pain ID with a passing test.
 - [ ] Sonnet + ShipRight 1.3 release score ≥ 9.3.
-- [ ] 2 hidden cases scored, no drop over 0.5 vs the 6 known cases.
+- [ ] 2 hidden cases scored, no drop over 0.5 vs the 8 known cases.
 - [ ] Haiku + ShipRight 1.3 scores reported.
 - [ ] Installed skill folder contains scripts, templates, patterns, blocks and fonts; `shipright.zip` verified.
 - [ ] All unit, source, context and block tests pass.

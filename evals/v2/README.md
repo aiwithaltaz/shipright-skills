@@ -14,7 +14,7 @@ All arms get the same message, the same scripted reply, the same offline librari
 
 ## Cases
 
-Six fixed cases in [cases.json](cases.json): LinkedIn automation app, AI agent dashboard, vague SaaS, bakery website, premium 3D product site, and a real feedback round on the IVC desk screen.
+Eight fixed cases in [cases.json](cases.json): LinkedIn automation app, AI agent dashboard, vague SaaS, bakery website, premium 3D product site, a real feedback round on the IVC desk screen, and two "improve my existing app" cases (c7 IVC desk v1 prototype, c8 crew scheduling app). c7 and c8 were added on October 18, before any grading.
 Scoring uses [rubric.md](rubric.md). Grading uses [grader-prompt.md](grader-prompt.md): three fresh graders per case, runs under shuffled labels, tool names scrubbed.
 
 ## Run prompt (exact)
@@ -42,6 +42,12 @@ When done, answer with one line: the list of files you wrote.
 ```
 
 `{PACK_LINE}` for ShipRight arms: "A skill called ShipRight is installed at {PACK}/shipright. Read {PACK}/shipright/SKILL.md first and follow it." Empty for `opus-plain`.
+
+## Existing-app cases (c7, c8)
+
+- The run gets the app as a folder `app/` in its run folder.
+- Graders also get the before screenshots in `cases/<case>/before-shots/`. Add this line to `{ATTACHMENT_NOTE}`: "The client's app before the work is shown in {BEFORE_SHOTS}. Judge how well the run understood it, what it kept, and what it improved."
+- c7 has a real answer key: the owner's own review of that exact prototype (`answer-keys/c7-ivc-app.md`). After rubric grading, one extra grader runs [pain-recall-prompt.md](pain-recall-prompt.md) per c7 run. Pain recall and keep recall are reported next to the score and never change it. Run agents never see the answer key.
 
 ## Steps
 

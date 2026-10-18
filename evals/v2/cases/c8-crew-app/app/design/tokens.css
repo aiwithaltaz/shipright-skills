@@ -1,0 +1,61 @@
+/* Design tokens. Proposed (delegated), see build/DESIGN.md. Semantic names only; components never use raw values. */
+:root {
+  /* Color roles. Starter A (calm dense) with the accent changed to a deep field green. */
+  --color-bg: #F7F8FA;
+  --color-surface: #FFFFFF;
+  --color-sunken: #F1F2F4;
+  --color-text: #16181D;
+  --color-muted: #545B66;
+  --color-subtle: #6B7280;          /* only on bg or surface, never on sunken */
+  --color-border: #E2E5EA;
+  --color-field-border: #848B96;
+  --color-accent: #1C6A45;          /* white text on it: 6.57:1 */
+  --color-accent-contrast: #FFFFFF;
+  --color-accent-tint: #E6F1EB;     /* text on it: 15.3:1 */
+  --color-warning: #9A4F00;
+  --color-warning-bg: #FDF0E1;
+  --color-danger: #C1341F;
+  --color-danger-bg: #FCEBE7;
+  --color-scrim: rgba(22, 24, 29, 0.4);
+
+  /* Type. System stack in the preview; the build loads Inter through next/font. */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --text-caption: 12px;
+  --text-meta: 13px;
+  --text-body: 14px;
+  --text-section: 16px;
+  --text-page: 20px;
+  --text-figure: 24px;
+  --leading-text: 1.45;
+  --leading-heading: 1.25;
+
+  /* Space. One scale. */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px; --space-5: 20px;
+  --space-6: 24px; --space-8: 32px; --space-10: 40px; --space-12: 48px; --space-16: 64px;
+
+  /* Shape */
+  --radius-sm: 4px;   /* tags */
+  --radius-md: 6px;   /* controls */
+  --radius-lg: 8px;   /* panels, board */
+  --radius-xl: 12px;  /* dialogs, sheets */
+
+  /* Elevation: borders at rest, shadow only on what floats */
+  --shadow-float: 0 8px 24px rgba(16, 24, 40, 0.12);
+
+  /* Controls */
+  --control-h-compact: 32px;
+  --control-h: 36px;
+  --control-h-touch: 44px;
+
+  /* Motion */
+  --motion-fast: 120ms;
+  --motion-menu: 180ms;
+  --motion-sheet: 240ms;
+  --ease-out: cubic-bezier(.23, 1, .32, 1);
+
+  /* Layout */
+  --gutter: 24px;
+  --content-max: 1400px;
+  --crew-col: 176px;
+}
+@media (max-width: 760px) { :root { --gutter: 16px; } }

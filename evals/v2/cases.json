@@ -37,8 +37,36 @@
       "id": "c6-feedback-round",
       "message": "This is my registration desk screen for our event (registration-full.png). The crops crop-1 to crop-6 are parts I like. Changes: remove the dot on the selected nav item. Keep Escalations and Desk help like they are (crop 2) and keep Record donation (crop 3). Remove 'Filter: All Attendees' (crop 4). In progress needs a 'View all' option or a way to clear it (crop 5). Selected row should have a clean border all around, not the thick left bar, and remove 'Query: Test' (crop 6). Remove 'Synced to event sheet'. Profile only at bottom left, remove the box at the top right. Remove the Checked In and In Queue counters for now, and the Name / Phone, Scan QR, Family ID tabs. Remove the printer and badge stock panel. We are only doing registration now, check-in comes later. Rebuild the screen with these changes as index.html.",
       "scripted_reply": "You decide anything I did not say. Build it now.",
-      "attachments": ["registration-full.png", "crop-1.png", "crop-2.png", "crop-3.png", "crop-4.png", "crop-5.png", "crop-6.png"],
+      "attachments": [
+        "registration-full.png",
+        "crop-1.png",
+        "crop-2.png",
+        "crop-3.png",
+        "crop-4.png",
+        "crop-5.png",
+        "crop-6.png"
+      ],
       "kind": "feedback"
+    },
+    {
+      "id": "c7-ivc-app",
+      "message": "This is my event registration desk app (folder app/, open app/index.html and sign in with a demo account). Volunteers use it at a desk on event day to register volunteers and their families. Look at it properly and tell me what is working, what is not, and what we should add. Then redesign the main desk flow and build it.",
+      "scripted_reply": "You decide everything. Build the improved desk flow as index.html.",
+      "attachments": [
+        "app"
+      ],
+      "answer_key": "evals/v2/answer-keys/c7-ivc-app.md",
+      "kind": "existing-app"
+    },
+    {
+      "id": "c8-crew-app",
+      "message": "Here's my crew scheduling app for my landscaping company (folder app/, open app/index.html). It works, but it feels clunky. Review it and make it better.",
+      "scripted_reply": "You decide. My office manager says Monday planning takes too long. Build the improved main screen as index.html.",
+      "attachments": [
+        "app"
+      ],
+      "kind": "existing-app"
     }
-  ]
+  ],
+  "amended": "2026-10-18: added c7 and c8 (improve an existing app) before any grading. The rubric is unchanged."
 }

@@ -31,5 +31,11 @@ for case in cases:
         d = root / case["id"] / arm
         d.mkdir(parents=True, exist_ok=True)
         for a in case.get("attachments", []):
-            shutil.copy(repo / "evals/v2/cases" / a, d / a)
+            src = repo / "evals/v2/cases" / a
+            if not src.exists():
+                src = repo / "evals/v2/cases" / case["id"] / a
+            if src.is_dir():
+                shutil.copytree(src, d / a, dirs_exist_ok=True)
+            else:
+                shutil.copy(src, d / a)
 print(f"prepared {len(cases)} cases x {len(arms)} arms in {root}")
