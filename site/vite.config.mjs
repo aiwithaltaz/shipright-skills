@@ -30,8 +30,12 @@ export default defineConfig({
       });
     },
     async closeBundle() {
-      await mkdir(resolve(outputDirectory, 'downloads'), { recursive: true });
-      await copyFile(exportFile, resolve(outputDirectory, 'downloads/shipright-chatgpt.md'));
+      try {
+        await mkdir(resolve(outputDirectory, 'downloads'), { recursive: true });
+        await copyFile(exportFile, resolve(outputDirectory, 'downloads/shipright-chatgpt.md'));
+      } catch {
+        // The short ChatGPT file is produced by scripts/release_skill.py. A site build does not require it.
+      }
     }
   }]
 });

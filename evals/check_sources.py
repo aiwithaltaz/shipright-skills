@@ -23,7 +23,7 @@ VERBATIM_SOURCES = {'docs/rebuild/BLUEPRINT.md'}
 RAW_EVIDENCE_DIRS = ('evals/v1/runs/', 'evals/v1/grades/', 'evals/v2/runs/')
 ICONS = 'skills/ui-ux-design/references/icons-and-placement.md'
 HEAVY_ACCENT = 'without a heavy accent bar unless the design system says so'
-VERSION = '1.3.0'
+VERSION = '1.3.1'
 SKILLS = {'product-design': 8, 'ui-ux-design': 10, 'ux-critique': 10, 'ship-check': 20, 'build-pack': 10}
 TEMPLATES = ['01-prd.md', '02-technical-architecture.md', '03-security-and-access.md',
              '04-frontend-spec.md', '05-feature-ticket-list.md', '06-pitch-one-pager.md',
@@ -471,13 +471,13 @@ def validate(root):
 
     # Every Markdown file, including root, docs, examples and evals, is checked.
     for path in sorted(root.rglob('*.md')):
-        if '.git' in path.relative_to(root).parts:
+        if any(part in {'.git', 'node_modules'} for part in path.relative_to(root).parts):
             continue
         rel = path.relative_to(root)
         if rel.as_posix().startswith(RAW_EVIDENCE_DIRS):
             continue  # raw trial output links point into the user's future project, not this pack
-        if rel.as_posix().startswith('dist/'):
-            continue  # flat ChatGPT export; its file links are section names, not pack paths
+        if rel.as_posix().startswith(('dist/', 'site/dist/')):
+            continue  # flat ChatGPT export (and the site build's copy of it); its file links are section names, not pack paths
         text = own_text(path)
         prose = strip_fences(text)
         targets = re.findall(r'!?\[[^\]]*\]\(([^\s)]+)(?:\s+"[^"]*")?\)', prose)
@@ -561,7 +561,7 @@ def validate(root):
     context_errors, _, _ = context_mod.check_structure(root)
     errors.extend(context_errors)
     for p in sorted(root.rglob('*')):
-        if not p.is_file() or '.git' in p.relative_to(root).parts or p.suffix in {'.png', '.zip', '.pyc'}:
+        if not p.is_file() or any(part in {'.git', 'node_modules'} for part in p.relative_to(root).parts) or p.suffix in {'.png', '.zip', '.pyc'}:
             continue
         try:
             text = p.read_text(encoding='utf-8')

@@ -1,6 +1,6 @@
 # Blocks
 
-Copy a block and set its attributes. Do not load more of this folder than this file. Do not rewrite a block unless a test fails.
+Copy a block and set its attributes. Do not load more of this folder than this file. Every block includes `[hidden] { display: none !important; }`.
 
 A premium site, a scroll story, or a 3D product uses scroll-story, product-3d, and page-transition. They load the pinned CDN in `patterns/motion.md`. If the CDN fails, or motion is reduced, the still in the block is the page. product-stage, pinned-scene, and exploded-view are the no-network stand-ins.
 

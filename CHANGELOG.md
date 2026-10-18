@@ -1,8 +1,20 @@
 # Changelog
 
+## 1.3.1 - 2026-10-18
+
+Released as v1.3.1. The site is not deployed. There is no zip. Use the repository.
+
+- Stage 9 now fails the bugs that passed on the 1.3.0 site: a hidden element that stays visible, a fallback poster under a live canvas, a pinned frame that clips, a slider whose pictures do not share a box, a phone nav that wraps, and a stale draft or not-released claim.
+- The premium profile also fails a text-only first screen, two acts with the same composition, an accent with no product source, and an empty rounded panel.
+- Starter tokens and every HTML block set `[hidden] { display: none !important; }`.
+- The site is rebuilt. The first screen shows the five files a run writes. Each act is a different composition. The accent is sealing wax. Eval scores are pending.
+- Premium check-ui on the home page and the case study: 0 fails, 0 warns, at 390 and 1280. The same check on the 1.3.0 home page reported 19 fails (9 on desktop, 10 on the phone).
+- run-tests.mjs: 18 of 18. consistency.mjs: pass on both pages. check-record.mjs: pass.
+- Limits: eval scores for 1.3 are still pending. Taste is Not verified. Nothing was deployed.
+
 ## 1.3.0 - 2026-10-18
 
-Not tagged. Not merged. Not released. There is no 1.3 zip. Use the repository.
+Released as v1.3.0. There is no 1.3 zip. Use the repository.
 
 - Stages 0 to 10, a project record, and a case study that may only use numbers already in the record.
 - Pitch deck template. Market, model, and ask stay blank unless the owner supplied them. `check-record.mjs` rejects an unsourced number.

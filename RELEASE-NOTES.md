@@ -1,3 +1,40 @@
+# ShipRight 1.3.1
+
+**Date:** 2026-10-18. **Status:** released as v1.3.1. Site not deployed. No zip. Install from this repository. Eval scores pending.
+
+## In one line
+
+The test step now catches the bugs the 1.3.0 site showed, and the site is rebuilt to those rules.
+
+## What changed
+
+Stage 9 measures hidden states, the fallback poster, every pinned frame, slider alignment, phone nav wrapping, and stale release claims. The premium profile also measures a product on the first screen, a new composition per act, an accent that names its source, and empty cards.
+
+The site puts the five files a run writes on the first screen. Keel is not on the page. Sections no longer repeat one split layout. The accent is sealing wax. Copy does not say draft, not released, or not started.
+
+## Evidence
+
+| Check | Result |
+| --- | --- |
+| Premium check-ui on the 1.3.0 home page, before the fix | 19 fails, 0 warns |
+| Premium check-ui on the 1.3.1 home page and the case study | 0 fails, 0 warns, at 390 and 1280 |
+| run-tests.mjs | 18 of 18 steps passed |
+| consistency.mjs | pass on both pages |
+| check-record.mjs on site/record | pass |
+| 1.3 grades | not run |
+
+Screenshots of each section and each pinned frame are in `site/evidence/v1.3.1/`. The per-section note is `site/evidence/v1.3.1/WHY.md`.
+
+## What is not true yet
+
+Sonnet plus 1.3 has not yet been shown to beat Opus. Do not say that it does. Taste is Not verified.
+
+## Limits
+
+Software WebGL. One browser. Not a full accessibility audit. Nothing was deployed.
+
+---
+
 # ShipRight 1.3.0
 
 **Date:** 2026-10-18. **Status:** released. No zip. Install from this repository. Eval scores pending.

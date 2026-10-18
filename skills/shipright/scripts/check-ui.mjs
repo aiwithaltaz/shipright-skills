@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // ShipRight screen checker. Opens a page in real Chromium and measures rules that can be measured.
-// Usage: node <skill>/scripts/check-ui.mjs <page.html | url> [--root dir] [--out dir] [--json] [--allow rule,rule]
+// Usage: node <skill>/scripts/check-ui.mjs <page.html | url> [--root dir] [--out dir] [--json] [--allow rule,rule] [--profile standard|premium] [--release-state released|draft] [--pack-version x.y.z]
 // <skill> is the folder that holds SKILL.md. The repo wrapper scripts/check-ui.mjs calls this file.
 // Local files are served over a throwaway local server rooted at --root (default: the current folder),
 // so module scripts and relative assets load as they would on a real site.
@@ -21,7 +21,7 @@ function loadPlaywright() {
 }
 
 const args = process.argv.slice(2);
-const target = args.find((a, i) => !a.startsWith('--') && !['--out', '--allow', '--root', '--profile', '--browser'].includes(args[i - 1]));
+const target = args.find((a, i) => !a.startsWith('--') && !['--out', '--allow', '--root', '--profile', '--browser', '--release-state', '--pack-version'].includes(args[i - 1]));
 if (!target) { console.error('usage: node <skill>/scripts/check-ui.mjs <page.html|url> [--out dir] [--json] [--allow rule,rule]'); process.exit(2); }
 const flag = name => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : undefined; };
 const profile = flag('--profile') || 'standard';
@@ -48,7 +48,7 @@ export const VIEWPORTS = [
 ];
 
 // Runs inside the page. Returns raw measurements; rules are judged in Node.
-function measure({ vp, premium }) {
+function measure({ vp, premium, expectRelease, expectVersion }) {
   const vis = el => {
     const r = el.getBoundingClientRect(); const s = getComputedStyle(el);
     return r.width > 0 && r.height > 0 && s.visibility !== 'hidden' && s.display !== 'none' && +s.opacity > 0.05;
@@ -148,6 +148,155 @@ function measure({ vp, premium }) {
   const unsupportedProof = proofClaims.filter(el => !el.getAttribute('data-proof-source')?.trim()).length;
   const suspiciousClaims = text.match(/(?:trusted by|rated \d|\d[\d,.]*\+? (?:customers|users|teams)|\d+(?:\.\d+)?% (?:faster|increase|improvement))/gi) || [];
   const undeclaredProof = suspiciousClaims.filter(claim => !proofClaims.some(el => el.textContent.includes(claim))).length;
+  const hiddenIgnored = [...document.querySelectorAll('[hidden]')].filter(el => {
+    const r = el.getBoundingClientRect();
+    const s = getComputedStyle(el);
+    return r.width > 1 && r.height > 1 && s.display !== 'none' && s.visibility !== 'hidden' && +s.opacity > 0.05;
+  }).length;
+  const canvasOn = [...document.querySelectorAll('canvas')].some(c => vis(c) && c.width > 0 && c.height > 0);
+  const posterOn = [...document.querySelectorAll('[data-poster]')].some(vis);
+  const posterLeak = canvasOn && posterOn ? 1 : 0;
+  const nav = document.querySelector('nav');
+  let navWrapped = false;
+  if (nav) {
+    const items = [...nav.querySelectorAll('a,button')].filter(el => {
+      if (el.hidden || el.closest('[hidden]')) return false;
+      const s = getComputedStyle(el);
+      if (s.display === 'none' || s.visibility === 'hidden' || s.position === 'fixed' || s.position === 'absolute') return false;
+      const r = el.getBoundingClientRect();
+      return r.width > 0 && r.height > 0;
+    });
+    if (items.length > 1) {
+      const tops = items.map(el => el.getBoundingClientRect().top);
+      navWrapped = Math.max(...tops) - Math.min(...tops) > 10;
+    }
+  }
+  const sliderIssues = [];
+  const sliderRoots = [...document.querySelectorAll('div,section,figure')].filter(el => el.querySelector('input[type=range]') && el.querySelectorAll('img').length >= 2);
+  for (const frame of sliderRoots) {
+    if (sliderRoots.some(other => other !== frame && frame.contains(other))) continue;
+    const fr = frame.getBoundingClientRect();
+    if (fr.width < 40 || fr.height < 40) continue;
+    const imgs = [...frame.querySelectorAll('img')].slice(0, 2);
+    const boxes = imgs.map(img => {
+      const r = img.getBoundingClientRect();
+      return { w: r.width, h: r.height, fit: getComputedStyle(img).objectFit };
+    });
+    if (boxes.some(b => b.h < 8 || b.w < 8)) { sliderIssues.push('missing picture'); continue; }
+    const ar = boxes.map(b => b.w / b.h);
+    const sameBox = Math.abs(ar[0] - ar[1]) < 0.05 && Math.abs(boxes[0].w - boxes[1].w) < 6 && Math.abs(boxes[0].h - boxes[1].h) < 6;
+    const fitted = boxes.every(b => b.fit === 'cover' || b.fit === 'contain');
+    if (!sameBox && !fitted) sliderIssues.push('pictures do not share a box or object-fit');
+    const covers = boxes.some(b => b.h >= fr.height - 10 && b.w >= fr.width - 10);
+    if (!covers) sliderIssues.push('empty band in the frame');
+  }
+  const metaRelease = (document.querySelector('meta[name="release-state"]')?.content || '').trim().toLowerCase();
+  const metaVersion = (document.querySelector('meta[name="pack-version"]')?.content || '').trim();
+  const release = String(expectRelease || metaRelease).toLowerCase();
+  const version = String(expectVersion || metaVersion);
+  const blob = `${document.querySelector('meta[name="description"]')?.content || ''}\n${text}`;
+  const staleClaims = [];
+  if (release === 'released') {
+    if (/\bnot released\b/i.test(blob)) staleClaims.push('not released');
+    if (/\bdraft\b/i.test(blob)) staleClaims.push('draft');
+    if (/\bnot started\b/i.test(blob)) staleClaims.push('not started');
+    if (/\bthe draft is\b/i.test(blob)) staleClaims.push('the draft is');
+    const said = blob.match(/\bdraft\s+(\d+\.\d+(?:\.\d+)?)/i);
+    if (version && said && said[1] !== version) staleClaims.push('draft version ' + said[1]);
+  }
+  function hexColor(c) {
+    const m = String(c || '').trim().match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i);
+    if (!m) return null;
+    let h = m[1];
+    if (h.length === 3) h = h.split('').map(ch => ch + ch).join('');
+    return { r: parseInt(h.slice(0, 2), 16), g: parseInt(h.slice(2, 4), 16), b: parseInt(h.slice(4, 6), 16), a: 1 };
+  }
+  function sameish(a, b) {
+    const A = parse(a) || hexColor(a);
+    const B = parse(b) || hexColor(b);
+    if (!A || !B) return false;
+    return Math.abs(A.r - B.r) < 3 && Math.abs(A.g - B.g) < 3 && Math.abs(A.b - B.b) < 3;
+  }
+  function opaqueTone(el) {
+    for (let n = el; n; n = n.parentElement) {
+      const c = parse(getComputedStyle(n).backgroundColor);
+      if (c && c.a > 0.85) return lum(c) > 0.55 ? 'light' : 'dark';
+    }
+    return 'light';
+  }
+  function mediaOf(el) {
+    const big = node => {
+      if (!node || node.hidden || node.closest('[hidden]')) return false;
+      const s = getComputedStyle(node);
+      if (s.display === 'none' || s.visibility === 'hidden' || +s.opacity < 0.2) return false;
+      const r = node.getBoundingClientRect();
+      return r.width > 80 && r.height > 80;
+    };
+    if ([...el.querySelectorAll('canvas')].some(big)) return 'canvas';
+    if ([...el.querySelectorAll('img')].some(big)) return 'photo';
+    if ([...el.querySelectorAll('svg')].some(big)) return 'draw';
+    return 'type';
+  }
+  const actSignatures = [...document.querySelectorAll('[data-act]')].filter(el => {
+    const r = el.getBoundingClientRect();
+    return r.height > 40 && getComputedStyle(el).display !== 'none';
+  }).map(el => {
+    const h = el.getBoundingClientRect().height;
+    const scale = h < 220 ? 'bar' : h < vp.height * 0.92 ? 'band' : 'screen';
+    const align = getComputedStyle(el).textAlign === 'center' ? 'center' : 'left';
+    return `${opaqueTone(el)}|${mediaOf(el)}|${align}|${scale}`;
+  });
+  const craftDupes = [...new Set(actSignatures.filter((sig, i) => actSignatures.indexOf(sig) !== i))];
+  function shownMedia(el) {
+    if (!el || el.hidden || el.closest('[hidden]')) return false;
+    const s = getComputedStyle(el);
+    if (s.display === 'none' || s.visibility === 'hidden' || +s.opacity <= 0.05) return false;
+    const r = el.getBoundingClientRect();
+    if (r.width < 140 || r.height < 140) return false;
+    if (el.tagName === 'IMG' && (!el.complete || el.naturalWidth === 0)) return false;
+    const visibleH = Math.min(r.bottom, vp.height) - Math.max(r.top, 0);
+    return visibleH > r.height * 0.7 && r.left < vp.width && r.right > 0;
+  }
+  const hero = document.querySelector('[data-product-hero]');
+  const craftProduct = !!(hero && [...hero.querySelectorAll('img,canvas,svg,video')].some(shownMedia));
+  const accentRaw = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
+  const accentSource = (document.documentElement.getAttribute('data-accent-source') || document.body.getAttribute('data-accent-source') || '').trim();
+  let craftAccent = '';
+  if (premium) {
+    if (!accentRaw) craftAccent = 'missing --accent';
+    else if (accentSource.length < 8) craftAccent = 'accent has no product source';
+    else if (sameish(accentRaw, getComputedStyle(document.body).color)) craftAccent = 'accent matches the text color';
+    else if (![...document.querySelectorAll('body *')].some(el => {
+      if (!vis(el)) return false;
+      const s = getComputedStyle(el);
+      return [s.color, s.backgroundColor, s.borderTopColor, s.borderColor].some(c => sameish(c, accentRaw));
+    })) craftAccent = 'accent token is not used';
+  }
+  const craftEmpty = [...document.querySelectorAll('body *')].filter(el => {
+    if (el.hasAttribute('data-act') || el.closest('nav,header,footer')) return false;
+    if (el.matches('img,canvas,svg,video,input')) return false;
+    if (el.hidden || el.closest('[hidden]')) return false;
+    const s = getComputedStyle(el);
+    if (s.display === 'none' || s.visibility === 'hidden') return false;
+    const r = el.getBoundingClientRect();
+    if (r.height < 240 || r.width < 120) return false;
+    const radius = Math.max(0, ...s.borderRadius.split(/\s+/).map(v => parseFloat(v) || 0));
+    if (radius < 12) return false;
+    const parent = el.parentElement ? parse(getComputedStyle(el.parentElement).backgroundColor) : null;
+    const own = parse(s.backgroundColor);
+    if (!own || own.a < 0.9) return false;
+    if (parent && Math.abs(own.r - parent.r) < 6 && Math.abs(own.g - parent.g) < 6 && Math.abs(own.b - parent.b) < 6) return false;
+    let contentBottom = r.top;
+    for (const kid of el.querySelectorAll('*')) {
+      if (kid.hidden || kid.closest('[hidden]')) continue;
+      const ks = getComputedStyle(kid);
+      if (ks.display === 'none' || ks.visibility === 'hidden' || +ks.opacity < 0.2) continue;
+      const b = kid.getBoundingClientRect();
+      if (b.width < 2 || b.height < 2) continue;
+      contentBottom = Math.max(contentBottom, Math.min(b.bottom, r.bottom));
+    }
+    return r.bottom - contentBottom > 140;
+  }).length;
   return {
     heroVisible, unsupportedProof, undeclaredProof,
     visibleWords: text.replace(/\s+/g, ' ').trim(),
@@ -165,6 +314,8 @@ function measure({ vp, premium }) {
     animated: document.getAnimations().length > 0 || /@keyframes|transition:\s*(?!none)/.test(css) || /gsap|requestAnimationFrame|Lenis/.test(scripts),
     reducedMotionRule: /prefers-reduced-motion/.test(css + scripts),
     outlineNone: /outline:\s*(none|0)/.test(css) && !/focus-visible/.test(css),
+    hiddenIgnored, posterLeak, navWrapped, sliderIssues, staleClaims,
+    actSignatures, craftDupes, craftProduct, craftAccent, craftEmpty,
   };
 }
 
@@ -192,7 +343,71 @@ const RULES = [
   ['one-h1', 'WARN', m => m.h1 !== 1, m => `${m.h1} h1 elements`],
   ['outline-none', 'WARN', m => m.outlineNone, () => 'outline removed without a focus-visible rule'],
   ['canvas-label', 'WARN', m => m.canvases.some(c => !c.labeled), () => 'canvas without aria-label, role or aria-hidden'],
+  ['hidden-ignored', 'FAIL', m => m.hiddenIgnored, m => `${m.hiddenIgnored} [hidden] elements are still visible. display beat the hidden attribute`],
+  ['poster-under-model', 'FAIL', m => m.posterLeak, () => 'fallback poster is visible while the canvas is showing'],
+  ['pin-clip', 'FAIL', m => m.pinClipped && m.pinClipped.length, m => `pinned frame clips content out of the viewport: ${m.pinClipped.slice(0, 3).join(' | ')}`],
+  ['slider-align', 'FAIL', m => m.sliderIssues && m.sliderIssues.length, m => `compare slider: ${m.sliderIssues.join('; ')}`],
+  ['nav-wrap', 'FAIL', (m, vp) => vp.touch && m.navWrapped, () => 'phone nav wraps onto a second line at 390'],
+  ['stale-claim', 'FAIL', m => m.staleClaims && m.staleClaims.length, m => `stale release claim: ${m.staleClaims.join(', ')}`],
 ];
+
+async function scrollToY(page, y) {
+  await page.evaluate(target => {
+    const lenis = window.__lenis;
+    if (lenis && typeof lenis.scrollTo === 'function') lenis.scrollTo(target, { immediate: true, force: true });
+    window.scrollTo(0, target);
+  }, y);
+  await page.waitForTimeout(70);
+}
+
+async function pinClipsNow(page) {
+  return page.evaluate(() => {
+    const vh = window.innerHeight;
+    const vw = window.innerWidth;
+    const roots = new Set();
+    document.querySelectorAll('.pin-spacer').forEach(spacer => {
+      const fixed = [...spacer.children].find(el => getComputedStyle(el).position === 'fixed');
+      if (fixed) roots.add(fixed);
+    });
+    document.querySelectorAll('[data-pin]').forEach(el => {
+      if (getComputedStyle(el).position === 'fixed') roots.add(el);
+    });
+    const bad = [];
+    for (const root of roots) {
+      const nodes = [...root.querySelectorAll('h1,h2,h3,p,li,figcaption,img,canvas,button,a,pre')];
+      for (const el of nodes) {
+        if (el.hidden || el.closest('[hidden]') || el.closest('[aria-hidden="true"]')) continue;
+        const s = getComputedStyle(el);
+        if (s.display === 'none' || s.visibility === 'hidden' || +s.opacity < 0.05) continue;
+        const r = el.getBoundingClientRect();
+        if (r.width < 4 || r.height < 4) continue;
+        if (r.top < -12 || r.bottom > vh + 12 || r.left < -12 || r.right > vw + 12) {
+          const label = (el.innerText || el.getAttribute('alt') || el.getAttribute('aria-label') || el.tagName).trim().replace(/\s+/g, ' ').slice(0, 48);
+          bad.push(label || el.tagName);
+        }
+      }
+    }
+    return [...new Set(bad)].slice(0, 8);
+  });
+}
+
+async function walkPins(page) {
+  const found = new Set(await pinClipsNow(page));
+  const ranges = await page.evaluate(() => [...document.querySelectorAll('.pin-spacer')].map(el => ({
+    top: el.getBoundingClientRect().top + window.scrollY,
+    height: el.offsetHeight,
+  })));
+  const vh = page.viewportSize().height;
+  for (const range of ranges) {
+    const travel = Math.max(0, range.height - vh);
+    for (let i = 0; i < 5; i++) {
+      await scrollToY(page, range.top + (travel * i) / 4);
+      for (const item of await pinClipsNow(page)) found.add(item);
+    }
+  }
+  if (ranges.length) await scrollToY(page, 0);
+  return [...found];
+}
 
 async function run() {
   const { chromium } = loadPlaywright();
@@ -215,8 +430,9 @@ async function run() {
     await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {});
     await page.evaluate(() => document.fonts.ready);
     await page.waitForTimeout(1200);
-    const m = await page.evaluate(measure, { vp, premium: profile === 'premium' });
+    const m = await page.evaluate(measure, { vp, premium: profile === 'premium', expectRelease: flag('--release-state') || '', expectVersion: flag('--pack-version') || '' });
     m.errors = errors;
+    m.pinClipped = await walkPins(page);
     // A family is missing when text set in it measures the same as the generic fallbacks.
     m.fontsMissing = await page.evaluate(fams => {
       const ctx = document.createElement('canvas').getContext('2d'); const probe = 'Hamburgefonstiv 0123456789 WMwm';
@@ -239,7 +455,7 @@ async function run() {
       await page.reload({ waitUntil: 'networkidle' });
       await page.evaluate(() => document.fonts.ready);
       await page.waitForTimeout(300);
-      const reduced = await page.evaluate(measure, { vp, premium: true });
+      const reduced = await page.evaluate(measure, { vp, premium: true, expectRelease: flag('--release-state') || '', expectVersion: flag('--pack-version') || '' });
       const reducedWords = await page.evaluate(() => [...document.querySelectorAll('[data-act]')].map(el => el.textContent.replace(/\s+/g, ' ').trim()));
       m.reduced = { hiddenText: reduced.hiddenText, heroVisible: reduced.heroVisible, overflowX: reduced.overflowX,
         contentChanged: JSON.stringify(normalWords) !== JSON.stringify(reducedWords) };
@@ -256,6 +472,10 @@ async function run() {
       if (m.unsupportedProof || m.undeclaredProof) results.push({ id: 'unsupported-proof', level: 'FAIL', message: 'proof claim lacks a source declaration; review truth against supplied facts' });
       if (!m.reduced.heroVisible || m.reduced.hiddenText || m.reduced.contentChanged || m.reduced.overflowX > 1)
         results.push({ id: 'premium-reduced-content', level: 'FAIL', message: 'reduced motion loses product or words, hides content, or overflows' });
+      if (!m.craftProduct) results.push({ id: 'craft-product', level: 'FAIL', message: 'first screen does not show the product. Put an image, canvas, or drawing inside the hero' });
+      if (m.craftDupes && m.craftDupes.length) results.push({ id: 'craft-composition', level: 'FAIL', message: `acts share a composition: ${m.craftDupes.join(', ')}` });
+      if (m.craftAccent) results.push({ id: 'craft-accent', level: 'FAIL', message: m.craftAccent });
+      if (m.craftEmpty) results.push({ id: 'craft-empty', level: 'FAIL', message: `${m.craftEmpty} rounded panels are mostly empty` });
     }
     report.viewports[vp.name] = { results, metrics: m };
     await ctx.close();

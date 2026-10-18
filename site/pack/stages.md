@@ -2,7 +2,7 @@
 
 Status: current
 
-This is the record of rebuilding site/ with the 1.3 draft. It is not a release grade.
+This is the record of the site rebuild. It is not a release grade. 1.3.1 is released. Eval scores are pending.
 
 ## Research
 
@@ -18,7 +18,7 @@ Three layouts. They differ in structure, not in color.
 
 ## Build
 
-Home and case study. Self-hosted Inter and Fraunces. Lenis on a fine pointer. GSAP ScrollTrigger pins the run and the process. The Keel model is the product-3d block's CC0 file. The page-transition block is the wipe between home and the case study.
+Home and case study. Self-hosted Inter and Fraunces. Lenis on a fine pointer. GSAP ScrollTrigger pins the run for about three viewports and the process for about 2.4 viewports. The first screen is the five files a run writes, not keel.glb. The accent is sealing wax. The page-transition block is the wipe between home and the case study.
 
 ## Test
 

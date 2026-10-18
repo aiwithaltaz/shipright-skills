@@ -13,7 +13,7 @@ Check: durations in tokens.css match these, or the design system names an overri
 Feedback (it worked), orientation (where it went), continuity (same thing, new place), or one-time delight.
 No job, no animation. Scope the class. Never animate a control the owner did not ask to move.
 Everything readable with no JavaScript. Off under reduced motion. A tilted 3D object lies flat when the page is zoomed.
-Check: reduced motion shows the same words. A still stands in for WebGL.
+Check: reduced motion shows the same words. A still stands in for WebGL. The poster is hidden once the canvas renders. `[hidden]` stays hidden: do not override it with `display`.
 
 ## App catalog
 

@@ -1,6 +1,6 @@
 # Pack architecture
 
-**ShipRight 1.3.0**
+**ShipRight 1.3.1**
 
 This is a product, design and build-planning instruction pack, not an application framework.
 

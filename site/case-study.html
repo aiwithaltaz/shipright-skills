@@ -1,33 +1,38 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-accent-source="sealing wax on the record">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Case study. The desk prototype, baseline only.</title>
-<meta name="description" content="A case study built only from the c7 baseline: the owner review and the before shots. No score. No client name.">
+<meta name="pack-version" content="1.3.1">
+<meta name="release-state" content="released">
+<meta name="description" content="A case study built only from the c7 baseline: the owner review and the before shots. No score. No client name. 1.3.1 is released. Eval scores are pending.">
 <link rel="icon" href="/favicon.svg">
 <link rel="stylesheet" href="/fonts/fonts.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="top">
-  <a class="brand" href="./index.html" data-transition>ShipRight</a>
+  <a class="brand" href="./index.html" data-transition><i class="seal" aria-hidden="true"></i>ShipRight</a>
   <nav class="nav" aria-label="Main">
-    <a href="./index.html#install" data-transition>Install</a>
-    <a href="./index.html" data-transition>Home</a>
+    <button type="button" class="menu btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links">
+      <a href="./index.html#install" data-transition>Install</a>
+      <a href="./index.html" data-transition>Home</a>
+    </div>
   </nav>
 </header>
 <main id="main" class="case">
-  <section data-act="problem" class="prose">
+  <section data-act="problem" class="act-problem prose">
     <p>Case study. Baseline evidence only. No client name.</p>
     <h1 data-keep-text>The desk screen makes registration harder than the job.</h1>
-    <p>Desk volunteers register people and their families on event day. Supplied by the case message.</p>
     <figure data-product-hero aria-label="Before shot of the desk prototype, wide frame">
       <img src="/case/desktop-1.png" alt="Desk prototype before any rebuild, wide frame one" width="1120" height="700">
       <figcaption>Wide frame one. Before only.</figcaption>
     </figure>
+    <p>Desk volunteers register people and their families on event day. Supplied by the case message.</p>
   </section>
-  <section data-act="research" class="prose">
+  <section data-act="research" class="act-research prose">
     <h2>What the owner already found</h2>
     <p>Verified from the owner review of 25 September 2026 and 4 October 2026. The review lists 20 pains and 3 keeps.</p>
     <ul>
@@ -39,7 +44,7 @@
     </ul>
     <p>No quotes were invented. Nothing here is marked Assumed.</p>
   </section>
-  <section data-act="shots" class="shots">
+  <section data-act="shots" class="act-shots shots">
     <h2>Before only</h2>
     <p>There is no after shot from a rebuild. These are the other baseline frames.</p>
     <figure>
@@ -51,13 +56,13 @@
       <figcaption>Phone frame one.</figcaption>
     </figure>
   </section>
-  <section data-act="results" class="prose" data-proof-claim data-proof-source="site/record/CONTEXT.md and evals/v2/answer-keys/c7-ivc-app.md">
+  <section data-act="results" class="act-results prose" data-proof-claim data-proof-source="site/record/CONTEXT.md and evals/v2/answer-keys/c7-ivc-app.md">
     <h2>Idea, decisions, results</h2>
     <p>No concept round was run. There is no chosen idea and no pair of rejected ideas in the baseline.</p>
     <p>D1. Publish the baseline, not a made-up after screen. Proposed.</p>
     <p>D2. Do not print a score. Proposed.</p>
     <p>Results: not measured. No test of a rebuild. No step count. No load time. No score.</p>
-    <p>Next: run the case again with this draft, recall the 20 pains and the 3 keeps, and ask the owner before naming anyone.</p>
+    <p>Next: run the case again on this release, recall the 20 pains and the 3 keeps, and ask the owner before naming anyone.</p>
     <a class="btn fill" href="./index.html" data-transition>Back to ShipRight</a>
   </section>
 </main>

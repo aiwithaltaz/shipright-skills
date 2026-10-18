@@ -1,170 +1,121 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-accent-source="sealing wax on the record">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ShipRight. Turn an idea into a tested product.</title>
-<meta name="description" content="ShipRight takes an idea through research, a build, and tests. Draft 1.3 is not released. Scores are not in yet.">
+<meta name="pack-version" content="1.3.1">
+<meta name="release-state" content="released">
+<meta name="description" content="ShipRight 1.3.1 is released. Turn an idea into a tested product your AI builds right. Eval scores are pending.">
 <link rel="icon" href="/favicon.svg">
 <link rel="stylesheet" href="/fonts/fonts.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="top">
-  <a class="brand" href="#run">ShipRight</a>
+  <a class="brand" href="#run"><i class="seal" aria-hidden="true"></i>ShipRight</a>
   <nav class="nav" aria-label="Main">
-    <a href="#compare">Work</a>
-    <a href="#process">Process</a>
-    <a href="#proof">Proof</a>
-    <a href="#install">Install</a>
-    <a href="./case-study.html" data-transition>Case study</a>
+    <button type="button" class="menu btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links">
+      <a href="#compare">Work</a>
+      <a href="#process">Process</a>
+      <a href="#proof">Proof</a>
+      <a href="#install">Install</a>
+      <a href="./case-study.html" data-transition>Case study</a>
+    </div>
   </nav>
 </header>
 <main id="main">
   <section id="run" data-act="run">
-    <div class="pin">
-      <div class="stack">
-        <h1 data-keep-text>Turn an idea into a tested product your AI builds right.</h1>
+    <div class="scene">
+      <div class="scene-copy">
+        <h1 data-keep-text>
+          <span class="mask"><span class="line">Turn an idea into</span></span>
+          <span class="mask"><span class="line">a tested product</span></span>
+          <span class="mask"><span class="line">your AI builds right.</span></span>
+        </h1>
         <p class="tag">Context before generate. Product before pixels.</p>
         <div class="row">
           <a class="btn fill" href="#install">Install ShipRight</a>
-          <a class="btn" href="#run-stage">Watch a real run</a>
+          <button class="btn" type="button" id="orbit">Turn the files</button>
         </div>
       </div>
-      <div class="stage" id="run-stage" data-product-hero aria-label="Sample replay of a ShipRight run: a prompt, decision cards, You decide, the stages, then two real baseline screens">
+      <div class="stage3d" id="run-stage" data-product-hero aria-label="Illustrative stack of the five files a ShipRight run writes. Drag to turn. Not a screenshot.">
+        <canvas id="view" hidden aria-label="Illustrative 3D stack of Research, Options, Build, Test, and Record"></canvas>
+        <div class="poster" data-poster>
+          <svg viewBox="0 0 440 360" role="img" aria-label="Still of five paper files with a sealing-wax mark">
+            <rect width="440" height="360" fill="#1a1816"/>
+            <g fill="#e7e1d6">
+              <rect x="78" y="196" width="284" height="18" rx="3"/>
+              <rect x="86" y="166" width="268" height="18" rx="3"/>
+              <rect x="94" y="136" width="252" height="18" rx="3"/>
+              <rect x="102" y="106" width="236" height="18" rx="3"/>
+            </g>
+            <rect x="70" y="214" width="300" height="86" rx="6" fill="#f3f0ea"/>
+            <circle cx="320" cy="248" r="16" fill="#9d3419"/>
+            <text x="92" y="258" fill="#161412" font-family="Georgia, serif" font-size="28">Record</text>
+          </svg>
+        </div>
+      </div>
+      <div class="states">
         <p class="kicker" data-sample>Sample replay</p>
-        <div class="run-state" data-state="0">
-          <p class="prompt">I want to build a booking app for my salon.</p>
-          <p class="quiet">The prompt is on the table. Nothing is invented yet.</p>
-        </div>
-        <div class="run-state" data-state="1" hidden>
-          <p class="prompt">Four decisions, asked once.</p>
-          <div class="cards">
-            <div class="card"><b>Who is it for?</b><span>The owner, or you decide</span></div>
-            <div class="card"><b>What is the job?</b><span>Book a chair</span></div>
-            <div class="card"><b>What stays out?</b><span>Payments, until asked</span></div>
-            <div class="card"><b>Whose look?</b><span>A starter, marked Sample</span></div>
-          </div>
-        </div>
-        <div class="run-state" data-state="2" hidden>
-          <p class="prompt">You decide.</p>
-          <div class="cards">
-            <div class="card on"><b>You decide</b><span>Chosen for this replay</span></div>
-            <p class="quiet">The owner can still say no. Proposed is not Approved.</p>
-          </div>
-        </div>
-        <div class="run-state" data-state="3" hidden>
-          <p class="prompt">The stages tick by.</p>
-          <ol class="ticks">
-            <li class="on">Research</li>
-            <li>Options</li>
-            <li>Build</li>
-            <li>Test</li>
-            <li>Record</li>
-          </ol>
-          <p class="quiet">Same order every time. A rush phrase does not skip one.</p>
-        </div>
-        <div class="run-state" data-state="4" hidden>
-          <p class="prompt">Screens land.</p>
-          <div class="land">
-            <figure>
-              <img src="/proof/c2-agents-dashboard-opus.png" alt="Baseline 1.2, Opus plain, agents dashboard, desktop shot. Not graded.">
-              <figcaption>Opus plain. Baseline 1.2. Not graded.</figcaption>
-            </figure>
-            <figure>
-              <img src="/proof/c2-agents-dashboard-sonnet.png" alt="Baseline 1.2, Sonnet with ShipRight, agents dashboard, desktop shot. Not graded.">
-              <figcaption>Sonnet with ShipRight. Baseline 1.2. Not graded.</figcaption>
-            </figure>
-          </div>
-        </div>
+        <p class="run-state quiet" data-state="0">I want to build a booking app for my salon. The prompt is on the table. Nothing is invented yet.</p>
+        <p class="run-state quiet" data-state="1" hidden>Four decisions, asked once. Who it is for, the job, what stays out, and whose look.</p>
+        <p class="run-state quiet" data-state="2" hidden>You decide. Proposed is not Approved. The owner can still say no.</p>
+        <p class="run-state quiet" data-state="3" hidden>Research, options, build, test, record. A rush phrase does not skip one.</p>
+        <p class="run-state quiet" data-state="4" hidden>The run writes those five files. 1.3.1 is released. Eval scores are pending.</p>
       </div>
     </div>
   </section>
 
   <section id="compare" class="section" data-act="compare" data-proof-claim data-proof-source="evals/v2/cases/registration-full.png and evals/v2/runs/baseline-1.2/c6-feedback-round/sonnet-sr/shots/desktop-1.png">
     <div class="section-head">
-      <h2>The brief on one side. The build on the other.</h2>
+      <h2>
+        <span class="mask"><span class="line">The brief on one side.</span></span>
+        <span class="mask"><span class="line">The build on the other.</span></span>
+      </h2>
       <p class="lede">Case c6, baseline 1.2. Drag the bar. These pictures are not a grade.</p>
     </div>
-    <div class="frame" id="compare-frame">
+    <div class="frame" id="compare-frame" data-compare>
       <img src="/proof/c6-sonnet.png" alt="Sonnet with ShipRight, baseline 1.2, feedback round, desktop shot. Not graded.">
-      <div class="before-clip" id="before-clip">
+      <div class="clip" id="before-clip">
         <img src="/proof/c6-before.png" alt="The desk screen the owner sent, before either arm rebuilt it.">
       </div>
-      <input class="slider" id="compare-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare the owner screen and the Sonnet build">
+      <input class="slider" id="compare-range" type="range" min="8" max="92" value="50" aria-label="Drag to compare the owner screen and the Sonnet build">
     </div>
     <ol class="leaders">
       <li><i></i>Remove the dot on the selected nav item.</li>
       <li><i></i>Keep Escalations and Desk help as they are.</li>
       <li><i></i>Give the selected row a clean border, not a thick left bar.</li>
     </ol>
-    <p class="note">Those three lines are the owner's requests from the case, not a claim that the picture did each one. 1.3 results coming.</p>
+    <p class="note">Those three lines are the owner's requests from the case, not a claim that the picture did each one. Eval scores are pending.</p>
   </section>
 
   <section id="process" class="process" data-act="process">
     <div class="process-pin">
-      <div>
-        <h2>One step is black. The rest wait.</h2>
-        <ol class="steps" aria-label="Stages">
-          <li><button type="button" class="on" data-go="0" aria-pressed="true">Research</button></li>
-          <li><button type="button" data-go="1" aria-pressed="false">Options</button></li>
-          <li><button type="button" data-go="2" aria-pressed="false">Build</button></li>
-          <li><button type="button" data-go="3" aria-pressed="false">Test</button></li>
-          <li><button type="button" data-go="4" aria-pressed="false">Record</button></li>
-        </ol>
-      </div>
-      <div class="sheet" aria-live="polite">
-        <article data-artifact="0">
-          <h3>Research</h3>
-          <p>Three real alternatives. Every fact is Verified or Assumed. The file is research-brief.md.</p>
-        </article>
-        <article data-artifact="1" hidden>
-          <h3>Options</h3>
-          <p>Exactly three. They differ in story or layout, not in color. The owner picks, or the pick is marked Proposed.</p>
-        </article>
-        <article data-artifact="2" hidden>
-          <h3>Build</h3>
-          <p>The screen matches the spec. Sample data is labeled. No dev controls on the user screen.</p>
-        </article>
-        <article data-artifact="3" hidden>
-          <h3>Test</h3>
-          <p>check-ui, the test plan, and consistency. Widths 390 and 1280. Taste stays Not verified until a fresh reviewer looks.</p>
-        </article>
-        <article data-artifact="4" hidden>
-          <h3>Record</h3>
-          <p>CONTEXT, DECISIONS, CHANGELOG, HANDOFF. A case study is filled only from those files.</p>
-        </article>
-      </div>
+      <h2>One step holds the page.</h2>
+      <ol class="steps" aria-label="Stages">
+        <li><button type="button" class="on" data-go="0" aria-pressed="true">Research</button></li>
+        <li><button type="button" data-go="1" aria-pressed="false">Options</button></li>
+        <li><button type="button" data-go="2" aria-pressed="false">Build</button></li>
+        <li><button type="button" data-go="3" aria-pressed="false">Test</button></li>
+        <li><button type="button" data-go="4" aria-pressed="false">Record</button></li>
+      </ol>
+      <p class="artifact" data-artifact="0">Three real alternatives. Every fact is Verified or Assumed. The file is research-brief.md.</p>
+      <p class="artifact" data-artifact="1" hidden>Exactly three options. They differ in story or layout, not in color. The pick is marked Proposed until the owner says yes.</p>
+      <p class="artifact" data-artifact="2" hidden>The screen matches the spec. Sample data is labeled. No dev controls on the user screen.</p>
+      <p class="artifact" data-artifact="3" hidden>check-ui, the test plan, and consistency. Widths 390 and 1280. Taste stays Not verified until a fresh reviewer looks.</p>
+      <p class="artifact" data-artifact="4" hidden>CONTEXT, DECISIONS, CHANGELOG, HANDOFF. A case study uses only those files.</p>
     </div>
   </section>
 
-  <section id="product" class="section" data-act="product" data-proof-claim data-proof-source="evals/v2/cases.json c5-3d-product supplied facts">
-    <div class="product-grid">
-      <div class="stack">
-        <h2>A product on a stage, not a rocking box.</h2>
-        <p class="lede">Keel One is the c5 sample. Supplied facts: 189 dollars, hot-swap, wireless and USB-C, ships December 2026. No photo was supplied. This model is original and marked Demo data.</p>
-        <p class="note">Drag to turn it. Scroll lifts the cap. If WebGL is off, the still stays.</p>
-        <button class="btn fill" type="button" id="orbit">Turn the model</button>
-      </div>
-      <div class="viewport" data-model="/models/keel.glb">
-        <canvas id="view" hidden aria-label="Keel One 3D model, demo data"></canvas>
-        <div class="poster" data-poster>
-          <svg viewBox="0 0 420 360" role="img" aria-label="Still of the Keel model when WebGL is off">
-            <rect width="420" height="360" fill="#f3f0e8"/>
-            <ellipse cx="210" cy="280" rx="120" ry="16" fill="#1c1916" opacity=".12"/>
-            <rect x="110" y="168" width="200" height="96" rx="16" fill="#1c1916"/>
-            <rect x="145" y="142" width="130" height="22" rx="8" fill="#c4b7a2"/>
-            <rect x="125" y="112" width="170" height="28" rx="10" fill="#3f3a34"/>
-          </svg>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="proof" class="section" data-act="proof" data-proof-claim data-proof-source="evals/v2/runs/baseline-1.2 desktop-1 shots for c1, c2, and c3. evals/v2/results/baseline-1.2.md says not graded.">
-    <div class="section-head">
-      <h2>Opus alone, next to Sonnet with ShipRight.</h2>
-      <p class="lede">Three baseline 1.2 pairs that exist on disk. They are not grades. 1.3 results coming.</p>
+  <section id="proof" class="section proof" data-act="proof" data-proof-claim data-proof-source="evals/v2/runs/baseline-1.2 desktop-1 shots for c1, c2, and c3. evals/v2/results/baseline-1.2.md says not graded.">
+    <div class="proof-copy">
+      <h2>
+        <span class="mask"><span class="line">Opus alone, next to</span></span>
+        <span class="mask"><span class="line">Sonnet with ShipRight.</span></span>
+      </h2>
+      <p class="lede">Three baseline 1.2 pairs that exist on disk. They are not grades. 1.3.1 is released. Eval scores are pending.</p>
     </div>
     <div class="pairs">
       <article class="pair">
@@ -207,16 +158,15 @@
         </div>
       </article>
     </div>
-    <div class="coming">
-      <h3>Release scores</h3>
-      <p>Results coming. The 1.3 runs are prepared and not started. This page will not invent a winner.</p>
-    </div>
+    <p class="note">This page will not invent a winner.</p>
   </section>
 
-  <section id="install" class="section" data-act="install">
-    <div class="section-head">
-      <h2>Install from the repo.</h2>
-      <p class="lede">One skill. Pick the tool. There is no 1.3 zip. The draft is this repository.</p>
+  <section id="install" class="section install" data-act="install">
+    <div class="install-copy">
+      <h2>
+        <span class="mask"><span class="line">Install from the repo.</span></span>
+      </h2>
+      <p class="lede">1.3.1. One skill. Pick the tool. There is no zip.</p>
     </div>
     <div class="install-panel">
       <div class="tabs" role="tablist" aria-label="Install by tool">
@@ -236,15 +186,15 @@
       <pre id="cmd-vscode" role="tabpanel" hidden>npx skills add aiwithaltaz/shipright-skills -a github-copilot -y</pre>
       <pre id="cmd-anti" role="tabpanel" hidden>npx skills add aiwithaltaz/shipright-skills -a antigravity -y</pre>
       <pre id="cmd-gemini" role="tabpanel" hidden>npx skills add aiwithaltaz/shipright-skills -a gemini-cli -y</pre>
-      <pre id="cmd-ai" role="tabpanel" hidden>Read skills/shipright/SKILL.md from this repository. A 1.3 zip is not published.</pre>
-      <pre id="cmd-gpt" role="tabpanel" hidden>Use the repository. The ChatGPT file in dist is the short spine, not a 1.3 release.</pre>
+      <pre id="cmd-ai" role="tabpanel" hidden>Read skills/shipright/SKILL.md from this repository. There is no zip.</pre>
+      <pre id="cmd-gpt" role="tabpanel" hidden>Use the repository. The ChatGPT file is the short spine, not a zip.</pre>
       <button type="button" class="btn fill" id="copy-cmd">Copy command</button>
       <p class="status" id="copy-status" role="status" aria-live="polite"></p>
     </div>
   </section>
 </main>
 <footer class="foot" id="close" data-act="footer">
-  <p>Draft 1.3. Not released. Not a grade.</p>
+  <p>1.3.1. Eval scores pending. Not a grade.</p>
   <a href="./case-study.html" data-transition>Read the c7 case study</a>
   <a href="https://github.com/aiwithaltaz/shipright-skills">GitHub</a>
 </footer>

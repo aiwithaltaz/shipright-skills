@@ -20,3 +20,8 @@ Check: every number that is not Supplied or Verified is tagged Sample or Assumed
 
 Use the label table. The same action does not switch between Save, Update, and Done.
 Check: consistency.mjs, or a manual pass, finds one word per action.
+
+## Release state
+
+If the version is released, do not call the page a draft, and do not say it is not released or that the runs have not started. Scores that are not in yet stay pending.
+Check: `meta[name=release-state]` matches the visible text. check-ui fails a contradiction.

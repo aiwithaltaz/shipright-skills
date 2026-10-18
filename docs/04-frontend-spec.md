@@ -1,6 +1,6 @@
 # 04 - Frontend specification
 
-**Status: Template (ShipRight 1.3.0).**
+**Status: Template (ShipRight 1.3.1).**
 **Project path:** `docs/shipright/04-frontend-spec.md`
 
 **Version/date:** <!-- -->  **Sources and approval:** <!-- -->
