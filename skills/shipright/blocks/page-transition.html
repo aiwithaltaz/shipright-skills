@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-interaction="click" data-expect="opened">
+<!--
+Block: page-transition
+Job: A section change with a short GSAP move. The next view is already in the page.
+Use when: a premium site moves from an index into a case
+Do not use when: the change is a full reload, or the page must run with no network and no still
+Attributes: data-from, data-to
+Size: 6 KB
+Libraries: gsap@3.12.5 from jsDelivr. Fallback: an instant swap.
+-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open the case</title>
+<style>
+@import url("fonts/fonts.css");
+:root { --ink:#1c1916; --paper:#f7f6f3; --card:#fff; --line:#6f6a62; --accent:#145c3a; --muted:#4e4943; }
+* { box-sizing: border-box; }
+html, body { margin: 0; max-width: 100%; background: var(--paper); color: var(--ink); }
+body { font-family: "Inter", system-ui, sans-serif; font-size: 16px; line-height: 1.5; }
+.mast { max-width: 960px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; gap: 16px; align-items: center; background: var(--card); border-bottom: 1px solid var(--line); }
+.mast b { font-family: "Fraunces", Georgia, serif; font-weight: 400; }
+.mast span, .kicker { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+main { max-width: 960px; margin: 0 auto; padding: 48px 24px 64px; }
+.stage { position: relative; min-height: 520px; }
+article { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 32px; }
+article[hidden] { display: none; }
+h1, h2 { font-family: "Fraunces", Georgia, serif; font-weight: 400; font-size: 40px; line-height: 1.2; margin: 8px 0 16px; }
+p { margin: 16px 0 0; max-width: 36em; }
+.figure { margin-top: 24px; border-radius: 16px; overflow: hidden; background: var(--paper); }
+.figure svg { width: 100%; height: auto; display: block; }
+button { font: inherit; min-height: 44px; min-width: 44px; padding: 8px 16px; border-radius: 12px; border: 1px solid var(--accent); background: var(--accent); color: #fff; cursor: pointer; margin-top: 24px; }
+button:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+.out { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+[data-keep-text] { color: var(--ink); }
+@media (max-width: 800px) {
+  main { padding: 32px 16px 48px; }
+  h1, h2 { font-size: 32px; }
+  article { padding: 24px; }
+  .stage { min-height: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body data-ready="0">
+<header class="mast"><b>Studio index</b><span>Demo data</span></header>
+<main>
+<p class="kicker">Page transition</p>
+<p data-keep-text>Both views are in the page. Motion only changes which one is in front.</p>
+<div class="stage" data-from="index" data-to="case">
+  <article id="index">
+    <p class="kicker">Index</p>
+    <h1>Three studies</h1>
+    <p>A field kit, a week board, and the object on the table.</p>
+    <div class="figure" aria-hidden="true">
+      <svg viewBox="0 0 880 360">
+        <rect width="880" height="360" fill="#f7f6f3"/>
+        <rect x="32" y="32" width="250" height="296" rx="24" fill="#145c3a"/>
+        <rect x="314" y="32" width="250" height="296" rx="24" fill="#fff" stroke="#6f6a62"/>
+        <rect x="354" y="96" width="170" height="12" fill="#1c1916"/>
+        <rect x="354" y="128" width="140" height="8" fill="#6f6a62"/>
+        <rect x="354" y="152" width="120" height="8" fill="#6f6a62"/>
+        <rect x="354" y="196" width="170" height="80" rx="12" fill="#145c3a"/>
+        <rect x="596" y="32" width="250" height="296" rx="24" fill="#1c1916"/>
+        <circle cx="720" cy="150" r="36" fill="#f7f6f3"/>
+      </svg>
+    </div>
+    <button type="button" data-test="run" id="open">Open the case</button>
+  </article>
+  <article id="case" hidden>
+    <p class="kicker">Case</p>
+    <h2>Keel, opened</h2>
+    <p>The case is the same object, closer. The collar lifts. The notes stay put.</p>
+    <div class="figure" aria-hidden="true">
+      <svg viewBox="0 0 880 360">
+        <rect width="880" height="360" fill="#f7f6f3"/>
+        <rect x="180" y="150" width="520" height="120" rx="16" fill="#145c3a"/>
+        <rect x="250" y="110" width="300" height="28" rx="12" fill="#c4b7a2"/>
+        <rect x="220" y="70" width="400" height="36" rx="12" fill="#1c1916"/>
+      </svg>
+    </div>
+  </article>
+</div>
+<p class="out" data-test="out">idle</p>
+</main>
+<script>
+const GSAP = 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js';
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const index = document.getElementById('index');
+const next = document.getElementById('case');
+
+function showCase() {
+  index.hidden = true;
+  next.hidden = false;
+  document.querySelector('[data-test=out]').textContent = 'opened';
+}
+
+function load(src) {
+  return new Promise((resolve, reject) => {
+    const el = document.createElement('script');
+    el.src = src;
+    el.onload = () => resolve();
+    el.onerror = () => reject(new Error('offline'));
+    document.head.appendChild(el);
+  });
+}
+
+document.getElementById('open').addEventListener('click', () => {
+  document.querySelector('[data-test=out]').textContent = 'opened';
+  if (reduce || !window.gsap) {
+    showCase();
+    return;
+  }
+  const gsap = window.gsap;
+  next.hidden = false;
+  gsap.set(next, { autoAlpha: 0, y: 24 });
+  gsap.timeline({ onComplete: () => { document.querySelector('[data-test=out]').textContent = 'opened'; } })
+    .to(index, { autoAlpha: 0, y: -16, duration: 0.32, ease: 'power2.in' })
+    .to(next, { autoAlpha: 1, y: 0, duration: 0.45, ease: 'power2.out' }, 0.16)
+    .add(() => { index.hidden = true; });
+});
+
+(async function start() {
+  if (!reduce) {
+    try { await load(GSAP); } catch (err) { document.body.dataset.mode = 'still'; }
+  } else {
+    document.body.dataset.mode = 'still';
+  }
+  document.body.dataset.ready = '1';
+})();
+</script>
+</body>
+</html>

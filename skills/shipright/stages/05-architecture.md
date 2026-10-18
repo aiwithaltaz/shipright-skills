@@ -5,7 +5,7 @@ Required headings: Stack, Data model, Access, Integrations, Secrets, Costs, Phas
 
 The website stack is decided only in this file. Do not pick a second default from a table.
 
-- Premium public site, with a product on stage: Vite, plus Three.js or React Three Fiber, plus GSAP and Lenis.
+- Premium public site, with a product on stage: Vite, plus Three.js or React Three Fiber, plus GSAP and Lenis. The tested scene is `blocks/product-3d.html`. The tested scroll story is `blocks/scroll-story.html`. Do not invent a second 3D stack inside a stand-in block.
 - Calm content site, or a site with no product object: Astro.
 - An existing codebase or a named tool wins over both. Say the switch point.
 

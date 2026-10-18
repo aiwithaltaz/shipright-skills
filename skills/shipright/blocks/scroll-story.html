@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" data-interaction="click" data-expect="revealed">
+<!--
+Block: scroll-story
+Job: Lenis smooth scroll and a GSAP ScrollTrigger pin. Text and images reveal as the story scrubs.
+Use when: a premium public site needs a scroll story
+Do not use when: the page is an app tool, or it must run with no network and no still. Use pinned-scene for that.
+Attributes: data-beats
+Size: 8 KB
+Libraries: gsap@3.12.5, ScrollTrigger@3.12.5, lenis@1.1.18 from jsDelivr. Fallback: the beats in normal flow.
+-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rain moved Thursday</title>
+<style>
+@import url("fonts/fonts.css");
+:root {
+  --ink:#1c1916; --paper:#f7f6f3; --card:#fff; --line:#6f6a62; --accent:#145c3a; --muted:#4e4943;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; max-width: 100%; background: var(--paper); color: var(--ink); }
+body { font-family: "Inter", system-ui, sans-serif; font-size: 16px; line-height: 1.5; }
+.mast { max-width: 1120px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; background: var(--card); border-bottom: 1px solid var(--line); }
+.mast b { font-family: "Fraunces", Georgia, serif; font-weight: 400; font-size: 16px; }
+.mast span, .kicker { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+#story { height: 300vh; }
+.pin { min-height: 100vh; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 32px; align-items: center; padding: 48px 24px 64px; max-width: 1120px; margin: 0 auto; }
+h1 { font-family: "Fraunces", Georgia, serif; font-weight: 400; font-size: 40px; line-height: 1.2; margin: 8px 0 16px; }
+.copy p { margin: 16px 0 0; max-width: 36em; }
+.visual { position: relative; min-height: 420px; background: var(--card); border: 1px solid var(--line); border-radius: 24px; overflow: hidden; }
+.shot { position: absolute; inset: 0; opacity: 0; }
+.shot.on, .shot[data-shot="0"] { opacity: 1; }
+.shot svg { width: 100%; height: 100%; display: block; }
+button { font: inherit; min-height: 44px; min-width: 44px; padding: 8px 16px; border-radius: 12px; border: 1px solid var(--accent); background: var(--accent); color: #fff; cursor: pointer; margin-top: 24px; }
+button:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+.out { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+[data-keep-text] { margin: 0; color: var(--muted); }
+@media (max-width: 800px) {
+  h1 { font-size: 32px; }
+  .pin { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 32px 16px 48px; align-items: start; }
+  .visual { min-height: 280px; }
+  .mast { padding: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  #story { height: auto; }
+  .pin { min-height: 0; display: block; }
+  .shot { position: relative; opacity: 1 !important; transform: none !important; min-height: 220px; margin-top: 16px; }
+  .visual { overflow: visible; background: transparent; border: 0; min-height: 0; }
+  .copy p { opacity: 1 !important; transform: none !important; }
+}
+</style>
+</head>
+<body data-ready="0">
+<header class="mast"><b>Field kit</b><span>Demo data</span></header>
+<main>
+<section id="story" data-beats="3">
+  <div class="pin">
+    <div class="copy">
+      <p class="kicker">Scroll story</p>
+      <h1>Rain moved Thursday</h1>
+      <p data-keep-text data-reveal="0">The week stays readable when motion is off. 59 visits, one crew day over capacity.</p>
+      <p data-reveal="1">Outdoor work shifts to Friday. The board shows the gap before anyone drives out.</p>
+      <p data-reveal="2">12 invoices, $930, ready when the week locks.</p>
+      <button type="button" data-test="run" id="advance">Advance</button>
+    </div>
+    <div class="visual" aria-hidden="true">
+      <div class="shot on" data-shot="0">
+        <svg viewBox="0 0 640 800" role="img">
+          <rect width="640" height="800" fill="#f7f6f3"/>
+          <rect x="48" y="80" width="544" height="640" rx="24" fill="#145c3a"/>
+          <rect x="48" y="520" width="544" height="200" fill="#1c1916" opacity=".35"/>
+          <circle cx="470" cy="210" r="48" fill="#f7f6f3"/>
+          <path d="M80 560 C180 480 260 600 360 520 C460 440 520 500 580 470 L580 720 L80 720 Z" fill="#f7f6f3" opacity=".9"/>
+        </svg>
+      </div>
+      <div class="shot" data-shot="1">
+        <svg viewBox="0 0 640 800" role="img">
+          <rect width="640" height="800" fill="#fff"/>
+          <rect x="64" y="80" width="160" height="640" rx="16" fill="#f7f6f3"/>
+          <rect x="240" y="80" width="160" height="640" rx="16" fill="#f7f6f3"/>
+          <rect x="416" y="80" width="160" height="640" rx="16" fill="#f7f6f3"/>
+          <rect x="80" y="140" width="128" height="80" rx="12" fill="#145c3a"/>
+          <rect x="256" y="220" width="128" height="64" rx="12" fill="#1c1916"/>
+          <rect x="432" y="300" width="128" height="96" rx="12" fill="#6f6a62"/>
+        </svg>
+      </div>
+      <div class="shot" data-shot="2">
+        <svg viewBox="0 0 640 800" role="img">
+          <rect width="640" height="800" fill="#f7f6f3"/>
+          <rect x="96" y="96" width="448" height="608" rx="24" fill="#fff" stroke="#6f6a62"/>
+          <rect x="136" y="150" width="180" height="16" fill="#1c1916"/>
+          <rect x="136" y="190" width="360" height="8" fill="#6f6a62"/>
+          <rect x="136" y="220" width="300" height="8" fill="#6f6a62"/>
+          <rect x="136" y="280" width="368" height="160" rx="16" fill="#145c3a"/>
+          <rect x="136" y="500" width="200" height="24" fill="#1c1916"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+<p class="out" data-test="out">idle</p>
+</main>
+<script>
+const GSAP = 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js';
+const TRIGGER = 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js';
+const LENIS = 'https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js';
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function load(src) {
+  return new Promise((resolve, reject) => {
+    const el = document.createElement('script');
+    el.src = src;
+    el.onload = () => resolve();
+    el.onerror = () => reject(new Error('offline'));
+    document.head.appendChild(el);
+  });
+}
+
+document.getElementById('advance').addEventListener('click', () => {
+  const trigger = window.ScrollTrigger && window.ScrollTrigger.getAll()[0];
+  if (trigger) {
+    const dest = trigger.start + (trigger.end - trigger.start) * 0.72;
+    trigger.scroll(dest);
+  }
+  document.querySelector('[data-test=out]').textContent = 'revealed';
+});
+
+async function start() {
+  if (reduce) {
+    document.body.dataset.mode = 'still';
+    document.body.dataset.ready = '1';
+    return;
+  }
+  try {
+    await load(GSAP);
+    await load(TRIGGER);
+    const fine = matchMedia('(pointer: fine)').matches;
+    if (fine) await load(LENIS);
+    if (!window.gsap || !window.ScrollTrigger) throw new Error('offline');
+    const gsap = window.gsap;
+    gsap.registerPlugin(window.ScrollTrigger);
+    if (fine && window.Lenis) {
+      const lenis = new window.Lenis({ duration: 1.05 });
+      lenis.on('scroll', window.ScrollTrigger.update);
+      gsap.ticker.add(time => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+      document.addEventListener('visibilitychange', () => { if (document.hidden) lenis.stop(); else lenis.start(); });
+    }
+    gsap.set('[data-reveal="1"], [data-reveal="2"]', { autoAlpha: 0, y: 16 });
+    gsap.set('[data-shot="1"], [data-shot="2"]', { autoAlpha: 0 });
+    const tl = gsap.timeline();
+    tl.to('[data-reveal="1"]', { autoAlpha: 1, y: 0, duration: 1 }, 0.15)
+      .to('[data-shot="0"]', { autoAlpha: 0, duration: 0.8 }, 0.35)
+      .to('[data-shot="1"]', { autoAlpha: 1, duration: 0.8 }, 0.35)
+      .to('[data-reveal="2"]', { autoAlpha: 1, y: 0, duration: 1 }, 1.1)
+      .to('[data-shot="1"]', { autoAlpha: 0, duration: 0.8 }, 1.2)
+      .to('[data-shot="2"]', { autoAlpha: 1, duration: 0.8 }, 1.2);
+    window.ScrollTrigger.create({
+      trigger: '#story',
+      start: 'top top',
+      end: 'bottom bottom',
+      pin: '.pin',
+      scrub: true,
+      animation: tl,
+    });
+    document.body.dataset.mode = 'story';
+  } catch (err) {
+    document.body.dataset.mode = 'still';
+  }
+  document.body.dataset.ready = '1';
+}
+start();
+</script>
+</body>
+</html>

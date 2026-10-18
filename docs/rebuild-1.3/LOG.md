@@ -250,3 +250,56 @@ Not a release. Stages 4 to 9, the patterns, the 17 blocks, and the three checker
 2. Keep taste opt-in, keep the historical spacing sentence in personal-taste/altaz.md, and use 4, 8, 16, 24, 32, 40, 48, 64 for new gaps, with 12px only as a kicker? Recommended: yes.
 3. Leave the ChatGPT file on the spine at 3,754 words, with stages 4 to 10 and the blocks only in the zip? Recommended: yes. This matches the Phase 1 answer. The file grew by 32 words because SKILL.md grew.
 
+# Phase 2b log
+
+Draft 1.3, not released. No merge, tag, release, or deploy. Phase 3 has not started.
+
+Phase 2 answers, applied: app blocks stay plain HTML. Taste stays opt-in, with the historical spacing sentence kept and 12px only as a kicker. The ChatGPT file stays on the spine. Premium sites do not use the stand-in blocks.
+
+## Plan
+
+1. P2b.1 Three premium blocks. Each loads a pinned CDN build, and falls back when the CDN fails or motion is reduced.
+2. P2b.2 Polish every block with the starter type, the spacing scale, and a balanced width. Retake shots at 390 and 1280.
+3. P2b.3 Point stage 8, stage 5, the motion pattern, and the web pattern at those blocks for a premium or 3D site.
+
+## What changed
+
+### Premium blocks
+
+`scroll-story` loads gsap@3.12.5, ScrollTrigger@3.12.5, and lenis@1.1.18 from jsDelivr. Lenis runs on a fine pointer only. A pinned section scrubs text and three images. Reduced motion, or a failed CDN, leaves the beats in normal flow.
+
+`product-3d` loads three@0.169.0 and GLTFLoader from the same CDN. It draws `models/keel.glb` with studio lights, drag orbit, and a scroll that turns the body and lifts the cap. The model is original, CC0 1.0, and noted in `models/LICENSE.txt`. It is not a scan. Reduced motion, or a failed load, shows the poster in the block. The canvas uses preserveDrawingBuffer so a shot is not empty.
+
+`page-transition` loads gsap@3.12.5 and moves from an index into a case. Without GSAP, or with reduced motion, the swap is instant. Both views are in the page.
+
+### Polish
+
+The other 17 blocks now use Inter and Fraunces from `fonts/fonts.css`, the 40px display line, a 12px kicker, spacing on 4, 8, 16, 24, 32, 40, 48, 64, and a 960px column. Sample pages are marked Demo data. The primary action uses the starter accent. Shots were retaken at 390 and 1280.
+
+### Guidance
+
+Stage 8 says a premium site, a scroll story, or a 3D product must copy the three new blocks, not product-stage, pinned-scene, or exploded-view. Stage 5 names the same files for the website stack. `patterns/motion.md` records the pins, the measured CDN sizes, and the CC0 model. `patterns/web-pages.md` adds the three blocks to the catalog. Those notes are in backticks where a second pattern link would break the one-pattern rule.
+
+## Commands
+
+python3 evals/check_context.py
+
+PASS. Always shared 1,915. All shared 3,247. Largest normal path stays 11,132.
+
+python3 evals/check_sources.py
+
+0 new errors against the image-less zip baseline. 6 old README errors stay gone.
+
+NODE_PATH=/workspace/node_modules node tests/blocks/test-blocks.mjs
+
+blocks: pass 20.
+
+python3 -m unittest tests.test_phase2 tests.test_v13_foundation.FoundationTests.test_stage_required_headings_exist
+
+7 tests, OK. That includes the block run, token checks, and the stage heading check.
+
+## Pending
+
+Smoke eval on c2, c5, and c8 is still not run. No scores. Phase 3 has not started.
+
+

@@ -10,8 +10,11 @@ exploded-view.html
 form-kit.html
 hover-invert-faq.html
 mask-reveal.html
+page-transition.html
 pinned-scene.html
+product-3d.html
 product-stage.html
 scroll-rail.html
+scroll-story.html
 states-kit.html
 week-board.html

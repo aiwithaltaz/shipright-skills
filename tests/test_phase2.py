@@ -10,7 +10,7 @@ BLOCKS = [
     'product-stage', 'exploded-view', 'pinned-scene', 'mask-reveal', 'block-wipe',
     'hover-invert-faq', 'scroll-rail', 'counter-preloader', 'app-shell', 'attention-list',
     'data-table', 'week-board', 'context-rail', 'custom-select', 'form-kit', 'states-kit',
-    'app-motion-kit',
+    'app-motion-kit', 'scroll-story', 'product-3d', 'page-transition',
 ]
 
 
@@ -56,7 +56,7 @@ class Phase2Tests(unittest.TestCase):
             self.assertTrue((SHIP / 'blocks/shots' / f'{name}-phone.png').is_file(), name)
         proc = subprocess.run(
             ['node', str(ROOT / 'tests/blocks/test-blocks.mjs')],
-            cwd=ROOT, capture_output=True, text=True, env=node_env(), timeout=180,
+            cwd=ROOT, capture_output=True, text=True, env=node_env(), timeout=300,
         )
         self.assertEqual(0, proc.returncode, proc.stderr[-2000:] + proc.stdout[-500:])
 

@@ -20,15 +20,29 @@ Check: reduced motion shows the same words. A still stands in for WebGL.
 Use the app-motion-kit block: selection, stepper, list add and remove, toast, skeleton to content, dialog, count-up, drag to reorder, success check, error shake once.
 Check: the block's test passes before you copy it.
 
+## Premium blocks
+
+Checked 2026-10-18 against the jsDelivr files named here.
+
+A brief that asks for a premium site, a scroll story, or a 3D product must copy these blocks. Do not use the stand-in blocks for that job.
+
+| Block | Pin | Fallback |
+| --- | --- | --- |
+| scroll-story | gsap@3.12.5 and lenis@1.1.18 | beats in normal flow |
+| product-3d | three@0.169.0 | the poster in the block |
+| page-transition | gsap@3.12.5 | an instant swap |
+
+`blocks/models/keel.glb` is an original model, CC0 1.0, noted in `blocks/models/LICENSE.txt`. It is not a scan. CDN sizes the same day: gsap.min.js 71 KB, ScrollTrigger.min.js 42 KB, lenis.min.js 13 KB, three.module.js 1,274 KB.
+
 ## Tool table
 
 | Need | Use | Size checked | License | Reduced motion |
 | --- | --- | --- | --- | --- |
 | Small state | CSS | none | none | instant |
 | List reorder | Web Animations API | none | platform | instant |
-| Scroll story | GSAP plus ScrollTrigger | gsap.min.js 71 KB, ScrollTrigger 43 KB in this pack | Standard no-charge license. Commercial use is allowed. Do not build a visual animation competitor. | content in normal flow |
-| Smooth scroll on a marketing page | Lenis, fine pointer only | lenis.min.js 16 KB in this pack. The site says the core is under 5 KB. | MIT | off |
-| A 3D product | Three.js, or React Three Fiber in React | three.module.js 676 KB in this pack | MIT | still image |
+| Scroll story | GSAP 3.12.5 plus ScrollTrigger | gsap.min.js 71 KB, ScrollTrigger 42 KB on jsDelivr, 2026-10-18 | Standard no-charge license. Commercial use is allowed. Do not build a visual animation competitor. | content in normal flow |
+| Smooth scroll on a marketing page | Lenis 1.1.18, fine pointer only | lenis.min.js 13 KB on jsDelivr, 2026-10-18 | MIT | off |
+| A 3D product | Three.js 0.169.0, block product-3d | three.module.js 1,274 KB on jsDelivr, 2026-10-18 | MIT | still image |
 | State machines from a designer | Rive runtime | confirm the wasm you ship | MIT runtime | first frame |
 | Playback from a designer | Lottie (lottie-web) | confirm the build you ship | MIT | first frame |
 | A game or particles | Canvas 2D | none | none | still |

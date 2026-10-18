@@ -48,6 +48,11 @@ Check: neighboring acts differ in composition. Name the block used for each act.
 | Questions, one open | hover-invert-faq |
 | A row of cards driven by scroll | scroll-rail |
 | A short warm-up before the page | counter-preloader |
+| Premium scroll story | scroll-story |
+| A real 3D product | product-3d |
+| Index into a case | page-transition |
+
+If the brief asks for a premium site, a scroll story, or a 3D product, use those three blocks. Do not use product-stage, pinned-scene, or exploded-view for that job.
 
 Copy the block. Set its attributes. Do not rewrite it unless a test fails.
 Phone first. The same words remain when motion is reduced and when JavaScript is off.

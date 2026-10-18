@@ -14,6 +14,10 @@ Required headings in screen-spec.md: Job, Layout, States, Copy.
 5. For a coding tool, write one prompt per ticket (goal, read first, steps, states, do not add, done when, stop). A website prompt is 550 to 1,700 words and follows the six acts. App tickets stay short.
 6. Each change on an existing app names its pain ID in CHANGELOG.md.
 
+## Premium sites
+
+A premium public site, a scroll story, or a 3D product copies `scroll-story`, `product-3d`, and `page-transition` from `blocks/`. Do not swap in `product-stage`, `pinned-scene`, or `exploded-view` for those jobs. Those three are the no-network stand-ins. Set the block attributes. Do not rewrite a block unless a test fails. The libraries load from the pinned CDN in `patterns/motion.md`. If that CDN fails, or the person asks for reduced motion, keep the still that is already in the block.
+
 ## Gate
 
 Matches the layout spec. Labeled sample data. No dev controls. Pain IDs on existing-app changes. Record updated.
