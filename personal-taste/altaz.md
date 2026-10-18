@@ -15,6 +15,7 @@ Current instructions and the existing approved system take precedence. These pre
 - Build tables around what people compare. Put secondary facts next to their main item and deeper detail in the record view.
 - Decide the primary action side once in the design system and use it the same way across the app.
 - For a new layout without an existing system, prefer 8-point spacing: 4, 8, 12, 16, 24, 32 and 48. Preserve an approved system, including a 4px system.
+- That historical line mixes a 12px size into the gap list. For new work, 12px is the kicker size, not a gap. Gaps are 4, 8, 16, 24, 32, 40, 48, and 64. See the opt-in profile in the skill when it is selected.
 
 A bottom-left profile home is specific to the registration desk correction, not every product.
 No preference requires a sidebar, wizard, table, summary panel or new feature.

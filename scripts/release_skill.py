@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
-"""Build the Claude.ai skill zip and the single-file ChatGPT fallback.
+"""Build the Claude.ai skill zip and the short ChatGPT fallback.
 
 Claude.ai wants a zip whose top folder matches the skill name and contains
-SKILL.md. ChatGPT Custom GPTs and projects have no skill folder, so they get
-one Markdown file with every mode and reference inlined.
+SKILL.md. The zip includes scripts, templates, patterns, blocks, stages, and modes.
+
+ChatGPT Custom GPTs and projects have no skill folder. They get one short
+Markdown file: the router, stages 0 to 3, the feedback round, and the core
+templates. Stages 4 to 10 and the mode references stay in the zip. Inlining
+them made the old file about 28,000 words.
 
     python3 scripts/release_skill.py
     python3 scripts/release_skill.py --out dist
@@ -15,6 +19,23 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / 'skills' / 'shipright'
 STAMP = (2026, 10, 14, 0, 0, 0)
+# Short edition. Measured to stay inside 3,000 to 4,000 words.
+CHATGPT_REL = (
+    'SKILL.md',
+    'stages/00-discover.md',
+    'stages/01-research.md',
+    'stages/02-brainstorm.md',
+    'stages/03-problem-solving.md',
+    'stages/feedback-round.md',
+    'templates/research-brief.md',
+    'templates/concepts.md',
+    'templates/risks.md',
+    'templates/discovery.md',
+    'templates/pain-map.md',
+    'templates/reply.md',
+    'templates/record/CONTEXT.md',
+    'templates/record/HANDOFF.md',
+)
 
 
 def skill_files():
@@ -25,15 +46,14 @@ def chatgpt_text():
     parts = [
         '# ShipRight for ChatGPT',
         '',
-        'This is the whole ShipRight skill in one file. Paste it into Custom GPT instructions, or attach it to a ChatGPT project, when the tool cannot load a skill folder.',
-        '',
-        'When a section says to read another file, find the matching `Source:` heading later in this file and read that section. Follow one mode. Leave the other modes unread.',
+        'Short edition for a Custom GPT or a ChatGPT project. It holds the router, stages 0 to 3, the feedback round, and the core templates.',
+        'Stages 4 to 10, the mode references, and the scripts are in shipright.zip. When a step names one of those files, follow the step and say the file is in the full skill if this paste does not include it.',
         '',
         'Claude Code, Cursor, Codex, VS Code, Antigravity, and Gemini CLI should install the `shipright` skill instead of this file. The command is `/shipright`.',
         '',
     ]
-    for path in skill_files():
-        rel = path.relative_to(SKILL).as_posix()
+    for rel in CHATGPT_REL:
+        path = SKILL / rel
         parts.append('---')
         parts.append('')
         parts.append(f'# Source: {rel}')

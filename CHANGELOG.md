@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.3.0 - 2026-10-18
+
+Not tagged. Not merged. Not released. There is no 1.3 zip. Use the repository.
+
+- Stages 0 to 10, a project record, and a case study that may only use numbers already in the record.
+- Pitch deck template. Market, model, and ask stay blank unless the owner supplied them. `check-record.mjs` rejects an unsourced number.
+- Seventeen plain blocks, plus scroll-story, product-3d, and page-transition for a premium site.
+- The site in `site/` rebuilt on that draft: self-hosted Inter and Fraunces, a pinned run, a before/after slider, a proof section that says "results coming", and a c7 case study from baseline evidence only.
+- Eval prompts for 8 cases times Sonnet, Haiku, and Opus, plus 2 hidden cases. Not launched. No scores.
+- Limits: baseline 1.2 is not graded. 1.3 runs do not exist yet. Taste on the new site is Not verified.
+
+- Merged in PR 21 and released as v1.3.0. Backup tag: backup-2026-10-18-pre-1.3. No zip asset; install from the repo.
+
 ## 1.2.0 - 2026-10-14
 
 - Added guided website research, real product heroes and six-act story architecture.

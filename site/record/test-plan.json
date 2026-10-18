@@ -1,0 +1,22 @@
+{
+  "screens": [
+    {
+      "name": "home",
+      "file": "../dist/index.html",
+      "widths": [390, 1280],
+      "actions": [
+        {
+          "type": "click",
+          "selector": "#install-tab-cursor",
+          "expectText": "npx skills add aiwithaltaz/shipright-skills -a cursor -y"
+        }
+      ]
+    },
+    {
+      "name": "case",
+      "file": "../dist/case-study.html",
+      "widths": [390, 1280],
+      "actions": []
+    }
+  ]
+}

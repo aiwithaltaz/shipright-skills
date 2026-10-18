@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" data-interaction="click" data-expect="orbited" data-webgl="1">
+<!--
+Block: product-3d
+Job: A CC0 glTF on a lit stage. Drag to orbit. Scroll turns it and separates the parts. A poster stands in when WebGL is off.
+Use when: a premium site or a 3D product page
+Do not use when: there is no physical product. Use product-stage only when a glTF is not allowed.
+Attributes: data-model, data-accent
+Size: 9 KB
+Libraries: three@0.169.0 from jsDelivr. Model: models/keel.glb, CC0, see models/LICENSE.txt.
+-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keel in the round</title>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+  }
+}
+</script>
+<style>
+@import url("fonts/fonts.css");
+:root { --ink:#1c1916; --paper:#f7f6f3; --card:#fff; --line:#6f6a62; --accent:#145c3a; --muted:#4e4943; }
+* { box-sizing: border-box; }
+html, body { margin: 0; max-width: 100%; background: var(--paper); color: var(--ink); }
+body { font-family: "Inter", system-ui, sans-serif; font-size: 16px; line-height: 1.5; }
+.mast { max-width: 1120px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; gap: 16px; align-items: center; background: var(--card); border-bottom: 1px solid var(--line); }
+.mast b { font-family: "Fraunces", Georgia, serif; font-weight: 400; }
+.mast span, .kicker { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.hero { max-width: 1120px; margin: 0 auto; padding: 32px 24px 24px; display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 32px; align-items: center; }
+h1 { font-family: "Fraunces", Georgia, serif; font-weight: 400; font-size: 40px; line-height: 1.2; margin: 8px 0 16px; }
+.stage { position: relative; min-height: 560px; background: var(--card); border: 1px solid var(--line); border-radius: 24px; overflow: hidden; }
+canvas { width: 100%; height: 560px; display: block; touch-action: none; }
+[data-poster] { min-height: 560px; display: grid; place-items: center; padding: 24px; }
+[data-poster] svg { width: min(100%, 420px); height: auto; }
+[data-poster][hidden], canvas[hidden] { display: none; }
+button { font: inherit; min-height: 44px; min-width: 44px; padding: 8px 16px; border-radius: 12px; border: 1px solid var(--accent); background: var(--accent); color: #fff; cursor: pointer; margin-top: 24px; }
+button:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+.track { height: 180vh; }
+.note { max-width: 1120px; margin: 0 auto; padding: 24px; color: var(--muted); }
+.out { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+[data-keep-text] { margin: 0; max-width: 36em; }
+@media (max-width: 800px) {
+  .hero { grid-template-columns: minmax(0, 1fr); padding: 32px 16px 16px; gap: 24px; }
+  h1 { font-size: 32px; }
+  .stage, canvas, [data-poster] { min-height: 320px; }
+  canvas { height: 320px; }
+  .mast, .note, .out { padding-left: 16px; padding-right: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  canvas, .track { display: none !important; }
+  [data-poster] { display: grid !important; }
+}
+</style>
+</head>
+<body data-ready="0">
+<header class="mast"><b>Keel</b><span>Demo data</span></header>
+<div class="hero">
+  <div>
+    <p class="kicker">Product</p>
+    <h1>Keel, in the round</h1>
+    <p data-keep-text>The still stands in when WebGL is off or motion is reduced. Drag to orbit. Scroll to open the parts.</p>
+    <button type="button" data-test="run" id="orbit">Orbit</button>
+  </div>
+  <div class="stage" data-model="models/keel.glb" data-accent="#145c3a">
+    <canvas id="view" hidden></canvas>
+    <div data-poster>
+      <svg viewBox="0 0 420 360" role="img" aria-label="Still of the Keel model">
+        <rect width="420" height="360" fill="#f7f6f3"/>
+        <ellipse cx="210" cy="280" rx="120" ry="16" fill="#1c1916" opacity=".15"/>
+        <rect x="110" y="168" width="200" height="96" rx="16" fill="#145c3a"/>
+        <rect x="145" y="142" width="130" height="22" rx="8" fill="#c4b7a2"/>
+        <rect x="125" y="112" width="170" height="28" rx="10" fill="#1c1916"/>
+      </svg>
+    </div>
+  </div>
+</div>
+<div class="track" id="track"></div>
+<p class="note">Scroll turns the body and lifts the cap. The poster above is the fallback, not a second product.</p>
+<p class="out" data-test="out">idle</p>
+<script type="module">
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const canvas = document.getElementById('view');
+const poster = document.querySelector('[data-poster]');
+let yaw = 0.7;
+let pitch = 0.35;
+let explode = 0;
+let model = null;
+let base = new Map();
+let renderer, scene, camera, frame;
+
+function showPoster() {
+  canvas.hidden = true;
+  poster.hidden = false;
+  document.body.dataset.mode = 'still';
+  document.body.dataset.ready = '1';
+}
+
+document.getElementById('orbit').addEventListener('click', () => {
+  yaw += 0.7;
+  document.querySelector('[data-test=out]').textContent = 'orbited';
+});
+
+function onScroll() {
+  const track = document.getElementById('track');
+  const total = Math.max(1, track.offsetHeight - window.innerHeight * 0.4);
+  const start = track.offsetTop - window.innerHeight * 0.8;
+  explode = Math.min(1, Math.max(0, (window.scrollY - start) / total));
+}
+
+if (reduce) {
+  showPoster();
+} else {
+  try {
+    const THREE = await import('three');
+    const { GLTFLoader } = await import('three/addons/loaders/GLTFLoader.js');
+    const stage = canvas.parentElement;
+    renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, preserveDrawingBuffer: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+    renderer.setClearColor(0xf7f6f3, 1);
+    if (THREE.SRGBColorSpace) renderer.outputColorSpace = THREE.SRGBColorSpace;
+    scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xf7f6f3);
+    camera = new THREE.PerspectiveCamera(32, 1, 0.1, 40);
+    scene.add(new THREE.HemisphereLight(0xfff6ea, 0x2a2926, 1.15));
+    const key = new THREE.DirectionalLight(0xffffff, 2.4);
+    key.position.set(3.2, 5.2, 2.4);
+    scene.add(key);
+    const fill = new THREE.DirectionalLight(0xd5dbe8, 0.7);
+    fill.position.set(-3.4, 1.4, -2);
+    scene.add(fill);
+    const rim = new THREE.DirectionalLight(0xffffff, 0.8);
+    rim.position.set(-1, 2.2, 4);
+    scene.add(rim);
+    const ground = new THREE.Mesh(
+      new THREE.CircleGeometry(1.8, 48),
+      new THREE.MeshStandardMaterial({ color: 0xe6e1d8, roughness: 1, metalness: 0 })
+    );
+    ground.rotation.x = -Math.PI / 2;
+    scene.add(ground);
+    const gltf = await new GLTFLoader().loadAsync(new URL('models/keel.glb', import.meta.url).href);
+    model = gltf.scene;
+    model.traverse(obj => {
+      if (obj.isMesh) {
+        obj.castShadow = false;
+        obj.receiveShadow = false;
+      }
+    });
+    ['body', 'collar', 'cap'].forEach(name => {
+      const part = model.getObjectByName(name);
+      if (part) base.set(name, part.position.y);
+    });
+    scene.add(model);
+    canvas.hidden = false;
+    poster.hidden = true;
+
+    function size() {
+      const width = Math.max(1, stage.clientWidth);
+      const height = Math.max(1, canvas.clientHeight || 460);
+      renderer.setSize(width, height, false);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+    }
+    size();
+    window.addEventListener('resize', size);
+
+    let dragging = false;
+    let lx = 0;
+    let ly = 0;
+    canvas.addEventListener('pointerdown', event => {
+      dragging = true;
+      lx = event.clientX;
+      ly = event.clientY;
+      canvas.setPointerCapture(event.pointerId);
+    });
+    canvas.addEventListener('pointerup', () => { dragging = false; });
+    canvas.addEventListener('pointermove', event => {
+      if (!dragging) return;
+      yaw += (event.clientX - lx) * 0.01;
+      pitch = Math.max(0.05, Math.min(1.1, pitch + (event.clientY - ly) * 0.005));
+      lx = event.clientX;
+      ly = event.clientY;
+    });
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    function place() {
+      const radius = 3.5;
+      const cos = Math.cos(pitch);
+      camera.position.set(Math.sin(yaw) * cos * radius, 0.85 + Math.sin(pitch) * 1.4, Math.cos(yaw) * cos * radius);
+      camera.lookAt(0, 0.55, 0);
+      if (model) {
+        model.rotation.y = explode * Math.PI * 0.85;
+        base.forEach((y, name) => {
+          const part = model.getObjectByName(name);
+          if (!part || name === 'body') return;
+          const lift = name === 'cap' ? 0.85 : 0.38;
+          part.position.y = y + explode * lift;
+        });
+      }
+    }
+    function loop() {
+      if (document.hidden) return;
+      place();
+      renderer.render(scene, camera);
+      frame = requestAnimationFrame(loop);
+    }
+    place();
+    renderer.render(scene, camera);
+    document.body.dataset.mode = 'webgl';
+    document.body.dataset.ready = '1';
+    frame = requestAnimationFrame(loop);
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) cancelAnimationFrame(frame);
+      else frame = requestAnimationFrame(loop);
+    });
+  } catch (err) {
+    showPoster();
+  }
+}
+</script>
+</body>
+</html>

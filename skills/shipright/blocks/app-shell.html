@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-interaction="click" data-expect="open">
+<!--
+Block: app-shell
+Job: Sidebar, nav with no active dot, profile at the bottom, phone drawer.
+Use when: a signed-in app with a few sections
+Do not use when: a single marketing page
+Attributes: data-product
+Size: 4 KB
+-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fleet</title>
+<style>
+
+@import url("fonts/fonts.css");
+  :root {
+    --ink:#1c1916; --paper:#f7f6f3; --card:#fff; --line:#6f6a62; --accent:#145c3a; --muted:#4e4943;
+    --space-1:4px; --space-2:8px; --space-3:16px; --space-4:24px; --space-5:32px; --space-6:40px; --space-7:48px; --space-8:64px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; max-width: 100%; }
+  body { font-family: "Inter", system-ui, sans-serif; font-size: 16px; line-height: 1.5; color: var(--ink); background: var(--paper); }
+  a { color: inherit; text-decoration: none; }
+  .mast { max-width: 960px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; background: var(--card); border-bottom: 1px solid var(--line); }
+  .mast b { font-family: "Fraunces", Georgia, serif; font-weight: 400; font-size: 16px; }
+  .mast span, .kicker { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px 64px; }
+  h1, h2 { font-family: "Fraunces", Georgia, serif; font-weight: 400; line-height: 1.2; }
+  h1 { font-size: 40px; margin: 8px 0 16px; }
+  h2 { font-size: 24px; margin: 0 0 8px; }
+  .kicker { margin: 0 0 8px; }
+  p { margin: 8px 0 0; }
+  [data-keep-text] { margin: 0 0 16px; max-width: 40em; color: var(--muted); }
+  button, [role="option"] { font: inherit; color: inherit; }
+  button { min-height: 44px; min-width: 44px; padding: 8px 16px; border-radius: 12px; border: 1px solid var(--ink); background: var(--card); cursor: pointer; }
+  button[data-test="run"]:not(.row) { background: var(--accent); color: #fff; border-color: var(--accent); }
+  button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+  .out { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+  @media (max-width: 800px) {
+    main { padding: 32px 16px 48px; }
+    h1 { font-size: 32px; }
+    .mast { padding: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+
+    .shell { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 16px; margin-top: 16px; }
+    .side { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 16px; display: flex; flex-direction: column; gap: 8px; min-height: 280px; }
+    .nav a { display: flex; justify-content: space-between; padding: 8px; border-radius: 12px; text-decoration: none; }
+    .nav a[aria-current="page"] { background: var(--paper); font-weight: 600; }
+    .profile { margin-top: auto; }
+    @media (max-width: 800px) {
+      .shell { grid-template-columns: minmax(0, 1fr); }
+      .side { display: none; }
+      .side.open { display: flex; }
+    }
+    
+</style>
+</head>
+<body>
+<header class="mast"><b>App shell</b><span>Demo data</span></header>
+<main>
+<p data-keep-text>Navigation names stay visible as text.</p>
+<p class="kicker">App shell</p>
+<h1>Fleet</h1>
+<button type="button" data-test="run" id="menu">Menu</button>
+    <div class="shell" data-product="Fleet">
+      <aside class="side" id="side">
+        <strong>Fleet</strong>
+        <nav class="nav" aria-label="App">
+          <a href="#today" aria-current="page">Today <span>3</span></a>
+          <a href="#agents">Agents <span>12</span></a>
+        </nav>
+        <div class="profile">A. Rivera</div>
+      </aside>
+      <section><h2>Today</h2><p>3 agents need a decision.</p></section>
+    </div>
+<p class="out" data-test="out">idle</p>
+</main>
+<script>
+document.getElementById('menu').addEventListener('click', () => { document.getElementById('side').classList.toggle('open'); document.querySelector('[data-test=out]').textContent = 'open'; });
+</script>
+</body>
+</html>

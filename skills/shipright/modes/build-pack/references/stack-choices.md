@@ -4,6 +4,8 @@ Pick boring, well-known defaults the user's coding tool already handles well. Ev
 An existing codebase or a named tool wins over this table. Do not add a service without a job in this release.
 Say "current stable version" rather than guessing version numbers. Record the stack as Proposed until the user agrees; build T1 with it anyway, because changing it later is cheap at that point.
 
+Public websites do not pick from two competing defaults. The only website stack rule is in [stages/05-architecture.md](../../../stages/05-architecture.md). A premium public site with a product on stage uses Vite plus Three.js or React Three Fiber, GSAP, and Lenis. A calm content site, or a site with no product object, uses Astro. The rows below match that split. Do not use both stacks on one site.
+
 ## By product type
 
 | Product | Proposed default | Why | Switch when |

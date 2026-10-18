@@ -1,6 +1,6 @@
 # Decision ownership and evidence
 
-ShipRight 1.0.0. Read once per task.
+Read this once per task.
 
 ## Authority
 
@@ -11,6 +11,17 @@ Keep decisions **Proposed**, **Approved**, **Unresolved** or **Superseded**.
 Approval needs instruction/delegation; silence is not approval. Corrections authorize their named changes.
 Log consequential decisions: ID, scope, statement, status, source/date, files and replaced decision.
 Update dependent specifications; invalidate only affected evidence.
+
+
+## Facts ladder
+
+| Kind | Meaning | Example |
+| --- | --- | --- |
+| Supplied | The owner gave it. | "$189, ships December 2026" |
+| Verified | Found in a source this session. | User agreement bans automated invites. |
+| Assumed | A guess the plan needs. Mark Assumed, and how to check. | Crews invoice weekly. Ask 3 owners. |
+| Sample | Placeholder on screen. Label it. | A menu labeled Sample menu. |
+| Illustrative | A picture that claims no fact. Label it Illustrative render. | A code-drawn product, labeled. |
 
 ## Current phase
 
@@ -90,6 +101,11 @@ Separate unresolved proposals under **Needs approval before build**.
 
 ## Work boundaries
 
-Reuse authorization; requested edits/writes authorize scoped local changes. Reviews are read-only. Read files; preserve unrelated work.
+If the owner asked you to write or change files, you may change those files. Do not change anything else.
+A review is read-only. Read the files. Leave unrelated work as you found it.
 Readiness does not authorize deployment, publication, payment, live data changes or external messages.
-Bound verification and stopping point. Use simple English; define unfamiliar terms and preserve consequences. No em dashes.
+Say how far you checked, and where you stopped. Use simple English. Define an unfamiliar term, and do not drop a consequence when you simplify. No em dashes.
+
+## Project record
+
+A stage is not done until its record files are updated. Write a fact once, then link to it. Proposed is never written as Approved. Assumed is never written as Verified.

@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schedule, Crewline (working name)</title>
+<meta name="description" content="Preview of the crew schedule and invoices screens for small landscaping companies. Sample data only.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%231C6A45'/%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="design/tokens.css">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--color-bg);color:var(--color-text);font:var(--text-body)/var(--leading-text) var(--font-sans);min-height:100vh}
+h1,h2,h3,p,dl,dd,ul{margin:0;padding:0}
+ul{list-style:none}
+button,input,select,textarea{font:inherit;color:inherit}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.num{font-variant-numeric:tabular-nums}
+svg.i{width:16px;height:16px;flex:none;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* Focus */
+:where(a,button,input,select,textarea,[tabindex]):focus-visible{outline:2px solid var(--color-accent);outline-offset:2px}
+
+/* Skip link */
+.skip{position:absolute;left:var(--space-4);top:-48px;background:var(--color-surface);border:1px solid var(--color-field-border);padding:var(--space-2) var(--space-3);border-radius:var(--radius-md);z-index:50;color:var(--color-text)}
+.skip:focus{top:var(--space-2)}
+
+/* Top bar */
+.topbar{position:sticky;top:0;z-index:10;height:56px;background:var(--color-surface);border-bottom:1px solid var(--color-border)}
+.topbar-in{max-width:var(--content-max);margin:0 auto;height:100%;padding:0 var(--gutter);display:flex;align-items:center;gap:var(--space-6)}
+.brand{font-weight:600;font-size:var(--text-section);letter-spacing:-.01em;white-space:nowrap}
+.brand small{font-weight:400;font-size:var(--text-caption);color:var(--color-muted);margin-left:var(--space-2)}
+.nav{display:flex;gap:var(--space-1)}
+.nav a{display:inline-flex;align-items:center;gap:var(--space-2);height:var(--control-h);padding:0 var(--space-3);border-radius:var(--radius-md);color:var(--color-muted);text-decoration:none;font-weight:500}
+.nav a:hover{background:var(--color-sunken);color:var(--color-text)}
+.nav a[aria-current="page"]{background:var(--color-sunken);color:var(--color-text);font-weight:600}
+.nav .count{font-size:var(--text-caption);font-weight:400;color:var(--color-muted)}
+.company{margin-left:auto;color:var(--color-muted);font-size:var(--text-meta);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+
+/* Page */
+.page{max-width:var(--content-max);margin:0 auto;padding:var(--space-6) var(--gutter) var(--space-10)}
+.page-head{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);margin-bottom:var(--space-4)}
+h1{font-size:var(--text-page);line-height:var(--leading-heading);font-weight:600;letter-spacing:-.01em}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);height:var(--control-h);padding:0 var(--space-3);border-radius:var(--radius-md);border:1px solid var(--color-field-border);background:var(--color-surface);color:var(--color-text);font-weight:500;cursor:pointer;white-space:nowrap;transition:background var(--motion-fast) var(--ease-out)}
+.btn:hover{background:var(--color-sunken)}
+.btn.primary{background:var(--color-accent);border-color:var(--color-accent);color:var(--color-accent-contrast)}
+.btn.primary:hover{background:#17583A;border-color:#17583A}
+.btn.text{border-color:transparent;background:transparent;padding:0 var(--space-2);color:var(--color-accent);font-weight:600}
+.btn.text:hover{background:var(--color-accent-tint)}
+.btn.danger-text{border-color:transparent;background:transparent;color:var(--color-danger);padding:0 var(--space-2);font-weight:600}
+.btn.danger-text:hover{background:var(--color-danger-bg)}
+.btn.danger{background:var(--color-danger);border-color:var(--color-danger);color:#fff}
+.btn.danger:hover{background:#A52B19}
+.btn[disabled],.btn[aria-disabled="true"]{opacity:1;color:var(--color-muted);background:var(--color-sunken);border-color:var(--color-border);cursor:not-allowed}
+.btn.primary[disabled]{background:var(--color-sunken);color:var(--color-muted);border-color:var(--color-border)}
+.link-btn{background:none;border:0;padding:0;color:var(--color-accent);text-decoration:underline;font-weight:600;cursor:pointer;text-underline-offset:2px}
+
+/* Toolbar and summary */
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-2) var(--space-3);margin-bottom:var(--space-2)}
+.toolbar .range{font-size:var(--text-section);font-weight:600;margin-left:var(--space-2);font-variant-numeric:tabular-nums}
+.btn-group{display:inline-flex;flex-wrap:wrap;gap:var(--space-2);max-width:100%}
+.summary{display:flex;flex-wrap:wrap;gap:var(--space-1) var(--space-4);color:var(--color-muted);font-size:var(--text-meta);margin-bottom:var(--space-4);min-height:20px}
+.summary .warn{color:var(--color-warning);font-weight:500;display:inline-flex;align-items:center;gap:var(--space-1)}
+
+/* Board */
+.board-wrap{display:block}
+.board{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg)}
+.board th,.board td{border-right:1px solid var(--color-border);border-bottom:1px solid var(--color-border);vertical-align:top;text-align:left;font-weight:400}
+.board th:last-child,.board td:last-child{border-right:0}
+.board tbody tr:last-child>*{border-bottom:0}
+.board thead th{position:sticky;top:56px;z-index:3;background:var(--color-surface);padding:var(--space-2) var(--space-3);height:44px;vertical-align:middle;font-size:var(--text-meta);font-weight:600;border-top-left-radius:0}
+.board thead th:first-child{border-top-left-radius:var(--radius-lg);width:var(--crew-col);color:var(--color-muted);font-weight:500}
+.board thead th:last-child{border-top-right-radius:var(--radius-lg)}
+.board thead th.today{background:var(--color-accent-tint)}
+.board .tag-today{margin-left:var(--space-1);font-weight:600;color:var(--color-accent);font-size:var(--text-caption)}
+.board tbody th{padding:var(--space-3);width:var(--crew-col);background:var(--color-surface)}
+.crew-name{display:block;font-weight:600;font-size:var(--text-body)}
+.crew-members{display:block;color:var(--color-muted);font-size:var(--text-caption);margin-top:2px}
+.board tr.needs th,.board tr.needs td{background:var(--color-sunken)}
+.board tr.needs th .crew-name{display:flex;gap:var(--space-1);align-items:center;color:var(--color-warning)}
+.board td{padding:var(--space-2)}
+.cell{display:flex;flex-direction:column;gap:6px;min-width:0}
+.cell:empty::after{content:"";display:block;min-height:24px}
+
+/* Job item */
+.job{display:block;width:100%;min-width:0;text-align:left;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-2);cursor:pointer;transition:background var(--motion-fast) var(--ease-out)}
+.job:hover{background:var(--color-sunken)}
+.job span{display:block;min-width:0;overflow-wrap:anywhere}
+.job-time{font-size:var(--text-caption);color:var(--color-muted);font-variant-numeric:tabular-nums}
+.job-name{font-weight:600;font-size:var(--text-meta);line-height:1.3;margin-top:1px}
+.job-svc{font-size:var(--text-caption);color:var(--color-muted);margin-top:2px;line-height:1.35}
+.job-status{display:flex!important;align-items:flex-start;gap:var(--space-1);font-size:var(--text-caption);margin-top:6px;line-height:1.3;color:var(--color-muted)}
+.job-status svg{margin-top:1px;width:14px;height:14px}
+.job-status.warn{color:var(--color-warning);font-weight:600}
+.load{font-size:var(--text-caption);color:var(--color-muted);font-variant-numeric:tabular-nums;padding:2px var(--space-1) 0;display:flex;gap:var(--space-1);align-items:flex-start}
+.load.over{color:var(--color-warning);font-weight:600;background:var(--color-warning-bg);border-radius:var(--radius-sm);padding:var(--space-1)}
+.load.over svg{margin-top:1px;width:14px;height:14px}
+
+/* Skeleton */
+.skel{background:var(--color-sunken);border-radius:var(--radius-md);height:56px}
+.skel.s{height:36px}
+
+/* Alert and empty */
+.alert{display:flex;gap:var(--space-3);align-items:center;padding:var(--space-3) var(--space-4);border-radius:var(--radius-lg);background:var(--color-danger-bg);color:var(--color-danger);border:1px solid #E9B8AE;font-weight:500}
+.alert .alert-body{flex:1;min-width:0}
+.alert.warn{background:var(--color-warning-bg);color:var(--color-warning);border-color:#EBCB9F}
+.alert .btn{background:var(--color-surface)}
+.empty{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-10) var(--space-6);text-align:center;color:var(--color-muted)}
+.empty strong{display:block;color:var(--color-text);font-size:var(--text-section);font-weight:600;margin-bottom:var(--space-1)}
+.empty .btn{margin-top:var(--space-4)}
+
+/* Day view (narrow) */
+.dayview{display:none}
+.chips{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--space-1);margin-bottom:var(--space-4)}
+.chip{min-height:var(--control-h-touch);padding:var(--space-1) 0;border-radius:var(--radius-md);border:1px solid var(--color-field-border);background:var(--color-surface);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.2;position:relative}
+.chip .d{font-size:var(--text-caption);color:var(--color-muted)}
+.chip .n{font-weight:600;font-variant-numeric:tabular-nums}
+.chip .c{font-size:11px;color:var(--color-muted)}
+.chip[aria-pressed="true"]{background:var(--color-accent);border-color:var(--color-accent);color:#fff}
+.chip[aria-pressed="true"] .d,.chip[aria-pressed="true"] .c{color:#fff}
+.chip svg{position:absolute;top:3px;right:3px;width:12px;height:12px;stroke-width:2}
+.chip .tdy{font-size:11px;font-weight:600;color:var(--color-accent)}
+.chip[aria-pressed="true"] .tdy{color:#fff}
+.day-title{font-size:var(--text-section);font-weight:600;margin-bottom:var(--space-3)}
+.crew-sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:var(--space-4);align-items:start}
+.crew-sec{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-3)}
+.crew-sec h3{font-size:var(--text-body);font-weight:600}
+.crew-sec .sub{color:var(--color-muted);font-size:var(--text-caption);margin-bottom:var(--space-3)}
+.crew-sec.needs{background:var(--color-sunken)}
+.crew-sec .none{color:var(--color-muted);font-size:var(--text-meta)}
+.crew-sec .cell{gap:var(--space-2)}
+.bottombar{display:none}
+
+/* Invoices */
+.seg{display:inline-flex;gap:2px;background:var(--color-sunken);padding:2px;border-radius:var(--radius-md);margin-bottom:var(--space-3);max-width:100%;flex-wrap:wrap}
+.seg button{height:32px;padding:0 var(--space-3);border:0;background:transparent;border-radius:4px;cursor:pointer;font-weight:500;color:var(--color-muted);display:inline-flex;gap:var(--space-2);align-items:center}
+.seg button:hover{color:var(--color-text)}
+.seg button[aria-pressed="true"]{background:var(--color-surface);color:var(--color-text);font-weight:600;box-shadow:0 0 0 1px var(--color-border)}
+.seg button[aria-pressed="true"] svg{color:var(--color-accent)}
+.inv{width:100%;border-collapse:separate;border-spacing:0;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg)}
+.inv th,.inv td{padding:0 var(--space-3);height:48px;text-align:left;border-bottom:1px solid var(--color-border);font-weight:400;vertical-align:middle}
+.inv tbody tr:last-child td{border-bottom:0}
+.inv thead th{height:40px;font-size:var(--text-meta);font-weight:600;color:var(--color-muted);background:var(--color-surface);position:sticky;top:56px;z-index:2}
+.inv .r{text-align:right;font-variant-numeric:tabular-nums}
+.inv .act{text-align:right;width:1%;white-space:nowrap}
+.inv td.who{padding-top:var(--space-2);padding-bottom:var(--space-2)}
+.who-name{display:inline-flex;align-items:center;min-height:32px;background:none;border:0;padding:0;font-weight:600;cursor:pointer;text-align:left;color:var(--color-text);text-decoration:underline;text-decoration-color:var(--color-border);text-underline-offset:3px}
+.who-name:hover{text-decoration-color:var(--color-text)}
+.sub{display:block;color:var(--color-muted);font-size:var(--text-caption)}
+.st{display:inline-flex;gap:var(--space-1);align-items:center;font-size:var(--text-meta)}
+.st.warn{color:var(--color-warning);font-weight:600}
+.st.bad{color:var(--color-danger);font-weight:600}
+.st svg{width:14px;height:14px}
+.owed{color:var(--color-muted);font-size:var(--text-meta);margin-bottom:var(--space-3)}
+.dim{color:var(--color-muted)}
+.m-only{display:none}
+#main:focus{outline:none}
+.crew-sec .load{margin-bottom:var(--space-3)}
+
+/* Dialogs */
+dialog{color:var(--color-text);background:var(--color-surface);padding:0;border:1px solid var(--color-border)}
+dialog::backdrop{background:var(--color-scrim)}
+dialog.modal{width:min(540px,calc(100% - 32px));max-height:calc(100dvh - 32px);border-radius:var(--radius-xl);box-shadow:var(--shadow-float);margin:auto}
+dialog.modal[open]{display:flex;flex-direction:column}
+dialog.drawer{margin:0 0 0 auto;width:min(420px,100%);max-width:100%;height:100dvh;max-height:100dvh;border-radius:0;border-width:0 0 0 1px;box-shadow:var(--shadow-float)}
+dialog.drawer[open]{display:flex;flex-direction:column}
+@media (prefers-reduced-motion:no-preference){
+  dialog.drawer[open]{animation:slide-in var(--motion-sheet) var(--ease-out)}
+  dialog.modal[open]{animation:fade-in var(--motion-menu) var(--ease-out)}
+  @keyframes slide-in{from{transform:translateX(24px);opacity:0}to{transform:none;opacity:1}}
+  @keyframes fade-in{from{opacity:0}to{opacity:1}}
+}
+dialog.modal{overflow:hidden}
+dialog.modal form{display:flex;flex-direction:column;flex:1;min-height:0}
+.dlg-head{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);padding:var(--space-4) var(--space-5);border-bottom:1px solid var(--color-border)}
+.dlg-head h2{font-size:var(--text-section);font-weight:600;line-height:var(--leading-heading);overflow-wrap:anywhere}
+.dlg-body{padding:var(--space-5);overflow:auto;flex:1;min-height:0;display:flex;flex-direction:column;gap:var(--space-4)}
+.dlg-foot{display:flex;gap:var(--space-2);justify-content:flex-end;align-items:center;padding:var(--space-3) var(--space-5);border-top:1px solid var(--color-border);flex-wrap:wrap}
+.dlg-foot .left{margin-right:auto}
+.facts{display:grid;grid-template-columns:96px minmax(0,1fr);gap:var(--space-2) var(--space-3)}
+.facts dt{color:var(--color-muted);font-size:var(--text-meta)}
+.facts dd{overflow-wrap:anywhere}
+.block{border-top:1px solid var(--color-border);padding-top:var(--space-4);display:flex;flex-direction:column;gap:var(--space-3)}
+.block h3{font-size:var(--text-body);font-weight:600}
+.row{display:flex;gap:var(--space-3);align-items:center;flex-wrap:wrap}
+.help{color:var(--color-muted);font-size:var(--text-meta)}
+.help.warn{color:var(--color-warning);font-weight:500;display:flex;gap:var(--space-1);align-items:flex-start}
+
+/* Fields */
+.field{display:flex;flex-direction:column;gap:var(--space-1);min-width:0}
+.field label{font-weight:600;font-size:var(--text-meta)}
+.field .req{color:var(--color-muted);font-weight:400}
+.field input,.field select,.field textarea{height:var(--control-h);padding:0 var(--space-3);border:1px solid var(--color-field-border);border-radius:var(--radius-md);background:var(--color-surface);width:100%;min-width:0}
+.field textarea{height:auto;min-height:64px;padding:var(--space-2) var(--space-3);resize:vertical}
+.field input[aria-invalid="true"],.field select[aria-invalid="true"],.field textarea[aria-invalid="true"]{border-color:var(--color-danger);box-shadow:inset 0 0 0 1px var(--color-danger)}
+.err{color:var(--color-danger);font-size:var(--text-meta);font-weight:500;display:flex;gap:var(--space-1);align-items:flex-start}
+.err svg{margin-top:2px;width:14px;height:14px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-3)}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3)}
+.errsum{background:var(--color-danger-bg);color:var(--color-danger);border:1px solid #E9B8AE;border-radius:var(--radius-md);padding:var(--space-3);font-weight:500}
+.errsum ul{margin-top:var(--space-1);padding-left:var(--space-4);list-style:disc}
+.errsum a{color:inherit}
+.pay{background:var(--color-sunken);border-radius:var(--radius-md);padding:var(--space-3);font-size:var(--text-meta)}
+.pay strong{display:block;font-size:var(--text-caption);color:var(--color-muted);font-weight:600;margin-bottom:2px}
+
+/* Toast */
+.toast{position:fixed;inset:auto auto var(--space-6) 50%;margin:0;border:0;overflow:visible;transform:translateX(-50%);z-index:100;background:var(--color-text);color:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-float);padding:var(--space-3) var(--space-4);display:none;gap:var(--space-4);align-items:center;max-width:min(560px,calc(100% - 32px));font-size:var(--text-meta)}
+.toast.on,.toast:popover-open{display:flex}
+.toast .tbtn{background:none;border:1px solid rgba(255,255,255,.7);color:#fff;border-radius:var(--radius-md);height:32px;padding:0 var(--space-3);font-weight:600;cursor:pointer;white-space:nowrap}
+.toast .tbtn:hover{background:rgba(255,255,255,.14)}
+.toast .tx{background:none;border:0;color:#fff;cursor:pointer;height:32px;padding:0 var(--space-2);text-decoration:underline;font-weight:500}
+.toast :focus-visible{outline-color:#fff}
+
+/* Preview controls (not part of the product) */
+.preview{max-width:var(--content-max);margin:0 auto;padding:0 var(--gutter) var(--space-10)}
+.preview-in{border:1px dashed var(--color-field-border);border-radius:var(--radius-lg);padding:var(--space-3) var(--space-4);display:flex;flex-wrap:wrap;gap:var(--space-3) var(--space-5);align-items:center;color:var(--color-muted);font-size:var(--text-meta)}
+.preview-in .pfield{display:flex;align-items:center;gap:var(--space-2)}
+.preview-in select{height:var(--control-h-compact);border:1px solid var(--color-field-border);border-radius:var(--radius-md);padding:0 var(--space-2);background:var(--color-surface)}
+.preview-in .btn{height:var(--control-h-compact)}
+
+/* Narrow: day view and stacked tables */
+@media (max-width:999px){
+  .board-wrap{display:none}
+  .dayview{display:block}
+  .bottombar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--color-surface);border-top:1px solid var(--color-border);padding:var(--space-3) var(--gutter)}
+  body.view-invoices .bottombar{display:none}
+  .bottombar .btn{width:100%;height:var(--control-h-touch)}
+  .page{padding-bottom:88px}
+  body.view-invoices .page{padding-bottom:var(--space-10)}
+  .head-new{display:none}
+  .toast{bottom:88px}
+  body.view-invoices .toast{bottom:var(--space-6)}
+  .preview{padding-bottom:96px}
+}
+@media (max-width:760px){
+  .btn,.seg button{min-height:var(--control-h-touch)}
+  .topbar-in{gap:var(--space-3)}
+  .brand small{display:none}
+  .company{display:none}
+  .nav a{height:var(--control-h-touch);padding:0 var(--space-2)}
+  .nav .count{display:none}
+  .toolbar .range{flex-basis:100%;margin-left:0;order:-1}
+  .toolbar .btn{height:var(--control-h-touch)}
+  .field input,.field select,.field textarea{height:var(--control-h-touch);font-size:16px}
+  .field textarea{height:auto}
+  .grid2,.grid3{grid-template-columns:minmax(0,1fr)}
+  dialog.modal{width:calc(100% - 16px);max-height:calc(100dvh - 16px)}
+  .dlg-head,.dlg-body,.dlg-foot{padding-left:var(--space-4);padding-right:var(--space-4)}
+  .dlg-foot .btn{flex:1}
+  .dlg-foot .left{flex-basis:100%;margin-right:0}
+  .dlg-foot .left .btn{width:100%}
+  .facts{grid-template-columns:72px minmax(0,1fr)}
+  /* Invoices table becomes two-line rows */
+  .inv,.inv tbody{display:block;border:0;background:transparent}
+  .inv thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .inv tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px var(--space-3);padding:var(--space-3);background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);margin-bottom:var(--space-2)}
+  .inv td{display:block;height:auto;padding:0;border:0}
+  .inv td.who{grid-column:1;grid-row:1}
+  .inv td.amt{grid-column:2;grid-row:1;text-align:right}
+  .inv td.when{grid-column:1/-1;grid-row:2;color:var(--color-muted);font-size:var(--text-meta)}
+  .inv td.status{grid-column:1/-1;grid-row:3}
+  .inv td.act{grid-column:1/-1;grid-row:4;width:auto;text-align:left;margin-top:var(--space-2)}
+  .inv td.act .btn{width:100%}
+  .seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%}
+  .seg button{justify-content:center;padding:0 var(--space-1);font-size:var(--text-meta)}
+  .inv td.extra{display:none}
+  .m-only{display:inline}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body class="view-schedule">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-left" viewBox="0 0 16 16"><path d="M10 3.5 5.5 8l4.5 4.5"/></symbol>
+  <symbol id="i-right" viewBox="0 0 16 16"><path d="M6 3.5 10.5 8 6 12.5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></symbol>
+  <symbol id="i-check" viewBox="0 0 16 16"><path d="m3.5 8.5 3 3 6-7"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 16 16"><path d="M8 2.2 14.2 13H1.8L8 2.2Z"/><path d="M8 6.5v3M8 11.4v.1"/></symbol>
+  <symbol id="i-x" viewBox="0 0 16 16"><path d="m4 4 8 8M12 4l-8 8"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <div class="brand">Crewline<small>working name</small></div>
+    <nav class="nav" aria-label="Main">
+      <a href="#/schedule" id="nav-schedule">Schedule</a>
+      <a href="#/invoices" id="nav-invoices">Invoices <span class="count" id="nav-count"></span></a>
+    </nav>
+    <div class="company" id="company">Oak &amp; Row Landscaping</div>
+  </div>
+</header>
+
+<main id="main" class="page" tabindex="-1">
+  <div id="app"></div>
+</main>
+
+<div class="bottombar"><button type="button" class="btn primary" data-act="new-job"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg>New job</button></div>
+
+<aside class="preview" aria-label="Preview controls">
+  <div class="preview-in">
+    <span><strong>Preview only.</strong> Sample data with made-up names. Nothing is saved or sent.</span>
+    <span class="pfield"><label for="pv-state">Screen state</label>
+      <select id="pv-state">
+        <option value="populated">Populated</option>
+        <option value="empty">No data yet</option>
+        <option value="loading">Loading</option>
+        <option value="error">Failed to load</option>
+      </select></span>
+    <button type="button" class="btn" id="pv-reset">Reset sample data</button>
+  </div>
+</aside>
+
+<!-- Job panel -->
+<dialog id="drawer" class="drawer" aria-labelledby="drawer-title"></dialog>
+<!-- Job form -->
+<dialog id="jobform" class="modal" aria-labelledby="jf-title"></dialog>
+<!-- Send invoice -->
+<dialog id="senddlg" class="modal" aria-labelledby="sd-title"></dialog>
+<!-- Confirm -->
+<dialog id="confirm" class="modal" aria-labelledby="cf-title"></dialog>
+
+<div id="toast" class="toast" popover="manual" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- helpers ---------- */
+var DAY_MS = 86400000;
+function atMidnight(d){ return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+function addDays(d,n){ return new Date(d.getFullYear(), d.getMonth(), d.getDate()+n); }
+function iso(d){ var m=d.getMonth()+1, day=d.getDate(); return d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(day<10?'0':'')+day; }
+function parseISO(s){ var p=s.split('-'); return new Date(+p[0], +p[1]-1, +p[2]); }
+function diffDays(a,b){ return Math.round((atMidnight(a)-atMidnight(b))/DAY_MS); }
+var DOW=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+var MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function dLabel(d){ return DOW[d.getDay()]+' '+d.getDate()+' '+MON[d.getMonth()]; }
+function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+function fmtTime(t){ var p=t.split(':'), h=+p[0], m=p[1]; var ap=h>=12?'PM':'AM'; h=h%12; if(h===0)h=12; return h+':'+m+' '+ap; }
+function fmtH(h){ return (Math.round(h*10)/10).toString()+' h'; }
+function money(c){ if(c==null) return ''; return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(c/100); }
+function plural(n,w){ return n+' '+w+(n===1?'':'s'); }
+function icon(id,cls){ return '<svg class="i'+(cls?' '+cls:'')+'" aria-hidden="true" focusable="false"><use href="#i-'+id+'"/></svg>'; }
+function slug(s){ return s.toLowerCase().replace(/[^a-z0-9]+/g,'.').replace(/^\.|\.$/g,''); }
+function addMinutes(t,mins){ var p=t.split(':'); var total=+p[0]*60+ +p[1]+mins; var h=Math.floor(total/60)%24, m=total%60; return (h<10?'0':'')+h+':'+(m<10?'0':'')+m; }
+
+/* ---------- sample data ---------- */
+var TODAY = atMidnight(new Date());
+var ANCHOR = (function(){ var dow=TODAY.getDay(); var back = dow===0 ? -1 : dow-1; return addDays(TODAY, -back); })();
+var CAP = 8;
+var CREWS = [
+  {id:'a', name:'Crew A', members:'Marcus, Dee, Tomas'},
+  {id:'b', name:'Crew B', members:'Priya, Lou'},
+  {id:'c', name:'Crew C', members:'Ahmed, Jo, Ben, Rae'}
+];
+/* [weekOffset, day 0-5, crew|null, start, hours, customer, address, services, price, invoiceMarker] */
+var SEED = [
+  [-3,1,'a','08:00',3,'Maple Court Condos','12 Maple Court','Mow, trim, blow, 3 buildings',380,'sent'],
+  [-3,3,'b','09:00',2,'Bakar residence','77 Alder Street','Hedge trim and cleanup',220,'sent'],
+  [-3,4,'c','07:30',5,"St. Anne's Church",'300 Church Road','Leaf cleanup, grounds',640,'paid'],
+  [-2,0,'a','07:30',1.5,'Okafor residence','214 Birch Lane','Mow, edge, blow',85,'paid'],
+  [-2,0,'a','09:15',2,'Lindqvist residence','18 Spruce Court','Mow, edge, blow',110,'paid'],
+  [-2,1,'b','08:00',4,'Whitfield Apartments','900 Cedar Avenue','Mow, trim, blow',520,'sent'],
+  [-2,2,'c','07:30',6,'Ridgeway Plaza','2 Ridgeway Drive','Aeration and overseed',1450,'sent'],
+  [-2,3,'a','08:00',2.5,'Perez residence','41 Linden Way','Fall cleanup',260,'paid'],
+  [-2,4,'b','10:00',1.5,'Chen residence','5 Willow Court','Sprinkler winterizing',130,'sent'],
+  [-1,0,'a','07:30',1.5,'Okafor residence','214 Birch Lane','Mow, edge, blow',85,'paid'],
+  [-1,0,'a','09:15',2,'Lindqvist residence','18 Spruce Court','Mow, edge, blow',110,'paid'],
+  [-1,0,'b','07:00',4,'Harbor View HOA','40 Harbor Road','Mow, trim, blow, common areas',420,'sent'],
+  [-1,1,'c','07:30',6,'Dunmore Dental','1 Main Street','Leaf cleanup, parking lot beds',480,'sent'],
+  [-1,2,'a','08:00',3,'Santos residence','63 Poplar Drive','Hedge trim, haul away',310,'sent'],
+  [-1,2,'b','08:30',2,'Bakar residence','77 Alder Street','Mow, edge, blow',95,null],
+  [-1,3,'c','07:30',5,'Greenfield Elementary School Grounds','1200 Greenfield Boulevard','Mow, trim, blow, athletic fields',760,'sent'],
+  [-1,4,'a','09:00',2.5,"O'Neill residence",'9 Hickory Lane','Leaf cleanup',240,null],
+  [-1,5,'b','08:00',3,'Maple Court Condos','12 Maple Court','Mow, trim, blow',380,'sent'],
+  [0,0,'a','07:30',1.5,'Okafor residence','214 Birch Lane','Mow, edge, blow',85,'sent'],
+  [0,0,'a','09:15',2,'Lindqvist residence','18 Spruce Court','Mow, edge, blow',110,'sent'],
+  [0,0,'a','11:45',3.5,'Perez residence','41 Linden Way','Fall cleanup, haul away',340,'sent'],
+  [0,0,'b','07:00',4,'Whitfield Apartments','900 Cedar Avenue','Leaf cleanup, 3 beds',540,null],
+  [0,0,'b','11:30',2.5,'Dunmore Dental','1 Main Street','Mow, edge, blow',140,'sent'],
+  [0,0,'c','08:00',6,'Ridgeway Plaza','2 Ridgeway Drive','Mulch install, 12 yards',1450,'sent'],
+  [0,1,'a','07:30',3,'Harbor View HOA','40 Harbor Road','Mow, trim, blow',420,'sent'],
+  [0,1,'a','11:00',2,'Santos residence','63 Poplar Drive','Hedge trim',210,null],
+  [0,1,'b','08:00',2,'Bakar residence','77 Alder Street','Mow, edge, blow',95,'sent'],
+  [0,1,'c','07:30',5,'Greenfield Elementary School Grounds','1200 Greenfield Boulevard','Mow, trim, blow, athletic fields',760,'sent'],
+  [0,1,null,'10:30',2,'Chen residence','5 Willow Court','Sprinkler winterizing',130,null],
+  [0,2,'a','08:00',4,'Maple Court Condos','12 Maple Court','Mow, trim, blow, 3 buildings',380,'sent'],
+  [0,2,'b','07:30',2.5,"O'Neill residence",'9 Hickory Lane','Leaf cleanup',240,'sent'],
+  [0,2,'c','08:00',3,"St. Anne's Church",'300 Church Road','Leaf cleanup, grounds',640,'sent'],
+  [0,2,'c','11:30',3,'Westbrook residence','31 Elm Street','Hedge trim, mulch touch-up',410,null],
+  [0,3,'a','07:30',3.5,'Harbor View HOA','40 Harbor Road','Fall cleanup, common areas',880,'sent'],
+  [0,3,'a','11:30',3,'Lindqvist residence','18 Spruce Court','Hedge trim, leaf cleanup',260,'sent'],
+  [0,3,'a','15:00',3,'Dunmore Dental','1 Main Street','Leaf cleanup, parking lot beds',480,'sent'],
+  [0,3,'b','08:00',4,'Whitfield Apartments','900 Cedar Avenue','Leaf cleanup, 3 beds',540,'sent'],
+  [0,3,null,'09:00',1.5,'Nakamura residence','88 Aspen Court','Mow, edge, blow',90,null],
+  [0,3,null,'13:00',2,'Reyes residence','15 Sycamore Street','Tree trimming, small',300,null],
+  [0,4,'a','07:30',2,'Okafor residence','214 Birch Lane','Mow, edge, blow',85,null],
+  [0,4,'b','07:30',6,'Ridgeway Plaza','2 Ridgeway Drive','Aeration and overseed, west lot',1450,null],
+  [0,4,'c','08:00',4,'Greenfield Elementary School Grounds','1200 Greenfield Boulevard','Leaf cleanup, grounds',700,null],
+  [0,5,'c','08:00',4,'Maple Court Condos','12 Maple Court','Leaf cleanup',520,null],
+  [1,0,'a','07:30',1.5,'Okafor residence','214 Birch Lane','Mow, edge, blow',85,null],
+  [1,0,'a','09:15',2,'Lindqvist residence','18 Spruce Court','Mow, edge, blow',110,null],
+  [1,0,'b','07:00',4,'Harbor View HOA','40 Harbor Road','Mow, trim, blow, common areas',420,null],
+  [1,1,'c','07:30',6,'Dunmore Dental','1 Main Street','Leaf cleanup, parking lot beds',480,null],
+  [1,2,'a','08:00',3,'Santos residence','63 Poplar Drive','Hedge trim, haul away',310,null],
+  [1,2,null,'09:00',2,'Chen residence','5 Willow Court','Sprinkler winterizing',130,null]
+];
+var NO_EMAIL = {'Westbrook residence':1,'Nakamura residence':1,'Reyes residence':1};
+
+var S = {}; /* app state, built by seed() */
+
+function seed(){
+  var jobs=[], invoices=[], n=0;
+  var upcoming=[], k=0, u=0;
+  for(var x=1; upcoming.length<4; x++){ var cand=addDays(TODAY,x); if(cand.getDay()!==0) upcoming.push(cand); }
+  SEED.forEach(function(r){
+    var date = addDays(ANCHOR, r[0]*7 + r[1]);
+    if(!r[2] && diffDays(date,TODAY)<=0){ date = upcoming[u%upcoming.length]; u++; }
+    n++;
+    var done = diffDays(date, TODAY) < 0;
+    jobs.push({
+      id:'j'+n, crew:r[2], date:iso(date), start:r[3], hours:r[4],
+      customer:r[5], email: NO_EMAIL[r[5]] ? '' : slug(r[5].replace(/ residence/,''))+'@example.com',
+      address:r[6], services:r[7], price:r[8]*100, status: done?'done':'scheduled',
+      _marker: done ? r[9] : null
+    });
+  });
+  var invN = 37;
+  jobs.slice().sort(function(a,b){ return a.date<b.date?-1:a.date>b.date?1:0; }).forEach(function(j){
+    if(j._marker==='sent' || j._marker==='paid'){
+      invN++;
+      var issued = addDays(parseISO(j.date),1);
+      if(diffDays(issued,TODAY)>0) issued = TODAY;
+      var due = addDays(issued,14);
+      var paid = null;
+      if(j._marker==='paid'){ paid = addDays(issued,4); if(diffDays(paid,TODAY)>0) paid=TODAY; }
+      invoices.push({id:'i'+invN, jobId:j.id, number:'INV-'+('0000'+invN).slice(-4), customer:j.customer, email:j.email, amount:j.price, issued:iso(issued), due:iso(due), paid: paid?iso(paid):null});
+    }
+    delete j._marker;
+  });
+  S.jobs=jobs; S.invoices=invoices; S.nextJob=n+1; S.nextInv=invN+1;
+}
+
+S = {
+  jobs:[], invoices:[], view:'schedule', week: iso(ANCHOR), day: 0, tab:'ready', preview:'populated',
+  dueDays:14, returnFocus:null, openJob:null
+};
+seed();
+S.day = (function(){ var d=diffDays(TODAY, ANCHOR); return d>=0 && d<=5 ? d : 0; })();
+
+/* ---------- derived ---------- */
+function crewById(id){ for(var i=0;i<CREWS.length;i++) if(CREWS[i].id===id) return CREWS[i]; return null; }
+function jobById(id){ for(var i=0;i<S.jobs.length;i++) if(S.jobs[i].id===id) return S.jobs[i]; return null; }
+function invoiceForJob(id){ for(var i=0;i<S.invoices.length;i++) if(S.invoices[i].jobId===id) return S.invoices[i]; return null; }
+function visJobs(){ return S.preview==='empty' ? [] : S.jobs; }
+function visInvoices(){ return S.preview==='empty' ? [] : S.invoices; }
+function weekStart(){ return parseISO(S.week); }
+function weekDays(){ var w=weekStart(), out=[]; for(var i=0;i<6;i++) out.push(addDays(w,i)); return out; }
+function cellJobs(dateIso, crewId){
+  return visJobs().filter(function(j){ return j.date===dateIso && (j.crew||null)===crewId; })
+    .sort(function(a,b){ return a.start<b.start?-1:a.start>b.start?1:0; });
+}
+function load(dateIso, crewId){ return cellJobs(dateIso,crewId).reduce(function(s,j){ return s+j.hours; },0); }
+function readyJobs(){ return visJobs().filter(function(j){ return j.status==='done' && !invoiceForJob(j.id); })
+  .sort(function(a,b){ return a.date<b.date?-1:a.date>b.date?1:0; }); }
+function unpaid(){ return visInvoices().filter(function(i){ return !i.paid; }); }
+function overdueDays(i){ return i.paid ? 0 : Math.max(0, diffDays(TODAY, parseISO(i.due))); }
+function rangeLabel(){
+  var d=weekDays(), a=d[0], b=d[5];
+  if(a.getMonth()===b.getMonth()) return a.getDate()+' to '+b.getDate()+' '+MON[b.getMonth()]+' '+b.getFullYear();
+  return a.getDate()+' '+MON[a.getMonth()]+' to '+b.getDate()+' '+MON[b.getMonth()]+' '+b.getFullYear();
+}
+
+/* ---------- toast ---------- */
+var toastTimer=null;
+function toast(msg, opts){
+  opts=opts||{};
+  var t=document.getElementById('toast');
+  t.innerHTML='<span>'+esc(msg)+'</span>' + (opts.actionLabel?'<button type="button" class="tbtn" data-toast-act>'+esc(opts.actionLabel)+'</button>':'') + '<button type="button" class="tx" data-toast-close>Dismiss</button>';
+  t.classList.add('on');
+  try{ if(t.showPopover && !t.matches(':popover-open')) t.showPopover(); }catch(err){}
+  t._act=opts.action||null;
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(hideToast, opts.ms||10000);
+}
+function hideToast(){ var t=document.getElementById('toast'); t.classList.remove('on'); try{ if(t.hidePopover && t.matches(':popover-open')) t.hidePopover(); }catch(err){} }
+document.getElementById('toast').addEventListener('click',function(e){
+  var t=e.currentTarget;
+  if(e.target.closest('[data-toast-act]')){ var f=t._act; hideToast(); if(f) f(); }
+  else if(e.target.closest('[data-toast-close]')){ hideToast(); }
+});
+
+/* ---------- rendering: schedule ---------- */
+function jobButton(j){
+  var inv=invoiceForJob(j.id), st='';
+  if(j.status==='done'){
+    if(!inv) st='<span class="job-status warn">'+icon('alert')+'<span>Done, not invoiced</span></span>';
+    else if(inv.paid) st='<span class="job-status">'+icon('check')+'<span>Done, paid</span></span>';
+    else if(overdueDays(inv)>0) st='<span class="job-status warn">'+icon('alert')+'<span>Done, invoice overdue</span></span>';
+    else st='<span class="job-status">'+icon('check')+'<span>Done, invoice sent</span></span>';
+  }
+  return '<button type="button" class="job" data-job="'+j.id+'" aria-haspopup="dialog">'+
+    '<span class="job-time">'+fmtTime(j.start)+' &middot; '+fmtH(j.hours)+'</span>'+
+    '<span class="job-name">'+esc(j.customer)+'</span>'+
+    '<span class="job-svc">'+esc(j.services)+'</span>'+st+'</button>';
+}
+function loadLine(h){
+  if(h<=0) return '';
+  if(h>CAP) return '<div class="load over">'+icon('alert')+'<span>'+fmtH(h)+' of '+CAP+' h, over by '+fmtH(h-CAP)+'</span></div>';
+  return '<div class="load">'+fmtH(h)+' of '+CAP+' h</div>';
+}
+function weekStats(){
+  var days=weekDays(), set={}; days.forEach(function(d){ set[iso(d)]=1; });
+  var inWeek=visJobs().filter(function(j){ return set[j.date]; });
+  var needs=inWeek.filter(function(j){ return !j.crew; }).length;
+  var over=0;
+  days.forEach(function(d){ CREWS.forEach(function(c){ if(load(iso(d),c.id)>CAP) over++; }); });
+  return {total:inWeek.length, needs:needs, over:over, ready:readyJobs().length};
+}
+function summaryHTML(){
+  if(S.preview==='loading'||S.preview==='error') return '';
+  var s=weekStats(), parts=[];
+  if(s.total===0 && s.ready===0) return '';
+  parts.push('<span>'+plural(s.total,'job')+' this week</span>');
+  if(s.needs) parts.push('<span class="warn">'+icon('alert')+s.needs+' need'+(s.needs===1?'s':'')+' a crew</span>');
+  if(s.over) parts.push('<span class="warn">'+icon('alert')+plural(s.over,'crew day')+' over hours</span>');
+  if(s.ready) parts.push('<span class="warn">'+icon('alert')+plural(s.ready,'finished job')+' not invoiced. <a href="#/invoices" data-go-ready style="color:inherit;font-weight:600">Invoice them</a></span>');
+  return parts.join('');
+}
+function boardHTML(){
+  var days=weekDays(), todayIso=iso(TODAY);
+  var head='<tr><th scope="col">Crew</th>'+days.map(function(d){
+    var t = iso(d)===todayIso;
+    return '<th scope="col" class="'+(t?'today':'')+'">'+DOW[d.getDay()]+' '+d.getDate()+(t?'<span class="tag-today">Today</span>':'')+'</th>';
+  }).join('')+'</tr>';
+  var rows='';
+  var weekSet={}; days.forEach(function(d){ weekSet[iso(d)]=1; });
+  var needsCount = visJobs().filter(function(j){ return !j.crew && weekSet[j.date]; }).length;
+  if(needsCount){
+    rows+='<tr class="needs"><th scope="row"><span class="crew-name">'+icon('alert')+'Needs a crew</span><span class="crew-members">'+plural(needsCount,'job')+'</span></th>'+
+      days.map(function(d){ return '<td><div class="cell">'+cellJobs(iso(d),null).map(jobButton).join('')+'</div></td>'; }).join('')+'</tr>';
+  }
+  CREWS.forEach(function(c){
+    rows+='<tr><th scope="row"><span class="crew-name">'+esc(c.name)+'</span><span class="crew-members">'+esc(c.members)+'</span></th>'+
+      days.map(function(d){ var di=iso(d); return '<td><div class="cell">'+cellJobs(di,c.id).map(jobButton).join('')+loadLine(load(di,c.id))+'</div></td>'; }).join('')+'</tr>';
+  });
+  return '<table class="board"><caption class="sr-only">Crew schedule for '+esc(rangeLabel())+'. Rows are crews, columns are days.</caption><thead>'+head+'</thead><tbody>'+rows+'</tbody></table>';
+}
+function skeletonBoard(){
+  var days=weekDays();
+  var head='<tr><th scope="col">Crew</th>'+days.map(function(d){ return '<th scope="col">'+DOW[d.getDay()]+' '+d.getDate()+'</th>'; }).join('')+'</tr>';
+  var rows=CREWS.map(function(c){ return '<tr><th scope="row"><span class="crew-name">'+esc(c.name)+'</span></th>'+days.map(function(){ return '<td><div class="cell"><div class="skel"></div><div class="skel s"></div></div></td>'; }).join('')+'</tr>'; }).join('');
+  return '<table class="board" aria-busy="true"><caption class="sr-only">Loading schedule</caption><thead>'+head+'</thead><tbody>'+rows+'</tbody></table>';
+}
+function dayViewHTML(){
+  var days=weekDays(), todayIso=iso(TODAY);
+  var chips='<div class="chips" role="group" aria-label="Day of the week">'+days.map(function(d,idx){
+    var di=iso(d), cnt=visJobs().filter(function(j){return j.date===di;}).length, sel=idx===S.day;
+    return '<button type="button" class="chip" data-day="'+idx+'" aria-pressed="'+sel+'">'+
+      (sel?icon('check'):'')+
+      '<span class="d">'+DOW[d.getDay()]+'</span><span class="n">'+d.getDate()+'</span>'+
+      (di===todayIso?'<span class="tdy">Today</span>':'<span class="c">'+(cnt===1?'1 job':cnt+' jobs')+'</span>')+'</button>';
+  }).join('')+'</div>';
+  var d=days[S.day], di=iso(d), secs='';
+  var un=cellJobs(di,null);
+  if(un.length) secs+='<section class="crew-sec needs"><h3>Needs a crew</h3><p class="sub">'+plural(un.length,'job')+'</p><div class="cell">'+un.map(jobButton).join('')+'</div></section>';
+  CREWS.forEach(function(c){
+    var js=cellJobs(di,c.id), h=load(di,c.id);
+    var sub = h>CAP ? '<p class="load over">'+icon('alert')+'<span>'+fmtH(h)+' of '+CAP+' h, over by '+fmtH(h-CAP)+'</span></p>' : '<p class="sub num">'+fmtH(h)+' of '+CAP+' h &middot; '+esc(c.members)+'</p>';
+    secs+='<section class="crew-sec"><h3>'+esc(c.name)+'</h3>'+sub+(js.length?'<div class="cell">'+js.map(jobButton).join('')+'</div>':'<p class="none">No jobs.</p>')+'</section>';
+  });
+  return chips+'<h2 class="day-title">'+dLabel(d)+(di===todayIso?', today':'')+'</h2><div class="crew-sections">'+secs+'</div>';
+}
+function skeletonDay(){
+  return '<div class="chips" aria-hidden="true">'+[1,2,3,4,5,6].map(function(){return '<div class="chip" style="border-color:var(--color-border)"></div>';}).join('')+'</div><div class="crew-sections" aria-busy="true"><div class="crew-sec"><div class="skel" style="margin-bottom:8px"></div><div class="skel"></div></div></div><p class="sr-only">Loading schedule</p>';
+}
+function scheduleHTML(){
+  var head='<div class="page-head"><h1>Schedule</h1><button type="button" class="btn primary head-new" data-act="new-job">'+icon('plus')+'New job</button></div>';
+  var tool='<div class="toolbar"><div class="btn-group"><button type="button" class="btn" data-act="prev-week">'+icon('left')+'Previous week</button><button type="button" class="btn" data-act="this-week">Today</button><button type="button" class="btn" data-act="next-week">Next week'+icon('right')+'</button></div><h2 class="range" id="range">'+esc(rangeLabel())+'</h2></div>';
+  var sum='<div class="summary" id="summary">'+summaryHTML()+'</div>';
+  var body;
+  if(S.preview==='loading'){
+    body='<div class="board-wrap">'+skeletonBoard()+'</div><div class="dayview">'+skeletonDay()+'</div>';
+  } else if(S.preview==='error'){
+    body='<div class="alert" role="alert">'+icon('alert')+'<div class="alert-body">The schedule did not load. Try again.</div><button type="button" class="btn" data-act="retry">Try again</button></div>';
+  } else {
+    var days=weekDays(), set={}; days.forEach(function(d){ set[iso(d)]=1; });
+    var any=visJobs().some(function(j){ return set[j.date]; });
+    if(!any){
+      body='<div class="empty"><strong>No jobs this week.</strong>Add the first job for '+esc(rangeLabel())+'.<br><button type="button" class="btn" data-act="new-job">'+icon('plus')+'New job</button></div>';
+    } else {
+      body='<div class="board-wrap">'+boardHTML()+'</div><div class="dayview">'+dayViewHTML()+'</div>';
+    }
+  }
+  return head+tool+sum+body;
+}
+
+/* ---------- rendering: invoices ---------- */
+function statusCell(i){
+  if(i.paid) return '<span class="st">'+icon('check')+'Paid '+dLabel(parseISO(i.paid))+'</span>';
+  var od=overdueDays(i);
+  if(od>0) return '<span class="st bad">'+icon('alert')+'Overdue '+plural(od,'day')+'</span>';
+  var left=diffDays(parseISO(i.due),TODAY);
+  return '<span class="st">'+(left===0?'Due today':'Due in '+plural(left,'day'))+'</span>';
+}
+function invoicesHTML(){
+  var head='<div class="page-head"><h1>Invoices</h1></div>';
+  if(S.preview==='loading'){
+    return head+'<div class="skel" style="height:32px;width:340px;max-width:100%;margin-bottom:12px"></div><div aria-busy="true">'+[1,2,3,4].map(function(){return '<div class="skel" style="margin-bottom:8px;height:48px"></div>';}).join('')+'</div><p class="sr-only">Loading invoices</p>';
+  }
+  if(S.preview==='error'){
+    return head+'<div class="alert" role="alert">'+icon('alert')+'<div class="alert-body">Invoices did not load. Try again.</div><button type="button" class="btn" data-act="retry">Try again</button></div>';
+  }
+  var ready=readyJobs(), invs=visInvoices();
+  var sent=invs.filter(function(i){return !i.paid;}).sort(function(a,b){return a.due<b.due?-1:1;});
+  var paid=invs.filter(function(i){return i.paid;}).sort(function(a,b){return a.paid<b.paid?1:-1;});
+  var tabs=[['ready','Ready to invoice',ready.length],['sent','Sent',sent.length],['paid','Paid',paid.length]];
+  var seg='<div class="seg" role="group" aria-label="Invoice list">'+tabs.map(function(t){
+    var on=S.tab===t[0];
+    return '<button type="button" data-tab="'+t[0]+'" aria-pressed="'+on+'">'+(on?icon('check'):'')+t[1]+' ('+t[2]+')</button>';
+  }).join('')+'</div>';
+  var owed='';
+  var up=unpaid();
+  if(up.length){
+    var tot=up.reduce(function(s,i){return s+i.amount;},0), od=up.filter(function(i){return overdueDays(i)>0;}).length;
+    owed='<p class="owed num">Outstanding '+money(tot)+' across '+plural(up.length,'invoice')+(od?', '+od+' overdue':'')+'.</p>';
+  }
+  var table='';
+  if(S.tab==='ready'){
+    if(!ready.length) table='<div class="empty"><strong>Nothing to invoice.</strong>Finished jobs without an invoice appear here.</div>';
+    else table='<table class="inv" role="table"><caption class="sr-only">Finished jobs that are not invoiced</caption><thead><tr><th scope="col">Customer</th><th scope="col">Job date</th><th scope="col" class="r">Amount</th><th scope="col"><span class="sr-only">Action</span></th></tr></thead><tbody>'+
+      ready.map(function(j){
+        return '<tr><td class="who"><button type="button" class="who-name" data-job="'+j.id+'" aria-haspopup="dialog">'+esc(j.customer)+'</button><span class="sub">'+esc(j.address)+'</span></td><td class="when">'+dLabel(parseISO(j.date))+'</td><td class="r amt">'+(j.price!=null?money(j.price):'<span class="dim">No price</span>')+'</td><td class="act"><button type="button" class="btn" data-invoice="'+j.id+'">Invoice this job</button></td></tr>';
+      }).join('')+'</tbody></table>';
+  } else if(S.tab==='sent'){
+    if(!sent.length) table='<div class="empty"><strong>No unpaid invoices.</strong>Sent invoices that are not paid appear here.</div>';
+    else table='<table class="inv" role="table"><caption class="sr-only">Sent invoices that are not paid</caption><thead><tr><th scope="col">Customer</th><th scope="col">Invoice</th><th scope="col">Sent</th><th scope="col">Status</th><th scope="col" class="r">Amount</th><th scope="col"><span class="sr-only">Action</span></th></tr></thead><tbody>'+
+      sent.map(function(i){
+        return '<tr><td class="who"><button type="button" class="who-name" data-job="'+i.jobId+'" aria-haspopup="dialog">'+esc(i.customer)+'</button></td><td class="extra num">'+i.number+'</td><td class="when num">Sent '+dLabel(parseISO(i.issued))+'<span class="m-only"> &middot; '+i.number+'</span></td><td class="status">'+statusCell(i)+'</td><td class="r amt">'+money(i.amount)+'</td><td class="act"><button type="button" class="btn" data-paid="'+i.id+'">Mark as paid</button></td></tr>';
+      }).join('')+'</tbody></table>';
+  } else {
+    if(!paid.length) table='<div class="empty"><strong>No paid invoices yet.</strong>Invoices you mark as paid appear here.</div>';
+    else table='<table class="inv" role="table"><caption class="sr-only">Paid invoices</caption><thead><tr><th scope="col">Customer</th><th scope="col">Invoice</th><th scope="col">Status</th><th scope="col" class="r">Amount</th></tr></thead><tbody>'+
+      paid.map(function(i){
+        return '<tr><td class="who"><button type="button" class="who-name" data-job="'+i.jobId+'" aria-haspopup="dialog">'+esc(i.customer)+'</button></td><td class="extra num">'+i.number+'</td><td class="status">'+statusCell(i)+'</td><td class="r amt">'+money(i.amount)+'</td></tr>';
+      }).join('')+'</tbody></table>';
+  }
+  return head+seg+owed+table;
+}
+
+/* ---------- main render ---------- */
+function render(){
+  var app=document.getElementById('app');
+  document.body.className = 'view-'+S.view;
+  document.getElementById('nav-schedule').setAttribute('aria-current', S.view==='schedule'?'page':'false');
+  document.getElementById('nav-invoices').setAttribute('aria-current', S.view==='invoices'?'page':'false');
+  if(S.view==='schedule'){ app.innerHTML=scheduleHTML(); document.title='Schedule, Crewline (working name)'; }
+  else { app.innerHTML=invoicesHTML(); document.title='Invoices, Crewline (working name)'; }
+  var r=readyJobs().length;
+  document.getElementById('nav-count').textContent = (r && S.preview!=='loading' && S.preview!=='error') ? r+' to invoice' : '';
+  document.getElementById('pv-state').value=S.preview;
+}
+
+/* ---------- focus return ---------- */
+function visible(el){ return el && el.getClientRects().length>0; }
+function focusJob(id){
+  var els=document.querySelectorAll('[data-job="'+id+'"]');
+  for(var i=0;i<els.length;i++){ if(visible(els[i])){ els[i].focus(); return true; } }
+  return false;
+}
+function focusMain(){ var m=document.getElementById('main'); m.focus({preventScroll:true}); }
+
+/* ---------- dialogs ---------- */
+var drawer=document.getElementById('drawer'), jobform=document.getElementById('jobform'), senddlg=document.getElementById('senddlg'), confirmdlg=document.getElementById('confirm');
+
+function drawerHTML(){
+  var j=jobById(S.openJob); if(!j) return '';
+  var inv=invoiceForJob(j.id), d=parseISO(j.date), crew=crewById(j.crew);
+  var end=addMinutes(j.start, Math.round(j.hours*60));
+  var crewOpts='<option value=""'+(!j.crew?' selected':'')+'>Needs a crew</option>'+CREWS.map(function(c){ return '<option value="'+c.id+'"'+(j.crew===c.id?' selected':'')+'>'+esc(c.name)+'</option>'; }).join('');
+  var helper='';
+  if(j.crew){
+    var h=load(j.date,j.crew);
+    helper = h>CAP ? '<p class="help warn">'+icon('alert')+'<span>'+esc(crew.name)+' has '+fmtH(h)+' booked on '+dLabel(d)+', over by '+fmtH(h-CAP)+'.</span></p>' : '<p class="help">'+esc(crew.name)+' has '+fmtH(h)+' of '+CAP+' h booked on '+dLabel(d)+'.</p>';
+  } else helper='<p class="help warn">'+icon('alert')+'<span>No crew is assigned yet.</span></p>';
+  var status='', foot='';
+  if(j.status==='scheduled'){
+    status='<div class="row"><span><strong>Scheduled</strong></span><button type="button" class="btn primary" data-do="done">'+icon('check')+'Mark as done</button></div>';
+  } else {
+    status='<div class="row"><span class="st">'+icon('check')+'<strong>Done</strong></span>'+
+      (inv?'<button type="button" class="btn" aria-disabled="true" data-do="undone-blocked">Mark as not done</button>':'<button type="button" class="btn text" data-do="undone">Mark as not done</button>')+'</div>'+
+      (inv?'<p class="help">This job has an invoice, so it cannot go back to scheduled.</p>':'');
+  }
+  var invBlock='';
+  if(j.status==='done'){
+    if(!inv) invBlock='<div class="block"><h3>Invoice</h3><p class="help warn">'+icon('alert')+'<span>Not invoiced yet.'+(j.price!=null?' Job price '+money(j.price)+'.':'')+'</span></p><div><button type="button" class="btn primary" data-invoice="'+j.id+'">Invoice this job</button></div></div>';
+    else if(inv.paid) invBlock='<div class="block"><h3>Invoice '+inv.number+'</h3><p><span class="st">'+icon('check')+'Paid '+dLabel(parseISO(inv.paid))+'</span> &middot; <span class="num">'+money(inv.amount)+'</span></p><div><button type="button" class="btn text" data-unpaid="'+inv.id+'">Mark as not paid</button></div></div>';
+    else invBlock='<div class="block"><h3>Invoice '+inv.number+'</h3><p class="num">'+money(inv.amount)+' &middot; sent '+dLabel(parseISO(inv.issued))+' to '+esc(inv.email||'no email')+'</p><p>'+statusCell(inv)+'</p><div><button type="button" class="btn primary" data-paid="'+inv.id+'">Mark as paid</button></div></div>';
+  }
+  return '<div class="dlg-head"><h2 id="drawer-title">'+esc(j.customer)+'</h2><button type="button" class="btn" data-close autofocus>'+icon('x')+'Close</button></div>'+
+    '<div class="dlg-body">'+
+      '<dl class="facts"><dt>When</dt><dd class="num">'+dLabel(d)+', '+fmtTime(j.start)+' to '+fmtTime(end)+' ('+fmtH(j.hours)+')</dd>'+
+      '<dt>Where</dt><dd>'+esc(j.address)+'</dd>'+
+      '<dt>Email</dt><dd>'+(j.email?esc(j.email):'<span class="dim">None yet. Needed to send an invoice.</span>')+'</dd>'+
+      '<dt>Services</dt><dd>'+esc(j.services)+'</dd>'+
+      '<dt>Price</dt><dd class="num">'+(j.price!=null?money(j.price):'<span class="dim">Not set</span>')+'</dd></dl>'+
+      '<div class="field"><label for="dr-crew">Crew</label><select id="dr-crew">'+crewOpts+'</select>'+helper+'</div>'+
+      '<div class="block"><h3>Status</h3>'+status+'</div>'+invBlock+
+    '</div>'+
+    '<div class="dlg-foot"><button type="button" class="btn" data-edit="'+j.id+'">Edit job</button></div>';
+}
+function openDrawer(id, trigger){
+  S.openJob=id;
+  drawer.innerHTML=drawerHTML();
+  if(!drawer.open) drawer.showModal();
+}
+function refreshDrawer(focusSel){
+  if(!drawer.open) return;
+  drawer.innerHTML=drawerHTML();
+  if(focusSel){ var el=drawer.querySelector(focusSel); if(el) el.focus(); }
+}
+drawer.addEventListener('close',function(){
+  S.openJob=null;
+  render();
+  if(jobform.open) return;
+  if(S.returnFocus){ var rf=S.returnFocus; S.returnFocus=null; if(rf.job){ if(!focusJob(rf.job)) focusMain(); } else if(rf.sel){ var e=document.querySelector(rf.sel); if(e) e.focus(); else focusMain(); } }
+});
+drawer.addEventListener('click',function(e){
+  if(e.target===drawer){ drawer.close(); return; }
+  var b=e.target.closest('button'); if(!b) return;
+  if(b.hasAttribute('data-close')){ drawer.close(); return; }
+  var j=jobById(S.openJob);
+  if(b.dataset.do==='done'){ j.status='done'; render(); refreshDrawer('[data-invoice]'); toast('Marked as done. You can invoice it now.'); }
+  else if(b.dataset.do==='undone'){ j.status='scheduled'; render(); refreshDrawer('[data-do="done"]'); toast('Moved back to scheduled.'); }
+  else if(b.dataset.do==='undone-blocked'){ toast('This job has an invoice, so it cannot go back to scheduled.'); }
+  else if(b.dataset.invoice){ openSend(b.dataset.invoice); }
+  else if(b.dataset.paid){ markPaid(b.dataset.paid); }
+  else if(b.dataset.unpaid){ markUnpaid(b.dataset.unpaid); }
+  else if(b.dataset.edit){ var id=b.dataset.edit; S.returnFocus={job:id}; drawer.close(); openForm(id); }
+});
+drawer.addEventListener('change',function(e){
+  if(e.target.id==='dr-crew'){
+    var j=jobById(S.openJob); var v=e.target.value||null; j.crew=v;
+    render(); refreshDrawer('#dr-crew');
+    toast(v ? 'Moved to '+crewById(v).name+' for '+dLabel(parseISO(j.date))+'.' : 'Now needs a crew.');
+  }
+});
+
+/* confirm dialog */
+var confirmCb=null;
+function openConfirm(o){
+  confirmCb=o.onConfirm; var onKeep=o.onCancel||null;
+  confirmdlg.innerHTML='<div class="dlg-head"><h2 id="cf-title">'+esc(o.title)+'</h2></div><div class="dlg-body"><p>'+esc(o.text)+'</p></div><div class="dlg-foot"><button type="button" class="btn" data-cf="cancel" autofocus>'+esc(o.cancelLabel||'Cancel')+'</button><button type="button" class="btn '+(o.danger?'danger':'primary')+'" data-cf="ok">'+esc(o.confirmLabel)+'</button></div>';
+  confirmdlg._onCancel=onKeep;
+  confirmdlg.showModal();
+}
+confirmdlg.addEventListener('click',function(e){
+  var b=e.target.closest('[data-cf]'); if(!b) return;
+  var cb=confirmCb, onC=confirmdlg._onCancel;
+  confirmdlg.close();
+  if(b.dataset.cf==='ok' && cb) cb(); else if(onC) onC();
+});
+
+/* job form */
+var formState=null;
+function durationOptions(sel){
+  var o=''; for(var h=0.5; h<=10; h+=0.5){ o+='<option value="'+h+'"'+(h===sel?' selected':'')+'>'+fmtH(h)+'</option>'; } return o;
+}
+function formFields(v){
+  return {
+    customer:v.customer||'', email:v.email||'', address:v.address||'', date:v.date||'', start:v.start||'07:30',
+    hours:String(v.hours||2), crew:v.crew||'', services:v.services||'', price:v.price!=null && v.price!==''? String((v.price/100)) : ''
+  };
+}
+function defaultDate(){
+  if(S.view!=='schedule') return TODAY;
+  if(window.innerWidth<1000) return weekDays()[S.day];
+  var di=diffDays(TODAY,weekStart());
+  return (di>=0 && di<=5) ? TODAY : weekStart();
+}
+function openForm(id){
+  var j = id ? jobById(id) : null;
+  var dflt = {date: iso(defaultDate())};
+  var v = formFields(j || dflt);
+  formState={id:id||null, initial:JSON.stringify(v)};
+  var crewOpts='<option value="">Needs a crew</option>'+CREWS.map(function(c){return '<option value="'+c.id+'"'+(v.crew===c.id?' selected':'')+'>'+esc(c.name)+'</option>';}).join('');
+  var hasInv = j && invoiceForJob(j.id);
+  var delBtn='';
+  if(j){
+    delBtn = hasInv ? '<div class="left help">This job has an invoice, so it cannot be deleted.</div>' : '<div class="left"><button type="button" class="btn danger-text" data-del>Delete job</button></div>';
+  }
+  jobform.innerHTML='<form id="jf" novalidate><div class="dlg-head"><h2 id="jf-title">'+(j?'Edit job':'New job')+'</h2></div>'+
+  '<div class="dlg-body">'+
+    '<div id="jf-sum"></div>'+
+    '<div class="field"><label for="jf-customer">Customer name <span class="req">(required)</span></label><input id="jf-customer" name="customer" type="text" autocomplete="off" value="'+esc(v.customer)+'"><div id="jf-customer-e"></div></div>'+
+    '<div class="field"><label for="jf-email">Customer email</label><input id="jf-email" name="email" type="email" autocomplete="off" inputmode="email" value="'+esc(v.email)+'" aria-describedby="jf-email-h"><p class="help" id="jf-email-h">Needed to send an invoice.</p><div id="jf-email-e"></div></div>'+
+    '<div class="field"><label for="jf-address">Address <span class="req">(required)</span></label><input id="jf-address" name="address" type="text" autocomplete="off" value="'+esc(v.address)+'"><div id="jf-address-e"></div></div>'+
+    '<div class="grid3">'+
+      '<div class="field"><label for="jf-date">Date <span class="req">(required)</span></label><input id="jf-date" name="date" type="date" value="'+esc(v.date)+'"><div id="jf-date-e"></div></div>'+
+      '<div class="field"><label for="jf-start">Start time <span class="req">(required)</span></label><input id="jf-start" name="start" type="time" value="'+esc(v.start)+'"><div id="jf-start-e"></div></div>'+
+      '<div class="field"><label for="jf-hours">Duration</label><select id="jf-hours" name="hours">'+durationOptions(+v.hours)+'</select></div>'+
+    '</div>'+
+    '<div class="field"><label for="jf-crew">Crew</label><select id="jf-crew" name="crew">'+crewOpts+'</select></div>'+
+    '<div class="field"><label for="jf-services">Services <span class="req">(required)</span></label><textarea id="jf-services" name="services" rows="2">'+esc(v.services)+'</textarea><div id="jf-services-e"></div></div>'+
+    '<div class="field"><label for="jf-price">Price in dollars</label><input id="jf-price" name="price" type="text" inputmode="decimal" autocomplete="off" value="'+esc(v.price)+'" aria-describedby="jf-price-h"><p class="help" id="jf-price-h">Optional. Used as the invoice amount.</p><div id="jf-price-e"></div></div>'+
+  '</div>'+
+  '<div class="dlg-foot">'+delBtn+'<button type="button" class="btn" data-cancel>Cancel</button><button type="submit" class="btn primary">Save job</button></div></form>';
+  jobform.showModal();
+  var first=jobform.querySelector('#jf-customer'); if(first) first.focus();
+}
+function readForm(){
+  var f=jobform.querySelector('#jf'); var o={};
+  ['customer','email','address','date','start','hours','crew','services','price'].forEach(function(k){ o[k]=f.elements[k].value; });
+  return o;
+}
+function isDirty(){ return JSON.stringify(readForm())!==formState.initial; }
+function closeFormTo(id){
+  S.returnFocus = id ? {job:id} : (S.returnFocus||null);
+  jobform.close();
+}
+jobform.addEventListener('close',function(){
+  render();
+  if(S.returnFocus){ var rf=S.returnFocus; S.returnFocus=null; if(rf.job){ if(!focusJob(rf.job)) focusMain(); } else focusMain(); }
+});
+function tryCancelForm(){
+  if(!formState) return jobform.close();
+  if(isDirty()){
+    openConfirm({title:'Discard this job?', text:'Your entries will be lost.', cancelLabel:'Keep editing', confirmLabel:'Discard', danger:true, onConfirm:function(){ closeFormTo(formState.id); }, onCancel:function(){ var f=jobform.querySelector('#jf-customer'); if(f) f.focus(); }});
+  } else closeFormTo(formState.id);
+}
+jobform.addEventListener('cancel',function(e){ e.preventDefault(); tryCancelForm(); });
+jobform.addEventListener('click',function(e){
+  if(e.target.closest('[data-cancel]')) tryCancelForm();
+  else if(e.target.closest('[data-del]')){
+    var j=jobById(formState.id);
+    openConfirm({title:'Delete this job?', text:'This removes '+j.customer+' on '+dLabel(parseISO(j.date))+' from the schedule. This cannot be undone.', confirmLabel:'Delete job', danger:true, onConfirm:function(){
+      S.jobs=S.jobs.filter(function(x){return x.id!==j.id;}); S.returnFocus={sel:'#main'}; jobform.close(); toast('Job deleted.');
+    }, onCancel:function(){ var b=jobform.querySelector('[data-del]'); if(b) b.focus(); }});
+  }
+});
+function showErr(field,msg){
+  var inp=jobform.querySelector('#jf-'+field), box=jobform.querySelector('#jf-'+field+'-e');
+  if(!inp||!box) return;
+  if(msg){ inp.setAttribute('aria-invalid','true'); box.innerHTML='<p class="err" id="jf-'+field+'-m">'+icon('alert')+'<span>'+esc(msg)+'</span></p>'; var d=(inp.getAttribute('aria-describedby')||'').split(' ').filter(function(x){return x&&x!=='jf-'+field+'-m';}); d.push('jf-'+field+'-m'); inp.setAttribute('aria-describedby',d.join(' ')); }
+  else { inp.removeAttribute('aria-invalid'); box.innerHTML=''; }
+}
+jobform.addEventListener('submit',function(e){
+  e.preventDefault();
+  var v=readForm(), errs=[];
+  function chk(field,cond,msg){ if(cond){ errs.push([field,msg]); showErr(field,msg); } else showErr(field,null); }
+  chk('customer',!v.customer.trim(),'Enter the customer name.');
+  chk('email', v.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email.trim()),'Enter a valid email, like name@example.com.');
+  chk('address',!v.address.trim(),'Enter the job address.');
+  chk('date',!v.date,'Choose a date.');
+  chk('start',!v.start,'Choose a start time.');
+  chk('services',!v.services.trim(),'Enter what the crew will do.');
+  var priceNum=null;
+  if(v.price.trim()){ var p=parseFloat(v.price.replace(/[$,\s]/g,'')); if(isNaN(p)||p<0){ errs.push(['price','Enter the price as a number, like 85 or 85.50.']); showErr('price','Enter the price as a number, like 85 or 85.50.'); } else { priceNum=Math.round(p*100); showErr('price',null);} } else showErr('price',null);
+  var sum=jobform.querySelector('#jf-sum');
+  if(errs.length){
+    sum.innerHTML='<div class="errsum"><p>'+(errs.length===1?'Fix 1 thing to save this job:':'Fix '+errs.length+' things to save this job:')+'</p><ul>'+errs.map(function(x){ return '<li><a href="#jf-'+x[0]+'" data-fld="'+x[0]+'">'+esc(x[1])+'</a></li>'; }).join('')+'</ul></div>';
+    var f=jobform.querySelector('#jf-'+errs[0][0]); if(f) f.focus();
+    return;
+  }
+  sum.innerHTML='';
+  var j;
+  var isNew=!formState.id;
+  if(isNew){ j={id:'j'+(S.nextJob++), status:'scheduled'}; S.jobs.push(j); } else j=jobById(formState.id);
+  j.customer=v.customer.trim(); j.email=v.email.trim(); j.address=v.address.trim(); j.date=v.date; j.start=v.start; j.hours=+v.hours; j.crew=v.crew||null; j.services=v.services.trim(); j.price=priceNum;
+  var d=parseISO(j.date);
+  var inWeek = diffDays(d,weekStart())>=0 && diffDays(d,weekStart())<=5;
+  var msg = (isNew?'Job added for ':'Job saved for ')+dLabel(d)+'.';
+  if(inWeek){
+    if(window.innerWidth<1000){ S.day=diffDays(d,weekStart()); }
+    S.returnFocus={job:j.id}; jobform.close(); toast(msg);
+  } else {
+    S.returnFocus={sel:'#main'}; jobform.close();
+    toast(msg+' It is in another week.', {actionLabel:'Go to that week', action:function(){ goWeek(weekMonday(d)); }, ms:12000});
+  }
+});
+jobform.addEventListener('click',function(e){
+  var a=e.target.closest('a[data-fld]'); if(a){ e.preventDefault(); var f=jobform.querySelector('#jf-'+a.dataset.fld); if(f) f.focus(); }
+});
+
+/* send invoice */
+var sendState=null;
+function dueDate(days){ return addDays(TODAY,days); }
+function openSend(jobId){
+  var j=jobById(jobId);
+  sendState={jobId:jobId, sending:false};
+  var opts=[7,14,30].map(function(n){ return '<option value="'+n+'"'+(n===S.dueDays?' selected':'')+'>'+n+' days</option>'; }).join('');
+  senddlg.innerHTML='<form id="sf" novalidate><div class="dlg-head"><h2 id="sd-title">Invoice this job</h2></div><div class="dlg-body">'+
+   '<p>'+esc(j.customer)+', '+dLabel(parseISO(j.date))+'. '+esc(j.services)+'.</p>'+
+   '<div id="sf-alert"></div>'+
+   '<div class="field"><label for="sf-to">Send to <span class="req">(required)</span></label><input id="sf-to" name="to" type="email" inputmode="email" autocomplete="off" value="'+esc(j.email)+'"><div id="sf-to-e"></div></div>'+
+   '<div class="grid2"><div class="field"><label for="sf-amount">Amount in dollars <span class="req">(required)</span></label><input id="sf-amount" name="amount" type="text" inputmode="decimal" autocomplete="off" value="'+(j.price!=null?(j.price/100).toFixed(2):'')+'"><div id="sf-amount-e"></div></div>'+
+   '<div class="field"><label for="sf-due">Payment due in</label><select id="sf-due" name="due">'+opts+'</select><p class="help num" id="sf-due-h">Due '+dLabel(dueDate(S.dueDays))+'</p></div></div>'+
+   '<div class="pay"><strong>Payment instructions (sample, set in Company details)</strong>Pay by check to Oak &amp; Row Landscaping, or by bank transfer. Details are in the email.</div>'+
+   '<p class="help">The customer gets the invoice by email. A sent invoice cannot be unsent. Preview only: nothing is sent from this page.</p>'+
+  '</div><div class="dlg-foot"><button type="button" class="btn" data-sd-cancel>Cancel</button><button type="submit" class="btn primary" id="sf-send">Send invoice</button></div></form>';
+  senddlg.showModal();
+  var f=senddlg.querySelector(j.email?'#sf-amount':'#sf-to'); if(f) f.focus();
+}
+senddlg.addEventListener('change',function(e){
+  if(e.target.id==='sf-due'){ senddlg.querySelector('#sf-due-h').textContent='Due '+dLabel(dueDate(+e.target.value)); }
+});
+senddlg.addEventListener('click',function(e){
+  if(e.target.closest('[data-sd-cancel]')){ if(!sendState.sending) senddlg.close(); }
+});
+senddlg.addEventListener('cancel',function(e){ if(sendState && sendState.sending) e.preventDefault(); });
+function sdErr(field,msg){
+  var inp=senddlg.querySelector('#sf-'+field), box=senddlg.querySelector('#sf-'+field+'-e');
+  if(msg){ inp.setAttribute('aria-invalid','true'); inp.setAttribute('aria-describedby','sf-'+field+'-m'); box.innerHTML='<p class="err" id="sf-'+field+'-m">'+icon('alert')+'<span>'+esc(msg)+'</span></p>'; }
+  else { inp.removeAttribute('aria-invalid'); inp.removeAttribute('aria-describedby'); box.innerHTML=''; }
+}
+senddlg.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(sendState.sending) return;
+  var f=senddlg.querySelector('#sf'), to=f.elements.to.value.trim(), amt=f.elements.amount.value.replace(/[$,\s]/g,''), days=+f.elements.due.value;
+  var bad=null;
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to)){ sdErr('to','Enter a valid email, like name@example.com.'); bad=bad||'to'; } else sdErr('to',null);
+  var a=parseFloat(amt);
+  if(!amt || isNaN(a) || a<=0){ sdErr('amount','Enter the amount, like 85 or 85.50.'); bad=bad||'amount'; } else sdErr('amount',null);
+  if(bad){ senddlg.querySelector('#sf-'+bad).focus(); return; }
+  sendState.sending=true;
+  var btn=senddlg.querySelector('#sf-send'); btn.disabled=true; btn.textContent='Sending';
+  senddlg.querySelector('[data-sd-cancel]').disabled=true;
+  var jobId=sendState.jobId;
+  setTimeout(function(){
+    var j=jobById(jobId);
+    var num='INV-'+('0000'+(S.nextInv++)).slice(-4);
+    j.email=to; S.dueDays=days;
+    S.invoices.push({id:'i'+num, jobId:jobId, number:num, customer:j.customer, email:to, amount:Math.round(a*100), issued:iso(TODAY), due:iso(dueDate(days)), paid:null});
+    sendState.sending=false;
+    senddlg.close();
+    toast('Invoice '+num+' marked as sent to '+to+'. Preview only: no email left this page.',{ms:12000});
+    render();
+    if(drawer.open) refreshDrawer('[data-paid]'); else focusMain();
+  },700);
+});
+
+/* paid */
+function markPaid(id){
+  var inv=null; S.invoices.forEach(function(i){ if(i.id===id) inv=i; });
+  inv.paid=iso(TODAY);
+  var wasDrawer=drawer.open;
+  render(); if(wasDrawer) refreshDrawer('[data-unpaid]'); else focusMain();
+  if(wasDrawer) toast('Invoice '+inv.number+' marked as paid.');
+  else toast('Invoice '+inv.number+' for '+inv.customer+' marked as paid.',{actionLabel:'Undo', action:function(){ inv.paid=null; render(); focusMain(); }});
+}
+function markUnpaid(id){
+  var inv=null; S.invoices.forEach(function(i){ if(i.id===id) inv=i; });
+  inv.paid=null; render(); refreshDrawer('[data-paid]'); toast('Invoice '+inv.number+' is unpaid again.');
+}
+
+/* ---------- navigation ---------- */
+function weekMonday(d){ var dow=d.getDay(); var back = dow===0 ? 6 : dow-1; return addDays(d,-back); }
+function goWeek(d){
+  S.week=iso(d);
+  var di=diffDays(TODAY,d); S.day = (di>=0&&di<=5) ? di : 0;
+  S.view='schedule';
+  S.ignoreHash='#/schedule/'+S.week;
+  location.hash='#/schedule/'+S.week;
+  render();
+  var r=document.getElementById('range'); if(r){ /* announced through live region below */ }
+  announce('Showing '+rangeLabel()+'.');
+}
+var live=document.createElement('div'); live.className='sr-only'; live.setAttribute('role','status'); live.setAttribute('aria-live','polite'); document.body.appendChild(live);
+function announce(msg){ live.textContent=''; setTimeout(function(){ live.textContent=msg; },30); }
+
+function route(){
+  if(S.ignoreHash && location.hash===S.ignoreHash){ S.ignoreHash=null; return; }
+  var h=location.hash||'#/schedule';
+  var m=h.match(/^#\/schedule(?:\/(\d{4}-\d{2}-\d{2}))?/);
+  if(m){
+    S.view='schedule';
+    if(m[1]){ var d=parseISO(m[1]); S.week=iso(weekMonday(d)); var di=diffDays(TODAY,parseISO(S.week)); S.day=(di>=0&&di<=5)?di:0; }
+  } else if(/^#\/invoices/.test(h)){ S.view='invoices'; }
+  render();
+}
+window.addEventListener('hashchange',route);
+
+/* ---------- global click handling ---------- */
+document.addEventListener('click',function(e){
+  var t=e.target;
+  var go=t.closest('[data-go-ready]'); if(go){ S.tab='ready'; return; }
+  var b=t.closest('button'); if(!b) return;
+  if(b.closest('dialog')) return;
+  if(b.dataset.act==='new-job'){ S.returnFocus={sel:'[data-act="new-job"]'}; openForm(null); }
+  else if(b.dataset.act==='prev-week'){ goWeek(addDays(weekStart(),-7)); focusToolbar('prev-week'); }
+  else if(b.dataset.act==='next-week'){ goWeek(addDays(weekStart(),7)); focusToolbar('next-week'); }
+  else if(b.dataset.act==='this-week'){ goWeek(ANCHOR); focusToolbar('this-week'); }
+  else if(b.dataset.act==='retry'){ S.preview='populated'; render(); focusMain(); }
+  else if(b.dataset.day){ S.day=+b.dataset.day; render(); var c=document.querySelector('.chip[data-day="'+S.day+'"]'); if(c) c.focus(); }
+  else if(b.dataset.tab){ S.tab=b.dataset.tab; render(); var s=document.querySelector('[data-tab="'+S.tab+'"]'); if(s) s.focus(); }
+  else if(b.dataset.job){ S.returnFocus={job:b.dataset.job}; openDrawer(b.dataset.job); }
+  else if(b.dataset.invoice){ S.returnFocus={sel:'[data-invoice="'+b.dataset.invoice+'"]'}; openSend(b.dataset.invoice); }
+  else if(b.dataset.paid){ markPaid(b.dataset.paid); }
+});
+function focusToolbar(act){ var el=document.querySelector('[data-act="'+act+'"]'); if(el) el.focus(); }
+
+/* preview controls */
+document.getElementById('pv-state').addEventListener('change',function(e){ S.preview=e.target.value; render(); });
+document.getElementById('pv-reset').addEventListener('click',function(){ seed(); S.preview='populated'; S.week=iso(ANCHOR); S.tab='ready'; render(); toast('Sample data reset.',{ms:4000}); });
+
+/* keep chips in sync on resize across the breakpoint */
+route();
+if(!location.hash) { /* default route stays on schedule without forcing a hash */ }
+})();
+</script>
+</body>
+</html>

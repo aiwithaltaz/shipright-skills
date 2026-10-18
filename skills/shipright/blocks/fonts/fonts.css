@@ -1,0 +1,16 @@
+/* SIL Open Font License. Inter for UI. Fraunces for headlines.
+   Files sit next to this CSS. Do not request a font that is not in the project. */
+@font-face {
+  font-family: "Inter";
+  src: url("inter-latin-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("fraunces-latin-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

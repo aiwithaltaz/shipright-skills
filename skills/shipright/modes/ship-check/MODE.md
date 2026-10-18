@@ -5,7 +5,7 @@ description: "Use this when checking launch readiness or specific release items 
 
 # Ship check
 
-**Pack version:** 1.2.0
+**Pack version:** 1.3.0
 **Context before generate. Product before pixels.**
 
 Report what launch evidence establishes. This is not a security audit, legal review or deployment step.
@@ -16,11 +16,7 @@ For a plan without a build, record future verification needs; do not claim launc
 Read [shared intake](../_shared/intake.md) and [the operating contract](../_shared/operating-contract.md) once per task.
 Use 0-5 questions total before starting. Current instructions and the current phase control scope.
 
-**Core rules if `../_shared` is unreachable:** say the pack is incomplete. Honor exact feedback and current-phase scope.
-Never invent facts, brand values, data or features. You decide delegates the named choice; Let me decide reserves it.
-Silence is not approval. Use Pass, Fail, Not verified or justified Not applicable with evidence.
-A ticket cannot turn Fail into Pass. A critical failure blocks readiness. Screenshots cannot prove runtime behavior.
-Continue supported work; do not claim a full ShipRight check without its required references.
+Shared rules live in the operating contract. Do not copy them into this mode.
 
 ## Scope and evidence
 

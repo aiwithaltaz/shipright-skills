@@ -1,0 +1,23 @@
+{
+  "index": true,
+  "views": {
+    "desktop": {
+      "height": 1270,
+      "frames": 2,
+      "errors": [],
+      "failedRequests": [],
+      "overflowX": false,
+      "brokenImages": 0,
+      "textLength": 2424
+    },
+    "phone": {
+      "height": 1083,
+      "frames": 2,
+      "errors": [],
+      "failedRequests": [],
+      "overflowX": false,
+      "brokenImages": 0,
+      "textLength": 621
+    }
+  }
+}

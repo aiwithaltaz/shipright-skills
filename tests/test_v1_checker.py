@@ -12,11 +12,20 @@ ROOT = Path(__file__).resolve().parents[1]
 FIX = ROOT / 'evals/v1/checker-fixtures'
 
 
+def node_env():
+    parts = [os.environ.get('NODE_PATH', '')]
+    for raw in ('/workspace/node_modules', '/opt/node22/lib/node_modules',
+                '/opt/app-template/node_modules', '/usr/lib/node_modules'):
+        base = Path(raw)
+        if (base / 'playwright' / 'package.json').exists() or (base / 'playwright-core' / 'package.json').exists():
+            parts.append(str(base))
+    return dict(os.environ, NODE_PATH=os.pathsep.join(dict.fromkeys(p for p in parts if p)))
+
+
 def run(page):
     out = tempfile.mkdtemp(prefix='check-ui-')
-    env = dict(os.environ, NODE_PATH=os.environ.get('NODE_PATH', '/opt/node22/lib/node_modules'))
     proc = subprocess.run(['node', str(ROOT / 'scripts/check-ui.mjs'), str(page), '--root', str(ROOT), '--out', out, '--json'],
-                          capture_output=True, text=True, env=env, timeout=180)
+                          capture_output=True, text=True, env=node_env(), timeout=180)
     shutil.rmtree(out, ignore_errors=True)
     return proc
 

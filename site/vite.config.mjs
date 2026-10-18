@@ -8,7 +8,15 @@ const exportFile = new URL('../dist/shipright-chatgpt.md', import.meta.url);
 let outputDirectory;
 export default defineConfig({
   cacheDir: process.env.SHIPRIGHT_VITE_CACHE || 'node_modules/.vite',
-  build: { outDir: process.env.SHIPRIGHT_SITE_OUT || 'dist' },
+  build: {
+    outDir: process.env.SHIPRIGHT_SITE_OUT || 'dist',
+    rollupOptions: {
+      input: {
+        main: resolve(import.meta.dirname, 'index.html'),
+        case: resolve(import.meta.dirname, 'case-study.html'),
+      },
+    },
+  },
   plugins: [{
     name: 'released-chatgpt-download',
     configResolved(config) { outputDirectory = resolve(config.root, config.build.outDir); },

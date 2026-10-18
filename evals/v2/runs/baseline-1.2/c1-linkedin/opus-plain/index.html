@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Threadline · Today</title>
+<meta name="description" content="Threadline prototype: the Today queue. AI-drafted LinkedIn follow-ups you send yourself, plus scheduled posts.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- ============ Sidebar ============ -->
+  <aside class="sidebar" aria-label="Main navigation">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="1" y="1" width="30" height="30" rx="9" fill="var(--accent)"/>
+        <path d="M7 19c3-6 6-6 9 0s6 6 9 0" fill="none" stroke="var(--accent-ink)" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="7" cy="19" r="2" fill="var(--accent-ink)"/>
+        <circle cx="25" cy="19" r="2" fill="var(--accent-ink)"/>
+      </svg>
+      <span class="brand-name">Threadline</span>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-item is-active" aria-current="page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l4.5 4.5L20 6"/></svg>
+        <span>Today</span><span class="nav-badge" id="navBadge">7</span>
+      </button>
+      <button class="nav-item" data-soon="Compose">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></svg>
+        <span>Compose</span>
+      </button>
+      <button class="nav-item" data-soon="Calendar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+        <span>Calendar</span>
+      </button>
+      <button class="nav-item" data-soon="People">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 5.2a3.3 3.3 0 010 6.6M18 14.8c1.9.7 3.1 2.4 3.5 5.2"/></svg>
+        <span>People</span>
+      </button>
+      <button class="nav-item" data-soon="Insights">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V12M12 20V5M19 20v-9"/></svg>
+        <span>Insights</span>
+      </button>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="conn">
+        <span class="conn-dot" aria-hidden="true"></span>
+        <div>
+          <div class="conn-title">LinkedIn connected</div>
+          <div class="conn-sub">Posting access · renews in 41 days</div>
+        </div>
+      </div>
+      <button class="nav-item" data-soon="Settings">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/></svg>
+        <span>Settings</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ============ Main: Today queue ============ -->
+  <main class="main" id="main">
+    <header class="today-head">
+      <div class="today-titles">
+        <p class="eyebrow" id="dateLine">Today</p>
+        <h1 id="greeting">Good morning, Sam.</h1>
+        <p class="today-sub" id="summaryLine">7 actions · about 14 min. Everything is drafted. You press send.</p>
+      </div>
+      <div class="progress" aria-live="polite">
+        <svg class="ring" viewBox="0 0 64 64" aria-hidden="true">
+          <circle class="ring-track" cx="32" cy="32" r="27"/>
+          <circle class="ring-fill" id="ringFill" cx="32" cy="32" r="27"/>
+        </svg>
+        <div class="progress-text">
+          <strong id="progressCount">0/7</strong>
+          <span>done</span>
+        </div>
+        <div class="streak" title="Days in a row you cleared your queue">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 01-10 0c0-2 1-3.5 2-4.5.3 1.8 1.2 2.8 2.3 3-.6-3.2.2-6 .7-8.5z"/></svg>
+          <span><span id="streakCount">12</span>-day streak</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="filters" role="tablist" aria-label="Filter actions" id="filters">
+      <button role="tab" class="filter is-active" data-filter="all" aria-selected="true">All <span class="fc" data-count="all"></span></button>
+      <button role="tab" class="filter" data-filter="follow" aria-selected="false">Follow-ups <span class="fc" data-count="follow"></span></button>
+      <button role="tab" class="filter" data-filter="reply" aria-selected="false">Replies <span class="fc" data-count="reply"></span></button>
+      <button role="tab" class="filter" data-filter="engage" aria-selected="false">Engage <span class="fc" data-count="engage"></span></button>
+      <button role="tab" class="filter" data-filter="connect" aria-selected="false">Connect <span class="fc" data-count="connect"></span></button>
+    </div>
+
+    <section class="queue" id="queue" aria-label="Today's actions"></section>
+
+    <div class="cleared" id="cleared" hidden>
+      <div class="cleared-art" aria-hidden="true">
+        <svg viewBox="0 0 120 60"><path d="M8 30c17-24 35-24 52 0s35 24 52 0" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/><circle cx="8" cy="30" r="5" fill="var(--accent)"/><circle cx="112" cy="30" r="5" fill="var(--accent)"/></svg>
+      </div>
+      <h2>Queue cleared.</h2>
+      <p>That's every follow-up handled for today. Tomorrow's queue builds itself overnight.</p>
+      <button class="btn btn-primary" data-soon="Compose">Write tomorrow's post</button>
+    </div>
+  </main>
+
+  <!-- ============ Right rail ============ -->
+  <aside class="rail" aria-label="Week overview">
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Posts this week</h2>
+        <button class="link" data-soon="Calendar">Calendar</button>
+      </div>
+      <ol class="week" id="week"></ol>
+      <button class="btn btn-soft btn-block" data-soon="Compose">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        Fill an open slot
+      </button>
+      <p class="fineprint">Posts publish to your profile through LinkedIn's official API.</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Pipeline</h2>
+        <button class="link" data-soon="People">People</button>
+      </div>
+      <ul class="pipe" id="pipe"></ul>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><h2>Daily pace</h2></div>
+      <div class="pace">
+        <div class="pace-row">
+          <span>Connection notes</span>
+          <strong><span id="paceNotes">4</span> / 20</strong>
+        </div>
+        <div class="bar"><span id="paceBar" style="width:20%"></span></div>
+        <p class="fineprint">A human-sized pace keeps your account healthy and your notes personal.</p>
+      </div>
+    </section>
+
+    <section class="trust">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V6l7-3z"/><path d="M8.8 12l2.2 2.2 4.2-4.4"/></svg>
+      <p><strong>Threadline never sends messages for you.</strong> We write, remind and schedule. You stay in control of your account.</p>
+    </section>
+  </aside>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden>
+  <span id="toastMsg"></span>
+  <button class="toast-undo" id="toastUndo" hidden>Undo</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

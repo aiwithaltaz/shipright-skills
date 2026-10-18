@@ -1,0 +1,6 @@
+Inter (latin 400) and Fraunces (latin 400) are shipped as woff2 under the SIL Open Font License, version 1.1.
+Inter: Rasmus Andersson and contributors.
+Fraunces: Undercase Type, The League of Moveable Type, and contributors.
+Full license: https://openfontlicense.org/open-font-license-official-text/
+Do not sell these font files on their own. Keep this notice with the files.
+Checked 2026-10-18 from the fontsource CDN builds.

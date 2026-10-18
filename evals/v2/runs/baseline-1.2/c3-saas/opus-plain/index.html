@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Groundcrew Week Board</title>
+<meta name="description" content="Groundcrew prototype: plan the week's landscaping crews, move a rain day, and invoice finished visits.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-board" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18M9 9v11M15 9v11" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 19c.6-3.4 3-5 6-5s5.4 1.6 6 5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15.5 5.2a3 3 0 0 1 0 5.6M17.5 14.3c1.8.6 3 2.2 3.5 4.7" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8h6M9 12h6" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h11v10H2zM13 10h4l3 3v3h-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="6" cy="17.5" r="1.8" fill="var(--ink)" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="17.5" r="1.8" fill="var(--ink)" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.8v3M12 18.2v3M2.8 12h3M18.2 12h3M5.5 5.5l2.1 2.1M16.4 16.4l2.1 2.1M5.5 18.5l2.1-2.1M16.4 7.6l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="currentColor"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 11a3.5 3.5 0 0 0 1 7z" fill="currentColor"/></symbol>
+    <symbol id="i-partly" viewBox="0 0 24 24"><circle cx="8" cy="8" r="3" fill="currentColor" opacity=".55"/><path d="M9 19h9a3.5 3.5 0 0 0 .3-7A5 5 0 0 0 8.5 13 3 3 0 0 0 9 19z" fill="currentColor"/></symbol>
+    <symbol id="i-rain" viewBox="0 0 24 24"><path d="M7 14h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 7a3.5 3.5 0 0 0 1 7z" fill="currentColor"/><path d="M8 17l-1 3M12 17l-1 3M16 17l-1 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4M6 4h11l-2.5 4L17 12H6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<div class="app">
+  <nav class="rail" aria-label="Main">
+    <div class="brand" aria-label="Groundcrew">
+      <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path d="M4 24c4-1 6-6 6-12 2 5 3 8 6 9 1-6 4-11 8-13-1 6 0 11 4 16z" fill="#7FC29B"/><path d="M2 26h28" stroke="#E0337A" stroke-width="2.6" stroke-linecap="round"/></svg>
+    </div>
+    <a href="#" class="rail-link is-active" aria-current="page"><svg><use href="#i-board"/></svg><span>Week</span></a>
+    <a href="#" class="rail-link" data-stub="Customers"><svg><use href="#i-people"/></svg><span>Customers</span></a>
+    <a href="#" class="rail-link" data-stub="Invoices"><svg><use href="#i-receipt"/></svg><span>Invoices</span></a>
+    <a href="#" class="rail-link" data-stub="Crews"><svg><use href="#i-truck"/></svg><span>Crews</span></a>
+    <a href="#" class="rail-link rail-bottom" data-stub="Settings"><svg><use href="#i-gear"/></svg><span>Settings</span></a>
+  </nav>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="title-block">
+        <p class="company">Hollow Creek Lawn &amp; Landscape</p>
+        <h1>Week of October 19</h1>
+        <p class="week-summary" id="weekSummary"></p>
+      </div>
+      <div class="top-actions">
+        <button class="btn btn-primary" id="addVisitBtn" type="button"><svg aria-hidden="true"><use href="#i-plus"/></svg>Add visit</button>
+      </div>
+    </header>
+
+    <div class="daytabs" id="dayTabs" role="tablist" aria-label="Day"></div>
+
+    <section class="board-wrap" aria-label="Crew schedule for the week">
+      <div class="board" id="board"></div>
+    </section>
+    <p class="hint">Drag a visit to another crew or day, or click it to move it, mark it done, or skip it.</p>
+  </main>
+
+  <aside class="panel" aria-labelledby="invTitle">
+    <div class="panel-head">
+      <h2 id="invTitle">Ready to invoice</h2>
+      <p class="panel-sub" id="invSub"></p>
+    </div>
+    <div id="invList" class="inv-list"></div>
+    <div class="panel-foot" id="invFoot"></div>
+
+    <section class="held" id="held" aria-labelledby="heldTitle"></section>
+
+    <section class="overdue" aria-labelledby="overdueTitle">
+      <div class="overdue-head">
+        <h3 id="overdueTitle">Overdue</h3>
+        <span class="overdue-total" id="overdueTotal"></span>
+      </div>
+      <ul id="overdueList" class="overdue-list"></ul>
+      <button class="btn btn-quiet" id="remindBtn" type="button">Send 3 reminders</button>
+    </section>
+  </aside>
+</div>
+
+<dialog id="visitDialog" class="sheet" aria-labelledby="vdTitle">
+  <form method="dialog" class="sheet-inner" id="visitForm">
+    <div class="sheet-head">
+      <div>
+        <h2 id="vdTitle"></h2>
+        <p id="vdService" class="sheet-service"></p>
+      </div>
+      <button class="icon-btn" value="cancel" aria-label="Close"><svg><use href="#i-close"/></svg></button>
+    </div>
+    <dl class="facts" id="vdFacts"></dl>
+    <div class="sheet-status" id="vdStatus"></div>
+    <fieldset class="move" id="vdMove">
+      <legend>Move to</legend>
+      <div class="move-row">
+        <label>Crew<select id="vdCrew"></select></label>
+        <label>Day<select id="vdDay"></select></label>
+      </div>
+      <button type="button" class="btn btn-secondary" id="vdMoveBtn">Move visit</button>
+    </fieldset>
+    <div class="sheet-actions" id="vdActions"></div>
+  </form>
+</dialog>
+
+<dialog id="addDialog" class="sheet" aria-labelledby="adTitle">
+  <form method="dialog" class="sheet-inner" id="addForm">
+    <div class="sheet-head">
+      <div>
+        <h2 id="adTitle">Add a one-off visit</h2>
+        <p class="sheet-service">It goes to the Unassigned row until you put it on a crew.</p>
+      </div>
+      <button class="icon-btn" value="cancel" aria-label="Close" formnovalidate><svg><use href="#i-close"/></svg></button>
+    </div>
+    <label class="field">Customer<input id="adCustomer" required placeholder="e.g. Jamie Hayes" autocomplete="off"></label>
+    <label class="field">Address<input id="adAddress" placeholder="e.g. 214 Elm Bend Rd" autocomplete="off"></label>
+    <div class="move-row">
+      <label>Service<select id="adService"></select></label>
+      <label>Day<select id="adDay"></select></label>
+    </div>
+    <div class="sheet-actions">
+      <button class="btn btn-primary" id="adSubmit" value="add">Add visit</button>
+    </div>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden>
+  <span id="toastMsg"></span>
+  <button type="button" class="toast-undo" id="toastUndo" hidden>Undo</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

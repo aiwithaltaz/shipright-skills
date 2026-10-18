@@ -1,0 +1,8 @@
+keel.glb
+
+Original model made for ShipRight on 2026-10-18. Three solid parts: body, collar, and cap.
+Dedicated to the public domain under CC0 1.0.
+https://creativecommons.org/publicdomain/zero/1.0/
+
+It is not a scan of a product and it does not use a trademark.
+You can copy, change, and ship it, including for commercial work.

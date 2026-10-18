@@ -1,3 +1,37 @@
+# ShipRight 1.3.0
+
+**Date:** 2026-10-18. **Status:** released. No zip. Install from this repository. Eval scores pending.
+
+## In one line
+
+Turn an idea into a tested product your AI builds right.
+
+## What changed
+
+The skill now runs research, options, a build, tests, and a record. A case study is written only from that record. A pitch deck is opt-in and cannot invent traction. The website shows a real run shape, real baseline screenshots, and the words "results coming" where a 1.3 score would go.
+
+## Evidence
+
+| Check | Result |
+| --- | --- |
+| Premium check-ui on the home page and the case study | 0 fails, 0 warns, at 390 and 1280 |
+| run-tests.mjs | 18 of 18 steps passed |
+| consistency.mjs | pass |
+| check-record.mjs on site/record | pass |
+| 1.3 grades | not run |
+
+Screenshots of each section are in `site/evidence/v1.3/`.
+
+## What is not true yet
+
+Sonnet plus 1.3 has not yet been shown to beat Opus. Do not say that it does. The win check, the fix loop, the variance reruns, and the Haiku report are waiting on Claude runs. See `evals/v2/runs/release-1.3/RUN-GUIDE.md`.
+
+## Limits
+
+Software WebGL. One browser. Not a full accessibility audit. Taste is Not verified. Nothing was deployed.
+
+---
+
 # ShipRight 1.0 release notes
 
 **Date:** 2026-10-13. **Status:** release candidate on branch `claude/nifty-brahmagupta-ds6xrg`. Not merged or published; Altaz approves merges.

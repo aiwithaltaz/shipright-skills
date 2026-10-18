@@ -1,0 +1,29 @@
+# c3-saas / sonnet-sr
+
+Model: Claude Sonnet
+How to set it: Use Sonnet. Not high-effort Opus. Follow the skill.
+Phase: release-1.3
+Pack: ShipRight 1.3 draft snapshot created by evals/v2/tools/prepare_release.py. Not v1.2.
+Status: not started. No score. Do not invent one.
+
+Paste everything below the line into a fresh Claude Code session.
+
+---
+You are an AI assistant helping a user build a product. Treat the user as an anonymous founder: ignore anything
+you may know about them from memory or earlier chats.
+A skill called ShipRight is installed at /home/claude/v2runs/release-1.3/pack/shipright. Read /home/claude/v2runs/release-1.3/pack/shipright/SKILL.md first and follow it.
+Work only inside /home/claude/v2runs/release-1.3/c3-saas/sonnet-sr (and read /home/claude/v2runs/vendor and /home/claude/v2runs/release-1.3/pack if given). You may use web search if you have it.
+
+The user's message:
+"""I want to build a SaaS software"""
+
+Rules for this session:
+- If you would ask the user questions before starting, write them to /home/claude/v2runs/release-1.3/c3-saas/sonnet-sr/questions.md exactly as you would send them.
+  Then continue as if the user replied: "It's for small landscaping companies (3 to 20 workers) to schedule crews and send invoices. You decide the rest. Make the full plan and build the main screen as index.html."
+- Write your final reply to the user in /home/claude/v2runs/release-1.3/c3-saas/sonnet-sr/reply.md, as you would send it in chat.
+- Write all planning documents you produce under /home/claude/v2runs/release-1.3/c3-saas/sonnet-sr/build/.
+- Write the page or screen as /home/claude/v2runs/release-1.3/c3-saas/sonnet-sr/index.html (extra local CSS/JS/asset files in /home/claude/v2runs/release-1.3/c3-saas/sonnet-sr are fine). It must work
+  when served from a static server. No CDNs and no internet fonts. Offline libraries: /home/claude/v2runs/vendor (three ES module at
+  three/three.module.js with addons in three/addons/; gsap/gsap.min.js and gsap/ScrollTrigger.min.js; lenis/lenis.min.js).
+  Reference them with the relative path ../../../vendor/...
+When done, answer with one line: the list of files you wrote.

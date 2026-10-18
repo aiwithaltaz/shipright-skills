@@ -2,7 +2,6 @@
 import hashlib
 import importlib.util
 import json
-import re
 import unittest
 from pathlib import Path
 
@@ -13,22 +12,19 @@ STUB = 'skills/ui-ux-design/references/operator-workspaces.md'
 REAL = 'skills/shipright/modes/ui-ux-design/references/operator-workspaces.md'
 STEPS = ('build pack', 'design preview', 'build', 'critique', 'ship-check')
 RUSH = ('just build it', 'skip the plan', 'build in one go')
+STAGES = (
+    '00-discover.md', '01-research.md', '02-brainstorm.md', '03-problem-solving.md',
+    '04-scope-and-pages.md', '05-architecture.md', '06-design-system.md',
+    '07-design-options.md', '08-build.md', '09-test-and-critique.md', '10-ship-check.md',
+)
 
 
-def section(text):
-    start = text.index('## Full flow for a new project')
-    lines = text[start:].splitlines()
-    kept = [lines[0]]
-    for line in lines[1:]:
-        if line.startswith('## '):
-            break
-        kept.append(line)
-    return '\n'.join(kept).strip()
-
-
-def required_steps(skill_text, prompt):
-    """Steps a new-project prompt must still run, from the written rule."""
-    if not re.search(r'Just build it.*skip the plan.*build in one go do not skip a step', skill_text):
+def rush_still_runs(skill_text):
+    """Rush phrases must stay, and they must not be a way to skip the work."""
+    lowered = skill_text.lower()
+    if not all(phrase in lowered for phrase in RUSH):
+        return []
+    if 'no step is skipped for a new project, even on request.' not in lowered:
         return []
     return list(STEPS)
 
@@ -36,22 +32,25 @@ def required_steps(skill_text, prompt):
 class FullFlowTests(unittest.TestCase):
     def test_router_contains_full_flow_rule(self):
         text = ROUTER.read_text(encoding='utf-8')
-        body = section(text)
-        self.assertIn('A new project always runs every step below, in order.', body)
-        self.assertIn('2-3 distinct visual directions (type, color, spacing, motion)', body)
-        self.assertIn('Stop for the user to choose or approve.', body)
-        self.assertIn('No step is skipped for a new project, even on request.', body)
-        self.assertIn('three different stories and technique sets, not color swaps', body)
-        self.assertIn('Proposed, awaiting owner approval', body)
-        self.assertIn('scripts/check-ui.mjs', body)
-        self.assertIn('ux-critique', body)
-        positions = [body.index(label) for label in (
-            '1. **Build pack.**', '2. **Design preview.**', '3. **Build.**',
-            '4. **Critique.**', '5. **Ship-check.**')]
-        self.assertEqual(positions, sorted(positions))
+        self.assertNotIn('## Full flow for a new project', text)
+        self.assertIn('No step is skipped for a new project, even on request.', text)
+        self.assertIn('Show exactly three options.', text)
+        self.assertIn('Stop for the owner to choose or approve.', text)
+        self.assertIn('Proposed, awaiting owner approval', text)
+        self.assertIn('<skill>/scripts/check-ui.mjs', text)
+        self.assertIn('ux-critique', text)
+        self.assertIn('A new project runs 1 to 10 in order.', text)
+        for stage in STAGES:
+            self.assertIn(stage, text)
 
-    def test_build_pack_has_the_same_rule(self):
-        self.assertEqual(section(ROUTER.read_text(encoding='utf-8')), section(BUILD.read_text(encoding='utf-8')))
+    def test_build_pack_points_at_the_spine(self):
+        text = BUILD.read_text(encoding='utf-8')
+        self.assertNotIn('## Full flow for a new project', text)
+        self.assertIn('No step is skipped for a new project, even on request.', text)
+        self.assertIn('stages 1 to 10', text)
+        self.assertIn('../../SKILL.md', text)
+        self.assertIn('Proposed, awaiting owner approval', text)
+        self.assertNotEqual(ROUTER.read_text(encoding='utf-8'), text)
 
     def test_just_build_it_skips_no_step(self):
         prompts = (
@@ -64,9 +63,10 @@ class FullFlowTests(unittest.TestCase):
             text = path.read_text(encoding='utf-8')
             for prompt in prompts:
                 with self.subTest(path=path.name, prompt=prompt):
-                    self.assertEqual(required_steps(text, prompt), list(STEPS))
+                    self.assertEqual(rush_still_runs(text), list(STEPS))
                     lowered = text.lower()
                     self.assertTrue(all(phrase in lowered for phrase in RUSH))
+                    self.assertNotIn(prompt.lower() + ' skips', lowered)
 
 
 class RedirectStubTests(unittest.TestCase):

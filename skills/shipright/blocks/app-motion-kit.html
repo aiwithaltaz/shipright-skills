@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" data-interaction="click" data-expect="added">
+<!--
+Block: app-motion-kit
+Job: Small motion with a job: selection, stepper, list add and remove, toast, skeleton, dialog, count-up, reorder, success check, error shake.
+Use when: an app needs feedback that something changed
+Do not use when: you want a scroll story. Use a web block.
+Attributes: data-duration
+Size: 8 KB
+-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motion with a job</title>
+<style>
+@import url("fonts/fonts.css");
+  :root {
+    --ink:#1c1916; --paper:#f7f6f3; --card:#fff; --line:#6f6a62; --accent:#145c3a; --muted:#4e4943;
+    --space-1:4px; --space-2:8px; --space-3:16px; --space-4:24px; --space-5:32px; --space-6:40px; --space-7:48px; --space-8:64px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; max-width: 100%; }
+  body { font-family: "Inter", system-ui, sans-serif; font-size: 16px; line-height: 1.5; color: var(--ink); background: var(--paper); }
+  a { color: inherit; text-decoration: none; }
+  .mast { max-width: 960px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; background: var(--card); border-bottom: 1px solid var(--line); }
+  .mast b { font-family: "Fraunces", Georgia, serif; font-weight: 400; font-size: 16px; }
+  .mast span, .kicker { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px 64px; }
+  h1, h2 { font-family: "Fraunces", Georgia, serif; font-weight: 400; line-height: 1.2; }
+  h1 { font-size: 40px; margin: 8px 0 16px; }
+  h2 { font-size: 24px; margin: 0 0 8px; }
+  .kicker { margin: 0 0 8px; }
+  p { margin: 8px 0 0; }
+  [data-keep-text] { margin: 0 0 16px; max-width: 40em; color: var(--muted); }
+  button, [role="option"] { font: inherit; color: inherit; }
+  button { min-height: 44px; min-width: 44px; padding: 8px 16px; border-radius: 12px; border: 1px solid var(--ink); background: var(--card); cursor: pointer; }
+  button[data-test="run"]:not(.row) { background: var(--accent); color: #fff; border-color: var(--accent); }
+  button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+  .out { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+  @media (max-width: 800px) {
+    main { padding: 32px 16px 48px; }
+    h1 { font-size: 32px; }
+    .mast { padding: 16px; }
+  }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .item { border: 1px solid var(--line); border-radius: 12px; padding: 8px 16px; margin-top: 8px; background: var(--card); }
+  .item.selected { border: 2px solid var(--ink); }
+  .steps { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .step { border: 1px solid var(--line); border-radius: 12px; padding: 8px 16px; }
+  .step.on { border-color: var(--ink); font-weight: 650; }
+  .skel { margin-top: 8px; height: 44px; border-radius: 12px; background: #e7e4de; }
+  .dialog { margin-top: 8px; border: 1px solid var(--ink); border-radius: 24px; padding: 16px; background: var(--card); }
+  @media (prefers-reduced-motion: no-preference) {
+    .item.in { animation: in 200ms cubic-bezier(.22,1,.36,1); }
+    .shake { animation: shake 200ms linear 1; }
+    @keyframes in { from { transform: translateY(8px); opacity: .4; } to { transform: none; opacity: 1; } }
+    @keyframes shake { 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<header class="mast"><b>Motion</b><span>Demo data</span></header>
+<main>
+<p data-keep-text>The list, the toast, and the dialog text stay readable when animation is off.</p>
+<p class="kicker">Motion</p>
+<h1>Motion with a job</h1>
+<p data-duration="200">Each motion says something changed.</p>
+<div class="row">
+  <button type="button" data-test="run" id="add">Add visit</button>
+  <button type="button" id="select">Select</button>
+  <button type="button" id="step">Step</button>
+  <button type="button" id="remove">Remove</button>
+  <button type="button" id="open">Dialog</button>
+  <button type="button" id="up">Move up</button>
+  <button type="button" id="bad">Shake</button>
+</div>
+<div class="steps" id="steps"><span class="step on">1 Plan</span><span class="step">2 Visit</span><span class="step">3 Done</span></div>
+<div id="list"></div>
+<p class="skel" id="skel">Loading the list</p>
+<p class="toast" id="toast">Toast waits.</p>
+<p id="count">0</p>
+<div class="dialog" id="dialog" hidden>
+  <p id="dialog-text">Saved. You can close this.</p>
+  <button type="button" id="close">Close</button>
+</div>
+<p class="out" data-test="out">idle</p>
+</main>
+<script>
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const list = document.getElementById('list');
+  const out = document.querySelector('[data-test=out]');
+  function flip(mutate) {
+    const before = [...list.children].map(el => [el, el.getBoundingClientRect()]);
+    mutate();
+    if (reduce) return;
+    for (const [el, b] of before) {
+      if (!el.isConnected) continue;
+      const a = el.getBoundingClientRect();
+      const dx = b.left - a.left;
+      const dy = b.top - a.top;
+      if (!dx && !dy) continue;
+      el.animate(
+        [{ transform: 'translate(' + dx + 'px,' + dy + 'px)' }, { transform: 'none' }],
+        { duration: 200, easing: 'cubic-bezier(.22,1,.36,1)' }
+      );
+    }
+  }
+  document.getElementById('add').addEventListener('click', () => {
+    document.getElementById('skel').hidden = true;
+    const row = document.createElement('div');
+    row.className = 'item' + (reduce ? '' : ' in');
+    row.textContent = 'Visit added. Check.';
+    flip(() => list.appendChild(row));
+    document.getElementById('toast').textContent = 'Saved';
+    const count = document.getElementById('count');
+    const target = Number(count.textContent) + 1;
+    if (reduce) count.textContent = String(target);
+    else {
+      let n = Number(count.textContent);
+      const step = () => { n += 1; count.textContent = String(n); if (n < target) requestAnimationFrame(step); };
+      requestAnimationFrame(step);
+    }
+    out.textContent = 'added';
+  });
+  document.getElementById('select').addEventListener('click', () => {
+    const row = list.querySelector('.item') || document.createElement('div');
+    if (!row.parentNode) { row.className = 'item'; row.textContent = 'Visit added. Check.'; list.appendChild(row); }
+    row.classList.toggle('selected');
+  });
+  document.getElementById('step').addEventListener('click', () => {
+    const steps = [...document.querySelectorAll('#steps .step')];
+    const i = steps.findIndex(el => el.classList.contains('on'));
+    steps.forEach(el => el.classList.remove('on'));
+    steps[Math.min(i + 1, steps.length - 1)].classList.add('on');
+  });
+  document.getElementById('remove').addEventListener('click', () => {
+    const row = list.lastElementChild;
+    if (!row) return;
+    flip(() => row.remove());
+    document.getElementById('toast').textContent = 'Removed';
+  });
+  document.getElementById('open').addEventListener('click', () => {
+    const box = document.getElementById('dialog');
+    box.hidden = false;
+    document.getElementById('close').focus();
+  });
+  document.getElementById('close').addEventListener('click', () => { document.getElementById('dialog').hidden = true; });
+  document.addEventListener('keydown', ev => {
+    if (ev.key === 'Escape') document.getElementById('dialog').hidden = true;
+  });
+  document.getElementById('up').addEventListener('click', () => {
+    const row = list.lastElementChild;
+    const prev = row && row.previousElementSibling;
+    if (!prev) return;
+    flip(() => list.insertBefore(row, prev));
+  });
+  document.getElementById('bad').addEventListener('click', () => {
+    const toast = document.getElementById('toast');
+    toast.textContent = 'Could not save';
+    toast.classList.remove('shake');
+    void toast.offsetWidth;
+    toast.classList.add('shake');
+  });
+</script>
+</body>
+</html>
