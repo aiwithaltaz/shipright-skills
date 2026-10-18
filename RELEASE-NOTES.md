@@ -1,6 +1,6 @@
 # ShipRight 1.3.1
 
-**Date:** 2026-10-18. **Status:** patch prepared. Not tagged. Not merged. Not deployed. No zip. Install from this repository. Eval scores pending.
+**Date:** 2026-10-18. **Status:** released as v1.3.1. Site not deployed. No zip. Install from this repository. Eval scores pending.
 
 ## In one line
 

@@ -8,4 +8,4 @@ Acts do not repeat one layout. The run is a dark screen with the object. Compare
 
 Motion is GSAP ScrollTrigger and Lenis (fine pointer only). Headings use a line mask. The run pin travels about three viewports. The process pin travels about 2.4 viewports. Reduced motion shows every line and the still, and does not override `[hidden]`.
 
-Honest limits: 1.3.0 is released, 1.3.1 is this patch, eval scores are pending, and taste is Not verified.
+Honest limits: 1.3.1 is released, eval scores are pending, and taste is Not verified.

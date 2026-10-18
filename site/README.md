@@ -1,6 +1,6 @@
 # ShipRight website
 
-1.3.1 patch of the released site. Not deployed. The root `vercel.json` still builds this folder. `site/vercel.json` is unchanged. There is no zip.
+The 1.3.1 site (released in the repo). Not deployed. The root `vercel.json` still builds this folder. `site/vercel.json` is unchanged. There is no zip.
 
 ```sh
 cd site

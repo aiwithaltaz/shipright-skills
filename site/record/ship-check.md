@@ -21,7 +21,7 @@ Status: current
 - Contrast and targets: Pass when the premium check reports zero fails and zero warns.
 - Taste: Not verified. No fresh reviewer.
 - Deploy: Not applicable. Do not deploy. vercel.json unchanged.
-- 1.3 scores: Not verified. 1.3.0 is released. Eval scores are pending. This patch is 1.3.1.
+- 1.3 scores: Not verified. 1.3.1 is released. Eval scores are pending.
 - Legal and domain: Not verified. No domain was invented.
 - Payments: Not applicable. The page does not charge.
 

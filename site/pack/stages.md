@@ -2,7 +2,7 @@
 
 Status: current
 
-This is the record of the site rebuild. It is not a release grade. 1.3.0 is released. 1.3.1 is this patch. Eval scores are pending.
+This is the record of the site rebuild. It is not a release grade. 1.3.1 is released. Eval scores are pending.
 
 ## Research
 
