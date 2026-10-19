@@ -1,5 +1,7 @@
 # Stage 4: Scope and pages
 
+**Deal first:** run `node <skill>/scripts/deal.mjs --stage 04 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
+
 Keep the core value. Cut the rest. List every page. Open [scope.md](../templates/scope.md) and [system-pages.md](../patterns/system-pages.md).
 Required headings in scope.md: Core loop, Value floor, Flows, Page inventory.
 

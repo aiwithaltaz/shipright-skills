@@ -1,0 +1,164 @@
+[
+ {
+  "id": "editorial-index",
+  "name": "Editorial index",
+  "idea": "Big serif headlines, numbered sections, a strict 12 column grid, one ink accent.",
+  "type": "serif display + grotesk body",
+  "palette": "paper white, ink black, one accent from the product",
+  "motion": "line-mask reveals, no parallax",
+  "tags": [
+   "content",
+   "landing"
+  ],
+  "source": "ShipRight study of Taste Skill draw.mjs (MIT) and the ShipRight site runs; directions are our own wording"
+ },
+ {
+  "id": "product-stage",
+  "name": "Product on stage",
+  "idea": "The real product (screen, object or file) sits center on a dark stage and turns as you scroll.",
+  "type": "grotesk display, mono labels",
+  "palette": "near black, one warm accent, product colors carry the page",
+  "motion": "GSAP pin with 3 to 5 steps, Three.js or layered images",
+  "tags": [
+   "landing",
+   "3d",
+   "motion"
+  ],
+  "source": "ShipRight study of Taste Skill draw.mjs (MIT) and the ShipRight site runs; directions are our own wording"
+ },
+ {
+  "id": "quiet-tool",
+  "name": "Quiet tool",
+  "idea": "Dense, calm app chrome like Linear or Things: left rail, list, detail. Color only for status.",
+  "type": "one grotesk family, tabular numbers",
+  "palette": "neutral grays, status colors only",
+  "motion": "150 to 250ms state transitions, no page motion",
+  "tags": [
+   "saas",
+   "dashboard",
+   "app"
+  ],
+  "source": "ShipRight study of Taste Skill draw.mjs (MIT) and the ShipRight site runs; directions are our own wording"
+ },
+ {
+  "id": "data-room",
+  "name": "Data room",
+  "idea": "Numbers first: a few large figures, small multiples and tables that read at a glance.",
+  "type": "grotesk + mono numbers",
+  "palette": "white or graphite, one data accent, 2 to 4 chart hues",
+  "motion": "count-up once, chart draw on view",
+  "tags": [
+   "dashboard",
+   "saas"
+  ],
+  "source": "ShipRight study of Taste Skill draw.mjs (MIT) and the ShipRight site runs; directions are our own wording"
+ },
+ {
+  "id": "field-manual",
+  "name": "Field manual",
+  "idea": "Instructions as a printed manual: steps, diagrams, callouts, page numbers.",
+  "type": "condensed grotesk + mono",
+  "palette": "off-white, black, safety orange or blue",
+  "motion": "none, or step highlight on scroll",
+  "tags": [
+   "content",
+   "app",
+   "landing"
+  ],
+  "source": "ShipRight study of Taste Skill draw.mjs (MIT) and the ShipRight site runs; directions are our own wording"
+ },
+ {
+  "id": "swiss-poster",
+  "name": "Swiss poster",
+  "idea": "Type is the image: huge cropped words, asymmetric grid, hard edges.",
+  "type": "neo-grotesk at extreme sizes",
+  "palette": "two colors, high contrast",
+  "motion": "kinetic type on scroll, reduced-motion still",
+  "tags": [
+   "landing",
+   "motion"
+  ],
+  "source": "ShipRight study of Taste Skill draw.mjs (MIT) and the ShipRight site runs; directions are our own wording"
+ },
+ {
+  "id": "tactile-object",
+  "name": "Tactile object",
+  "idea": "Soft real-world material (paper, glass, clay) rendered with light and shadow, one object per section.",
+  "type": "humanist sans",
+  "palette": "material colors from the object",
+  "motion": "Three.js scene with slow orbit, poster fallback",
+  "tags": [
+   "3d",
+   "landing"
+  ],
+  "source": "ShipRight study of Taste Skill draw.mjs (MIT) and the ShipRight site runs; directions are our own wording"
+ },
+ {
+  "id": "warm-utility",
+  "name": "Warm utility",
+  "idea": "Friendly consumer app: rounded but not bubbly, real photos of people using it, clear big actions.",
+  "type": "rounded grotesk",
+  "palette": "cream base, one saturated brand color",
+  "motion": "small spring feedback on taps",
+  "tags": [
+   "app",
+   "mobile",
+   "form"
+  ],
+  "source": "ShipRight study of Taste Skill draw.mjs (MIT) and the ShipRight site runs; directions are our own wording"
+ },
+ {
+  "id": "terminal-native",
+  "name": "Terminal native",
+  "idea": "For developer tools: real commands, real output, monospace as the voice.",
+  "type": "mono display + grotesk body",
+  "palette": "black or white, green or amber accent",
+  "motion": "typed output replay, no fake typing delays over 1s",
+  "tags": [
+   "landing",
+   "saas"
+  ],
+  "source": "ShipRight study of Taste Skill draw.mjs (MIT) and the ShipRight site runs; directions are our own wording"
+ },
+ {
+  "id": "gallery-wall",
+  "name": "Gallery wall",
+  "idea": "Work or images hung on a wall: large crops, captions, generous gaps.",
+  "type": "serif captions, small grotesk",
+  "palette": "gallery white or charcoal",
+  "motion": "drag or horizontal scroll strip with keyboard support",
+  "tags": [
+   "content",
+   "landing"
+  ],
+  "source": "ShipRight study of Taste Skill draw.mjs (MIT) and the ShipRight site runs; directions are our own wording"
+ },
+ {
+  "id": "map-and-route",
+  "name": "Map and route",
+  "idea": "The journey is the layout: a path or timeline that the user walks through.",
+  "type": "grotesk + mono markers",
+  "palette": "map neutrals plus one route color",
+  "motion": "scroll-drawn path (SVG stroke) with ScrollTrigger",
+  "tags": [
+   "landing",
+   "motion",
+   "content"
+  ],
+  "source": "ShipRight study of Taste Skill draw.mjs (MIT) and the ShipRight site runs; directions are our own wording"
+ },
+ {
+  "id": "form-first",
+  "name": "Form first",
+  "idea": "The main task form is the hero: one question per page, GOV.UK clarity, progress shown.",
+  "type": "system or grotesk, large labels",
+  "palette": "white, black, one action color, clear error red",
+  "motion": "none beyond focus and error states",
+  "tags": [
+   "form",
+   "app",
+   "mobile"
+  ],
+  "source": "ShipRight study of Taste Skill draw.mjs (MIT) and the ShipRight site runs; directions are our own wording"
+ }
+]

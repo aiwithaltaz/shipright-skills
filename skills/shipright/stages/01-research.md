@@ -1,9 +1,15 @@
 # Stage 1: Research
 
+**Deal first:** run `node <skill>/scripts/deal.mjs --stage 01 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
+
 Know the users, the alternatives, the rules, and the money before you invent a concept. Open [research-brief.md](../templates/research-brief.md).
 Required headings: Questions, Findings, Alternatives, Rules and limits, Money, Domain world, Implications.
 
 For an existing app on the improve path, keep this light: domain, rules, and alternatives only. Do not restart the whole brief.
+
+## Idea brief
+
+Before research on a new project, write `## Idea` in CONTEXT.md with five lines: Vision, User, MVP, Out of scope, Next step. Research then tests that brief.
 
 ## Steps
 

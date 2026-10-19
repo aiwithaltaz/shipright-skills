@@ -206,7 +206,7 @@ class FixedSiteTests(unittest.TestCase):
             with tempfile.TemporaryDirectory() as d:
                 proc = subprocess.run(
                     ['node', str(CHECK), str(self.dist / name), '--root', str(self.dist),
-                     '--profile', 'premium', '--release-state', 'released', '--pack-version', '1.3.1',
+                     '--profile', 'premium', '--release-state', 'released', '--pack-version', '1.4.0',
                      '--out', d, '--json'],
                     env=node_env(), capture_output=True, text=True, timeout=180,
                 )

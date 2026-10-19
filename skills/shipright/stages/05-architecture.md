@@ -1,5 +1,7 @@
 # Stage 5: Architecture
 
+**Deal first:** run `node <skill>/scripts/deal.mjs --stage 05 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
+
 Make it buildable. Open [architecture.md](../templates/architecture.md).
 Required headings: Stack, Data model, Access, Integrations, Secrets, Costs, Phases.
 
@@ -25,6 +27,12 @@ App stacks stay in [stack-choices.md](../modes/build-pack/references/stack-choic
 
 Copy the stack, data, access, secrets, and costs into ARCHITECTURE.md. Replace stale lines. Do not append a second stack.
 Required headings in ARCHITECTURE.md: Stack, Data, Access, Integrations, Secrets, Costs.
+
+## Screens and states
+
+In ARCHITECTURE.md add `## Screens`: a table with Screen, Job, Primary action, Empty, Loading, Error. One primary action per screen. Loading names skeleton, spinner, progress or instant. Every error has a way out (retry, fix, back).
+Add `## Project rules` with Stack, Folders and Banned lines before any build code.
+Run `node <skill>/scripts/check-record.mjs <record> --base`.
 
 ## Gate
 

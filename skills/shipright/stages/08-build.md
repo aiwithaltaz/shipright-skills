@@ -1,5 +1,7 @@
 # Stage 8: Build
 
+**Deal first:** run `node <skill>/scripts/deal.mjs --stage 08 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
+
 Build from the layout spec. Open [build-prompt.md](../templates/build-prompt.md), [screen-spec.md](../templates/screen-spec.md), and [app-screens.md](../patterns/app-screens.md) for an app.
 For a website, open `patterns/web-pages.md` instead of the app pattern. Do not open both. Use `patterns/copy.md` for labels. Copy blocks from `blocks/README.md`. Set attributes. Do not rewrite a block unless a test fails.
 Required headings in build-prompt.md: Goal, Steps, Done when, Stop.

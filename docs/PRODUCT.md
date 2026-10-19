@@ -1,6 +1,6 @@
 # Product
 
-<!-- ShipRight 1.3.1 template. Project path: PRODUCT.md. Short export of docs/shipright/01-prd.md. -->
+<!-- ShipRight 1.4.0 template. Project path: PRODUCT.md. Short export of docs/shipright/01-prd.md. -->
 
 **Version/date and approval sources:** <!-- -->
 **User and outcome:** <!-- -->

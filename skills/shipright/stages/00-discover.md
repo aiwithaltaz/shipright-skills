@@ -1,5 +1,7 @@
 # Stage 0: Discover
 
+**Deal first:** run `node <skill>/scripts/deal.mjs --stage 00 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
+
 Use this only for an existing app. Your job is to use it, name what works, name what hurts, and turn pains into a ranked fix map. A review that only criticizes is not trusted.
 
 Read [discovery.md](../templates/discovery.md), [pain-map.md](../templates/pain-map.md), and [user-test-script.md](../templates/user-test-script.md).

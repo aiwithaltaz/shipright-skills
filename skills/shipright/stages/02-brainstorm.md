@@ -1,5 +1,7 @@
 # Stage 2: Brainstorm
 
+**Deal first:** run `node <skill>/scripts/deal.mjs --stage 02 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
+
 Find one sharp idea. Open [concepts.md](../templates/concepts.md).
 Required headings: Concepts, Scores, Decision in one line.
 

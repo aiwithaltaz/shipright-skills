@@ -2,6 +2,14 @@
 
 Status: current
 
+## Idea
+
+- Vision: one page that shows how ShipRight turns an idea into a tested product, with real runs, not claims.
+- User: a designer or builder using an AI coding tool who wants better results than a plain prompt.
+- MVP: home page (run replay, files, before and after, stages, knowledge, proof, install, FAQ) and one case study.
+- Out of scope: accounts, forms, analytics, cookies, pricing, invented scores.
+- Next step: run the CRM benchmark and the 1.3 evals, then show real scores.
+
 ## Site
 
 - What it is: the public ShipRight site, site/ in this repo, live at shipright-psi.vercel.app.

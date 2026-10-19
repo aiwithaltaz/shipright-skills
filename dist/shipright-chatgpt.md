@@ -16,7 +16,7 @@ description: "Use this when someone has an idea, an app, a SaaS, a website, a la
 
 # ShipRight
 
-**Pack version:** 1.3.1
+**Pack version:** 1.4.0
 **Status:** released. Eval scores for 1.3 are pending. Context before generate. Product before pixels.
 
 ShipRight takes an idea to a tested product, or a clunky app to a clearer one. Every design choice traces to a real pain or a real fact, and ends in a test.
@@ -112,7 +112,8 @@ Copy [reply.md](templates/reply.md). Lead with the result, then why, then the ne
 
 - `node <skill>/scripts/check-ui.mjs <page.html>`
 - `node <skill>/scripts/crawl.mjs <index.html>`
-- `node <skill>/scripts/check-record.mjs <record-folder>`
+- `node <skill>/scripts/deal.mjs --stage NN --tags saas,dashboard` (deals 5 to 8 checked cards from `library/`, plus 3 directions at stage 07; never read `library/` directly)
+- `node <skill>/scripts/check-record.mjs <record-folder> [--base] [--ship]`
 - `node <skill>/scripts/check-tokens.mjs <tokens.css>`
 - `node <skill>/scripts/run-tests.mjs <test-plan.json>`
 - `node <skill>/scripts/consistency.mjs <page.html>`
@@ -126,6 +127,8 @@ If Playwright is missing, the checker prints one install command and exits 2. In
 # Source: stages/00-discover.md
 
 # Stage 0: Discover
+
+**Deal first:** run `node <skill>/scripts/deal.mjs --stage 00 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
 
 Use this only for an existing app. Your job is to use it, name what works, name what hurts, and turn pains into a ranked fix map. A review that only criticizes is not trusted.
 
@@ -203,10 +206,16 @@ Every screen visited and captured. Core tasks walked and timed. Each pain has ev
 
 # Stage 1: Research
 
+**Deal first:** run `node <skill>/scripts/deal.mjs --stage 01 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
+
 Know the users, the alternatives, the rules, and the money before you invent a concept. Open [research-brief.md](../templates/research-brief.md).
 Required headings: Questions, Findings, Alternatives, Rules and limits, Money, Domain world, Implications.
 
 For an existing app on the improve path, keep this light: domain, rules, and alternatives only. Do not restart the whole brief.
+
+## Idea brief
+
+Before research on a new project, write `## Idea` in CONTEXT.md with five lines: Vision, User, MVP, Out of scope, Next step. Research then tests that brief.
 
 ## Steps
 
@@ -244,6 +253,8 @@ At least 3 real alternatives. Platform, legal, and data rules checked. Every fac
 
 # Stage 2: Brainstorm
 
+**Deal first:** run `node <skill>/scripts/deal.mjs --stage 02 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
+
 Find one sharp idea. Open [concepts.md](../templates/concepts.md).
 Required headings: Concepts, Scores, Decision in one line.
 
@@ -278,6 +289,8 @@ Three concepts differ in mechanism. Scores are shown. The decision line is writt
 # Source: stages/03-problem-solving.md
 
 # Stage 3: Problem solving
+
+**Deal first:** run `node <skill>/scripts/deal.mjs --stage 03 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
 
 Find the hard problems and answer each one. Open [risks.md](../templates/risks.md).
 Required headings: Risks, Platform verdict, Required rows.
@@ -528,6 +541,14 @@ Status: template
 One page for the whole product. Replace stale lines. History lives in DECISIONS and CHANGELOG, not here.
 Replace `Status: template` with `Status: current` when filled.
 
+## Idea
+
+- Vision:
+- User:
+- MVP:
+- Out of scope:
+- Next step:
+
 ## What it is
 
 -
@@ -574,6 +595,18 @@ Replace `Status: template` with `Status: current` when filled.
 ## Open decisions
 
 -
+
+## Security
+
+-
+
+## Preview and QA
+
+-
+
+## Monitoring
+
+- Owner:
 
 ## How to run
 

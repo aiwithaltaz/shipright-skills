@@ -1,7 +1,7 @@
 {
   "name": "shipright",
   "displayName": "ShipRight",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "One skill for product, UX, UI, and launch checks. Command: /shipright.",
   "author": {
     "name": "Altaz",

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ShipRight. Turn an idea into a tested product.</title>
-<meta name="pack-version" content="1.3.1">
+<meta name="pack-version" content="1.4.0">
 <meta name="release-state" content="released">
 <meta name="description" content="ShipRight is a free AI skill. It asks before it builds, writes the plan, designs and builds a tested screen, and improves apps you already made.">
 <meta property="og:title" content="ShipRight. Turn an idea into a tested product.">
@@ -22,6 +22,7 @@
     <div class="nav-links" id="nav-links">
       <a href="#doors">How it works</a>
       <a href="#work">Before and after</a>
+      <a href="#knows">What it knows</a>
       <a href="#proof">Proof</a>
       <a href="./case-study.html" data-transition>Case study</a>
       <a class="nav-cta" href="#install">Install</a>
@@ -165,7 +166,7 @@
           <p class="tree-dir"><code>./</code></p>
           <button type="button" role="tab" id="f-design" aria-selected="false" aria-controls="x-design" tabindex="-1"><code>DESIGN.md</code></button>
         </div>
-        <p class="tree-note">1.3 also keeps a project record: CONTEXT, DECISIONS, CHANGELOG and HANDOFF. A new chat can pick up where the last one stopped.</p>
+        <p class="tree-note">It also keeps a project record: CONTEXT, DECISIONS, CHANGELOG and HANDOFF. A new chat can pick up where the last one stopped.</p>
       </div>
       <div class="reader">
         <article role="tabpanel" id="x-prd" aria-labelledby="f-prd" class="excerpt">
@@ -258,30 +259,69 @@
     </div>
   </section>
 
-  <!-- Act 5. Stages. Pain S06. -->
+  <!-- Act 5. Stages. Pain S06. 1.4: the base comes first, each stage gets dealt cards with checks. -->
   <section id="stages" class="stages" data-act="stages">
     <div class="wrap">
       <div class="stages-head">
         <h2>
-          <span class="mask"><span class="line">Eleven stages.</span></span>
-          <span class="mask"><span class="line">Each one writes a file.</span></span>
+          <span class="mask"><span class="line">The base first.</span></span>
+          <span class="mask"><span class="line">Then the pixels.</span></span>
         </h2>
-        <p class="lede">A new idea runs 1 to 10. An app you already built starts at 0. A stage is not done until the project record is updated.</p>
+        <p class="lede">A new idea runs 1 to 10. An app you already built starts at 0. Each stage writes a file and has a check, so a stage is not done on a feeling.</p>
       </div>
-      <ol class="stage-grid">
-        <li><span class="n">0</span><b>Discover</b><code>pain-map.md</code></li>
-        <li><span class="n">1</span><b>Research</b><code>research-brief.md</code></li>
-        <li><span class="n">2</span><b>Brainstorm</b><code>concepts.md</code></li>
-        <li><span class="n">3</span><b>Problem solving</b><code>risks.md</code></li>
-        <li><span class="n">4</span><b>Scope and pages</b><code>scope.md</code></li>
-        <li><span class="n">5</span><b>Architecture</b><code>architecture.md</code></li>
-        <li><span class="n">6</span><b>Design system</b><code>DESIGN.md</code></li>
-        <li><span class="n">7</span><b>Three options</b><code>options.md</code></li>
-        <li><span class="n">8</span><b>Build</b><code>the screen</code></li>
-        <li><span class="n">9</span><b>Test</b><code>test-report.md</code></li>
-        <li><span class="n">10</span><b>Ship check</b><code>ship-check.md</code></li>
-        <li class="rec"><span class="n">+</span><b>Record</b><code>CONTEXT · DECISIONS · HANDOFF</code></li>
-      </ol>
+      <div class="stage-cols">
+        <div class="stage-col">
+          <p class="stage-label">Base: idea to plan</p>
+          <ol class="stage-list">
+            <li><span class="n">0</span><b>Discover</b><span class="adds">Use the app you have. Pains with proof.</span><code>pain-map.md</code></li>
+            <li><span class="n">1</span><b>Research</b><span class="adds">Idea brief: vision, user, MVP, out of scope, next step.</span><code>CONTEXT.md</code></li>
+            <li><span class="n">2</span><b>Brainstorm</b><span class="adds">Three concepts that differ in how they work.</span><code>concepts.md</code></li>
+            <li><span class="n">3</span><b>Problem solving</b><span class="adds">Every risk gets a decision and a test.</span><code>risks.md</code></li>
+            <li><span class="n">4</span><b>Scope and pages</b><span class="adds">Core loop and a page list with reasons.</span><code>scope.md</code></li>
+            <li><span class="n">5</span><b>Architecture</b><span class="adds">Every screen: one job, one action, empty, loading, error.</span><code>ARCHITECTURE.md</code></li>
+          </ol>
+        </div>
+        <div class="stage-col">
+          <p class="stage-label">Make: plan to shipped</p>
+          <ol class="stage-list" start="6">
+            <li><span class="n">6</span><b>Design system</b><span class="adds">Tokens with numbers, not adjectives.</span><code>DESIGN.md</code></li>
+            <li><span class="n">7</span><b>Three options</b><span class="adds">Three dealt directions, so it is not the average look.</span><code>options.md</code></li>
+            <li><span class="n">8</span><b>Build</b><span class="adds">Project rules first: stack, folders, banned patterns.</span><code>the screen</code></li>
+            <li><span class="n">9</span><b>Test</b><span class="adds">Real browser at 390 and 1280. Measured, not guessed.</span><code>test-report.md</code></li>
+            <li><span class="n">10</span><b>Ship check</b><span class="adds">Security, preview and QA, then who watches errors.</span><code>HANDOFF.md</code></li>
+            <li class="rec"><span class="n">+</span><b>Record</b><span class="adds">A new chat picks up where the last one stopped.</span><code>CONTEXT · DECISIONS · HANDOFF</code></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Act 5b. Knowledge. 1.4: the card library and the dealer. Numbers come from skills/shipright/library/cards.json. -->
+  <section id="knows" class="knows" data-act="knows">
+    <div class="wrap knows-grid">
+      <div class="knows-copy">
+        <h2>
+          <span class="mask"><span class="line">It reads 6 cards,</span></span>
+          <span class="mask"><span class="line">not 64 websites.</span></span>
+        </h2>
+        <p class="lede">We read 64 public sources on UX, research, architecture, design systems and motion, and turned them into short rule cards. Each card keeps its source, a short quote and a check.</p>
+        <svg class="funnel" viewBox="0 0 360 150" role="img" aria-label="64 sources become 445 cards, and 6 are dealt to one stage">
+          <rect x="0" y="4" width="360" height="40" rx="20" class="f1"/><text x="180" y="29">64 public sources</text>
+          <rect x="40" y="54" width="280" height="40" rx="20" class="f2"/><text x="180" y="79">445 cards, quote and check</text>
+          <rect x="110" y="104" width="140" height="40" rx="20" class="f3"/><text x="180" y="129">6 for this stage</text>
+        </svg>
+        <p class="tree-note">A small script deals 5 to 8 cards that fit your stage and project. The rest of the library never enters the chat, so the AI does not skim.</p>
+      </div>
+      <figure class="deal" aria-label="Real output of the dealer for stage 5, SaaS dashboard">
+        <p class="deal-cmd"><code>node scripts/deal.mjs --stage 05 --tags saas,dashboard</code></p>
+        <ol class="deal-cards">
+          <li><b>Skeleton for lists and pages, spinner only for a short single action.</b><span>Check: check-record --base. Source: synsation_</span></li>
+          <li><b>Use a skeleton for page loads of about 1 to 10 seconds.</b><span>Source: NN/g, skeleton screens</span></li>
+          <li><b>Past 10 seconds, show a progress bar or a time estimate.</b><span>Source: NN/g, progress indicators</span></li>
+          <li><b>Size the navigation to the depth of the content, not the look.</b><span>Source: NN/g, IA vs navigation</span></li>
+        </ol>
+        <figcaption>Four of the six cards it dealt. Shortened.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -412,7 +452,7 @@
 </main>
 
 <footer class="foot" id="close" data-act="footer">
-  <p><i class="seal" aria-hidden="true"></i>ShipRight 1.3.1 · MIT · by Altaz Lavji</p>
+  <p><i class="seal" aria-hidden="true"></i>ShipRight 1.4.0 · MIT · by Altaz Lavji</p>
   <nav aria-label="Footer">
     <a href="./case-study.html" data-transition>Case study</a>
     <a href="https://github.com/aiwithaltaz/shipright-skills">GitHub</a>

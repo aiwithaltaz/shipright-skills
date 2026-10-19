@@ -1,6 +1,17 @@
 # Changelog
 
-## Unreleased
+## 1.4.0 - 2026-10-19 (on branch feat/1.4-knowledge, not merged or released)
+
+- Knowledge library: 445 rule cards in `skills/shipright/library/cards.json`, from 64 public sources fetched on 2026-10-19 (NN/g, Laws of UX, GOV.UK Design System, WCAG, Shape Up, Paul Graham, SVPG, Product Talk, Atlassian, Primer, Polaris, Design Tokens, OWASP, Google SRE, Vercel, GSAP, Lenis, web.dev, Motion, Refactoring UI, Smashing, Taste Skill references under MIT). Each card has a rule, why, do, don't, a verbatim quote of 40 words or less, its URL, and a check.
+- Cards were drafted by DeepSeek Flash and curated by script: the quote must appear word for word in the fetched page, vague and duplicate rules are dropped, and a card with no check never loads. 11 cards are hand written from Altaz's Instagram notes, the 18-step workflow and our own 1.3.1 lessons.
+- `scripts/deal.mjs` deals 5 to 8 cards per stage and project tags (seeded, so the same project gets the same deal) and 3 of 12 directions at stage 7. Every stage file now starts with one deal line. check_context.py caps dealt output at 1200 tokens per stage.
+- The base is stronger: an Idea brief in stage 1 (vision, user, MVP, out of scope, next step), a Screens table in stage 5 (job, one primary action, empty, loading, error) and Project rules, and Security, Preview and QA, and Monitoring in stage 10. These fill the gaps found against the 18-step workflow.
+- New checks: check-ui `heading-color-word` (a heading that names the color of its own background, the 1.3.1 "One step is black" bug) and `pin-length` (more than 3 screens of scroll per pinned step, or 6 in total). check-record `--base` and `--ship` check the idea brief, the screens and states table, project rules, and the ship sections. Each has a unit test with a bad and a good fixture.
+- New fixed product benchmark: `evals/v2/benchmarks/crm-dashboard.md` (B2B CRM, 8 named areas, rubric). No results yet.
+- Site: the stages act is split into Base and Make with what each stage now adds, and a new act shows how the library is dealt. Premium check-ui 0 fail, 0 warn on both pages.
+- Limits: no Claude eval or benchmark run yet, so there is no score. Cards were checked for quote and shape by script, and spot checked by hand, not each read by a person.
+
+## Earlier unreleased site work
 
 - Site rebuilt with ShipRight 1.3.1 on its own page (stage 0, then 4 to 9). The first screen replays the real c3 run and shows the screen it built. New acts: two ways in, what lands in your folder, eleven stages, FAQ. The 0.6.2 to 1.0 and IVC before and after pairs are back in a four-tab slider. Proof says where 1.2 lost to Opus and what 1.3 changed.
 - three.js, GSAP and Lenis removed from the site. Page JS is about 8 kB.

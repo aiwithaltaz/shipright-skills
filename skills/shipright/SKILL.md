@@ -5,7 +5,7 @@ description: "Use this when someone has an idea, an app, a SaaS, a website, a la
 
 # ShipRight
 
-**Pack version:** 1.3.1
+**Pack version:** 1.4.0
 **Status:** released. Eval scores for 1.3 are pending. Context before generate. Product before pixels.
 
 ShipRight takes an idea to a tested product, or a clunky app to a clearer one. Every design choice traces to a real pain or a real fact, and ends in a test.
@@ -101,7 +101,8 @@ Copy [reply.md](templates/reply.md). Lead with the result, then why, then the ne
 
 - `node <skill>/scripts/check-ui.mjs <page.html>`
 - `node <skill>/scripts/crawl.mjs <index.html>`
-- `node <skill>/scripts/check-record.mjs <record-folder>`
+- `node <skill>/scripts/deal.mjs --stage NN --tags saas,dashboard` (deals 5 to 8 checked cards from `library/`, plus 3 directions at stage 07; never read `library/` directly)
+- `node <skill>/scripts/check-record.mjs <record-folder> [--base] [--ship]`
 - `node <skill>/scripts/check-tokens.mjs <tokens.css>`
 - `node <skill>/scripts/run-tests.mjs <test-plan.json>`
 - `node <skill>/scripts/consistency.mjs <page.html>`

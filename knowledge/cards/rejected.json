@@ -1,0 +1,37 @@
+[
+ {
+  "source": "https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/skills/taste-skill/references/layout.md",
+  "rule": "Give every section a different arrangement from its neighbours, using the dealt shapes instead of one repeated block.",
+  "reason": "quote not verbatim in source"
+ },
+ {
+  "source": "https://www.nngroup.com/articles/card-sorting-definition/",
+  "rule": "Keep a card-sort deck to 30–50 cards so participants stay engaged and sort thoughtfully.",
+  "reason": "quote not verbatim in source"
+ },
+ {
+  "source": "https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/skills/taste-skill/references/app-screens.md",
+  "rule": "Spend colour on the data itself, not on the shell and chrome of the app screen.",
+  "reason": "quote not verbatim in source"
+ },
+ {
+  "source": "https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/skills/taste-skill/references/app-screens.md",
+  "rule": "Set KPIs as typographic figures with a plain label, never as tiles carrying icon chips or sparklines.",
+  "reason": "quote not verbatim in source"
+ },
+ {
+  "source": "https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/skills/taste-skill/references/app-screens.md",
+  "rule": "Separate cards with a 1px rule or one tone step instead of a drop shadow.",
+  "reason": "quote not verbatim in source"
+ },
+ {
+  "source": "https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/skills/taste-skill/references/app-screens.md",
+  "rule": "Print zeros as zeros, missing values as a grey dash, and keep an empty section's frame.",
+  "reason": "quote not verbatim in source"
+ },
+ {
+  "source": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+  "rule": "Write error messages in plain language that name the problem and suggest a fix.",
+  "reason": "duplicate"
+ }
+]

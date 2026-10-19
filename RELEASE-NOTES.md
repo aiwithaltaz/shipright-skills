@@ -1,3 +1,34 @@
+# ShipRight 1.4.0
+
+**Date:** 2026-10-19. **Status:** on branch feat/1.4-knowledge for review. Not merged, not tagged, not released. No zip. Install from this repository.
+
+## In one line
+
+ShipRight now has a knowledge library, and it only reads the few cards each stage needs.
+
+## What changed
+
+- 445 rule cards from 64 public sources, each with a quote, a link and a check. The base (idea, research, flows, architecture, app states, SaaS building) has the most cards.
+- `deal.mjs` picks 5 to 8 cards per stage and 3 visual directions at stage 7, so the skill does not get longer.
+- Stage 1 writes an idea brief. Stage 5 lists every screen with its job, one action, and empty, loading and error states. Stage 8 starts from project rules. Stage 10 adds security, preview and QA, and monitoring.
+- Two new browser checks (heading color words, pin length) and a record check (`check-record --base --ship`).
+- A fixed CRM dashboard benchmark for later runs.
+
+## Evidence
+
+| Check | Result |
+| --- | --- |
+| Unit tests | see the PR for the final count |
+| check_sources, check_context | pass |
+| Dealt cards per stage | 1102 tokens at most, cap 1200 |
+| Premium check-ui on home and case study | 0 fails, 0 warns at 390 and 1280 |
+| DeepSeek cost for distilling | under 0.50 US dollars |
+| Claude evals and the CRM benchmark | not run |
+
+## What is not true yet
+
+There is no score that shows 1.4 builds better products. The benchmark is written but has not been run. Taste is Not verified.
+
 # ShipRight 1.3.1
 
 **Date:** 2026-10-18. **Status:** released as v1.3.1. Site not deployed. No zip. Install from this repository. Eval scores pending.

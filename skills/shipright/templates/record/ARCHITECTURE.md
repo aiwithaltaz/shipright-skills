@@ -28,3 +28,14 @@ Names only.
 ## Costs
 
 -
+
+## Screens
+
+| Screen | Job | Primary action | Empty | Loading | Error |
+| --- | --- | --- | --- | --- | --- |
+
+## Project rules
+
+- Stack:
+- Folders:
+- Banned:

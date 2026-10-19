@@ -26,8 +26,8 @@ No runtime libraries. Fonts are self-hosted in `public/fonts` (Inter and Fraunce
 From the repo root, after `npm run build` inside `site/`:
 
 ```sh
-node skills/shipright/scripts/check-ui.mjs site/dist/index.html --root site/dist --profile premium --release-state released --pack-version 1.3.1
-node skills/shipright/scripts/check-ui.mjs site/dist/case-study.html --root site/dist --profile premium --release-state released --pack-version 1.3.1
+node skills/shipright/scripts/check-ui.mjs site/dist/index.html --root site/dist --profile premium --release-state released --pack-version 1.4.0
+node skills/shipright/scripts/check-ui.mjs site/dist/case-study.html --root site/dist --profile premium --release-state released --pack-version 1.4.0
 node skills/shipright/scripts/run-tests.mjs site/record/test-plan.json --out site/record
 node skills/shipright/scripts/consistency.mjs site/dist/index.html
 node skills/shipright/scripts/check-record.mjs site/record
