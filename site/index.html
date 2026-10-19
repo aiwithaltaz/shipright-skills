@@ -6,7 +6,10 @@
 <title>ShipRight. Turn an idea into a tested product.</title>
 <meta name="pack-version" content="1.3.1">
 <meta name="release-state" content="released">
-<meta name="description" content="ShipRight 1.3.1 is released. Turn an idea into a tested product your AI builds right. Eval scores are pending.">
+<meta name="description" content="ShipRight is a free AI skill. It asks before it builds, writes the plan, designs and builds a tested screen, and improves apps you already made.">
+<meta property="og:title" content="ShipRight. Turn an idea into a tested product.">
+<meta property="og:description" content="A free AI skill that asks before it builds, writes the plan, and tests what it makes.">
+<meta property="og:type" content="website">
 <link rel="icon" href="/favicon.svg">
 <link rel="stylesheet" href="/fonts/fonts.css">
 </head>
@@ -17,186 +20,403 @@
   <nav class="nav" aria-label="Main">
     <button type="button" class="menu btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
     <div class="nav-links" id="nav-links">
-      <a href="#compare">Work</a>
-      <a href="#process">Process</a>
+      <a href="#doors">How it works</a>
+      <a href="#work">Before and after</a>
       <a href="#proof">Proof</a>
-      <a href="#install">Install</a>
       <a href="./case-study.html" data-transition>Case study</a>
+      <a class="nav-cta" href="#install">Install</a>
     </div>
   </nav>
 </header>
+
 <main id="main">
-  <section id="run" data-act="run">
-    <div class="scene">
-      <div class="scene-copy">
-        <h1 data-keep-text>
-          <span class="mask"><span class="line">Turn an idea into</span></span>
-          <span class="mask"><span class="line">a tested product</span></span>
-          <span class="mask"><span class="line">your AI builds right.</span></span>
-        </h1>
-        <p class="tag">Context before generate. Product before pixels.</p>
-        <div class="row">
-          <a class="btn fill" href="#install">Install ShipRight</a>
-          <button class="btn" type="button" id="orbit">Turn the files</button>
+  <!-- Act 1. The run. Product on stage: a replay of a real run (W2). Pain S01, S08. -->
+  <section id="run" class="hero" data-act="run">
+    <div class="hero-copy">
+      <h1 data-keep-text>
+        <span class="mask"><span class="line">Turn an idea into</span></span>
+        <span class="mask"><span class="line">a tested product</span></span>
+        <span class="mask"><span class="line">your AI builds right.</span></span>
+      </h1>
+      <p class="hero-sub">ShipRight is a free skill for your AI coding tool. It asks before it builds, writes the plan, designs the screens, and tests what it makes.</p>
+      <div class="row">
+        <a class="btn fill" href="#install">Install ShipRight</a>
+        <button class="btn ghost" type="button" id="watch">Watch a real run</button>
+      </div>
+      <p class="tag">Context before generate. Product before pixels.</p>
+    </div>
+
+    <div class="stage" data-product-hero>
+      <figure class="built" id="built">
+        <img src="/proof/c3-saas-sonnet.png" alt="The schedule screen this run built: crews by weekday, an over-hours warning, and jobs not yet invoiced. Sample data." width="1280" height="800">
+        <figcaption>The screen this run built. Sample data.</figcaption>
+      </figure>
+
+      <div class="replay" id="replay" aria-label="Replay of a real ShipRight run">
+        <div class="replay-bar">
+          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <code class="replay-title">/shipright · case c3</code>
+          <button type="button" class="pause" id="replay-pause" data-state="play"><span class="l-pause">Pause</span><span class="l-play">Play</span><span class="l-replay">Replay</span></button>
+        </div>
+
+        <div class="beats" id="beats">
+          <div class="beat" data-beat="0">
+            <p class="who">You</p>
+            <p class="say you">I want to build a SaaS software</p>
+            <p class="aside">One vague line. Nothing is built yet.</p>
+          </div>
+
+          <div class="beat" data-beat="1">
+            <p class="who">ShipRight asks first</p>
+            <ol class="cards">
+              <li><b>Who is it for, and what one job should version one finish?</b><span>My pick: small service businesses that send crews to job sites.</span></li>
+              <li><b>What stays out of the first release?</b><span>My pick: only the core job. Payments wait for release 2.</span></li>
+              <li><b>What should it look like?</b><span>My pick: I propose a look and show it before any screens.</span></li>
+            </ol>
+            <p class="aside">Three cards, asked once. Each has options, a pick, and "You decide".</p>
+          </div>
+
+          <div class="beat" data-beat="2">
+            <p class="who">You</p>
+            <p class="say you">It's for small landscaping companies (3 to 20 workers) to schedule crews and send invoices. You decide the rest.</p>
+            <p class="aside">Every pick it makes for you is marked Proposed, not Approved.</p>
+          </div>
+
+          <div class="beat" data-beat="3">
+            <p class="who">ShipRight writes the plan</p>
+            <ul class="files">
+              <li><code>01-prd.md</code><span>Jobs, flows, what stays out</span></li>
+              <li><code>02-technical-architecture.md</code><span>Stack, and when to switch</span></li>
+              <li><code>DESIGN.md</code><span>Field green, contrast measured</span></li>
+              <li><code>04-frontend-spec.md</code><span>Every screen and state</span></li>
+              <li><code>05-feature-ticket-list.md</code><span>12 paste-ready tickets</span></li>
+              <li><code>design-preview.md</code><span>3 directions, 1 picked</span></li>
+              <li><code>critique.md</code><span>7 fixes in 3 rounds</span></li>
+              <li><code>ship-check.md</code><span>20 launch items</span></li>
+            </ul>
+          </div>
+
+          <div class="beat" data-beat="4">
+            <p class="confirm-head">Built and tested. Only you can confirm</p>
+            <ul class="confirm">
+              <li>Subscription price</li>
+              <li>Invoice wording and tax lines</li>
+              <li>Sender email domain</li>
+              <li>Real workday hours</li>
+            </ul>
+            <p class="aside">The screen uses sample data. Nothing is saved or sent.</p>
+          </div>
+        </div>
+
+        <div class="steps-bar" role="group" aria-label="Replay steps">
+          <button type="button" data-go="0" aria-pressed="true">Ask</button>
+          <button type="button" data-go="1" aria-pressed="false">Cards</button>
+          <button type="button" data-go="2" aria-pressed="false">Reply</button>
+          <button type="button" data-go="3" aria-pressed="false">Files</button>
+          <button type="button" data-go="4" aria-pressed="false">Screen</button>
         </div>
       </div>
-      <div class="stage3d" id="run-stage" data-product-hero aria-label="Illustrative stack of the five files a ShipRight run writes. Drag to turn. Not a screenshot.">
-        <canvas id="view" hidden aria-label="Illustrative 3D stack of Research, Options, Build, Test, and Record"></canvas>
-        <div class="poster" data-poster>
-          <svg viewBox="0 0 440 360" role="img" aria-label="Still of five paper files with a sealing-wax mark">
-            <rect width="440" height="360" fill="#1a1816"/>
-            <g fill="#e7e1d6">
-              <rect x="78" y="196" width="284" height="18" rx="3"/>
-              <rect x="86" y="166" width="268" height="18" rx="3"/>
-              <rect x="94" y="136" width="252" height="18" rx="3"/>
-              <rect x="102" y="106" width="236" height="18" rx="3"/>
-            </g>
-            <rect x="70" y="214" width="300" height="86" rx="6" fill="#f3f0ea"/>
-            <circle cx="320" cy="248" r="16" fill="#9d3419"/>
-            <text x="92" y="258" fill="#161412" font-family="Georgia, serif" font-size="28">Record</text>
-          </svg>
-        </div>
-      </div>
-      <div class="states">
-        <p class="kicker" data-sample>Sample replay</p>
-        <p class="run-state quiet" data-state="0">I want to build a booking app for my salon. The prompt is on the table. Nothing is invented yet.</p>
-        <p class="run-state quiet" data-state="1" hidden>Four decisions, asked once. Who it is for, the job, what stays out, and whose look.</p>
-        <p class="run-state quiet" data-state="2" hidden>You decide. Proposed is not Approved. The owner can still say no.</p>
-        <p class="run-state quiet" data-state="3" hidden>Research, options, build, test, record. A rush phrase does not skip one.</p>
-        <p class="run-state quiet" data-state="4" hidden>The run writes those five files. 1.3.1 is released. Eval scores are pending.</p>
-      </div>
+      <p class="replay-label">Replay of a real run: Sonnet with ShipRight 1.2, case c3. Text shortened. Tap a step.</p>
     </div>
   </section>
 
-  <section id="compare" class="section" data-act="compare" data-proof-claim data-proof-source="evals/v2/cases/registration-full.png and evals/v2/runs/baseline-1.2/c6-feedback-round/sonnet-sr/shots/desktop-1.png">
-    <div class="section-head">
+  <!-- Act 2. Two doors. Pain S02. -->
+  <section id="doors" class="doors" data-act="doors">
+    <div class="wrap">
       <h2>
-        <span class="mask"><span class="line">The brief on one side.</span></span>
-        <span class="mask"><span class="line">The build on the other.</span></span>
+        <span class="mask"><span class="line">Two ways in.</span></span>
       </h2>
-      <p class="lede">Case c6, baseline 1.2. Drag the bar. These pictures are not a grade.</p>
-    </div>
-    <div class="frame" id="compare-frame" data-compare>
-      <img src="/proof/c6-sonnet.png" alt="Sonnet with ShipRight, baseline 1.2, feedback round, desktop shot. Not graded.">
-      <div class="clip" id="before-clip">
-        <img src="/proof/c6-before.png" alt="The desk screen the owner sent, before either arm rebuilt it.">
+      <div class="door-grid">
+        <article class="door">
+          <p class="kicker">New idea</p>
+          <h3>I have an idea.</h3>
+          <pre class="cmd"><code>/shipright I want to build a booking app for my salon</code></pre>
+          <p>You answer up to 4 questions. Then it runs every stage: research, three concepts, risks, scope and pages, architecture, design system, three design options, build, test, and a launch check.</p>
+          <p class="door-foot">"Just build it" does not skip a stage.</p>
+        </article>
+        <article class="door">
+          <p class="kicker">Existing app</p>
+          <h3>I already built something.</h3>
+          <pre class="cmd"><code>/shipright review my app and make it better</code></pre>
+          <p>It uses every screen like a first-time user. It says what works first, then lists each pain with a screenshot and a cause, and ranks the fixes.</p>
+          <p class="door-foot">Every change it builds names its pain and has a test.</p>
+        </article>
       </div>
-      <input class="slider" id="compare-range" type="range" min="8" max="92" value="50" aria-label="Drag to compare the owner screen and the Sonnet build">
     </div>
-    <ol class="leaders">
-      <li><i></i>Remove the dot on the selected nav item.</li>
-      <li><i></i>Keep Escalations and Desk help as they are.</li>
-      <li><i></i>Give the selected row a clean border, not a thick left bar.</li>
-    </ol>
-    <p class="note">Those three lines are the owner's requests from the case, not a claim that the picture did each one. Eval scores are pending.</p>
   </section>
 
-  <section id="process" class="process" data-act="process">
-    <div class="process-pin">
-      <h2>One step holds the page.</h2>
-      <ol class="steps" aria-label="Stages">
-        <li><button type="button" class="on" data-go="0" aria-pressed="true">Research</button></li>
-        <li><button type="button" data-go="1" aria-pressed="false">Options</button></li>
-        <li><button type="button" data-go="2" aria-pressed="false">Build</button></li>
-        <li><button type="button" data-go="3" aria-pressed="false">Test</button></li>
-        <li><button type="button" data-go="4" aria-pressed="false">Record</button></li>
+  <!-- Act 3. The folder. Real files from the c3 run. Pain S02. -->
+  <section id="folder" class="folder" data-act="folder">
+    <div class="wrap folder-grid">
+      <div class="folder-copy">
+        <h2>
+          <span class="mask"><span class="line">What lands</span></span>
+          <span class="mask"><span class="line">in your folder.</span></span>
+        </h2>
+        <p class="lede">Real files from the c3 run. Tap one to read a few lines. Your coding tool reads the same folder, so nothing is left to guess.</p>
+        <div class="tree" role="tablist" aria-label="Files from the c3 run" aria-orientation="vertical">
+          <p class="tree-dir"><code>docs/shipright/</code></p>
+          <button type="button" role="tab" id="f-prd" aria-selected="true" aria-controls="x-prd"><code>01-prd.md</code></button>
+          <button type="button" role="tab" id="f-arch" aria-selected="false" aria-controls="x-arch" tabindex="-1"><code>02-technical-architecture.md</code></button>
+          <button type="button" role="tab" id="f-spec" aria-selected="false" aria-controls="x-spec" tabindex="-1"><code>04-frontend-spec.md</code></button>
+          <button type="button" role="tab" id="f-tix" aria-selected="false" aria-controls="x-tix" tabindex="-1"><code>05-feature-ticket-list.md</code></button>
+          <button type="button" role="tab" id="f-crit" aria-selected="false" aria-controls="x-crit" tabindex="-1"><code>critique.md</code></button>
+          <button type="button" role="tab" id="f-ship" aria-selected="false" aria-controls="x-ship" tabindex="-1"><code>ship-check.md</code></button>
+          <p class="tree-dir"><code>./</code></p>
+          <button type="button" role="tab" id="f-design" aria-selected="false" aria-controls="x-design" tabindex="-1"><code>DESIGN.md</code></button>
+        </div>
+        <p class="tree-note">1.3 also keeps a project record: CONTEXT, DECISIONS, CHANGELOG and HANDOFF. A new chat can pick up where the last one stopped.</p>
+      </div>
+      <div class="reader">
+        <article role="tabpanel" id="x-prd" aria-labelledby="f-prd" class="excerpt">
+          <p class="ex-file"><code>01-prd.md</code></p>
+          <p><b>Who:</b> the owner or office manager of a landscaping company with 3 to 20 workers, usually 1 to 4 crews.</p>
+          <p><b>Job:</b> put every job on a crew and a day without overloading anyone, then bill for finished jobs.</p>
+          <p><b>What they do today:</b> Unknown. Hypothesis H1: a whiteboard, a group chat, a spreadsheet or paper. Source needed: 5 owner conversations.</p>
+          <p class="ex-why">Unknown stays Unknown. It names who checks it.</p>
+        </article>
+        <article role="tabpanel" id="x-arch" aria-labelledby="f-arch" class="excerpt" hidden>
+          <p class="ex-file"><code>02-technical-architecture.md</code></p>
+          <table>
+            <thead><tr><th>Layer</th><th>Choice</th><th>Switch when</th></tr></thead>
+            <tbody>
+              <tr><td>App</td><td>Next.js</td><td>Heavy background jobs appear</td></tr>
+              <tr><td>Data and sign-in</td><td>Supabase</td><td>Strict data residency</td></tr>
+              <tr><td>Email</td><td>Resend</td><td>Reminders or marketing mail</td></tr>
+            </tbody>
+          </table>
+          <p>Not added: analytics, payments, maps, queues, a separate API server.</p>
+          <p class="ex-why">Every choice has a reason and a switch point.</p>
+        </article>
+        <article role="tabpanel" id="x-spec" aria-labelledby="f-spec" class="excerpt" hidden>
+          <p class="ex-file"><code>04-frontend-spec.md</code></p>
+          <p><b>S1 Schedule.</b> Job: see the week by crew and place jobs.</p>
+          <p><b>Load line:</b> "6.5 of 8 h". Over: "9.5 of 8 h, over by 1.5 h" in amber.</p>
+          <p><b>States:</b> populated, empty week, loading, error. 0, 1 and many jobs per cell.</p>
+          <p><b>Do not add:</b> drag and drop, filters, charts, summary cards, notification dots.</p>
+          <p class="ex-why">Each screen has a job, its states, and what to leave out.</p>
+        </article>
+        <article role="tabpanel" id="x-tix" aria-labelledby="f-tix" class="excerpt" hidden>
+          <p class="ex-file"><code>05-feature-ticket-list.md</code></p>
+          <p><b>T4 Schedule board, happy path.</b> Goal: see a week by crew.</p>
+          <p><b>Done when:</b> 0, 1 and 12 jobs per cell render at 1280. Enter opens the job panel. The week in the URL survives reload.</p>
+          <p><b>Do not add:</b> drag and drop, filters.</p>
+          <p class="ex-why">One prompt per ticket. Paste it into your coding tool.</p>
+        </article>
+        <article role="tabpanel" id="x-crit" aria-labelledby="f-crit" class="excerpt" hidden>
+          <p class="ex-file"><code>critique.md</code></p>
+          <table>
+            <thead><tr><th>Finding</th><th>Severity</th><th>Retest</th></tr></thead>
+            <tbody>
+              <tr><td>Phone form hid its Cancel and Save buttons below the scroll</td><td>Blocker on phone</td><td>Pass at 390</td></tr>
+              <tr><td>Schedule scrolled sideways at 320</td><td>Major</td><td>Pass at 320</td></tr>
+              <tr><td>13 filled buttons on one screen</td><td>Major</td><td>Pass</td></tr>
+            </tbody>
+          </table>
+          <p class="ex-why">It finds its own bugs, fixes them, and retests.</p>
+        </article>
+        <article role="tabpanel" id="x-ship" aria-labelledby="f-ship" class="excerpt" hidden>
+          <p class="ex-file"><code>ship-check.md</code></p>
+          <p><b>Verdict: Not established.</b> This is a design preview. It is not a release candidate.</p>
+          <p>Contrast and focus: Pass. HTTPS: Not verified, local only. Privacy policy: Not verified, the owner decides.</p>
+          <p class="ex-why">20 launch items. No Pass without evidence.</p>
+        </article>
+        <article role="tabpanel" id="x-design" aria-labelledby="f-design" class="excerpt" hidden>
+          <p class="ex-file"><code>DESIGN.md</code></p>
+          <p><b>Source:</b> Proposed (delegated). If the owner sends a design system, it wins.</p>
+          <p><b>Accent:</b> field green #1C6A45, white text 6.57:1. Amber and red only for warnings and errors.</p>
+          <p><b>States:</b> status always has text and an icon, never color alone.</p>
+          <p class="ex-why">Tokens with numbers, not adjectives.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Act 4. Before and after. Four real pairs. Pains S07, S04. -->
+  <section id="work" class="work" data-act="work">
+    <div class="wrap">
+      <div class="work-head">
+        <h2>
+          <span class="mask"><span class="line">Before and after.</span></span>
+        </h2>
+        <div class="pair-tabs" role="tablist" aria-label="Choose a before and after">
+          <button type="button" role="tab" id="p-product" aria-selected="true" aria-controls="cmp">Product site</button>
+          <button type="button" role="tab" id="p-dashboard" aria-selected="false" aria-controls="cmp" tabindex="-1">SaaS dashboard</button>
+          <button type="button" role="tab" id="p-feedback" aria-selected="false" aria-controls="cmp" tabindex="-1">Feedback round</button>
+          <button type="button" role="tab" id="p-ivc" aria-selected="false" aria-controls="cmp" tabindex="-1">IVC desk</button>
+        </div>
+      </div>
+      <div class="cmp" id="cmp" role="tabpanel" aria-labelledby="p-product" data-compare>
+        <img class="cmp-before" id="cmp-before" src="/gallery/product-before.png" alt="Product site built with ShipRight 0.6.2: dark speaker page, title low on the left, model in a framed box." width="1280" height="800">
+        <img class="cmp-after" id="cmp-after" src="/gallery/product-after.png" alt="Product site built with ShipRight 1.0: Buy in the hero, the speaker larger, view buttons under the model." width="1280" height="800">
+        <span class="cmp-tag left" id="tag-before">Before · 0.6.2</span>
+        <span class="cmp-tag right" id="tag-after">After · 1.0</span>
+        <span class="cmp-handle" aria-hidden="true"></span>
+        <input class="cmp-range" id="cmp-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+      </div>
+      <p class="cmp-caption" id="cmp-caption">Same prompt, two pack versions. 1.0 put Buy in the hero, view buttons under the model, and a working name in place of placeholders.</p>
+    </div>
+  </section>
+
+  <!-- Act 5. Stages. Pain S06. -->
+  <section id="stages" class="stages" data-act="stages">
+    <div class="wrap">
+      <div class="stages-head">
+        <h2>
+          <span class="mask"><span class="line">Eleven stages.</span></span>
+          <span class="mask"><span class="line">Each one writes a file.</span></span>
+        </h2>
+        <p class="lede">A new idea runs 1 to 10. An app you already built starts at 0. A stage is not done until the project record is updated.</p>
+      </div>
+      <ol class="stage-grid">
+        <li><span class="n">0</span><b>Discover</b><code>pain-map.md</code></li>
+        <li><span class="n">1</span><b>Research</b><code>research-brief.md</code></li>
+        <li><span class="n">2</span><b>Brainstorm</b><code>concepts.md</code></li>
+        <li><span class="n">3</span><b>Problem solving</b><code>risks.md</code></li>
+        <li><span class="n">4</span><b>Scope and pages</b><code>scope.md</code></li>
+        <li><span class="n">5</span><b>Architecture</b><code>architecture.md</code></li>
+        <li><span class="n">6</span><b>Design system</b><code>DESIGN.md</code></li>
+        <li><span class="n">7</span><b>Three options</b><code>options.md</code></li>
+        <li><span class="n">8</span><b>Build</b><code>the screen</code></li>
+        <li><span class="n">9</span><b>Test</b><code>test-report.md</code></li>
+        <li><span class="n">10</span><b>Ship check</b><code>ship-check.md</code></li>
+        <li class="rec"><span class="n">+</span><b>Record</b><code>CONTEXT · DECISIONS · HANDOFF</code></li>
       </ol>
-      <p class="artifact" data-artifact="0">Three real alternatives. Every fact is Verified or Assumed. The file is research-brief.md.</p>
-      <p class="artifact" data-artifact="1" hidden>Exactly three options. They differ in story or layout, not in color. The pick is marked Proposed until the owner says yes.</p>
-      <p class="artifact" data-artifact="2" hidden>The screen matches the spec. Sample data is labeled. No dev controls on the user screen.</p>
-      <p class="artifact" data-artifact="3" hidden>check-ui, the test plan, and consistency. Widths 390 and 1280. Taste stays Not verified until a fresh reviewer looks.</p>
-      <p class="artifact" data-artifact="4" hidden>CONTEXT, DECISIONS, CHANGELOG, HANDOFF. A case study uses only those files.</p>
     </div>
   </section>
 
-  <section id="proof" class="section proof" data-act="proof" data-proof-claim data-proof-source="evals/v2/runs/baseline-1.2 desktop-1 shots for c1, c2, and c3. evals/v2/results/baseline-1.2.md says not graded.">
-    <div class="proof-copy">
-      <h2>
-        <span class="mask"><span class="line">Opus alone, next to</span></span>
-        <span class="mask"><span class="line">Sonnet with ShipRight.</span></span>
-      </h2>
-      <p class="lede">Three baseline 1.2 pairs that exist on disk. They are not grades. 1.3.1 is released. Eval scores are pending.</p>
-    </div>
-    <div class="pairs">
-      <article class="pair">
-        <h3>LinkedIn automation</h3>
-        <div class="pair-grid">
-          <figure>
-            <img src="/proof/c1-linkedin-opus.png" alt="Baseline 1.2 Opus plain, LinkedIn case, desktop shot. Not graded.">
-            <figcaption>Opus plain. Not graded.</figcaption>
-          </figure>
-          <figure>
-            <img src="/proof/c1-linkedin-sonnet.png" alt="Baseline 1.2 Sonnet with ShipRight, LinkedIn case, desktop shot. Not graded.">
-            <figcaption>Sonnet with ShipRight. Not graded.</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="pair">
-        <h3>Agent dashboard</h3>
-        <div class="pair-grid">
-          <figure>
-            <img src="/proof/c2-agents-dashboard-opus.png" alt="Baseline 1.2 Opus plain, agent dashboard, desktop shot. Not graded.">
-            <figcaption>Opus plain. Not graded.</figcaption>
-          </figure>
-          <figure>
-            <img src="/proof/c2-agents-dashboard-sonnet.png" alt="Baseline 1.2 Sonnet with ShipRight, agent dashboard, desktop shot. Not graded.">
-            <figcaption>Sonnet with ShipRight. Not graded.</figcaption>
-          </figure>
-        </div>
-      </article>
-      <article class="pair">
-        <h3>Landscaping SaaS</h3>
-        <div class="pair-grid">
-          <figure>
-            <img src="/proof/c3-saas-opus.png" alt="Baseline 1.2 Opus plain, landscaping SaaS, desktop shot. Not graded.">
-            <figcaption>Opus plain. Not graded.</figcaption>
-          </figure>
-          <figure>
-            <img src="/proof/c3-saas-sonnet.png" alt="Baseline 1.2 Sonnet with ShipRight, landscaping SaaS, desktop shot. Not graded.">
-            <figcaption>Sonnet with ShipRight. Not graded.</figcaption>
-          </figure>
-        </div>
-      </article>
-    </div>
-    <p class="note">This page will not invent a winner.</p>
-  </section>
-
-  <section id="install" class="section install" data-act="install">
-    <div class="install-copy">
-      <h2>
-        <span class="mask"><span class="line">Install from the repo.</span></span>
-      </h2>
-      <p class="lede">1.3.1. One skill. Pick the tool. There is no zip.</p>
-    </div>
-    <div class="install-panel">
-      <div class="tabs" role="tablist" aria-label="Install by tool">
-        <button type="button" class="btn" role="tab" id="install-tab-claude" aria-selected="true" aria-controls="cmd-claude">Claude Code</button>
-        <button type="button" class="btn" role="tab" id="install-tab-cursor" aria-selected="false" aria-controls="cmd-cursor">Cursor</button>
-        <button type="button" class="btn" role="tab" id="install-tab-codex" aria-selected="false" aria-controls="cmd-codex">Codex</button>
-        <button type="button" class="btn" role="tab" id="install-tab-vscode" aria-selected="false" aria-controls="cmd-vscode">VS Code</button>
-        <button type="button" class="btn" role="tab" id="install-tab-anti" aria-selected="false" aria-controls="cmd-anti">Antigravity</button>
-        <button type="button" class="btn" role="tab" id="install-tab-gemini" aria-selected="false" aria-controls="cmd-gemini">Gemini CLI</button>
-        <button type="button" class="btn" role="tab" id="install-tab-ai" aria-selected="false" aria-controls="cmd-ai">Claude.ai</button>
-        <button type="button" class="btn" role="tab" id="install-tab-gpt" aria-selected="false" aria-controls="cmd-gpt">ChatGPT</button>
+  <!-- Act 6. Proof. Honest: where 1.2 lost to Opus and what 1.3 changed. Pains S05, S03. -->
+  <section id="proof" class="proof" data-act="proof" data-proof-claim data-proof-source="evals/v2/runs/baseline-1.2 desktop-1 shots for c1, c2 and c3. evals/v2/results/release-1.3.md says not graded.">
+    <div class="wrap">
+      <div class="proof-head">
+        <h2>
+          <span class="mask"><span class="line">We test it against Opus.</span></span>
+          <span class="mask"><span class="line">Here is where it lost.</span></span>
+        </h2>
+        <p class="lede">Same prompt. Opus alone on the left. Sonnet with ShipRight 1.2 on the right. Opus thought harder about the product. These three pairs are why 1.3 exists.</p>
       </div>
-      <pre id="cmd-claude" role="tabpanel">/plugin marketplace add aiwithaltaz/shipright-skills
+      <div class="pairs">
+        <article class="pair">
+          <div class="pair-text">
+            <h3>LinkedIn assistant</h3>
+            <p>Opus led with the situation: 7 actions left, about 13 minutes, everything drafted. The 1.2 screen showed users a "Preview state" switch meant for developers.</p>
+          </div>
+          <figure><img src="/proof/c1-linkedin-opus.png" alt="Opus alone, LinkedIn case: a today screen with 7 actions left and drafted replies." loading="lazy" width="1280" height="800"><figcaption>Opus alone</figcaption></figure>
+          <figure><img src="/proof/c1-linkedin-sonnet.png" alt="Sonnet with ShipRight 1.2, LinkedIn case: a post queue with a preview-state dropdown at the top." loading="lazy" width="1280" height="800"><figcaption>Sonnet with ShipRight 1.2</figcaption></figure>
+        </article>
+        <article class="pair">
+          <div class="pair-text">
+            <h3>AI agent dashboard</h3>
+            <p>Opus put the fix on each problem, like Pause agent and Cap at $150/day, and compared each number to normal: 18%, usually 2%. The 1.2 screen listed statuses with no action.</p>
+          </div>
+          <figure><img src="/proof/c2-agents-dashboard-opus.png" alt="Opus alone, agent dashboard: a needs-attention list with an action on each row." loading="lazy" width="1280" height="800"><figcaption>Opus alone</figcaption></figure>
+          <figure><img src="/proof/c2-agents-dashboard-sonnet.png" alt="Sonnet with ShipRight 1.2, agent dashboard: a table of agents with status badges." loading="lazy" width="1280" height="800"><figcaption>Sonnet with ShipRight 1.2</figcaption></figure>
+        </article>
+        <article class="pair">
+          <div class="pair-text">
+            <h3>Landscaping SaaS</h3>
+            <p>Both flagged the crew day over its hours. Opus also put the week's money and Thursday's rain in the headline, with one button to move 9 visits.</p>
+          </div>
+          <figure><img src="/proof/c3-saas-opus.png" alt="Opus alone, landscaping case: week of October 19, 59 visits worth $8,385, rain Thursday." loading="lazy" width="1280" height="800"><figcaption>Opus alone</figcaption></figure>
+          <figure><img src="/proof/c3-saas-sonnet.png" alt="Sonnet with ShipRight 1.2, landscaping case: schedule by crew with an over-hours warning." loading="lazy" width="1280" height="800"><figcaption>Sonnet with ShipRight 1.2</figcaption></figure>
+        </article>
+      </div>
+      <div class="changed">
+        <h3>What 1.3 changed because of it</h3>
+        <ol>
+          <li><b>Situation headline.</b> The title states what is going on and the next decision, with numbers.</li>
+          <li><b>The fix sits on the item.</b> Each row that needs attention carries its one action.</li>
+          <li><b>Compare to normal.</b> A number shows its usual value beside it.</li>
+          <li><b>No dev controls.</b> Review switches hide behind ?review=1.</li>
+          <li><b>Sample is allowed, if labeled.</b> Rich demo data, never passed off as real.</li>
+        </ol>
+        <p class="status-line">1.3 eval runs are prepared in the repo and not graded yet. No score is shown until one exists.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Act 7. Install. Keep K4. -->
+  <section id="install" class="install" data-act="install">
+    <div class="wrap install-wrap">
+      <h2>
+        <span class="mask"><span class="line">Install in one line.</span></span>
+      </h2>
+      <p class="lede">Free and open source. MIT license. Pick your tool.</p>
+      <div class="install-panel">
+        <div class="tabs" role="tablist" aria-label="Install by tool">
+          <button type="button" role="tab" id="install-tab-claude" aria-selected="true" aria-controls="cmd-claude">Claude Code</button>
+          <button type="button" role="tab" id="install-tab-cursor" aria-selected="false" aria-controls="cmd-cursor" tabindex="-1">Cursor</button>
+          <button type="button" role="tab" id="install-tab-codex" aria-selected="false" aria-controls="cmd-codex" tabindex="-1">Codex</button>
+          <button type="button" role="tab" id="install-tab-vscode" aria-selected="false" aria-controls="cmd-vscode" tabindex="-1">VS Code</button>
+          <button type="button" role="tab" id="install-tab-anti" aria-selected="false" aria-controls="cmd-anti" tabindex="-1">Antigravity</button>
+          <button type="button" role="tab" id="install-tab-gemini" aria-selected="false" aria-controls="cmd-gemini" tabindex="-1">Gemini CLI</button>
+          <button type="button" role="tab" id="install-tab-ai" aria-selected="false" aria-controls="cmd-ai" tabindex="-1">Claude.ai</button>
+          <button type="button" role="tab" id="install-tab-gpt" aria-selected="false" aria-controls="cmd-gpt" tabindex="-1">ChatGPT</button>
+        </div>
+        <div class="cmd-row">
+          <pre id="cmd-claude" role="tabpanel" aria-labelledby="install-tab-claude">/plugin marketplace add aiwithaltaz/shipright-skills
 /plugin install shipright@shipright</pre>
-      <pre id="cmd-cursor" role="tabpanel" hidden>npx skills add aiwithaltaz/shipright-skills -a cursor -y</pre>
-      <pre id="cmd-codex" role="tabpanel" hidden>npx skills add aiwithaltaz/shipright-skills -a codex -y</pre>
-      <pre id="cmd-vscode" role="tabpanel" hidden>npx skills add aiwithaltaz/shipright-skills -a github-copilot -y</pre>
-      <pre id="cmd-anti" role="tabpanel" hidden>npx skills add aiwithaltaz/shipright-skills -a antigravity -y</pre>
-      <pre id="cmd-gemini" role="tabpanel" hidden>npx skills add aiwithaltaz/shipright-skills -a gemini-cli -y</pre>
-      <pre id="cmd-ai" role="tabpanel" hidden>Read skills/shipright/SKILL.md from this repository. There is no zip.</pre>
-      <pre id="cmd-gpt" role="tabpanel" hidden>Use the repository. The ChatGPT file is the short spine, not a zip.</pre>
-      <button type="button" class="btn fill" id="copy-cmd">Copy command</button>
-      <p class="status" id="copy-status" role="status" aria-live="polite"></p>
+          <pre id="cmd-cursor" role="tabpanel" aria-labelledby="install-tab-cursor" hidden>npx skills add aiwithaltaz/shipright-skills -a cursor -y</pre>
+          <pre id="cmd-codex" role="tabpanel" aria-labelledby="install-tab-codex" hidden>npx skills add aiwithaltaz/shipright-skills -a codex -y</pre>
+          <pre id="cmd-vscode" role="tabpanel" aria-labelledby="install-tab-vscode" hidden>npx skills add aiwithaltaz/shipright-skills -a github-copilot -y</pre>
+          <pre id="cmd-anti" role="tabpanel" aria-labelledby="install-tab-anti" hidden>npx skills add aiwithaltaz/shipright-skills -a antigravity -y</pre>
+          <pre id="cmd-gemini" role="tabpanel" aria-labelledby="install-tab-gemini" hidden>npx skills add aiwithaltaz/shipright-skills -a gemini-cli -y</pre>
+          <pre id="cmd-ai" role="tabpanel" aria-labelledby="install-tab-ai" hidden>Read skills/shipright/SKILL.md from this repository. There is no zip.</pre>
+          <pre id="cmd-gpt" role="tabpanel" aria-labelledby="install-tab-gpt" hidden>Use the repository. The ChatGPT file is the short spine, not a zip.</pre>
+          <button type="button" class="btn fill" id="copy-cmd">Copy</button>
+        </div>
+        <p class="status" id="copy-status" role="status" aria-live="polite"></p>
+        <p class="then">Then type <code>/shipright</code> and say what you want to build.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Act 8. Questions. Pain S09. -->
+  <section id="faq" class="faq" data-act="faq">
+    <div class="wrap faq-grid">
+      <div class="faq-side">
+        <h2>
+          <span class="mask"><span class="line">Questions.</span></span>
+        </h2>
+        <p>Something else? Ask on GitHub.</p>
+        <a href="https://github.com/aiwithaltaz/shipright-skills/issues">Open an issue</a>
+      </div>
+      <div class="qs">
+        <div class="q">
+          <h3><button type="button" aria-expanded="false" aria-controls="a1"><span>Is it free?</span><i aria-hidden="true"></i></button></h3>
+          <div class="a" id="a1" hidden><p>Yes. It is open source under the MIT license. The code is on GitHub.</p></div>
+        </div>
+        <div class="q">
+          <h3><button type="button" aria-expanded="false" aria-controls="a2"><span>Does it write my app?</span><i aria-hidden="true"></i></button></h3>
+          <div class="a" id="a2" hidden><p>It plans, designs and builds a tested screen or page. For a full app it writes one paste-ready ticket per feature, so your coding tool builds the rest in order.</p></div>
+        </div>
+        <div class="q">
+          <h3><button type="button" aria-expanded="false" aria-controls="a3"><span>Will it make things up?</span><i aria-hidden="true"></i></button></h3>
+          <div class="a" id="a3" hidden><p>No. Every fact is Supplied, Verified, Assumed, Sample or Illustrative. Sample and Illustrative content stays labeled on screen. It never invents reviews, prices or legal text.</p></div>
+        </div>
+        <div class="q">
+          <h3><button type="button" aria-expanded="false" aria-controls="a4"><span>Can it fix an app I already built?</span><i aria-hidden="true"></i></button></h3>
+          <div class="a" id="a4" hidden><p>Yes. Say "review my app". It starts with Discover: what works, what hurts, and a ranked fix list with screenshots, before it builds anything.</p></div>
+        </div>
+        <div class="q">
+          <h3><button type="button" aria-expanded="false" aria-controls="a5"><span>Which tools does it work with?</span><i aria-hidden="true"></i></button></h3>
+          <div class="a" id="a5" hidden><p>Claude Code, Cursor, Codex, VS Code Copilot, Antigravity and Gemini CLI. Claude.ai and ChatGPT can read the skill file.</p></div>
+        </div>
+        <div class="q">
+          <h3><button type="button" aria-expanded="false" aria-controls="a6"><span>What do the checks need?</span><i aria-hidden="true"></i></button></h3>
+          <div class="a" id="a6" hidden><p>Node and Playwright. If Playwright is missing, the checker prints the one install command and stops.</p></div>
+        </div>
+      </div>
     </div>
   </section>
 </main>
+
 <footer class="foot" id="close" data-act="footer">
-  <p>1.3.1. Eval scores pending. Not a grade.</p>
-  <a href="./case-study.html" data-transition>Read the c7 case study</a>
-  <a href="https://github.com/aiwithaltaz/shipright-skills">GitHub</a>
+  <p><i class="seal" aria-hidden="true"></i>ShipRight 1.3.1 · MIT · by Altaz Lavji</p>
+  <nav aria-label="Footer">
+    <a href="./case-study.html" data-transition>Case study</a>
+    <a href="https://github.com/aiwithaltaz/shipright-skills">GitHub</a>
+  </nav>
 </footer>
 <div class="wipe" aria-hidden="true"></div>
 <script type="module" src="./main.js"></script>

@@ -1,297 +1,235 @@
 import './style.css';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Lenis from 'lenis';
-import * as THREE from 'three';
 
-gsap.registerPlugin(ScrollTrigger);
-
+// No libraries. Everything is readable without this file.
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const fine = matchMedia('(pointer: fine)').matches;
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+document.documentElement.classList.add('js');
 
-function showRun(index) {
-  document.querySelectorAll('.run-state').forEach((el, i) => {
-    el.hidden = i !== index;
+/* ---------- Tabs: one helper for every tablist (arrow keys, Home, End) ---------- */
+function tablist(list, onSelect) {
+  const tabs = $$('[role="tab"]', list);
+  const select = (tab, focus) => {
+    tabs.forEach(t => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+    });
+    if (focus) tab.focus();
+    onSelect(tab);
+  };
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => select(tab, false));
+    tab.addEventListener('keydown', e => {
+      const vertical = list.getAttribute('aria-orientation') === 'vertical';
+      const next = vertical ? 'ArrowDown' : 'ArrowRight';
+      const prev = vertical ? 'ArrowUp' : 'ArrowLeft';
+      let j = null;
+      if (e.key === next) j = (i + 1) % tabs.length;
+      if (e.key === prev) j = (i - 1 + tabs.length) % tabs.length;
+      if (e.key === 'Home') j = 0;
+      if (e.key === 'End') j = tabs.length - 1;
+      if (j !== null) { e.preventDefault(); select(tabs[j], true); }
+    });
   });
-  window.__activeSheet = index;
-}
-
-function showStep(index) {
-  document.querySelectorAll('[data-go]').forEach(btn => {
-    const on = Number(btn.dataset.go) === index;
-    btn.classList.toggle('on', on);
-    btn.setAttribute('aria-pressed', String(on));
-  });
-  document.querySelectorAll('[data-artifact]').forEach(el => {
-    el.hidden = Number(el.dataset.artifact) !== index;
-  });
-}
-
-const compare = document.getElementById('compare-range');
-const clip = document.getElementById('before-clip');
-const frame = document.getElementById('compare-frame');
-function sizeCompare() {
-  if (!frame) return;
-  const fullW = frame.clientWidth;
-  const fullH = frame.clientHeight;
-  frame.querySelectorAll('img').forEach(img => {
-    img.style.width = fullW + 'px';
-    img.style.height = fullH + 'px';
-  });
-}
-function setCompare(value) {
-  if (!clip) return;
-  const pct = Math.max(8, Math.min(92, Number(value) || 50));
-  clip.style.width = pct + '%';
-  sizeCompare();
-  if (compare) compare.setAttribute('aria-valuetext', Math.round(pct) + ' percent owner screen');
-}
-if (compare) {
-  setCompare(compare.value);
-  compare.addEventListener('input', () => setCompare(compare.value));
-  addEventListener('resize', () => setCompare(compare.value));
+  return { tabs, select };
 }
 
-const tabs = [...document.querySelectorAll('[role="tab"]')];
-const panels = [...document.querySelectorAll('[role="tabpanel"]')];
-function selectTab(id) {
-  const show = document.getElementById(id)?.getAttribute('aria-controls');
-  tabs.forEach(tab => {
-    const on = tab.id === id;
-    tab.setAttribute('aria-selected', String(on));
-    tab.classList.toggle('fill', on);
-  });
-  panels.forEach(panel => { panel.hidden = panel.id !== show; });
-}
-tabs.forEach(tab => tab.addEventListener('click', () => selectTab(tab.id)));
-if (tabs[0]) selectTab(tabs[0].id);
+/* ---------- Act 1. Replay of a real run ---------- */
+const replay = $('#replay');
+if (replay) {
+  const stage = $('.stage');
+  const beats = $$('.beat', replay);
+  const goes = $$('[data-go]', replay);
+  const pauseBtn = $('#replay-pause');
+  let index = 0;
+  let timer = null;
+  let playing = false;
+  let userTook = false;
 
-const copyBtn = document.getElementById('copy-cmd');
-if (copyBtn) {
-  copyBtn.addEventListener('click', async () => {
-    const status = document.getElementById('copy-status');
-    const panel = panels.find(item => !item.hidden);
-    const text = panel ? panel.textContent : '';
+  const show = i => {
+    index = i;
+    beats.forEach((b, k) => {
+      const on = k === i;
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-hidden', String(!on));
+      if (on) b.removeAttribute('inert'); else b.setAttribute('inert', '');
+    });
+    goes.forEach(g => g.setAttribute('aria-pressed', String(Number(g.dataset.go) === i)));
+    stage.classList.toggle('landed', i === beats.length - 1);
+  };
+  const durations = [2600, 4200, 3600, 3800, 0];
+  const tick = () => {
+    clearTimeout(timer);
+    if (!playing || index >= beats.length - 1) { setPlaying(false); return; }
+    timer = setTimeout(() => { show(index + 1); tick(); }, durations[index]);
+  };
+  const setPlaying = on => {
+    playing = on;
+    pauseBtn.dataset.state = on ? 'pause' : (index >= beats.length - 1 ? 'replay' : 'play');
+    if (!on) clearTimeout(timer);
+  };
+  const play = fromStart => {
+    if (fromStart) show(0);
+    setPlaying(true);
+    tick();
+  };
+
+  goes.forEach(g => g.addEventListener('click', () => { userTook = true; setPlaying(false); show(Number(g.dataset.go)); }));
+  pauseBtn.addEventListener('click', () => {
+    userTook = true;
+    if (playing) setPlaying(false);
+    else play(index >= beats.length - 1);
+  });
+  $('#watch')?.addEventListener('click', () => {
+    userTook = true;
+    replay.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' });
+    if (!reduced) play(true);
+  });
+
+  if (reduced) {
+    beats.forEach(b => { b.classList.add('on'); b.removeAttribute('inert'); b.removeAttribute('aria-hidden'); });
+  } else {
+    show(0);
+    setPlaying(false);
+    // Play once when the window is in view. It does not loop.
+    let started = false;
+    new IntersectionObserver((entries, io) => {
+      if (entries[0].isIntersecting && !started) { started = true; io.disconnect(); setTimeout(() => { if (!userTook) play(true); }, 600); }
+    }, { threshold: 0.4 }).observe(replay);
+  }
+}
+
+/* ---------- Act 3. Folder reader ---------- */
+const tree = $('.tree');
+if (tree) {
+  tablist(tree, tab => {
+    $$('.reader [role="tabpanel"]').forEach(p => { p.hidden = p.id !== tab.getAttribute('aria-controls'); });
+  });
+}
+
+/* ---------- Act 4. Before and after ---------- */
+const pairs = {
+  'p-product': {
+    before: ['/gallery/product-before.png', 'Product site built with ShipRight 0.6.2: dark speaker page, title low on the left, model in a framed box.'],
+    after: ['/gallery/product-after.png', 'Product site built with ShipRight 1.0: Buy in the hero, the speaker larger, view buttons under the model.'],
+    tags: ['Before · 0.6.2', 'After · 1.0'],
+    caption: 'Same prompt, two pack versions. 1.0 put Buy in the hero, view buttons under the model, and a working name in place of placeholders.',
+  },
+  'p-dashboard': {
+    before: ['/gallery/dashboard-before.png', 'Project tracker built with ShipRight 0.6.2: four projects that need attention, a budget bar on each.'],
+    after: ['/gallery/dashboard-after.png', 'Project tracker built with ShipRight 1.0: nine projects in one table, each with its next deadline and budget used.'],
+    tags: ['Before · 0.6.2', 'After · 1.0'],
+    caption: 'Same prompt, two pack versions. 1.0 shows more projects, each with its next deadline and budget, in one calm table. Sample data.',
+  },
+  'p-feedback': {
+    before: ['/proof/c6-before.png', 'The registration desk screen the owner sent, with three change requests.'],
+    after: ['/proof/c6-sonnet.png', 'The desk screen rebuilt by Sonnet with ShipRight 1.2 in a feedback round.'],
+    tags: ['Owner screen', 'Rebuild · 1.2'],
+    caption: 'Case c6, a feedback round. The owner asked for three things: remove the dot on the selected nav item, keep Escalations and Desk help, and give the selected row a clean border.',
+  },
+  'p-ivc': {
+    before: ['/gallery/ivc-before.png', 'IVC desk person form, earlier version: small fields, no section headings, a button named Save and next person.'],
+    after: ['/gallery/ivc-after.png', 'IVC desk person form, Altaz’s Figma redesign: fields grouped under headings, status pills by the name, one named next button.'],
+    tags: ['Before', 'Owner redesign'],
+    caption: 'The human bar. This after is Altaz’s own Figma redesign, not ShipRight output. ShipRight 1.3 learned its Discover stage and layout moves from this round.',
+  },
+};
+const cmp = $('#cmp');
+if (cmp) {
+  const range = $('#cmp-range');
+  const setPos = v => cmp.style.setProperty('--pos', `${v}%`);
+  range.addEventListener('input', () => setPos(range.value));
+  setPos(range.value);
+  const list = $('.pair-tabs');
+  tablist(list, tab => {
+    const p = pairs[tab.id];
+    if (!p) return;
+    const b = $('#cmp-before'); const a = $('#cmp-after');
+    b.src = p.before[0]; b.alt = p.before[1];
+    a.src = p.after[0]; a.alt = p.after[1];
+    $('#tag-before').textContent = p.tags[0];
+    $('#tag-after').textContent = p.tags[1];
+    $('#cmp-caption').textContent = p.caption;
+    cmp.setAttribute('aria-labelledby', tab.id);
+    range.value = 50; setPos(50);
+  });
+}
+
+/* ---------- Act 7. Install ---------- */
+const installTabs = $('.install .tabs');
+if (installTabs) {
+  const panels = $$('.cmd-row pre');
+  tablist(installTabs, tab => { panels.forEach(p => { p.hidden = p.id !== tab.getAttribute('aria-controls'); }); });
+  const status = $('#copy-status');
+  $('#copy-cmd')?.addEventListener('click', async () => {
+    const panel = panels.find(p => !p.hidden);
     try {
-      await navigator.clipboard.writeText(text);
-      status.textContent = 'Command copied.';
+      await navigator.clipboard.writeText(panel ? panel.textContent : '');
+      status.textContent = 'Copied. Paste it in your tool.';
     } catch {
       status.textContent = 'Copy did not work. Select the command and copy it yourself.';
     }
   });
 }
 
-document.querySelectorAll('[data-go]').forEach(btn => {
-  btn.addEventListener('click', () => showStep(Number(btn.dataset.go)));
-});
+/* ---------- Act 8. Questions: one open at a time ---------- */
+const qButtons = $$('.q button');
+qButtons.forEach(btn => btn.addEventListener('click', () => {
+  const open = btn.getAttribute('aria-expanded') === 'true';
+  qButtons.forEach(other => {
+    other.setAttribute('aria-expanded', 'false');
+    $('#' + other.getAttribute('aria-controls')).hidden = true;
+  });
+  if (!open) {
+    btn.setAttribute('aria-expanded', 'true');
+    $('#' + btn.getAttribute('aria-controls')).hidden = false;
+  }
+}));
 
-const menu = document.querySelector('.menu');
-const navLinks = document.querySelector('.nav-links');
+/* ---------- Menu ---------- */
+const menu = $('.menu');
+const navLinks = $('.nav-links');
 if (menu && navLinks) {
+  const close = () => { navLinks.classList.remove('open'); menu.setAttribute('aria-expanded', 'false'); };
   menu.addEventListener('click', () => {
     const open = navLinks.classList.toggle('open');
     menu.setAttribute('aria-expanded', String(open));
   });
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menu.setAttribute('aria-expanded', 'false');
-    });
-  });
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
+  addEventListener('keydown', e => { if (e.key === 'Escape' && navLinks.classList.contains('open')) { close(); menu.focus(); } });
 }
 
-document.querySelectorAll('[data-transition]').forEach(link => {
-  link.addEventListener('click', event => {
-    if (reduced || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
-    const wipe = document.querySelector('.wipe');
-    gsap.to(wipe, {
-      yPercent: -100,
-      duration: 0.45,
-      ease: 'power2.inOut',
-      onComplete: () => { location.href = link.href; },
-    });
+/* ---------- Page wipe into the case study ---------- */
+$$('[data-transition]').forEach(link => {
+  link.addEventListener('click', e => {
+    if (reduced || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    const wipe = $('.wipe');
+    wipe.animate([{ transform: 'translateY(100%)' }, { transform: 'translateY(0)' }], { duration: 420, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'forwards' })
+      .finished.then(() => { location.href = link.href; });
   });
 });
+addEventListener('pageshow', () => { const w = $('.wipe'); if (w) w.getAnimations().forEach(a => a.cancel()); });
 
-if (reduced) {
-  document.querySelectorAll('.run-state, .artifact').forEach(el => { el.hidden = false; });
-  document.querySelectorAll('.scene, .process').forEach(el => el.classList.add('flat'));
-} else if (document.getElementById('run')) {
-  if (fine) {
-    const lenis = new Lenis({ autoRaf: false, smoothWheel: true });
-    window.__lenis = lenis;
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add(time => lenis.raf(time * 1000));
-    gsap.ticker.lagSmoothing(0);
-  }
-  gsap.from('.scene h1 .line', {
-    yPercent: 110,
-    duration: 0.8,
-    stagger: 0.07,
-    ease: 'power3.out',
-  });
-  document.querySelectorAll('[data-act] h2 .line').forEach(line => {
-    gsap.from(line, {
-      yPercent: 110,
-      duration: 0.7,
-      ease: 'power3.out',
-      scrollTrigger: { trigger: line, start: 'top 86%' },
+/* ---------- Reveals: line masks on titles, fade-up on blocks ---------- */
+if (!reduced && 'IntersectionObserver' in window) {
+  const targets = [...$$('h1, h2').filter(h => h.querySelector('.mask'))];
+  targets.forEach(t => t.classList.add('reveal'));
+  const blocks = $$('.door, .stage-grid li, .pair, .changed, .q');
+  blocks.forEach(b => b.classList.add('fade'));
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const siblings = el.classList.contains('fade') ? [...el.parentElement.children].filter(c => c.classList.contains('fade')) : [];
+      const delay = Math.max(0, siblings.indexOf(el)) * 70;
+      el.style.transitionDelay = `${Math.min(delay, 420)}ms`;
+      el.classList.add('in');
+      io.unobserve(el);
     });
-  });
-  ScrollTrigger.create({
-    trigger: '#run',
-    start: 'top top',
-    end: () => '+=' + window.innerHeight * 3,
-    pin: true,
-    scrub: true,
-    onUpdate: self => {
-      showRun(Math.min(4, Math.floor(self.progress * 5)));
-      window.__fileLift = self.progress;
-    },
-  });
-  const steps = document.querySelectorAll('[data-artifact]').length || 1;
-  ScrollTrigger.create({
-    trigger: '#process',
-    start: 'top top',
-    end: () => '+=' + window.innerHeight * 2.4,
-    pin: true,
-    scrub: true,
-    onUpdate: self => showStep(Math.min(steps - 1, Math.floor(self.progress * steps))),
-  });
-}
-
-const canvas = document.getElementById('view');
-const poster = document.querySelector('[data-poster]');
-let yaw = 0.62;
-let pitch = 0.62;
-
-function showPoster() {
-  if (canvas) canvas.hidden = true;
-  if (poster) poster.hidden = false;
-}
-
-document.getElementById('orbit')?.addEventListener('click', () => { yaw += 0.65; });
-
-if (reduced || !canvas) {
-  showPoster();
-} else {
-  try {
-    const stage = canvas.parentElement;
-    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, preserveDrawingBuffer: true });
-    renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 1.5));
-    renderer.setClearColor(0x1a1816, 1);
-    if (THREE.SRGBColorSpace) renderer.outputColorSpace = THREE.SRGBColorSpace;
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x1a1816);
-    const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 40);
-    scene.add(new THREE.HemisphereLight(0xf6f1e8, 0x1a1816, 0.9));
-    const key = new THREE.DirectionalLight(0xfff6ee, 2.5);
-    key.position.set(2.6, 4.4, 3.2);
-    scene.add(key);
-    const fill = new THREE.DirectionalLight(0xd9cfc2, 0.55);
-    fill.position.set(-3.2, 1.6, -1.4);
-    scene.add(fill);
-    const titles = ['Research', 'Options', 'Build', 'Test', 'Record'];
-    const sheets = titles.map((title, index) => {
-      const board = document.createElement('canvas');
-      board.width = 512;
-      board.height = 704;
-      const ctx = board.getContext('2d');
-      ctx.fillStyle = '#f3f0ea';
-      ctx.fillRect(0, 0, 512, 704);
-      ctx.fillStyle = '#9d3419';
-      ctx.beginPath();
-      ctx.arc(430, 86, 26, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.fillStyle = '#161412';
-      ctx.font = '56px Georgia, serif';
-      ctx.fillText(title, 40, 110);
-      ctx.fillStyle = '#5c564e';
-      ctx.font = '22px Georgia, serif';
-      ctx.fillText('File ' + (index + 1) + ' of 5', 40, 168);
-      ctx.fillText('Illustrative. Not a screenshot.', 40, 204);
-      const tex = new THREE.CanvasTexture(board);
-      if (THREE.SRGBColorSpace) tex.colorSpace = THREE.SRGBColorSpace;
-      const side = new THREE.MeshStandardMaterial({ color: 0xe4ddd2, roughness: 0.92 });
-      const face = new THREE.MeshStandardMaterial({ map: tex, roughness: 0.78 });
-      const mesh = new THREE.Mesh(new THREE.BoxGeometry(2.05, 0.034, 2.72), [side, side, face, side, side, side]);
-      mesh.position.y = index * 0.04;
-      mesh.userData.home = index * 0.04;
-      scene.add(mesh);
-      return mesh;
-    });
-    const shadow = new THREE.Mesh(
-      new THREE.CircleGeometry(1.15, 40),
-      new THREE.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: 0.28 }),
-    );
-    shadow.rotation.x = -Math.PI / 2;
-    shadow.position.y = -0.04;
-    scene.add(shadow);
-    canvas.hidden = false;
-    if (poster) poster.hidden = true;
-    function size() {
-      const width = Math.max(1, stage.clientWidth);
-      const height = Math.max(1, stage.clientHeight || 320);
-      renderer.setSize(width, height, false);
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
-    }
-    size();
-    addEventListener('resize', size);
-    let dragging = false;
-    let mode = '';
-    let lx = 0;
-    let ly = 0;
-    canvas.addEventListener('pointerdown', event => {
-      dragging = true;
-      mode = '';
-      lx = event.clientX;
-      ly = event.clientY;
-    });
-    canvas.addEventListener('pointerup', () => { dragging = false; mode = ''; });
-    canvas.addEventListener('pointercancel', () => { dragging = false; mode = ''; });
-    canvas.addEventListener('pointermove', event => {
-      if (!dragging) return;
-      const dx = event.clientX - lx;
-      const dy = event.clientY - ly;
-      if (!mode) {
-        if (Math.hypot(dx, dy) < 8) return;
-        mode = Math.abs(dx) > Math.abs(dy) ? 'turn' : 'scroll';
-        if (mode === 'turn') canvas.setPointerCapture(event.pointerId);
-      }
-      if (mode !== 'turn') return;
-      yaw += dx * 0.01;
-      pitch = Math.max(0.15, Math.min(1.05, pitch + dy * 0.004));
-      lx = event.clientX;
-      ly = event.clientY;
-    });
-    function place() {
-      const lift = window.__fileLift || 0;
-      const active = window.__activeSheet || 0;
-      const radius = 3.15;
-      const cos = Math.cos(pitch);
-      camera.position.set(Math.sin(yaw) * cos * radius, 0.85 + Math.sin(pitch) * 0.85, Math.cos(yaw) * cos * radius);
-      camera.lookAt(0, 0.12 + lift * 0.22, 0);
-      sheets.forEach((mesh, index) => {
-        const open = lift * index * 0.34;
-        const focus = index === active ? lift * 0.08 : 0;
-        mesh.position.y = mesh.userData.home + open + focus;
-        mesh.rotation.z = (index - 2) * lift * 0.03;
-      });
-    }
-    function loop() {
-      if (!document.hidden) {
-        place();
-        renderer.render(scene, camera);
-      }
-      requestAnimationFrame(loop);
-    }
-    place();
-    renderer.render(scene, camera);
-    requestAnimationFrame(loop);
-    if (frame) setCompare(compare ? compare.value : 50);
-  } catch {
-    showPoster();
-  }
+  }, { rootMargin: '0px 0px -10% 0px' });
+  [...targets, ...blocks].forEach(el => io.observe(el));
+  // Safety net: nothing stays hidden if an observer never fires.
+  setTimeout(() => [...targets, ...blocks].forEach(el => el.classList.add('in')), 4000);
 }
