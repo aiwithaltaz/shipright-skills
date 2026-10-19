@@ -1,0 +1,147 @@
+{
+ "target": "site/dist/index.html",
+ "profile": "premium",
+ "checkedAt": "2026-10-19T04:55:55.982Z",
+ "viewports": {
+  "desktop": {
+   "results": [],
+   "metrics": {
+    "heroVisible": true,
+    "unsupportedProof": 0,
+    "undeclaredProof": 0,
+    "visibleWords": "Skip to content ShipRight How it works Before and after Proof Case study Install Turn an idea into a tested product your AI builds right. ShipRight is a free skill for your AI coding tool. It asks before it builds, writes the plan, designs the screens, and tests what it makes. Install ShipRight Watch a real run Context before generate. Product before pixels. The screen this run built. Sample data. /shipright · case c3 Pause You I want to build a SaaS software One vague line. Nothing is built yet. Ask Cards Reply Files Screen Replay of a real run: Sonnet with ShipRight 1.2, case c3. Text shortened. Tap a step. Two ways in. NEW IDEA I have an idea. /shipright I want to build a booking app for my salon You answer up to 4 questions. Then it runs every stage: research, three concepts, risks, scope and pages, architecture, design system, three design options, build, test, and a launch check. \"Just build it\" does not skip a stage. EXISTING APP I already built something. /shipright review my app and make it better It uses every screen like a first-time user. It says what works first, then lists each pain with a screenshot and a cause, and ranks the fixes. Every change it builds names its pain and has a test. What lands in your folder. Real files from the c3 run. Tap one to read a few lines. Your coding tool reads the same folder, so nothing is left to guess. docs/shipright/ 01-prd.md 02-technical-architecture.md 04-frontend-spec.md 05-feature-ticket-list.md critique.md ship-check.md ./ DESIGN.md 1.3 also keeps a project record: CONTEXT, DECISIONS, CHANGELOG and HANDOFF. A new chat can pick up where the last one stopped. 01-prd.md Who: the owner or office manager of a landscaping company with 3 to 20 workers, usually 1 to 4 crews. Job: put every job on a crew and a day without overloading anyone, then bill for finished jobs. What they do today: Unknown. Hypothesis H1: a whiteboard, a group chat, a spreadsheet or paper. Source needed: 5 owner conversations. Unknown stays Unknown. It names who checks it. Before and after. Product site SaaS dashboard Feedback round IVC desk Before · 0.6.2 After · 1.0 Same prompt, two pack versions. 1.0 put Buy in the hero, view buttons under the model, and a working name in place of placeholders. Eleven stages. Each one writes a file. A new idea runs 1 to 10. An app you already built starts at 0. A stage is not done until the project record is updated. 0 Discover pain-map.md 1 Research research-brief.md 2 Brainstorm concepts.md 3 Problem solving risks.md 4 Scope and pages scope.md 5 Architecture architecture.md 6 Design system DESIGN.md 7 Three options options.md 8 Build the screen 9 Test test-report.md 10 Ship check ship-check.md + Record CONTEXT · DECISIONS · HANDOFF We test it against Opus. Here is where it lost. Same prompt. Opus alone on the left. Sonnet with ShipRight 1.2 on the right. Opus thought harder about the product. These three pairs are why 1.3 exists. LinkedIn assistant Opus led with the situation: 7 actions left, about 13 minutes, everything drafted. The 1.2 screen showed users a \"Preview state\" switch meant for developers. Opus alone Sonnet with ShipRight 1.2 AI agent dashboard Opus put the fix on each problem, like Pause agent and Cap at $150/day, and compared each number to normal: 18%, usually 2%. The 1.2 screen listed statuses with no action. Opus alone Sonnet with ShipRight 1.2 Landscaping SaaS Both flagged the crew day over its hours. Opus also put the week's money and Thursday's rain in the headline, with one button to move 9 visits. Opus alone Sonnet with ShipRight 1.2 What 1.3 changed because of it Situation headline. The title states what is going on and the next decision, with numbers. The fix sits on the item. Each row that needs attention carries its one action. Compare to normal. A number shows its usual value beside it. No dev controls. Review switches hide behind ?review=1. Sample is allowed, if labeled. Rich demo data, never passed off as real. 1.3 eval runs are prepared in the repo and not graded yet. No score is shown until one exists. Install in one line. Free and open source. MIT license. Pick your tool. Claude Code Cursor Codex VS Code Antigravity Gemini CLI Claude.ai ChatGPT /plugin marketplace add aiwithaltaz/shipright-skills /plugin install shipright@shipright Copy Then type /shipright and say what you want to build. Questions. Something else? Ask on GitHub. Open an issue Is it free? Does it write my app? Will it make things up? Can it fix an app I already built? Which tools does it work with? What do the checks need? ShipRight 1.3.1 · MIT · by Altaz Lavji Case study GitHub",
+    "overflowX": 0,
+    "pageHeight": 9348,
+    "h1": 1,
+    "families": [
+     [
+      "Inter",
+      98
+     ],
+     [
+      "Fraunces",
+      22
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 2,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 0,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [],
+    "hiddenText": 65,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "hiddenIgnored": 0,
+    "posterLeak": 0,
+    "navWrapped": false,
+    "sliderIssues": [],
+    "staleClaims": [],
+    "actSignatures": [
+     "dark|photo|left|screen",
+     "light|type|center|screen",
+     "light|type|left|screen",
+     "light|photo|left|screen",
+     "dark|type|left|screen",
+     "light|photo|center|screen",
+     "dark|type|left|band",
+     "light|type|left|band",
+     "dark|type|left|bar"
+    ],
+    "craftDupes": [],
+    "craftProduct": true,
+    "craftAccent": "",
+    "craftEmpty": 0,
+    "errors": [],
+    "pinClipped": [],
+    "fontsMissing": [],
+    "focusVisible": true,
+    "reduced": {
+     "hiddenText": 0,
+     "heroVisible": true,
+     "overflowX": 0,
+     "contentChanged": false
+    }
+   }
+  },
+  "phone": {
+   "results": [],
+   "metrics": {
+    "heroVisible": true,
+    "unsupportedProof": 0,
+    "undeclaredProof": 0,
+    "visibleWords": "Skip to content ShipRight Menu Turn an idea into a tested product your AI builds right. ShipRight is a free skill for your AI coding tool. It asks before it builds, writes the plan, designs the screens, and tests what it makes. Install ShipRight Watch a real run Context before generate. Product before pixels. The screen this run built. Sample data. /shipright · case c3 Play You I want to build a SaaS software One vague line. Nothing is built yet. Ask Cards Reply Files Screen Replay of a real run: Sonnet with ShipRight 1.2, case c3. Text shortened. Tap a step. Two ways in. NEW IDEA I have an idea. /shipright I want to build a booking app for my salon You answer up to 4 questions. Then it runs every stage: research, three concepts, risks, scope and pages, architecture, design system, three design options, build, test, and a launch check. \"Just build it\" does not skip a stage. EXISTING APP I already built something. /shipright review my app and make it better It uses every screen like a first-time user. It says what works first, then lists each pain with a screenshot and a cause, and ranks the fixes. Every change it builds names its pain and has a test. What lands in your folder. Real files from the c3 run. Tap one to read a few lines. Your coding tool reads the same folder, so nothing is left to guess. docs/shipright/ 01-prd.md 02-technical-architecture.md 04-frontend-spec.md 05-feature-ticket-list.md critique.md ship-check.md ./ DESIGN.md 1.3 also keeps a project record: CONTEXT, DECISIONS, CHANGELOG and HANDOFF. A new chat can pick up where the last one stopped. 01-prd.md Who: the owner or office manager of a landscaping company with 3 to 20 workers, usually 1 to 4 crews. Job: put every job on a crew and a day without overloading anyone, then bill for finished jobs. What they do today: Unknown. Hypothesis H1: a whiteboard, a group chat, a spreadsheet or paper. Source needed: 5 owner conversations. Unknown stays Unknown. It names who checks it. Before and after. Product site SaaS dashboard Feedback round IVC desk Before · 0.6.2 After · 1.0 Same prompt, two pack versions. 1.0 put Buy in the hero, view buttons under the model, and a working name in place of placeholders. Eleven stages. Each one writes a file. A new idea runs 1 to 10. An app you already built starts at 0. A stage is not done until the project record is updated. 0 Discover pain-map.md 1 Research research-brief.md 2 Brainstorm concepts.md 3 Problem solving risks.md 4 Scope and pages scope.md 5 Architecture architecture.md 6 Design system DESIGN.md 7 Three options options.md 8 Build the screen 9 Test test-report.md 10 Ship check ship-check.md + Record CONTEXT · DECISIONS · HANDOFF We test it against Opus. Here is where it lost. Same prompt. Opus alone on the left. Sonnet with ShipRight 1.2 on the right. Opus thought harder about the product. These three pairs are why 1.3 exists. LinkedIn assistant Opus led with the situation: 7 actions left, about 13 minutes, everything drafted. The 1.2 screen showed users a \"Preview state\" switch meant for developers. Opus alone Sonnet with ShipRight 1.2 AI agent dashboard Opus put the fix on each problem, like Pause agent and Cap at $150/day, and compared each number to normal: 18%, usually 2%. The 1.2 screen listed statuses with no action. Opus alone Sonnet with ShipRight 1.2 Landscaping SaaS Both flagged the crew day over its hours. Opus also put the week's money and Thursday's rain in the headline, with one button to move 9 visits. Opus alone Sonnet with ShipRight 1.2 What 1.3 changed because of it Situation headline. The title states what is going on and the next decision, with numbers. The fix sits on the item. Each row that needs attention carries its one action. Compare to normal. A number shows its usual value beside it. No dev controls. Review switches hide behind ?review=1. Sample is allowed, if labeled. Rich demo data, never passed off as real. 1.3 eval runs are prepared in the repo and not graded yet. No score is shown until one exists. Install in one line. Free and open source. MIT license. Pick your tool. Claude Code Cursor Codex VS Code Antigravity Gemini CLI Claude.ai ChatGPT /plugin marketplace add aiwithaltaz/shipright-skills /plugin install shipright@shipright Copy Then type /shipright and say what you want to build. Questions. Something else? Ask on GitHub. Open an issue Is it free? Does it write my app? Will it make things up? Can it fix an app I already built? Which tools does it work with? What do the checks need? ShipRight 1.3.1 · MIT · by Altaz Lavji Case study GitHub",
+    "overflowX": 0,
+    "pageHeight": 13968,
+    "h1": 1,
+    "families": [
+     [
+      "Inter",
+      94
+     ],
+     [
+      "Fraunces",
+      22
+     ]
+    ],
+    "contrast": [],
+    "smallText": 0,
+    "eyebrows": 2,
+    "gradients": 0,
+    "gradientText": 0,
+    "glows": 0,
+    "smallTargets": 0,
+    "touchTargets": 0,
+    "filledPairs": 0,
+    "unlabeled": 0,
+    "noAlt": 0,
+    "namelessButtons": 0,
+    "canvases": [],
+    "hiddenText": 65,
+    "emDashes": 0,
+    "animated": true,
+    "reducedMotionRule": true,
+    "outlineNone": false,
+    "hiddenIgnored": 0,
+    "posterLeak": 0,
+    "navWrapped": false,
+    "sliderIssues": [],
+    "staleClaims": [],
+    "actSignatures": [
+     "dark|photo|left|screen",
+     "light|type|center|screen",
+     "light|type|left|screen",
+     "light|photo|left|band",
+     "dark|type|left|screen",
+     "light|photo|center|screen",
+     "dark|type|left|band",
+     "light|type|left|band",
+     "dark|type|left|bar"
+    ],
+    "craftDupes": [],
+    "craftProduct": true,
+    "craftAccent": "",
+    "craftEmpty": 0,
+    "errors": [],
+    "pinClipped": [],
+    "fontsMissing": [],
+    "focusVisible": true,
+    "reduced": {
+     "hiddenText": 0,
+     "heroVisible": true,
+     "overflowX": 0,
+     "contentChanged": false
+    }
+   }
+  }
+ }
+}

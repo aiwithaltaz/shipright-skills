@@ -1,0 +1,5 @@
+dist/case-study.html            3.88 kB │ gzip: 1.60 kB
+dist/index.html                28.25 kB │ gzip: 7.58 kB
+dist/assets/main-DsYLJv6D.css  22.01 kB │ gzip: 5.16 kB
+dist/assets/main-DJ1qWioA.js    7.37 kB │ gzip: 3.11 kB
+✓ built in 123ms

@@ -3,19 +3,60 @@
     {
       "name": "home",
       "file": "../dist/index.html",
-      "widths": [390, 1280],
+      "widths": [
+        390,
+        1280
+      ],
       "actions": [
+        {
+          "type": "click",
+          "selector": "[data-go=\"1\"]",
+          "expectText": "Who is it for, and what one job should version one finish?"
+        },
+        {
+          "type": "click",
+          "selector": "[data-go=\"3\"]",
+          "expectText": "05-feature-ticket-list.md"
+        },
+        {
+          "type": "click",
+          "selector": "[data-go=\"4\"]",
+          "expectText": "Subscription price"
+        },
+        {
+          "type": "click",
+          "selector": "#f-crit",
+          "expectText": "Phone form hid its Cancel and Save buttons below the scroll"
+        },
+        {
+          "type": "click",
+          "selector": "#p-ivc",
+          "expectText": "This after is Altaz"
+        },
+        {
+          "type": "click",
+          "selector": "#p-feedback",
+          "expectText": "remove the dot on the selected nav item"
+        },
         {
           "type": "click",
           "selector": "#install-tab-cursor",
           "expectText": "npx skills add aiwithaltaz/shipright-skills -a cursor -y"
+        },
+        {
+          "type": "click",
+          "selector": "[aria-controls=\"a1\"]",
+          "expectText": "open source under the MIT license"
         }
       ]
     },
     {
       "name": "case",
       "file": "../dist/case-study.html",
-      "widths": [390, 1280],
+      "widths": [
+        390,
+        1280
+      ],
       "actions": []
     }
   ]

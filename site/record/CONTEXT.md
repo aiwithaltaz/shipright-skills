@@ -2,6 +2,17 @@
 
 Status: current
 
+## Site
+
+- What it is: the public ShipRight site, site/ in this repo, live at shipright-psi.vercel.app.
+- Who it is for: builders who use an AI coding tool and want it to plan, design and test before it codes.
+- Decision in one line: the first screen replays a real ShipRight run, so a visitor sees the product working, then installs it.
+- Phase: 1.3.1 site rebuild on branch feat/site-1.3.1-run. Proposed, awaiting owner approval. Not deployed to production.
+- Locks: paper, ink and sealing-wax palette. Inter and Fraunces. The headline. Install tabs. The c7 case study. Nothing ships until the owner says "push it".
+- Discovery: site-discovery.md. Fix map: site-pain-map.md. Options: options.md. Layout: layout-spec.md.
+
+## Case study
+
 ## Facts
 
 - Case c7. The number 7 is the case id.

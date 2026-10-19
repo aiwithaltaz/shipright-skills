@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Site rebuilt with ShipRight 1.3.1 on its own page (stage 0, then 4 to 9). The first screen replays the real c3 run and shows the screen it built. New acts: two ways in, what lands in your folder, eleven stages, FAQ. The 0.6.2 to 1.0 and IVC before and after pairs are back in a four-tab slider. Proof says where 1.2 lost to Opus and what 1.3 changed.
+- three.js, GSAP and Lenis removed from the site. Page JS is about 8 kB.
+- Premium check-ui 0 fail 0 warn on both pages, run-tests 30/30, consistency pass, check-record pass. No horizontal scroll from 320 to 1536.
+- Limits: the replay is a 1.2 run, labeled. 1.3 eval scores are pending. Taste is Not verified. Not deployed until the owner approves.
+
 ## 1.3.1 - 2026-10-18
 
 Released as v1.3.1. The site is not deployed. There is no zip. Use the repository.
