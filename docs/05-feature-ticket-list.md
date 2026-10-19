@@ -1,6 +1,6 @@
 # 05 - Feature tickets
 
-**Status: Template (ShipRight 1.3.1).**
+**Status: Template (ShipRight 1.4.0).**
 **Project path:** `docs/shipright/05-feature-ticket-list.md`
 
 **Version/date:** <!-- -->  **Sources and approval:** <!-- -->

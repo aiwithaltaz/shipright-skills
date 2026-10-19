@@ -1,5 +1,7 @@
 # Stage 3: Problem solving
 
+**Deal first:** run `node <skill>/scripts/deal.mjs --stage 03 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
+
 Find the hard problems and answer each one. Open [risks.md](../templates/risks.md).
 Required headings: Risks, Platform verdict, Required rows.
 

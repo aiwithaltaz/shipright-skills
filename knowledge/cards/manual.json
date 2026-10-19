@@ -1,0 +1,236 @@
+[
+ {
+  "id": "00-idea-brief-five-parts",
+  "stage": "00-discover",
+  "topic": "idea framing",
+  "rule": "Turn the one-line idea into a brief with vision, the user, MVP features, tech stack and a project structure outline before research.",
+  "why": "The workflow starts with a written vision and MVP list, so later steps have something to test.",
+  "do": "idea.md lists vision, who it is for, 3 to 5 MVP features, stack, folder outline, next step.",
+  "dont": "Jumping from \"a CRM for agencies\" straight to screens.",
+  "example": "",
+  "source_url": "https://www.instagram.com/p/DeEqz4EOspV/",
+  "source_quote": "the ideation output has Project Vision, Key Features (MVP), Tech Stack, Project Structure Outline, and Next Step",
+  "check_kind": "script",
+  "check": "check-record --base: the idea record has Vision, User, MVP, Out of scope and Next step headings with text under each.",
+  "tags": [
+   "any"
+  ],
+  "category": "idea",
+  "date": "2026-10-19",
+  "origin": "manual"
+ },
+ {
+  "id": "08-project-rules-file",
+  "stage": "08-build",
+  "topic": "project rules",
+  "rule": "Write a project rules file (stack, folders, naming, tokens, banned patterns) before the first line of build code.",
+  "why": "Step 8 of the workflow; rules keep many AI sessions consistent.",
+  "do": "PROJECT-RULES.md with stack, folder map, naming, token file path and the ban list.",
+  "dont": "Each build session re-deciding folder names and colors.",
+  "example": "",
+  "source_url": "https://www.instagram.com/p/DeEqz4EOspV/",
+  "source_quote": "8 PROJECT RULES, 9 TASK BREAKDOWN, 10 SETUP",
+  "check_kind": "script",
+  "check": "check-record --base: a ARCHITECTURE.md has Project rules with Stack, Folders and Banned lines.",
+  "tags": [
+   "app",
+   "saas",
+   "any"
+  ],
+  "category": "saas",
+  "date": "2026-10-19",
+  "origin": "manual"
+ },
+ {
+  "id": "10-security-review",
+  "stage": "10-ship-check",
+  "topic": "security review",
+  "rule": "Run a security review against the OWASP Top 10 before shipping anything with accounts, forms or data.",
+  "why": "Step 13 of the workflow; broken access control is the top web risk.",
+  "do": "Ship check lists each OWASP item as checked, not applicable, or open.",
+  "dont": "Shipping a login form with no note on access control or input handling.",
+  "example": "",
+  "source_url": "https://owasp.org/www-project-top-ten/",
+  "source_quote": "The OWASP Top 10 is the reference standard for the most critical web application security risks.",
+  "check_kind": "script",
+  "check": "check-record --ship: the ship record has a Security section naming access control and input validation.",
+  "tags": [
+   "app",
+   "saas",
+   "form"
+  ],
+  "category": "saas",
+  "date": "2026-10-19",
+  "origin": "manual"
+ },
+ {
+  "id": "10-preview-deploy-before-prod",
+  "stage": "10-ship-check",
+  "topic": "preview deploy",
+  "rule": "Deploy every change to a preview URL and QA it there before production.",
+  "why": "Steps 15 to 17: preview, QA, then production.",
+  "do": "Ship record links the preview URL and the QA pass on it.",
+  "dont": "Merging to main and testing on the live site.",
+  "example": "",
+  "source_url": "https://www.instagram.com/p/DeEqz4EOspV/",
+  "source_quote": "14 CODE REVIEW, 15 PREVIEW DEPLOYMENT, 16 QA TESTING, 17 PRODUCTION DEPLOY",
+  "check_kind": "script",
+  "check": "check-record --ship: the ship record has Preview and QA sections, QA lists the screens and states tested.",
+  "tags": [
+   "app",
+   "saas",
+   "landing"
+  ],
+  "category": "saas",
+  "date": "2026-10-19",
+  "origin": "manual"
+ },
+ {
+  "id": "10-monitoring-after-launch",
+  "stage": "10-ship-check",
+  "topic": "monitoring",
+  "rule": "Name what you will watch after launch: errors, latency, traffic and saturation, and who looks.",
+  "why": "Step 18 of the workflow; the four golden signals are the minimum.",
+  "do": "Ship record: \"Errors: runtime logs daily. Latency: p95 page load. Owner: Altaz.\"",
+  "dont": "Launching with no plan to see breakage.",
+  "example": "",
+  "source_url": "https://sre.google/sre-book/monitoring-distributed-systems/",
+  "source_quote": "The four golden signals of monitoring are latency, traffic, errors, and saturation.",
+  "check_kind": "script",
+  "check": "check-record --ship: the ship record has a Monitoring section with at least errors and an owner.",
+  "tags": [
+   "app",
+   "saas"
+  ],
+  "category": "saas",
+  "date": "2026-10-19",
+  "origin": "manual"
+ },
+ {
+  "id": "05-thumb-reach-tap-spacing",
+  "stage": "05-architecture",
+  "topic": "tap targets",
+  "rule": "Keep phone tap targets at least 44px and spaced apart, with main actions in thumb reach.",
+  "why": "Small, crowded targets cause mis-taps (synsation_ Build for Good UX Pt 19).",
+  "do": "Bottom action bar with 48px buttons and 8px gaps.",
+  "dont": "Three 28px icon buttons touching in the top corner.",
+  "example": "",
+  "source_url": "https://www.instagram.com/synsation_/reel/Dc2Z_OyBWtc/",
+  "source_quote": "small tap targets placed close together cause mis-taps; mind thumb reach",
+  "check_kind": "script",
+  "check": "check-ui small-targets / touch-targets at 390.",
+  "tags": [
+   "mobile",
+   "app"
+  ],
+  "category": "ux-fundamentals",
+  "date": "2026-10-19",
+  "origin": "manual"
+ },
+ {
+  "id": "05-skeleton-vs-spinner",
+  "stage": "05-architecture",
+  "topic": "loading state",
+  "rule": "Pick the loading pattern by context: skeleton for page or list loads with known layout, spinner only for short single actions.",
+  "why": "synsation_ Pt 3; skeletons show structure and feel faster.",
+  "do": "Leads table shows 8 skeleton rows while loading.",
+  "dont": "A full-page spinner over the dashboard for every load.",
+  "example": "",
+  "source_url": "https://www.instagram.com/synsation_/reel/DYcbCoiIKK1/",
+  "source_quote": "choose the loading pattern by context, skeleton screen vs spinner",
+  "check_kind": "script",
+  "check": "check-record --base: every screen lists a loading state naming skeleton or spinner.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "states",
+  "date": "2026-10-19",
+  "origin": "manual"
+ },
+ {
+  "id": "07-glass-with-contrast",
+  "stage": "07-design-options",
+  "topic": "glass trend",
+  "rule": "If you use glass, keep text contrast at 4.5:1 over the busiest part of the background, and use it on one layer only.",
+  "why": "Glass is returning (synsation_), but blur over busy media fails contrast.",
+  "do": "One frosted nav over a calm photo, tested for contrast.",
+  "dont": "Every card frosted over a gradient blob.",
+  "example": "",
+  "source_url": "https://www.instagram.com/synsation_/",
+  "source_quote": "Skeuomorphism to flat to glass history; glass is coming back",
+  "check_kind": "rubric",
+  "check": "Is glass used on at most one layer, with readable text over the busiest part?",
+  "tags": [
+   "landing",
+   "app"
+  ],
+  "category": "modern-ui",
+  "date": "2026-10-19",
+  "origin": "manual"
+ },
+ {
+  "id": "08-motion-references",
+  "stage": "08-build",
+  "topic": "motion references",
+  "rule": "For cursor, magnetic and trail effects, start from a maintained library example (Motion.dev, Anime.js) and add a reduced-motion path.",
+  "why": "Resource post from @avani.codes; libraries handle timing and cleanup.",
+  "do": "Magnetic button from a Motion example with prefers-reduced-motion off switch.",
+  "dont": "Hand-rolled rAF cursor that never stops on reduced motion.",
+  "example": "",
+  "source_url": "https://www.instagram.com/p/DeebqHiN7gj/",
+  "source_quote": "Anime.js (animation engine), Motion.dev (UI animation and interaction examples, e.g. cursor effects, magnetic, trails)",
+  "check_kind": "test",
+  "check": "check-ui premium-reduced-content passes with reduced motion.",
+  "tags": [
+   "motion",
+   "landing"
+  ],
+  "category": "motion",
+  "date": "2026-10-19",
+  "origin": "manual"
+ },
+ {
+  "id": "09-heading-words-match-color",
+  "stage": "09-test-and-critique",
+  "topic": "copy vs color",
+  "rule": "A heading must not name a color or tone that contradicts the background it sits on.",
+  "why": "1.3.1 bug: \"One step is black\" sat on a black band and read as a mistake.",
+  "do": "\"Here the band turns light\" on a light band.",
+  "dont": "\"One step is black\" on a #000 band.",
+  "example": "",
+  "source_url": "knowledge/sources/lessons.md",
+  "source_quote": "Nothing automated catches the wrong \"One step is black\" wording on a black band",
+  "check_kind": "script",
+  "check": "check-ui heading-color-word.",
+  "tags": [
+   "landing",
+   "any"
+  ],
+  "category": "slop",
+  "date": "2026-10-19",
+  "origin": "manual"
+ },
+ {
+  "id": "09-pin-length-cap",
+  "stage": "09-test-and-critique",
+  "topic": "pin length",
+  "rule": "Keep a pinned scroll scene to at most 3 screens of scroll per pinned step, and never more than 6 screens total.",
+  "why": "1.3.1 hole: long pins feel stuck and nothing checked length.",
+  "do": "5 steps pinned over 2.5 screens each.",
+  "dont": "A hero pin that eats 12 screens of scroll.",
+  "example": "",
+  "source_url": "knowledge/sources/lessons.md",
+  "source_quote": "nothing checks pin length",
+  "check_kind": "script",
+  "check": "check-ui pin-length.",
+  "tags": [
+   "motion",
+   "landing"
+  ],
+  "category": "motion",
+  "date": "2026-10-19",
+  "origin": "manual"
+ }
+]

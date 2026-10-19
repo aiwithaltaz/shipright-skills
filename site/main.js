@@ -216,7 +216,7 @@ addEventListener('pageshow', () => { const w = $('.wipe'); if (w) w.getAnimation
 if (!reduced && 'IntersectionObserver' in window) {
   const targets = [...$$('h1, h2').filter(h => h.querySelector('.mask'))];
   targets.forEach(t => t.classList.add('reveal'));
-  const blocks = $$('.door, .stage-grid li, .pair, .changed, .q');
+  const blocks = $$('.door, .stage-list li, .deal-cards li, .pair, .changed, .q');
   blocks.forEach(b => b.classList.add('fade'));
   const io = new IntersectionObserver(entries => {
     entries.forEach(entry => {

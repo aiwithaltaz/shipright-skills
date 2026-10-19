@@ -1,0 +1,8 @@
+{
+ "model": "deepseek-flash",
+ "calls": 64,
+ "input_tokens": 215694,
+ "cache_hit_tokens": 7168,
+ "output_tokens": 299799,
+ "cost_upper_bound_usd": 0.4225
+}

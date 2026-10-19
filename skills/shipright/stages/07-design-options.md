@@ -1,5 +1,7 @@
 # Stage 7: Layout and options
 
+**Deal first:** run `node <skill>/scripts/deal.mjs --stage 07 --tags <project tags>`. It prints cards and 3 directions. Base the three options on those directions.
+
 Structure every screen, then show exactly three directions. Open [layout-moves.md](../patterns/layout-moves.md), [layout-spec.md](../templates/layout-spec.md), and [options.md](../templates/options.md).
 Required headings in layout-spec.md: Job, Zones, Hero, Changes.
 Required headings in options.md: Options, Pick.

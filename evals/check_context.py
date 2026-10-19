@@ -266,6 +266,32 @@ def check_tokens(root, policy, count):
                               'stored_skill_tokens': sum(sizes.values()), 'repository_bytes': repo_bytes}
 
 
+DEALT_TOKENS = 1200  # 1.4 dealer cap per stage; kept here so the approved policy limits stay unchanged.
+
+
+def check_dealt(root, policy, count, report):
+    """1.4: the dealer output is the only part of the card library that enters context. Cap it per stage."""
+    import shutil, subprocess
+    dealer = root / 'skills/shipright/scripts/deal.mjs'
+    limit = DEALT_TOKENS
+    if not dealer.exists():
+        return []
+    if not shutil.which('node'):
+        return ['dealt output: node is required to measure deal.mjs']
+    errors, sizes = [], {}
+    for stage in ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10']:
+        out = subprocess.run(['node', str(dealer), '--stage', stage, '--n', '8', '--tags', 'landing,saas,dashboard,app,mobile,motion,3d'],
+                             capture_output=True, text=True, timeout=60)
+        if out.returncode:
+            errors.append(f'deal.mjs --stage {stage}: exit {out.returncode}')
+            continue
+        sizes[stage] = count(out.stdout)
+        if sizes[stage] > limit:
+            errors.append(f'deal.mjs --stage {stage}: {sizes[stage]} tokens > {limit}')
+    report['dealt_tokens'] = sizes
+    return errors
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=ROOT)
@@ -279,6 +305,7 @@ def main():
             token_errors, warnings, report = check_tokens(args.root, policy, count)
             errors.extend(token_errors)
             report['direct_links'] = inventory
+            errors.extend(check_dealt(args.root, policy, count, report))
         except Exception as exc:
             errors.append(f'token check unavailable: {type(exc).__name__}: {exc}')
     report.update(status='Fail' if errors else 'Pass', errors=errors, warnings=warnings)
@@ -291,6 +318,8 @@ def main():
         if not errors:
             print(f'{TOKENIZER}: {len(report["files"])} files; always shared {report["always_shared_tokens"]}; '
                   f'all shared {report["shared_total_tokens"]}; no global knowledge cap.')
+            if report.get('dealt_tokens'):
+                print(f'dealt cards: largest stage {max(report["dealt_tokens"].values())}/{DEALT_TOKENS} tokens')
             for name, paths in report['normal_paths'].items():
                 print(f'{name}: largest declared normal path {max(p["tokens"] for p in paths.values())}/12000 tokens')
         print('Static declarations do not guarantee client loading or universal provider token counts.')

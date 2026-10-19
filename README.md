@@ -1,9 +1,9 @@
 # ShipRight
 
-**Version 1.3.1**
+**Version 1.4.0**
 **Context before generate. Product before pixels.**
 
-**1.3.1 is released.** Turn an idea into a tested product your AI builds right. Install from this repository (there is no zip). The Claude eval scores for 1.3 are still pending; see `evals/v2/runs/release-1.3/RUN-GUIDE.md`.
+**1.4.0 adds a knowledge library.** 445 short rule cards from 64 public sources (UX, research, architecture, app states, SaaS, design systems, UI, motion), each with a quote and a check. `scripts/deal.mjs` hands 5 to 8 of them to each stage, so the library never fills the context. Turn an idea into a tested product your AI builds right. Install from this repository (there is no zip). The Claude eval scores for 1.3 are still pending; see `evals/v2/runs/release-1.3/RUN-GUIDE.md`.
 
 ShipRight is one skill, named `shipright`, for Claude Code, Cursor, Codex, VS Code, Antigravity, Gemini CLI, Claude.ai, and ChatGPT.
 Bring an idea for a website, a SaaS app, a mobile app or a 3D site. You get a build pack: a PRD, a stack with reasons, a design system with tokens, screen specs, and small ordered tickets written as prompts you paste into your coding tool.

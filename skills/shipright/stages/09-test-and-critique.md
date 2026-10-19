@@ -1,5 +1,7 @@
 # Stage 9: Test and critique
 
+**Deal first:** run `node <skill>/scripts/deal.mjs --stage 09 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
+
 Prove it works, then look at it with fresh eyes. Open [test-plan.json](../templates/test-plan.json), [test-report.md](../templates/test-report.md), and [critique.md](../templates/critique.md).
 Required headings in test-report.md: Steps, Rounds, Limits.
 Required headings in critique.md: Removal, Patterns, Taste, Severity.
@@ -27,6 +29,8 @@ These fail on the standard profile too. Look at every pinned frame, not only the
 - `[hidden]` loses to `display`. Starter tokens and every block set `[hidden] { display: none !important; }`. The checker fails a hidden element that is still visible.
 - The fallback poster stays up under a live canvas. Fail when `[data-poster]` is visible and the canvas is showing.
 - Pinned scenes. The checker scrolls each pin and fails if visible content is clipped out of the viewport.
+- Heading color words. A heading that says a thing "is black" on a black band (or white on white) fails `heading-color-word`.
+- Pin length. A pin over 3 screens of scroll per `[data-step]`, or over 6 screens in total, fails `pin-length`.
 - Before and after sliders. The two pictures share one box, or both use `object-fit`, and the frame has no empty band.
 - Phone nav. At 390, in-flow nav links stay on one line.
 - Stale claims. The page sets `meta[name=pack-version]` and `meta[name=release-state]` (`released` or `draft`). A run may also pass `--release-state` and `--pack-version`. When the state is released, the visible text and the description must not say draft, not released, the draft is, or not started.

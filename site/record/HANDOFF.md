@@ -23,6 +23,19 @@ Status: current
 - D4 to D8 are Proposed. D1 and D2 (case study) are still Proposed.
 - Whether the case study may name the client.
 
+## Security
+
+- No accounts, forms, cookies or analytics, so access control and input validation are not applicable. Static files only.
+
+## Preview and QA
+
+- Preview: each PR gets a Vercel preview deployment. QA on it at 390 and 1280 with premium check-ui, run-tests and consistency before merge.
+
+## Monitoring
+
+- Errors: Vercel runtime and build logs after each deploy; console errors checked by crawl.mjs.
+- Owner: Altaz Lavji.
+
 ## How to run
 
 - cd site, npm ci, npm run build.

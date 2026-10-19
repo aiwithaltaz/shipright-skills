@@ -1,0 +1,30 @@
+{
+ "id": "B1-crm-dashboard",
+ "added": "1.4.0",
+ "prompt_file": "crm-dashboard.md",
+ "areas": [
+  "Overview",
+  "Leads",
+  "Pipeline",
+  "Team analytics",
+  "Revenue",
+  "Tasks",
+  "Notifications",
+  "Settings"
+ ],
+ "viewports": [
+  1280,
+  390
+ ],
+ "rubric": [
+  "UX thinking",
+  "Information architecture",
+  "Flows",
+  "States",
+  "Design quality",
+  "Phone",
+  "Honesty"
+ ],
+ "scale": "0-4",
+ "results": []
+}

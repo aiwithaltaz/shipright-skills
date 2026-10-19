@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 // Check a project record folder.
-// Usage: node <skill>/scripts/check-record.mjs <record-dir>
+// Usage: node <skill>/scripts/check-record.mjs <record-dir> [--base] [--ship]
+// --base (1.4): CONTEXT.md has an Idea brief, ARCHITECTURE.md has a Screens table with a job, one primary action
+//   and empty, loading and error states for every screen, plus Project rules. --ship (1.4): HANDOFF.md has
+//   Security, Preview and QA, and Monitoring sections.
 // Exit 0 when the six record files exist and are not templates, and any case study
 // or pitch deck in that folder passes the guardrails below.
 // Exit 1 on a problem. Exit 2 on bad usage.
@@ -184,6 +187,56 @@ if (existsSync(pitchPath)) {
       break;
     }
   }
+}
+
+const argv = process.argv.slice(2);
+function section(text, name) {
+  const m = text.match(new RegExp(`^## ${name}[^\\n]*\\n([\\s\\S]*?)(?=^## |(?![\\s\\S]))`, 'mi'));
+  return m ? m[1] : null;
+}
+function filled(body) { return body && body.replace(/^[-*\s]*$/gm, '').replace(/Names only\./, '').trim().length > 0; }
+function labeled(body, labels, where) {
+  for (const label of labels) {
+    const line = (body || '').match(new RegExp(`^[-*]\\s*${label}:\\s*(.*)$`, 'mi'));
+    if (!line || line[1].trim().length < 3) problems.push(`${where}: "${label}:" is missing or empty`);
+  }
+}
+const readIf = name => existsSync(join(dir, name)) ? read(join(dir, name)) : '';
+if (argv.includes('--base')) {
+  const ctx = readIf('CONTEXT.md');
+  const idea = section(ctx, 'Idea');
+  if (!idea) problems.push('CONTEXT.md: no "## Idea" brief (vision, user, MVP, out of scope, next step)');
+  else labeled(idea, ['Vision', 'User', 'MVP', 'Out of scope', 'Next step'], 'CONTEXT.md Idea');
+  const arch = readIf('ARCHITECTURE.md');
+  const screens = section(arch, 'Screens');
+  if (!screens) problems.push('ARCHITECTURE.md: no "## Screens" table (screen, job, primary action, empty, loading, error)');
+  else {
+    const rows = tableRows(screens);
+    if (!rows.length) problems.push('ARCHITECTURE.md Screens: table has no rows');
+    for (const row of rows) {
+      const name = row.screen || '?';
+      for (const col of ['job', 'primary action', 'empty', 'loading', 'error']) {
+        const v = (row[col] || '').trim();
+        if (!v || /^(-|tbd|todo|n\/a|none)$/i.test(v)) problems.push(`ARCHITECTURE.md Screens: ${name} has no ${col}`);
+      }
+      if (/\b(and|or)\b|[,+/]/i.test(row['primary action'] || '')) problems.push(`ARCHITECTURE.md Screens: ${name} has more than one primary action`);
+      if (row.loading && !/skeleton|spinner|progress|instant|optimistic|placeholder/i.test(row.loading)) problems.push(`ARCHITECTURE.md Screens: ${name} loading state does not name skeleton, spinner, progress or instant`);
+      if (row.error && !/retry|try again|fix|contact|back|undo|edit|reload/i.test(row.error)) problems.push(`ARCHITECTURE.md Screens: ${name} error state has no way out (retry, fix, back)`);
+    }
+  }
+  const rules = section(arch, 'Project rules');
+  if (!rules) problems.push('ARCHITECTURE.md: no "## Project rules" (stack, folders, banned)');
+  else labeled(rules, ['Stack', 'Folders', 'Banned'], 'ARCHITECTURE.md Project rules');
+}
+if (argv.includes('--ship')) {
+  const hand = readIf('HANDOFF.md');
+  for (const [name, need] of [['Security', /access|auth/i], ['Preview and QA', /https?:\/\/|preview/i], ['Monitoring', /error/i]]) {
+    const body = section(hand, name);
+    if (!filled(body)) problems.push(`HANDOFF.md: no filled "## ${name}" section`);
+    else if (!need.test(body)) problems.push(`HANDOFF.md ${name}: must mention ${need.source.replace(/\\/g, '')}`);
+  }
+  const mon = section(hand, 'Monitoring');
+  if (mon && filled(mon) && !/owner:/i.test(mon)) problems.push('HANDOFF.md Monitoring: no "Owner:" line');
 }
 
 if (problems.length) {

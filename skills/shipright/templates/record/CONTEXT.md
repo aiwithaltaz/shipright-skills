@@ -5,6 +5,14 @@ Status: template
 One page for the whole product. Replace stale lines. History lives in DECISIONS and CHANGELOG, not here.
 Replace `Status: template` with `Status: current` when filled.
 
+## Idea
+
+- Vision:
+- User:
+- MVP:
+- Out of scope:
+- Next step:
+
 ## What it is
 
 -

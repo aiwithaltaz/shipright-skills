@@ -1,0 +1,635 @@
+[
+ {
+  "id": "87754986fc",
+  "category": "idea",
+  "url": "https://www.ycombinator.com/library/4D-yc-s-essential-startup-advice",
+  "fetched": "2026-10-19",
+  "status": "too-short",
+  "title": "YC's essential startup advice  : YC Startup Library | Y Combinator",
+  "chars": 0
+ },
+ {
+  "id": "5fcc791faa",
+  "category": "idea",
+  "url": "https://paulgraham.com/startupideas.html",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "How to Get Startup Ideas",
+  "chars": 40562
+ },
+ {
+  "id": "611bea2a59",
+  "category": "idea",
+  "url": "https://paulgraham.com/ds.html",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Do Things that Don't Scale",
+  "chars": 25093
+ },
+ {
+  "id": "dcfd0c8e3d",
+  "category": "idea",
+  "url": "https://www.svpg.com/four-big-risks/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "The Four Big Risks - Silicon Valley Product Group : Silicon Valley Product Group",
+  "chars": 3878
+ },
+ {
+  "id": "ff90e1e642",
+  "category": "idea",
+  "url": "https://basecamp.com/shapeup/1.1-chapter-02",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Principles of Shaping | Shape Up",
+  "chars": 9662
+ },
+ {
+  "id": "57f77edcd0",
+  "category": "idea",
+  "url": "https://basecamp.com/shapeup/1.2-chapter-03",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Set Boundaries | Shape Up",
+  "chars": 10515
+ },
+ {
+  "id": "5ebf3a443c",
+  "category": "idea",
+  "url": "https://basecamp.com/shapeup/1.5-chapter-06",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Write the Pitch | Shape Up",
+  "chars": 11327
+ },
+ {
+  "id": "c214ca6ca6",
+  "category": "ux-fundamentals",
+  "url": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "10 Usability Heuristics for User Interface Design - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 14962
+ },
+ {
+  "id": "ffae43e543",
+  "category": "ux-fundamentals",
+  "url": "https://lawsofux.com/hicks-law/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Hick\u2019s Law | Laws of UXdown arrowdrop down arrowdrop up arrowleft arrowright arrowup arrowclosedownloadexternal linkfacebookFiltergridlanguageLinkedInlogomenuno",
+  "chars": 2933
+ },
+ {
+  "id": "006909d9cd",
+  "category": "ux-fundamentals",
+  "url": "https://lawsofux.com/fittss-law/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Fitts\u2019s Law | Laws of UXdown arrowdrop down arrowdrop up arrowleft arrowright arrowup arrowclosedownloadexternal linkfacebookFiltergridlanguageLinkedInlogomenun",
+  "chars": 2191
+ },
+ {
+  "id": "0acffca260",
+  "category": "ux-fundamentals",
+  "url": "https://lawsofux.com/jakobs-law/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Jakob\u2019s Law | Laws of UXdown arrowdrop down arrowdrop up arrowleft arrowright arrowup arrowclosedownloadexternal linkfacebookFiltergridlanguageLinkedInlogomenun",
+  "chars": 2384
+ },
+ {
+  "id": "cf44badbc8",
+  "category": "ux-fundamentals",
+  "url": "https://lawsofux.com/millers-law/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Miller\u2019s Law | Laws of UXdown arrowdrop down arrowdrop up arrowleft arrowright arrowup arrowclosedownloadexternal linkfacebookFiltergridlanguageLinkedInlogomenu",
+  "chars": 2064
+ },
+ {
+  "id": "f02538e949",
+  "category": "ux-fundamentals",
+  "url": "https://lawsofux.com/doherty-threshold/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Doherty Threshold | Laws of UXdown arrowdrop down arrowdrop up arrowleft arrowright arrowup arrowclosedownloadexternal linkfacebookFiltergridlanguageLinkedInlog",
+  "chars": 2098
+ },
+ {
+  "id": "2b8f64f022",
+  "category": "ux-fundamentals",
+  "url": "https://www.nngroup.com/articles/visibility-system-status/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Visibility of System Status - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 11812
+ },
+ {
+  "id": "c5180be664",
+  "category": "ux-fundamentals",
+  "url": "https://www.nngroup.com/articles/error-message-guidelines/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Error-Message Guidelines - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 12036
+ },
+ {
+  "id": "54898850c9",
+  "category": "ux-fundamentals",
+  "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Understanding Success Criterion 2.5.8: Target Size (Minimum) | WAI | W3CW3C homepageWeb Accessibility Initiative (WAI) homepage",
+  "chars": 25213
+ },
+ {
+  "id": "c8cd05d9fd",
+  "category": "ux-fundamentals",
+  "url": "https://www.nngroup.com/articles/progressive-disclosure/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Progressive Disclosure - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 12742
+ },
+ {
+  "id": "aaa9b22313",
+  "category": "research",
+  "url": "https://www.nngroup.com/articles/which-ux-research-methods/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "When to Use Which User-Experience Research Methods - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 17220
+ },
+ {
+  "id": "9bd4c49b1a",
+  "category": "research",
+  "url": "https://www.nngroup.com/articles/interviewing-users/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Interviewing Users - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 10214
+ },
+ {
+  "id": "7e945362ef",
+  "category": "research",
+  "url": "https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Why You Only Need to Test with 5 Users - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 9306
+ },
+ {
+  "id": "50cf459860",
+  "category": "research",
+  "url": "https://www.producttalk.org/opportunity-solution-trees/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Opportunity Solution Trees: Visualize Your Discovery to Stay Aligned and Drive Outcomes",
+  "chars": 34918
+ },
+ {
+  "id": "b976d0cb30",
+  "category": "research",
+  "url": "https://www.nngroup.com/articles/personas-study-guide/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Personas: Study Guide - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 4409
+ },
+ {
+  "id": "52bf64f2e3",
+  "category": "research",
+  "url": "https://www.nngroup.com/articles/competitive-usability-evaluations/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Competitive Usability Evaluations: Definition - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 11267
+ },
+ {
+  "id": "4e91417740",
+  "category": "architecture",
+  "url": "https://www.nngroup.com/articles/ia-vs-navigation/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "The Difference Between Information Architecture (IA) and Navigation - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 7169
+ },
+ {
+  "id": "a4458ac5dd",
+  "category": "architecture",
+  "url": "https://www.nngroup.com/articles/card-sorting-definition/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Card Sorting: Uncover Users' Mental Models - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 19668
+ },
+ {
+  "id": "5ccdbf2082",
+  "category": "architecture",
+  "url": "https://www.nngroup.com/articles/user-journeys-vs-user-flows/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "User Journeys vs. User Flows - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 9027
+ },
+ {
+  "id": "78d143b5f7",
+  "category": "architecture",
+  "url": "https://www.nngroup.com/articles/menu-design/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Menu-Design Checklist: 17 UX Guidelines - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 12114
+ },
+ {
+  "id": "ad432ac868",
+  "category": "architecture",
+  "url": "https://www.nngroup.com/articles/breadcrumbs/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Breadcrumbs: 11 Design Guidelines for Desktop and Mobile - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 11595
+ },
+ {
+  "id": "00d470891b",
+  "category": "architecture",
+  "url": "https://www.nngroup.com/articles/tree-testing/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Tree Testing: Evaluate Menu Labels and Categories - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 21502
+ },
+ {
+  "id": "4cc18c9eba",
+  "category": "states",
+  "url": "https://www.nngroup.com/articles/empty-state-interface-design/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Designing Empty States in Complex Applications: 3 Guidelines - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 12392
+ },
+ {
+  "id": "d0b5f2eebb",
+  "category": "states",
+  "url": "https://www.nngroup.com/articles/skeleton-screens/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Skeleton Screens 101 - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 9928
+ },
+ {
+  "id": "9f1cb6ee0e",
+  "category": "states",
+  "url": "https://www.nngroup.com/articles/progress-indicators/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Progress Indicators Make a Slow System Less Insufferable - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 18355
+ },
+ {
+  "id": "16ddf9d3c3",
+  "category": "states",
+  "url": "https://design-system.service.gov.uk/components/error-summary/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Error summary \u2013 GOV.UK Design SystemGOV.UK",
+  "chars": 16477
+ },
+ {
+  "id": "a86cda03b9",
+  "category": "states",
+  "url": "https://design-system.service.gov.uk/components/error-message/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Error message \u2013 GOV.UK Design SystemGOV.UK",
+  "chars": 13694
+ },
+ {
+  "id": "e5f566dddd",
+  "category": "states",
+  "url": "https://design-system.service.gov.uk/patterns/validation/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Recover from validation errors \u2013 GOV.UK Design SystemGOV.UK",
+  "chars": 6263
+ },
+ {
+  "id": "3bfb50dc61",
+  "category": "states",
+  "url": "https://m3.material.io/components/progress-indicators/guidelines",
+  "fetched": "2026-10-19",
+  "status": "too-short",
+  "title": "Progress indicators \u2013 Material Design 3",
+  "chars": 0
+ },
+ {
+  "id": "1a08348f81",
+  "category": "saas",
+  "url": "https://www.nngroup.com/articles/dashboards-preattentive/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Dashboards: Making Charts and Graphs Easier to Understand - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 16541
+ },
+ {
+  "id": "0cc4fc4652",
+  "category": "saas",
+  "url": "https://www.nngroup.com/articles/data-tables/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Data Tables: Four Major User Tasks - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 12474
+ },
+ {
+  "id": "dd6e7b0599",
+  "category": "saas",
+  "url": "https://design-system.service.gov.uk/patterns/question-pages/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Question pages \u2013 GOV.UK Design SystemGOV.UK",
+  "chars": 21433
+ },
+ {
+  "id": "d6ff1a0290",
+  "category": "saas",
+  "url": "https://www.nngroup.com/articles/user-onboarding/",
+  "fetched": "2026-10-19",
+  "status": "error: HTTP Error 404: Not Found"
+ },
+ {
+  "id": "6e5372da29",
+  "category": "saas",
+  "url": "https://basecamp.com/shapeup/2.2-chapter-08",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "The Betting Table | Shape Up",
+  "chars": 13933
+ },
+ {
+  "id": "aa79c4524f",
+  "category": "saas",
+  "url": "https://owasp.org/www-project-top-ten/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "OWASP Top 10 | OWASP FoundationOWASP Foundation",
+  "chars": 2410
+ },
+ {
+  "id": "9c951a11e2",
+  "category": "saas",
+  "url": "https://vercel.com/docs/deployments/preview-deployments",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "",
+  "chars": 15604
+ },
+ {
+  "id": "82833e3ee7",
+  "category": "saas",
+  "url": "https://sre.google/sre-book/monitoring-distributed-systems/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Google SRE: SRE Responsibilities and Management Frameworks",
+  "chars": 30531
+ },
+ {
+  "id": "9a4181de05",
+  "category": "design-systems",
+  "url": "https://m3.material.io/foundations/layout/understanding-layout/spacing",
+  "fetched": "2026-10-19",
+  "status": "too-short",
+  "title": "Grids & spacing \u2013 Material Design 3",
+  "chars": 0
+ },
+ {
+  "id": "b0bc06c4f2",
+  "category": "design-systems",
+  "url": "https://developer.apple.com/design/human-interface-guidelines/typography",
+  "fetched": "2026-10-19",
+  "status": "too-short",
+  "title": "Typography | Apple Developer Documentation",
+  "chars": 0
+ },
+ {
+  "id": "cc0e05eef9",
+  "category": "design-systems",
+  "url": "https://design-system.service.gov.uk/styles/spacing/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Spacing \u2013 GOV.UK Design SystemGOV.UK",
+  "chars": 5878
+ },
+ {
+  "id": "c12a03a0d2",
+  "category": "design-systems",
+  "url": "https://www.designtokens.org/tr/drafts/format/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Design Tokens Format Module 2025.10",
+  "chars": 83767
+ },
+ {
+  "id": "c4d825550e",
+  "category": "design-systems",
+  "url": "https://primer.style/foundations/color/overview",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Color usage | Primer",
+  "chars": 5791
+ },
+ {
+  "id": "d70488b60c",
+  "category": "design-systems",
+  "url": "https://atlassian.design/foundations/spacing",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Overview - Spacing - Atlassian Design",
+  "chars": 7090
+ },
+ {
+  "id": "12ede51b6f",
+  "category": "design-systems",
+  "url": "https://polaris-react.shopify.com/design/colors",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Polaris references",
+  "chars": 3735
+ },
+ {
+  "id": "4cf4312bb2",
+  "category": "modern-ui",
+  "url": "https://www.refactoringui.com/previews/building-your-color-palette",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Building Your Color Palette - Refactoring UIBuilding Your Color Palette - Refactoring UI",
+  "chars": 6199
+ },
+ {
+  "id": "f90d8a0ce2",
+  "category": "modern-ui",
+  "url": "https://www.smashingmagazine.com/2023/02/guide-accessible-form-validation/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "A Guide To Accessible Form Validation \u2014 Smashing MagazineClear SearchBack to top",
+  "chars": 28296
+ },
+ {
+  "id": "bcc2741127",
+  "category": "modern-ui",
+  "url": "https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/README.md",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "README.md",
+  "chars": 18359
+ },
+ {
+  "id": "1d93eb418c",
+  "category": "modern-ui",
+  "url": "https://www.nngroup.com/articles/glassmorphism/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Glassmorphism: Definition and Best Practices - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 9963
+ },
+ {
+  "id": "65e14e38ba",
+  "category": "modern-ui",
+  "url": "https://www.nngroup.com/articles/flat-design/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Flat Design: Its Origins, Its Problems, and Why Flat 2.0 Is Better for Users - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 11739
+ },
+ {
+  "id": "dce9740f7d",
+  "category": "motion",
+  "url": "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "ScrollTrigger | GSAP | Docs & LearningGSAPGSAPNotificationsMessages",
+  "chars": 50489
+ },
+ {
+  "id": "1f57dc2f1f",
+  "category": "motion",
+  "url": "https://gsap.com/resources/a11y/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Accessible Animation | GSAP | Docs & LearningGSAPGSAPNotificationsMessages",
+  "chars": 11608
+ },
+ {
+  "id": "7e3612d2c5",
+  "category": "motion",
+  "url": "https://github.com/darkroomengineering/lenis",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "GitHub - darkroomengineering/lenis: Smooth scroll as it should be \u00b7 GitHub",
+  "chars": 13684
+ },
+ {
+  "id": "6c1eff6526",
+  "category": "motion",
+  "url": "https://threejs.org/manual/en/fundamentals.html",
+  "fetched": "2026-10-19",
+  "status": "error: HTTP Error 404: Not Found"
+ },
+ {
+  "id": "e25aedb5ce",
+  "category": "motion",
+  "url": "https://threejs.org/manual/en/responsive.html",
+  "fetched": "2026-10-19",
+  "status": "error: HTTP Error 404: Not Found"
+ },
+ {
+  "id": "5cc8b7966c",
+  "category": "motion",
+  "url": "https://web.dev/articles/prefers-reduced-motion",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "prefers-reduced-motion: Sometimes less movement is more \u00a0|\u00a0 Articles \u00a0|\u00a0 web.devGitHubLinkedInMastodonBlueskyHomepage",
+  "chars": 12465
+ },
+ {
+  "id": "a88998b4c7",
+  "category": "motion",
+  "url": "https://www.nngroup.com/articles/animation-purpose-ux/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "The Role of Animation and Motion in UX - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 14590
+ },
+ {
+  "id": "fc2bad94d4",
+  "category": "motion",
+  "url": "https://motion.dev/docs/react-accessibility",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Create accessible animations in React | Guide | Motion for React",
+  "chars": 5346
+ },
+ {
+  "id": "a9bc9d84cc",
+  "category": "motion",
+  "url": "https://web.dev/articles/animations-guide",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "How to create high-performance CSS animations \u00a0|\u00a0 Articles \u00a0|\u00a0 web.devXGitHubGitHubLinkedInMastodonBlueskyHomepage",
+  "chars": 8423
+ },
+ {
+  "id": "711a25b520",
+  "category": "slop",
+  "url": "https://www.nngroup.com/articles/ai-design-tools-not-ready/",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "Status Update: AI UX-Design Tools Are Not Ready for Primetime - NN/GNielsen Norman GroupNielsen Norman Group",
+  "chars": 11373
+ },
+ {
+  "id": "41cd786267",
+  "category": "slop",
+  "url": "https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/skills/taste-skill/references/tells.md",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "tells.md",
+  "chars": 7398
+ },
+ {
+  "id": "aabb2fdf4a",
+  "category": "modern-ui",
+  "url": "https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/skills/taste-skill/references/app-screens.md",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "app-screens.md",
+  "chars": 85318
+ },
+ {
+  "id": "591468a920",
+  "category": "modern-ui",
+  "url": "https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/skills/taste-skill/references/critique.md",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "critique.md",
+  "chars": 11092
+ },
+ {
+  "id": "d22a64c334",
+  "category": "motion",
+  "url": "https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/skills/taste-skill/references/motion.md",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "motion.md",
+  "chars": 55356
+ },
+ {
+  "id": "2b1a3eb4f7",
+  "category": "modern-ui",
+  "url": "https://raw.githubusercontent.com/Leonxlnx/taste-skill/main/skills/taste-skill/references/layout.md",
+  "fetched": "2026-10-19",
+  "status": "ok",
+  "title": "layout.md",
+  "chars": 18284
+ }
+]

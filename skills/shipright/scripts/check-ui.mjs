@@ -297,7 +297,17 @@ function measure({ vp, premium, expectRelease, expectVersion }) {
     }
     return r.bottom - contentBottom > 140;
   }).length;
+  // 1.4: a heading that says a thing "is black" while it sits on black (or "is white" on white) describes a color the reader cannot see.
+  const headingColorWords = [...document.querySelectorAll('h1,h2,h3')].filter(vis).flatMap(el => {
+    const m = el.textContent.match(/\b(?:is|are|turns?|goes|stays|shown in|in)\s+(black|dark|white|light)\b/i);
+    if (!m) return [];
+    const bg = background(el); if (!bg) return [];
+    const tone = lum(bg) > 0.4 ? 'light' : 'dark';
+    const said = /black|dark/i.test(m[1]) ? 'dark' : 'light';
+    return said === tone ? [`"${el.textContent.trim().slice(0, 40)}" on a ${tone} background`] : [];
+  });
   return {
+    headingColorWords,
     heroVisible, unsupportedProof, undeclaredProof,
     visibleWords: text.replace(/\s+/g, ' ').trim(),
     overflowX: Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - vp.width,
@@ -348,6 +358,8 @@ const RULES = [
   ['pin-clip', 'FAIL', m => m.pinClipped && m.pinClipped.length, m => `pinned frame clips content out of the viewport: ${m.pinClipped.slice(0, 3).join(' | ')}`],
   ['slider-align', 'FAIL', m => m.sliderIssues && m.sliderIssues.length, m => `compare slider: ${m.sliderIssues.join('; ')}`],
   ['nav-wrap', 'FAIL', (m, vp) => vp.touch && m.navWrapped, () => 'phone nav wraps onto a second line at 390'],
+  ['heading-color-word', 'FAIL', m => m.headingColorWords && m.headingColorWords.length, m => `heading names the color of its own background: ${m.headingColorWords.join(' | ')}`],
+  ['pin-length', 'FAIL', m => m.pinLength && m.pinLength.length, m => `pinned scene is too long: ${m.pinLength.join(' | ')}. Keep 3 screens or less per step and 6 in total`],
   ['stale-claim', 'FAIL', m => m.staleClaims && m.staleClaims.length, m => `stale release claim: ${m.staleClaims.join(', ')}`],
 ];
 
@@ -433,6 +445,18 @@ async function run() {
     const m = await page.evaluate(measure, { vp, premium: profile === 'premium', expectRelease: flag('--release-state') || '', expectVersion: flag('--pack-version') || '' });
     m.errors = errors;
     m.pinClipped = await walkPins(page);
+    m.pinLength = await page.evaluate(() => {
+      const vh = window.innerHeight; const out = [];
+      const pins = [...document.querySelectorAll('.pin-spacer')].map(sp => ({ el: sp.firstElementChild || sp, travel: sp.offsetHeight - vh }));
+      document.querySelectorAll('[data-pin]').forEach(el => { if (!el.closest('.pin-spacer')) { const host = el.parentElement; if (host && host.offsetHeight > vh) pins.push({ el, travel: host.offsetHeight - vh }); } });
+      for (const { el, travel } of pins) {
+        if (travel <= 0) continue;
+        const steps = Math.max(1, el.querySelectorAll('[data-step]').length || +el.getAttribute('data-steps') || 1);
+        const screens = travel / vh; const per = screens / steps;
+        if (screens > 6 || per > 3) out.push(`${screens.toFixed(1)} screens for ${steps} step${steps > 1 ? 's' : ''}`);
+      }
+      return out;
+    });
     // A family is missing when text set in it measures the same as the generic fallbacks.
     m.fontsMissing = await page.evaluate(fams => {
       const ctx = document.createElement('canvas').getContext('2d'); const probe = 'Hamburgefonstiv 0123456789 WMwm';

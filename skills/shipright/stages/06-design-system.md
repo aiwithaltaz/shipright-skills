@@ -1,5 +1,7 @@
 # Stage 6: Design system
 
+**Deal first:** run `node <skill>/scripts/deal.mjs --stage 06 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
+
 One system, measured, then used. Open [DESIGN.md](../templates/DESIGN.md), [components.md](../templates/components.md), [tokens.css](../templates/tokens.css), and [motion.md](../patterns/motion.md) when anything moves.
 Required headings in DESIGN.md: Choice, Tokens, Components, Status table, Label table.
 Required headings in components.md: Variants, States, Screens.
