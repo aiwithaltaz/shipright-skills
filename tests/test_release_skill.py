@@ -26,9 +26,11 @@ class ReleaseSkillTests(unittest.TestCase):
             self.assertIn(f'shipright/modes/{mode}/MODE.md', names)
         for rel in (
             'shipright/scripts/check-ui.mjs',
+            'shipright/scripts/design-metrics.mjs',
             'shipright/scripts/crawl.mjs',
             'shipright/scripts/check-record.mjs',
             'shipright/templates/research-brief.md',
+            'shipright/templates/06-design-contract.md',
             'shipright/templates/concepts.md',
             'shipright/templates/risks.md',
             'shipright/patterns/README.md',

@@ -1,5 +1,13 @@
 # Changelog
 
+## Design Excellence draft - 2026-10-20 (unreleased)
+
+- Seven lean idea-to-design steps with one template each and a shared planning budget. Existing stage paths and five mode names remain compatible.
+- A canonical app craft layer covers type, spacing, charts, column contracts, missing values, navigation, states and motion. A self-critique loop uses two or three references, a proposed 8/10 threshold and separate independent review.
+- Six new browser rules measure word breaks, squeezed columns, raw values, required charts, nav scroll hints and weak type hierarchy. New research-synthesis cards retain source pointers and uncertainty.
+- Authored CRM fixtures and regression checks illustrate the rules. No independent model A/B result or universal win is claimed. See docs/design-excellence/README.md for evidence and the retest plan.
+
+
 ## 1.4.0 - 2026-10-19 (on branch feat/1.4-knowledge, not merged or released)
 
 - Knowledge library: 445 rule cards in `skills/shipright/library/cards.json`, from 64 public sources fetched on 2026-10-19 (NN/g, Laws of UX, GOV.UK Design System, WCAG, Shape Up, Paul Graham, SVPG, Product Talk, Atlassian, Primer, Polaris, Design Tokens, OWASP, Google SRE, Vercel, GSAP, Lenis, web.dev, Motion, Refactoring UI, Smashing, Taste Skill references under MIT). Each card has a rule, why, do, don't, a verbatim quote of 40 words or less, its URL, and a check.

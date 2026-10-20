@@ -234,6 +234,9 @@
         },
         "skills/shipright/modes/ui-ux-design/references/page-transition.md": {
           "when": "For chosen page transition, read [page-transition.md](references/page-transition.md)."
+        },
+        "skills/shipright/modes/ui-ux-design/references/design-excellence.md": {
+          "when": "For an app, dashboard or operational table, load [Design Excellence](references/design-excellence.md) before implementation or visual review."
         }
       },
       "normal_paths": [
@@ -386,6 +389,12 @@
             "skills/shipright/modes/ui-ux-design/references/block-wipe.md",
             "skills/shipright/modes/ui-ux-design/references/text-scramble.md"
           ]
+        },
+        {
+          "task": "App visual contract and reference critique",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/design-excellence.md"
+          ]
         }
       ]
     },
@@ -420,6 +429,9 @@
         },
         "skills/shipright/modes/ux-critique/references/taste-check.md": {
           "when": "For a public website or immersive page, read [taste-check.md](references/taste-check.md) and compare the rendered product and six-act story."
+        },
+        "skills/shipright/modes/ui-ux-design/references/design-excellence.md": {
+          "when": "For an app, dashboard or operational table, load [Design Excellence](../ui-ux-design/references/design-excellence.md) before implementation or visual review."
         }
       },
       "normal_paths": [
@@ -447,6 +459,12 @@
             "skills/shipright/modes/ux-critique/references/taste-check.md",
             "skills/shipright/modes/ux-critique/references/severity-rubric.md",
             "skills/shipright/modes/ux-critique/references/bounded-verification.md"
+          ]
+        },
+        {
+          "task": "App visual contract and reference critique",
+          "references": [
+            "skills/shipright/modes/ui-ux-design/references/design-excellence.md"
           ]
         }
       ]

@@ -1,0 +1,4 @@
+PASS: 1 installable skill and 5 modes; stable 8/10/10/20 gates plus build-pack 10; 528 local references; phase/feedback/intake contracts; synchronized F1-F3 exports; project paths; versions; 38983 skill words (informational; run check_context.py for token budgets); original paths and historical bytes retained.
+KNOWN LIMIT: Historical app.js hash mismatch is disclosed; old runtime evidence does not verify packaged app.js.
+KNOWN LIMIT: F03 raw evidence retains a quoted em dash; the style miss is disclosed.
+Source integrity only. Behavior trials, client installs and runtime verification require separate evidence.

@@ -58,10 +58,12 @@ Use 0-5 questions total before starting. For a vague app idea, the first reply i
 2. What stays out of this release.
 3. The look: the user's own design system or Figma file (it always wins), or a starter direction you recommend.
 
-Do not ask about the stack unless the user named a constraint; recommend it. After answers or "you decide", build the whole pack in one pass. That pass is the build pack only. A new project then follows the stages in SKILL.md and stops at the three options before the product build.
+Do not ask about the stack unless the user named a constraint; recommend it. After answers or "you decide", follow the seven idea-to-design steps in SKILL.md once. Their short records are the build pack; do not produce a separate long pack and then repeat the stages. Show unresolved layout choices before expanding the build.
 Delegated picks are recorded as Proposed (delegated). Prices, legal text, access policy and payments are never delegated.
 
 Shared rules live in the operating contract. Do not copy them into this mode.
+
+Steps 1 to 5 share the router's 700-word decision summary, excluding sources and necessary schemas. Reuse approved decisions; do not write a second planning deck.
 
 ## Sequence
 

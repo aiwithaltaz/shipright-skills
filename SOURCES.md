@@ -4,6 +4,24 @@ Provenance for ShipRight guidance. Skills never load this file; they cite it.
 Sources are guidance, not this product's findings, brand authority or approval. Ideas are borrowed; text is not copied.
 Registers below are kept from earlier phases with their original access dates. New v1.0 sources are listed first.
 
+## Design Excellence draft sources (2026-10-20)
+
+The owner supplied research.json from Perplexity. knowledge/sources/design-excellence.json records its SHA-256, selected excerpts and original JSON pointers. The new cards explicitly quote that synthesis; they do not claim verbatim upstream quotations. Upstream files and authenticated reference screens were not reverified.
+
+- Apple typography: role-based type and legibility. https://developer.apple.com/design/human-interface-guidelines/typography
+- Radix spacing: useful intermediate steps including 12px. https://github.com/radix-ui/themes/blob/main/packages/radix-ui-themes/src/styles/tokens/space.css
+- Refactoring UI: palette roles. https://refactoringui.com/previews/building-your-color-palette
+- Carbon: chart anatomy, palette semantics and dashboard questions. https://www.carbondesignsystem.com/building-blocks/data-visualization/chart-anatomy
+- Ant Design: table column/overflow contracts. https://github.com/ant-design/ant-design/blob/master/components/table/index.en-US.md
+- React Admin: missing-value semantics. https://github.com/marmelab/react-admin/blob/master/packages/ra-ui-materialui/src/field/TextField.tsx
+- Headless UI: peer tabs and panel relationships. https://github.com/tailwindlabs/headlessui/blob/main/packages/%40headlessui-react/src/components/tabs/tabs.tsx
+- WCAG: contrast and the 24px AA target criterion with exceptions. https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html and https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html
+- Motion: reduced-motion behavior. https://motion.dev/docs/react-accessibility
+- NN/g: visual hierarchy and evidence-backed review. https://www.nngroup.com/articles/principles-visual-design/
+- Attio, Linear and Stripe are reference candidates from the research, not verified current screen captures: https://attio.com/ https://linear.app/ https://stripe.com/
+
+The 700-word planning budget, checker thresholds and proposed 8/10 rubric are ShipRight implementation policies, not measured universal optima. No upstream code or reference-product assets are copied. See docs/design-excellence/README.md for rejected claims and the A/B retest protocol.
+
 ## 1.2 premium web sources
 
 Reference provenance: the owner's 16-site screenshot study, recorded 14 October 2026 in docs/rebuild-1.2/CONTEXT.md. The upload is not available in this checkout. These are pattern inspirations from that record, not claims that this implementation visited or copied every live site. Ideas only: no copied site code, prompt wording, layouts, screenshots, models or other assets. Site licenses are not assumed to grant reuse.

@@ -1,0 +1,14 @@
+PASS: bounded context and direct conditional references
+repository: 180714834 bytes; review assets (no global cap)
+site/node_modules/lightningcss-linux-x64-gnu/lightningcss.linux-x64-gnu.node: large file; review necessity (no size failure)
+site/node_modules/lightningcss-linux-x64-musl/lightningcss.linux-x64-musl.node: large file; review necessity (no size failure)
+site/node_modules/@rolldown/binding-linux-x64-musl/rolldown-binding.linux-x64-musl.node: large file; review necessity (no size failure)
+site/node_modules/@rolldown/binding-linux-x64-gnu/rolldown-binding.linux-x64-gnu.node: large file; review necessity (no size failure)
+{'package': 'tiktoken', 'version': '0.12.0', 'encoding': 'cl100k_base'}: 110 files; always shared 1915; all shared 3247; no global knowledge cap.
+dealt cards: largest stage 931/1200 tokens
+product-design: largest declared normal path 6319/12000 tokens
+ship-check: largest declared normal path 6130/12000 tokens
+ui-ux-design: largest declared normal path 11159/12000 tokens
+ux-critique: largest declared normal path 6834/12000 tokens
+build-pack: largest declared normal path 9399/12000 tokens
+Static declarations do not guarantee client loading or universal provider token counts.

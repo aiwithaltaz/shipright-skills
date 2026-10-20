@@ -33,3 +33,7 @@ Replace `Status: template` with `Status: current` when this file holds the proje
 ## Phases
 
 - 
+
+## Display contract
+
+Field | meaning | units/precision/locale | null/undefined/empty | 0/false | not applicable | retrieval error | freshness.

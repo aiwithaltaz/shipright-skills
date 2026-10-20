@@ -1,0 +1,632 @@
+[
+ {
+  "id": "06-craft-type",
+  "stage": "06-design-system",
+  "topic": "type",
+  "rule": "Assign type roles with explicit size, leading and weight; validate the research starting profile.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Use 12/16 meta, 14/20 body, 18/24 section and 24/32 title as Proposed starting values.",
+  "dont": "Flatten title and body into identical text.",
+  "example": "",
+  "source_url": "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md",
+  "source_quote": "Use role-based sizes and line heights, not one ratio applied indiscriminately.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/visual_rules/0/rule",
+  "upstream_status": "not reverified",
+  "check_kind": "test",
+  "check": "Inspect role tokens, font loading, heading/body contrast and 200% text.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "06-craft-spacing",
+  "stage": "06-design-system",
+  "topic": "spacing",
+  "rule": "Use a coherent spacing scale that includes 12px and documented optical exceptions.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Start at 4, 8, 12, 16, 24, 32, 48 and 64px.",
+  "dont": "Reject 12px solely because it is not on an 8px grid.",
+  "example": "",
+  "source_url": "https://github.com/radix-ui/themes/blob/main/packages/radix-ui-themes/src/styles/tokens/space.css",
+  "source_quote": "Use a coherent spacing system with useful intermediate steps.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/visual_rules/3/rule",
+  "upstream_status": "not reverified",
+  "check_kind": "test",
+  "check": "Run check-tokens; inspect shared edges and group spacing.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "06-craft-color",
+  "stage": "06-design-system",
+  "topic": "color",
+  "rule": "Map palette shades to semantic roles before assigning component colors.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Define surface, text, border, focus, action and status roles.",
+  "dont": "Give every nav item a competing accent box.",
+  "example": "",
+  "source_url": "https://refactoringui.com/previews/building-your-color-palette",
+  "source_quote": "Build neutral, primary and semantic scales rather than selecting five unrelated swatches.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/visual_rules/5/rule",
+  "upstream_status": "not reverified",
+  "check_kind": "test",
+  "check": "Audit undeclared colors and actual foreground/background contrast.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "06-craft-charts",
+  "stage": "06-design-system",
+  "topic": "charts",
+  "rule": "Specify the analytical question and data before choosing the required dashboard chart.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Time trend: line. Category comparison: bars. Exact lookup: table.",
+  "dont": "Replace a required chart with decorative KPI cards.",
+  "example": "",
+  "source_url": "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md",
+  "source_quote": "Choose a chart from the analytical question.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/visual_rules/9/rule",
+  "upstream_status": "not reverified",
+  "check_kind": "test",
+  "check": "Record question, source, units, range, aggregation and encoding; inspect plotted values.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "06-craft-columns",
+  "stage": "06-design-system",
+  "topic": "columns",
+  "rule": "Declare width, content and responsive behavior for each table column.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Set minimum/preferred width, growth, formatting and full-value access.",
+  "dont": "Split names or status words to fit a context rail.",
+  "example": "",
+  "source_url": "https://github.com/ant-design/ant-design/blob/master/components/table/index.en-US.md",
+  "source_quote": "Define content and width behavior for every column.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/visual_rules/13/rule",
+  "upstream_status": "not reverified",
+  "check_kind": "test",
+  "check": "Stress long names and large numbers; run mid-word-break and squeezed-columns.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "06-craft-states",
+  "stage": "06-design-system",
+  "topic": "states",
+  "rule": "Keep first use, no results and restricted states distinct.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Give each absent-data cause its own explanation and next action.",
+  "dont": "Use Create for every empty condition.",
+  "example": "",
+  "source_url": "https://github.com/Shopify/polaris/blob/main/polaris-react/src/components/EmptyState/EmptyState.tsx",
+  "source_quote": "Differentiate first use, no results and no permission.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/visual_rules/20/rule",
+  "upstream_status": "not reverified",
+  "check_kind": "test",
+  "check": "Exercise separate fixtures for first use, filtered-empty and restricted access.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "07-craft-references",
+  "stage": "07-design-options",
+  "topic": "references",
+  "rule": "Choose two or three task-relevant references before judging the screen.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Record capture, width, state and contribution for each reference.",
+  "dont": "Treat a promotional homepage as an observed authenticated app.",
+  "example": "",
+  "source_url": "https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md",
+  "source_quote": "A small annotated reference set and a coherent visual contract. This is the proposed missing bridge between ShipRight's product planning and component generation.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/workflow_steps/8/good_output",
+  "upstream_status": "not reverified",
+  "check_kind": "rubric",
+  "check": "Compare matched screenshots; unavailable reference evidence stays Not verified.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "07-craft-composition",
+  "stage": "07-design-options",
+  "topic": "composition",
+  "rule": "Allocate the dashboard to the question, visualization and underlying action.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Give the main decision readable space and link overview to records.",
+  "dont": "Force an empty context rail beside a squeezed table.",
+  "example": "",
+  "source_url": "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md",
+  "source_quote": "Prioritize the question and action, not a fixed row of KPI cards.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/visual_rules/12/rule",
+  "upstream_status": "not reverified",
+  "check_kind": "rubric",
+  "check": "Map regions to requirement IDs; inspect chart and queue in the first working viewport.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "07-craft-type",
+  "stage": "07-design-options",
+  "topic": "type",
+  "rule": "Review title, section, body and meta roles on the populated screen.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Use role tokens and weight to establish reading order.",
+  "dont": "Assume unusual fonts make a screen better.",
+  "example": "",
+  "source_url": "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md",
+  "source_quote": "Use role-based sizes and line heights, not one ratio applied indiscriminately.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/visual_rules/0/rule",
+  "upstream_status": "not reverified",
+  "check_kind": "test",
+  "check": "Compare computed roles and screenshots against the chosen references.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "07-craft-nav",
+  "stage": "07-design-options",
+  "topic": "nav",
+  "rule": "Make product, workspace scope and active destination identifiable.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Use restrained chrome and clear labels with a distinct workspace switch.",
+  "dont": "Use saturated boxes around every navigation destination.",
+  "example": "",
+  "source_url": "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md",
+  "source_quote": "Navigation should identify product, scope and destination.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/visual_rules/18/rule",
+  "upstream_status": "not reverified",
+  "check_kind": "test",
+  "check": "Identify product, workspace and active section from each captured state.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "07-craft-density",
+  "stage": "07-design-options",
+  "topic": "density",
+  "rule": "Treat compact density as coordinated padding, row pitch and type.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Keep records readable while tuning repeated row geometry.",
+  "dont": "Shrink text to fit every column beside a rail.",
+  "example": "",
+  "source_url": "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md",
+  "source_quote": "Density is a coordinated component setting, not smaller text.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/visual_rules/4/rule",
+  "upstream_status": "not reverified",
+  "check_kind": "rubric",
+  "check": "Record visible rows, padding and line counts at phone and desktop widths.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "08-craft-columns",
+  "stage": "08-build",
+  "topic": "columns",
+  "rule": "Preserve ordinary table words and provide access to truncated values.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Use selective nowrap or ellipsis and keyboard/touch detail access.",
+  "dont": "Apply break-all to human names and statuses.",
+  "example": "",
+  "source_url": "https://github.com/ant-design/ant-design/blob/master/components/table/demo/ellipsis.tsx",
+  "source_quote": "Truncate selectively and preserve access to the full value.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/visual_rules/14/rule",
+  "upstream_status": "not reverified",
+  "check_kind": "test",
+  "check": "Run geometry checks on longest values; open full values without hover.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "08-craft-missing",
+  "stage": "08-build",
+  "topic": "missing",
+  "rule": "Give missing fields product semantics without destroying zero or false.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Use Unassigned for missing owners and preserve real numeric zero.",
+  "dont": "Leak None, null, undefined or NaN into data cells.",
+  "example": "",
+  "source_url": "https://github.com/marmelab/react-admin/blob/master/packages/ra-ui-materialui/src/field/TextField.tsx",
+  "source_quote": "Missing values require product semantics, not raw serialization.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/visual_rules/17/rule",
+  "upstream_status": "not reverified",
+  "check_kind": "test",
+  "check": "Test null, undefined, empty, zero, false, not applicable and failed retrieval separately.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "08-craft-charts",
+  "stage": "08-build",
+  "topic": "charts",
+  "rule": "Implement the required chart from its question and data contract.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Label units, range and sample data; share formatters.",
+  "dont": "Use a decorative curve to satisfy chart presence.",
+  "example": "",
+  "source_url": "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md",
+  "source_quote": "Choose a chart from the analytical question.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/visual_rules/9/rule",
+  "upstream_status": "not reverified",
+  "check_kind": "test",
+  "check": "Check required chart presence, then verify actual encoding and values manually.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "08-craft-nav",
+  "stage": "08-build",
+  "topic": "nav",
+  "rule": "Transform global navigation deliberately on phones; keep peer tabs related.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Use a drawer or contained tab scroller with a visible linked hint.",
+  "dont": "Clip the last tab without a way to discover and reach it.",
+  "example": "",
+  "source_url": "https://github.com/tailwindlabs/headlessui/blob/main/packages/%40headlessui-react/src/components/tabs/tabs.tsx",
+  "source_quote": "Use tabs for related peer views and transform navigation deliberately on smaller screens.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/visual_rules/19/rule",
+  "upstream_status": "not reverified",
+  "check_kind": "test",
+  "check": "Run nav-scroll-hint; reach the last item by keyboard and touch.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "08-craft-motion",
+  "stage": "08-build",
+  "topic": "motion",
+  "rule": "Use motion for state and continuity while routine work stays usable.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Specify purpose, interruption and reduced-motion fallback.",
+  "dont": "Animate every data row on each refresh.",
+  "example": "",
+  "source_url": "https://motion.dev/docs/react-accessibility",
+  "source_quote": "Use motion to communicate state and continuity, not delay routine work.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/visual_rules/24/rule",
+  "upstream_status": "not reverified",
+  "check_kind": "test",
+  "check": "Exercise mid-animation input and reduced motion with essential text preserved.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "09-craft-geometry",
+  "stage": "09-test-and-critique",
+  "topic": "geometry",
+  "rule": "Review tables with difficult content before calling craft complete.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Capture long names, large/negative amounts and dense statuses.",
+  "dont": "Validate only short empty fixtures.",
+  "example": "",
+  "source_url": "https://github.com/ant-design/ant-design/blob/master/components/table/index.en-US.md",
+  "source_quote": "Define content and width behavior for every column.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/visual_rules/13/rule",
+  "upstream_status": "not reverified",
+  "check_kind": "test",
+  "check": "Run mid-word-break and squeezed-columns; inspect captures at 390 and 1280.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "09-craft-missing",
+  "stage": "09-test-and-critique",
+  "topic": "missing",
+  "rule": "Check rendered data for raw serialization and meaningful missing-value labels.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Use formatters that distinguish missing, false, zero and retrieval failure.",
+  "dont": "Globally replace every false-like value with a dash.",
+  "example": "",
+  "source_url": "https://github.com/marmelab/react-admin/blob/master/packages/ra-ui-materialui/src/field/TextField.tsx",
+  "source_quote": "Missing values require product semantics, not raw serialization.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/visual_rules/17/rule",
+  "upstream_status": "not reverified",
+  "check_kind": "test",
+  "check": "Run raw-data-value and formatter cases; verify failures are not shown as zero.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "09-craft-charts",
+  "stage": "09-test-and-critique",
+  "topic": "charts",
+  "rule": "A required dashboard visualization cannot disappear inside an average score.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Compare chart, question and actionable records against the brief.",
+  "dont": "Award craft points merely for chart count.",
+  "example": "",
+  "source_url": "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md",
+  "source_quote": "Prioritize the question and action, not a fixed row of KPI cards.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/visual_rules/12/rule",
+  "upstream_status": "not reverified",
+  "check_kind": "test",
+  "check": "Fail missing required charts; verify labels, units, source and task relevance.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "09-craft-type",
+  "stage": "09-test-and-critique",
+  "topic": "type",
+  "rule": "Inspect the implemented type hierarchy and real text wrapping.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Compare roles and reference screenshots at matched widths.",
+  "dont": "Treat a token list as proof of good typography.",
+  "example": "",
+  "source_url": "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md",
+  "source_quote": "Use role-based sizes and line heights, not one ratio applied indiscriminately.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/visual_rules/0/rule",
+  "upstream_status": "not reverified",
+  "check_kind": "test",
+  "check": "Run weak-type-scale; inspect actual font loading and hierarchy before accepting a warning.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ },
+ {
+  "id": "09-craft-review",
+  "stage": "09-test-and-critique",
+  "topic": "review",
+  "rule": "Keep product, visual and technical judgments separate and evidence based.",
+  "why": "A visible craft defect must be checked separately from planning completeness.",
+  "do": "Score five visual categories 0/1/2 with screenshot regions and limitations.",
+  "dont": "Let process scores average away unreadable tables or missing charts.",
+  "example": "",
+  "source_url": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+  "source_quote": "Proposed ShipRight policy: require usable core tasks, acceptable visual review and no unresolved release-blocking defects.",
+  "quote_scope": "research-synthesis",
+  "evidence_pointer": "/quality_measurement/19/how",
+  "upstream_status": "not reverified",
+  "check_kind": "rubric",
+  "check": "Self-critique against two or three references; fix and rescore to 8/10 with no blocker.",
+  "tags": [
+   "app",
+   "saas",
+   "dashboard"
+  ],
+  "category": "design-excellence",
+  "date": "2026-10-20",
+  "origin": "research-synthesis",
+  "required_for": [
+   "app",
+   "dashboard",
+   "saas"
+  ]
+ }
+]

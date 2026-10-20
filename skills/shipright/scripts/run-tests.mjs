@@ -33,6 +33,9 @@ mkdirSync(outDir, { recursive: true });
 function serve(dir) {
   return new Promise(ok => {
     const server = createServer((req, res) => {
+      // The browser can request an implicit icon even when a fixture declares none.
+      // Required page assets still return 404 and remain console failures.
+      if (req.url === '/favicon.ico') { res.writeHead(204); return res.end(); }
       const file = resolve(dir, '.' + decodeURIComponent(new URL(req.url, 'http://x').pathname));
       if (!(file + sep).startsWith(dir + sep) || !existsSync(file) || !statSync(file).isFile()) {
         res.writeHead(404); return res.end();
@@ -45,7 +48,7 @@ function serve(dir) {
 }
 
 const { chromium } = loadPlaywright();
-const browser = await chromium.launch({ args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
+const browser = await chromium.launch({ ...(process.env.SHIPRIGHT_BROWSER ? { executablePath: resolve(process.env.SHIPRIGHT_BROWSER) } : {}), args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
 const results = [];
 let server;
 let serverRoot;

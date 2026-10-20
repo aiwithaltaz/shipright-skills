@@ -3,7 +3,7 @@
 // Usage: node <skill>/scripts/check-tokens.mjs <tokens.css>
 // Pairs are comments: /* pair body --text --bg */ or /* pair ui --border --surface */
 // body must be at least 4.5:1. ui must be at least 3:1.
-// --space-* values must be 0, 4, 8, 16, 24, 32, 40, 48, or 64 px.
+// --space-* values use the starter scale, including 12px. Explicit optical exceptions are documented.
 // Exit 0 when all pairs pass. Exit 1 on a failed pair or an off-scale space. Exit 2 on bad usage.
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -18,13 +18,15 @@ const vars = {};
 for (const match of text.matchAll(/(--[a-z0-9-]+)\s*:\s*([^;]+);/gi)) {
   vars[match[1]] = match[2].trim();
 }
-const scale = new Set([0, 4, 8, 16, 24, 32, 40, 48, 64]);
+const scale = new Set([0, 4, 8, 12, 16, 24, 32, 40, 48, 64]);
 const fails = [];
 for (const [name, value] of Object.entries(vars)) {
   if (!name.startsWith('--space-')) continue;
   const px = value.match(/^(-?\d+(?:\.\d+)?)px$/);
-  const n = px ? Math.round(Number(px[1])) : null;
-  if (n === null || !scale.has(n)) fails.push(`${name}: ${value} is off the spacing scale`);
+  const n = px ? Number(px[1]) : null;
+  const exception = [...text.matchAll(/space-exception\s+(--space-[a-z0-9-]+)\s*:\s*([^\n*]+)/gi)]
+    .some(m => m[1] === name && m[2].trim().length >= 12);
+  if (n === null || (!scale.has(n) && !exception)) fails.push(`${name}: ${value} is off the spacing scale`);
 }
 
 function hexOf(token) {

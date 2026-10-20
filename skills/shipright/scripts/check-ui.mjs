@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // ShipRight screen checker. Opens a page in real Chromium and measures rules that can be measured.
-// Usage: node <skill>/scripts/check-ui.mjs <page.html | url> [--root dir] [--out dir] [--json] [--allow rule,rule] [--profile standard|premium] [--release-state released|draft] [--pack-version x.y.z]
+// Usage: node <skill>/scripts/check-ui.mjs <page.html | url> [--root dir] [--out dir] [--json] [--allow rule,rule] [--profile standard|premium|app] [--release-state released|draft] [--pack-version x.y.z]
 // <skill> is the folder that holds SKILL.md. The repo wrapper scripts/check-ui.mjs calls this file.
 // Local files are served over a throwaway local server rooted at --root (default: the current folder),
 // so module scripts and relative assets load as they would on a real site.
@@ -11,6 +11,7 @@ import { createRequire } from 'node:module';
 import { mkdirSync, writeFileSync, existsSync, readFileSync, statSync } from 'node:fs';
 import { resolve, join, basename, dirname, relative, extname, sep } from 'node:path';
 import { createServer } from 'node:http';
+import { measureDesign, DESIGN_RULES } from './design-metrics.mjs';
 
 const require = createRequire(import.meta.url);
 function loadPlaywright() {
@@ -25,7 +26,7 @@ const target = args.find((a, i) => !a.startsWith('--') && !['--out', '--allow', 
 if (!target) { console.error('usage: node <skill>/scripts/check-ui.mjs <page.html|url> [--out dir] [--json] [--allow rule,rule]'); process.exit(2); }
 const flag = name => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : undefined; };
 const profile = flag('--profile') || 'standard';
-if (!['standard', 'premium'].includes(profile)) { console.error('unknown profile'); process.exit(2); }
+if (!['standard', 'premium', 'app'].includes(profile)) { console.error('unknown profile'); process.exit(2); }
 const allow = new Set((flag('--allow') || '').split(',').filter(Boolean));
 const remote = /^https?:/.test(target);
 const root = resolve(flag('--root') || '.');
@@ -330,6 +331,7 @@ function measure({ vp, premium, expectRelease, expectVersion }) {
 }
 
 const RULES = [
+  ...DESIGN_RULES,
   ['overflow', 'FAIL', m => m.overflowX > 1, m => `page scrolls sideways by ${m.overflowX}px`],
   ['fonts-loaded', 'FAIL', m => m.fontsMissing.length, m => `font fell back: ${m.fontsMissing.join(', ')}`],
   ['contrast', 'FAIL', m => m.contrast.length, m => `${m.contrast.length} text runs below contrast, e.g. "${m.contrast[0].text}" ${m.contrast[0].ratio}:1 (need ${m.contrast[0].need})`],
@@ -443,6 +445,7 @@ async function run() {
     await page.evaluate(() => document.fonts.ready);
     await page.waitForTimeout(1200);
     const m = await page.evaluate(measure, { vp, premium: profile === 'premium', expectRelease: flag('--release-state') || '', expectVersion: flag('--pack-version') || '' });
+    m.design = await page.evaluate(measureDesign, { appProfile: profile === 'app' });
     m.errors = errors;
     m.pinClipped = await walkPins(page);
     m.pinLength = await page.evaluate(() => {

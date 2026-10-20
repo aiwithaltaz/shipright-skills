@@ -1,0 +1,32 @@
+{
+  "target": "tests/fixtures/design-excellence/after.html",
+  "profile": "app",
+  "fails": 0,
+  "warns": 0,
+  "viewports": {
+    "desktop": {
+      "results": [],
+      "design": {
+        "wordBreaks": [],
+        "squeezedColumns": [],
+        "rawValues": [],
+        "navOverflow": [],
+        "dashboard": true,
+        "chartCount": 1,
+        "weakType": null
+      }
+    },
+    "phone": {
+      "results": [],
+      "design": {
+        "wordBreaks": [],
+        "squeezedColumns": [],
+        "rawValues": [],
+        "navOverflow": [],
+        "dashboard": true,
+        "chartCount": 1,
+        "weakType": null
+      }
+    }
+  }
+}

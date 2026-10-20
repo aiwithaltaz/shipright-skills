@@ -23,6 +23,7 @@ const files = readdirSync(root).filter(name => name.endsWith('.html')).sort();
 function serve(dir) {
   return new Promise(ok => {
     const server = createServer((req, res) => {
+      if (req.url === '/favicon.ico') { res.writeHead(204); return res.end(); }
       const file = resolve(dir, '.' + decodeURIComponent(new URL(req.url, 'http://x').pathname));
       if (!(file + sep).startsWith(dir + sep) || !existsSync(file) || !statSync(file).isFile()) {
         res.writeHead(404); return res.end();
@@ -37,7 +38,7 @@ function serve(dir) {
   });
 }
 const { chromium } = loadPlaywright();
-const browser = await chromium.launch({ args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
+const browser = await chromium.launch({ ...(process.env.SHIPRIGHT_BROWSER ? { executablePath: resolve(process.env.SHIPRIGHT_BROWSER) } : {}), args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
 const server = await serve(root);
 const port = server.address().port;
 const fails = [];

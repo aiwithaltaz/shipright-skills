@@ -1,0 +1,503 @@
+{
+ "attachment": "research.json",
+ "sha256": "254218c6b531385162e0c3a0c45dc645b0bc8c0fdbedba0c78b8e698d8919590",
+ "status": "User-supplied Perplexity synthesis. Upstream pages and authenticated product screens were not reverified for this change.",
+ "entries": [
+  {
+   "pointer": "/visual_rules/0/rule",
+   "text": "Use role-based sizes and line heights, not one ratio applied indiscriminately.",
+   "urls": [
+    "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md",
+    "https://github.com/mui/material-ui/blob/master/packages/mui-material/src/styles/createTypography.js",
+    "https://developer.apple.com/design/human-interface-guidelines/typography"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/1/rule",
+   "text": "Use stronger display/body contrast for promotional pages while keeping body text legible.",
+   "urls": [
+    "https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md",
+    "https://github.com/saralobo/rules-design-bible/blob/main/.cursor/rules/04-typography.mdc"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/2/rule",
+   "text": "Choose fonts for role, legibility and identity; unusual fonts are not inherently better.",
+   "urls": [
+    "https://developer.apple.com/design/human-interface-guidelines/typography",
+    "https://github.com/aiwithaltaz/shipright-skills/blob/main/skills/shipright/stages/06-design-system.md",
+    "https://github.com/saralobo/rules-design-bible/blob/main/.cursor/rules/04-typography.mdc"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/3/rule",
+   "text": "Use a coherent spacing system with useful intermediate steps.",
+   "urls": [
+    "https://github.com/radix-ui/themes/blob/main/packages/radix-ui-themes/src/styles/tokens/space.css",
+    "https://github.com/carbon-design-system/carbon/blob/main/packages/layout/scss/*spacing.scss*"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/4/rule",
+   "text": "Density is a coordinated component setting, not smaller text.",
+   "urls": [
+    "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md",
+    "https://github.com/carbon-design-system/carbon/blob/main/packages/react/scss/components/data-table/*data-table.scss*"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/5/rule",
+   "text": "Build neutral, primary and semantic scales rather than selecting five unrelated swatches.",
+   "urls": [
+    "https://refactoringui.com/previews/building-your-color-palette"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/6/rule",
+   "text": "Normal text generally requires 4.5:1 contrast; qualifying large text requires 3:1, subject to WCAG exceptions. ",
+   "urls": [
+    "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/7/rule",
+   "text": "Dark mode needs role-based remapping, not simple inversion.",
+   "urls": [
+    "https://github.com/mui/material-ui/blob/master/packages/mui-material/src/styles/createPalette.js",
+    "https://www.carbondesignsystem.com/building-blocks/data-visualization/color-palettes"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/8/rule",
+   "text": "Use accent color to communicate priority, selection, identity or data meaning.",
+   "urls": [
+    "https://refactoringui.com/previews/building-your-color-palette",
+    "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/9/rule",
+   "text": "Choose a chart from the analytical question.",
+   "urls": [
+    "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md",
+    "https://github.com/pbakaus/impeccable/blob/main/skill/reference/visualize.md"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/10/rule",
+   "text": "Distinguish categorical, sequential and diverging color meanings.",
+   "urls": [
+    "https://www.carbondesignsystem.com/building-blocks/data-visualization/color-palettes"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/11/rule",
+   "text": "Choose one chart implementation path per product.",
+   "urls": [
+    "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/chart.tsx",
+    "https://github.com/tremorlabs/tremor",
+    "https://charts.carbondesignsystem.com/"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/12/rule",
+   "text": "Prioritize the question and action, not a fixed row of KPI cards.",
+   "urls": [
+    "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md",
+    "https://github.com/mui/material-ui/blob/master/docs/data/material/getting-started/templates/dashboard/components/MainGrid.tsx"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/13/rule",
+   "text": "Define content and width behavior for every column.",
+   "urls": [
+    "https://github.com/ant-design/ant-design/blob/master/components/table/index.en-US.md",
+    "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/14/rule",
+   "text": "Truncate selectively and preserve access to the full value.",
+   "urls": [
+    "https://github.com/ant-design/ant-design/blob/master/components/table/demo/ellipsis.tsx",
+    "https://github.com/twentyhq/twenty/blob/main/packages/twenty-docs/ui/primitives/typography/overflowing-text-with-tooltip.mdx"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/15/rule",
+   "text": "Preserve comparison when a table genuinely needs two-dimensional layout.",
+   "urls": [
+    "https://www.w3.org/WAI/WCAG22/Understanding/reflow",
+    "https://github.com/ant-design/ant-design/blob/master/components/table/demo/responsive.tsx"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/16/rule",
+   "text": "Align and format comparable numeric values consistently.",
+   "urls": [
+    "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md",
+    "https://github.com/Shopify/polaris/blob/main/polaris-react/src/components/DataTable/DataTable.tsx"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/17/rule",
+   "text": "Missing values require product semantics, not raw serialization.",
+   "urls": [
+    "https://github.com/marmelab/react-admin/blob/master/packages/ra-ui-materialui/src/field/TextField.tsx",
+    "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/18/rule",
+   "text": "Navigation should identify product, scope and destination.",
+   "urls": [
+    "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md",
+    "https://github.com/satnaing/shadcn-admin/blob/main/src/components/layout/app-sidebar.tsx"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/19/rule",
+   "text": "Use tabs for related peer views and transform navigation deliberately on smaller screens.",
+   "urls": [
+    "https://github.com/tailwindlabs/headlessui/blob/main/packages/%40headlessui-react/src/components/tabs/tabs.tsx",
+    "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/sidebar.tsx"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/20/rule",
+   "text": "Differentiate first use, no results and no permission.",
+   "urls": [
+    "https://github.com/Shopify/polaris/blob/main/polaris-react/src/components/EmptyState/EmptyState.tsx",
+    "https://github.com/marmelab/react-admin/blob/master/packages/ra-ui-materialui/src/list/Empty.tsx"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/21/rule",
+   "text": "Loading presentation should preserve expected structure.",
+   "urls": [
+    "https://github.com/Shopify/polaris/blob/main/polaris-react/src/components/SkeletonPage/SkeletonPage.tsx",
+    "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/22/rule",
+   "text": "Errors need scope, explanation and recovery.",
+   "urls": [
+    "https://www.nngroup.com/articles/ten-usability-heuristics/",
+    "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/23/rule",
+   "text": "Meet WCAG target-size requirements without confusing the AA minimum with the larger AAA criterion.",
+   "urls": [
+    "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+    "https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/24/rule",
+   "text": "Use motion to communicate state and continuity, not delay routine work.",
+   "urls": [
+    "https://motion.dev/docs/react-accessibility",
+    "https://github.com/vercel-labs/web-interface-guidelines/blob/main/command.md"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/25/rule",
+   "text": "Use timeline and scroll orchestration only when the experience needs it.",
+   "urls": [
+    "https://gsap.com/core/",
+    "https://gsap.com/docs/v3/GSAP/gsap.matchMedia/"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/26/rule",
+   "text": "Smooth scrolling is an optional experience choice, not a premium-design requirement.",
+   "urls": [
+    "https://github.com/darkroomengineering/lenis",
+    "https://oss.darkroom.engineering/lenis"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/27/rule",
+   "text": "Use 3D when spatial interaction explains the product or enables the task.",
+   "urls": [
+    "https://github.com/aiwithaltaz/shipright-skills",
+    "https://developer.apple.com/design/human-interface-guidelines/typography"
+   ]
+  },
+  {
+   "pointer": "/visual_rules/28/rule",
+   "text": "Use references at the right level: complete workflows for apps, composition and art direction for marketing.",
+   "urls": [
+    "https://mobbin.com/",
+    "https://www.awwwards.com/",
+    "https://godly.website/",
+    "https://land-book.com/"
+   ]
+  },
+  {
+   "pointer": "/workflow_steps/0/good_output",
+   "text": "A short opportunity brief defining the user problem, desired outcome, constraints and riskiest assumptions. The template below is an analyst synthesis, not a quoted standard.",
+   "urls": [
+    "https://www.designkit.org/methods/create-a-concept.html",
+    "https://basecamp.com/shapeup",
+    "https://designsprintkit.withgoogle.com/methodology/phase1-understand"
+   ]
+  },
+  {
+   "pointer": "/workflow_steps/1/good_output",
+   "text": "A research plan and evidence ledger connecting observed behavior to needs, constraints and workarounds. No invented interviews, quotations, personas or pain-frequency estimates.",
+   "urls": [
+    "https://www.designkit.org/methods",
+    "https://designsprintkit.withgoogle.com/methodology/phase1-understand",
+    "https://www.nngroup.com/articles/usability-testing-101/"
+   ]
+  },
+  {
+   "pointer": "/workflow_steps/2/good_output",
+   "text": "A source-linked comparison of how users solve the job today, including spreadsheets, manual work and doing nothing - not just competing SaaS homepages.",
+   "urls": [
+    "https://designsprintkit.withgoogle.com/methodology/phase1-understand",
+    "https://basecamp.com/shapeup"
+   ]
+  },
+  {
+   "pointer": "/workflow_steps/3/good_output",
+   "text": "A behavior-based user definition and one prioritized job, with role, permissions, context and accessibility needs.",
+   "urls": [
+    "https://designsprintkit.withgoogle.com/methodology/phase2-define",
+    "https://www.designkit.org/methods"
+   ]
+  },
+  {
+   "pointer": "/workflow_steps/4/good_output",
+   "text": "A decision-oriented specification with a bounded core loop, measurable outcomes, non-goals, risks and acceptance criteria. Keep supplementary evidence separate from the decision summary.",
+   "urls": [
+    "https://www.lennysnewsletter.com/p/how-i-built-lennyrpg",
+    "https://www.lennysnewsletter.com/p/how-ramp-builds-product",
+    "https://basecamp.com/shapeup"
+   ]
+  },
+  {
+   "pointer": "/workflow_steps/5/good_output",
+   "text": "A justified stack decision tied to product constraints, with alternatives, operating costs and switch conditions. No stack is universally best.",
+   "urls": [
+    "https://github.com/aiwithaltaz/shipright-skills",
+    "https://github.com/refinedev/refine",
+    "https://github.com/shadcn-ui/ui",
+    "https://github.com/tremorlabs/tremor"
+   ]
+  },
+  {
+   "pointer": "/workflow_steps/6/good_output",
+   "text": "A small architecture decision record covering entities, access boundaries, routes, integrations, failure modes and display semantics.",
+   "urls": [
+    "https://github.com/aiwithaltaz/shipright-skills",
+    "https://github.com/marmelab/react-admin/blob/master/packages/ra-ui-materialui/src/field/TextField.tsx",
+    "https://github.com/refinedev/refine/blob/main/packages/core/README.md"
+   ]
+  },
+  {
+   "pointer": "/workflow_steps/7/good_output",
+   "text": "A task flow, entity-based sitemap and navigation model showing how users complete the primary job, recover from failure and understand their current scope.",
+   "urls": [
+    "https://designsprintkit.withgoogle.com/",
+    "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md",
+    "https://github.com/satnaing/shadcn-admin/blob/main/src/components/layout/nav-group.tsx"
+   ]
+  },
+  {
+   "pointer": "/workflow_steps/8/good_output",
+   "text": "A small annotated reference set and a coherent visual contract. This is the proposed missing bridge between ShipRight's product planning and component generation.",
+   "urls": [
+    "https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md",
+    "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/SKILL.md",
+    "https://mobbin.com/",
+    "https://www.awwwards.com/",
+    "https://godly.website/",
+    "https://land-book.com/"
+   ]
+  },
+  {
+   "pointer": "/workflow_steps/9/good_output",
+   "text": "An implemented token and component system demonstrated with real-length content, not just color swatches and isolated buttons.",
+   "urls": [
+    "https://github.com/radix-ui/themes",
+    "https://github.com/carbon-design-system/carbon",
+    "https://github.com/Shopify/polaris",
+    "https://developer.apple.com/design/human-interface-guidelines/typography"
+   ]
+  },
+  {
+   "pointer": "/workflow_steps/10/good_output",
+   "text": "One realistic, populated primary screen with functional navigation, appropriate data visualization, robust table geometry and a complete primary interaction.",
+   "urls": [
+    "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/app-screens.md",
+    "https://github.com/shadcn-ui/ui",
+    "https://github.com/ant-design/ant-design/blob/master/components/table/index.en-US.md"
+   ]
+  },
+  {
+   "pointer": "/workflow_steps/11/good_output",
+   "text": "Separate records for usability, visual quality, accessibility, performance and release readiness; fix the highest-impact defects before expanding or publishing.",
+   "urls": [
+    "https://www.nngroup.com/articles/ten-usability-heuristics/",
+    "https://developer.chrome.com/docs/lighthouse/overview/",
+    "https://github.com/dequelabs/axe-core",
+    "https://arxiv.org/abs/2403.03163"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/0/how",
+   "text": "Proposed ShipRight protocol: report usability, appearance, accessibility and performance separately. Do not let good planning compensate for weak visuals, or attractive screenshots compensate for broken tasks. This separation responds to the documented aesthetic-usability effect; the proposed scorecard itself is not a validated instrument.",
+   "urls": [
+    "https://www.nngroup.com/articles/aesthetic-usability-effect/"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/1/how",
+   "text": "Use the original Visual Aesthetics of Websites Inventory and its published scoring instructions. It contains 18 items rated on a seven-point scale. Preserve its wording and reverse-scoring rules rather than inventing a ShipRight version and calling it validated. It measures perceived aesthetics, not task success or an objective premium-design property.",
+   "urls": [
+    "http://www.thielsch.org/download/VisAWI/VisAWI_English.pdf"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/2/how",
+   "text": "Proposed protocol: show matched screens without model or skill labels, randomize presentation order, allow ties and ask separately about visual preference and expected usefulness. Keep content, viewport and application state comparable. Report preference counts and uncertainty rather than declaring a winner from one reviewer.",
+   "urls": [
+    "https://www.nngroup.com/videos/validate-visual-design/"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/3/how",
+   "text": "Proposed, unvalidated ShipRight rubric: score typography, hierarchy, alignment, density, color, data presentation and consistency separately on a 1–5 scale. Anchor 1 to visible defects, 3 to coherent execution with remaining weaknesses, and 5 to polished execution supported by screen-specific evidence. Calibrate reviewers with examples; do not present these numbers as a scientific beauty scale.",
+   "urls": [
+    "https://www.nngroup.com/articles/principles-visual-design/"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/4/how",
+   "text": "Briefly expose the screen, then ask what product it is, what the screen is for and what action appears primary. Proposed scoring: record correct identification separately for each question. This evaluates immediate communication, not complete usability or long-term efficiency.",
+   "urls": [
+    "https://www.nngroup.com/videos/validate-visual-design/"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/5/how",
+   "text": "Give a realistic task and record the first selected destination. Compare whether users choose the intended starting point across variants. Keep task wording neutral. Use the result to diagnose hierarchy and navigation, not to certify that the entire flow works.",
+   "urls": [
+    "https://www.nngroup.com/videos/validate-visual-design/"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/6/how",
+   "text": "Recruit representative users and observe realistic tasks. Track completion, errors, assistance and time on task where appropriate. Collect aesthetic judgments separately from observed performance. A screenshot alone cannot establish whether users can complete the workflow.",
+   "urls": [
+    "https://www.nngroup.com/articles/usability-testing-101/"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/7/how",
+   "text": "Review system feedback, terminology, user control, consistency, error prevention and recovery against Nielsen's heuristics. Record each finding with its screen, state, evidence and proposed fix. This is a usability inspection, not a standalone appearance score.",
+   "urls": [
+    "https://www.nngroup.com/articles/ten-usability-heuristics/"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/8/how",
+   "text": "Run axe-core after relevant UI states become visible, including dialogs, validation and expanded controls. Record violations and incomplete results requiring manual review. Passing automated checks does not establish full accessibility or premium visual design.",
+   "urls": [
+    "https://github.com/dequelabs/axe-core"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/9/how",
+   "text": "Check normal text against the 4.5:1 contrast requirement and qualifying large text against 3:1, accounting for exceptions. Evaluate the 24 by 24 CSS-pixel AA target-size criterion and its exceptions. Test reflow at 320 CSS pixels for vertically scrolling content; two-dimensional content has scoped exceptions, not a blanket exemption for surrounding controls.",
+   "urls": [
+    "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+    "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+    "https://www.w3.org/WAI/WCAG22/Understanding/reflow"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/10/how",
+   "text": "Exercise navigation, forms, menus and dialogs without a pointer. Verify visible focus, appropriate semantics, reachable actions and focus not hidden by sticky elements. Include this manual pass even when axe reports no violations.",
+   "urls": [
+    "https://github.com/vercel-labs/web-interface-guidelines/blob/main/command.md"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/11/how",
+   "text": "Run Lighthouse for performance, accessibility, best practices and SEO. Retain category results instead of relabeling an aggregate as design quality. It does not evaluate typography taste, composition or product-specific visual identity.",
+   "urls": [
+    "https://developer.chrome.com/docs/devtools/lighthouse"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/12/how",
+   "text": "Measure real-user loading, responsiveness and stability. Google's good thresholds are LCP at or below 2.5 seconds, INP at or below 200 milliseconds and CLS at or below 0.1, assessed at the 75th percentile and segmented by mobile and desktop. Navigation-only Lighthouse testing does not measure real-user INP.",
+   "urls": [
+    "https://web.dev/articles/vitals"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/13/how",
+   "text": "Use Playwright toHaveScreenshot against human-approved baselines. Stabilize content, fonts, viewport and rendering environment; review meaningful diffs instead of automatically accepting new baselines. Pixel similarity detects change, not whether a design is good.",
+   "urls": [
+    "https://playwright.dev/docs/api/class-pageassertions"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/14/how",
+   "text": "Proposed ShipRight tests: exercise long names, large and negative numbers, translated labels, absent owners, zero values and filtered-empty results. Assert that columns remain understandable, atomic values do not break mid-word and truncated content has a usable full-value path. Label test fixtures as test data, not research evidence.",
+   "urls": [
+    "https://github.com/ant-design/ant-design/blob/master/components/table/index.en-US.md",
+    "https://github.com/vercel-labs/web-interface-guidelines/blob/main/command.md",
+    "https://www.w3.org/WAI/WCAG22/Understanding/reflow"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/15/how",
+   "text": "For each chart, verify its analytical question, encoding, units, time range, labels, legend and source data. Check that controls update the intended visualizations and that linked charts maintain consistent meanings. Do not award points merely for having more charts.",
+   "urls": [
+    "https://www.carbondesignsystem.com/building-blocks/data-visualization/chart-anatomy",
+    "https://www.carbondesignsystem.com/building-blocks/data-visualization/dashboards"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/16/how",
+   "text": "Experimental protocol: give a vision-capable judge the brief and matched screenshots, require region-specific evidence, hide builder identities, swap image order and allow ties. Calibrate against independent human judgments. Text-judge research documents biases, but its reported agreement cannot be assumed for screenshot aesthetics.",
+   "urls": [
+    "https://arxiv.org/abs/2306.05685",
+    "https://arxiv.org/abs/2403.03163"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/17/how",
+   "text": "Use screenshot-to-code evaluation when a specific approved reference is the target. Assess preserved elements, layout and implementation alongside human review. Keep this separate from open-ended visual preference: accurate reproduction of a reference is not proof that the reference is attractive or appropriate.",
+   "urls": [
+    "https://arxiv.org/abs/2403.03163"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/18/how",
+   "text": "Proposed experiment, not an established result: compare no skill, current ShipRight and revised ShipRight using the same model/version, brief, assets, tools and budget. Repeat builds across independent tasks, including held-out briefs. Test visual modules separately where practical. Record build failures and report product, appearance and technical outcomes independently.",
+   "urls": [
+    "https://arxiv.org/abs/2403.03163",
+    "https://www.nngroup.com/articles/usability-testing-101/"
+   ]
+  },
+  {
+   "pointer": "/quality_measurement/19/how",
+   "text": "Proposed ShipRight policy: require usable core tasks, acceptable visual review and no unresolved release-blocking defects. Missing required visualizations, unreadable table content or inaccessible primary actions should not disappear inside an average score. Define blockers before judging; thresholds are project policy, not externally validated constants.",
+   "urls": [
+    "https://www.nngroup.com/articles/ten-usability-heuristics/",
+    "https://www.nngroup.com/articles/principles-visual-design/",
+    "https://github.com/dequelabs/axe-core"
+   ]
+  }
+ ],
+ "normalization": "Em dashes in unused excerpts are represented by spaced hyphens; card quotations retain their exact research text."
+}

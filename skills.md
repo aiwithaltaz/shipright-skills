@@ -13,6 +13,7 @@ Install one skill: [shipright](skills/shipright/SKILL.md). The rows below are it
 | Approved product organization, navigation, findability or route maps | product-design | Optional sourced structure and decisions before screens |
 | Journey, task/system flow or service delivery decision | product-design | Optional one sourced map, risks and proposed decisions |
 | Research evidence, method or lightweight study plan | product-design | Decision-relevant evidence/plan, not invented validation |
+| App/dashboard craft and reference review | ui-ux-design and ux-critique | Conditional Design Excellence layer; a separate visual gate |
 | Screen layout, system or exact correction | [ui-ux-design](skills/shipright/modes/ui-ux-design/MODE.md) | 10 checks at handoff |
 | Existing system selection, foundations or maintenance | ui-ux-design | Small system before screens: Observed reuse, or Proposed until the user agrees. Vocabulary, control choice and reference systems load only when needed |
 | Artifact review or plan score | [ux-critique](skills/shipright/modes/ux-critique/MODE.md) | 10 checks when relevant |

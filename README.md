@@ -106,6 +106,10 @@ node scripts/check-ui.mjs path/to/index.html --root path/to/site
 
 It needs Node 18+ and Playwright with Chromium. It measures rules; it does not prove good design or full accessibility.
 
+## Design Excellence draft
+
+The seven idea-to-design steps now keep one short decision summary and put app craft behind a separate visual contract. See [the implementation and diagnosis](docs/design-excellence/README.md). New app checks cover table geometry, raw missing values, required charts, navigation overflow and weak type hierarchy. These are proposed safeguards, not evidence of an A/B win.
+
 ## How it works
 
 A new idea runs stages 0 to 10. An existing app starts at discover. Nothing in that list is skipped because someone said to just build it.
@@ -113,13 +117,13 @@ A new idea runs stages 0 to 10. An existing app starts at discover. Nothing in t
 | Stage | What it writes |
 | --- | --- |
 | 0 Discover | Screens, tasks, pains with evidence |
-| 1 Research | Alternatives, each fact Verified or Assumed |
-| 2 Brainstorm | Three concepts that differ in mechanism |
-| 3 Problem solving | Every risk has a decision and a test |
-| 4 Scope | The core loop and the page list |
-| 5 Architecture | Stack, data, access, secrets, cost |
-| 6 Design system | Tokens, one status table, one label table |
-| 7 Options | Three layouts, one Proposed pick |
+| 1 Idea and research | Brief and decision-changing evidence, with fact status |
+| 2 Define user | Primary role, job, constraints and observable success |
+| 3 PRD and scope | Core loop, acceptance criteria, non-goals and risk decisions |
+| 4 Tech stack | Necessary layers, reasons, alternatives and switch conditions |
+| 5 Architecture and display data | Entities, access, routes and display-value semantics |
+| 6 Flows, IA and visual contract | Navigation, tokens, column contracts and required chart questions |
+| 7 Representative screen | Populated primary screen and reference-based visual review |
 | 8 Build | The screen, sample data labeled |
 | 9 Test | Checks at 390 and 1280, then a case study from the record |
 | 10 Ship check | 20 items. A verdict is not permission to publish |

@@ -1,0 +1,8 @@
+test_browser_measurements (test_design_excellence.DesignExcellenceTests.test_browser_measurements) ... ok
+test_card_provenance_and_installed_copy (test_design_excellence.DesignExcellenceTests.test_card_provenance_and_installed_copy) ... ok
+test_spacing_policy_accepts_12_and_explicit_exception (test_design_excellence.DesignExcellenceTests.test_spacing_policy_accepts_12_and_explicit_exception) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 2.063s
+
+OK

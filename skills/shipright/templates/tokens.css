@@ -1,4 +1,4 @@
-/* ShipRight starter tokens. Replace values from the product. Status: template.
+/* ShipRight starter tokens. Proposed app profile; validate against the approved system. Replace values from the product. Status: template.
    pair body --text --bg
    pair body --text --surface
    pair body --muted --bg
@@ -20,6 +20,7 @@
   --focus: #145c3a;
   --space-1: 4px;
   --space-2: 8px;
+  --space-compact: 12px;
   --space-3: 16px;
   --space-4: 24px;
   --space-5: 32px;
@@ -30,17 +31,21 @@
   --radius-notice: 16px;
   --radius-card: 24px;
   --font-sans: "Inter", system-ui, sans-serif;
-  --font-display: "Fraunces", "Source Serif 4", Georgia, serif;
+  --font-display: "Inter", system-ui, sans-serif;
   --ease-out: cubic-bezier(.22, 1, .36, 1);
   --ease-in: cubic-bezier(.4, 0, 1, 1);
   --dur-fast: 120ms;
   --dur-enter: 200ms;
   --dur-panel: 320ms;
   --dur-story: 600ms;
-  --type-body: 16px;
-  --type-body-lh: 1.5;
-  --type-display: 40px;
-  --type-display-lh: 1.2;
+  --type-meta: 12px;
+  --type-meta-lh: 16px;
+  --type-section: 18px;
+  --type-section-lh: 24px;
+  --type-body: 14px;
+  --type-body-lh: 1.428571;
+  --type-display: 24px;
+  --type-display-lh: 1.333333;
   --kicker-size: 12px;
 }
 

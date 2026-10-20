@@ -17,7 +17,7 @@ description: "Use this when someone has an idea, an app, a SaaS, a website, a la
 # ShipRight
 
 **Pack version:** 1.4.0
-**Status:** released. Eval scores for 1.3 are pending. Context before generate. Product before pixels.
+**Status:** Design Excellence draft, not released. Eval scores for 1.3 are pending. Context before generate. Product before pixels.
 
 ShipRight takes an idea to a tested product, or a clunky app to a clearer one. Every design choice traces to a real pain or a real fact, and ends in a test.
 
@@ -56,30 +56,30 @@ These names stay so old installs work. They do not replace the stages.
 | Mode | Runs | File |
 | --- | --- | --- |
 | build-pack | Stages 1 to 10 | [build-pack](modes/build-pack/MODE.md) |
-| product-design | Stages 1 to 5 | [product-design](modes/product-design/MODE.md) |
+| product-design | Stages 1 to 6 | [product-design](modes/product-design/MODE.md) |
 | ui-ux-design | Stages 6 to 9 | [ui-ux-design](modes/ui-ux-design/MODE.md) |
 | ux-critique | Stage 9 | [ux-critique](modes/ux-critique/MODE.md) |
 | ship-check | Stage 10 | [ship-check](modes/ship-check/MODE.md) |
 
 ## Stages
 
-A new project runs 1 to 10 in order. An existing app runs 0, a light pass of 1, then 4 to 10 for the approved fixes only. A stage is not done until its project record is updated.
+A new project runs 1 to 10 in order. An existing app runs 0, a light pass of 1, then 4 to 10 for the approved fixes only. A stage is not done until its project record is updated. Steps 1 to 7 are the lean idea-to-design workflow; steps 8 to 10 finish implementation and validation. Steps 1 to 5 share a 700-word decision summary, excluding sources and necessary schemas. Reuse evidence; spend the remaining effort on a populated screen and visual review.
 
 | # | Stage | Open | Done when |
 | --- | --- | --- | --- |
 | 0 | Discover | [00-discover.md](stages/00-discover.md) | Screens captured, tasks walked, keeps listed, pains have evidence and a cause, fix map ranked |
-| 1 | Research | [01-research.md](stages/01-research.md) | 3 or more real alternatives, rules checked, each fact Verified or Assumed |
-| 2 | Brainstorm | [02-brainstorm.md](stages/02-brainstorm.md) | 3 concepts differ in mechanism, one decision line written |
-| 3 | Problem solving | [03-problem-solving.md](stages/03-problem-solving.md) | Every risk has a decision and a test. No "monitor" or "TBD" |
-| 4 | Scope and pages | [04-scope-and-pages.md](stages/04-scope-and-pages.md) | Core loop, value floor, page inventory with a reason |
-| 5 | Architecture | [05-architecture.md](stages/05-architecture.md) | Stack, data, access, secrets by name, costs |
-| 6 | Design system | [06-design-system.md](stages/06-design-system.md) | Tokens, components, one status table |
-| 7 | Layout and options | [07-design-options.md](stages/07-design-options.md) | Exactly three options, one chosen, marked Proposed |
+| 1 | Idea and research | [01-research.md](stages/01-research.md) | Brief plus decision-changing evidence |
+| 2 | Define user | [02-brainstorm.md](stages/02-brainstorm.md) | Primary role, job, constraints and success |
+| 3 | PRD and scope | [03-problem-solving.md](stages/03-problem-solving.md) | Core loop, acceptance checks, non-goals and risk decisions |
+| 4 | Tech stack | [04-scope-and-pages.md](stages/04-scope-and-pages.md) | Necessary layers, reasons and switch conditions |
+| 5 | Architecture and display data | [05-architecture.md](stages/05-architecture.md) | Access, entities, routes and field formatters |
+| 6 | Flows, IA and visual contract | [06-design-system.md](stages/06-design-system.md) | Tokens, shell, chart and column contracts |
+| 7 | Representative screen | [07-design-options.md](stages/07-design-options.md) | Populated slice and reference-based critique |
 | 8 | Build | [08-build.md](stages/08-build.md) | Screen matches the spec, sample data labeled, no dev controls |
 | 9 | Test and critique | [09-test-and-critique.md](stages/09-test-and-critique.md) | Checks at 390 and 1280, or marked Not verified |
 | 10 | Ship check | [10-ship-check.md](stages/10-ship-check.md) | 20 items with evidence |
 
-Show exactly three options. They differ in story or layout, not in color. Stop for the owner to choose or approve. If no human is available, pick one, say why, and mark it "Proposed, awaiting owner approval". Then still test and run ship-check.
+Show exactly three options. Reuse an already approved direction for scoped fixes. New directions differ in story or layout, not in color. Stop for the owner to choose or approve. If no human is available, pick one, say why, and mark it "Proposed, awaiting owner approval". Then still test and run ship-check.
 
 ## Core rules
 
@@ -89,7 +89,7 @@ Show exactly three options. They differ in story or layout, not in color. Stop f
 4. Proposed is not Approved. Silence is not approval. You decide covers the named choice only. Prices, legal text, access policy, and payments are never decided for the owner.
 5. Nothing ships, publishes, or charges money without the owner's OK.
 6. Do not claim a pass you did not test. Use Pass, Fail, Not verified, or Not applicable, with evidence.
-7. Update the project record before you call a stage done.
+7. Update the project record before you call a stage done. Cards cannot add scope or reopen settled decisions.
 8. Simple English. Short sentences. Numbers, not adjectives.
 
 **Core rules if `modes/_shared` is unreachable:** say the pack is incomplete.
@@ -204,130 +204,78 @@ Every screen visited and captured. Core tasks walked and timed. Each pain has ev
 
 # Source: stages/01-research.md
 
-# Stage 1: Research
+# Step 01: Idea and research
 
 **Deal first:** run `node <skill>/scripts/deal.mjs --stage 01 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
 
-Know the users, the alternatives, the rules, and the money before you invent a concept. Open [research-brief.md](../templates/research-brief.md).
-Required headings: Questions, Findings, Alternatives, Rules and limits, Money, Domain world, Implications.
+Open [01-idea-research.md](../templates/01-idea-research.md).
+Required headings in 01-idea-research.md: Idea, Evidence, Decision.
 
-For an existing app on the improve path, keep this light: domain, rules, and alternatives only. Do not restart the whole brief.
+Frame the supplied idea, then research only the uncertainties that can change the build. Write Vision, User, MVP, Out of scope and Next step under Idea in CONTEXT.md. Label the MVP Proposed, not discovered demand.
 
-## Idea brief
+Use the supplied brief first. Name the job, appetite, constraints and riskiest assumption. Compare up to three relevant alternatives, including the current manual workflow. Search only unresolved facts that change scope, access, data, price or design. Record URL, date and Verified or Assumed. No mandatory search count. Never invent interviews, adoption, prices or legal conclusions.
 
-Before research on a new project, write `## Idea` in CONTEXT.md with five lines: Vision, User, MVP, Out of scope, Next step. Research then tests that brief.
+Pick two or three relevant reference products from the supplied research before design. Record what each may contribute, with visual observations left Not verified until captured. Product marketing is not evidence of its authenticated interface.
 
-## Steps
-
-1. Write the 5 questions this product depends on. Always include: who uses it and what they use today; which platform, API, or legal rules apply; how money works (who pays, and the usual price shape); what goes wrong in this domain; what changes by time or place (season, hours, region).
-2. If web search works: run 5 to 10 searches. Prefer official docs, pricing pages, laws, and real complaints (reviews, forums). Record the source and the date.
-3. If search is unavailable: answer from general knowledge, tag every line **Assumed**, and list exactly what to verify and where.
-4. Name at least 3 real alternatives, including "doing nothing" or "a spreadsheet". For each: what it does well, the gap, and the price shape.
-5. End with "What this means for the product": 3 to 5 bullets that change the plan. A finding that does not change a decision does not belong here.
-
-## Findings
-
-Each fact is **Verified** (source and date) or **Assumed** (how to check). Do not upgrade Assumed to Verified because it sounds right.
-Domain world facts are the things in the user's week that change a decision: weather, a rate limit, a deadline, a capacity cap. These show up later on the screen, not only in the doc.
-
-## Worked example
-
-LinkedIn automation. Rule: LinkedIn's User Agreement bans bots that send invites, messages, or scrape profiles. Posting through the official API is allowed. Verify the current terms before you treat this as Verified. Implication: build an assistant that drafts and schedules, and the user presses send. A copilot, not a bot.
-
-## Vague idea
-
-If you still cannot name the user and the job, ask the decision cards from SKILL.md first. Then fill this brief. A request to build it is not a frame, and it is not permission to invent.
+Record one decision and one next verification. When the brief is already clear, summarize its evidence instead of repeating intake.
 
 ## Record
 
-Update CONTEXT.md: who it is for, and which facts are Assumed. Add a DECISIONS.md row for any choice you are making from the research.
-Required headings in DECISIONS.md: Rows.
+Reuse the router's decision summary. Update only changed project-record fields.
 
 ## Gate
 
-At least 3 real alternatives. Platform, legal, and data rules checked. Every fact tagged Verified or Assumed. Implications change the plan. Record updated.
+The template answers the decisions above with evidence or explicit unknowns. No new features or facts were invented. Record updated.
 
 ---
 
 # Source: stages/02-brainstorm.md
 
-# Stage 2: Brainstorm
+# Step 02: Define the user
 
 **Deal first:** run `node <skill>/scripts/deal.mjs --stage 02 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
 
-Find one sharp idea. Open [concepts.md](../templates/concepts.md).
-Required headings: Concepts, Scores, Decision in one line.
+Open [02-user.md](../templates/02-user.md).
+Required headings in 02-user.md: User, Job, Constraints.
 
-Do this after research. Use the implications. Do not add features to hide a weak idea.
+Define one primary role by behavior, trigger and job. Include device, frequency, permissions, accessibility or locale needs only when supplied or evidenced. Keep unknowns explicit. No fictional biography or persona quotes.
 
-## Steps
+If the mechanism is unsettled, compare three mechanisms in one sentence each and record the choice. If it is supplied, keep it. Do not generate a scored concept deck for a specified screen. Name the core loop and one observable success condition. Preserve consent and access decisions for their owner.
 
-1. Write 3 concepts that differ in **mechanism** (how the product delivers the value), not in features or colors. Test: if you can swap the names and nothing else changes, they are not different.
-2. Each concept card: name; one line; who loves it; the core loop (what the user does every day, 3 to 5 steps); the signature moment (the one screen or interaction people remember); how it makes money; the biggest risk.
-3. Score each 1 to 5 on: user pain solved, difference from alternatives, buildable in the first release, money potential, risk. Show the table.
-4. Pick one. Write the decision in one line: "[Name] is a [what] for [who] that [does the job] by [mechanism], unlike [alternative]."
-5. If the owner said "you decide", record the pick as Proposed (delegated) and continue. Do not stop for applause.
-
-## Worked example
-
-A scheduling tool for small landscaping crews. Concepts: (A) a week board that plans crews by capacity and weather, and invoices on Friday; (B) a crew phone app where crews log work and the office approves; (C) a route builder that lays out the week from service plans. Pick A when the pain is the Monday plan and the Friday invoices. Signature moment: a rain-day card that moves the day's visits in one action.
-
-## What not to do
-
-Do not present three color themes as three concepts. Do not pick the concept with the longest feature list. Money and the core loop have to be specific. "Users will love it" is not a mechanism.
+Write the selected user and mechanism once in CONTEXT.md. Reuse the research ledger; do not retell it.
 
 ## Record
 
-Write the decision line into CONTEXT.md. Add the pick, the two you did not pick, and why, as one DECISIONS.md row. Status is Proposed until the owner approves.
+Reuse the router's decision summary. Update only changed project-record fields.
 
 ## Gate
 
-Three concepts differ in mechanism. Scores are shown. The decision line is written. Record updated.
+The template answers the decisions above with evidence or explicit unknowns. No new features or facts were invented. Record updated.
 
 ---
 
 # Source: stages/03-problem-solving.md
 
-# Stage 3: Problem solving
+# Step 03: PRD and scope
 
 **Deal first:** run `node <skill>/scripts/deal.mjs --stage 03 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
 
-Find the hard problems and answer each one. Open [risks.md](../templates/risks.md).
-Required headings: Risks, Platform verdict, Required rows.
+Open [03-prd.md](../templates/03-prd.md).
+Required headings in 03-prd.md: Outcome, Requirements, Risks.
 
-A risk without a decision is a wish. "Monitor" and "TBD" are not decisions.
+Write a short PRD: the outcome, core loop, this release, non-goals and requirement IDs with acceptance checks. Each screen and visible region must support one of those requirements.
 
-## Columns
+Keep risk rows for integration failure, empty or huge data, abuse/access and growing cost. Each has a decision and a test. Unknown access, destructive effects and prices stay unresolved; do not invent defaults. For third-party features, record Allowed, Risky or Banned with source/date when evidence exists, otherwise Not verified. A banned feature is removed, not hidden behind a toggle.
 
-Risk, type, how likely, how bad, design or tech decision, test that proves it.
-Type is one of: platform, abuse, failure, edge case, money, data and privacy, cost, season or time, people.
-
-## Required rows
-
-Every product gets these, even if the answer is short:
-
-- The main integration fails (API down, timeout, bad payload). What does the user see, and what is saved?
-- Data is empty, huge, or wrong. What is on screen?
-- Who could abuse it, and how is that limited?
-- Which costs grow with usage, and what is the cap?
-
-## Platform verdict
-
-When a third-party platform is involved (a social network, a payment provider, an app store), add a row per planned feature: Allowed, Risky, or Banned, with the source and date. A banned feature does not ship behind a toggle. Change the concept instead.
-
-## Decisions
-
-Each decision is concrete: a limit, a state, a copy line, a server check, or a cut from the first release. Write the test that would fail if the decision is ignored.
-Unknown access, destructive effects, and prices stay unresolved. They cannot become defaults. See the operating contract.
+List Needed, Not needed or Later surfaces with a reason. Keep first-use, no results, restricted, loading and failure distinct. Preserve F1 exit, F2 consistency and F3 useful status. Record only changed decisions in DECISIONS.md.
 
 ## Record
 
-Add each hard problem to CHALLENGES.md when you meet it while building. The risk row is the plan. The challenge row is what actually happened.
-Required headings in CHALLENGES.md: Rows.
+Reuse the router's decision summary. Update only changed project-record fields.
 
 ## Gate
 
-Every risk row has a decision and a test. No row says "monitor" or "TBD". Platform features have a verdict when a platform is in scope. Record updated.
+The template answers the decisions above with evidence or explicit unknowns. No new features or facts were invented. Record updated.
 
 ---
 
@@ -364,91 +312,69 @@ Every asked change is done, refused with a reason, or waiting on a named decisio
 
 ---
 
-# Source: templates/research-brief.md
+# Source: templates/01-idea-research.md
 
-# Research brief
+# Idea and research
 
 Status: template
 
-One row per fact: fact, kind (Verified or Assumed), source, date. Alternatives include doing nothing. Implications must change the plan.
+Replace Status: template with Status: current. Link prior decisions instead of repeating them.
 
-Replace `Status: template` with `Status: current` when this file holds the project, not the blank.
+## Idea
 
-## Questions
+Vision; User; MVP (Proposed); Out of scope; Next step. Appetite and key uncertainty.
 
-- 
+## Evidence
 
-## Findings
+Decision-changing facts only. Fact | Supplied/Verified/Assumed | source/date | effect. Alternatives and 2 or 3 reference candidates.
 
-- 
+## Decision
 
-## Alternatives
-
-- 
-
-## Rules and limits
-
-- 
-
-## Money
-
-- 
-
-## Domain world
-
-- 
-
-## Implications
-
--
+One next decision and the smallest verification that could change it.
 
 ---
 
-# Source: templates/concepts.md
+# Source: templates/02-user.md
 
-# Concepts
+# Define the user
 
 Status: template
 
-Three concepts. Each: name, one line, who loves it, core loop, signature moment, money, biggest risk. Scores are 1 to 5.
+Replace Status: template with Status: current. Link prior decisions instead of repeating them.
 
-Replace `Status: template` with `Status: current` when this file holds the project, not the blank.
+## User
 
-## Concepts
+Primary role, behavioral evidence and device/context. No invented persona.
 
-- 
+## Job
 
-## Scores
+When [trigger], [role] needs [job] so [outcome]. Core loop and observable success.
 
-- 
+## Constraints
 
-## Decision in one line
-
--
+Permissions, accessibility, locale, frequency and unknowns. Mechanism supplied or Proposed.
 
 ---
 
-# Source: templates/risks.md
+# Source: templates/03-prd.md
 
-# Risks
+# PRD and scope
 
 Status: template
 
-Columns: risk, type, how likely, how bad, decision, test. No monitor. No TBD. Platform rows are Allowed, Risky, or Banned.
+Replace Status: template with Status: current. Link prior decisions instead of repeating them.
 
-Replace `Status: template` with `Status: current` when this file holds the project, not the blank.
+## Outcome
+
+User outcome; this release; non-goals; core loop. Reuse the brief.
+
+## Requirements
+
+ID | job/surface | acceptance check | Needed/Not needed/Later. Include state and exit requirements.
 
 ## Risks
 
-- 
-
-## Platform verdict
-
-- 
-
-## Required rows
-
--
+Risk | decision or unresolved owner question | test. Integration, difficult data, abuse/access and cost.
 
 ---
 

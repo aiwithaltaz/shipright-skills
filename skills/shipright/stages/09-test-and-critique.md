@@ -9,9 +9,9 @@ Required headings in critique.md: Removal, Patterns, Taste, Severity.
 ## Test
 
 Run `node <skill>/scripts/check-ui.mjs` on the page and `node <skill>/scripts/run-tests.mjs <test-plan.json>`. The plan lists, per screen: url or file, widths 390 and 1280, actions, and expected text. Also run `node <skill>/scripts/consistency.mjs` on the page.
-Always check: console errors, no sideways scroll at 320, 390, 768, and 1280, contrast, 44px targets on a phone, keyboard focus, reduced motion with text still visible, a visible Sample or Demo label, no dev controls, and no text that moves when it should stay still.
+Always check: console errors, no sideways scroll at 320, 390, 768, and 1280, contrast, 24px AA targets with their exceptions (44px is a larger touch goal), keyboard focus, reduced motion with text still visible, a visible Sample or Demo label, no dev controls, and no text that moves when it should stay still.
 For an existing app: every Now pain has a passing test, plus before and after shots.
-The builder does not give itself a Pass on taste. If a fresh reviewer is available, they fill critique.md. If not, taste stays **Not verified**.
+The builder does not give itself a Pass on taste. If a fresh reviewer is available, they fill critique.md. If not, taste stays **Not verified**. Self-critique is still required. Follow the canonical Design Excellence rubric reached through step 7: compare two or three captured references, fix and rescore to at least 8/10 with no blocker. Unavailable references stay Not verified. Keep the self score separate from independent taste.
 
 ## Premium craft rubric
 
@@ -45,7 +45,7 @@ These fail on the standard profile too. Look at every pinned frame, not only the
 
 ## Fix loop
 
-Up to 3 rounds: test, fix, retest. Record each round. Update CHANGELOG.md.
+Test, fix, recapture and retest. Record every round in CHANGELOG.md. A round cap cannot turn an unresolved defect into a Pass; report any external or budget blocker explicitly.
 
 ## Case study
 

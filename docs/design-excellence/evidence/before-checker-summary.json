@@ -1,0 +1,244 @@
+{
+  "target": "tests/fixtures/design-excellence/before.html",
+  "profile": "app",
+  "fails": 9,
+  "warns": 3,
+  "viewports": {
+    "desktop": {
+      "results": [
+        {
+          "id": "mid-word-break",
+          "level": "FAIL",
+          "message": "words split inside cells: GmbH, Systems, Laboratories"
+        },
+        {
+          "id": "squeezed-columns",
+          "level": "FAIL",
+          "message": "3 cells clip, wrap atomic values, or violate declared minimum widths"
+        },
+        {
+          "id": "raw-data-value",
+          "level": "FAIL",
+          "message": "unformatted values: None | None"
+        },
+        {
+          "id": "dashboard-chart",
+          "level": "FAIL",
+          "message": "dashboard has no visible chart candidate; verify its question, data and encoding in visual review"
+        },
+        {
+          "id": "weak-type-scale",
+          "level": "WARN",
+          "message": "app title (14px) has little size or weight contrast against body (14px); review the hierarchy"
+        }
+      ],
+      "design": {
+        "wordBreaks": [
+          {
+            "word": "GmbH",
+            "cell": "Asterfield Research GmbH"
+          },
+          {
+            "word": "Systems",
+            "cell": "Harbor and Field Systems"
+          },
+          {
+            "word": "Laboratories",
+            "cell": "Northwind Laboratories"
+          }
+        ],
+        "squeezedColumns": [
+          {
+            "text": "Asterfield Research GmbH",
+            "width": 173,
+            "min": null
+          },
+          {
+            "text": "Harbor and Field Systems",
+            "width": 173,
+            "min": null
+          },
+          {
+            "text": "Northwind Laboratories",
+            "width": 173,
+            "min": null
+          }
+        ],
+        "rawValues": [
+          {
+            "token": "None",
+            "text": "None"
+          },
+          {
+            "token": "None",
+            "text": "None"
+          }
+        ],
+        "navOverflow": [],
+        "dashboard": true,
+        "chartCount": 0,
+        "weakType": {
+          "title": 14,
+          "body": 14,
+          "weight": 400
+        }
+      }
+    },
+    "phone": {
+      "results": [
+        {
+          "id": "mid-word-break",
+          "level": "FAIL",
+          "message": "words split inside cells: Company, Asterfield, Research"
+        },
+        {
+          "id": "squeezed-columns",
+          "level": "FAIL",
+          "message": "8 cells clip, wrap atomic values, or violate declared minimum widths"
+        },
+        {
+          "id": "raw-data-value",
+          "level": "FAIL",
+          "message": "unformatted values: None | None"
+        },
+        {
+          "id": "dashboard-chart",
+          "level": "FAIL",
+          "message": "dashboard has no visible chart candidate; verify its question, data and encoding in visual review"
+        },
+        {
+          "id": "nav-scroll-hint",
+          "level": "FAIL",
+          "message": "navigation clips destinations without scrolling and a visible linked hint or named scroll control"
+        },
+        {
+          "id": "weak-type-scale",
+          "level": "WARN",
+          "message": "app title (14px) has little size or weight contrast against body (14px); review the hierarchy"
+        },
+        {
+          "id": "touch-targets",
+          "level": "WARN",
+          "message": "1 controls smaller than 44x44px on a touch screen"
+        }
+      ],
+      "design": {
+        "wordBreaks": [
+          {
+            "word": "Company",
+            "cell": "Company"
+          },
+          {
+            "word": "Asterfield",
+            "cell": "Asterfield Research GmbH"
+          },
+          {
+            "word": "Research",
+            "cell": "Asterfield Research GmbH"
+          },
+          {
+            "word": "Discovery",
+            "cell": "Discovery"
+          },
+          {
+            "word": "Harbor",
+            "cell": "Harbor and Field Systems"
+          },
+          {
+            "word": "Field",
+            "cell": "Harbor and Field Systems"
+          },
+          {
+            "word": "Systems",
+            "cell": "Harbor and Field Systems"
+          },
+          {
+            "word": "Proposal",
+            "cell": "Proposal"
+          },
+          {
+            "word": "Northwind",
+            "cell": "Northwind Laboratories"
+          },
+          {
+            "word": "Laboratories",
+            "cell": "Northwind Laboratories"
+          },
+          {
+            "word": "Qualified",
+            "cell": "Qualified"
+          },
+          {
+            "word": "Company",
+            "cell": "Cedar Company"
+          }
+        ],
+        "squeezedColumns": [
+          {
+            "text": "Company",
+            "width": 63,
+            "min": null
+          },
+          {
+            "text": "Asterfield Research GmbH",
+            "width": 63,
+            "min": null
+          },
+          {
+            "text": "Discovery",
+            "width": 63,
+            "min": null
+          },
+          {
+            "text": "Harbor and Field Systems",
+            "width": 63,
+            "min": null
+          },
+          {
+            "text": "Proposal",
+            "width": 63,
+            "min": null
+          },
+          {
+            "text": "Northwind Laboratories",
+            "width": 63,
+            "min": null
+          },
+          {
+            "text": "Qualified",
+            "width": 63,
+            "min": null
+          },
+          {
+            "text": "Cedar Company",
+            "width": 63,
+            "min": null
+          }
+        ],
+        "rawValues": [
+          {
+            "token": "None",
+            "text": "None"
+          },
+          {
+            "token": "None",
+            "text": "None"
+          }
+        ],
+        "navOverflow": [
+          {
+            "text": "OverviewContactsPipelineAnalyticsRevenueTasks",
+            "scrollable": false
+          }
+        ],
+        "dashboard": true,
+        "chartCount": 0,
+        "weakType": {
+          "title": 14,
+          "body": 14,
+          "weight": 400
+        }
+      }
+    }
+  }
+}

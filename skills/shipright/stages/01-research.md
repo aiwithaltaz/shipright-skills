@@ -1,42 +1,22 @@
-# Stage 1: Research
+# Step 01: Idea and research
 
 **Deal first:** run `node <skill>/scripts/deal.mjs --stage 01 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
 
-Know the users, the alternatives, the rules, and the money before you invent a concept. Open [research-brief.md](../templates/research-brief.md).
-Required headings: Questions, Findings, Alternatives, Rules and limits, Money, Domain world, Implications.
+Open [01-idea-research.md](../templates/01-idea-research.md).
+Required headings in 01-idea-research.md: Idea, Evidence, Decision.
 
-For an existing app on the improve path, keep this light: domain, rules, and alternatives only. Do not restart the whole brief.
+Frame the supplied idea, then research only the uncertainties that can change the build. Write Vision, User, MVP, Out of scope and Next step under Idea in CONTEXT.md. Label the MVP Proposed, not discovered demand.
 
-## Idea brief
+Use the supplied brief first. Name the job, appetite, constraints and riskiest assumption. Compare up to three relevant alternatives, including the current manual workflow. Search only unresolved facts that change scope, access, data, price or design. Record URL, date and Verified or Assumed. No mandatory search count. Never invent interviews, adoption, prices or legal conclusions.
 
-Before research on a new project, write `## Idea` in CONTEXT.md with five lines: Vision, User, MVP, Out of scope, Next step. Research then tests that brief.
+Pick two or three relevant reference products from the supplied research before design. Record what each may contribute, with visual observations left Not verified until captured. Product marketing is not evidence of its authenticated interface.
 
-## Steps
-
-1. Write the 5 questions this product depends on. Always include: who uses it and what they use today; which platform, API, or legal rules apply; how money works (who pays, and the usual price shape); what goes wrong in this domain; what changes by time or place (season, hours, region).
-2. If web search works: run 5 to 10 searches. Prefer official docs, pricing pages, laws, and real complaints (reviews, forums). Record the source and the date.
-3. If search is unavailable: answer from general knowledge, tag every line **Assumed**, and list exactly what to verify and where.
-4. Name at least 3 real alternatives, including "doing nothing" or "a spreadsheet". For each: what it does well, the gap, and the price shape.
-5. End with "What this means for the product": 3 to 5 bullets that change the plan. A finding that does not change a decision does not belong here.
-
-## Findings
-
-Each fact is **Verified** (source and date) or **Assumed** (how to check). Do not upgrade Assumed to Verified because it sounds right.
-Domain world facts are the things in the user's week that change a decision: weather, a rate limit, a deadline, a capacity cap. These show up later on the screen, not only in the doc.
-
-## Worked example
-
-LinkedIn automation. Rule: LinkedIn's User Agreement bans bots that send invites, messages, or scrape profiles. Posting through the official API is allowed. Verify the current terms before you treat this as Verified. Implication: build an assistant that drafts and schedules, and the user presses send. A copilot, not a bot.
-
-## Vague idea
-
-If you still cannot name the user and the job, ask the decision cards from SKILL.md first. Then fill this brief. A request to build it is not a frame, and it is not permission to invent.
+Record one decision and one next verification. When the brief is already clear, summarize its evidence instead of repeating intake.
 
 ## Record
 
-Update CONTEXT.md: who it is for, and which facts are Assumed. Add a DECISIONS.md row for any choice you are making from the research.
-Required headings in DECISIONS.md: Rows.
+Reuse the router's decision summary. Update only changed project-record fields.
 
 ## Gate
 
-At least 3 real alternatives. Platform, legal, and data rules checked. Every fact tagged Verified or Assumed. Implications change the plan. Record updated.
+The template answers the decisions above with evidence or explicit unknowns. No new features or facts were invented. Record updated.

@@ -58,6 +58,12 @@ MERGED = {**{_PD + n: _PD + 'research.md' for n in ('research-evidence.md', 'res
           _PD + 'doc-set.md': 'skills/build-pack/references/pack-contract.md'}
 # Presence checks protect selected source contracts, not their interpretation.
 RULES = {
+    'skills/shipright/modes/ui-ux-design/references/design-excellence.md': [
+        'An analytical dashboard MUST', 'Never invent a trend',
+        'source', '0 and boolean false', '8/10 threshold',
+        'not a validated aesthetics instrument', 'independent reviewer',
+        'Not verified', 'unreadable values', '24px AA',
+    ],
     'skills/_shared/operating-contract.md': [
         '## Current phase', 'Every visible feature', 'Save later-phase ideas as notes, not UI',
         '## Exact feedback', 'acceptance check', 'Clearing a selection is not deleting records',
@@ -780,6 +786,11 @@ def self_test(root):
         ('premium choice', 'skills/shipright/modes/ui-ux-design/references/premium-web.md', "Stop for the user's choice", 'Build before the choice'),
         ('premium product blocker', 'skills/shipright/modes/ux-critique/references/taste-check.md', 'first screen is a **Blocker**', 'first screen is optional'),
         ('new project cannot skip', 'skills/shipright/SKILL.md', 'No step is skipped for a new project, even on request.', 'Skip the plan on request.'),
+    ])
+    mutations.extend([
+        ('craft required chart', 'skills/shipright/modes/ui-ux-design/references/design-excellence.md', 'An analytical dashboard MUST', 'An analytical dashboard may optionally'),
+        ('craft evidence threshold', 'skills/shipright/modes/ui-ux-design/references/design-excellence.md', 'not a validated aesthetics instrument', 'a validated aesthetics instrument'),
+        ('craft zero preserved', 'skills/shipright/modes/ui-ux-design/references/design-excellence.md', '0 and boolean false', 'missing values and empty strings'),
     ])
     mutations.extend(PHASE5_MUTATIONS)
     mutations.extend(PHASE51_MUTATIONS)

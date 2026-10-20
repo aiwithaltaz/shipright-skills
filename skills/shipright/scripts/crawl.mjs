@@ -37,6 +37,7 @@ const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/ja
 function serve(dir) {
   return new Promise(ok => {
     const server = createServer((req, res) => {
+      if (req.url === '/favicon.ico') { res.writeHead(204); return res.end(); }
       const file = resolve(dir, '.' + decodeURIComponent(new URL(req.url, 'http://x').pathname));
       if (!(file + sep).startsWith(dir + sep) || !existsSync(file) || !statSync(file).isFile()) { res.writeHead(404); return res.end(); }
       res.writeHead(200, { 'content-type': TYPES[extname(file)] || 'application/octet-stream' });
@@ -105,6 +106,7 @@ function sameApp(href, base) {
 
 const { chromium } = loadPlaywright();
 const browser = await chromium.launch({
+  ...(process.env.SHIPRIGHT_BROWSER ? { executablePath: resolve(process.env.SHIPRIGHT_BROWSER) } : {}),
   args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'],
 });
 const page = await browser.newPage();

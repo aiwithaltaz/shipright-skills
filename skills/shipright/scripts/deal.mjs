@@ -27,9 +27,10 @@ const rand = () => { h = Math.imul(h ^ (h >>> 15), 2246822507) >>> 0; h = Math.i
 const KIND = { script: 3, test: 2.5, rubric: 1.5 };
 const eligible = cards.filter(c => c.check && c.check.trim() && c.stage.slice(0, 2) === stage);
 const scored = eligible.map(c => {
+  const required = (c.required_for || []).some(t => tags.includes(t));
   const overlap = tags.length ? (c.tags || []).filter(t => tags.includes(t)).length : 0;
   const any = (c.tags || []).includes('any') ? 0.5 : 0;
-  return { c, s: (KIND[c.check_kind] || 1) + overlap * 2 + any + (c.origin === 'manual' ? 1 : 0) + rand() * 1.5 };
+  return { c, s: (required ? 100 : 0) + (KIND[c.check_kind] || 1) + overlap * 2 + any + (c.origin === 'manual' ? 1 : 0) + rand() * 1.5 };
 }).sort((a, b) => b.s - a.s);
 const picked = []; const topics = new Set();
 for (const { c } of scored) { if (picked.length >= n) break; const t = (c.topic || '').toLowerCase(); if (topics.has(t)) continue; topics.add(t); picked.push(c); }
@@ -43,7 +44,7 @@ if (nDir) {
 
 if (args.includes('--json')) { console.log(JSON.stringify({ stage, tags, cards: picked, directions: dealt }, null, 1)); process.exit(0); }
 const out = [`# Dealt cards for stage ${stage}${tags.length ? ` (${tags.join(', ')})` : ''}`,
-  'Apply each card. Record which check you ran in the stage record. Do not read the library file itself.', ''];
+  'Apply relevant cards within approved scope. Do not reopen settled decisions. Record checks once. Do not read the library file itself.', ''];
 const clip = (t, w) => { const p = String(t).split(/\s+/); return p.length > w ? p.slice(0, w).join(' ') + '...' : t; };
 const BUDGET = 4200; // characters, about 1000 tokens with the directions
 let used = out.join('\n').length + (nDir ? 1300 : 0);
@@ -54,6 +55,9 @@ for (const c of picked) {
   used += block.length + 1; shown.push(c); out.push(block);
 }
 out.push('', 'Sources: ' + [...new Set(shown.map(c => c.source_url))].join(' '));
+if (shown.some(c => c.quote_scope === 'research-synthesis')) {
+  out.push('Provenance: craft cards use supplied research synthesis; upstream pages were not reverified.');
+}
 if (dealt.length) {
   out.push('', `## Pick one of ${dealt.length} directions`, 'Choose the one whose idea comes from the subject itself. Say why in one sentence.');
   for (const d of dealt) out.push(`- **${d.name}**: ${d.idea} Type: ${d.type}. Color: ${d.palette}. Motion: ${d.motion}.`);

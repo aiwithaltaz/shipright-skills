@@ -28,13 +28,13 @@ Good: "18%, usually 2%". "2.9x usual by this hour".
 Bad: a raw count with no baseline.
 Check: a metric that can vary has a usual, a budget, or a prior period beside it.
 
-## A4. Work queue plus context rail
+## A4. Work queue with earned context
 
-The main column is what to do now. The right column is what drives the next decision.
-Why: one wide table hides the next action.
+The main region supports the next task. Add a rail only for a distinct next decision.
+Why: a mandatory rail can squeeze the primary records.
 Good: a week board, plus "Ready to invoice: 12 visits, $930, Send 12 invoices".
 Bad: one table, or a table plus an empty "Select a row" panel.
-Check: there is a primary list and a rail with one next decision. On a phone the rail moves under the list, not off screen.
+Check: primary records keep readable columns. A rail supports a named decision or collapses. On a phone useful context moves below the work. Analytical dashboards keep required charts visible; a plain list is not a chart substitute.
 
 ## A5. The product's real world
 

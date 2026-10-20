@@ -1,39 +1,22 @@
-# Stage 5: Architecture
+# Step 05: Architecture and display data
 
 **Deal first:** run `node <skill>/scripts/deal.mjs --stage 05 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
 
-Make it buildable. Open [architecture.md](../templates/architecture.md).
-Required headings: Stack, Data model, Access, Integrations, Secrets, Costs, Phases.
+Open [05-architecture.md](../templates/05-architecture.md).
+Required headings in 05-architecture.md: Data, Access, Display, Screens.
 
-The website stack is decided only in this file. Do not pick a second default from a table.
+Define current-release entities, relationships, operations, routes, access boundaries and integration failures. Enforce access on the server. Secrets are names only. State retention and destructive effects require evidence, not assumptions.
 
-- Premium public site, with a product on stage: Vite, plus Three.js or React Three Fiber, plus GSAP and Lenis. The tested scene is `blocks/product-3d.html`. The tested scroll story is `blocks/scroll-story.html`. Do not invent a second 3D stack inside a stand-in block.
-- Calm content site, or a site with no product object: Astro.
-- An existing codebase or a named tool wins over both. Say the switch point.
+Add a display contract per field: meaning, formatter, units, precision, locale, missing value and freshness. Distinguish null, undefined, empty string, 0, false, not applicable and failed retrieval. Absent owner can be Unassigned; failed retrieval is an error, never zero.
 
-App stacks stay in [stack-choices.md](../modes/build-pack/references/stack-choices.md): reason, switch point, and fit the user's coding tool. That file points back here for websites so the two do not compete.
+In ARCHITECTURE.md keep Stack, Data, Access, Integrations, Secrets and Costs. Costs are sourced or Assumed, never invented. Keep Screens with Screen, Job, Primary action, Empty, Loading and Error, plus Project rules with Stack, Folders and Banned lines. Run check-record --base.
 
-## Also write
-
-- Data model: every table, fields, types, relations, and the indexes that matter. No tables for later ideas.
-- Access: who reads and changes which rows. Enforce it on the server. Hiding a button is not access control.
-- Integrations: rate limits and what happens when they fail, from the risk register.
-- Secrets: names only. Never values.
-- Budgets: LCP under 2.5 s, INP under 200 ms, CLS under 0.1. For 3D, also a triangle and texture budget.
-- Costs per month at 0, 100, and 1,000 users. Mark Assumed prices as Assumed.
-- Build phases with weeks. Open decisions with an owner.
+Website stack: existing code wins; choose a content stack for reading and a scene stack only for a justified product demonstration. Explain each motion dependency and its fallback. Do not mandate a 3D stack for a public website.
 
 ## Record
 
-Copy the stack, data, access, secrets, and costs into ARCHITECTURE.md. Replace stale lines. Do not append a second stack.
-Required headings in ARCHITECTURE.md: Stack, Data, Access, Integrations, Secrets, Costs.
-
-## Screens and states
-
-In ARCHITECTURE.md add `## Screens`: a table with Screen, Job, Primary action, Empty, Loading, Error. One primary action per screen. Loading names skeleton, spinner, progress or instant. Every error has a way out (retry, fix, back).
-Add `## Project rules` with Stack, Folders and Banned lines before any build code.
-Run `node <skill>/scripts/check-record.mjs <record> --base`.
+Reuse the router's decision summary. Update only changed project-record fields.
 
 ## Gate
 
-Stack has a reason and a switch point. Data model and access rules are specific. Secrets are names only. Costs are stated. Record updated.
+The template answers the decisions above with evidence or explicit unknowns. No new features or facts were invented. Record updated.

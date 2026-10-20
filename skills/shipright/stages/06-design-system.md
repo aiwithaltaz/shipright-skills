@@ -1,31 +1,22 @@
-# Stage 6: Design system
+# Step 06: Flows, IA and visual contract
 
 **Deal first:** run `node <skill>/scripts/deal.mjs --stage 06 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
 
-One system, measured, then used. Open [DESIGN.md](../templates/DESIGN.md), [components.md](../templates/components.md), [tokens.css](../templates/tokens.css), and [motion.md](../patterns/motion.md) when anything moves.
-Required headings in DESIGN.md: Choice, Tokens, Components, Status table, Label table.
-Required headings in components.md: Variants, States, Screens.
+Open [06-design-contract.md](../templates/06-design-contract.md).
+Required headings in 06-design-contract.md: Flow, Navigation, Visual contract, Data presentation.
 
-## Choice
+Map the primary task: entry, steps, success, failure, cancellation and return. Map objects to destinations, routes, scope, selected state and phone equivalents. Tabs are peer views, not unrelated global destinations.
 
-One decision card: (a) the owner's system, (b) a known system, (c) a ShipRight starter adapted to the product. For an existing app, default to (a): extract what is already there and mark it Observed. Do not rebrand it without approval.
-Map their names to token roles (bg, surface, text, muted, border, accent, success, warning, danger, focus) so checks still run. For (c), take the accent from the product or its world (a keycap yellow, a crust brown, a field green), not from a generic purple.
+Load [Design Excellence](../patterns/design-excellence.md). Preserve the owner's approved system; otherwise propose tokens matched to the product. Use the step template as the short contract, not a second design manifesto. Specify type roles, spacing, semantic colors, density, component states and motion purpose. Numbers are defaults to validate, not universal facts.
 
-## Tokens
+Give every table column a content/width contract and every dashboard chart a question/data contract. An analytical dashboard must include its required visualization. A task list with no analytical question may use exact records; document that distinction against the brief, never rename a dashboard to evade its requirement.
 
-Type scale with size and line-height. Spacing scale 4, 8, 16, 24, 32, 40, 48, 64. No 2, 6, 10, or 12 gaps. Radii and motion durations as numbers.
-Run `node <skill>/scripts/check-tokens.mjs <tokens.css>`. Body text at least 4.5:1. Large text and UI borders at least 3:1. Off-scale spacing fails. Then build a `/design` page that shows every token and state, and screenshot it.
-Fonts: use the two SIL OFL families in `blocks/fonts/` (Inter for UI, Fraunces for headlines) with the `@font-face` file there. Do not depend on a font that exists only on one operating system.
-
-## Components
-
-Button, field, select, table row, badge, toast, dialog, empty, error, skeleton. Each lists default, hover, active, focus, disabled, and loading or error where it applies.
-One status table: one meaning, one label, one color role, one icon. One label table: the same job uses the same word (Save, Continue, Cancel, Remove).
+Test the design preview with a populated shell, long names, large/negative numbers, zero, missing owners and the required chart. Do not judge only empty cards and token swatches. Run check-tokens and capture 390/1280. Write one status/label table; reuse it.
 
 ## Record
 
-Note the system choice in DECISIONS.md. Status Proposed until the owner agrees.
+Reuse the router's decision summary. Update only changed project-record fields.
 
 ## Gate
 
-System choice recorded. Contrast written down. Spacing on the scale. Every component has its states. Record updated.
+The template answers the decisions above with evidence or explicit unknowns. No new features or facts were invented. Record updated.

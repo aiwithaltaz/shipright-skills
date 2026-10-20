@@ -13,6 +13,8 @@ With no artifact, ask for the smallest relevant input. A specification is review
 
 For a public website or immersive page, read [taste-check.md](references/taste-check.md) and compare the rendered product and six-act story.
 
+For an app, dashboard or operational table, load [Design Excellence](../ui-ux-design/references/design-excellence.md) before implementation or visual review.
+
 ## INTAKE
 
 Read [shared intake](../_shared/intake.md) and [the operating contract](../_shared/operating-contract.md) once per task.

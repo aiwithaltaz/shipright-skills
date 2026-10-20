@@ -39,6 +39,9 @@ def clean(v):
     if isinstance(v, str): return v.replace('\u2014', ' - ').replace('\u2013', '-')
     return [clean(x) for x in v] if isinstance(v, list) else v
 kept = [{k: clean(v) for k, v in c.items()} for c in kept]
+# Research synthesis is a separate evidence tier, never an alleged upstream quotation.
+from design_cards import load_cards
+kept.extend(load_cards())
 ids = {}
 for c in kept:
     ids[c['id']] = ids.get(c['id'], 0) + 1

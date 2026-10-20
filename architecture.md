@@ -11,7 +11,7 @@ This is a product, design and build-planning instruction pack, not an applicatio
 | AGENTS.md | Maintenance rules for this pack only |
 | SOURCES.md | Provenance and credits. Never loaded by skills |
 | skills/shipright/SKILL.md | The only installable skill. Routes to one stage, and still names the five modes |
-| skills/shipright/stages/ | Draft 1.3 spine, stages 0 to 10 plus a feedback round. Not a released version |
+| skills/shipright/stages/ | Seven idea-to-design steps, then build/test/ship checks, plus discovery and feedback |
 | skills/shipright/templates/ | Fill-in files for a stage, including templates/record/ |
 | skills/shipright/patterns/ | Phase 2 pattern files. The README is a placeholder |
 | skills/shipright/blocks/ | Phase 2 tested blocks. Not loaded as prompt context |
@@ -33,8 +33,8 @@ This is a product, design and build-planning instruction pack, not an applicatio
 
 ## Loading
 
-Load skills/shipright/SKILL.md, then one mode MODE.md, then the shared contract and intake once. Then load only the references the current step needs.
-build-pack loads in three bounded stages: frame, flows, structure and stack; design system and screens; tickets and pack check.
+Load skills/shipright/SKILL.md, then one stage. A named legacy mode still routes through those stages. Load the shared contract and intake once, then only references needed by the current decision.
+build-pack uses the same seven short idea-to-design steps. Do not repeat a long planning pass before them. Steps 8 to 10 complete implementation, tests and readiness.
 For premium public web, stages are research and six-act story; three options with only selected technique recipes; the six-act prompt and pack check. These replace document marketing references. Each stage reuses the canonical reference owned by another skill instead of copying it.
 Use existing project context instead of generating redundant documents. Do not load historical examples as current authority.
 
@@ -80,3 +80,9 @@ Keep the existing 1,300-word entry check as a secondary safeguard. Stored refere
 Load only references relevant to the current task. Each mode MODE.md links directly to its references with a loading condition; related links within references are reminders, never the only access path. The checker flags broken links, orphan references, nested reference folders, missing conditions and undeclared reference use. Topic ownership is the containing mode directory. Other modes link to that file; detailed research rules stay with product-design, visual rules with ui-ux-design, critique rules with ux-critique, launch checks with ship-check. No complex duplicate detection.
 
 A normal path is a declared guidance allowance, not a client-enforced context window. The checker conservatively includes linked skill-guidance dependencies from selected references. Include relevant dependencies when adding paths. Conversation, project artifacts, tool output, optional exported templates and opt-in taste files are outside these guidance totals. If a task needs more than a path allows, use bounded stages with concise decisions; never omit required safeguards or accessibility. Source checks cannot establish actual loading in every client.
+
+## Design Excellence draft ownership
+
+The seven idea-to-design steps retain their existing stage filenames. Each has one new compact template. The canonical app craft layer is skills/shipright/modes/ui-ux-design/references/design-excellence.md; the patterns entry only routes to it. Mode links and context-policy keep loading conditional.
+
+Browser measurements live in skills/shipright/scripts/design-metrics.mjs and are imported by check-ui.mjs. Research-synthesis cards live in knowledge/cards/design-excellence.json with evidence pointers in knowledge/sources/design-excellence.json. knowledge/tools/design_cards.py validates and merges them without overwriting earlier cards. The dealer prioritizes their current-stage app rules within the unchanged token budget.

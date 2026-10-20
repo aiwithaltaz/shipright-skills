@@ -1,0 +1,27 @@
+test_blocks_exist_and_pass (test_phase2.Phase2Tests.test_blocks_exist_and_pass) ... FAIL
+test_check_tokens_pass_and_fail (test_phase2.Phase2Tests.test_check_tokens_pass_and_fail) ... ok
+test_consistency_pass_and_fail (test_phase2.Phase2Tests.test_consistency_pass_and_fail) ... ok
+test_opus_and_layout_moves_are_rules (test_phase2.Phase2Tests.test_opus_and_layout_moves_are_rules) ... ok
+test_run_tests_writes_a_pass_report (test_phase2.Phase2Tests.test_run_tests_writes_a_pass_report) ... ok
+test_taste_is_opt_in (test_phase2.Phase2Tests.test_taste_is_opt_in) ... ok
+
+======================================================================
+FAIL: test_blocks_exist_and_pass (test_phase2.Phase2Tests.test_blocks_exist_and_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/.shipright-env/design-upgrade/regression-pack/tests/test_phase2.py", line 61, in test_blocks_exist_and_pass
+    self.assertEqual(0, proc.returncode, proc.stderr[-2000:] + proc.stdout[-500:])
+AssertionError: 0 != 1 : blocks: fail
+page-transition.html desktop: Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID
+page-transition.html phone: Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID
+product-3d.html desktop: Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID
+product-3d.html: canvas is blank (0)
+product-3d.html phone: Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID
+scroll-story.html desktop: Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID
+scroll-story.html phone: Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID
+
+
+----------------------------------------------------------------------
+Ran 6 tests in 38.391s
+
+FAILED (failures=1)

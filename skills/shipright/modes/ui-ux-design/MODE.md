@@ -35,6 +35,8 @@ For chosen sound toggle, read [sound-toggle.md](references/sound-toggle.md).
 
 For chosen page transition, read [page-transition.md](references/page-transition.md).
 
+For an app, dashboard or operational table, load [Design Excellence](references/design-excellence.md) before implementation or visual review.
+
 ## INTAKE
 
 Read [shared intake](../_shared/intake.md) and [the operating contract](../_shared/operating-contract.md) once per task.

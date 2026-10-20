@@ -1,22 +1,22 @@
-# Stage 7: Layout and options
+# Step 07: Design the representative screen
 
-**Deal first:** run `node <skill>/scripts/deal.mjs --stage 07 --tags <project tags>`. It prints cards and 3 directions. Base the three options on those directions.
+**Deal first:** run `node <skill>/scripts/deal.mjs --stage 07 --tags <project tags>` and apply the cards it prints. Do not open `library/` yourself.
 
-Structure every screen, then show exactly three directions. Open [layout-moves.md](../patterns/layout-moves.md), [layout-spec.md](../templates/layout-spec.md), and [options.md](../templates/options.md).
-Required headings in layout-spec.md: Job, Zones, Hero, Changes.
-Required headings in options.md: Options, Pick.
+Open [07-design-slice.md](../templates/07-design-slice.md).
+Required headings in 07-design-slice.md: Direction, Slice, Review.
 
-## Layout pass, before any skin
+Use the visual contract to render one realistic primary screen before expanding the app. Load [Design Excellence](../patterns/design-excellence.md). Show three small layout options only when the composition is not already approved. They change hierarchy or mechanism, not just color. The existing approved direction is not reopened for a small fix.
 
-For each screen: one job, one primary action, blocks in the order the user needs them, groups by meaning, controls next to the work they affect, a grid whose edges line up, one hero element that is bigger, fewer steps, and a visible state. Then run the removal test. Remove what fails.
-Write zones top to bottom. Widths at 390 and 1280. For an existing app, a before to after line with the pain ID.
+Record a Proposed pick and the owner's choice or delegation. Use a supplied or clearly labeled sample dataset. Implement the primary interaction, semantic navigation, required chart, column widths and responsive behavior. A context rail earns space by supporting the task; collapse it when it squeezes the main work.
 
-## Three options
+Compare screenshots against two or three chosen reference products using the five-part 10-point rubric in the pattern. Capture reference screens or use supplied captures; record unavailable evidence as Not verified. Self-critique is a draft assessment, not an independent Pass.
 
-Exactly three. Each: the story or layout device, 3 to 5 techniques, type pair, palette from the product, what it refuses, and one small preview.
-They differ by device, not by color. Apps: work queue plus a context rail, versus a calendar board, versus inbox-zero cards. Sites: inspect the object, versus take it apart, versus use it.
-Pick one with a reason. Mark it Proposed. If the owner said you decide, continue. Do not build three full sites.
+Fix the highest-impact mismatch, recapture and rescore. Continue until at least 8/10 with no blocker. If evidence or capability prevents that result, report Fail or Not verified and the remaining work. Never raise a score to stop a loop. Stages 8 to 10 still build the remaining scope, test and check readiness.
+
+## Record
+
+Reuse the router's decision summary. Update only changed project-record fields.
 
 ## Gate
 
-Each screen has a job, one primary action, ordered zones, and a hero. Options differ in device. One is chosen and marked Proposed. Record updated.
+The template answers the decisions above with evidence or explicit unknowns. No new features or facts were invented. Record updated.

@@ -30,7 +30,7 @@ const tokenHex = new Set();
 if (flag('--tokens') && existsSync(flag('--tokens'))) {
   for (const match of readFileSync(flag('--tokens'), 'utf8').matchAll(/#([0-9a-f]{6})\b/gi)) tokenHex.add(match[1].toLowerCase());
 }
-const SCALE = new Set([0, 4, 8, 16, 24, 32, 40, 48, 64]);
+const SCALE = new Set([0, 4, 8, 12, 16, 24, 32, 40, 48, 64]);
 const remote = /^https?:/.test(target);
 const pagePath = remote ? null : resolve(target);
 const root = remote ? null : dirname(pagePath);
@@ -52,7 +52,7 @@ function serve(dir) {
 }
 
 const { chromium } = loadPlaywright();
-const browser = await chromium.launch({ args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
+const browser = await chromium.launch({ ...(process.env.SHIPRIGHT_BROWSER ? { executablePath: resolve(process.env.SHIPRIGHT_BROWSER) } : {}), args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
 const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
 let server;
 try {
