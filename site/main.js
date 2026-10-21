@@ -101,7 +101,7 @@ if (menu && navLinks) {
 
 /* ---------- Fade-up on blocks ---------- */
 if (!reduced && 'IntersectionObserver' in window) {
-  const blocks = $$('.d, .shot, .score, .part, .q');
+  const blocks = $$('.d, .shot, .score, .part, .q, .step, .bench-card, .project');
   blocks.forEach(b => b.classList.add('fade'));
   const io = new IntersectionObserver(entries => entries.forEach(entry => {
     if (!entry.isIntersecting) return;

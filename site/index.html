@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ShipRight. Better AI designs from the same prompt.</title>
+<title>ShipRight. From a basic idea to a tested app.</title>
 <meta name="pack-version" content="1.4.0">
 <meta name="release-state" content="released">
 <meta name="description" content="ShipRight is a free skill for your AI coding tool. It thinks about the product and designs from real references before it writes UI. See the salon test.">
-<meta property="og:title" content="ShipRight. Better AI designs from the same prompt.">
+<meta property="og:title" content="ShipRight. From a basic idea to a tested app.">
 <meta property="og:description" content="Same prompt, same model. One salon app without ShipRight, one with it. Try both.">
 <meta property="og:type" content="website">
 <link rel="icon" href="/favicon.svg">
@@ -20,10 +20,9 @@
   <nav class="nav" aria-label="Main">
     <button type="button" class="menu btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
     <div class="nav-links" id="nav-links">
-      <a href="#proof">Proof</a>
-      <a href="#why">Why it works</a>
       <a href="#how">How it works</a>
-      <a href="./case-study.html">Case study</a>
+      <a href="#benchmark">Benchmark</a>
+      <a href="#projects">Projects</a>
       <a class="nav-cta" href="#install">Install</a>
     </div>
   </nav>
@@ -34,167 +33,124 @@
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">A free skill for AI coding tools</p>
-        <h1 data-keep-text>Same prompt.<br><em>Better app.</em></h1>
-        <p class="hero-sub">ShipRight makes your AI think about the product and design from real references before it writes any UI. Here is one test you can open and try.</p>
+        <h1 data-keep-text>From a basic idea<br><em>to a tested app.</em></h1>
+        <p class="hero-sub">ShipRight walks your AI through the steps a good product team takes: research, users, a PRD, flows, references and a brand mood. Then it builds the UI and checks it.</p>
         <div class="row">
           <a class="btn fill" href="#install">Install ShipRight</a>
-          <a class="btn ghost" href="#proof">See the salon test</a>
+          <a class="btn ghost" href="#how">See how it works</a>
         </div>
       </div>
-      <div class="cmp" id="cmp" data-compare data-product-hero>
-        <img class="cmp-before" src="/salon/a-hero.webp" alt="Salon app built without ShipRight: a booking form with a side panel, close to an admin screen." width="1100" height="688">
-        <img class="cmp-after" src="/salon/b-hero.webp" alt="Salon app built with ShipRight: a warm studio page that says Book a chair, with a photo of the room." width="1100" height="688">
-        <span class="cmp-tag left">Without</span>
-        <span class="cmp-tag right">With ShipRight</span>
-        <span class="cmp-handle" aria-hidden="true"></span>
-        <input class="cmp-range" id="cmp-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare the app without and with ShipRight">
-      </div>
-    </div>
-    <p class="wrap hero-note">Drag to compare. Both apps were built by Grok 4.7 in Grok Build from the same prompt.</p>
-  </section>
-
-  <section id="proof" class="proof" data-act="proof">
-    <div class="wrap">
-      <div class="head">
-        <p class="eyebrow">The test</p>
-        <h2>We built the same salon app twice.</h2>
-        <p class="lede">One prompt for a small hair salon: clients book a visit, the owner runs the day. Same model, same tool. Once without ShipRight, once with it. Then we used both.</p>
-      </div>
-
-      <div class="duo">
-        <figure class="shot">
-          <p class="shot-tag">Without ShipRight</p>
-          <img src="/salon/a-hero.webp" alt="Without ShipRight: the client side opens on a form with a side panel of hours and steps." loading="lazy" width="1100" height="688">
-          <figcaption>Clean, but it feels like software. The client lands in a form.</figcaption>
-          <a class="live" href="https://shipright-test-salon-a.vercel.app" rel="noopener">Try it live <span aria-hidden="true">↗</span></a>
-        </figure>
-        <figure class="shot win">
-          <p class="shot-tag">With ShipRight</p>
-          <img src="/salon/b-hero.webp" alt="With ShipRight: a studio page with a serif headline, the room photo and the menu with prices." loading="lazy" width="1100" height="688">
-          <figcaption>It feels like a real studio. The client sees the offer and how to book.</figcaption>
-          <a class="live" href="https://shipright-test-salon-b.vercel.app" rel="noopener">Try it live <span aria-hidden="true">↗</span></a>
+      <div class="path" data-product-hero>
+        <p class="path-ask"><code>/shipright</code> A booking app for my salon</p>
+        <ol class="path-steps">
+          <li>Idea</li><li>Research</li><li>Users</li><li>PRD</li><li>Flows</li><li>References and mood</li><li>Design system</li><li>Build</li><li>Checks</li>
+        </ol>
+        <figure class="path-out">
+          <img src="/salon/b-hero.webp" alt="The finished screen: a salon booking page that says Book a chair." width="1100" height="688">
+          <figcaption>The result, built and checked</figcaption>
         </figure>
       </div>
-
-      <div class="scores" data-proof-claim data-proof-source="RUBRIC.md grading of /workspace/ab-salon A and B2, graded by ShipRight Lab, not blind">
-        <div class="score">
-          <p class="score-name">Craft <span>out of 40</span></p>
-          <div class="bar"><i style="--v: 70%"></i><b>28</b><span>Without</span></div>
-          <div class="bar win"><i style="--v: 77.5%"></i><b>31</b><span>With ShipRight</span></div>
-        </div>
-        <div class="score">
-          <p class="score-name">Product thinking <span>out of 28</span></p>
-          <div class="bar"><i style="--v: 75%"></i><b>21</b><span>Without</span></div>
-          <div class="bar win"><i style="--v: 85.7%"></i><b>24</b><span>With ShipRight</span></div>
-        </div>
-        <p class="honest">We graded both apps ourselves with our rubric. It was not blind, so open both and judge for yourself. The test used the new reference-first ShipRight method, which is going into the next release.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="why" class="why" data-act="why">
-    <div class="wrap">
-      <div class="head">
-        <p class="eyebrow">Why it looks better</p>
-        <h2>Six decisions ShipRight made.</h2>
-        <p class="lede">Each one is next to the part of the app it shaped.</p>
-      </div>
-      <ol class="decisions">
-        <li class="d">
-          <div class="d-text">
-            <span class="d-n">01</span>
-            <h3>Two users, two sides.</h3>
-            <p>A salon has a client who wants to book fast and an owner who runs the day. ShipRight built a warm booking site for clients and a calm Today view for the owner. The plain build showed the booking panel inside the owner view too.</p>
-          </div>
-          <div class="d-media pair2">
-            <figure><img src="/salon/b-owner.webp" alt="With ShipRight: the owner's Today view, a list of the day's visits with stylist photos and notes." loading="lazy" width="1100" height="688"><figcaption>With: the owner's own Today view</figcaption></figure>
-            <figure class="dim"><img src="/salon/a-owner.webp" alt="Without ShipRight: the owner's book with the client booking panel still on the left." loading="lazy" width="1100" height="688"><figcaption>Without: client panel and owner book mixed</figcaption></figure>
-          </div>
-        </li>
-        <li class="d">
-          <div class="d-text">
-            <span class="d-n">02</span>
-            <h3>References of the same kind.</h3>
-            <p>It looked at boutique studio and hotel booking sites, not software. An earlier version used tools like Linear and Stripe as references, and the salon came out looking like an admin tool.</p>
-          </div>
-          <div class="d-media"><figure><img src="/salon/b-hero.webp" alt="The client first screen: Book a chair, opening hours, and the room photo, like a studio website." loading="lazy" width="1100" height="688"><figcaption>A studio site, not a dashboard</figcaption></figure></div>
-        </li>
-        <li class="d">
-          <div class="d-text">
-            <span class="d-n">03</span>
-            <h3>The mood came first.</h3>
-            <p>Before any screen, it picked a mood: a warm, quiet studio. The colors and photos come from that.</p>
-            <ul class="swatches" aria-label="Brand colors">
-              <li><i style="background:#f3eee6"></i>Paper cream <code>#f3eee6</code></li>
-              <li><i style="background:#8f4334"></i>Copper <code>#8f4334</code></li>
-              <li><i style="background:#234237"></i>Moss <code>#234237</code></li>
-            </ul>
-          </div>
-          <div class="d-media room"><figure><img src="/salon/b-room.webp" alt="The salon room photo used on the client side: a mirror, a plant and warm light." loading="lazy" width="900" height="1200"><figcaption>The room photo sets the tone</figcaption></figure></div>
-        </li>
-        <li class="d">
-          <div class="d-text">
-            <span class="d-n">04</span>
-            <h3>Type with a voice.</h3>
-            <p>Fraunces, a soft serif, for headlines like "Book a chair." It feels human. Figtree for small text, so prices and times stay easy to read.</p>
-          </div>
-          <div class="d-media type-card"><figure><img src="/salon/b-type.webp" alt="The headline Book a chair. set in Fraunces." loading="lazy" width="555" height="69"><figcaption>Fraunces headline, Figtree text</figcaption></figure></div>
-        </li>
-        <li class="d">
-          <div class="d-text">
-            <span class="d-n">05</span>
-            <h3>Booking cut to the main job.</h3>
-            <p>Service, stylist, time, details. One step at a time, and the price is shown up front. Each finished step folds up so you can change it.</p>
-          </div>
-          <div class="d-media"><figure class="clip">
-            <video src="/salon/booking.mp4" poster="/salon/booking-poster.webp" width="960" height="600" muted loop playsinline preload="none" aria-label="Clip: picking Signature cut, then Willa Chen, then Wednesday at 3:00 p.m., then the details form."></video>
-            <figcaption>Real clip of the booking steps</figcaption>
-          </figure></div>
-        </li>
-        <li class="d">
-          <div class="d-text">
-            <span class="d-n">06</span>
-            <h3>The basics, done.</h3>
-            <p>One spacing scale. Clear focus outlines for keyboard users. A skip link. And an honest note on top that says it is a sample studio and nothing is sent.</p>
-          </div>
-          <div class="d-media pair2 basics">
-            <figure><img src="/salon/b-skip.webp" alt="The skip link shown on the first Tab press, above the sample studio note." loading="lazy" width="640" height="200"><figcaption>Skip link and sample note</figcaption></figure>
-            <figure><img src="/salon/b-focus.webp" alt="A Book button with a clear double focus outline." loading="lazy" width="343" height="192"><figcaption>Focus outline</figcaption></figure>
-          </div>
-        </li>
-      </ol>
-      <a class="btn ghost more" href="./case-study.html">Read the full case study</a>
     </div>
   </section>
 
   <section id="how" class="how" data-act="how">
-    <div class="wrap how-grid">
+    <div class="wrap">
       <div class="head">
         <p class="eyebrow">How it works</p>
-        <h2>Think first. Then design from real work.</h2>
+        <h2>Nine steps, in order.</h2>
+        <p class="lede">The thinking comes before any pixels. Each step writes a short note the next one uses. The pictures come from the salon test; the notes are shortened examples.</p>
       </div>
-      <div class="parts">
-        <div class="part">
-          <h3>1. The product</h3>
-          <ul>
-            <li>Who uses it, and why they open it today</li>
-            <li>What each user sees first</li>
-            <li>The 3 to 5 jobs that matter</li>
-            <li>Empty, loading and error states</li>
-            <li>Real looking sample data, labeled</li>
-          </ul>
+      <div class="phase"><p>Part 1</p><h3>Think about the product</h3></div>
+      <ol class="steps">
+        <li class="step">
+          <div class="step-text"><span class="d-n">01</span><h3>A basic idea</h3><p>You type one line. ShipRight turns it into a short paragraph: what it is, who pays, and the job it does every day.</p></div>
+          <div class="step-out"><div class="note" aria-label="Illustrative output"><p class="note-file"><code>idea.md</code><span>Illustrative</span></p><ul><li>A booking site for a small hair salon</li><li>Clients book a visit, the owner runs the day</li><li>The job: fill the chairs without phone calls</li></ul></div></div>
+        </li>
+        <li class="step">
+          <div class="step-text"><span class="d-n">02</span><h3>Research</h3><p>It looks at the best products of the same type, what they do well, and where people get stuck.</p></div>
+          <div class="step-out"><div class="note" aria-label="Illustrative output"><p class="note-file"><code>research.md</code><span>Illustrative</span></p><ul><li>Boutique studio and hotel booking sites</li><li>Prices shown up front win trust</li><li>Pain: long forms before you see a time</li></ul></div></div>
+        </li>
+        <li class="step">
+          <div class="step-text"><span class="d-n">03</span><h3>Define the users</h3><p>A main user and a second one. Their day, why they open the app, and what worries them.</p></div>
+          <div class="step-out"><div class="note" aria-label="Illustrative output"><p class="note-file"><code>users.md</code><span>Illustrative</span></p><ul><li>Client: books in a short break, wants a clear price</li><li>Owner: needs to see who is next, fast</li><li>Two users, so two sides</li></ul></div></div>
+        </li>
+        <li class="step">
+          <div class="step-text"><span class="d-n">04</span><h3>The PRD</h3><p>What each user sees first, the few jobs that matter, and what stays out of version one.</p></div>
+          <div class="step-out"><div class="note" aria-label="Illustrative output"><p class="note-file"><code>prd.md</code><span>Illustrative</span></p><ul><li>Client first screen: the offer and a Book button</li><li>Owner first screen: today's visits</li><li>Out of v1: payments, reviews</li></ul></div></div>
+        </li>
+        <li class="step">
+          <div class="step-text"><span class="d-n">05</span><h3>Flows and states</h3><p>The 3 to 5 main jobs in a few clicks each, plus empty, loading and error states, and real looking sample data.</p></div>
+          <div class="step-out"><div class="note" aria-label="Illustrative output"><p class="note-file"><code>flows.md</code><span>Illustrative</span></p><ul><li>Book: service, stylist, time, details</li><li>Owner: mark done, add a walk-in</li><li>Empty day, failed save, long names</li></ul></div></div>
+        </li>
+      </ol>
+      <div class="phase"><p>Part 2</p><h3>Design from real references, then build</h3></div>
+      <ol class="steps" start="6">
+        <li class="step">
+          <div class="step-text"><span class="d-n">06</span><h3>References and brand mood</h3><p>It names the product type, picks 2 or 3 great references of that type, and sets a mood in three words.</p></div>
+          <div class="step-out"><figure class="mood"><img src="/salon/b-room.webp" alt="A warm salon room photo used to set the mood." loading="lazy" width="900" height="1200"><ul class="swatches" aria-label="Brand colors"><li><i style="background:#f3eee6"></i>Paper</li><li><i style="background:#8f4334"></i>Copper</li><li><i style="background:#234237"></i>Moss</li></ul><figcaption>Warm, quiet, crafted</figcaption></figure></div>
+        </li>
+        <li class="step">
+          <div class="step-text"><span class="d-n">07</span><h3>Design system</h3><p>Two fonts, a short type scale, one spacing scale and about ten colors, all in one file.</p></div>
+          <div class="step-out"><figure class="type-card"><img src="/salon/b-type.webp" alt="A headline set in Fraunces: Book a chair." loading="lazy" width="555" height="69"><figcaption>Fraunces for headlines, Figtree for text</figcaption></figure></div>
+        </li>
+        <li class="step">
+          <div class="step-text"><span class="d-n">08</span><h3>Build the UI</h3><p>Every screen is built to sit next to its references, with short, real copy.</p></div>
+          <div class="step-out"><figure><img class="frame" src="/salon/b-details.webp" alt="A built booking screen: finished steps, a details form and a price summary." loading="lazy" width="1100" height="688"></figure></div>
+        </li>
+        <li class="step">
+          <div class="step-text"><span class="d-n">09</span><h3>Checks</h3><p>Screenshots at desktop and phone size, compared with the references. It fixes the weakest parts, then checks for broken things.</p></div>
+          <div class="step-out"><figure class="checks"><img class="frame" src="/salon/b-focus.webp" alt="A button with a clear focus outline." loading="lazy" width="343" height="192"><ul><li>No console errors</li><li>Nothing cut off on a phone</li><li>Focus outlines and a skip link</li><li>Sample data labeled</li></ul></figure></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="benchmark" class="bench" data-act="benchmark">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Benchmark</p>
+        <h2>Same prompt. With and without.</h2>
+        <p class="lede">We give Grok 4.7 in Grok Build the same prompt twice: once alone, once with ShipRight. Then we grade both apps on craft and on product thinking.</p>
+      </div>
+      <div class="bench-grid" data-proof-claim data-proof-source="site/record/test-report.md, salon and CRM A/B tests, graded by ShipRight Lab, not blind">
+        <div class="bench-card">
+          <h3>Salon booking app</h3>
+          <div class="score"><p class="score-name">Craft <span>out of 40</span></p>
+            <div class="bar"><i style="--v: 70%"></i><b>28</b><span>Without</span></div>
+            <div class="bar win"><i style="--v: 77.5%"></i><b>31</b><span>With ShipRight</span></div></div>
+          <div class="score"><p class="score-name">Product thinking <span>out of 28</span></p>
+            <div class="bar"><i style="--v: 75%"></i><b>21</b><span>Without</span></div>
+            <div class="bar win"><i style="--v: 85.7%"></i><b>24</b><span>With ShipRight</span></div></div>
         </div>
-        <div class="part">
-          <h3>2. The design</h3>
-          <ul>
-            <li>Name the product type first</li>
-            <li>Pick 2 or 3 great products of that type</li>
-            <li>Set a mood in three words</li>
-            <li>Build a small set of fonts, colors and spacing</li>
-            <li>Screenshot, compare, fix the weakest parts</li>
-          </ul>
+        <div class="bench-card">
+          <h3>Sales CRM dashboard</h3>
+          <div class="score"><p class="score-name">Craft <span>out of 40</span></p>
+            <div class="bar"><i style="--v: 67.5%"></i><b>27</b><span>Without</span></div>
+            <div class="bar win"><i style="--v: 75%"></i><b>30</b><span>With ShipRight</span></div></div>
+          <div class="score"><p class="score-name">Product thinking <span>out of 28</span></p>
+            <div class="bar"><i style="--v: 67.9%"></i><b>19</b><span>Without</span></div>
+            <div class="bar win"><i style="--v: 78.6%"></i><b>22</b><span>With ShipRight</span></div></div>
         </div>
       </div>
+      <p class="honest">How we test: same prompt, same model, one run each. We grade both apps ourselves with our rubric, so it is not blind. Both wins used the new reference-first method, which is going into the next release; today's install is ShipRight 1.4.0. Earlier versions with more rules scored lower on craft than no skill at all, which is why we changed the method.</p>
+    </div>
+  </section>
+
+  <section id="projects" class="projects" data-act="projects">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Projects</p>
+        <h2>Built with ShipRight.</h2>
+      </div>
+      <a class="project" href="./case-study.html">
+        <img src="/salon/b-hero.webp" alt="Linden, a salon booking app built with ShipRight." loading="lazy" width="1100" height="688">
+        <div class="project-text">
+          <p class="project-kind">Booking app · Grok 4.7</p>
+          <h3>Linden salon</h3>
+          <p>A warm booking site for clients and a calm Today view for the owner, built from one prompt.</p>
+          <span class="link">Read case study <span aria-hidden="true">→</span></span>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -262,7 +218,7 @@
 <footer class="foot" data-act="footer">
   <p><i class="seal" aria-hidden="true"></i>ShipRight 1.4.0 · MIT · by Altaz Lavji</p>
   <nav aria-label="Footer">
-    <a href="./case-study.html">Case study</a>
+    <a href="#projects">Projects</a>
     <a href="https://github.com/aiwithaltaz/shipright-skills">GitHub</a>
   </nav>
 </footer>
