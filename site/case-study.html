@@ -3,70 +3,127 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Case study. The desk prototype, baseline only.</title>
+<title>Case study. The same salon app, without and with ShipRight.</title>
 <meta name="pack-version" content="1.4.0">
 <meta name="release-state" content="released">
-<meta name="description" content="A case study built only from the c7 baseline: the owner review and the before shots. No score. No client name.">
+<meta name="description" content="We built the same salon booking app with the same prompt in Grok Build, once without ShipRight and once with it. Screens, scores and why.">
 <link rel="icon" href="/favicon.svg">
 <link rel="stylesheet" href="/fonts/fonts.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="top">
-  <a class="brand" href="./index.html" data-transition><i class="seal" aria-hidden="true"></i>ShipRight</a>
+  <a class="brand" href="./index.html"><i class="seal" aria-hidden="true"></i>ShipRight</a>
   <nav class="nav" aria-label="Main">
     <button type="button" class="menu btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
     <div class="nav-links" id="nav-links">
-      <a href="./index.html#install" data-transition>Install</a>
-      <a href="./index.html" data-transition>Home</a>
+      <a href="./index.html">Home</a>
+      <a href="#screens">Screens</a>
+      <a href="#scores">Scores</a>
+      <a class="nav-cta" href="./index.html#install">Install</a>
     </div>
   </nav>
 </header>
 <main id="main" class="case">
-  <section data-act="problem" class="act-problem prose">
-    <p>Case study. Baseline evidence only. No client name.</p>
-    <h1 data-keep-text>The desk screen makes registration harder than the job.</h1>
-    <figure data-product-hero aria-label="Before shot of the desk prototype, wide frame">
-      <img src="/case/desktop-1.png" alt="Desk prototype before any rebuild, wide frame one" width="1120" height="700">
-      <figcaption>Wide frame one. Before only.</figcaption>
-    </figure>
-    <p>Desk volunteers register people and their families on event day. Supplied by the case message.</p>
+  <section class="hero case-hero" data-act="problem">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+      <p class="eyebrow">Case study · Salon booking app</p>
+      <h1 data-keep-text>Same prompt, twice.<br><em>One with ShipRight.</em></h1>
+      <p class="hero-sub">We built the same salon booking app with the same prompt in Grok Build (Grok 4.7). Once without ShipRight, once with ShipRight. Here is how each turned out, and why.</p>
+      <div class="row">
+        <a class="btn ghost" href="https://shipright-test-salon-a.vercel.app" rel="noopener">Try without <span aria-hidden="true">↗</span></a>
+        <a class="btn fill" href="https://shipright-test-salon-b.vercel.app" rel="noopener">Try with ShipRight <span aria-hidden="true">↗</span></a>
+      </div>
+      </div>
+      <figure class="case-hero-img" data-product-hero>
+        <img src="/salon/b-hero.webp" alt="The client side built with ShipRight: Book a chair, the room photo and the menu with prices." width="1100" height="688">
+        <figcaption>With ShipRight. Sample studio, nothing is sent.</figcaption>
+      </figure>
+    </div>
   </section>
-  <section data-act="research" class="act-research prose">
-    <h2>What the owner already found</h2>
-    <p>Verified from the owner review of 25 September 2026 and 4 October 2026. The review lists 20 pains and 3 keeps.</p>
-    <ul>
-      <li>F01. Branding is too big for a work screen.</li>
-      <li>F02. Reference facts repeat and always take space.</li>
-      <li>F03. The before-you-begin panel adds little.</li>
-      <li>F05. Lookup is by phone only.</li>
-      <li>Keeps: F04 regional context, F23 the registrations list, F26 reports.</li>
-    </ul>
-    <p>No quotes were invented. Nothing here is marked Assumed.</p>
+
+  <section id="screens" class="proof" data-act="shots">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">The screens</p>
+        <h2>What a client sees first.</h2>
+        <p class="lede">The prompt asked for a booking site for clients and a day view for the owner. Nothing else changed between the two runs.</p>
+      </div>
+      <div class="duo">
+        <figure class="shot"><p class="shot-tag">Without ShipRight</p><img src="/salon/a-hero.webp" alt="Without ShipRight: a booking form with step tabs and a side panel." loading="lazy" width="1100" height="688"><figcaption>A neat form. It reads like an admin tool.</figcaption></figure>
+        <figure class="shot win"><p class="shot-tag">With ShipRight</p><img src="/salon/b-hero.webp" alt="With ShipRight: a studio page with a big serif headline and a room photo." loading="lazy" width="1100" height="688"><figcaption>A studio site. The offer comes first.</figcaption></figure>
+      </div>
+      <div class="phones">
+        <figure class="shot"><p class="shot-tag">Without, on a phone</p><img src="/salon/a-phone.webp" alt="Without ShipRight on a phone: the side panel stacks above the services." loading="lazy" width="390" height="844"></figure>
+        <figure class="shot win"><p class="shot-tag">With, on a phone</p><img src="/salon/b-phone.webp" alt="With ShipRight on a phone: Book a chair and the room photo." loading="lazy" width="390" height="844"></figure>
+        <div class="phones-text">
+          <h3>On the phone</h3>
+          <p>The ShipRight build keeps the studio feel on a small screen. One weak spot: no service shows on the first screen, so you scroll once to see the menu.</p>
+        </div>
+      </div>
+    </div>
   </section>
-  <section data-act="shots" class="act-shots shots">
-    <h2>Before only</h2>
-    <p>There is no after shot from a rebuild. These are the other baseline frames.</p>
-    <figure>
-      <img src="/case/desktop-2.png" alt="Desk prototype before any rebuild, wide frame two">
-      <figcaption>Wide frame two.</figcaption>
-    </figure>
-    <figure>
-      <img src="/case/phone-1.png" alt="Desk prototype before any rebuild, phone frame one">
-      <figcaption>Phone frame one.</figcaption>
-    </figure>
+
+  <section class="why" data-act="research">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Why</p>
+        <h2>Six decisions ShipRight made.</h2>
+      </div>
+      <ol class="decisions">
+        <li class="d"><div class="d-text"><span class="d-n">01</span><h3>Two users, two sides.</h3><p>The client books. The owner runs the day. ShipRight gave each one its own screen. The owner opens on Today: who is coming, with which stylist, and their notes.</p></div>
+          <div class="d-media pair2"><figure><img src="/salon/b-owner.webp" alt="With ShipRight: the owner's Today list." loading="lazy" width="1100" height="688"><figcaption>With: Today, for the owner</figcaption></figure><figure class="dim"><img src="/salon/a-owner.webp" alt="Without ShipRight: the owner's book next to the client panel." loading="lazy" width="1100" height="688"><figcaption>Without: the two sides mixed</figcaption></figure></div></li>
+        <li class="d"><div class="d-text"><span class="d-n">02</span><h3>References of the same kind.</h3><p>It compared itself to boutique studio and hotel booking sites. When an earlier pack used tools like Linear and Stripe, the salon looked like an admin tool. Matching the product type fixed that.</p></div>
+          <div class="d-media"><figure><img src="/salon/b-hero.webp" alt="The studio style first screen." loading="lazy" width="1100" height="688"><figcaption>A studio site, not a dashboard</figcaption></figure></div></li>
+        <li class="d"><div class="d-text"><span class="d-n">03</span><h3>The mood came first.</h3><p>A warm, quiet studio. Every color and photo follows it.</p>
+            <ul class="swatches" aria-label="Brand colors"><li><i style="background:#f3eee6"></i>Paper cream <code>#f3eee6</code></li><li><i style="background:#8f4334"></i>Copper <code>#8f4334</code></li><li><i style="background:#234237"></i>Moss <code>#234237</code></li></ul></div>
+          <div class="d-media room"><figure><img src="/salon/b-room.webp" alt="The room photo: mirror, plant, warm light." loading="lazy" width="900" height="1200"><figcaption>The room photo</figcaption></figure></div></li>
+        <li class="d"><div class="d-text"><span class="d-n">04</span><h3>Type with a voice.</h3><p>Fraunces serif for headlines like "Book a chair." Figtree for the small text, so prices and times are easy to read.</p></div>
+          <div class="d-media type-card"><figure><img src="/salon/b-type.webp" alt="Book a chair. in Fraunces." loading="lazy" width="555" height="69"><figcaption>Fraunces headline</figcaption></figure></div></li>
+        <li class="d"><div class="d-text"><span class="d-n">05</span><h3>Booking cut to the main job.</h3><p>Service, stylist, time, details. One step at a time, prices up front, and a summary card that stays in view.</p></div>
+          <div class="d-media"><figure class="clip"><video src="/salon/booking.mp4" poster="/salon/booking-poster.webp" width="960" height="600" muted loop playsinline preload="none" aria-label="Clip of the four booking steps."></video><figcaption>Real clip of the booking steps</figcaption></figure>
+            <figure><img src="/salon/b-details.webp" alt="The last step: three finished steps folded up, the details form, and a summary card with the price." loading="lazy" width="1100" height="688"><figcaption>The last step, with the summary card</figcaption></figure></div></li>
+        <li class="d"><div class="d-text"><span class="d-n">06</span><h3>The basics, done.</h3><p>One spacing scale, focus outlines, a skip link, and an honest sample note at the top.</p></div>
+          <div class="d-media pair2 basics"><figure><img src="/salon/b-skip.webp" alt="Skip link on first Tab, above the sample note." loading="lazy" width="640" height="200"><figcaption>Skip link and sample note</figcaption></figure><figure><img src="/salon/b-focus.webp" alt="A Book button with a focus outline." loading="lazy" width="343" height="192"><figcaption>Focus outline</figcaption></figure></div></li>
+      </ol>
+    </div>
   </section>
-  <section data-act="results" class="act-results prose" data-proof-claim data-proof-source="site/record/CONTEXT.md and evals/v2/answer-keys/c7-ivc-app.md">
-    <h2>Idea, decisions, results</h2>
-    <p>No concept round was run. There is no chosen idea and no pair of rejected ideas in the baseline.</p>
-    <p>D1. Publish the baseline, not a made-up after screen. Proposed.</p>
-    <p>D2. Do not print a score. Proposed.</p>
-    <p>Results: not measured. No test of a rebuild. No step count. No load time. No score.</p>
-    <p>Next: run the case again on this release, recall the 20 pains and the 3 keeps, and ask the owner before naming anyone.</p>
-    <a class="btn fill" href="./index.html" data-transition>Back to ShipRight</a>
+
+  <section id="scores" class="results" data-act="results">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Results</p>
+        <h2>Better on both, not perfect.</h2>
+      </div>
+      <div class="scores" data-proof-claim data-proof-source="RUBRIC.md grading of /workspace/ab-salon A and B2, graded by ShipRight Lab, not blind">
+        <div class="score"><p class="score-name">Craft <span>out of 40</span></p>
+          <div class="bar"><i style="--v: 70%"></i><b>28</b><span>Without</span></div>
+          <div class="bar win"><i style="--v: 77.5%"></i><b>31</b><span>With ShipRight</span></div></div>
+        <div class="score"><p class="score-name">Product thinking <span>out of 28</span></p>
+          <div class="bar"><i style="--v: 75%"></i><b>21</b><span>Without</span></div>
+          <div class="bar win"><i style="--v: 85.7%"></i><b>24</b><span>With ShipRight</span></div></div>
+        <p class="honest">We graded both ourselves. It was not blind. Open both apps and judge.</p>
+      </div>
+      <div class="left">
+        <h3>What is still weak in the ShipRight build</h3>
+        <ul>
+          <li>On a phone, no service shows on the first screen.</li>
+          <li>The owner list has no clear "next up" focus.</li>
+          <li>After you pick a stylist, the other stylist's price note does not update.</li>
+          <li>The date row starts off-center, and phone numbers are not formatted.</li>
+          <li>The photos look AI made.</li>
+        </ul>
+        <p>The test used the new reference-first ShipRight method. It is going into the next release. Today's install is ShipRight 1.4.0.</p>
+      </div>
+      <a class="btn fill" href="./index.html#install">Install ShipRight</a>
+    </div>
   </section>
 </main>
-<div class="wipe" aria-hidden="true"></div>
+<footer class="foot" data-act="footer">
+  <p><i class="seal" aria-hidden="true"></i>ShipRight 1.4.0 · MIT · by Altaz Lavji</p>
+  <nav aria-label="Footer"><a href="./index.html">Home</a><a href="https://github.com/aiwithaltaz/shipright-skills">GitHub</a></nav>
+</footer>
 <script type="module" src="./main.js"></script>
 </body>
 </html>

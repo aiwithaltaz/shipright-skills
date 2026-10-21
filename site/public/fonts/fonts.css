@@ -9,8 +9,15 @@
 }
 @font-face {
   font-family: "Fraunces";
-  src: url("fraunces-latin-400.woff2") format("woff2");
-  font-weight: 400;
+  src: url("fraunces-var.woff2") format("woff2");
+  font-weight: 100 900;
   font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("fraunces-var-italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
   font-display: swap;
 }
