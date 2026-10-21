@@ -1,6 +1,6 @@
 {
   "name": "shipright",
-  "version": "1.4.0",
+  "version": "1.6.0",
   "description": "ShipRight: one skill for product, UX, UI, and launch checks.",
   "owner": {
     "name": "Altaz",
@@ -11,7 +11,7 @@
       "name": "shipright",
       "source": "./",
       "description": "Design and build a website, SaaS app, mobile app, or 3D site. One command: /shipright.",
-      "version": "1.4.0",
+      "version": "1.6.0",
       "author": {
         "name": "Altaz",
         "url": "https://github.com/aiwithaltaz"

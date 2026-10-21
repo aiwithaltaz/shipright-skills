@@ -1,6 +1,37 @@
+# ShipRight 1.6.0
+
+**Date:** 2026-10-21. **Status:** released as v1.6.0. No zip. Install from this repository. Backup tag backup-2026-10-21-pre-1.6 points at 1.4.0 (f4fb20a).
+
+## In one line
+
+ShipRight is lean again: think about the product, then design from 2 or 3 real products of the same type.
+
+## Why
+
+In A/B builds with Grok Build, adding more rules made designs plainer (CRM craft: 1.5 scored 19/40, 1.4 23, no skill 27). A short reference-first pack won: CRM craft 30 vs 27 and thinking 22 vs 19; salon app craft 31 vs 28 and thinking 24 vs 21. We graded these ourselves, not blind.
+
+## What changed
+
+- SKILL.md is 369 words and points at 4 numbered step files: Product, Design, Build, Look and fix.
+- Step 1 writes a durable `PRODUCT.md` (idea, research, users, PRD, flows and states, sample data). Step 2 writes `DESIGN.md` (product type, 2 or 3 real references of the same type and audience, customer and admin shells, a brand mood from the product's own world, tokens). Every later step reads them.
+- A genericness test before code: would this look like any other AI app? It names the AI default look to avoid (cream background, high-contrast serif, terracotta or copper accent).
+- Look and fix: a fresh critic pass on desktop and phone screenshots that ignores the plan. Fix the top 3 problems, at most 3 rounds.
+- Heavy 1.4 effects (sound toggle, camera flight, cursor 3D, entry gate and more) are listed in an optional `extras/` folder. The core steps never load them. The files stay in their old place because the context policy is locked by a test.
+- New `product-references/` library by product type: consumer booking, B2B internal tool and dashboard, landing page or dev tool, ecommerce, content or media, mobile app.
+- Short build checks fix bugs we saw in the tests: cut-off content, labels and prices not updating after a change, the core item missing from the phone's first screen, typos, unformatted phone numbers, misaligned rows, fake-looking photos.
+- New builds no longer route through the 10 stage files, three options and the card dealer. Stages for existing apps, feedback rounds, critique and ship check stay, and the planning templates (research brief, scope, screen spec) are linked.
+
+## Habit app test (with 1.6)
+
+Same prompt in Grok Build (Grok 4.7), one run each: a habit tracker phone app. Without ShipRight: craft 28/40, thinking 21/28. With ShipRight 1.6: craft 29/40, thinking 24/28. The craft win is small: the plain build looks polished but uses the common cream and serif look. Graded by us, not blind. Case study: site/habit-case-study.html.
+
+## Not done
+
+- No Claude eval runs. No blind grading yet.
+
 # ShipRight 1.4.0
 
-**Date:** 2026-10-19. **Status:** on branch feat/1.4-knowledge for review. Not merged, not tagged, not released. No zip. Install from this repository.
+**Date:** 2026-10-19. **Status:** released as v1.4.0 (PR #24, merged as f4fb20a). No zip. Install from this repository.
 
 ## In one line
 

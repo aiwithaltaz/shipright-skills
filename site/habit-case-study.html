@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" data-accent-source="sealing wax on the record">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study. The same habit app, without and with ShipRight 1.6.</title>
+<meta name="pack-version" content="1.6.0">
+<meta name="release-state" content="released">
+<meta name="description" content="We built the same habit tracker phone app with the same prompt in Grok Build, once without ShipRight and once with ShipRight 1.6. Screens, scores and why.">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/fonts/fonts.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="./index.html"><i class="seal" aria-hidden="true"></i>ShipRight</a>
+  <nav class="nav" aria-label="Main">
+    <button type="button" class="menu btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links">
+      <a href="./index.html">Home</a>
+      <a href="#screens">Screens</a>
+      <a href="#scores">Scores</a>
+      <a class="nav-cta" href="./index.html#install">Install</a>
+    </div>
+  </nav>
+</header>
+<main id="main" class="case">
+  <section class="hero case-hero" data-act="problem">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+      <p class="eyebrow">Case study · Habit tracker phone app</p>
+      <h1 data-keep-text>Same prompt, twice.<br><em>One with ShipRight 1.6.</em></h1>
+      <p class="hero-sub">We built the same habit tracker with the same prompt in Grok Build (Grok 4.7). Once without ShipRight (it named itself Daymark), once with ShipRight 1.6 (it named itself Nock). Open both on your phone.</p>
+      <div class="row">
+        <a class="btn ghost" href="https://shipright-test-habit-a.vercel.app" rel="noopener">Try without <span aria-hidden="true">↗</span></a>
+        <a class="btn fill" href="https://shipright-test-habit-b.vercel.app" rel="noopener">Try with ShipRight <span aria-hidden="true">↗</span></a>
+      </div>
+      </div>
+      <figure class="case-hero-img" data-product-hero>
+        <img src="/habit/b-desktop.webp" alt="Nock on a wide screen: today on the left page, this week on the right." width="1100" height="687">
+        <figcaption>With ShipRight 1.6. Sample data, nothing leaves the browser.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="screens" class="proof" data-act="shots">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">The screens</p>
+        <h2>What you see on your phone.</h2>
+        <p class="lede">The prompt asked for a private habit tracker: mark today, add a habit, see streaks and the week. Nothing else changed between the two runs.</p>
+      </div>
+      <div class="phones habit-phones">
+        <figure class="shot"><p class="shot-tag">Without ShipRight · Today</p><img src="/habit/a-phone-today.webp" alt="Without ShipRight: date, sample banner, one habit card with a grid." loading="lazy" width="390" height="844"></figure>
+        <figure class="shot win"><p class="shot-tag">With ShipRight · Today</p><img src="/habit/b-phone-today.webp" alt="With ShipRight: 4 of 5 still open today, a habit with a Notch button." loading="lazy" width="390" height="844"></figure>
+        <figure class="shot"><p class="shot-tag">Without · Week</p><img src="/habit/a-phone-week.webp" alt="Without ShipRight: the week as a percentage and bars." loading="lazy" width="390" height="844"></figure>
+        <figure class="shot win"><p class="shot-tag">With · Week</p><img src="/habit/b-phone-week.webp" alt="With ShipRight: the week as one bar per day." loading="lazy" width="390" height="844"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" data-act="research">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Why</p>
+        <h2>Six decisions ShipRight made.</h2>
+        <p class="lede">Each quote is from the PRODUCT.md and DESIGN.md that ShipRight 1.6 wrote before any code.</p>
+      </div>
+      <ol class="decisions">
+        <li class="d"><div class="d-text"><span class="d-n">01</span><h3>Today first, one tap.</h3><p>The plan put today on the first screen, with the open count as the heading and a labeled button on each habit. The plain build shows the date, a big sample banner, and an empty circle you have to guess is the button.</p><blockquote class="quote"><p>“First screen for the main user: today's habits, each with a Notch or Done control. The heading states how many are still open.”</p><cite>PRODUCT.md</cite></blockquote></div>
+          <div class="d-media pair2"><figure><img src="/habit/b-heading.webp" alt="With ShipRight: 4 of 5 still open today, above the first habit." loading="lazy" width="600" height="569"><figcaption>With: the open count is the heading</figcaption></figure><figure class="dim"><img src="/habit/a-row.webp" alt="Without ShipRight: a habit card with an empty circle as the mark button." loading="lazy" width="600" height="569"><figcaption>Without: an unlabeled circle</figcaption></figure></div></li>
+        <li class="d"><div class="d-text"><span class="d-n">02</span><h3>A streak that does not erase your effort.</h3><p>Research found that Streaks resets a habit to zero after one miss, and people feel the past effort disappeared. So each habit carries a 4-week tally stick: a slash for done, a red tick for a miss, a yellow line for today.</p><blockquote class="quote"><p>“They get anxious when a counter snaps back to zero.”</p><cite>PRODUCT.md</cite></blockquote></div>
+          <div class="d-media"><figure><img src="/habit/b-row.webp" alt="One habit row: Notch button, the streak, and four weeks of slashes and ticks." loading="lazy" width="600" height="369"><figcaption>The tally stick keeps the history in view</figcaption></figure></div></li>
+        <li class="d"><div class="d-text"><span class="d-n">03</span><h3>References of the same type, and a test against the AI look.</h3><p>It picked three habit and today-list apps: Streaks, Things 3 and Loop Habit Tracker. Then it checked that the look was not the default AI look. The plain build landed on exactly that look: cream page, serif headline.</p><blockquote class="quote"><p>“A cream page, a high-contrast serif, and a terracotta accent would look like any other generated app.”</p><cite>DESIGN.md</cite></blockquote></div>
+          <div class="d-media pair2"><figure><img src="/habit/b-phone-today.webp" alt="With ShipRight on a phone: a cool index card page." loading="lazy" width="390" height="844"><figcaption>With: an index card</figcaption></figure><figure class="dim"><img src="/habit/a-phone-today.webp" alt="Without ShipRight on a phone: cream page and serif date." loading="lazy" width="390" height="844"><figcaption>Without: the usual cream and serif</figcaption></figure></div></li>
+        <li class="d"><div class="d-text"><span class="d-n">04</span><h3>A mood from the product's own world.</h3><p>The mood is a pocket index card and a navy ballpoint. The red line is the card's margin rule. On a wide screen it opens like a notebook: today on the left page, this week on the right.</p><blockquote class="quote"><p>“Index card, ballpoint, notch.”</p><cite>DESIGN.md</cite></blockquote><ul class="swatches" aria-label="Brand colors"><li><i style="background:#E6EDF1"></i>Paper <code>#E6EDF1</code></li><li><i style="background:#143049"></i>Ballpoint <code>#143049</code></li><li><i style="background:#9E2218"></i>Margin <code>#9E2218</code></li><li><i style="background:#C8962E"></i>Pencil <code>#C8962E</code></li></ul></div>
+          <div class="d-media"><figure><img src="/habit/b-desktop.webp" alt="With ShipRight on desktop: a notebook spread with today and this week side by side." loading="lazy" width="1100" height="687"><figcaption>With: an open notebook</figcaption></figure><figure class="dim"><img src="/habit/a-desktop.webp" alt="Without ShipRight on desktop: a sidebar and one column of cards." loading="lazy" width="1100" height="687"><figcaption>Without: a sidebar layout</figcaption></figure></div></li>
+        <li class="d"><div class="d-text"><span class="d-n">05</span><h3>The main jobs in a few taps.</h3><p>Mark today, undo it, add a habit, and look at the week. Status text sits in the page and confirms each change. This clip is the real app: Notch, then Add a habit, then This week.</p><blockquote class="quote"><p>“See today's due habits and mark one done, or undo that mark, in one tap.”</p><cite>PRODUCT.md</cite></blockquote></div>
+          <div class="d-media pair2"><figure class="clip"><video src="/habit/flow.mp4" poster="/habit/flow-poster.webp" width="390" height="844" muted loop playsinline preload="none" aria-label="Clip: marking a habit, adding a habit, then the week view."></video><figcaption>Real clip on a phone</figcaption></figure><figure><img src="/habit/b-phone-week.webp" alt="This week: seven days as bars, today selected." loading="lazy" width="390" height="844"><figcaption>This week</figcaption></figure></div></li>
+        <li class="d"><div class="d-text"><span class="d-n">06</span><h3>Every state planned.</h3><p>Before any screen, the plan listed what each page shows when empty, when storage fails, and with long names. Both apps handle the empty state. Nock also explains a blocked browser without deleting anything.</p><blockquote class="quote"><p>“Storage blocked, or the save could not be read. Try again. Overwrite only after a confirm.”</p><cite>PRODUCT.md</cite></blockquote></div>
+          <div class="d-media pair2"><figure><img src="/habit/b-390-6-empty.webp" alt="Empty state: No habits yet, with Add a habit and Load sample data." loading="lazy" width="390" height="844"><figcaption>Empty</figcaption></figure><figure><img src="/habit/b-390-7-blocked.webp" alt="Storage blocked: Nock cannot read or save here. Nothing was deleted." loading="lazy" width="390" height="844"><figcaption>Storage blocked</figcaption></figure></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="scores" class="results" data-act="results">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Results</p>
+        <h2>A small craft win, a clear thinking win.</h2>
+      </div>
+      <div class="scores" data-proof-claim data-proof-source="site/record/test-report.md, habit A/B test, graded by ShipRight Lab, not blind">
+        <div class="score"><p class="score-name">Craft <span>out of 40</span></p>
+          <div class="bar"><i style="--v: 70%"></i><b>28</b><span>Without</span></div>
+          <div class="bar win"><i style="--v: 72.5%"></i><b>29</b><span>With ShipRight 1.6</span></div></div>
+        <div class="score"><p class="score-name">Product thinking <span>out of 28</span></p>
+          <div class="bar"><i style="--v: 75%"></i><b>21</b><span>Without</span></div>
+          <div class="bar win"><i style="--v: 85.7%"></i><b>24</b><span>With ShipRight 1.6</span></div></div>
+        <p class="honest">We graded both ourselves. It was not blind. The plain build looks more polished at a glance; the ShipRight build is more its own and clearer about the job. Open both and judge.</p>
+      </div>
+      <div class="left">
+        <h3>What is still weak in the ShipRight build</h3>
+        <ul>
+          <li>The phone page is long and has a lot of small explaining text.</li>
+          <li>A finished habit shows a filled dark Done button, so it looks like the main action.</li>
+          <li>The last Today status line still shows on the Add a habit screen.</li>
+          <li>When storage is blocked it stops, though its own DESIGN.md says you can still try the sample.</li>
+          <li>"Notch" is a new word you have to learn.</li>
+        </ul>
+      </div>
+      <a class="btn fill" href="./index.html#install">Install ShipRight</a>
+    </div>
+  </section>
+</main>
+<footer class="foot" data-act="footer">
+  <p><i class="seal" aria-hidden="true"></i>ShipRight 1.6.0 · MIT · by Altaz Lavji</p>
+  <nav aria-label="Footer"><a href="./index.html">Home</a><a href="https://github.com/aiwithaltaz/shipright-skills">GitHub</a></nav>
+</footer>
+<script type="module" src="./main.js"></script>
+</body>
+</html>

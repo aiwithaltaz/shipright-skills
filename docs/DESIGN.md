@@ -1,5 +1,5 @@
 ---
-version: "1.4.0"
+version: "1.6.0"
 name: ""
 description: ""
 colors: {}
@@ -11,7 +11,7 @@ components: {}
 
 # Design system
 
-<!-- ShipRight 1.4.0 template. Project path: DESIGN.md.
+<!-- ShipRight 1.6.0 template. Project path: DESIGN.md.
 Fill identity fields from sources; do not leave placeholders in a finished export.
 Only sourced Approved/Observed values permitted by current instructions enter YAML.
 Proposed values stay labeled in Markdown. Unknown values stay out of YAML.

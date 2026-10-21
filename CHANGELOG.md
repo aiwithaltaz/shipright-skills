@@ -1,6 +1,12 @@
 # Changelog
 
-## 1.4.0 - 2026-10-19 (on branch feat/1.4-knowledge, not merged or released)
+## 1.6.0 - 2026-10-21 (released)
+
+- Lean reference-first SKILL.md, a references library by product type, and short build checks. New builds skip the stage pile. See RELEASE-NOTES.md.
+- Habit app A/B test with 1.6: craft 29 vs 28, thinking 24 vs 21 (graded by us, not blind).
+- Site: home now shows how ShipRight works step by step with real PRODUCT.md and DESIGN.md quotes, a benchmark of three tests, and two project case studies (salon, habit). Old case studies removed.
+
+## 1.4.0 - 2026-10-19 (released)
 
 - Knowledge library: 445 rule cards in `skills/shipright/library/cards.json`, from 64 public sources fetched on 2026-10-19 (NN/g, Laws of UX, GOV.UK Design System, WCAG, Shape Up, Paul Graham, SVPG, Product Talk, Atlassian, Primer, Polaris, Design Tokens, OWASP, Google SRE, Vercel, GSAP, Lenis, web.dev, Motion, Refactoring UI, Smashing, Taste Skill references under MIT). Each card has a rule, why, do, don't, a verbatim quote of 40 words or less, its URL, and a check.
 - Cards were drafted by DeepSeek Flash and curated by script: the quote must appear word for word in the fetched page, vague and duplicate rules are dropped, and a card with no check never loads. 11 cards are hand written from Altaz's Instagram notes, the 18-step workflow and our own 1.3.1 lessons.

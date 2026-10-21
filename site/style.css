@@ -352,3 +352,15 @@ h3 { font-size: 28px; line-height: 1.15; }
 .ts1 { font-size: 30px; } .ts2 { font-size: 20px; } .ts3 { font-size: 13px; }
 .mood { grid-template-columns: 160px 1fr; }
 .mood img { width: 160px; }
+.bench-grid { grid-template-columns: repeat(3, 1fr); }
+.bench-card { padding: var(--s4); }
+.project-list { display: grid; gap: var(--s3); }
+.habit-sys .ts1 { font-size: 22px; } .habit-sys .ts2 { font-size: 16px; }
+@media (max-width: 960px) { .bench-grid { grid-template-columns: 1fr; } }
+.quote { margin-top: var(--s3); border-left: 2px solid var(--accent); padding: 4px 0 4px var(--s2); }
+.quote p { font-family: "Fraunces", Georgia, serif; font-size: 19px; line-height: 1.35; color: var(--ink); }
+.quote cite { display: block; margin-top: 6px; font-style: normal; font-size: 13px; color: var(--muted); }
+.habit-phones { grid-template-columns: repeat(4, 1fr); }
+.habit-phones .shot img { border-radius: 22px; }
+@media (max-width: 960px) { .habit-phones { grid-template-columns: 1fr 1fr; } }
+.habit-sys { grid-template-columns: 1.8fr .8fr .9fr; } .habit-sys .ts1 { font-size: 19px; } .habit-sys .ts2 { font-size: 15px; }

@@ -202,11 +202,11 @@ class FixedSiteTests(unittest.TestCase):
         cls._out.cleanup()
 
     def test_home_and_case_pass_premium_checks(self):
-        for name in ('index.html', 'case-study.html'):
+        for name in ('index.html', 'case-study.html', 'habit-case-study.html'):
             with tempfile.TemporaryDirectory() as d:
                 proc = subprocess.run(
                     ['node', str(CHECK), str(self.dist / name), '--root', str(self.dist),
-                     '--profile', 'premium', '--release-state', 'released', '--pack-version', '1.4.0',
+                     '--profile', 'premium', '--release-state', 'released', '--pack-version', '1.6.0',
                      '--out', d, '--json'],
                     env=node_env(), capture_output=True, text=True, timeout=180,
                 )
