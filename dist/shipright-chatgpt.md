@@ -17,7 +17,7 @@ description: "Use this when someone has an idea, an app, a SaaS, a website, a la
 # ShipRight
 
 **Pack version:** 1.6.0
-**Status:** unreleased. Think first, then design from real references.
+**Status:** released. Think first, then design from real references.
 
 Think about the product, then design from real references of the same type, then build and look again. Never invent facts, brand values, data, or features. Label sample data.
 

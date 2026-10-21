@@ -1,6 +1,6 @@
 # ShipRight 1.6.0
 
-**Date:** 2026-10-21. **Status:** unreleased, on local branch feat/1.6-lean. Not pushed, merged, tagged or released. No zip. Backup tag backup-2026-10-21-pre-1.6 points at 1.4.0 (f4fb20a).
+**Date:** 2026-10-21. **Status:** released as v1.6.0. No zip. Install from this repository. Backup tag backup-2026-10-21-pre-1.6 points at 1.4.0 (f4fb20a).
 
 ## In one line
 
@@ -21,10 +21,13 @@ In A/B builds with Grok Build, adding more rules made designs plainer (CRM craft
 - Short build checks fix bugs we saw in the tests: cut-off content, labels and prices not updating after a change, the core item missing from the phone's first screen, typos, unformatted phone numbers, misaligned rows, fake-looking photos.
 - New builds no longer route through the 10 stage files, three options and the card dealer. Stages for existing apps, feedback rounds, critique and ship check stay, and the planning templates (research brief, scope, screen spec) are linked.
 
+## Habit app test (with 1.6)
+
+Same prompt in Grok Build (Grok 4.7), one run each: a habit tracker phone app. Without ShipRight: craft 28/40, thinking 21/28. With ShipRight 1.6: craft 29/40, thinking 24/28. The craft win is small: the plain build looks polished but uses the common cream and serif look. Graded by us, not blind. Case study: site/habit-case-study.html.
+
 ## Not done
 
-- A third A/B app (a habit tracker phone app) is not built yet.
-- No Claude eval runs.
+- No Claude eval runs. No blind grading yet.
 
 # ShipRight 1.4.0
 

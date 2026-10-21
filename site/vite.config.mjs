@@ -14,6 +14,7 @@ export default defineConfig({
       input: {
         main: resolve(import.meta.dirname, 'index.html'),
         case: resolve(import.meta.dirname, 'case-study.html'),
+        habit: resolve(import.meta.dirname, 'habit-case-study.html'),
       },
     },
   },

@@ -1,8 +1,10 @@
 # Changelog
 
-## 1.6.0 - 2026-10-21 (unreleased, local branch feat/1.6-lean)
+## 1.6.0 - 2026-10-21 (released)
 
-- Lean reference-first SKILL.md (about 740 words), a references library by product type, and short build checks. New builds skip the stage pile. See RELEASE-NOTES.md.
+- Lean reference-first SKILL.md, a references library by product type, and short build checks. New builds skip the stage pile. See RELEASE-NOTES.md.
+- Habit app A/B test with 1.6: craft 29 vs 28, thinking 24 vs 21 (graded by us, not blind).
+- Site: home now shows how ShipRight works step by step with real PRODUCT.md and DESIGN.md quotes, a benchmark of three tests, and two project case studies (salon, habit). Old case studies removed.
 
 ## 1.4.0 - 2026-10-19 (released)
 
