@@ -43,8 +43,11 @@ def node_env():
 
 class FoundationTests(unittest.TestCase):
     def test_six_messages_route_to_the_named_stage(self):
+        """1.6: new ideas go to step 1; the other jobs keep their stage rows."""
         text = (SKILL / 'SKILL.md').read_text(encoding='utf-8')
-        for message, stage in ROUTES.items():
+        self.assertIn('[Product](steps/01-product.md)', text)
+        for message, stage in (('existing app', '00-discover.md'), ('rebuild the screen with these changes', 'feedback-round.md'),
+                               ('finished build', '09-test-and-critique.md'), ('ready to launch', '10-ship-check.md')):
             row = next(line for line in text.splitlines() if message in line)
             self.assertIn(stage, row, message)
 

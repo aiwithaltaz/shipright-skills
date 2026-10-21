@@ -1,7 +1,9 @@
 # ShipRight
 
-**Version 1.4.0**
+**Version 1.6.0**
 **Context before generate. Product before pixels.**
+
+**1.6.0 (unreleased) goes lean.** New builds run 4 short steps: Product (writes PRODUCT.md), Design from 2 or 3 real products of the same type (writes DESIGN.md, with a genericness test), Build with short checks, and Look and fix. A references library by product type lives in `skills/shipright/product-references/`, and heavy effects are listed as optional extras. In our A/B tests this approach beat no skill on a CRM (craft 30 vs 27) and a salon app (craft 31 vs 28), graded by us, not blind.
 
 **1.4.0 adds a knowledge library.** 445 short rule cards from 64 public sources (UX, research, architecture, app states, SaaS, design systems, UI, motion), each with a quote and a check. `scripts/deal.mjs` hands 5 to 8 of them to each stage, so the library never fills the context. Turn an idea into a tested product your AI builds right. Install from this repository (there is no zip). The Claude eval scores for 1.3 are still pending; see `evals/v2/runs/release-1.3/RUN-GUIDE.md`.
 

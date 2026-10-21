@@ -31,16 +31,24 @@ def rush_still_runs(skill_text):
 
 class FullFlowTests(unittest.TestCase):
     def test_router_contains_full_flow_rule(self):
+        """1.6: a lean router with four numbered steps and two durable files."""
         text = ROUTER.read_text(encoding='utf-8')
         self.assertNotIn('## Full flow for a new project', text)
         self.assertIn('No step is skipped for a new project, even on request.', text)
-        self.assertIn('Show exactly three options.', text)
-        self.assertIn('Stop for the owner to choose or approve.', text)
-        self.assertIn('Proposed, awaiting owner approval', text)
-        self.assertIn('<skill>/scripts/check-ui.mjs', text)
+        for step in ('steps/01-product.md', 'steps/02-design.md', 'steps/03-build.md', 'steps/04-look-and-fix.md'):
+            self.assertIn(step, text)
+            self.assertTrue((ROUTER.parent / step).exists(), step)
+        self.assertIn('PRODUCT.md', text)
+        self.assertIn('DESIGN.md', text)
+        self.assertIn('product-references/README.md', text)
+        self.assertIn('extras/README.md', text)
         self.assertIn('ux-critique', text)
-        self.assertIn('A new project runs 1 to 10 in order.', text)
-        for stage in STAGES:
+        self.assertLess(len(text.split()), 800)
+        design = (ROUTER.parent / 'steps/02-design.md').read_text(encoding='utf-8')
+        self.assertIn('Genericness test', design)
+        fix = (ROUTER.parent / 'steps/04-look-and-fix.md').read_text(encoding='utf-8')
+        self.assertIn('At most 3 rounds', fix)
+        for stage in ('00-discover.md', 'feedback-round.md', '09-test-and-critique.md', '10-ship-check.md'):
             self.assertIn(stage, text)
 
     def test_build_pack_points_at_the_spine(self):
