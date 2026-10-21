@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ShipRight. Turn an idea into a tested product.</title>
+<title>ShipRight. From a basic idea to a tested app.</title>
 <meta name="pack-version" content="1.4.0">
 <meta name="release-state" content="released">
-<meta name="description" content="ShipRight is a free AI skill. It asks before it builds, writes the plan, designs and builds a tested screen, and improves apps you already made.">
-<meta property="og:title" content="ShipRight. Turn an idea into a tested product.">
-<meta property="og:description" content="A free AI skill that asks before it builds, writes the plan, and tests what it makes.">
+<meta name="description" content="ShipRight is a free skill for your AI coding tool. It thinks about the product and designs from real references before it writes UI. See the salon test.">
+<meta property="og:title" content="ShipRight. From a basic idea to a tested app.">
+<meta property="og:description" content="Same prompt, same model. One salon app without ShipRight, one with it. Try both.">
 <meta property="og:type" content="website">
 <link rel="icon" href="/favicon.svg">
 <link rel="stylesheet" href="/fonts/fonts.css">
@@ -16,372 +16,151 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="top">
-  <a class="brand" href="#run"><i class="seal" aria-hidden="true"></i>ShipRight</a>
+  <a class="brand" href="#top"><i class="seal" aria-hidden="true"></i>ShipRight</a>
   <nav class="nav" aria-label="Main">
     <button type="button" class="menu btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
     <div class="nav-links" id="nav-links">
-      <a href="#doors">How it works</a>
-      <a href="#work">Before and after</a>
-      <a href="#knows">What it knows</a>
-      <a href="#proof">Proof</a>
-      <a href="./case-study.html" data-transition>Case study</a>
+      <a href="#how">How it works</a>
+      <a href="#benchmark">Benchmark</a>
+      <a href="#projects">Projects</a>
       <a class="nav-cta" href="#install">Install</a>
     </div>
   </nav>
 </header>
 
 <main id="main">
-  <!-- Act 1. The run. Product on stage: a replay of a real run (W2). Pain S01, S08. -->
-  <section id="run" class="hero" data-act="run">
-    <div class="hero-copy">
-      <h1 data-keep-text>
-        <span class="mask"><span class="line">Turn an idea into</span></span>
-        <span class="mask"><span class="line">a tested product</span></span>
-        <span class="mask"><span class="line">your AI builds right.</span></span>
-      </h1>
-      <p class="hero-sub">ShipRight is a free skill for your AI coding tool. It asks before it builds, writes the plan, designs the screens, and tests what it makes.</p>
-      <div class="row">
-        <a class="btn fill" href="#install">Install ShipRight</a>
-        <button class="btn ghost" type="button" id="watch">Watch a real run</button>
-      </div>
-      <p class="tag">Context before generate. Product before pixels.</p>
-    </div>
-
-    <div class="stage" data-product-hero>
-      <figure class="built" id="built">
-        <img src="/proof/c3-saas-sonnet.png" alt="The schedule screen this run built: crews by weekday, an over-hours warning, and jobs not yet invoiced. Sample data." width="1280" height="800">
-        <figcaption>The screen this run built. Sample data.</figcaption>
-      </figure>
-
-      <div class="replay" id="replay" aria-label="Replay of a real ShipRight run">
-        <div class="replay-bar">
-          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
-          <code class="replay-title">/shipright · case c3</code>
-          <button type="button" class="pause" id="replay-pause" data-state="play"><span class="l-pause">Pause</span><span class="l-play">Play</span><span class="l-replay">Replay</span></button>
-        </div>
-
-        <div class="beats" id="beats">
-          <div class="beat" data-beat="0">
-            <p class="who">You</p>
-            <p class="say you">I want to build a SaaS software</p>
-            <p class="aside">One vague line. Nothing is built yet.</p>
-          </div>
-
-          <div class="beat" data-beat="1">
-            <p class="who">ShipRight asks first</p>
-            <ol class="cards">
-              <li><b>Who is it for, and what one job should version one finish?</b><span>My pick: small service businesses that send crews to job sites.</span></li>
-              <li><b>What stays out of the first release?</b><span>My pick: only the core job. Payments wait for release 2.</span></li>
-              <li><b>What should it look like?</b><span>My pick: I propose a look and show it before any screens.</span></li>
-            </ol>
-            <p class="aside">Three cards, asked once. Each has options, a pick, and "You decide".</p>
-          </div>
-
-          <div class="beat" data-beat="2">
-            <p class="who">You</p>
-            <p class="say you">It's for small landscaping companies (3 to 20 workers) to schedule crews and send invoices. You decide the rest.</p>
-            <p class="aside">Every pick it makes for you is marked Proposed, not Approved.</p>
-          </div>
-
-          <div class="beat" data-beat="3">
-            <p class="who">ShipRight writes the plan</p>
-            <ul class="files">
-              <li><code>01-prd.md</code><span>Jobs, flows, what stays out</span></li>
-              <li><code>02-technical-architecture.md</code><span>Stack, and when to switch</span></li>
-              <li><code>DESIGN.md</code><span>Field green, contrast measured</span></li>
-              <li><code>04-frontend-spec.md</code><span>Every screen and state</span></li>
-              <li><code>05-feature-ticket-list.md</code><span>12 paste-ready tickets</span></li>
-              <li><code>design-preview.md</code><span>3 directions, 1 picked</span></li>
-              <li><code>critique.md</code><span>7 fixes in 3 rounds</span></li>
-              <li><code>ship-check.md</code><span>20 launch items</span></li>
-            </ul>
-          </div>
-
-          <div class="beat" data-beat="4">
-            <p class="confirm-head">Built and tested. Only you can confirm</p>
-            <ul class="confirm">
-              <li>Subscription price</li>
-              <li>Invoice wording and tax lines</li>
-              <li>Sender email domain</li>
-              <li>Real workday hours</li>
-            </ul>
-            <p class="aside">The screen uses sample data. Nothing is saved or sent.</p>
-          </div>
-        </div>
-
-        <div class="steps-bar" role="group" aria-label="Replay steps">
-          <button type="button" data-go="0" aria-pressed="true">Ask</button>
-          <button type="button" data-go="1" aria-pressed="false">Cards</button>
-          <button type="button" data-go="2" aria-pressed="false">Reply</button>
-          <button type="button" data-go="3" aria-pressed="false">Files</button>
-          <button type="button" data-go="4" aria-pressed="false">Screen</button>
+  <section id="top" class="hero" data-act="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">A free skill for AI coding tools</p>
+        <h1 data-keep-text>From a basic idea<br><em>to a tested app.</em></h1>
+        <p class="hero-sub">ShipRight walks your AI through the steps a good product team takes: research, users, a PRD, flows, references and a brand mood. Then it builds the UI and checks it.</p>
+        <div class="row">
+          <a class="btn fill" href="#install">Install ShipRight</a>
+          <a class="btn ghost" href="#how">See how it works</a>
         </div>
       </div>
-      <p class="replay-label">Replay of a real run: Sonnet with ShipRight 1.2, case c3. Text shortened. Tap a step.</p>
-    </div>
-  </section>
-
-  <!-- Act 2. Two doors. Pain S02. -->
-  <section id="doors" class="doors" data-act="doors">
-    <div class="wrap">
-      <h2>
-        <span class="mask"><span class="line">Two ways in.</span></span>
-      </h2>
-      <div class="door-grid">
-        <article class="door">
-          <p class="kicker">New idea</p>
-          <h3>I have an idea.</h3>
-          <pre class="cmd"><code>/shipright I want to build a booking app for my salon</code></pre>
-          <p>You answer up to 4 questions. Then it runs every stage: research, three concepts, risks, scope and pages, architecture, design system, three design options, build, test, and a launch check.</p>
-          <p class="door-foot">"Just build it" does not skip a stage.</p>
-        </article>
-        <article class="door">
-          <p class="kicker">Existing app</p>
-          <h3>I already built something.</h3>
-          <pre class="cmd"><code>/shipright review my app and make it better</code></pre>
-          <p>It uses every screen like a first-time user. It says what works first, then lists each pain with a screenshot and a cause, and ranks the fixes.</p>
-          <p class="door-foot">Every change it builds names its pain and has a test.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Act 3. The folder. Real files from the c3 run. Pain S02. -->
-  <section id="folder" class="folder" data-act="folder">
-    <div class="wrap folder-grid">
-      <div class="folder-copy">
-        <h2>
-          <span class="mask"><span class="line">What lands</span></span>
-          <span class="mask"><span class="line">in your folder.</span></span>
-        </h2>
-        <p class="lede">Real files from the c3 run. Tap one to read a few lines. Your coding tool reads the same folder, so nothing is left to guess.</p>
-        <div class="tree" role="tablist" aria-label="Files from the c3 run" aria-orientation="vertical">
-          <p class="tree-dir"><code>docs/shipright/</code></p>
-          <button type="button" role="tab" id="f-prd" aria-selected="true" aria-controls="x-prd"><code>01-prd.md</code></button>
-          <button type="button" role="tab" id="f-arch" aria-selected="false" aria-controls="x-arch" tabindex="-1"><code>02-technical-architecture.md</code></button>
-          <button type="button" role="tab" id="f-spec" aria-selected="false" aria-controls="x-spec" tabindex="-1"><code>04-frontend-spec.md</code></button>
-          <button type="button" role="tab" id="f-tix" aria-selected="false" aria-controls="x-tix" tabindex="-1"><code>05-feature-ticket-list.md</code></button>
-          <button type="button" role="tab" id="f-crit" aria-selected="false" aria-controls="x-crit" tabindex="-1"><code>critique.md</code></button>
-          <button type="button" role="tab" id="f-ship" aria-selected="false" aria-controls="x-ship" tabindex="-1"><code>ship-check.md</code></button>
-          <p class="tree-dir"><code>./</code></p>
-          <button type="button" role="tab" id="f-design" aria-selected="false" aria-controls="x-design" tabindex="-1"><code>DESIGN.md</code></button>
-        </div>
-        <p class="tree-note">It also keeps a project record: CONTEXT, DECISIONS, CHANGELOG and HANDOFF. A new chat can pick up where the last one stopped.</p>
-      </div>
-      <div class="reader">
-        <article role="tabpanel" id="x-prd" aria-labelledby="f-prd" class="excerpt">
-          <p class="ex-file"><code>01-prd.md</code></p>
-          <p><b>Who:</b> the owner or office manager of a landscaping company with 3 to 20 workers, usually 1 to 4 crews.</p>
-          <p><b>Job:</b> put every job on a crew and a day without overloading anyone, then bill for finished jobs.</p>
-          <p><b>What they do today:</b> Unknown. Hypothesis H1: a whiteboard, a group chat, a spreadsheet or paper. Source needed: 5 owner conversations.</p>
-          <p class="ex-why">Unknown stays Unknown. It names who checks it.</p>
-        </article>
-        <article role="tabpanel" id="x-arch" aria-labelledby="f-arch" class="excerpt" hidden>
-          <p class="ex-file"><code>02-technical-architecture.md</code></p>
-          <table>
-            <thead><tr><th>Layer</th><th>Choice</th><th>Switch when</th></tr></thead>
-            <tbody>
-              <tr><td>App</td><td>Next.js</td><td>Heavy background jobs appear</td></tr>
-              <tr><td>Data and sign-in</td><td>Supabase</td><td>Strict data residency</td></tr>
-              <tr><td>Email</td><td>Resend</td><td>Reminders or marketing mail</td></tr>
-            </tbody>
-          </table>
-          <p>Not added: analytics, payments, maps, queues, a separate API server.</p>
-          <p class="ex-why">Every choice has a reason and a switch point.</p>
-        </article>
-        <article role="tabpanel" id="x-spec" aria-labelledby="f-spec" class="excerpt" hidden>
-          <p class="ex-file"><code>04-frontend-spec.md</code></p>
-          <p><b>S1 Schedule.</b> Job: see the week by crew and place jobs.</p>
-          <p><b>Load line:</b> "6.5 of 8 h". Over: "9.5 of 8 h, over by 1.5 h" in amber.</p>
-          <p><b>States:</b> populated, empty week, loading, error. 0, 1 and many jobs per cell.</p>
-          <p><b>Do not add:</b> drag and drop, filters, charts, summary cards, notification dots.</p>
-          <p class="ex-why">Each screen has a job, its states, and what to leave out.</p>
-        </article>
-        <article role="tabpanel" id="x-tix" aria-labelledby="f-tix" class="excerpt" hidden>
-          <p class="ex-file"><code>05-feature-ticket-list.md</code></p>
-          <p><b>T4 Schedule board, happy path.</b> Goal: see a week by crew.</p>
-          <p><b>Done when:</b> 0, 1 and 12 jobs per cell render at 1280. Enter opens the job panel. The week in the URL survives reload.</p>
-          <p><b>Do not add:</b> drag and drop, filters.</p>
-          <p class="ex-why">One prompt per ticket. Paste it into your coding tool.</p>
-        </article>
-        <article role="tabpanel" id="x-crit" aria-labelledby="f-crit" class="excerpt" hidden>
-          <p class="ex-file"><code>critique.md</code></p>
-          <table>
-            <thead><tr><th>Finding</th><th>Severity</th><th>Retest</th></tr></thead>
-            <tbody>
-              <tr><td>Phone form hid its Cancel and Save buttons below the scroll</td><td>Blocker on phone</td><td>Pass at 390</td></tr>
-              <tr><td>Schedule scrolled sideways at 320</td><td>Major</td><td>Pass at 320</td></tr>
-              <tr><td>13 filled buttons on one screen</td><td>Major</td><td>Pass</td></tr>
-            </tbody>
-          </table>
-          <p class="ex-why">It finds its own bugs, fixes them, and retests.</p>
-        </article>
-        <article role="tabpanel" id="x-ship" aria-labelledby="f-ship" class="excerpt" hidden>
-          <p class="ex-file"><code>ship-check.md</code></p>
-          <p><b>Verdict: Not established.</b> This is a design preview. It is not a release candidate.</p>
-          <p>Contrast and focus: Pass. HTTPS: Not verified, local only. Privacy policy: Not verified, the owner decides.</p>
-          <p class="ex-why">20 launch items. No Pass without evidence.</p>
-        </article>
-        <article role="tabpanel" id="x-design" aria-labelledby="f-design" class="excerpt" hidden>
-          <p class="ex-file"><code>DESIGN.md</code></p>
-          <p><b>Source:</b> Proposed (delegated). If the owner sends a design system, it wins.</p>
-          <p><b>Accent:</b> field green #1C6A45, white text 6.57:1. Amber and red only for warnings and errors.</p>
-          <p><b>States:</b> status always has text and an icon, never color alone.</p>
-          <p class="ex-why">Tokens with numbers, not adjectives.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Act 4. Before and after. Four real pairs. Pains S07, S04. -->
-  <section id="work" class="work" data-act="work">
-    <div class="wrap">
-      <div class="work-head">
-        <h2>
-          <span class="mask"><span class="line">Before and after.</span></span>
-        </h2>
-        <div class="pair-tabs" role="tablist" aria-label="Choose a before and after">
-          <button type="button" role="tab" id="p-product" aria-selected="true" aria-controls="cmp">Product site</button>
-          <button type="button" role="tab" id="p-dashboard" aria-selected="false" aria-controls="cmp" tabindex="-1">SaaS dashboard</button>
-          <button type="button" role="tab" id="p-feedback" aria-selected="false" aria-controls="cmp" tabindex="-1">Feedback round</button>
-          <button type="button" role="tab" id="p-ivc" aria-selected="false" aria-controls="cmp" tabindex="-1">IVC desk</button>
-        </div>
-      </div>
-      <div class="cmp" id="cmp" role="tabpanel" aria-labelledby="p-product" data-compare>
-        <img class="cmp-before" id="cmp-before" src="/gallery/product-before.png" alt="Product site built with ShipRight 0.6.2: dark speaker page, title low on the left, model in a framed box." width="1280" height="800">
-        <img class="cmp-after" id="cmp-after" src="/gallery/product-after.png" alt="Product site built with ShipRight 1.0: Buy in the hero, the speaker larger, view buttons under the model." width="1280" height="800">
-        <span class="cmp-tag left" id="tag-before">Before · 0.6.2</span>
-        <span class="cmp-tag right" id="tag-after">After · 1.0</span>
-        <span class="cmp-handle" aria-hidden="true"></span>
-        <input class="cmp-range" id="cmp-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
-      </div>
-      <p class="cmp-caption" id="cmp-caption">Same prompt, two pack versions. 1.0 put Buy in the hero, view buttons under the model, and a working name in place of placeholders.</p>
-    </div>
-  </section>
-
-  <!-- Act 5. Stages. Pain S06. 1.4: the base comes first, each stage gets dealt cards with checks. -->
-  <section id="stages" class="stages" data-act="stages">
-    <div class="wrap">
-      <div class="stages-head">
-        <h2>
-          <span class="mask"><span class="line">The base first.</span></span>
-          <span class="mask"><span class="line">Then the pixels.</span></span>
-        </h2>
-        <p class="lede">A new idea runs 1 to 10. An app you already built starts at 0. Each stage writes a file and has a check, so a stage is not done on a feeling.</p>
-      </div>
-      <div class="stage-cols">
-        <div class="stage-col">
-          <p class="stage-label">Base: idea to plan</p>
-          <ol class="stage-list">
-            <li><span class="n">0</span><b>Discover</b><span class="adds">Use the app you have. Pains with proof.</span><code>pain-map.md</code></li>
-            <li><span class="n">1</span><b>Research</b><span class="adds">Idea brief: vision, user, MVP, out of scope, next step.</span><code>CONTEXT.md</code></li>
-            <li><span class="n">2</span><b>Brainstorm</b><span class="adds">Three concepts that differ in how they work.</span><code>concepts.md</code></li>
-            <li><span class="n">3</span><b>Problem solving</b><span class="adds">Every risk gets a decision and a test.</span><code>risks.md</code></li>
-            <li><span class="n">4</span><b>Scope and pages</b><span class="adds">Core loop and a page list with reasons.</span><code>scope.md</code></li>
-            <li><span class="n">5</span><b>Architecture</b><span class="adds">Every screen: one job, one action, empty, loading, error.</span><code>ARCHITECTURE.md</code></li>
-          </ol>
-        </div>
-        <div class="stage-col">
-          <p class="stage-label">Make: plan to shipped</p>
-          <ol class="stage-list" start="6">
-            <li><span class="n">6</span><b>Design system</b><span class="adds">Tokens with numbers, not adjectives.</span><code>DESIGN.md</code></li>
-            <li><span class="n">7</span><b>Three options</b><span class="adds">Three dealt directions, so it is not the average look.</span><code>options.md</code></li>
-            <li><span class="n">8</span><b>Build</b><span class="adds">Project rules first: stack, folders, banned patterns.</span><code>the screen</code></li>
-            <li><span class="n">9</span><b>Test</b><span class="adds">Real browser at 390 and 1280. Measured, not guessed.</span><code>test-report.md</code></li>
-            <li><span class="n">10</span><b>Ship check</b><span class="adds">Security, preview and QA, then who watches errors.</span><code>HANDOFF.md</code></li>
-            <li class="rec"><span class="n">+</span><b>Record</b><span class="adds">A new chat picks up where the last one stopped.</span><code>CONTEXT · DECISIONS · HANDOFF</code></li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Act 5b. Knowledge. 1.4: the card library and the dealer. Numbers come from skills/shipright/library/cards.json. -->
-  <section id="knows" class="knows" data-act="knows">
-    <div class="wrap knows-grid">
-      <div class="knows-copy">
-        <h2>
-          <span class="mask"><span class="line">It reads 6 cards,</span></span>
-          <span class="mask"><span class="line">not 64 websites.</span></span>
-        </h2>
-        <p class="lede">We read 64 public sources on UX, research, architecture, design systems and motion, and turned them into short rule cards. Each card keeps its source, a short quote and a check.</p>
-        <svg class="funnel" viewBox="0 0 360 150" role="img" aria-label="64 sources become 445 cards, and 6 are dealt to one stage">
-          <rect x="0" y="4" width="360" height="40" rx="20" class="f1"/><text x="180" y="29">64 public sources</text>
-          <rect x="40" y="54" width="280" height="40" rx="20" class="f2"/><text x="180" y="79">445 cards, quote and check</text>
-          <rect x="110" y="104" width="140" height="40" rx="20" class="f3"/><text x="180" y="129">6 for this stage</text>
-        </svg>
-        <p class="tree-note">A small script deals 5 to 8 cards that fit your stage and project. The rest of the library never enters the chat, so the AI does not skim.</p>
-      </div>
-      <figure class="deal" aria-label="Real output of the dealer for stage 5, SaaS dashboard">
-        <p class="deal-cmd"><code>node scripts/deal.mjs --stage 05 --tags saas,dashboard</code></p>
-        <ol class="deal-cards">
-          <li><b>Skeleton for lists and pages, spinner only for a short single action.</b><span>Check: check-record --base. Source: synsation_</span></li>
-          <li><b>Use a skeleton for page loads of about 1 to 10 seconds.</b><span>Source: NN/g, skeleton screens</span></li>
-          <li><b>Past 10 seconds, show a progress bar or a time estimate.</b><span>Source: NN/g, progress indicators</span></li>
-          <li><b>Size the navigation to the depth of the content, not the look.</b><span>Source: NN/g, IA vs navigation</span></li>
+      <div class="path" data-product-hero>
+        <p class="path-ask"><code>/shipright</code> A booking app for my salon</p>
+        <ol class="path-steps">
+          <li>Idea</li><li>Research</li><li>Users</li><li>PRD</li><li>Flows</li><li>References and mood</li><li>Design system</li><li>Build</li><li>Checks</li>
         </ol>
-        <figcaption>Four of the six cards it dealt. Shortened.</figcaption>
-      </figure>
+        <figure class="path-out">
+          <img src="/salon/b-hero.webp" alt="The finished screen: a salon booking page that says Book a chair." width="1100" height="688">
+          <figcaption>The result, built and checked</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
-  <!-- Act 6. Proof. Honest: where 1.2 lost to Opus and what 1.3 changed. Pains S05, S03. -->
-  <section id="proof" class="proof" data-act="proof" data-proof-claim data-proof-source="evals/v2/runs/baseline-1.2 desktop-1 shots for c1, c2 and c3. evals/v2/results/release-1.3.md says not graded.">
+  <section id="how" class="how" data-act="how">
     <div class="wrap">
-      <div class="proof-head">
-        <h2>
-          <span class="mask"><span class="line">We test it against Opus.</span></span>
-          <span class="mask"><span class="line">Here is where it lost.</span></span>
-        </h2>
-        <p class="lede">Same prompt. Opus alone on the left. Sonnet with ShipRight 1.2 on the right. Opus thought harder about the product. These three pairs are why 1.3 exists.</p>
+      <div class="head">
+        <p class="eyebrow">How it works</p>
+        <h2>Nine steps, in order.</h2>
+        <p class="lede">The thinking comes before any pixels. Each step writes a short note the next one uses. The pictures come from the salon test; the notes are shortened examples.</p>
       </div>
-      <div class="pairs">
-        <article class="pair">
-          <div class="pair-text">
-            <h3>LinkedIn assistant</h3>
-            <p>Opus led with the situation: 7 actions left, about 13 minutes, everything drafted. The 1.2 screen showed users a "Preview state" switch meant for developers.</p>
-          </div>
-          <figure><img src="/proof/c1-linkedin-opus.png" alt="Opus alone, LinkedIn case: a today screen with 7 actions left and drafted replies." loading="lazy" width="1280" height="800"><figcaption>Opus alone</figcaption></figure>
-          <figure><img src="/proof/c1-linkedin-sonnet.png" alt="Sonnet with ShipRight 1.2, LinkedIn case: a post queue with a preview-state dropdown at the top." loading="lazy" width="1280" height="800"><figcaption>Sonnet with ShipRight 1.2</figcaption></figure>
-        </article>
-        <article class="pair">
-          <div class="pair-text">
-            <h3>AI agent dashboard</h3>
-            <p>Opus put the fix on each problem, like Pause agent and Cap at $150/day, and compared each number to normal: 18%, usually 2%. The 1.2 screen listed statuses with no action.</p>
-          </div>
-          <figure><img src="/proof/c2-agents-dashboard-opus.png" alt="Opus alone, agent dashboard: a needs-attention list with an action on each row." loading="lazy" width="1280" height="800"><figcaption>Opus alone</figcaption></figure>
-          <figure><img src="/proof/c2-agents-dashboard-sonnet.png" alt="Sonnet with ShipRight 1.2, agent dashboard: a table of agents with status badges." loading="lazy" width="1280" height="800"><figcaption>Sonnet with ShipRight 1.2</figcaption></figure>
-        </article>
-        <article class="pair">
-          <div class="pair-text">
-            <h3>Landscaping SaaS</h3>
-            <p>Both flagged the crew day over its hours. Opus also put the week's money and Thursday's rain in the headline, with one button to move 9 visits.</p>
-          </div>
-          <figure><img src="/proof/c3-saas-opus.png" alt="Opus alone, landscaping case: week of October 19, 59 visits worth $8,385, rain Thursday." loading="lazy" width="1280" height="800"><figcaption>Opus alone</figcaption></figure>
-          <figure><img src="/proof/c3-saas-sonnet.png" alt="Sonnet with ShipRight 1.2, landscaping case: schedule by crew with an over-hours warning." loading="lazy" width="1280" height="800"><figcaption>Sonnet with ShipRight 1.2</figcaption></figure>
-        </article>
-      </div>
-      <div class="changed">
-        <h3>What 1.3 changed because of it</h3>
-        <ol>
-          <li><b>Situation headline.</b> The title states what is going on and the next decision, with numbers.</li>
-          <li><b>The fix sits on the item.</b> Each row that needs attention carries its one action.</li>
-          <li><b>Compare to normal.</b> A number shows its usual value beside it.</li>
-          <li><b>No dev controls.</b> Review switches hide behind ?review=1.</li>
-          <li><b>Sample is allowed, if labeled.</b> Rich demo data, never passed off as real.</li>
-        </ol>
-        <p class="status-line">1.3 eval runs are prepared in the repo and not graded yet. No score is shown until one exists.</p>
-      </div>
+      <div class="phase"><p>Part 1</p><h3>Think about the product</h3></div>
+      <ol class="steps steps-5">
+        <li class="step">
+          <div class="step-text"><span class="d-n">01</span><h3>A basic idea</h3><p>You type one line. ShipRight turns it into a short paragraph: what it is, who pays, and the job it does every day.</p></div>
+          <div class="step-out"><div class="note" aria-label="Illustrative output"><p class="note-file"><code>idea.md</code><span>Illustrative</span></p><ul><li>A booking site for a small hair salon</li><li>Clients book a visit, the owner runs the day</li><li>The job: fill the chairs without phone calls</li></ul></div></div>
+        </li>
+        <li class="step">
+          <div class="step-text"><span class="d-n">02</span><h3>Research</h3><p>It looks at the best products of the same type, what they do well, and where people get stuck.</p></div>
+          <div class="step-out"><div class="note" aria-label="Illustrative output"><p class="note-file"><code>research.md</code><span>Illustrative</span></p><ul><li>Boutique studio and hotel booking sites</li><li>Prices shown up front win trust</li><li>Pain: long forms before you see a time</li></ul></div></div>
+        </li>
+        <li class="step">
+          <div class="step-text"><span class="d-n">03</span><h3>Define the users</h3><p>A main user and a second one. Their day, why they open the app, and what worries them.</p></div>
+          <div class="step-out"><div class="note" aria-label="Illustrative output"><p class="note-file"><code>users.md</code><span>Illustrative</span></p><ul><li>Client: books in a short break, wants a clear price</li><li>Owner: needs to see who is next, fast</li><li>Two users, so two sides</li></ul></div></div>
+        </li>
+        <li class="step">
+          <div class="step-text"><span class="d-n">04</span><h3>The PRD</h3><p>What each user sees first, the few jobs that matter, and what stays out of version one.</p></div>
+          <div class="step-out"><div class="note" aria-label="Illustrative output"><p class="note-file"><code>prd.md</code><span>Illustrative</span></p><ul><li>Client first screen: the offer and a Book button</li><li>Owner first screen: today's visits</li><li>Out of v1: payments, reviews</li></ul></div></div>
+        </li>
+        <li class="step">
+          <div class="step-text"><span class="d-n">05</span><h3>Flows and states</h3><p>The 3 to 5 main jobs in a few clicks each, plus empty, loading and error states, and real looking sample data.</p></div>
+          <div class="step-out"><div class="note" aria-label="Illustrative output"><p class="note-file"><code>flows.md</code><span>Illustrative</span></p><ul><li>Book: service, stylist, time, details</li><li>Owner: mark done, add a walk-in</li><li>Empty day, failed save, long names</li></ul></div></div>
+        </li>
+      </ol>
+      <div class="phase"><p>Part 2</p><h3>Design from real references, then build</h3></div>
+      <ol class="steps steps-4" start="6">
+        <li class="step">
+          <div class="step-text"><span class="d-n">06</span><h3>References and brand mood</h3><p>It names the product type, picks 2 or 3 great references of that type, and sets a mood in three words.</p></div>
+          <div class="step-out"><figure class="mood"><img src="/salon/b-room.webp" alt="A warm salon room photo used to set the mood." loading="lazy" width="900" height="1200"><ul class="swatches" aria-label="Brand colors"><li><i style="background:#f3eee6"></i>Paper</li><li><i style="background:#8f4334"></i>Copper</li><li><i style="background:#234237"></i>Moss</li></ul><figcaption>Warm, quiet, crafted</figcaption></figure></div>
+        </li>
+        <li class="step">
+          <div class="step-text"><span class="d-n">07</span><h3>Design system</h3><p>Two fonts, a short type scale, one spacing scale and about ten colors, all in one file.</p></div>
+          <div class="step-out"><div class="sys"><div class="sys-grid" aria-label="Design system example from the salon build"><div class="sys-col"><p class="sys-label">Type steps</p><p class="ts ts1">Book a chair.</p><p class="ts ts2">Signature cut</p><p class="ts ts3">1 hr · $92</p></div><div class="sys-col"><p class="sys-label">Spacing</p><div class="sp"><i style="width:8px"></i>8</div><div class="sp"><i style="width:16px"></i>16</div><div class="sp"><i style="width:24px"></i>24</div><div class="sp"><i style="width:48px"></i>48</div></div><div class="sys-col"><p class="sys-label">Colors</p><ul class="chips"><li style="background:#f3eee6"></li><li style="background:#e6dfd2"></li><li style="background:#8f4334"></li><li style="background:#234237"></li><li style="background:#1f1b17"></li></ul></div></div></div></div>
+        </li>
+        <li class="step">
+          <div class="step-text"><span class="d-n">08</span><h3>Build the UI</h3><p>Every screen is built to sit next to its references, with short, real copy.</p></div>
+          <div class="step-out"><figure><img class="frame" src="/salon/b-details.webp" alt="A built booking screen: finished steps, a details form and a price summary." loading="lazy" width="1100" height="688"></figure></div>
+        </li>
+        <li class="step">
+          <div class="step-text"><span class="d-n">09</span><h3>Checks</h3><p>Screenshots at desktop and phone size, compared with the references. It fixes the weakest parts, then checks for broken things.</p></div>
+          <div class="step-out"><figure class="checks"><img class="frame" src="/salon/b-focus.webp" alt="A button with a clear focus outline." loading="lazy" width="343" height="192"><ul><li>No console errors</li><li>Nothing cut off on a phone</li><li>Focus outlines and a skip link</li><li>Sample data labeled</li></ul></figure></div>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- Act 7. Install. Keep K4. -->
+  <section id="benchmark" class="bench" data-act="benchmark">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Benchmark</p>
+        <h2>Same prompt. With and without.</h2>
+        <p class="lede">We give Grok 4.7 in Grok Build the same prompt twice: once alone, once with ShipRight. Then we grade both apps on craft and on product thinking.</p>
+      </div>
+      <div class="bench-grid" data-proof-claim data-proof-source="site/record/test-report.md, salon and CRM A/B tests, graded by ShipRight Lab, not blind">
+        <div class="bench-card">
+          <h3>Salon booking app</h3>
+          <div class="score"><p class="score-name">Craft <span>out of 40</span></p>
+            <div class="bar"><i style="--v: 70%"></i><b>28</b><span>Without</span></div>
+            <div class="bar win"><i style="--v: 77.5%"></i><b>31</b><span>With ShipRight</span></div></div>
+          <div class="score"><p class="score-name">Product thinking <span>out of 28</span></p>
+            <div class="bar"><i style="--v: 75%"></i><b>21</b><span>Without</span></div>
+            <div class="bar win"><i style="--v: 85.7%"></i><b>24</b><span>With ShipRight</span></div></div>
+        </div>
+        <div class="bench-card">
+          <h3>Sales CRM dashboard</h3>
+          <div class="score"><p class="score-name">Craft <span>out of 40</span></p>
+            <div class="bar"><i style="--v: 67.5%"></i><b>27</b><span>Without</span></div>
+            <div class="bar win"><i style="--v: 75%"></i><b>30</b><span>With ShipRight</span></div></div>
+          <div class="score"><p class="score-name">Product thinking <span>out of 28</span></p>
+            <div class="bar"><i style="--v: 67.9%"></i><b>19</b><span>Without</span></div>
+            <div class="bar win"><i style="--v: 78.6%"></i><b>22</b><span>With ShipRight</span></div></div>
+        </div>
+      </div>
+      <p class="honest">How we test: same prompt, same model, one run each. We grade both apps ourselves with our rubric, so it is not blind. Both wins used the new reference-first method, which is going into the next release; today's install is ShipRight 1.4.0. Earlier versions with more rules scored lower on craft than no skill at all, which is why we changed the method.</p>
+    </div>
+  </section>
+
+  <section id="projects" class="projects" data-act="projects">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Projects</p>
+        <h2>Built with ShipRight.</h2>
+      </div>
+      <a class="project" href="./case-study.html">
+        <img src="/salon/b-hero.webp" alt="Linden, a salon booking app built with ShipRight." loading="lazy" width="1100" height="688">
+        <div class="project-text">
+          <p class="project-kind">Booking app · Grok 4.7</p>
+          <h3>Linden salon</h3>
+          <p>A warm booking site for clients and a calm Today view for the owner, built from one prompt.</p>
+          <span class="link">Read case study <span aria-hidden="true">→</span></span>
+        </div>
+      </a>
+    </div>
+  </section>
+
   <section id="install" class="install" data-act="install">
     <div class="wrap install-wrap">
-      <h2>
-        <span class="mask"><span class="line">Install in one line.</span></span>
-      </h2>
-      <p class="lede">Free and open source. MIT license. Pick your tool.</p>
+      <div class="head">
+        <p class="eyebrow">Install</p>
+        <h2>One line, from the repo.</h2>
+        <p class="lede">Free and open source under MIT. Pick your tool. No zip to download.</p>
+      </div>
       <div class="install-panel">
         <div class="tabs" role="tablist" aria-label="Install by tool">
           <button type="button" role="tab" id="install-tab-claude" aria-selected="true" aria-controls="cmd-claude">Claude Code</button>
@@ -411,54 +190,38 @@
     </div>
   </section>
 
-  <!-- Act 8. Questions. Pain S09. -->
   <section id="faq" class="faq" data-act="faq">
     <div class="wrap faq-grid">
       <div class="faq-side">
-        <h2>
-          <span class="mask"><span class="line">Questions.</span></span>
-        </h2>
+        <h2>Questions.</h2>
         <p>Something else? Ask on GitHub.</p>
-        <a href="https://github.com/aiwithaltaz/shipright-skills/issues">Open an issue</a>
+        <a class="link" href="https://github.com/aiwithaltaz/shipright-skills/issues">Open an issue</a>
       </div>
       <div class="qs">
-        <div class="q">
-          <h3><button type="button" aria-expanded="false" aria-controls="a1"><span>Is it free?</span><i aria-hidden="true"></i></button></h3>
-          <div class="a" id="a1" hidden><p>Yes. It is open source under the MIT license. The code is on GitHub.</p></div>
-        </div>
-        <div class="q">
-          <h3><button type="button" aria-expanded="false" aria-controls="a2"><span>Does it write my app?</span><i aria-hidden="true"></i></button></h3>
-          <div class="a" id="a2" hidden><p>It plans, designs and builds a tested screen or page. For a full app it writes one paste-ready ticket per feature, so your coding tool builds the rest in order.</p></div>
-        </div>
-        <div class="q">
-          <h3><button type="button" aria-expanded="false" aria-controls="a3"><span>Will it make things up?</span><i aria-hidden="true"></i></button></h3>
-          <div class="a" id="a3" hidden><p>No. Every fact is Supplied, Verified, Assumed, Sample or Illustrative. Sample and Illustrative content stays labeled on screen. It never invents reviews, prices or legal text.</p></div>
-        </div>
-        <div class="q">
-          <h3><button type="button" aria-expanded="false" aria-controls="a4"><span>Can it fix an app I already built?</span><i aria-hidden="true"></i></button></h3>
-          <div class="a" id="a4" hidden><p>Yes. Say "review my app". It starts with Discover: what works, what hurts, and a ranked fix list with screenshots, before it builds anything.</p></div>
-        </div>
-        <div class="q">
-          <h3><button type="button" aria-expanded="false" aria-controls="a5"><span>Which tools does it work with?</span><i aria-hidden="true"></i></button></h3>
-          <div class="a" id="a5" hidden><p>Claude Code, Cursor, Codex, VS Code Copilot, Antigravity and Gemini CLI. Claude.ai and ChatGPT can read the skill file.</p></div>
-        </div>
-        <div class="q">
-          <h3><button type="button" aria-expanded="false" aria-controls="a6"><span>What do the checks need?</span><i aria-hidden="true"></i></button></h3>
-          <div class="a" id="a6" hidden><p>Node and Playwright. If Playwright is missing, the checker prints the one install command and stops.</p></div>
-        </div>
+        <div class="q"><h3><button type="button" aria-expanded="false" aria-controls="a1"><span>Is it free?</span><i aria-hidden="true"></i></button></h3>
+          <div class="a" id="a1" hidden><p>Yes. It is open source under the MIT license. The code is on GitHub.</p></div></div>
+        <div class="q"><h3><button type="button" aria-expanded="false" aria-controls="a2"><span>Does it write my app?</span><i aria-hidden="true"></i></button></h3>
+          <div class="a" id="a2" hidden><p>It plans, designs and builds a tested screen or page. For a full app it writes one paste-ready ticket per feature, so your coding tool builds the rest in order.</p></div></div>
+        <div class="q"><h3><button type="button" aria-expanded="false" aria-controls="a3"><span>Will it make things up?</span><i aria-hidden="true"></i></button></h3>
+          <div class="a" id="a3" hidden><p>No. Sample content stays labeled on screen, like the note on top of the salon app. It never invents reviews, prices or legal text.</p></div></div>
+        <div class="q"><h3><button type="button" aria-expanded="false" aria-controls="a4"><span>Can it fix an app I already built?</span><i aria-hidden="true"></i></button></h3>
+          <div class="a" id="a4" hidden><p>Yes. Say "review my app". It starts with what works, what hurts, and a ranked fix list with screenshots, before it builds anything.</p></div></div>
+        <div class="q"><h3><button type="button" aria-expanded="false" aria-controls="a5"><span>Which tools does it work with?</span><i aria-hidden="true"></i></button></h3>
+          <div class="a" id="a5" hidden><p>Claude Code, Cursor, Codex, VS Code Copilot, Antigravity and Gemini CLI. Claude.ai and ChatGPT can read the skill file.</p></div></div>
+        <div class="q"><h3><button type="button" aria-expanded="false" aria-controls="a6"><span>Is the salon test the version I install today?</span><i aria-hidden="true"></i></button></h3>
+          <div class="a" id="a6" hidden><p>Not fully yet. The test used the new reference-first method. It is going into the next release. Today's install is ShipRight 1.4.0.</p></div></div>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="foot" id="close" data-act="footer">
+<footer class="foot" data-act="footer">
   <p><i class="seal" aria-hidden="true"></i>ShipRight 1.4.0 · MIT · by Altaz Lavji</p>
   <nav aria-label="Footer">
-    <a href="./case-study.html" data-transition>Case study</a>
+    <a href="#projects">Projects</a>
     <a href="https://github.com/aiwithaltaz/shipright-skills">GitHub</a>
   </nav>
 </footer>
-<div class="wipe" aria-hidden="true"></div>
 <script type="module" src="./main.js"></script>
 </body>
 </html>

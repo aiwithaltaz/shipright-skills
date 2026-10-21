@@ -2,59 +2,59 @@
 
 Status: current
 
-Built from the c7 baseline only. No rebuild run. No client name.
+The salon A/B test. Same prompt, same model (Grok 4.7 in Grok Build), once without ShipRight and once with the reference-first ShipRight pack. Sample studio, no real client.
 
 ## Problem
 
-The desk screen makes registration harder than the job.
+AI builds of a small salon booking app look like admin tools, and the client and owner sides get mixed.
 
 ## Who
 
-Desk volunteers, registering people and their families on event day. Supplied by the case message.
+Salon clients who want to book fast, and the owner who runs the day. Supplied by the test prompt.
 
 ## Research
 
-Verified from the owner review of 25 September 2026 and 4 October 2026. The review lists 20 pains and 3 keeps.
+Verified by using both live builds on 20 October 2026: https://shipright-test-salon-a.vercel.app (without) and https://shipright-test-salon-b.vercel.app (with).
 
-- F01. Branding is too big for a work screen. Verified.
-- F02. Reference facts repeat and always take space. Verified.
-- F03. The before-you-begin panel adds little. Verified.
-- F05. Lookup is by phone only. Verified.
-- Keeps, also Verified: F04 regional context, F23 the registrations list, F26 reports.
+- Without: the client lands in a form with a side panel. Verified.
+- Without: the owner view still shows the client booking panel. Verified.
+- With: a studio style client page and a separate owner Today view. Verified.
 
 No quotes were invented. Assumed: nothing in this file.
 
 ## Idea
 
-No concept round was run for this draft. There is no chosen idea, and there are no two rejected ideas, in the baseline evidence.
+Compare one prompt, built twice, and show why the ShipRight build made each choice.
 
 ## Decisions
 
-- D1. Publish the baseline, not a made-up after screen. Proposed. Tradeoff: the page cannot show a redesign yet.
-- D2. Do not print a score. Proposed. Tradeoff: the proof section stays empty until graders run.
+- D1. Two users, two sides. Proposed. Tradeoff: two shells to keep in sync.
+- D2. References of the same product type (boutique studio sites). Proposed. Tradeoff: less reuse of dashboard patterns.
+- D3. Brand mood first: warm quiet studio, #f3eee6, #8f4334, #234237. Proposed.
+- D4. Fraunces headlines, Figtree body. Proposed.
+- D5. Booking in four steps with prices up front. Proposed.
+- D6. Basics: one spacing scale, focus outlines, skip link, sample note. Proposed.
 
 ## Pains
 
-Before shots only. There is no after shot from a rebuild.
+![Without ShipRight, first screen](../public/salon/a-hero.webp)
 
-![Desk before, wide, first frame](../public/case/desktop-1.png)
+![With ShipRight, first screen](../public/salon/b-hero.webp)
 
-![Desk before, wide, second frame](../public/case/desktop-2.png)
-
-![Desk before, phone, first frame](../public/case/phone-1.png)
+![Without ShipRight, owner view](../public/salon/a-owner.webp)
 
 ## System
 
-No design-system image was made for this baseline. The desk prototype keeps its own styles.
+The salon build uses paper cream, copper and moss with Fraunces and Figtree. The ShipRight site keeps its own paper, ink and sealing wax red.
 
 ## Process
 
-Stages were not run on this prototype for this draft. This page is the evidence sample, not a build.
+Grok Build ran the same prompt twice. The second run had the reference-first pack attached.
 
 ## Results
 
-Not measured. No test of a rebuild. No step count. No load time. No score.
+Graded by ShipRight Lab with RUBRIC.md, not blind. Craft out of 40: without 28, with 31. Product thinking out of 28: without 21, with 24.
 
 ## Next
 
-Run c7 again with this draft. Then recall the 20 pains and the 3 keeps. Then ask the owner before naming anyone. See the handoff in this record.
+Fix the weak spots in the ShipRight build (phone first screen shows no service, no next-up focus for the owner, stale stylist price note), then run a blind grading.

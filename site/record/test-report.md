@@ -42,3 +42,21 @@ Status: current
 ## Limits
 
 - One browser, software rendering. Not a full accessibility audit.
+
+## Salon A/B test (2026-10-20)
+
+Same prompt in Grok Build, model Grok 4.7. Build A without ShipRight, build B2 with the reference-first pack. Graded by ShipRight Lab with RUBRIC.md, not blind.
+
+- Craft, out of 40: without 28, with 31.
+- Product thinking, out of 28: without 21, with 24.
+- Brand colors in B2: #f3eee6, #8f4334, #234237.
+- Today's install is ShipRight 1.4.0; the reference-first method is not in 1.4 yet.
+- Live: https://shipright-test-salon-a.vercel.app and https://shipright-test-salon-b.vercel.app
+
+## CRM A/B test (2026-10-20)
+
+Sales CRM dashboard, same prompt in Grok Build, Grok 4.7. Without ShipRight vs with the reference-first pack (build Bref). Graded by ShipRight Lab with RUBRIC.md, not blind. One run each.
+
+- Craft, out of 40: without 27, with 30.
+- Product thinking, out of 28: without 19, with 22.
+- Earlier packs in the same test: 1.4 craft 23, 1.5 craft 19, both lower than without. That is why the method changed.
