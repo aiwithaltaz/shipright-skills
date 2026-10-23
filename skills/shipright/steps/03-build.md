@@ -2,8 +2,6 @@
 
 Read `PRODUCT.md` and `DESIGN.md`. Build every screen to the level of the references. Short, specific copy within the [word limits](word-limits.md). Build from the kit components in the chosen style pack. Follow every [clarity rule](clarity.md): legend for each state, plain counts, labeled grids, add form with frequency and day picker, a Habits manage screen, no crossed-out text. Real charts with axes and values when the data needs them.
 
-Redesigns: keep every "keep" row of BASELINE.md working (3D, GSAP, videos, proof links). Reuse the current assets and libraries; do not swap them for static images.
-
 ## Build checks (broken things only)
 Open every screen at 1280 and 390 and fix:
 
@@ -14,7 +12,6 @@ Open every screen at 1280 and 390 and fix:
 - phone numbers, money and dates are formatted, and inputs format as you type
 - no typos or double punctuation; rows and carousels start aligned
 - pop-ups and toasts do not cover content after you move on
-- motion respects prefers-reduced-motion; 3D pauses off screen and has a still fallback
 - photos look real, or use illustration; no fake-looking AI faces
 
 Do not add other checks. Optional tools: `node <skill>/scripts/check-ui.mjs <page.html>`, `crawl.mjs`, `check-tokens.mjs`, `run-tests.mjs`.

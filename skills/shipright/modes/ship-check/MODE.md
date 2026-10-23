@@ -5,7 +5,7 @@ description: "Use this when checking launch readiness or specific release items 
 
 # Ship check
 
-**Pack version:** 1.7.0
+**Pack version:** 1.7.1
 **Context before generate. Product before pixels.**
 
 Report what launch evidence establishes. This is not a security audit, legal review or deployment step.

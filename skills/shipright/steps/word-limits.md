@@ -9,8 +9,7 @@ Count words. Over the limit means cut, not rephrase longer.
 - No invented words or names: no made-up brand name, feature name or jargon. Name things with plain words a user would say ("Today", "Add habit", "Streak").
 - Nothing from PRODUCT.md or DESIGN.md goes into the UI: no "mood", "principle", "ritual", "philosophy", step notes or design reasons.
 - Only label sample data with 2 words: "Sample data".
-- Missing facts are left out, never written on screen ("Not listed", "TBD", "placeholder"). List them in PRODUCT.md. The leak check enforces this.
 
 ## Planning files
-- `PRODUCT.md`: 300 words at most. `DESIGN.md`: 250 words at most. `BASELINE.md`: 200 words at most. Bullets, not paragraphs.
+- `PRODUCT.md`: 300 words at most. `DESIGN.md`: 250 words at most. Bullets, not paragraphs.
 - Facts and choices only. No poetry, no metaphors.

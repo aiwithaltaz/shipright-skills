@@ -1,6 +1,6 @@
 # Maintaining ShipRight
 
-**Pack version: 1.7.0**
+**Pack version: 1.7.1**
 **Context before generate. Product before pixels.**
 
 These rules govern this pack, not an end-user app. The installable skill is `skills/shipright/SKILL.md`. Preserve the five mode names (build-pack, product-design, ui-ux-design, ux-critique, ship-check) under `skills/shipright/modes/` and one canonical source tree. Do not publish those modes as separate skills.
