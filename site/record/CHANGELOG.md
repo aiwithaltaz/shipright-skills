@@ -17,3 +17,4 @@ Status: current
 | 2026-10-18 | Restored the 0.6.2 to 1.0 pairs and the IVC Figma pair in a four-tab slider | S07 | run-tests: IVC and feedback tabs | site/evidence/v1.3.1-site/after/1280-index-work.png |
 | 2026-10-18 | Removed three.js, GSAP and Lenis | S08 | build: JS 7.4 kB | site/evidence/v1.3.1-site/build.txt |
 | 2026-10-18 | Added a six-question FAQ, one open at a time | S09 | run-tests: FAQ opens | site/evidence/v1.3.1-site/after/1280-index-faq.png |
+| 2026-10-23 | Footer and pack-version meta now say 1.7.0; FAQ says the case studies used 1.6 | D6 | check-record | none |

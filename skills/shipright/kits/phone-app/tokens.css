@@ -1,0 +1,7 @@
+/* ShipRight phone-app kit: structure tokens only (sizes, spacing, tap). The look comes from ONE style pack in ../styles/. */
+:root{
+  --t-xs:13px; --t-sm:14px; --t-md:16px; --t-lg:20px; --t-xl:32px; --t-2xl:48px;
+  --lh-tight:1.05; --lh:1.4;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px;
+  --tap:48px; --max:440px;
+}

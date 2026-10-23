@@ -28,6 +28,7 @@ EXTRA_PREFIXES = (
     f'{SKILL_ROOT}/product-references/',
     f'{SKILL_ROOT}/steps/',
     f'{SKILL_ROOT}/extras/',
+    f'{SKILL_ROOT}/kits/',
 )
 WORD_BUDGETS = {
     'router_words': 1600,
