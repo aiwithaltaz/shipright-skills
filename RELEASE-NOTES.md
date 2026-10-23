@@ -1,6 +1,69 @@
+# ShipRight 1.7.1
+
+**Date:** 2026-10-23. **Status:** released as v1.7.1. No zip asset. Install from this repository. Backup tag backup-2026-10-23-pre-F points at 1.7.0 (1f12dd2).
+
+## In one line
+
+1.7.1 goes back to version F. Altaz chose F as the base on Oct 23 because it built the screens he liked best.
+
+## What 1.7.1 is
+
+- The lean 1.6 method: Product, Design from 2 or 3 real references, Build, Look and fix.
+- A phone-app starter kit with three style packs: editorial (calm, adult), poster (energetic, sporty) and tactile (friendly, playful).
+- Hard word limits for every screen and planning file.
+- Clarity rules: plain counts ("3 of 5 done"), a legend for Done, Missed, Today and Ahead, labeled history grids, Add with Every day, Weekdays or Pick days, and a Habits screen to edit and delete.
+- Look and fix is required, at most 3 rounds, and writes `LOOK-REPORT.md`.
+
+## What was removed compared with 1.7.0
+
+- Color step (`steps/02a-color.md`): adopt the app's colors or build a palette from competitors.
+- Poster as opt-in only. Poster is a normal pack again.
+- Desktop width rule: 2 columns at 1280 px, no phone tab bar, labels 13 px or larger.
+- Leak check (`scripts/check-leaks.mjs`) and the required "no planning words on screen" step.
+- Research step (`steps/00-research.md`) and the keep-what-works audit (`BASELINE.md`) for redesigns.
+- UX step (`steps/01b-ux.md`).
+- Motion and depth pack (`steps/02b-motion-depth.md`).
+- One count per screen, keep or clear sample data, and the "progress on Today" rule.
+- In Look and fix: the award-bar check, craft-vs-before check, overlap and floating-button checks, and mid-animation frames.
+- Phone grid limits and the bottom-sheet add form rule.
+
+Nothing was added on top of F. The site changed only in version text and one FAQ answer.
+
+## Honest results
+
+Habit tracker, same prompt, 3 F builds against a plain build, built on Grok Build. 3 judges (DeepSeek, Gemini, OpenAI), both orders, normal and hard mode. "Agree" means 2 of 3 judges. Gemini hit its rate limit, so it voted on fewer slots.
+
+| Build | Looks | Product |
+|---|---|---|
+| F1 | 48% | 47% |
+| F2 | 71% | 84% |
+| F3 (best) | 78% | 81% |
+
+- Bar is 80% on looks and 70% on product. F3 is a near miss on looks. F2 and F1 are below it on looks, and F1 is below on product too.
+- The results spread a lot between runs, so ShipRight is not reliable yet.
+- Hard scores stayed near 5 to 6.5 out of 10. Judges called it "a good template plus", not something a real team would ship.
+- The 8.5 out of 10 gate on research, product, architecture, UX and UI was not met. Nothing here is confirmed beyond these runs.
+- 1.7.0 scored looks 99% and product 56% (both judges agree) in a different test with a different builder (the Technical Lead bot), so the two numbers cannot be compared one to one.
+
+## Known issues
+
+- All 3 F builds picked the editorial pack (cream, serif, deep green). Poster and tactile were never built into an app. They exist only as starter screens.
+- The poster pack still repeats black with acid lime. 1.7.0 tried to stop that with the color step. That step is gone, so the same palette can come back in every poster build.
+- Editorial is also a common AI look (cream, serif). Each app does not get its own color vibe.
+- No keep-what-works audit for redesigns. A redesign can lose motion, 3D or proof from the old site.
+- No desktop width rule: F builds can show a narrow phone column at 1280 px.
+- Dense history grids, a cramped add sheet and a fused label ("streakWeekdays") were seen in F builds.
+
+## Checks
+
+- `check_sources.py` and `check_context.py` pass.
+- Unit tests: 76 run, 4 fail (phase2 x3 and one v13 crawl test), 6 groups skipped. These need a Playwright browser that the test box does not have. The same 4 fail on 1.7.0, so nothing new fails.
+- No app builds and no blind tests were run for 1.7.1. The scores above are the earlier F runs (Oct 22), not a new test of this release.
+- Before and after screens (1.7.0 vs 1.7.1 reference screens, three packs, 390 and 1280 px) are kept in the project notes folder. The starter screens look almost the same, because the kit style files barely changed. The real change is in the steps and rules, which do not show in a screenshot.
+
 # ShipRight 1.7.0
 
-**Date:** 2026-10-23. **Status:** release candidate. Not released until the owner says yes. No zip asset. Install from this repository. Backup tag backup-2026-10-23-pre-1.7 points at 1.6.0 (14340b9).
+**Date:** 2026-10-23. **Status:** released as v1.7.0, then replaced as the base by 1.7.1 (above). No zip asset. Install from this repository. Backup tag backup-2026-10-23-pre-1.7 points at 1.6.0 (14340b9).
 
 ## In one line
 

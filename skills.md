@@ -1,6 +1,6 @@
 # Skills catalog
 
-**ShipRight 1.7.0**
+**ShipRight 1.7.1**
 
 Install one skill: [shipright](skills/shipright/SKILL.md). The rows below are its modes. A new idea starts at [Research](skills/shipright/stages/01-research.md), even when the request says to just build it. Naming build-pack still runs stages 1 to 10. An existing app starts at [Discover](skills/shipright/stages/00-discover.md).
 

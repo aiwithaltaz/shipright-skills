@@ -1,6 +1,6 @@
 # 03 - Security and access
 
-**Status: Template (ShipRight 1.7.0).**
+**Status: Template (ShipRight 1.7.1).**
 **Project path:** `docs/shipright/03-security-and-access.md`
 
 **Version/date:** <!-- -->  **Sources and approval:** <!-- -->

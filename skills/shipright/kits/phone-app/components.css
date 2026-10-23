@@ -49,10 +49,7 @@ body{font:400 var(--t-md)/var(--lh) var(--font);background:var(--bg);color:var(-
 .tabs{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:var(--s6);background:var(--tabs-bg);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:var(--s2) 0 calc(var(--s2) + env(safe-area-inset-bottom))}
 .tabs a{display:grid;justify-items:center;gap:2px;font-size:var(--t-xs);color:var(--ink-3);text-decoration:none;min-width:var(--tap)}
 .tabs a[aria-current]{color:var(--accent);font-weight:650}
-/* sheet form: bottom sheet on phone, centered dialog on desktop */
-.scrim{position:fixed;inset:0;background:rgba(0,0,0,.35);display:flex;align-items:flex-end;justify-content:center;z-index:20}
-.sheet{width:100%;max-width:var(--max);background:var(--surface);border-radius:var(--r-lg) var(--r-lg) 0 0;padding:var(--s5) var(--s4) calc(var(--s5) + env(safe-area-inset-bottom));max-height:90dvh;overflow:auto}
-@media(min-width:900px){.scrim{align-items:center}.sheet{max-width:440px;border-radius:var(--r-lg)}}
+/* sheet form */
 .field{display:grid;gap:var(--s1);margin-bottom:var(--s4)}
 .field label{font-size:var(--t-sm);font-weight:600;color:var(--ink-2)}
 .field input{height:var(--tap);border:1px solid var(--line);border-radius:var(--r-sm);padding:0 var(--s3);font:inherit;background:var(--surface)}
@@ -74,10 +71,6 @@ body{font:400 var(--t-md)/var(--lh) var(--font);background:var(--bg);color:var(-
 .legend span{display:inline-flex;align-items:center;gap:6px}
 .wk{display:grid;grid-template-columns:repeat(7,14px);gap:4px;margin-top:6px}
 .wk b{font:600 9px/1 var(--font);color:var(--ink-3);text-align:center}
-.grid28{display:grid;grid-template-columns:auto repeat(7,1fr);gap:6px;align-items:center;font-size:var(--t-xs);color:var(--ink-3)}
-.grid28 b{font-weight:600;text-align:center} .grid28 .mk{width:100%;height:auto;aspect-ratio:1;min-width:28px;max-width:36px;justify-self:center}
+.grid28{display:grid;grid-template-columns:auto repeat(7,1fr);gap:4px;align-items:center;font-size:var(--t-xs);color:var(--ink-3)}
+.grid28 b{font-weight:600;text-align:center} .grid28 .mk{width:100%;height:auto;aspect-ratio:1;max-width:22px;justify-self:center}
 .range{font-size:var(--t-xs);color:var(--ink-3);margin-top:var(--s2)}
-/* desktop: no phone tab bar, it becomes a top nav; labels stay 13px or more */
-@media(min-width:900px){.app{max-width:1120px}.tabs{position:sticky;top:0;bottom:auto;justify-content:flex-start;border-top:0;border-bottom:1px solid var(--line);padding:var(--s2) var(--s6);order:-1}.tabs a{display:inline-flex;gap:var(--s2);font-size:max(13px,var(--t-sm,13px))}}
-/* sample data notice: Keep sample / Start fresh */
-.sample-note{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2);padding:var(--s3);border:1px solid var(--line);border-radius:var(--r-md,10px);font-size:max(13px,var(--t-sm,13px))}

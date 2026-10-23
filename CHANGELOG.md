@@ -1,6 +1,13 @@
 # Changelog
 
-## 1.7.0 - 2026-10-23 (release candidate)
+## 1.7.1 - 2026-10-23 (released)
+
+- Returns to version F as the base of the skill. 1.6 method plus the phone-app kit with three style packs, word limits and clarity rules.
+- Removed from 1.7.0: color step, Research and UX steps (and the keep-what-works audit), motion and depth pack, poster opt-in, desktop width rule, one-count rule, keep or clear sample data, leak check, craft and overlap checks in Look and fix.
+- Habit app, blind test vs no skill (2 of 3 judges): best F build looks 78%, product 81%. Bar is 80% and 70%. See RELEASE-NOTES.md.
+- Site: version text and one FAQ answer. Nothing else changed.
+
+## 1.7.0 - 2026-10-23 (released)
 
 - Color step, poster style opt-in, desktop width rule, one count per screen, keep or clear sample data, and a required leak check. Phone-app starter kit with three style packs, a Research and a UX step, a motion and depth pack, and a required look-and-fix loop. See RELEASE-NOTES.md.
 - Habit app, blind test vs no skill (two judges): looks 99%, product 56% when both agree (bar 70%).

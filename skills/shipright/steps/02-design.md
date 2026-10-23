@@ -1,19 +1,8 @@
 # Step 2: Design (write DESIGN.md before any UI code)
 
-**Start from a kit and one style pack.** If a [kit](../kits/README.md) fits the product type, copy its `tokens.css` and `components.css`. Then pick ONE style pack from its `styles/` folder with the scored choice below, copy its `style.css`, read its `ART.md` and open its `reference.html`. Commit to that pack on every screen. DESIGN.md names the pack, the reason, and anything you changed (250 words at most, see [word limits](word-limits.md)).
+**Start from a kit and one style pack.** If a [kit](../kits/README.md) fits the product type, copy its `tokens.css` and `components.css`. Then pick ONE style pack from its `styles/` folder by audience and feel, copy its `style.css`, read its `ART.md` and open its `reference.html`. Commit to that pack on every screen. DESIGN.md names the pack, the reason, and anything you changed (250 words at most, see [word limits](word-limits.md)).
 
 Read `PRODUCT.md`. Write `DESIGN.md` at the project root. Every later step reads it.
-
-**First** do [Step 2a: Color](02a-color.md). The palette in PRODUCT.md wins over the pack's colors.
-
-## Style choice must fit the audience (no default pack)
-Packs: editorial (calm, refined, adult) and tactile (friendly, playful, beginner). Poster is an opt-in pack, never a default: use it only when the audience is clearly sport or competition AND the brand already looks like that. Streaks alone do not make an app competitive: almost every habit app has streaks.
-Score each pack 0 to 2 on 3 signals from PRODUCT.md: the user's age and energy, the job's feel (calm daily routine, play for beginners, sport), and the Research references. Write the scores and one sentence on why the winner fits this audience in DESIGN.md. A calm consumer habit or wellness app gets a calm, refined look. On a tie, pick the calmer pack.
-
-For sites without a kit (portfolio, marketing, store), pick a direction the same way from 3 named options, and for a redesign keep the current visual identity unless BASELINE.md says it fails the audience.
-
-## Motion and depth
-Portfolio, agency, launch or marketing: open [motion and depth](02b-motion-depth.md) and name each effect and its purpose in DESIGN.md. Utility apps: skip it.
 
 ## Type and references
 1. One line: product type and who looks at it. Open the matching file in [product-references/](../product-references/README.md).

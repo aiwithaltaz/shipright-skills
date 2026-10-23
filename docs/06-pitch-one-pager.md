@@ -1,6 +1,6 @@
 # 06 - Pitch one-pager
 
-**Status: Template (ShipRight 1.7.0).**
+**Status: Template (ShipRight 1.7.1).**
 **Project path:** `docs/shipright/06-pitch-one-pager.md`
 
 **Version/date:** <!-- -->  **Sources and approval:** <!-- -->

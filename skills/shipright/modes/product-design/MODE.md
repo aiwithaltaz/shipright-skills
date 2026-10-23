@@ -5,7 +5,7 @@ description: "Use this when framing a product idea, judging research evidence or
 
 # Product design
 
-**Pack version:** 1.7.0
+**Pack version:** 1.7.1
 **Context before generate. Product before pixels.**
 
 Connect outcome, mechanism, objects, journey and screen jobs.
