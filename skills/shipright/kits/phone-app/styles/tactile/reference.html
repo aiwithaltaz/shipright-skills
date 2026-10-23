@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Today</title><link rel="stylesheet" href="../../tokens.css"><link rel="stylesheet" href="../../components.css"><link rel="stylesheet" href="style.css"></head>
+<body><main class="app">
+<section>
+  <header class="top"><div><small>Wed, Oct 21</small><h1>Today</h1></div><div class="side"><div class="ring" id="ring" style="--p:40"><b id="pct">40%</b></div><button class="btn add" aria-label="Add habit">+ Add</button></div></header>
+  <p class="count" id="count"><b>2 of 5</b> done today</p>
+  <p class="tag" style="margin:var(--s2) 0">Sample data</p>
+  <div class="list" id="list"></div>
+  <div class="legend"><span><i class="mk done"></i>Done</span><span><i class="mk missed"></i>Missed</span><span><i class="mk today"></i>Today</span><span><i class="mk ahead"></i>Ahead</span><span><i class="mk off"></i>Not due</span></div>
+</section>
+<aside class="card" style="margin-top:var(--s5)"><h2>This week</h2>
+  <p class="count" style="margin:-8px 0 var(--s3)">Habits done per day</p>
+  <div class="bars">
+    <div><em>4</em><span style="height:80px"></span><em>M</em></div><div><em>5</em><span style="height:100px"></span><em>T</em></div>
+    <div class="today"><em id="tdy">2</em><span id="tdb" style="height:40px"></span><em>W</em></div><div><em>–</em><span style="height:4px;background:var(--surface-2)"></span><em>T</em></div>
+    <div><em>–</em><span style="height:4px;background:var(--surface-2)"></span><em>F</em></div><div><em>–</em><span style="height:4px;background:var(--surface-2)"></span><em>S</em></div>
+    <div><em>–</em><span style="height:4px;background:var(--surface-2)"></span><em>S</em></div></div>
+  <h2 style="margin-top:var(--s5)">Read 20 pages</h2>
+  <p class="count" style="margin:-8px 0 var(--s3)"><b>22 of 24</b> due days done</p>
+  <div class="grid28" id="g28"></div><p class="range">Sep 28 to Oct 25</p></aside>
+</main>
+<nav class="tabs"><a aria-current="page" href="#">● <span>Today</span></a><a href="#">▮ <span>Week</span></a><a href="#">☰ <span>Habits</span></a></nav>
+<script>
+const H=[["Read 20 pages",12,1,"Every day"],["Walk 8,000 steps",5,1,"Weekdays"],["No phone in bed",0,0,"Every day"],["Drink 2 L water",23,0,"Every day"],["Stretch 10 min",3,0,"Mon, Wed, Fri"]];
+const tick='<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+const W='MTWTFSS';
+// this week Mon..Sun, today = Wed (index 2)
+const wk=(i,d)=>[0,1,2,3,4,5,6].map(k=>{const due=!(i==1&&k>4)&&!(i==4&&![0,2,4].includes(k));let c=!due?'off':k<2?(i==2?'missed':'done'):k==2?(d?'done today':'today'):'ahead';return`<i class="mk ${c}" title="${W[k]}"></i>`}).join('');
+const L=document.getElementById('list');
+const row=([n,s,d,f],i)=>`<div class="habit ${d?'is-done':''}"><div class="meta"><div class="name">${n}</div><div class="sub"><span class="chip ${s>=7?'hot':''}">${s?s+'-day streak':'New streak'}</span><span>${f}</span></div><div class="wk">${[...W].map(x=>`<b>${x}</b>`).join('')}${wk(i,d)}</div></div><button class="check" aria-pressed="${!!d}" aria-label="Done: ${n}" data-i="${i}">${tick}</button></div>`;
+const draw=()=>{L.innerHTML=H.map(row).join('');const n=H.filter(h=>h[2]).length;
+document.getElementById('count').innerHTML=`<b>${n} of ${H.length}</b> done today`;document.getElementById('pct').textContent=Math.round(n/H.length*100)+'%';
+document.getElementById('ring').style.setProperty('--p',n/H.length*100);document.getElementById('tdy').textContent=n;document.getElementById('tdb').style.height=n*20+'px'};
+L.onclick=e=>{const b=e.target.closest('.check');if(!b)return;const h=H[b.dataset.i];h[2]=h[2]?0:1;h[1]+=h[2]?1:-1;draw()};
+draw();
+// labeled 4-week grid: Sep 28 (Mon) .. Oct 25 (Sun), today = Oct 21 (index 23)
+const G=document.getElementById('g28');let g='<span></span>'+[...W].map(x=>`<b>${x}</b>`).join('');
+const st=['Sep 28','Oct 5','Oct 12','Oct 19'];
+for(let r=0;r<4;r++){g+=`<span>${st[r]}</span>`;for(let k=0;k<7;k++){const i=r*7+k;const c=i<23?([3,11].includes(i)?'missed':'done'):i==23?'done today':'ahead';g+=`<i class="mk ${c}"></i>`}}
+G.innerHTML=g;
+</script></body></html>

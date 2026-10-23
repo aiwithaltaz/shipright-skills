@@ -1,0 +1,32 @@
+/* Style pack: Editorial. A well-set almanac. Warm paper, ink, one deep green. */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap');
+:root{
+  --font-display:"Fraunces",Georgia,serif; --display-weight:600; --display-track:-.025em;
+  --font:"Instrument Sans",system-ui,sans-serif; --font-num:"Fraunces",Georgia,serif;
+  --bg:#F1ECE2; --surface:#FBF8F2; --surface-2:#E6DFD1;
+  --ink:#1C1A17; --ink-2:#55504A; --ink-3:#8C857A; --line:#D8CFBF;
+  --accent:#1F3D33; --accent-ink:#F6F1E7; --done:#2F5D4C; --done-ink:#F6F1E7; --done-soft:#DCE6DE;
+  --hot-soft:#F0E1C6; --hot-ink:#7A4B12; --warn:#A8701A; --danger:#9B2C2C;
+  --r-sm:4px; --r-md:6px; --r-lg:8px; --r-pill:999px;
+  --shadow:none; --edge:1px solid var(--line);
+  --fab-shadow:0 2px 0 #0F231D; --tabs-bg:rgba(241,236,226,.94);
+}
+body{font-feature-settings:"ss01"}
+.top{border-bottom:2px solid var(--ink);padding-bottom:var(--s3);margin-bottom:var(--s4)}
+.top h1{font-size:var(--t-2xl);font-variation-settings:"opsz" 144}
+.top small{text-transform:uppercase;letter-spacing:.14em;font-size:11px;color:var(--ink-2)}
+.list{gap:0}
+.habit{border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;padding-left:0;min-height:76px}
+.habit .name{font:500 18px/1.2 var(--font-display)}
+.habit.is-done .name{color:var(--ink)}
+.check{border:1.5px solid var(--ink);border-radius:50%}
+.chip{background:none;padding:0;font:italic 500 13px var(--font-num);color:var(--ink-2)}
+.chip.hot{background:none;color:var(--hot-ink)}
+.days i{border-radius:50%;width:9px;height:9px}
+.ring{background:conic-gradient(var(--done) calc(var(--p)*1%),var(--surface-2) 0)}
+.ring b{font:600 15px var(--font-num)}
+.bars span{border-radius:2px;background:var(--done)} .bars .today span{background:var(--ink)}
+.bars em{font:italic 500 13px var(--font-num)}
+.card h2{font-style:italic;font-weight:400;font-size:24px}
+.tag{letter-spacing:.14em}
+.add{border-radius:var(--r-pill)}

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.7.0 - 2026-10-23 (release candidate)
+
+- Color step, poster style opt-in, desktop width rule, one count per screen, keep or clear sample data, and a required leak check. Phone-app starter kit with three style packs, a Research and a UX step, a motion and depth pack, and a required look-and-fix loop. See RELEASE-NOTES.md.
+- Habit app, blind test vs no skill (two judges): looks 99%, product 56% when both agree (bar 70%).
+- Site: footer and pack-version updated. Case studies still say they used 1.6.
+
 ## 1.6.0 - 2026-10-21 (released)
 
 - Lean reference-first SKILL.md, a references library by product type, and short build checks. New builds skip the stage pile. See RELEASE-NOTES.md.

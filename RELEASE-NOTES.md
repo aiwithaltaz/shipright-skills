@@ -1,3 +1,55 @@
+# ShipRight 1.7.0
+
+**Date:** 2026-10-23. **Status:** release candidate. Not released until the owner says yes. No zip asset. Install from this repository. Backup tag backup-2026-10-23-pre-1.7 points at 1.6.0 (14340b9).
+
+## In one line
+
+New builds now pick colors on purpose, look good at desktop width, and run a leak check before they say done. Phone-app builds start from a small kit with three style packs.
+
+## What changed
+
+- **Color step (new, `steps/02a-color.md`).** Use the app's own colors if it has them. If not, look at 3 to 5 competitors, write their colors in PRODUCT.md, and propose a palette that feels familiar for the category but is its own. Never reuse a palette from an earlier project. No default black with neon.
+- **Poster style is opt-in.** The style must fit the audience. A calm habit app gets a calm look. Editorial and tactile are the other packs.
+- **Desktop width rule.** At 1280 px the app uses the width (two columns or a side panel), has no phone tab bar, and labels are 13 px or larger.
+- **One count only.** The same number never shows twice in different forms on one screen.
+- **Sample data, keep or clear.** First open offers "Keep sample" or "Start fresh". Today shows progress and recent history.
+- **Leak check (`scripts/check-leaks.mjs`).** Reads the visible text and blocks "done" when it finds planning words ("placeholder", "TODO", "Not listed", "per PRODUCT.md") or fused labels like "streakWeekdays". `--render` finds Playwright and Chrome by itself and reads text with uppercase styling off.
+
+## Also in this release (added since 1.6.0)
+
+- Five steps instead of four: Research, Product, UX, UI, Look and fix. Research uses real references of the same type. For a redesign it writes a keep-what-works audit (`BASELINE.md`), and the result must keep or beat the old site's motion, 3D, media and proof.
+- New UX step: the audience's real question, scope at a glance, information order, flows and states.
+- Phone-app starter kit (`kits/phone-app/`) with three style packs (editorial, poster, tactile), plus hard word limits and clarity rules.
+- Motion and depth pack for portfolios, marketing and launches only (GSAP, Three.js, reduced motion, performance).
+- Look and fix is required: screenshots at 390 and 1280, mid-animation frames, overlap checks, craft-vs-before checks, at most 3 rounds, and a `LOOK-REPORT.md`.
+
+## Blind test results (honest)
+
+Habit tracker, same prompt, built by the Technical Lead bot. A = without ShipRight, I = this release. Two judges (DeepSeek and OpenAI), normal and hard mode, both orders, 3 roles. "Both agree" means 2 of 2 judges.
+
+| | Looks | Product |
+|---|---|---|
+| DeepSeek | 99% | 83% |
+| OpenAI | 100% | 63% |
+| Both agree | 99% | 56% |
+
+- Looks pass the 80% bar by far. Product passes for each judge alone, but "both agree" is 56%, under the 70% bar.
+- The Week screen was weakest (33% product). The add form on desktop and the dense 7-day rows were also called out.
+- One build each, and the I build came right after the A build in the same chat, so the bot may have learned. A single run is noisy.
+- Earlier versions G and H lost to the plain build on Grok Build (H: looks 12%, product 35%). That is why the color step and poster opt-in were added.
+
+## Not included
+
+- The UX-designer depth versions (J2 and K: pain points, journeys, information architecture, critique scores) did not pass their tests yet, so they are not in 1.7.0.
+- Later habit versions I3 and I4 are not included. I4 lost to I on product (39%).
+
+## Known limits
+
+- Four unit tests fail in the test box (three in phase 2 and one crawl test). They need a Playwright browser that is not installed there, and they failed the same way on 1.6.0. Six site and check-ui test groups are skipped for the same reason. All other tests pass (76 run), plus the sources and context checks.
+- The static leak scan can flag an HTML `placeholder="..."` attribute written inside a JavaScript string. Use `--allow placeholder` and say why in `LOOK-REPORT.md`.
+- This release has no score of 8.5 out of 10 on research, product, architecture, UX and UI. Publishing and sharing is a separate decision for the owner.
+- The site case studies and benchmark numbers are from ShipRight 1.6 runs and say so.
+
 # ShipRight 1.6.0
 
 **Date:** 2026-10-21. **Status:** released as v1.6.0. No zip. Install from this repository. Backup tag backup-2026-10-21-pre-1.6 points at 1.4.0 (f4fb20a).

@@ -1,0 +1,32 @@
+/* Style pack: Poster. Swiss sport poster. Black, white, one acid color, huge numbers. */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500;62..125,800;62..125,900&family=Space+Mono:wght@700&display=swap');
+:root{
+  --font-display:"Archivo",Impact,sans-serif; --display-weight:900; --display-track:-.03em;
+  --font:"Archivo",system-ui,sans-serif; --font-num:"Space Mono",ui-monospace,monospace;
+  --bg:#0D0D0C; --surface:#1A1A18; --surface-2:#2C2C29;
+  --ink:#F4F2EC; --ink-2:#BDBAB0; --ink-3:#85827A; --line:#3A3A36;
+  --accent:#D7FF3B; --accent-ink:#0D0D0C; --done:#D7FF3B; --done-ink:#0D0D0C; --done-soft:#3A4410;
+  --hot-soft:#FF5A1F; --hot-ink:#0D0D0C; --warn:#FFB020; --danger:#FF4D4D;
+  --r-sm:0; --r-md:0; --r-lg:0; --r-pill:0;
+  --shadow:none; --edge:0;
+  --fab-shadow:6px 6px 0 #F4F2EC; --tabs-bg:#0D0D0C;
+}
+.top h1{font-size:64px;font-stretch:75%;text-transform:uppercase;line-height:.85}
+.top small{font:700 12px var(--font-num);color:var(--accent);text-transform:uppercase}
+.ring{border-radius:0;width:72px;height:72px;background:var(--accent)}
+.ring b{border-radius:0;width:auto;height:auto;background:none;color:var(--accent-ink);font:700 20px var(--font-num)}
+.list{gap:2px}
+.habit{min-height:80px;border-left:6px solid var(--surface-2)}
+.habit.is-done{border-left-color:var(--accent)}
+.habit .name{font:800 19px/1.1 var(--font);text-transform:uppercase;font-stretch:87%;letter-spacing:.01em}
+.check{border-radius:0;border:2px solid var(--ink)}
+.chip{font-family:var(--font-num);text-transform:uppercase}
+.chip.hot{font-weight:700}
+.days i{border-radius:0}
+.card h2{text-transform:uppercase;font-stretch:75%;font-size:28px}
+.bars span{border-radius:0;background:var(--ink-3)} .bars .today span{background:var(--accent)}
+.bars em{font-family:var(--font-num)}
+.tag{color:var(--accent);font-family:var(--font-num)}
+.btn{text-transform:uppercase;font-weight:900}
+.tabs{border-top:2px solid var(--ink)} .tabs a{text-transform:uppercase;font-weight:800;letter-spacing:.04em}
+.add{box-shadow:4px 4px 0 #F4F2EC}

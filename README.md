@@ -1,7 +1,9 @@
 # ShipRight
 
-**Version 1.6.0**
+**Version 1.7.0**
 **Context before generate. Product before pixels.**
+
+**1.7.0 adds a color step, a research and a UX step, a phone-app kit and a leak check.** New builds pick colors from the app's own brand or from competitors, use the full width on desktop, and must pass a look-and-fix loop and a leak check before they are done. In a blind test on a habit app, the build with ShipRight won looks 99% against no skill, and product 56% when both judges agree (the bar is 70%). See RELEASE-NOTES.md.
 
 **1.6.0 goes lean.** New builds run 4 short steps: Product (writes PRODUCT.md), Design from 2 or 3 real products of the same type (writes DESIGN.md, with a genericness test), Build with short checks, and Look and fix. A references library by product type lives in `skills/shipright/product-references/`, and heavy effects are listed as optional extras. In our A/B tests this approach beat no skill on a CRM (craft 30 vs 27) a salon app (craft 31 vs 28) and a habit phone app (craft 29 vs 28, thinking 24 vs 21), graded by us, not blind.
 
